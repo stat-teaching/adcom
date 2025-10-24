@@ -1,0 +1,6 @@
+# Materiale extra
+
+## R
+
+- Corso intensivo (20 ore) su R, parte dei corsi [ARCA](https://www.dpss.unipd.it/applied-research-courses-academy-arca) del Dipartimento di Psicologia dello Sviluppo e della Socializzazione (DPSS). Potete trovare tutto il materiale [https://arca-dpss.github.io/course-R/](https://arca-dpss.github.io/course-R/).
+- Libro in italiano riguardo R che supporta il corso ARCA [https://psicostat.github.io/Introduction2R/](https://psicostat.github.io/Introduction2R/)

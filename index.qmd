@@ -1,0 +1,43 @@
+---
+title: "Analisi dei Dati in Ambito di Comunità"
+engine: knitr
+execute: 
+  echo: false
+  message: false
+
+listing:
+  contents: slides
+  type: table
+  sort:
+    - "filename"
+  fields: [title]
+  id: slides
+---
+
+```{r}
+#| message: false
+devtools::load_all()
+```
+
+Materiale per il corso di Analisi dei Dati in Ambito di Comunità (ADCOM, 6 CFU) nel corso di Psicologia di Comunità, della Promozione del Benessere e del Cambiamento Sociale. 
+
+In questo sito sarà presente tutto il materiale come slides, esercizi, approfondimenti, codici e dati. Per ogni comunicazione ufficiale si faccia sempre riferimento alla [pagina Moodle del corso]({{< var moodle >}}).
+
+## Slides
+
+::: {#sample-listings}
+:::
+
+## Link utili
+
+- Moodle:
+- Didattica:
+
+## Contatti
+
+Per orari di ricevimento, proposte di tesi e comunicazioni ufficiali si faccia riferimento alla mia pagina ufficiale [Unipd]({{< var unipd >}}).
+
+Per contattarmi: {{< fa envelope >}} [{{< var unipd-mail >}}]({{< var unipd-mail >}})
+
+## FAQ
+

@@ -1,0 +1,10 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/slides/00-intro-generale.html",
+      "/slides/01-intro-corso.html",
+      "/slides/02-intro-inferenza.html"
+    ]
+  }
+]
