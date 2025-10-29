@@ -1,0 +1,128 @@
+---
+title: Analisi dei dati in ambito di Comunità
+---
+
+```{r}
+library(tidyverse)
+
+mtheme <- function() {
+    theme_bw(15)
+}
+
+theme_set(mtheme())
+```
+
+# Quali tipi di domande di ricerca?
+
+## Quali tipi di domande di ricerca?
+
+Il capitolo *Introduction to Quantitative Methods* identifica i principali approcci quantitativi all'analisi dati in ambito di Psicologia di Comunità.
+
+![](img/handbook-community-research.png){fig-align="center"}
+
+## E' possibile una ricerca empirica?
+
+> On the one hand, more action-oriented proponents in the field argue in favor of constructivist or relativistic paradigms to promote greater engagement with the
+contextual and community-based influences that impact our areas of study (Lincoln & Guba, 2000). From this perspective, there is concern about the potential limitations, or even the potential harms to those who are disenfranchised, of more objective experimental paradigms (e.g., positivism and postpositivisism). On the other hand, proponents of these quantitative methods argue that as a scientific discipline seeking to expand the influence of our field’s perspective on the way social and community research is conducted, we should embrace the strengths of methods based on these paradigms to facilitate rigorous hypothesis testing, produce research that is both internally valid and externally generalizable, and assess cause-and-effect relationships between constructs (Johnson & Onwuegbuzie, 2004).
+
+## Quali tipi di domande di ricerca?
+
+Di seguito, sono identificate le principali domande di ricerca:
+
+1. La presenza e la forza della relazione tra due o più variabili
+2. La presenza di differenze in variabili d'interesse tra due o più gruppi
+3. Classificazione dei soggetti in gruppi, basandosi su variabili di interesse
+4. Misurazione e strutture latenti di variabili e costrutti d'interesse
+5. L'andamento temporale (i.e., longitudinale) di effetti e variabili d'interesse
+
+## Quali tipi di domande di ricerca?
+
+Quelle che affronteremo principalmente sono:
+
+1. **La presenza e la forza della relazione tra due o più variabili**
+2. **La presenza di differenze in variabili d'interesse tra due o più gruppi**
+3. Classificazione dei soggetti in gruppi, basandosi su variabili di interesse
+4. Misurazione e strutture latenti di variabili e costrutti d'interesse
+5. L'andamento temporale (i.e., longitudinale) di effetti e variabili d'interesse
+
+## Quali tipi di domande di ricerca
+
+Inoltre, tratteremo altri due argomenti:
+
+- **Strutture dati multilivello**: Questo è parzialmente compreso in (1) ma in Psicologia di Comunità spesso le domande di ricerca riguardano la relazione tra più livelli di analisi (e.g., come il contesto impatta il singolo e viceversa).
+- **Metanalisi**: In un contesto dove ci sono sempre più ricerche pubblicate, sviluppare un meta-analytic thinking è essenziale. Il motto è che uno studio, anche il più ben fatto, non dice mai abbastanza sul fenomeno d'indagine.
+
+## 1. Relazione tra due o più variabili
+
+Possiamo valutare la relazione tra criminalità percepita ed età anagrafica:
+
+```{r}
+n <- 1e3
+age <- round(runif(n, 18, 70))
+pcrim <- 30 + 0.5 * age + rnorm(n, 0, 10)
+pcrim <- filor::trim(pcrim, 0, 100)
+
+data.frame(
+    pcrim, age
+) |> 
+    ggplot(aes(x = age, y = pcrim)) +
+    geom_point(size = 3,
+               alpha = 0.5) +
+    geom_smooth(method = "lm", se = FALSE) +
+    xlab("Age") +
+    ylab("Perceived Criminality")
+```
+
+## 1. Relazione tra due o più variabili
+
+Oppure vedere la relazione tra uso dei social media e depressione in diversi paesi. Questa è una struttura multilivello:
+
+```{r}
+ns <- 100
+nations <- c("it" = 1, "de" = 2, "fr" = 3, "gb" = 4, "usa" = 5, "jp" = 6)
+nc <- length(nations)
+
+nation <- rep(1:nc, each = ns)
+smedia <- 20 + rnorm(nc, 0, 10)[nation] + rnorm(ns * nc, 0, 5)
+wellbeing <- 20 + rnorm(nc, 0, 10)[nation] + (1 + rnorm(nc, 0, 0.5)[nation]) * smedia + rnorm(ns * nc, 0, 10)
+
+data.frame(
+    nation = names(nations[nation]),
+    smedia,
+    wellbeing
+) |> 
+    ggplot(aes(x = smedia, y = wellbeing)) +
+    geom_point(aes(color = nation), alpha = 0.5) +
+    geom_smooth(aes(color = nation), method = "lm", se = FALSE) +
+    xlab("Social Media Usage") +
+    ylab("Well-being")
+```
+
+## 2. Differenze tra gruppi
+
+Possiamo indagare ad esempio punteggi di depressione e ansia in funzione del corso di laurea seguito:
+
+```{r}
+cdl <- c("psicologia", "fisica", "ingegneria", "filosofia")
+lapply(c(80, 10, 30, 50), function(x) rnorm(100, x, 10)) |> 
+    setNames(cdl) |> 
+    data.frame() |> 
+    pivot_longer(1:length(cdl)) |> 
+    mutate(value = filor::trim(value, 0, 100)) |> 
+    ggplot(aes(x = name, y = value)) +
+    geom_point(aes(color = name), position = position_jitter(width = 0.1), show.legend = FALSE) +
+    geom_boxplot(show.legend = FALSE) +
+    theme(axis.title.x = element_blank()) +
+    ylab("Depression")
+```
+
+## 3. Metanalisi
+
+Possiamo anche combinare diversi studi relativi ad uno specifico ambito di ricerca. Ad esempio, 10 studi che valutano l'impatto di uno specifico programma di prevenzione:
+
+```{r}
+library(metafor)
+mm <- filor::sim_meta(10, 0.3, 0.1, rpois(10, 50))
+fit <- rma(yi, vi, data = mm)
+forest(fit)
+```

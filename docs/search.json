@@ -54,5 +54,82 @@
     "title": "Analisi dei Dati in Ambito di Comunità",
     "section": "Slides",
     "text": "Slides"
+  },
+  {
+    "objectID": "extra.html",
+    "href": "extra.html",
+    "title": "Materiale extra",
+    "section": "",
+    "text": "Corso intensivo (20 ore) su R, parte dei corsi ARCA del Dipartimento di Psicologia dello Sviluppo e della Socializzazione (DPSS). Potete trovare tutto il materiale https://arca-dpss.github.io/course-R/.\nLibro in italiano riguardo R che supporta il corso ARCA https://psicostat.github.io/Introduction2R/"
+  },
+  {
+    "objectID": "extra.html#r",
+    "href": "extra.html#r",
+    "title": "Materiale extra",
+    "section": "",
+    "text": "Corso intensivo (20 ore) su R, parte dei corsi ARCA del Dipartimento di Psicologia dello Sviluppo e della Socializzazione (DPSS). Potete trovare tutto il materiale https://arca-dpss.github.io/course-R/.\nLibro in italiano riguardo R che supporta il corso ARCA https://psicostat.github.io/Introduction2R/"
+  },
+  {
+    "objectID": "slides/03-analisi-dati-comunita.html#quali-tipi-di-domande-di-ricerca-1",
+    "href": "slides/03-analisi-dati-comunita.html#quali-tipi-di-domande-di-ricerca-1",
+    "title": "Analisi dei dati in ambito di Comunità",
+    "section": "Quali tipi di domande di ricerca?",
+    "text": "Quali tipi di domande di ricerca?\nIl capitolo Introduction to Quantitative Methods identifica i principali approcci quantitativi all’analisi dati in ambito di Psicologia di Comunità."
+  },
+  {
+    "objectID": "slides/03-analisi-dati-comunita.html#quali-tipi-di-domande-di-ricerca-2",
+    "href": "slides/03-analisi-dati-comunita.html#quali-tipi-di-domande-di-ricerca-2",
+    "title": "Analisi dei dati in ambito di Comunità",
+    "section": "Quali tipi di domande di ricerca?",
+    "text": "Quali tipi di domande di ricerca?\nDi seguito, sono identificate le principali domande di ricerca:\n\nLa presenza e la forza della relazione tra due o più variabili\nLa presenza di differenze in variabili d’interesse tra due o più gruppi\nClassificazione dei soggetti in gruppi, basandosi su variabili di interesse\nMisurazione e strutture latenti di variabili e costrutti d’interesse\nL’andamento temporale (i.e., longitudinale) di effetti e variabili d’interesse"
+  },
+  {
+    "objectID": "slides/03-analisi-dati-comunita.html#e-possibile-una-ricerca-empirica",
+    "href": "slides/03-analisi-dati-comunita.html#e-possibile-una-ricerca-empirica",
+    "title": "Analisi dei dati in ambito di Comunità",
+    "section": "E’ possibile una ricerca empirica?",
+    "text": "E’ possibile una ricerca empirica?\n\nOn the one hand, more action-oriented proponents in the field argue in favor of constructivist or relativistic paradigms to promote greater engagement with the contextual and community-based influences that impact our areas of study (Lincoln & Guba, 2000). From this perspective, there is concern about the potential limitations, or even the potential harms to those who are disenfranchised, of more objective experimental paradigms (e.g., positivism and postpositivisism). On the other hand, proponents of these quantitative methods argue that as a scientific discipline seeking to expand the influence of our field’s perspective on the way social and community research is conducted, we should embrace the strengths of methods based on these paradigms to facilitate rigorous hypothesis testing, produce research that is both internally valid and externally generalizable, and assess cause-and-effect relationships between constructs (Johnson & Onwuegbuzie, 2004)."
+  },
+  {
+    "objectID": "slides/03-analisi-dati-comunita.html#quali-tipi-di-domande-di-ricerca-3",
+    "href": "slides/03-analisi-dati-comunita.html#quali-tipi-di-domande-di-ricerca-3",
+    "title": "Analisi dei dati in ambito di Comunità",
+    "section": "Quali tipi di domande di ricerca?",
+    "text": "Quali tipi di domande di ricerca?\nQuelle che affronteremo principalmente sono:\n\nLa presenza e la forza della relazione tra due o più variabili\nLa presenza di differenze in variabili d’interesse tra due o più gruppi\nClassificazione dei soggetti in gruppi, basandosi su variabili di interesse\nMisurazione e strutture latenti di variabili e costrutti d’interesse\nL’andamento temporale (i.e., longitudinale) di effetti e variabili d’interesse"
+  },
+  {
+    "objectID": "slides/03-analisi-dati-comunita.html#quali-tipi-di-domande-di-ricerca-4",
+    "href": "slides/03-analisi-dati-comunita.html#quali-tipi-di-domande-di-ricerca-4",
+    "title": "Analisi dei dati in ambito di Comunità",
+    "section": "Quali tipi di domande di ricerca",
+    "text": "Quali tipi di domande di ricerca\nInoltre, tratteremo altri due argomenti:\n\nStrutture dati multilivello: Questo è parzialmente compreso in (1) ma in Psicologia di Comunità spesso le domande di ricerca riguardano la relazione tra più livelli di analisi (e.g., come il contesto impatta il singolo e viceversa).\nMetanalisi: In un contesto dove ci sono sempre più ricerche pubblicate, sviluppare un meta-analytic thinking è essenziale. Il motto è che uno studio, anche il più ben fatto, non dice mai abbastanza sul fenomeno d’indagine."
+  },
+  {
+    "objectID": "slides/03-analisi-dati-comunita.html#relazione-tra-due-o-più-variabili",
+    "href": "slides/03-analisi-dati-comunita.html#relazione-tra-due-o-più-variabili",
+    "title": "Analisi dei dati in ambito di Comunità",
+    "section": "1. Relazione tra due o più variabili",
+    "text": "1. Relazione tra due o più variabili\nPossiamo valutare la relazione tra criminalità percepita ed età anagrafica:"
+  },
+  {
+    "objectID": "slides/03-analisi-dati-comunita.html#relazione-tra-due-o-più-variabili-1",
+    "href": "slides/03-analisi-dati-comunita.html#relazione-tra-due-o-più-variabili-1",
+    "title": "Analisi dei dati in ambito di Comunità",
+    "section": "1. Relazione tra due o più variabili",
+    "text": "1. Relazione tra due o più variabili\nOppure vedere la relazione tra uso dei social media e depressione in diversi paesi. Questa è una struttura multilivello:"
+  },
+  {
+    "objectID": "slides/03-analisi-dati-comunita.html#differenze-tra-gruppi",
+    "href": "slides/03-analisi-dati-comunita.html#differenze-tra-gruppi",
+    "title": "Analisi dei dati in ambito di Comunità",
+    "section": "2. Differenze tra gruppi",
+    "text": "2. Differenze tra gruppi\nPossiamo indagare ad esempio punteggi di depressione e ansia in funzione del corso di laurea seguito:"
+  },
+  {
+    "objectID": "slides/03-analisi-dati-comunita.html#metanalisi",
+    "href": "slides/03-analisi-dati-comunita.html#metanalisi",
+    "title": "Analisi dei dati in ambito di Comunità",
+    "section": "3. Metanalisi",
+    "text": "3. Metanalisi\nPossiamo anche combinare diversi studi relativi ad uno specifico ambito di ricerca. Ad esempio, 10 studi che valutano l’impatto di uno specifico programma di prevenzione:"
   }
 ]
