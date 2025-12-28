@@ -23,6 +23,10 @@
 
 > mostrare esempi di dati e analisi misleading. tipo simpson paradox, regression to the mean (pp. 88 ROS)
 
+# Cenni di funzionamento del pc, files, etc.
+
+- prima di fare delle cose pratiche è utile
+
 # Exploring data
 
 - statistiche descrittive
@@ -31,6 +35,7 @@
 - suggerimenti per un buon grafico e come leggerli1
 - tipi di distribuzioni, con focus nella normale
 - standardizzazione
+- apa book e rules
 
 > far vedere come usare le statistiche descrittive scorrette può creare situazioni misleading
 > concetto di distribuzione e molto largamente di likelihood. Far capire che tutte i modelli fanno delle assunzioni e queste si basano su distribuzioni di probabilità
@@ -48,6 +53,7 @@
 - teoria del limite centrale
 - small samples
 - significatività statistica e significatività clinica
+- concetto di effect size
 
 # Regressione lineare
 
@@ -74,6 +80,10 @@
 
 - concetto di struttura nested
 - predittori a vari livelli
+	- utile per cross-level interactions:
+		- https://www.learn-mlms.com/06-module-6.html
+		- https://www.youtube.com/@mronkko/videos
+		- predicting the intercept --> prova a capire
 - vantaggi e problematiche dei modelli multilivello
 - [se riesco] between, within e contextual effects
 
@@ -87,3 +97,21 @@
 - dal singolo studio al meta-analytic thinking
 - esempio di metanalisi fixed-effects e random effects
 - forest e funnel plot
+
+# Altro
+
+## Consigli Tommaso
+
+intro dataset
+mediazioni
+multilevello
+hbsc
+chiara ceccon, moscardino
+galeotti
+natale
+lenzi
+teoria della normalizzazione
+claudia marino mentoring
+carcere
+kiesner dottorato
+hlm stepwise
