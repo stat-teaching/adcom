@@ -131,5 +131,964 @@
     "title": "Analisi dei dati in ambito di Comunità",
     "section": "3. Metanalisi",
     "text": "3. Metanalisi\nPossiamo anche combinare diversi studi relativi ad uno specifico ambito di ricerca. Ad esempio, 10 studi che valutano l’impatto di uno specifico programma di prevenzione:"
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#about-me",
+    "href": "slides/00-intro-generale.html#about-me",
+    "title": "Introduzione al Corso",
+    "section": "About me",
+    "text": "About me\n\nAttualmente sono ricercatore in Psicometria presso il Dipartimento di Psicologia dello Sviluppo e della Socializzazione\nSono uno Psicologo Clinico (dello Sviluppo)\nHo fatto un Dottorato in Psicologia Sperimentale e Neuroscienze riguardo i correlati comportamentali e neurali di stimoli subliminali"
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#contatti",
+    "href": "slides/00-intro-generale.html#contatti",
+    "title": "Introduzione al Corso",
+    "section": "Contatti",
+    "text": "Contatti\n\nPotete venire a ricevimento il Venerdì 10:00 - 12:00 nell’ufficio 025 al 5° Piano del CLA. Non serve avvertirmi via mail o altro ma è meglio se prenotate uno slot qui\nPotete scrivermi a filippo.gambarota@unipd.it o chiamarmi (weird) al +390498271221\n\nPer qualsiasi altra informazione:\n\nsito personale https://filippogambarota.github.io/\npagina UNIPD https://didattica.unipd.it/off/docente/5B6087F14CEBE76D28A2F158C10564D7"
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#logistica",
+    "href": "slides/00-intro-generale.html#logistica",
+    "title": "Introduzione al Corso",
+    "section": "Logistica",
+    "text": "Logistica"
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#programma",
+    "href": "slides/00-intro-generale.html#programma",
+    "title": "Introduzione al Corso",
+    "section": "Programma",
+    "text": "Programma\n\nIl programma d’esame riguarda esclusivamente le slides. Nel caso in cui ci sia materiale aggiuntivo, sarà chiaramente indicato se riguarda materiale d’esame.\nSulle slide a volte è presente il tag #extra. Questo significa che quella specifica slide o riferimento aggiuntivo indicato è utile, interessante ma non sarà oggetto d’esame."
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#esame",
+    "href": "slides/00-intro-generale.html#esame",
+    "title": "Introduzione al Corso",
+    "section": "Esame",
+    "text": "Esame\nCome riportato nel syllabus:\nL’esame è scritto e consiste di 31 domande a risposta multipla. Per ogni domanda ci sono 4 alternative di risposta di cui una sola corretta. I punteggi sono assegnati nella seguente modalità:\n\n1 punto per ogni risposta corretta\n-0.33 punti per ogni risposta sbagliata\n0 punti per ogni risposta non data\n\nLa durata dell’esame è di 45 minuti. L’utilizzo dell’intelligenza artificiale generativa non è consentita durante l’esame."
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#esame-fun",
+    "href": "slides/00-intro-generale.html#esame-fun",
+    "title": "Introduzione al Corso",
+    "section": "Esame (fun)",
+    "text": "Esame (fun)\nQuesta è la distribuzione simulata di 1000 student* che fanno un esame impostato in questo modo totalmente a caso."
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#organizzazione-esame",
+    "href": "slides/00-intro-generale.html#organizzazione-esame",
+    "title": "Introduzione al Corso",
+    "section": "Organizzazione esame",
+    "text": "Organizzazione esame\n\nGli appelli d’esame si terranno nei periodi stabiliti dalla Scuola di Psicologia: sessione estiva (giugno-luglio), autunnale (settembre) e invernale (gennaio-febbraio). Non sono previsti preappelli!\nFate sempre riferimento al sito ufficiale per date e variazioni.\nPer poter fare l’esame bisogna essere regolarmente iscrittə su Uniweb entro i termini previsti\nL’esame si svolgerà in una delle Aule Informatiche al computer. E’ obbligatorio iscriversi al corso nella piattaforma Moodle esami (che non è Moodle normale)"
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#esercizi-e-analisi-dei-dati",
+    "href": "slides/00-intro-generale.html#esercizi-e-analisi-dei-dati",
+    "title": "Introduzione al Corso",
+    "section": "Esercizi e analisi dei dati",
+    "text": "Esercizi e analisi dei dati\nDurante il corso faremo lezioni pratiche e lezioni più applicate con un rapporto di 3:1 circa. Le lezioni pratiche consistono nell’implementare i metodi con dati reali tramite il software R.\nLa conoscenza del linguaggio R non è necessaria per svolgere l’esame MA la comprensione degli esercizi e di output di analisi reali si.\nL’utilizzo di R è quindi facoltativo (lo uso io durante le lezioni spiegando tutto quello che faccio) ma fortemente consigliato per capire meglio i concetti.\nTutto quello (quasi) che faccio in R si può fare in qualsiasi altro linguaggio/software (SPSS, Jamovi, JASP, Excel, etc.). Qualche volta vedremo qualche applicazione usando alternative (principalmente Jamovi)."
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#esercizi-analisi-dei-dati-ed-r",
+    "href": "slides/00-intro-generale.html#esercizi-analisi-dei-dati-ed-r",
+    "title": "Introduzione al Corso",
+    "section": "Esercizi, analisi dei dati ed R",
+    "text": "Esercizi, analisi dei dati ed R\nDurante il corso faremo lezioni pratiche e lezioni più applicate con un rapporto di 3:1 circa. Le lezioni pratiche consistono nell’implementare i metodi con dati reali tramite il software R.\nLa conoscenza del linguaggio R non è necessaria per svolgere l’esame MA la comprensione degli esercizi e di output di analisi reali si.\nL’utilizzo di R è quindi facoltativo (lo uso io durante le lezioni spiegando tutto quello che faccio) ma fortemente consigliato per capire meglio i concetti.\nTutto quello (quasi) che faccio in R si può fare in qualsiasi altro linguaggio/software (SPSS, Jamovi, JASP, Excel, etc.). Qualche volta vedremo qualche applicazione usando alternative (principalmente Jamovi)."
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#programma-1",
+    "href": "slides/00-intro-generale.html#programma-1",
+    "title": "Introduzione al Corso",
+    "section": "~ Programma",
+    "text": "~ Programma\nA grandi linee1 il programma sarà:\n\nIntroduzione all’analisi dei dati: utilità, disegni di ricerca, problematiche e aspetti importanti\nVariabili, statistiche descrittive e grafici\nCenni di misurazione e testing psicologico\nInferenza statistica\nRegressione Lineare\nCenni di regressione lineare multilivello\nMetanalisi e metaricerca\n\nIn base a come procedede ci possono essere degli aggiustamenti. Ovviamente anche l’esame sarà adattato in base al programma svolto."
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#programma-2",
+    "href": "slides/00-intro-generale.html#programma-2",
+    "title": "Introduzione al Corso",
+    "section": "~ Programma",
+    "text": "~ Programma\nInoltre, se abbiamo tempo ci saranno degli approfondimenti molto pratici:\n\ncome usare (e come non usare) chatGPT e simili nell’analisi dei dati\nintroduzione ad R\ncenni ad altri argomenti utili quando si analizzano dati in ambito di comunità"
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#regole-del-gioco-1",
+    "href": "slides/00-intro-generale.html#regole-del-gioco-1",
+    "title": "Introduzione al Corso",
+    "section": "Regole del gioco",
+    "text": "Regole del gioco\n\nThere are no stupid questions, only stupid answers"
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#quality-over-quantity",
+    "href": "slides/00-intro-generale.html#quality-over-quantity",
+    "title": "Introduzione al Corso",
+    "section": "1. Quality over quantity",
+    "text": "1. Quality over quantity\nIl programma è denso, tutte le slide e materiali saranno a disposizione. Tuttavia la mia priorità è passarvi al meglio i concetti principali.\nPreferisco rimanere di più su qualcosa di non chiaro piuttosto di procedere su molte cose poco chiare o completamente non chiare."
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#participation",
+    "href": "slides/00-intro-generale.html#participation",
+    "title": "Introduzione al Corso",
+    "section": "2. Participation",
+    "text": "2. Participation\nIl punto 1 di prima, è particolarmente vero a patto che io sappia quello che non è chiaro. Quindi:\n\npartecipate\nfate domande (vedi slide dopo)\nchiedete approfondimenti\ndatemi feedback\nsono sempre disponibile a ricevimento o via email MA preferirei una discussione partecipata in aula\npartecipate\npartecipate"
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#questions",
+    "href": "slides/00-intro-generale.html#questions",
+    "title": "Introduzione al Corso",
+    "section": "3. Questions",
+    "text": "3. Questions\n\nThere are no stupid questions, only stupid answers\n\nDa psicologo abilitato assumo un atteggiamento genuinamente non giudicante. Le domande non sono intelligenti o stupide ma sono utili (quelle che vengono fatte) o inutili (quelle che non vengono fatte)."
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#questions-pt.2",
+    "href": "slides/00-intro-generale.html#questions-pt.2",
+    "title": "Introduzione al Corso",
+    "section": "3. Questions pt.2",
+    "text": "3. Questions pt.2\nPer identificare meglio gli argomenti critici e quelli da ripetere ho creato una board su Padlet. Per ogni macro-argomento c’è una sezione e potete (in modo anonimo) mettere domande, dubbi, commenti.\nhttps://unipd.padlet.org/filippogambarota/adcom2526\n\n\n    \nPrima di cominciare la lezione, dedichiamo una decina di minuti a rivedere gli argomenti critici. L’idea è che scriviate le domande dopo la lezione, e le rivediamo in quella dopo."
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#questions-pt.3",
+    "href": "slides/00-intro-generale.html#questions-pt.3",
+    "title": "Introduzione al Corso",
+    "section": "3. Questions pt.3",
+    "text": "3. Questions pt.3\nSe non emerge nessuna domanda a lezione (preferibilmente) o su Padlet, do per scontata sia per le lezioni future che per l’esame, l’assenza di dubbi e quindi la chiarezza di quell’argomento. Think carefully 🙃."
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#materiale",
+    "href": "slides/00-intro-generale.html#materiale",
+    "title": "Introduzione al Corso",
+    "section": "4. Materiale",
+    "text": "4. Materiale\nTutto il materiale come slides, esercizi, approfondimenti, etc. si trova su Moodle. In realtà, su moodle ci sono solo dei link al sito che ho creato per il corso https://stat-teaching.github.io/adcom.\nTrovate lo stesso materiale ma è più semplice e veloce accedere al sito esterno. Ci sono anche tutti i link utili come il Padlet, etc. Vi consiglio di metterlo tra i bookmarks."
+  },
+  {
+    "objectID": "slides/00-intro-generale.html#logistica-lezioni",
+    "href": "slides/00-intro-generale.html#logistica-lezioni",
+    "title": "Introduzione al Corso",
+    "section": "5. Logistica lezioni",
+    "text": "5. Logistica lezioni\nLe lezioni saranno organizzate in questo modo:\n\nprima parte: revisione domande su Padlet + domande a voce\nargomento del giorno in caso di lezioni teoriche/metodologiche\nesempi con dati reali da articoli/libri\n\nNel caso di lezioni pratiche (1 ogni 3 circa), useremo un dataset il più possibile rilevante per l’ambito e di interesse e con R o altro applicheremo dei concetti studiati in precedenza."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#about-me",
+    "href": "slides/00-intro-corso.html#about-me",
+    "title": "Introduzione al Corso",
+    "section": "About me",
+    "text": "About me\n\nAttualmente sono ricercatore in Psicometria presso il Dipartimento di Psicologia dello Sviluppo e della Socializzazione\nSono uno Psicologo Clinico (dello Sviluppo)\nHo fatto un Dottorato in Psicologia Sperimentale e Neuroscienze riguardo i correlati comportamentali e neurali di stimoli subliminali"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#contatti",
+    "href": "slides/00-intro-corso.html#contatti",
+    "title": "Introduzione al Corso",
+    "section": "Contatti",
+    "text": "Contatti\n\nPotete venire a ricevimento il Venerdì 10:00 - 12:00 nell’ufficio 025 al 5° Piano del CLA. Non serve avvertirmi via mail o altro ma è meglio se prenotate uno slot qui\nPotete scrivermi a filippo.gambarota@unipd.it o chiamarmi (weird) al +390498271221\n\nPer qualsiasi altra informazione:\n\nsito personale https://filippogambarota.github.io/\npagina UNIPD https://didattica.unipd.it/off/docente/5B6087F14CEBE76D28A2F158C10564D7"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#programma",
+    "href": "slides/00-intro-corso.html#programma",
+    "title": "Introduzione al Corso",
+    "section": "Programma",
+    "text": "Programma\n\nIl programma d’esame riguarda esclusivamente le slides. Nel caso in cui ci sia materiale aggiuntivo, sarà chiaramente indicato se riguarda materiale d’esame.\nSulle slide a volte è presente il tag #extra. Questo significa che quella specifica slide o riferimento aggiuntivo indicato è utile, interessante ma non sarà oggetto d’esame."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#esame",
+    "href": "slides/00-intro-corso.html#esame",
+    "title": "Introduzione al Corso",
+    "section": "Esame",
+    "text": "Esame\nCome riportato nel syllabus:\nL’esame è scritto e consiste di 31 domande a risposta multipla. Per ogni domanda ci sono 4 alternative di risposta di cui una sola corretta. I punteggi sono assegnati nella seguente modalità:\n\n1 punto per ogni risposta corretta\n-0.33 punti per ogni risposta sbagliata\n0 punti per ogni risposta non data\n\nLa durata dell’esame è di 45 minuti. L’utilizzo dell’intelligenza artificiale generativa non è consentita durante l’esame."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#esame-fun",
+    "href": "slides/00-intro-corso.html#esame-fun",
+    "title": "Introduzione al Corso",
+    "section": "Esame (fun)",
+    "text": "Esame (fun)\nQuesta è la distribuzione simulata di 1000 student* che fanno un esame impostato in questo modo totalmente a caso."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#organizzazione-esame",
+    "href": "slides/00-intro-corso.html#organizzazione-esame",
+    "title": "Introduzione al Corso",
+    "section": "Organizzazione esame",
+    "text": "Organizzazione esame\n\nGli appelli d’esame si terranno nei periodi stabiliti dalla Scuola di Psicologia: sessione estiva (giugno-luglio), autunnale (settembre) e invernale (gennaio-febbraio). Non sono previsti preappelli!\nFate sempre riferimento al sito ufficiale per date e variazioni.\nPer poter fare l’esame bisogna essere regolarmente iscrittə su Uniweb entro i termini previsti\nL’esame si svolgerà in una delle Aule Informatiche al computer. E’ obbligatorio iscriversi al corso nella piattaforma Moodle esami (che non è Moodle normale)"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#esercizi-analisi-dei-dati-ed-r",
+    "href": "slides/00-intro-corso.html#esercizi-analisi-dei-dati-ed-r",
+    "title": "Introduzione al Corso",
+    "section": "Esercizi, analisi dei dati ed R",
+    "text": "Esercizi, analisi dei dati ed R\nDurante il corso faremo lezioni pratiche e lezioni più applicate con un rapporto di 3:1 circa. Le lezioni pratiche consistono nell’implementare i metodi con dati reali tramite il software R.\nLa conoscenza del linguaggio R non è necessaria per svolgere l’esame MA la comprensione degli esercizi e di output di analisi reali si.\nL’utilizzo di R è quindi facoltativo (lo uso io durante le lezioni spiegando tutto quello che faccio) ma fortemente consigliato per capire meglio i concetti.\nTutto quello (quasi) che faccio in R si può fare in qualsiasi altro linguaggio/software (SPSS, Jamovi, JASP, Excel, etc.). Qualche volta vedremo qualche applicazione usando alternative (principalmente Jamovi)."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#programma-1",
+    "href": "slides/00-intro-corso.html#programma-1",
+    "title": "Introduzione al Corso",
+    "section": "~ Programma",
+    "text": "~ Programma\nA grandi linee1 il programma sarà:\n\nIntroduzione all’analisi dei dati: utilità, disegni di ricerca, problematiche e aspetti importanti\nVariabili, statistiche descrittive e grafici\nCenni di misurazione e testing psicologico\nInferenza statistica\nRegressione Lineare\nCenni di regressione lineare multilivello\nMetanalisi e metaricerca\n\nIn base a come procedede ci possono essere degli aggiustamenti. Ovviamente anche l’esame sarà adattato in base al programma svolto."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#programma-2",
+    "href": "slides/00-intro-corso.html#programma-2",
+    "title": "Introduzione al Corso",
+    "section": "~ Programma",
+    "text": "~ Programma\nInoltre, se abbiamo tempo ci saranno degli approfondimenti molto pratici:\n\ncome usare (e come non usare) chatGPT e simili nell’analisi dei dati\nintroduzione ad R\ncenni ad altri argomenti utili quando si analizzano dati in ambito di comunità"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#quality-over-quantity",
+    "href": "slides/00-intro-corso.html#quality-over-quantity",
+    "title": "Introduzione al Corso",
+    "section": "1. Quality over quantity",
+    "text": "1. Quality over quantity\nIl programma è denso, tutte le slide e materiali saranno a disposizione. Tuttavia la mia priorità è passarvi al meglio i concetti principali.\nPreferisco rimanere di più su qualcosa di non chiaro piuttosto di procedere su molte cose poco chiare o completamente non chiare."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#participation",
+    "href": "slides/00-intro-corso.html#participation",
+    "title": "Introduzione al Corso",
+    "section": "2. Participation",
+    "text": "2. Participation\nIl punto 1 di prima, è particolarmente vero a patto che io sappia quello che non è chiaro. Quindi:\n\npartecipate\nfate domande (vedi slide dopo)\nchiedete approfondimenti\ndatemi feedback\nsono sempre disponibile a ricevimento o via email MA preferirei una discussione partecipata in aula\npartecipate\npartecipate"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#questions",
+    "href": "slides/00-intro-corso.html#questions",
+    "title": "Introduzione al Corso",
+    "section": "3. Questions",
+    "text": "3. Questions\n\nThere are no stupid questions, only stupid answers\n\nDa psicologo abilitato assumo un atteggiamento genuinamente non giudicante. Le domande non sono intelligenti o stupide ma sono utili (quelle che vengono fatte) o inutili (quelle che non vengono fatte)."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#questions-pt.2",
+    "href": "slides/00-intro-corso.html#questions-pt.2",
+    "title": "Introduzione al Corso",
+    "section": "3. Questions pt.2",
+    "text": "3. Questions pt.2\nPer identificare meglio gli argomenti critici e quelli da ripetere ho creato una board su Padlet. Per ogni macro-argomento c’è una sezione e potete (in modo anonimo) mettere domande, dubbi, commenti.\nhttps://unipd.padlet.org/filippogambarota/adcom2526\n\n\n    \nPrima di cominciare la lezione, dedichiamo una decina di minuti a rivedere gli argomenti critici. L’idea è che scriviate le domande dopo la lezione, e le rivediamo in quella dopo."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#questions-pt.3",
+    "href": "slides/00-intro-corso.html#questions-pt.3",
+    "title": "Introduzione al Corso",
+    "section": "3. Questions pt.3",
+    "text": "3. Questions pt.3\nSe non emerge nessuna domanda a lezione (preferibilmente) o su Padlet, do per scontata sia per le lezioni future che per l’esame, l’assenza di dubbi e quindi la chiarezza di quell’argomento. Think carefully 🙃."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#materiale",
+    "href": "slides/00-intro-corso.html#materiale",
+    "title": "Introduzione al Corso",
+    "section": "4. Materiale",
+    "text": "4. Materiale\nTutto il materiale come slides, esercizi, approfondimenti, etc. si trova su Moodle. In realtà, su moodle ci sono solo dei link al sito che ho creato per il corso https://stat-teaching.github.io/adcom.\nTrovate lo stesso materiale ma è più semplice e veloce accedere al sito esterno. Ci sono anche tutti i link utili come il Padlet, etc. Vi consiglio di metterlo tra i bookmarks."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#logistica-lezioni",
+    "href": "slides/00-intro-corso.html#logistica-lezioni",
+    "title": "Introduzione al Corso",
+    "section": "5. Logistica lezioni",
+    "text": "5. Logistica lezioni\nLe lezioni saranno organizzate in questo modo:\n\nprima parte: revisione domande su Padlet + domande a voce\nargomento del giorno in caso di lezioni teoriche/metodologiche\nesempi con dati reali da articoli/libri\n\nNel caso di lezioni pratiche (1 ogni 3 circa), useremo un dataset il più possibile rilevante per l’ambito e di interesse e con R o altro applicheremo dei concetti studiati in precedenza."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#formule-formule-formule",
+    "href": "slides/01-intro-analisi-dati.html#formule-formule-formule",
+    "title": "Introduzione al Corso",
+    "section": "Formule, formule, formule",
+    "text": "Formule, formule, formule\nTuttə voi conoscete e capite questa formula giusto? Possiamo dare per scontate queste cose?\n\\[\nL(\\mathbf{\\beta}, \\sigma^2 \\mid \\mathbf{y}) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi \\sigma^2}} \\exp\\left( -\\frac{(y_i - \\mathbf{x}_i^\\top \\mathbf{\\beta})^2}{2\\sigma^2} \\right)\n\\]\n\nIn realtà, nemmeno io la capisco fino in fondo. L’obiettivo di questo corso non è capire o studiare le formule ma capire più ad alto livello quello che implicano."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#un-piccolo-esempio",
+    "href": "slides/01-intro-analisi-dati.html#un-piccolo-esempio",
+    "title": "Introduzione al Corso",
+    "section": "Un piccolo esempio",
+    "text": "Un piccolo esempio\nImmaginate di leggere su un paper di due studi dove un gruppo clinico e un gruppo di controllo vengono confrontati in un certo costrutto psicologico misurato tramite una certa scala self-report. Nel primo studio viene raccolto un campione di 30 soggetti. Nel secondo studio viene raccolto un campione di 300 soggetti.\n\nNel primo studio viene riportato che il gruppo clinico ha una misura significativamente maggiore nella variabile d’interesse, mentre il secondo studio non riporta differenze significative.\n\n\nSe doveste scommettere, su quale dei due studi puntereste rispetto ad aver trovato un risultato empiricamente vero?"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#simpsons-paradox",
+    "href": "slides/01-intro-analisi-dati.html#simpsons-paradox",
+    "title": "Introduzione al Corso",
+    "section": "Simpson’s paradox",
+    "text": "Simpson’s paradox\nqui esempio di california, per far vedere importanza di saper leggere e analizzare dati\nhttps://setosa.io/simpsons/"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#la-psicologia-è-una-scienza-statistica",
+    "href": "slides/01-intro-analisi-dati.html#la-psicologia-è-una-scienza-statistica",
+    "title": "Introduzione al Corso",
+    "section": "La psicologia è una scienza statistica",
+    "text": "La psicologia è una scienza statistica\nRispetto al pensiero comune dove le hard-sciences (fisica, ingegneria, matematica) richiedono competenze di analisi dei dati, sono le scienze sociali quelle più complesse:\n\nquantità direttamente non osservabili (latenti)\ngrande differenze individuali scomponibile a vari livelli in interazione (geni-ambiente)\ndinamiche complesse con molte variabili coinvolte"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#devo-essere-unə-statisticə-per-fare-lə-psicologə",
+    "href": "slides/01-intro-analisi-dati.html#devo-essere-unə-statisticə-per-fare-lə-psicologə",
+    "title": "Introduzione al Corso",
+    "section": "Devo essere unə statisticə per fare lə psicologə?",
+    "text": "Devo essere unə statisticə per fare lə psicologə?\nAssolutamente no. Una buona metafora è:\nLa statistica studia il funzionamento del motore sia in termini di funzionamento attuale che come migliorarlo. Lə scienziatə (ad esempio in Psicologia) deve guidare bene la macchina.\nConoscere un pochino il motore aiuta MA non è necessario per essere un buon pilota."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#perchè-capire-la-statistica",
+    "href": "slides/01-intro-analisi-dati.html#perchè-capire-la-statistica",
+    "title": "Introduzione al Corso",
+    "section": "Perchè capire la statistica?",
+    "text": "Perchè capire la statistica?\nTanto quanto sapere l’inglese è necessario per conoscere la letteratura scientifica, conoscere la statistica è necessario per leggere in modo adeguato i risultati di un paper."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#lo-dice-anche-il-codice-deontologico",
+    "href": "slides/01-intro-analisi-dati.html#lo-dice-anche-il-codice-deontologico",
+    "title": "Introduzione al Corso",
+    "section": "Lo dice anche il codice deontologico",
+    "text": "Lo dice anche il codice deontologico\n\nArticolo 5: Lo psicologo è tenuto a mantenere un livello adeguato di preparazione e aggiornamento professionale, con particolare riguardo ai settori nei quali opera. La violazione dell’obbligo di formazione continua, determina un illecito disciplinare che è sanzionato sulla base di quanto stabilito dall’ordinamento professionale. Riconosce i limiti della propria competenza e usa, pertanto solo strumenti teorico – pratici per i quali ha acquisito adeguata competenza e, ove necessario, formale autorizzazione. Lo psicologo impiega metodologie delle quali è in grado di indicare le fonti e riferimenti scientifici, e non suscita, nelle attese del cliente e/o utente, aspettative infondate."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#lo-dice-anche-il-codice-deontologico-1",
+    "href": "slides/01-intro-analisi-dati.html#lo-dice-anche-il-codice-deontologico-1",
+    "title": "Introduzione al Corso",
+    "section": "Lo dice anche il codice deontologico",
+    "text": "Lo dice anche il codice deontologico\n\nArticolo 7: Nelle proprie attività professionali, nelle attività di ricerca e nelle comunicazioni dei risultati delle stesse, nonché nelle attività didattiche, lo psicologo valuta attentamente, anche in relazione al contesto, il grado di validità e di attendibilità di informazioni, dati e fonti su cui basa le conclusioni raggiunte; espone all’occorrenza, le ipotesi interpretative alternative, ed esplicita i limiti dei risultati. Lo psicologo, su casi specifici, esprime valutazioni e giudizi professionali solo se fondati sulla conoscenza professionale diretta ovvero su una documentazione adeguata ed attendibile."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#diverse-variabili-diverse-analisi",
+    "href": "slides/01-intro-analisi-dati.html#diverse-variabili-diverse-analisi",
+    "title": "Introduzione al Corso",
+    "section": "Diverse variabili, diverse analisi",
+    "text": "Diverse variabili, diverse analisi\nPrima di imparare ad analizzare i dati è importante capire come i dati vengono raccolti e strutturati. Quando raccogliamo o trattiamo una variabile, chiediamoci sempre quale sia la tipologia. Il tipo di variabile influenza diversi aspetti, come:\n\nquali statistiche descrittive sono sensate e quali sono più informative\nle rappresentazioni grafiche più informative\nil modello statistico più adeguato per quella variabile"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#variabili-le-tipologie-principali",
+    "href": "slides/01-intro-analisi-dati.html#variabili-le-tipologie-principali",
+    "title": "Introduzione al Corso",
+    "section": "Variabili, le tipologie principali",
+    "text": "Variabili, le tipologie principali\nPossiamo individuare 4 tipologie principali di variabili:\n\nnominale\nordinale\nintervalli\nrapporti\n\nQuesta viene anche chiamata tassonomia NOIR.\n\n\nPer un paper classico si veda Stevens (1946)"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#variabili-di-tipo-nominale",
+    "href": "slides/01-intro-analisi-dati.html#variabili-di-tipo-nominale",
+    "title": "Introduzione al Corso",
+    "section": "Variabili di tipo nominale",
+    "text": "Variabili di tipo nominale\nLe variabili di tipologia nominale sono anche definite variabili categoriali. Sono quindi delle etichette, verbali o numeriche, che vengono assegnate ad una tipologia di osservazione. Ad esempio:\n\nRegione di residenza\nColore degli occhi\nReligione\nCategoria diagnostica\n\nLe diverse categorie sono interscambiabili quindi non c’è un ordine predefinito. L’unica operazione consentita è quella di contare le diverse categorie calcolando, in vari modi, distribuzioni di frequenza."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#variabili-di-tipo-nominale-esempi",
+    "href": "slides/01-intro-analisi-dati.html#variabili-di-tipo-nominale-esempi",
+    "title": "Introduzione al Corso",
+    "section": "Variabili di tipo nominale, esempi:",
+    "text": "Variabili di tipo nominale, esempi:\nLo vedremo meglio nelle prossime lezioni, ma possiamo rappresentare le frequenze tramite dei barplot:"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#testing-psicologico-in-a-nutshell",
+    "href": "slides/01-intro-analisi-dati.html#testing-psicologico-in-a-nutshell",
+    "title": "Introduzione al Corso",
+    "section": "Testing psicologico, in a nutshell",
+    "text": "Testing psicologico, in a nutshell\nIl testing psicologico è un argomento complesso e ci sono corsi interi a riguardo .\nE’ importante sottolineare alcuni concetti:\n\nLe misure che usiamo (e.g., senso di comunità ) non sono misure fisiche/oggettive ma sono costruite con ragionamenti teorici su variabili non direttamente osservabili (latenti)\nLe misure che usiamo influenzano le conclusioni. Quindi le conclusioni sono legate alla qualità e correttezza delle misure utilizzate."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#validità-di-una-misura",
+    "href": "slides/01-intro-analisi-dati.html#validità-di-una-misura",
+    "title": "Introduzione al Corso",
+    "section": "Validità di una misura",
+    "text": "Validità di una misura\nLa validità è intesa come il grado di sovrapposizione tra quello che misura un questionario e il costrutto (latente) che si vuole misura.\nUn questionario creato per misurare la gravità di sintomi depressivi in pazienti con diagnosi di disturbo depressivo maggiore:\n\nè valido se utilizzato su un gruppo di pazienti con DDM\nnon è valido se utilizzato sulla popolazione generale"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#validità-di-una-misura-1",
+    "href": "slides/01-intro-analisi-dati.html#validità-di-una-misura-1",
+    "title": "Introduzione al Corso",
+    "section": "Validità di una misura",
+    "text": "Validità di una misura\nLa validità viene intesa come il grado di sovrapposizione tra la misura ed il costrutto latente.\nSpesso, semplificando, viene detto che la validità di una misura (ad esempio un questionario) è la sua capacità di misurare quello che si prefigge (teoricamente) di misurare.\nCi sono diversi sottotipi di validità:\n\nValidità interna\nValidità esterna\nValidità di costrutto\nValidità di facciata\nValidità ecologica"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#tipi-di-validità",
+    "href": "slides/01-intro-analisi-dati.html#tipi-di-validità",
+    "title": "Introduzione al Corso",
+    "section": "tipi di validità",
+    "text": "tipi di validità\nhttps://learningstatisticswithr.com/\n• Internal validity • External validity • Construct validity • Face validity • Ecological validity\nLet’s illustrate the concept with a simple example. Suppose you’re interested in finding out whether a university education makes you write better. To do so, you get a group of first year students, ask them to write a 1000 word essay, and count the number of spelling and grammatical errors they make. Then you find some third-year students, who obviously have had more of a university education than the first-years, and repeat the exercise. And let’s suppose it turns out that the third-year students produce fewer errors. And so you conclude that a university education improves writing skills. Right? Except… the big problem that you have with this experiment is that the third-year students are older, and they’ve had more experience with writing things. So it’s hard to know for sure what the causal relationship is: Do older people write better? Or people who have had more writing experience? Or people who have had more education? Which of the above is the true cause of the superior performance of the third-years? Age? Experience? Education? You can’t tell. This is an example of a failure of internal validity, because your study doesn’t properly tease apart the causal relationships between the different variables."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#affidabilità-di-una-misura",
+    "href": "slides/01-intro-analisi-dati.html#affidabilità-di-una-misura",
+    "title": "Introduzione al Corso",
+    "section": "Affidabilità di una misura",
+    "text": "Affidabilità di una misura\nLa validità di una misura è la corrispondenza teorica con il costrutto latente. L’affidabilità invece fa riferimento al processo di misurazione.\nUna misura affidabile fornisce risultati consistenti (in base a diversi indici) rispetto a diverse instanze del processo di misura.\nRisulta centrale quindi il concetto di errore di misura."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#esempi-validità-affidabilità",
+    "href": "slides/01-intro-analisi-dati.html#esempi-validità-affidabilità",
+    "title": "Introduzione al Corso",
+    "section": "esempi validità affidabilità",
+    "text": "esempi validità affidabilità\nresearch methods for the behavioral sciences\nmisure e disegni di ricerca non sono cose indipendenti ed entrambi impattano le nostre conclusioni e quindi la teoria che viene testata. Ad esempio:\n\nmisuro l’ansia con uno strumento valido ma non mi assicuro in che stato siano i partecipanti (prima di un esame importante). La misura può essere valida ed affidabile MA non è usata in modo corretto\nallo stesso modo utilizzo una misura discutibile che dovrebbe misurare l’ansia ma in realtà non è affidabile. Nonostante il disegno di ricerca adeguato le mie conclusioni sono altrettanto invalide\n\nsolitamente, l’affidabilità/validità delle misure è un prerequisito inteso come ho delle misure valide e poi costruisco un esperimento adeguato."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#self-report-fisio-and-behavioral",
+    "href": "slides/01-intro-analisi-dati.html#self-report-fisio-and-behavioral",
+    "title": "Introduzione al Corso",
+    "section": "self report, fisio and behavioral",
+    "text": "self report, fisio and behavioral\nresearch methods for the behavioral sciences\nle misure self report sono facili ma facilmente flawed in termini di validità. solitamente se voglio sapere l’umore posso chiedere direttamente una domanda (valida)\nle misure fisio sono generalmente affidabili ma non altrettanto chiaramente valide. lo stesso indice può essere legato a vari aspetti (paura, rabbia magari sono simili a livello fisiologico)\nbehavioral sono una sorta di via di mezzo generalmente sono più affidabili e meno aspecifiche rispetto alle misure fisio. tuttavia rispetto al self report sono più generici (cosa significa essere più veloci nelle risposte?)"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#sensitivity-and-range-effects",
+    "href": "slides/01-intro-analisi-dati.html#sensitivity-and-range-effects",
+    "title": "Introduzione al Corso",
+    "section": "sensitivity and range effects",
+    "text": "sensitivity and range effects\nresearch methods for the behavioral sciences\n\nl’effetto che sto cercando o che mi aspetto deve essere catturabile (in termini di scala) dalla misura che utilizzo."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#ceiling-and-floor-effect",
+    "href": "slides/01-intro-analisi-dati.html#ceiling-and-floor-effect",
+    "title": "Introduzione al Corso",
+    "section": "ceiling and floor effect",
+    "text": "ceiling and floor effect\nquesto riduce la variabilità e la misura diventa più problematica"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#tipi-di-affidabilità",
+    "href": "slides/01-intro-analisi-dati.html#tipi-di-affidabilità",
+    "title": "Introduzione al Corso",
+    "section": "Tipi di affidabilità",
+    "text": "Tipi di affidabilità\nhttps://learningstatisticswithr.com/\nTest-retest reliability. This relates to consistency over time: if we repeat the measurement at a later date, do we get a the same answer?\n\nInter-rater reliability. This relates to consistency across people: if someone else repeats the measurement (e.g., someone else rates my intelligence) will they produce the same answer?\nParallel forms reliability. This relates to consistency across theoretically-equivalent measure- ments: if I use a different set of bathroom scales to measure my weight, does it give the same answer?\nInternal consistency reliability. If a measurement is constructed from lots of different parts that perform similar functions (e.g., a personality questionnaire)"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#notazione",
+    "href": "slides/01-intro-analisi-dati.html#notazione",
+    "title": "Introduzione al Corso",
+    "section": "notazione",
+    "text": "notazione\npuò essere utile mettere sempre delle slide di notazione, in questo caso Y e X principalmente predictors outcomes vs variabile dipendente e indipendente, mi piace di più outcome e predittori"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#research-designs-1",
+    "href": "slides/01-intro-analisi-dati.html#research-designs-1",
+    "title": "Introduzione al Corso",
+    "section": "research designs",
+    "text": "research designs\nMellis (2020)\nhttps://www.cebm.ox.ac.uk/resources/ebm-tools/study-designs\nil pdf allegato è molto bello, un flowchart può essere interessante"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#experimental-ans-non-experimental-research",
+    "href": "slides/01-intro-analisi-dati.html#experimental-ans-non-experimental-research",
+    "title": "Introduzione al Corso",
+    "section": "experimental ans non experimental research",
+    "text": "experimental ans non experimental research\nhttps://learningstatisticswithr.com/\nWhen we make this distinction, what we’re really talking about is the degree of control that the researcher exercises over the people and events in the study"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#experimental",
+    "href": "slides/01-intro-analisi-dati.html#experimental",
+    "title": "Introduzione al Corso",
+    "section": "experimental",
+    "text": "experimental\nl’idea principale è la randomizzazione. questo è legato al concetto di campionamento e al controllo delle variabili\nLet’s consider a very simple, completely unrealistic and grossly unethical example. Suppose you wanted to find out if smoking causes lung cancer. One way to do this would be to find people who smoke and people who don’t smoke, and look to see if smokers have a higher rate of lung cancer. This is not a proper experiment, since the researcher doesn’t have a lot of control over who is and isn’t a smoker. And this really matters: for instance, it might be that people who choose to smoke cigarettes also tend to have poor diets, or maybe they tend to work in asbestos mines, or whatever. The point here is that the groups (smokers and non-smokers) actually differ on lots of things, not just smoking. So it might be that the higher incidence of lung cancer among smokers is caused by something else, not by smoking per se. In technical terms, these other things (e.g. diet) are called “confounds”, and we’ll talk about those in just a moment."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#quasi-experimental",
+    "href": "slides/01-intro-analisi-dati.html#quasi-experimental",
+    "title": "Introduzione al Corso",
+    "section": "quasi-experimental",
+    "text": "quasi-experimental\nhttps://learningstatisticswithr.com/\nOne distinction worth making between two types of non-experimental research is the difference be- tween quasi-experimental research and case studies. The example I discussed earlier – in which we wanted to examine incidence of lung cancer among smokers and non-smokers, without trying to control who smokes and who doesn’t – is a quasi-experimental design. That is, it’s the same as an experiment, but we don’t control the predictors (IVs). We can still use statistics to analyse the results, it’s just that we have to be a lot more careful."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#case-study",
+    "href": "slides/01-intro-analisi-dati.html#case-study",
+    "title": "Introduzione al Corso",
+    "section": "case study",
+    "text": "case study\nno generalizzazione ma comunque molte informazioni possono essere utili"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#confounds-and-artifacts",
+    "href": "slides/01-intro-analisi-dati.html#confounds-and-artifacts",
+    "title": "Introduzione al Corso",
+    "section": "confounds and artifacts",
+    "text": "confounds and artifacts"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#regression-to-the-mean",
+    "href": "slides/01-intro-analisi-dati.html#regression-to-the-mean",
+    "title": "Introduzione al Corso",
+    "section": "regression to the mean",
+    "text": "regression to the mean"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#correlational-research",
+    "href": "slides/01-intro-analisi-dati.html#correlational-research",
+    "title": "Introduzione al Corso",
+    "section": "correlational research",
+    "text": "correlational research"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#third-variable-problem",
+    "href": "slides/01-intro-analisi-dati.html#third-variable-problem",
+    "title": "Introduzione al Corso",
+    "section": "third variable problem",
+    "text": "third variable problem\nEarlier we noted that a relationship between two variables can be simply coinciden- tal and not causal. For example, if a researcher measures weight and mathematical abil- ity for a group of children who are 6–12 years old, there will be a strong relationship between the two variables: as weight increases from child to child, mathematical ability also tends to increase. However, this does not mean that an increase in weight causes an increase in mathematics ability. Instead, it is the age of the children that is responsible for the observed relationship: As age increases from 6 to 12, the children tend to weigh more and as age increases from 6 to 12, children tend to have more mathematics education. This is an example of the third-variable problem. Although a study may establish that two variables are related, it does not necessarily mean that there is a direct (causal) relation- ship between the two variables. It is always possible that a third (unidentified) variable is controlling the two variables and is responsible for producing the observed relation.\n\n\n\n\nMellis, C. M. (2020). How to choose your study design. Journal of Paediatrics and Child Health, 56, 1018–1022. https://doi.org/10.1111/jpc.14929\n\n\nStevens, S. S. (1946). On the theory of scales of measurement. Science (New York, N.Y.), 103, 677–680. https://doi.org/10.1126/science.103.2684.677"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#variabili-di-tipo-nominale-quali-operazioni",
+    "href": "slides/01-intro-analisi-dati.html#variabili-di-tipo-nominale-quali-operazioni",
+    "title": "Introduzione al Corso",
+    "section": "Variabili di tipo nominale, quali operazioni?",
+    "text": "Variabili di tipo nominale, quali operazioni?\n\n\n\n\n\n\nCaution\n\n\nCosa succede, secondo voi, se dovessi calcolare la media di una variabile categoriale?\nE se dovessi calcolare la varianza o la mediana?\n\n\n\n\nIn sostanza, la tipologia di variabile è spesso legata anche a quali operazioni sono permesse, sensate o informative. In questo caso, calcolare la regione media non ha alcun senso."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#variabili-di-tipo-ordinale",
+    "href": "slides/01-intro-analisi-dati.html#variabili-di-tipo-ordinale",
+    "title": "Introduzione al Corso",
+    "section": "Variabili di tipo ordinale",
+    "text": "Variabili di tipo ordinale\nLe variabili di tipo ordinale sono quelle più comunemente utilizzate in Psicologia ed anche quelle in un certo senso meno intuitive.\nAlcuni esempi:\n\nRisposte su scale likert\nStatus socio-economico (e.g., alto, medio e basso)\nLivello d’istruzione"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#variabili-di-tipo-ordinale-1",
+    "href": "slides/01-intro-analisi-dati.html#variabili-di-tipo-ordinale-1",
+    "title": "Introduzione al Corso",
+    "section": "Variabili di tipo ordinale",
+    "text": "Variabili di tipo ordinale\nRispetto alle variabili categoriali, le variabili ordinali hanno un ordine. Possiamo quindi pensarle categorie alle quali assegnamo un numero progressivo.\n\nQuello che non è definito per le variabili ordinali, è la distanza tra le categorie. Potremmo assegnare allo status socio-economico 1 = basso, 2 = medio e 3 = alto, come 1.5, 2, 2.1.\n\n\nIn altri termini, la distanza tra le categorie non è nota e quindi non è utilizzabile come informazione."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#variabili-di-tipo-ordinale-esempi",
+    "href": "slides/01-intro-analisi-dati.html#variabili-di-tipo-ordinale-esempi",
+    "title": "Introduzione al Corso",
+    "section": "Variabili di tipo ordinale, esempi:",
+    "text": "Variabili di tipo ordinale, esempi:\nAnche qui, lo vedremo meglio nelle prossime lezioni ma un grafico a barre, ordinato è un tipo di rappresentazione grafica utilizzabile."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#variabili-su-scala-ad-intervalli",
+    "href": "slides/01-intro-analisi-dati.html#variabili-su-scala-ad-intervalli",
+    "title": "Introduzione al Corso",
+    "section": "Variabili su scala ad intervalli",
+    "text": "Variabili su scala ad intervalli\nQuesto è il primo tipo di variabile numerica in senso stretto. Le principali caratteristiche sono:\n\nL’ordine è significativo (questo viene ereditato dalle variabili ordinali)\nLe differenze (intervalli) tra due valori sono note e costanti per tutta la scala\nNon c’è uno zero assoluto definito come assenza della proprietà misurata\n\nLa mancanza di zero assoluto rende quindi non intepretabili i rapporti tra valori, mentre lo sono le differenze."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#variabili-su-scala-ad-intervalli-esempi",
+    "href": "slides/01-intro-analisi-dati.html#variabili-su-scala-ad-intervalli-esempi",
+    "title": "Introduzione al Corso",
+    "section": "Variabili su scala ad intervalli: esempi",
+    "text": "Variabili su scala ad intervalli: esempi\nAlcuni esempi sono:\n\nTemperatura come ad esempio Celsius o Fahrenheit\nIn generale le misure psicologiche come intelligenza, personalità, etc.\nLe date sul calendario\n\nPossiamo dire che la distanza tra un QI di 100 e 110 è la stessa rispetto ad un QI di 115 e 125 (sono 10 punti di QI). Non possiamo dire che una persona che ha QI di 200 sia il doppio più intelligente di un QI di 100."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#variabili-su-scala-ad-intervalli-esempi-1",
+    "href": "slides/01-intro-analisi-dati.html#variabili-su-scala-ad-intervalli-esempi-1",
+    "title": "Introduzione al Corso",
+    "section": "Variabili su scala ad intervalli: esempi",
+    "text": "Variabili su scala ad intervalli: esempi"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#variabili-su-scala-a-rapporti",
+    "href": "slides/01-intro-analisi-dati.html#variabili-su-scala-a-rapporti",
+    "title": "Introduzione al Corso",
+    "section": "Variabili su scala a rapporti",
+    "text": "Variabili su scala a rapporti\nQuesto è il tipo più completo di variabile numerica che solitamente si trova nelle misurazioni fisiche. Eredità tutte le proprietà precedenti aggiungendo la presenza di uno zero assoluto inteso come assenza della proprietà.\nQualche esempio:\n\nIl tempo inteso come minuti, secondi, millisecondi: tempi di reazione in esperimenti cognitivi\nSegnale psicofisiologico come EEG, ECG, etc.\n\nLa presenza dello zero assoluto permette di poter calcolare rapporti significativi. Possiamo dire che 20 secondi sono il doppio del tempo rispetto a 10 secondi."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#tipologia-di-variabili-riassunto",
+    "href": "slides/01-intro-analisi-dati.html#tipologia-di-variabili-riassunto",
+    "title": "Introduzione al Corso",
+    "section": "Tipologia di variabili, riassunto:",
+    "text": "Tipologia di variabili, riassunto:\nLe 4 tipologie di variabili sono gerarchicamente ordinate rispetto alle operazioni permissibili e significative:\n\ncategoriali –&gt; uguaglianza: possiamo dire se due osservazioni sono nella stessa categoria\nordinali –&gt; ranking: possiamo dire chi è maggiore tra due osservazioni\nintervalli –&gt; distanze: possiamo interpretare la distanza tra due osservazioni rapporti –&gt; rapporti: possiamo calcolare il rapporto tra due osservazioni"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#tipologia-di-variabili-alcuni-caveats",
+    "href": "slides/01-intro-analisi-dati.html#tipologia-di-variabili-alcuni-caveats",
+    "title": "Introduzione al Corso",
+    "section": "Tipologia di variabili, alcuni caveats",
+    "text": "Tipologia di variabili, alcuni caveats\n\nQuesta tassonomia, abbastanza definita e chiara è stata anche criticata"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#intervalli-vs-ordinale",
+    "href": "slides/01-intro-analisi-dati.html#intervalli-vs-ordinale",
+    "title": "Introduzione al Corso",
+    "section": "Intervalli vs ordinale",
+    "text": "Intervalli vs ordinale\nQuesta tassonomia non viene sempre rispettata. Ad esempio, le variabili ordinali come le scale likert vengono comunemente trattate come scale ad intervalli o anche a rapporti. Ad esempio viene assunto che la differenza tra 1 (per niente) e 2 (poco) sia la stessa che per altri livelli."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#operazioni-permissibili",
+    "href": "slides/01-intro-analisi-dati.html#operazioni-permissibili",
+    "title": "Introduzione al Corso",
+    "section": "Operazioni permissibili",
+    "text": "Operazioni permissibili\nVedremo meglio quando parleremo delle varie statistiche descrittive. Tuttavia, in base al tipo di variabile ci sono delle operazioni permissibili.\n\nFonte: Stevens (1946)"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#dataset-1",
+    "href": "slides/01-intro-analisi-dati.html#dataset-1",
+    "title": "Introduzione al Corso",
+    "section": "Dataset",
+    "text": "Dataset\nIl dataset è l’insieme delle variabili che sono state raccolte in uno specifico esperimento. Contiene tutte o una parte delle variabili che verranno utilizzate nei vari modelli statistici.\nPer intenderci, possiamo immaginare un classico dataset come un foglio Excel composto da un certo numero di righe e colonne:"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#righe-e-colonne",
+    "href": "slides/01-intro-analisi-dati.html#righe-e-colonne",
+    "title": "Introduzione al Corso",
+    "section": "Righe e colonne",
+    "text": "Righe e colonne\nIl dataset è una struttura dati bidimensionale formata da \\(n\\) righe e \\(p\\) colonne. La dimensione totale è \\(n \\times p\\) (il numero di celle). La convenzione è di indicare:\n\n\\(n\\) come le unità statistiche o osservazioni\n\\(p\\) le variabili quindi le proprietà misurate su quelle specifiche unità statistiche\n\nQuindi, per ogni riga \\(n\\) noi abbiamo tutte le caratteristiche dell’osservazione \\(n\\). In ogni colonna \\(p\\) abbiamo tutte le osservazioni per quella specifica caratteristica."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#dataset-come-principale-struttura-dati",
+    "href": "slides/01-intro-analisi-dati.html#dataset-come-principale-struttura-dati",
+    "title": "Introduzione al Corso",
+    "section": "Dataset come principale struttura dati",
+    "text": "Dataset come principale struttura dati\nTutti i principali software per eseguire analisi dei dati come R, SPSS, Jamovi o JASP utilizzano di base questa struttura dati bidimensionale.\nSolitamente, i dati vengono raccolti tramite software ad esempio Google Form, Qualtrics, etc. che producono in output un database, ad esempio un foglio Excel."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#colonne-come-variabili",
+    "href": "slides/01-intro-analisi-dati.html#colonne-come-variabili",
+    "title": "Introduzione al Corso",
+    "section": "Colonne come variabili",
+    "text": "Colonne come variabili\nOgni colonna in un dataset è indipendente nel senso che può essere di tipologia diversa. Possiamo avere una colonna che indica il nome (quindi stringhe di testo), una che indica l’età in anni (quindi numeri interi) e una che indica il peso in kg (quindi numeri con la virgola).\n\nIn alcuni software inoltre le variabili possono anche essere indicate usando la tassonomia NOIR. Quindi possiamo avere numeri o stringhe di testo che hanno un ordine oppure sono delle semplici categorie."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#colonne-come-variabili-jamovi",
+    "href": "slides/01-intro-analisi-dati.html#colonne-come-variabili-jamovi",
+    "title": "Introduzione al Corso",
+    "section": "Colonne come variabili, Jamovi",
+    "text": "Colonne come variabili, Jamovi\n\nEsempio di variabili in Jamovi"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#colonne-come-variabili-r",
+    "href": "slides/01-intro-analisi-dati.html#colonne-come-variabili-r",
+    "title": "Introduzione al Corso",
+    "section": "Colonne come variabili, R",
+    "text": "Colonne come variabili, R\nIn R abbiamo diverse tipologie di dato:\n\ninteger()    # numeri interi (senza virgola)\nnumeric()    # numeri (con la virgola)\ncharacter()  # stringhe di testo ~ categoriali\nordered()    # stringhe di testo ordinate ~ ordinali"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#colonne-come-variabili-1",
+    "href": "slides/01-intro-analisi-dati.html#colonne-come-variabili-1",
+    "title": "Introduzione al Corso",
+    "section": "Colonne come variabili",
+    "text": "Colonne come variabili\nIn realtà, possiamo codificare le variabili nel modo che vogliamo, è sufficiente avere una regola. Possiamo indicare ad esempio 4 categorie come il colore degli occhi con i numeri da 1 a 4.\nLa media dei numeri da 1 a 4 è permessa ovviamente MA il risultato non ha senso rispetto alla variabile originale.\nCostruite un dataset sempre con il tipo di variabile con il tipo che più si avvicina a quello originale, in modo da limitare questo tipo di errori."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#esempi-di-dataset",
+    "href": "slides/01-intro-analisi-dati.html#esempi-di-dataset",
+    "title": "Introduzione al Corso",
+    "section": "Esempi di dataset",
+    "text": "Esempi di dataset\nmetti qui qualche link a fogli google con esempi di dataset. Metti i link in lettura e tu come editor."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#cattivi-esempi-di-dataset",
+    "href": "slides/01-intro-analisi-dati.html#cattivi-esempi-di-dataset",
+    "title": "Introduzione al Corso",
+    "section": "(cattivi) Esempi di dataset",
+    "text": "(cattivi) Esempi di dataset\nqui metti qualche esempio a dataset con dei problemi:\n\nstringhe non consistenti\nnessun nome di variabile\ntipi delle variabili non rispettati"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#la-misura-in-psicologia-1",
+    "href": "slides/01-intro-analisi-dati.html#la-misura-in-psicologia-1",
+    "title": "Introduzione al Corso",
+    "section": "La misura in Psicologia",
+    "text": "La misura in Psicologia\nLa misurazione in Psicologia è forse l’argomento più complesso, critico ed affascinante di tutta la ricerca Psicologica e della Psicometria.\nLo scopo del corso non è quello di fornire una panoramica esaustiva riguardo la misurazione ed il testing ma di fornire uno sguardo critico rispetto alle misure che utilizziamo.\nLe differenti variabili (colonne) del nostro dataset sono delle misurazioni più o meno precise di costrutti più o meno definiti.\nCapire questo punto e capire come valutare la qualità delle nostre variabili è fondamentale per comprendere i risultati dell’analisi dei dati."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#gigo---garbage-in-garbage-out",
+    "href": "slides/01-intro-analisi-dati.html#gigo---garbage-in-garbage-out",
+    "title": "Introduzione al Corso",
+    "section": "GIGO - Garbage In, Garbage Out",
+    "text": "GIGO - Garbage In, Garbage Out\nIl GIGO è un principio cardine nell’analisi dei dati. L’idea è che non c’è analisi sofisticata, algoritmo o procedura che possa risolvere il problema della bassa qualità dei dati."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#gigo---garbage-in-garbage-out-1",
+    "href": "slides/01-intro-analisi-dati.html#gigo---garbage-in-garbage-out-1",
+    "title": "Introduzione al Corso",
+    "section": "GIGO - Garbage In, Garbage Out",
+    "text": "GIGO - Garbage In, Garbage Out\nIn Psicologia, la qualità dei dati è sempre legata al tipo di strumento, alla sua affidabilità, precisione e alla procedura di acquisizione.\nPensate ad un dataset dove una delle colonne identifica un punteggio ad un questionario di depressione. Vediamo che questo è, per esempio, maggiore in soggetti italiani vs stranieri.\nConcludiamo che, per qualche motivo culturale, genetico o psicologico gli italiani abbiano una tendenza maggiore alla depressione."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#gigo---garbage-in-garbage-out-2",
+    "href": "slides/01-intro-analisi-dati.html#gigo---garbage-in-garbage-out-2",
+    "title": "Introduzione al Corso",
+    "section": "GIGO - Garbage In, Garbage Out",
+    "text": "GIGO - Garbage In, Garbage Out\nTuttavia, non abbiamo misurato la depressione come se misurassimo il peso o l’età ma un insieme di item che in teoria dovrebbero essere legati al costrutto depressione.\nL’assunzione implicita è quindi che:\n\nil questionario misuri effettivamente e principalmente la depressione\nche misurandola più volte, questa sia più o meno simile\nche gli item vengano compresi allo stesso modo\nche gli item siano abbastanza sensibili da differenziare le persone"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#qualità-della-misura",
+    "href": "slides/01-intro-analisi-dati.html#qualità-della-misura",
+    "title": "Introduzione al Corso",
+    "section": "Qualità della misura",
+    "text": "Qualità della misura\nQuindi non è sufficiente avere una misura di depressione ma dobbiamo chiederci:\n\nquanto è precisa la misura\nquanto è valida e affidabile\nquanto è specifica vs aspecifica\n…"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#variabili-latenti-e-osservate",
+    "href": "slides/01-intro-analisi-dati.html#variabili-latenti-e-osservate",
+    "title": "Introduzione al Corso",
+    "section": "Variabili latenti e osservate",
+    "text": "Variabili latenti e osservate\nIn Psicologia, nella maggior parte dei casi siamo interessati a costrutti detti latenti. Latenti perchè non sono direttamente osservabili.\nNon sono direttamente osservabili ma sono indirettamente osservabili tramite degli indicatori. La qualità della nostra osservazione quindi dipende dalla qualità degli indicatori.\nGli indicatori sono ad esempio gli item di un questionario o un insieme di questionari. La variabile latente è ad esempio la depressione."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#un-esempio",
+    "href": "slides/01-intro-analisi-dati.html#un-esempio",
+    "title": "Introduzione al Corso",
+    "section": "Un esempio",
+    "text": "Un esempio\nVediamo un esempio di item del BDI-II:\n\nNon sono più irrequieto o teso del solito.\nMi sento più irrequieto o teso del solito.\nSono così irrequieto o agitato che è difficile stare fermo.\nSono così irrequieto o agitato che devo continuare a muovermi o a fare qualcosa.\n\nPerchè questo indicatore viene utilizzato per la depressione secondo voi?"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#un-esempio-1",
+    "href": "slides/01-intro-analisi-dati.html#un-esempio-1",
+    "title": "Introduzione al Corso",
+    "section": "Un esempio",
+    "text": "Un esempio\nTeoricamente, tra le manifestazioni cliniche della depressione è presente agitazione e irrequietezza. Quindi, se misurassi questa manifestazione mi aspetterei, in media, punteggi elevati in soggetti depressi.\nQuindi il collegamento tra indicatore e costrutto latente è teorico e viene assunto o inferito dall’osservazione ma non è scontato.\nInoltre, ci possono essere molti modi diversi di misurare l’irrequietezza che quindi concorrono a misurare (indirettamente) più o meno accuratamente il costrutto latente."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#affidabilità-di-una-misura-esempio",
+    "href": "slides/01-intro-analisi-dati.html#affidabilità-di-una-misura-esempio",
+    "title": "Introduzione al Corso",
+    "section": "Affidabilità di una misura, esempio",
+    "text": "Affidabilità di una misura, esempio"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#affidabilità-di-una-misura-1",
+    "href": "slides/01-intro-analisi-dati.html#affidabilità-di-una-misura-1",
+    "title": "Introduzione al Corso",
+    "section": "Affidabilità di una misura",
+    "text": "Affidabilità di una misura\nresearch methods for the behavioral sciences\nmisure e disegni di ricerca non sono cose indipendenti ed entrambi impattano le nostre conclusioni e quindi la teoria che viene testata. Ad esempio:\n\nmisuro l’ansia con uno strumento valido ma non mi assicuro in che stato siano i partecipanti (prima di un esame importante). La misura può essere valida ed affidabile MA non è usata in modo corretto\nallo stesso modo utilizzo una misura discutibile che dovrebbe misurare l’ansia ma in realtà non è affidabile. Nonostante il disegno di ricerca adeguato le mie conclusioni sono altrettanto invalide\n\nsolitamente, l’affidabilità/validità delle misure è un prerequisito inteso come ho delle misure valide e poi costruisco un esperimento adeguato."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#affidabilità-diverse-tipologie",
+    "href": "slides/01-intro-analisi-dati.html#affidabilità-diverse-tipologie",
+    "title": "Introduzione al Corso",
+    "section": "Affidabilità, diverse tipologie",
+    "text": "Affidabilità, diverse tipologie\nCi sono diverse tipologie di affidabilità (in inglese reliability):\n\nAffidabilità test-retest (test-retest reliability)\nAffidabilità tra giudici (interrater realiability)\nAffidabilità tra forme parallele (parallel form reliability)\nConsistenza interna (internal consistency)"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#affidabilità-test-retest",
+    "href": "slides/01-intro-analisi-dati.html#affidabilità-test-retest",
+    "title": "Introduzione al Corso",
+    "section": "Affidabilità test-retest",
+    "text": "Affidabilità test-retest\nSe la misura utilizzata è un indicatore di un costrutto latente tendialmente stabile nel tempo, più misurazioni dello stesso indicatore dovrebbero produrre risultati simili."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#affidabilità-tra-giudici",
+    "href": "slides/01-intro-analisi-dati.html#affidabilità-tra-giudici",
+    "title": "Introduzione al Corso",
+    "section": "Affidabilità tra giudici",
+    "text": "Affidabilità tra giudici\nSe diversi giudici/sperimentatori giungono a risultati simili usando un indicatore in modo indipendente, allora quell’indicatore ha una buona affidabilità."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#affidabilità-tra-forme-parallele",
+    "href": "slides/01-intro-analisi-dati.html#affidabilità-tra-forme-parallele",
+    "title": "Introduzione al Corso",
+    "section": "Affidabilità tra forme parallele",
+    "text": "Affidabilità tra forme parallele"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#consistenza-interna",
+    "href": "slides/01-intro-analisi-dati.html#consistenza-interna",
+    "title": "Introduzione al Corso",
+    "section": "Consistenza interna",
+    "text": "Consistenza interna\nQuando diversi indicatori sono operazionalizzazioni dello stesso costrutto latente anche le misurazioni rilevate dovrebbero riflettere questo legame.\nIn altri termini, i soggetti dovrebbero rispondere (in media) in modo consistente ad indicatori che riflettono uno stesso costrutto latente."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#affidabilità-e-validità-alcuni-esempi",
+    "href": "slides/01-intro-analisi-dati.html#affidabilità-e-validità-alcuni-esempi",
+    "title": "Introduzione al Corso",
+    "section": "Affidabilità e validità, alcuni esempi",
+    "text": "Affidabilità e validità, alcuni esempi\nPensate a voler misurare l’ansia con un solo item chiedendo:\n\nquanto ti senti agitatə in questo momento?\n\nQuesta misura è chiaramente valida (legata teoricamente al costrutto ansia) ma è molto instabile, poco precisa e può dipendere da molti fattori sia personali che contestuali.\nL’errore di misura dell’indicatore ansia sarebbe molto pur essendo un indicatore teoricamente valido."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#affidabilità-e-validità-alcuni-esempi-1",
+    "href": "slides/01-intro-analisi-dati.html#affidabilità-e-validità-alcuni-esempi-1",
+    "title": "Introduzione al Corso",
+    "section": "Affidabilità e validità, alcuni esempi",
+    "text": "Affidabilità e validità, alcuni esempi\nUn esempio invece di misure affidabili ma non per forza valide riguarda gli indici psicofisiogici. Immaginiamo di vedere la relazione tra indici psicofisiologici come il battito cardiaco e la depressione.\nLa strumentazione per misurare il battito cardiaco può essere molto affidabile e con poco errore di misura. Tuttavia il legame tra battito cardiaco e depressione può essere meno chiaro e non per forza del tutto valido."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#sensibilità-e-range-delle-misure",
+    "href": "slides/01-intro-analisi-dati.html#sensibilità-e-range-delle-misure",
+    "title": "Introduzione al Corso",
+    "section": "Sensibilità e range delle misure",
+    "text": "Sensibilità e range delle misure\nUn’altro aspetto importante riguarda la granularità delle misure. In altri termini, se siamo interessati a misurare variazioni nel costrutto latente (differenza di depressione tra due gruppi di individui) dobbiamo assicurarci che l’indicatore sia abbastanza sensibile per cogliere queste differenze.\nSarebbe come trovare la temperatura ideale ma possiamo regolarla solo di 5 gradi alla volta. Per quanto il termostato sia affidabile e valido come misura, la sua granularità non è adeguata."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#effetto-soffitto-o-pavimento",
+    "href": "slides/01-intro-analisi-dati.html#effetto-soffitto-o-pavimento",
+    "title": "Introduzione al Corso",
+    "section": "Effetto soffitto o pavimento",
+    "text": "Effetto soffitto o pavimento\nIn un certo senso legato alla granularità, la mia misura deve poter differenziare le diverse osservazioni ovvero non devono esserci effetti soffitto o pavimento.\nImmaginate una domanda di matematica troppo difficile o troppo facile dove tuttə sbagliano o fanno corretto. Quella domanda non è una buona domande perchè non mi permette di distinguere le abilità delle mie osservazioni."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#terminologia",
+    "href": "slides/01-intro-analisi-dati.html#terminologia",
+    "title": "Introduzione al Corso",
+    "section": "Terminologia",
+    "text": "Terminologia\nQuando parliamo di esperimenti, ricerche e analisi dati la terminologia è importante:\n\n\\(y\\) sono gli outcomes (uno o più). Solitamente chiamate anche variabili dipendenti (ma preferisco outcomes)\n\\(x\\) sono i predittori. Solitamente chiamate anche variabili indipendenti (ma preferisco predittori)"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#terminologia-1",
+    "href": "slides/01-intro-analisi-dati.html#terminologia-1",
+    "title": "Introduzione al Corso",
+    "section": "Terminologia",
+    "text": "Terminologia\nPer costrutto o variabile latente intendiamo qualcosa di non direttamente osservabile se non indirettamente tramite indicatori.\nIl legame tra variabile latente e indicatori si chiama operazionalizzazione ovvero definire indicatori validi e affidabili del costrutto latente di interesse."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#disegni-di-ricerca-1",
+    "href": "slides/01-intro-analisi-dati.html#disegni-di-ricerca-1",
+    "title": "Introduzione al Corso",
+    "section": "Disegni di ricerca",
+    "text": "Disegni di ricerca\nNon tutte le ricerche dove si analizzano dei dati sono della stessa tipologia. Le informazioni ed il grado di confidenza nel poter trarre informazioni causali dipende dalla tipologia di studio. Ci sono due tipologie principali:\n\nDisegni sperimentali\nDisegni non-sperimentali"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#research-designs",
+    "href": "slides/01-intro-analisi-dati.html#research-designs",
+    "title": "Introduzione al Corso",
+    "section": "research designs",
+    "text": "research designs\nMellis (2020) fornisce una panoramica sulla tipologia di studi. Anche questo sito https://www.cebm.ox.ac.uk/resources/ebm-tools/study-designs fornisce una rappresentazione grafica. La nomenclatura dipende molto dalla disciplina ma la grande distinzione è la presenza o meno di randomizzazione e la manipolazione delle variabili."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#disegni-sperimentali",
+    "href": "slides/01-intro-analisi-dati.html#disegni-sperimentali",
+    "title": "Introduzione al Corso",
+    "section": "Disegni sperimentali",
+    "text": "Disegni sperimentali\nUn disegno di ricerca sperimentale, ha come aspetto principale il controllo e la manipolazione delle variabili, nello specifico i predittori \\(x\\)."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#disegni-sperimentali-un-esempio",
+    "href": "slides/01-intro-analisi-dati.html#disegni-sperimentali-un-esempio",
+    "title": "Introduzione al Corso",
+    "section": "Disegni sperimentali, un esempio",
+    "text": "Disegni sperimentali, un esempio\nIl classico esempio è la ricerca medica. Voglio valutare l’efficiacia di un certo farmaco o trattamento (\\(x\\)). Semplificando somministro il trattamento sul 50% dei soggetti e un placebo nel restante 50%.\nSe l’outcome \\(y\\) cambia tra i due gruppi, c’è una relazione causale tra il trattamento \\(x\\) ed il cambiamento nell’outcome \\(y\\)."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#disegni-sperimentali-1",
+    "href": "slides/01-intro-analisi-dati.html#disegni-sperimentali-1",
+    "title": "Introduzione al Corso",
+    "section": "Disegni sperimentali",
+    "text": "Disegni sperimentali\nQuesto presuppone che, i due gruppi differiscano solo per il trattamento \\(x\\) e tutte le altre variabili (che potrebbero avere un effetto) siano controllate.\nQuesto non è sempre (mai) possibile e quindi si ricorre alla randomizzazione. Assegnando casualmente i soggetti ai due gruppi si limita l’impatto di altre variabili."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#randomizzazione-perchè-funziona",
+    "href": "slides/01-intro-analisi-dati.html#randomizzazione-perchè-funziona",
+    "title": "Introduzione al Corso",
+    "section": "Randomizzazione, perchè funziona?",
+    "text": "Randomizzazione, perchè funziona?\nImmaginate di avere 100 persone, un trattamento \\(x\\) ed un outcome \\(y\\). Immaginate che per qualche ragione, l’età (per semplicità adulti e anziani) sia associata ad un diverso livello di \\(y\\)."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#randomizzazione-perchè-funziona-1",
+    "href": "slides/01-intro-analisi-dati.html#randomizzazione-perchè-funziona-1",
+    "title": "Introduzione al Corso",
+    "section": "Randomizzazione, perchè funziona?",
+    "text": "Randomizzazione, perchè funziona?\nLa randomizzazione quindi mitiga (e in teoria rimuove) l’effetto di variabili non direttamente controllate assegnando gli individui in modo casuale al trattamento."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#perchè-non-randomizziamo-sempre",
+    "href": "slides/01-intro-analisi-dati.html#perchè-non-randomizziamo-sempre",
+    "title": "Introduzione al Corso",
+    "section": "Perchè non randomizziamo sempre?",
+    "text": "Perchè non randomizziamo sempre?\nIl non randomizzare non è una scelta spesso. Ci sono delle condizioni dove non è possibile randomizzare per motivi etici o strettamente empirici.\nImmaginate di dover capire l’impatto sulla salute di un certo comportamento (e.g., mangiare un certo alimento). Idealmente dovreste prendere in modo casuale soggetti, assegnarli una dieta e vedere l’impatto.\nQuello che invece si fa è raccogliere su larga scala le abitudini di un campione di soggetti e vedere le associazioni con l’outcome."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#perchè-non-randomizziamo-sempre-1",
+    "href": "slides/01-intro-analisi-dati.html#perchè-non-randomizziamo-sempre-1",
+    "title": "Introduzione al Corso",
+    "section": "Perchè non randomizziamo sempre?",
+    "text": "Perchè non randomizziamo sempre?\nIl problema è che non potendo randomizzare, non è possibile isolare chiaramente l’effetto del predittore d’interesse.\nIn realtà possiamo:\n\nIncludere tutte le possibili variabili come predittore (regressione multipla) ma questo è valido solo se siamo sicuri di averle inserite tutte (molto poco plausibile)\nEvidenziare un’associazione tra \\(x\\) e \\(y\\) ma senza poterne trarre una relazione causale."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#quasi-esperimenti",
+    "href": "slides/01-intro-analisi-dati.html#quasi-esperimenti",
+    "title": "Introduzione al Corso",
+    "section": "Quasi-esperimenti",
+    "text": "Quasi-esperimenti\nI quasi-esperimenti o studi osservazionali sono quelli studi dove vengono rilevate delle variabli e si vedono le associazioni.\nConsegnare un questionario a \\(n\\) persone e vedere associazioni tra variabili è uno studio osservazionale dove quasi mai possiamo inferire relazioni causali."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#disegni-di-ricerca-2",
+    "href": "slides/01-intro-analisi-dati.html#disegni-di-ricerca-2",
+    "title": "Introduzione al Corso",
+    "section": "Disegni di ricerca",
+    "text": "Disegni di ricerca\nMellis (2020) fornisce una panoramica sulla tipologia di studi. Anche questo sito https://www.cebm.ox.ac.uk/resources/ebm-tools/study-designs fornisce una rappresentazione grafica. La nomenclatura dipende molto dalla disciplina ma la grande distinzione è la presenza o meno di randomizzazione e la manipolazione delle variabili."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#confounder-e-artefatti",
+    "href": "slides/01-intro-analisi-dati.html#confounder-e-artefatti",
+    "title": "Introduzione al Corso",
+    "section": "Confounder e artefatti",
+    "text": "Confounder e artefatti"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#confounder-e-artefatti-1",
+    "href": "slides/01-intro-analisi-dati.html#confounder-e-artefatti-1",
+    "title": "Introduzione al Corso",
+    "section": "Confounder e artefatti",
+    "text": "Confounder e artefatti\nLa validità di uno studio e di un’analisi dei dati può essere compromessa da confounder e artefatti. I confounder, come dice la parola, sono variabili che confondono la relazione che assumiamo e osserviamo tra \\(x\\) e \\(y\\)."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#confounder",
+    "href": "slides/01-intro-analisi-dati.html#confounder",
+    "title": "Introduzione al Corso",
+    "section": "Confounder",
+    "text": "Confounder\nL’idea è che se c’è una variabile \\(z\\) che è legata sia ad \\(x\\) che a \\(y\\) ma io non la osservo/raccolgo. La relazione tra \\(x\\) e \\(y\\) è parzialmente o totalmente spuria."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#confounder-un-esempio",
+    "href": "slides/01-intro-analisi-dati.html#confounder-un-esempio",
+    "title": "Introduzione al Corso",
+    "section": "Confounder, un esempio",
+    "text": "Confounder, un esempio\nImmaginate di raccogliere dei dati di bambinə e ragazzə dai 6 ai 18 anni. Raccogliete punteggi a test di matematica e raccogliete il peso. Non avete altre informazioni.\n\n\n    \nAndate a questo link e provate ad esplorare il dataset. Quali potrebbero essere dei confounder?"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#confounder-un-esempio-1",
+    "href": "slides/01-intro-analisi-dati.html#confounder-un-esempio-1",
+    "title": "Introduzione al Corso",
+    "section": "Confounder, un esempio",
+    "text": "Confounder, un esempio\nIn pratica, \\(z\\) (l’età in questo caso) è una variabile legata sia a \\(x\\) che a \\(y\\) che non osserviamo ma spiega totalmente (o parzialmente) la relazione \\(y \\sim x\\). Vedremo come tenere conto di \\(z\\) statisticamente ma i confounder possono renderci la vita molto complessa."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#riferimenti",
+    "href": "slides/01-intro-analisi-dati.html#riferimenti",
+    "title": "Introduzione al Corso",
+    "section": "Riferimenti",
+    "text": "Riferimenti\n\n\n\n\nBickel, P. J., Hammel, E. A., & O’connell, J. W. (1975). Sex bias in graduate admissions: data from berkeley: Measuring bias is harder than is usually assumed, and the evidence is sometimes contrary to expectation. Science (New York, N.Y.), 187, 398–404. https://doi.org/10.1126/science.187.4175.398\n\n\nMellis, C. M. (2020). How to choose your study design. Journal of Paediatrics and Child Health, 56, 1018–1022. https://doi.org/10.1111/jpc.14929\n\n\nStevens, S. S. (1946). On the theory of scales of measurement. Science (New York, N.Y.), 103, 677–680. https://doi.org/10.1126/science.103.2684.677"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#simpsons-paradox-1",
+    "href": "slides/01-intro-analisi-dati.html#simpsons-paradox-1",
+    "title": "Introduzione al Corso",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nNell’autunno del 1973, l’Università della California a Berkeley rese pubblici i dati relativi alle ammissioni ai corsi di laurea magistrale. Cosa potreste concludere guardando i dati aggregati?\n\n\n\n\n\n\n\n\n\n\n\nSi veda Bickel et al. (1975)"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#simpsons-paradox-2",
+    "href": "slides/01-intro-analisi-dati.html#simpsons-paradox-2",
+    "title": "Introduzione al Corso",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nIn modo naive si potrebbe concludere che ci sia un bias verso l’ammissione di candidati di sesso maschile. Ma come abbiamo imparato per i confounder ci potrebbero essere altre spiegazioni.\nQuali altre spiegazioni ci potrebbero essere? Vi ricordo che:\n\nabbiamo solo il sesso come informazione riguardo i partecipanti\ni dati sono qui aggregati ma sono anche disponibili i dati separati per corso di studio"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#simpsons-paradox-3",
+    "href": "slides/01-intro-analisi-dati.html#simpsons-paradox-3",
+    "title": "Introduzione al Corso",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nVediamo cosa succede se disaggreghiamo e separiamo per corso di studio. Potete trovare il dataset con le percentuali di ammissione separato per dipartimento qui:\n\n\n    \nCosa potete notare?"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#simpsons-paradox-4",
+    "href": "slides/01-intro-analisi-dati.html#simpsons-paradox-4",
+    "title": "Introduzione al Corso",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nFacciamo un grafico (un pochino complesso) dei dati in questione:"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#simpsons-paradox-5",
+    "href": "slides/01-intro-analisi-dati.html#simpsons-paradox-5",
+    "title": "Introduzione al Corso",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nSostanzialmente, se ordiniamo i corsi per la % totale di ammissione (un indice della difficoltà ad entrare) vediamo che:\n\nGli studenti tendono ad applicare di più a dipartimenti più facili\nLe studentesse tendono ad applicare di più a dipartimenti più difficili\n\nAnzi, se calcoliamo la media della percentuale di ammissione tra corsi, è leggermente più alta per le studentesse."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#simpsons-paradox-6",
+    "href": "slides/01-intro-analisi-dati.html#simpsons-paradox-6",
+    "title": "Introduzione al Corso",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nQuesto fenomeno si chiama Paradosso di Simpson e può accadere quando in presenza di un confounder (la difficoltà di ammissione) le conclusioni guardando i dati aggregati è diversa rispetto a guardare i dati disaggregati (in questo caso rispetto al corso).\nQuesto è un ottimo esempio di come conoscere o non conoscere l’analisi dei dati aiuta a trarre conclusioni più appropriate."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#campionamento",
+    "href": "slides/01-intro-analisi-dati.html#campionamento",
+    "title": "Introduzione al Corso",
+    "section": "Campionamento",
+    "text": "Campionamento"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#esempio",
+    "href": "slides/01-intro-analisi-dati.html#esempio",
+    "title": "Introduzione al Corso",
+    "section": "Esempio",
+    "text": "Esempio\nImmaginate di voler vedere se ci sono differenze legate al sesso in una certa abilità (tipo matematica) e di raccogliere studentə. Raccogliete 100 studentə, somministrate la prova di matematica e poi guardate i risultati:"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#esempio-1",
+    "href": "slides/01-intro-analisi-dati.html#esempio-1",
+    "title": "Introduzione al Corso",
+    "section": "Esempio",
+    "text": "Esempio\nIl test di matematica è affidabile e valido e la numerosità campionaria è adeguata (\\(n = 500\\)). Quali potrebbero essere le problematiche? Quali informazioni vorreste in aggiunta per capire meglio?\n\nLa domanda fondamentale riguarda il tipo di campione raccolto. Sono studenti e studentesse, ma sono rappresentativi (vedremo meglio questo concetto)?."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#esempio-2",
+    "href": "slides/01-intro-analisi-dati.html#esempio-2",
+    "title": "Introduzione al Corso",
+    "section": "Esempio",
+    "text": "Esempio\nVediamo, ad esempio, il corso di studi da cui provengono:\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                sex\n                dep\n                math\n                n\n              \n        \n        \n        \n                \n                  f\n                  ing\n                  130.6\n                  75\n                \n                \n                  f\n                  psi\n                  89.6\n                  175\n                \n                \n                  m\n                  ing\n                  129.7\n                  175\n                \n                \n                  m\n                  psi\n                  90.7\n                  75\n                \n        \n      \n    \n\n\n\n\nIl livello di matematica tra maschi e femmine è identico ma il livello di matematica tra studenti e studentesse di ingegneria vs psicologia è molto diverso.\nIl campione di studentesse è stato raccolto principalmente nel dipartimento di psicologia e quello dei maschi da quello di ingegneria"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#esempio-3",
+    "href": "slides/01-intro-analisi-dati.html#esempio-3",
+    "title": "Introduzione al Corso",
+    "section": "Esempio",
+    "text": "Esempio\nIn altri termini, un campione costruito in modo non adeguato, anche al netto di misure valide e affidabili ed una sufficiente numerosità campionaria può portare a conclusioni non valide."
   }
 ]

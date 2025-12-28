@@ -2,8 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/slides/00-intro-generale.html",
-      "/slides/01-intro-corso.html",
+      "/slides/00-intro-corso.html",
+      "/slides/01-intro-analisi-dati.html",
       "/slides/02-intro-inferenza.html",
       "/slides/03-analisi-dati-comunita.html"
     ]

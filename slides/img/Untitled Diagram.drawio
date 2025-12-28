@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.7">
+  <diagram name="Page-1" id="rtgJcReQBDqgTp1_KRRV">
+    <mxGraphModel dx="2066" dy="1119" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;gradientColor=none;fillColor=light-dark(#ff4d4d, #ededed);strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="80" width="80" x="190" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Gruppo Sperimentale" vertex="1">
+          <mxGeometry height="30" width="130" x="165" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Gruppo Controllo" vertex="1">
+          <mxGeometry height="30" width="130" x="380" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-6" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;gradientColor=none;fillColor=light-dark(#FFDADA,#EDEDED);strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="80" width="80" x="405" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-8" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;gradientColor=none;fillColor=light-dark(#FFDFDF,#EDEDED);strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="80" width="80" x="185" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Anziani" vertex="1">
+          <mxGeometry height="30" width="130" x="160" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Giovani" vertex="1">
+          <mxGeometry height="30" width="130" x="375" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-11" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;gradientColor=none;fillColor=light-dark(#FF7B7B,#EDEDED);strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="80" width="80" x="400" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-12" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;gradientColor=none;fillColor=light-dark(#FF8383,#EDEDED);strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="80" width="80" x="185" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Gruppo Sperimentale" vertex="1">
+          <mxGeometry height="30" width="130" x="160" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Gruppo Controllo" vertex="1">
+          <mxGeometry height="30" width="130" x="375" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-15" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;gradientColor=none;fillColor=light-dark(#FF9F9F,#EDEDED);strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="80" width="80" x="400" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-16" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;gradientColor=none;fillColor=light-dark(#FF8383,#EDEDED);strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="80" width="80" x="185" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Gruppo Sperimentale" vertex="1">
+          <mxGeometry height="30" width="130" x="160" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Gruppo Controllo" vertex="1">
+          <mxGeometry height="30" width="130" x="375" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="ZTqk5MMAYBM41Iycvr8q-19" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;gradientColor=none;fillColor=light-dark(#FF9F9F,#EDEDED);strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="80" width="80" x="400" y="840" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

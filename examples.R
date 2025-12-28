@@ -96,3 +96,10 @@ y <- 0.2 * x + 0.1 * z + rnorm(N)
 
 fit <- lm(y ~ x)
 summary(fit)
+
+
+x <- 1:10
+x <- x - mean(x)
+
+(t(x) %*% x) / (length(x) - 1)
+var(x)

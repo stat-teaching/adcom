@@ -15,7 +15,10 @@
 
 - disegni di ricerca, causalità, randomizzazione
 - misurazione, errore e validità delle misure
+    - https://learningstatisticswithr.com/lsr-0.6.pdf
+    - https://notebooklm.google.com/notebook/2199d2b8-4db4-4c1d-8450-b79031d65216
 - tipi di variabili
+    - https://www.personality-project.org/r/book/Chapter3.pdf
 - dataset: cosa sono, come sono organizzati, cautele, etc.
 
 > mostrare esempi di dati e analisi misleading. tipo simpson paradox, regression to the mean (pp. 88 ROS)
@@ -49,6 +52,7 @@
 # Regressione lineare
 
 - regressione lineare come modello generale (t-test, anova, etc.)
+    - https://www.personality-project.org/r/book/chapter5.pdf
 - assunzioni e implicazioni (pp. 153 ROS)
 - concetto di varianza spiegata
 - introduzione partendo dal grafico, concetto di minimi quadrati (pp. 103 ROS), residui e massima verosimiglianza

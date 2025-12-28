@@ -1,0 +1,11 @@
+---
+title: Introduzione a Jamovi
+---
+
+In questa pagina sono raccolte delle risorse per l'utilizzo di Jamovi.
+
+- https://www.jamovi.org/
+- https://www.jamovi.org/user-manual.html
+- https://datalab.cc/jamovi/
+- https://davidfoxcroft.github.io/lsj-book/
+

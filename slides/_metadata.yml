@@ -2,6 +2,6 @@ format:
   #minimal-beamer: default
   minimal-revealjs: default
 
-subtitle: "**ADCOM** {{< var academic-year >}}"
+subtitle: "**ADCOM** \n {{< var academic-year >}}"
 date: last-modified
 date-format: "*[Ultimo aggiornamento:] MM-DD-YYYY*"

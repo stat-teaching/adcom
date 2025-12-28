@@ -1,0 +1,8 @@
+---
+title: Datasets
+listing:
+  contents:
+    - "data/data.yml"
+  type: table
+  fields: [Dataset, File, Online]
+---

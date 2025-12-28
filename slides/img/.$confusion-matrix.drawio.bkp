@@ -1,0 +1,73 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram name="Page-1" id="qtqDOAp4OIVjqnN0Va4m">
+    <mxGraphModel dx="2068" dy="1203" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-26" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="-0.0031034482758798276" width="472.50310344827585" height="415" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-1" value="True&amp;nbsp;&lt;div&gt;Positive&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;container=0;fontSize=20;" vertex="1" parent="vc6TexpSszhAyrEmwrPJ-26">
+          <mxGeometry x="179.16793103448276" y="121.66666666666666" width="146.66758620689654" height="146.66666666666666" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-2" value="False&amp;nbsp;&lt;div&gt;Positive&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;container=0;fontSize=20;" vertex="1" parent="vc6TexpSszhAyrEmwrPJ-26">
+          <mxGeometry x="325.8355172413793" y="121.66666666666666" width="146.66758620689654" height="146.66666666666666" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-3" value="False&amp;nbsp;&lt;div&gt;Negative&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;container=0;fontSize=20;" vertex="1" parent="vc6TexpSszhAyrEmwrPJ-26">
+          <mxGeometry x="179.16793103448276" y="268.3333333333333" width="146.66758620689654" height="146.66666666666666" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-4" value="True&amp;nbsp;&lt;div&gt;Negative&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;container=0;fontSize=20;" vertex="1" parent="vc6TexpSszhAyrEmwrPJ-26">
+          <mxGeometry x="325.8355172413793" y="268.3333333333333" width="146.66758620689654" height="146.66666666666666" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-5" value="Test" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;fontSize=22;fontStyle=1;rotation=-90;" vertex="1" parent="vc6TexpSszhAyrEmwrPJ-26">
+          <mxGeometry x="-9.166896551724108" y="244.9966666666666" width="73.33379310344827" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-6" value="Positivo" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;fontSize=20;" vertex="1" parent="vc6TexpSszhAyrEmwrPJ-26">
+          <mxGeometry x="32.49689655172415" y="167.50333333333333" width="146.66758620689654" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-7" value="Negativo" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;fontSize=20;" vertex="1" parent="vc6TexpSszhAyrEmwrPJ-26">
+          <mxGeometry x="32.49689655172415" y="314.16666666666663" width="146.66758620689654" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-8" value="Condizione" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;fontSize=22;fontStyle=1" vertex="1" parent="vc6TexpSszhAyrEmwrPJ-26">
+          <mxGeometry x="252.50172413793103" width="146.66758620689654" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-10" value="Presente" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;fontSize=20;" vertex="1" parent="vc6TexpSszhAyrEmwrPJ-26">
+          <mxGeometry x="179.16793103448276" y="55" width="146.66758620689654" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-11" value="Assente" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;fontSize=20;" vertex="1" parent="vc6TexpSszhAyrEmwrPJ-26">
+          <mxGeometry x="325.8355172413793" y="55" width="146.66758620689654" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-28" value="$$1 - \beta$$&lt;div&gt;Potenza&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;container=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="489.1648275862069" y="1141.6666666666667" width="146.66758620689654" height="146.66666666666666" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-29" value="$$\alpha$$&lt;div&gt;Type-1 Error&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;container=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="635.8324137931035" y="1141.6666666666667" width="146.66758620689654" height="146.66666666666666" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-30" value="&lt;b&gt;$$\mathbf{\beta}$$&lt;/b&gt;&lt;div&gt;&lt;b&gt;Type-2 Error&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=0;container=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="489.1648275862069" y="1288.3333333333333" width="146.66758620689654" height="146.66666666666666" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-31" value="$$1 - \alpha$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;container=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="635.8324137931035" y="1288.3333333333333" width="146.66758620689654" height="146.66666666666666" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-32" value="Test" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;fontSize=22;fontStyle=1;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="300.83000000000004" y="1264.9966666666667" width="73.33379310344827" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-33" value="$$p \leq \alpha$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="342.4937931034483" y="1187.5033333333333" width="146.66758620689654" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-36" value="Vera" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="489.1648275862069" y="1075" width="146.66758620689654" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-37" value="Falsa" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="635.8324137931035" y="1075" width="146.66758620689654" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-39" value="$$H_0$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontStyle=1;container=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="560" y="1038.34" width="146.67" height="36.66" as="geometry" />
+        </mxCell>
+        <mxCell id="vc6TexpSszhAyrEmwrPJ-40" value="$$p &amp;gt; \alpha$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="342.4937931034483" y="1334.1633333333334" width="146.66758620689654" height="55" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
