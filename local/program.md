@@ -57,6 +57,12 @@
 
 # Regressione lineare
 
+Nell'introduzione fai esempio di:
+
+- varianza con e senza x
+- intepretazione geometrica
+- visualizzazione con misc/plot-reg.R
+
 - regressione lineare come modello generale (t-test, anova, etc.)
     - https://www.personality-project.org/r/book/chapter5.pdf
 - assunzioni e implicazioni (pp. 153 ROS)
