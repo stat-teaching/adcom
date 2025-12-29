@@ -4,6 +4,7 @@ project:
   render:
     - "*.qmd"
     - "!local/"
+    - "!slides/"
 
 website:
   favicon: resources/favicon.png
