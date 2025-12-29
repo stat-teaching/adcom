@@ -1,0 +1,16 @@
+[
+  {
+    "listing": "/index.html",
+    "items": []
+  },
+  {
+    "listing": "/data.html",
+    "items": []
+  },
+  {
+    "listing": "/notes.html",
+    "items": [
+      "/notes/jamovi.html"
+    ]
+  }
+]
