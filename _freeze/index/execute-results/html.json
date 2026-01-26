@@ -1,8 +1,8 @@
 {
-  "hash": "c21ae8001ea6227edcfceed0e7591841",
+  "hash": "4722987e0f1e8f5c933f1bc94e310f33",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Analisi dei Dati in Ambito di Comunità\"\nengine: knitr\nexecute: \n  echo: false\n  message: false\n\nlisting:\n  contents: slides\n  type: table\n  sort:\n    - \"filename\"\n  fields: [title]\n  id: slides\n---\n\n\n::: {.cell}\n\n:::\n\n\nMateriale per il corso di Analisi dei Dati in Ambito di Comunità (ADCOM, 6 CFU) nel corso di Psicologia di Comunità, della Promozione del Benessere e del Cambiamento Sociale. \n\nIn questo sito sarà presente tutto il materiale come slides, esercizi, approfondimenti, codici e dati. Per ogni comunicazione ufficiale si faccia sempre riferimento alla [pagina Moodle del corso]({{< var moodle >}}).\n\n## Slides\n\n::: {#sample-listings}\n:::\n\n## Link utili\n\n- Moodle:\n- Didattica:\n\n## Contatti\n\nPer orari di ricevimento, proposte di tesi e comunicazioni ufficiali si faccia riferimento alla mia pagina ufficiale [Unipd]({{< var unipd >}}).\n\nPer contattarmi: {{< fa envelope >}} [{{< var unipd-mail >}}]({{< var unipd-mail >}})\n\n## FAQ\n\n",
+    "markdown": "---\ntitle: \"Analisi dei Dati in Ambito di Comunità\"\nengine: knitr\nexecute: \n  echo: false\n  message: false\n\nlisting:\n  contents: slides\n  type: table\n  sort:\n    - \"filename\"\n  fields: [title]\n  id: slides\n---\n\n![](resources/hex.svg){fig-align=\"center\"}\n\n\n::: {.cell}\n\n:::\n\n\nMateriale per il corso di Analisi dei Dati in Ambito di Comunità (ADCOM, 6 CFU) nel corso di Psicologia di Comunità, della Promozione del Benessere e del Cambiamento Sociale. \n\nIn questo sito sarà presente tutto il materiale come slides, esercizi, approfondimenti, codici e dati. Per ogni comunicazione ufficiale si faccia sempre riferimento alla [pagina Moodle del corso]({{< var moodle >}}).\n\n## Slides\n\n::: {#slides}\n:::\n\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

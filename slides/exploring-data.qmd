@@ -1,0 +1,196 @@
+---
+title: Exploring Data
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(patchwork)
+library(dagitty)
+library(ggdag)
+library(here)
+
+devtools::load_all()
+
+qtab <- function(x, width = NULL, fontsize = 0.85){
+    tinytable::tt(x, width = width) |> 
+        tinytable::theme_striped() |> 
+        tinytable::style_tt(fontsize = fontsize)
+}
+```
+
+# Statistiche, parametri, popolazioni e campioni
+
+## Statistiche, parametri, popolazioni e campioni
+
+Un pochino di terminologia è sempre necessaria:
+
+- Quando parliamo di **statistiche** ci riferiamo a quantità che vengono calcolate su un campione. In altri termini sono quantità che vengono calcolate sul dataset che stiamo utilizzando
+- Quando parliamo di **parametri** ci riferiamo a proprietà di una popolazione
+
+La statistica ed il parametro sono concettualmente la stessa quantità ma la grossa differenza è che la statistica viene calcolata sui dati osservati mentre il parametro non è direttamente calcolabile per definizione. Vedremo nel prossimo modulo quando parleremo di inferenza i concetti di campionamento, di stima e di errore di stima.
+
+Per il momento è importante capire che quelle che calcoliamo sui nostri dati sono statistiche. Queste statistiche sono delle stime (più o meno accurate) dei rispettivi parametri della popolazione di riferimento.
+
+## Statistiche e parametri, notazione
+
+Per convenzione:
+
+- I **parametri** si indicano con lettere greche: $\mu$, $\sigma$, etc.
+- Le **statistiche** si indicano con lettere latine: $x$, $s$, $\bar x$, etc.
+
+Anche noi, quando necessario useremo questa convenzione. Le statistiche sono intese come qualsiasi quantità calcolata sul campione. Ad esempio:
+
+- *media*
+- *mediana*
+- *deviazione standard*
+- ...
+
+Ma non solo queste. Qualsiasi operazione calcolata su un campione, si chiama statistica.
+
+## Statistiche come domande
+
+Le statistiche quindi sono dei modi per **ridurre la complessità** di un certo dato ed **estrarre delle informazioni di interesse**. 
+
+Un modo interessante di vederle è come se fossero delle **domande** fatte ai nostri dati. Queste domande sono fatte in modo molto mirato e forniscono risposte molto mirate.
+
+La qualità, i limiti e la quantità di informazione della risposta sono funzione di quanto la domanda è adatta a quello che veramente voglio. In un certo senso possiamo parlare di *validità* delle statistiche.
+
+## Statistiche come riduzione di complessità
+
+Le statistiche permettono di riassumere centinaia, migliaia, milioni di dati in pochi numeri. Il prezzo da pagare è quello di capire esattamente:
+
+- il significato di quella statistica
+- i limiti e le criticità di quella statistica
+- il fatto che sto perdendo informazione (ridurre la complessità = perdita informazione)
+- il fatto che più statistiche sono sempre meglio una sola (minore riduzione di complessità)
+
+> Come analogia, un abstract o riassunto di un articolo è molto cognitivamente conveniente per avere un'idea generale. Per capire veramente l'argomento è necessario leggerlo interamente e magari leggerne più di uno.
+
+# Exploratory data analysis (EDA)
+
+## EDA, the big picture
+
+![](img/eda.svg){fig-align="center"}
+
+## EDA, principi
+
+In generale, l'esplorazione (dovrebbe) è il primo passo quando si affronta un dataset. Anche nell'esplorazione ci sono degli step, quello che consiglio:
+
+1. Individuare chiaramente la tipologia di variabile/i
+2. Rappresentare con un grafico (*adeguato*)
+3. Calcolare statistiche descrittive (*adeguate*)
+4. Eventualmente integrare grafici e statistiche
+
+## Un esempio, @Di-Marco2020-wu
+
+```{r}
+dimarco2020 <- readRDS(here("data/dimarco2020.rds"))
+```
+
+L’articolo di @Di-Marco2020-wu esamina come le risorse psicosociali dei volontari (inclusi benessere professionale, senso di comunità ed esperienze traumatiche) siano correlate alla loro qualità della vita complessiva.
+
+I dati sono disponibili direttamente sul sito della rivista [link](https://doi.org/10.1016/j.dib.2020.105522). Ho pulito e sistemato un pochino il dataset, lo potete trovare [qui](../data.qmd):
+
+{{< qrcode https://docs.google.com/spreadsheets/d/1Zba8n2u7_Krc6iqnlyF9bu-wxD5SMx3n-QqEHAVJx-E/edit?gid=436198876#gid=436198876 >}}
+
+## 0. Dataset
+
+Intanto le prime cosa da fare sono quelle di capire quante righe e quante colonne ha il dataset. In questo caso abbiamo `r nrow(dimarco2020)` righe (osservazioni/soggetti) e `r ncol(dimarco2020)` colonne (variabili).
+
+## 1. Tipologia di variabili
+
+Proviamo ad esplorare ed individuare qualche tipologia di variabili.
+
+- `education`
+- `age`
+- `residence`
+- `attachment` (in questo caso intesa come senso di comunità)
+
+## 1. Tipologia di variabili
+
+- `education`: è una variabile **ordinale** con **3 modalità** (o livelli) `sec_school` < `high_school` < `degree`.
+- `age`: è una variabile **numerica** su **scala a rapporti**. In questo caso espressa in anni (quindi numeri interi).
+- `residence`: è una variabile nominale (o categoriale) con 3 modalità (o livelli) `north`, `central` e `south`
+- `attachment`: tecnicamente è una media o somma di *item* ordinali. Nella pratica (ma ci sono obiezioni) viene considerata una **scala ad intervalli**.
+
+## Esplorazione univariata
+
+Con esplorazione **univariata** si intende esplorare una o più variabili **singolarmente** ovvero senza considerare allo stesso tempo altre variabili. L'obiettivo è quello di:
+
+- assicurarsi che la variabile sia stata correttamente intepretata dal software che stiamo utilizzando
+- controllare la presenza di errori, valori anomali e/o impossibili
+- controllare la presenza di dati mancanti
+- esplorare caratteristiche della variabile usando **statistiche descrittive**
+
+## Intepretazione del software
+
+## Presenza di errori e/o valori anomali
+
+Questo punto è molto importante. La presenza di valori anomali o errori può impattare notevolmente le analisi ed i risultati (vedremo poi un esempio). Un punto di partenza è:
+
+- **ci sono dei limiti (in senso matematico) oggettivi nella variabile?** Ad esempio, avere nella variabile età valori molto alti (70-80) quando ho raccolto dati nelle scuole o avere valori impossibili (e.g., 200). Soprautto se i dati sono raccolti o inseriti manualmente può succedere.
+- **ci sono dei valori anomali in termini di tipologia di dato?** Ad esempio lettere o stringhe dove dovrebbero esserci numeri e viceversa? Questo può essere molto problematico.
+
+## Presenza di errori e/o valori anomali
+
+- **Sopratutto per i questionari, il massimo e minimo sono consistenti?** Se un questionario ha 10 item con likert 1-5, il minimo è 10 ed il massimo è 50. Valori minori o maggiori sono probabilmente errori o dati mancanti.
+- **Ci sono dati mancanti?** Quanti sono, dove, e se possibile capire il motivo. I partecipanti potevano non rispondere? Sono errori di salvataggio/inserimento? Possono avere un significato o sono totalmente casuali? I dati mancanti possono essere molto problematici.
+
+## Statistiche descrittive
+
+Una statistica descrittiva è una funzione dei dati osservati che ha lo scopo di riassumere, sintetizzare o rappresentare in modo compatto le caratteristiche principali di un insieme di dati. Quindi:
+
+- è una funzione --> un insieme di calcoli
+- riassumere/sintetizzare --> di solito 1/2 valori che rappresentano una proprieta specifica
+- è di natura descrittiva, senza l'obiettivo di trarre conclusioni o inferenze
+
+::: {.content-hidden when-profile="sharing"}
+
+::: {.callout title="❓ Question Time"}
+
+**Conoscete qualche statistica descrittiva?**
+
+:::
+
+:::
+
+## Statistiche di tendenza centrale
+
+Le statistiche di tendenza centrale restituiscono un valore rappresentativo o *centrale* di una distribuzione di dati. Questo valore può essere posizionato al centro, rappresentare un valore tipico o quello più ricorrente. Solitamente ci sono tre principali statistiche di tendenza centrale:
+
+- Media
+- Mediana
+- Moda
+
+## Media
+
+L' @eq-mean illustra come calcolare la media di una variabile $x$ misurata su un campione di numerosità $n$.
+
+$$
+\bar x = \frac{\sum^n_{i = 1} x_i}{n}
+$$ {#eq-mean}
+
+Quindi prendiamo tutti ($n$) gli $x$, sommiamo i loro valori e dividuamo per il numero $n$. Quello che otteniamo è un valore che, sulla scala della variabile, rappresenta la quantità media.
+
+## Off-topic: come leggere le formule
+
+Useremo poche formule ma è importante avere una notazione chiara e consistente e saperla leggere. Una volta che è abbastanza chiaro, le formule sono un modo sintetico ed efficace di rappresentare un concetto complesso.
+
+- $x$ è una variabile generica, può essere qualsiasi lettera (latina solitamente)
+- La barra sopra $\bar x$ indica solitamente la media della variabile $x$
+- $\sum^n_{i = 1}$ indica che facciamo la somma partendo da $i = 1$. Quindi $i = 1 \quad x_1$, poi $i = 2 \quad x_1 + x_2$, $i = 3 \quad x_1 + x_2 + x_3$ fino a $i = n \quad x_1 + x_2 + \dots + x_n$.
+
+## Media
+
+Secondo voi, la media di questa distribuzione di dati dove si potrebbe posizionare?
+
+```{r}
+data.frame(x = rnorm(1e4, 100, 30)) |> 
+    ggplot(aes(x = x)) +
+    geom_histogram(bins = 30, fill = "dodgerblue", col = "black")
+```
+
+## References

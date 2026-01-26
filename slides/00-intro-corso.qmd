@@ -1,5 +1,7 @@
 ---
 title: Introduzione al Corso
+toc: true
+toc-title: Contenuti
 ---
 
 ```{r}
@@ -11,45 +13,77 @@ library(tidyverse)
 theme_set(theme_bw(15))
 ```
 
+# Informazioni generali
+
 ## About me
 
-- Attualmente sono *ricercatore in Psicometria* presso il Dipartimento di Psicologia dello Sviluppo e della Socializzazione
+- Attualmente sono *Ricercatore (RTDa) in Psicometria* presso il Dipartimento di Psicologia dello Sviluppo e della Socializzazione
 - Sono uno *Psicologo Clinico* (dello Sviluppo)
 - Ho fatto un Dottorato in Psicologia Sperimentale e Neuroscienze riguardo i correlati comportamentali e neurali di stimoli subliminali
+- Attualmente mi occupo di analisi dei dati in Psicologia, in particolare metanalisi e simulazioni Monte Carlo
 
 ## Contatti
 
-- Potete venire a ricevimento il Venerdì 10:00 - 12:00 nell'ufficio 025 al 5° Piano del CLA. Il ricevimento si tiene in prezenza o alternativa su Zoom.
+- Ricevimento il Venerdì 10:00 - 12:00 nell'ufficio 025 al 5° Piano del CLA. Il ricevimento si tiene in prezenza o alternativa su Zoom.
 - Potete scrivermi a [{{< var unipd-mail >}}](mailto:{{< var unipd-mail >}}) o chiamarmi (weird) al +390498271221
 
 Per qualsiasi altra informazione:
 
-- sito personale [{{< var personal-website >}}]({{< var personal-website >}})
-- pagina UNIPD [{{< var unipd >}}]({{< var unipd >}})
+- [Sito personale]({{< var personal-website >}})
+- [Pagina docente Unipd]({{< var unipd-website >}})
+
+# Programma
 
 ## Programma
 
-- Il **programma d'esame** riguarda **esclusivamente le slides**. Nel caso in cui ci sia materiale aggiuntivo, sarà chiaramente indicato se riguarda materiale d'esame.
+- Il **programma d'esame** riguarda **esclusivamente le slides** ed i contenuti affrontati a lezione. Nel caso di materiale aggiuntivo, sarà espressamente indicato se parte o meno dell'esame.
 - Sulle slide a volte è presente il tag `#extra`. Questo significa che quella specifica slide o riferimento aggiuntivo indicato è utile, interessante ma non sarà oggetto d'esame.
+
+Potete trovare a questo link [{{< var timetable >}}]({{< var timetable >}}) (anche su Moodle) un calendario con orari ed argomenti (aggiornati progressivamente) delle lezioni.
+
+## ~ Programma
+
+A grandi linee il programma sarà:
+
+- Introduzione all'analisi dei dati: utilità, disegni di ricerca, problematiche e aspetti importanti
+- Variabili, statistiche descrittive e grafici
+- Cenni di misurazione e testing psicologico
+- Inferenza statistica
+- Regressione Lineare
+- Cenni di regressione lineare multilivello <sup>*</sup>
+- Metanalisi e metaricerca <sup>*</sup>
+
+::: aside
+<sup>*</sup> Questi argomenti, in caso di modifiche al programma, sono quelli che più facilmente possono essere saltati. L'eventuale materiale sarà comunque a disposizione.
+:::
+
+## ~ Programma
+
+Inoltre, se abbiamo tempo ci saranno degli approfondimenti molto pratici:
+
+- Come usare (e come non usare) chatGPT (e simili) nello studio, scrittura e analisi dei dati
+- Introduzione ad R: qualche lezione mirata sulle basi di R
+
+# Esame
 
 ## Esame
 
-Come riportato nel [*syllabus*](https://didattica.unipd.it/didattica/2025/PS2972/2025/000ZZ/PSP3050667/N0):
+Come riportato nel [*syllabus*]({{< var syllabus >}}):
 
-L'esame è scritto e consiste di **31 domande a risposta multipla**. Per ogni domanda ci sono **4 alternative di risposta** di cui una sola corretta. I punteggi sono assegnati nella seguente modalità:
+L'esame è scritto e consiste di **31 domande a risposta multipla**. Per ogni domanda ci sono **4 alternative di risposta** di cui solo una corretta. I punteggi sono assegnati nella seguente modalità:
 
 - 1 punto per ogni risposta corretta
 - -0.33 punti per ogni risposta sbagliata
 - 0 punti per ogni risposta non data
 
-La durata dell’esame è di **45 minuti**. L’utilizzo dell’intelligenza artificiale generativa non è consentita durante l’esame.
+La durata dell’esame è di **45 minuti**. L’utilizzo di internet o dell'intelligenza artificiale generativa non è consentito durante l’esame.
 
 ## Esame (fun)
 
-Questa è la distribuzione simulata di 1000 student* che fanno un esame impostato in questo modo totalmente a caso.
+Questa è la distribuzione simulata di 1000 student* che fanno questo esame, rispondnendo totalmente a caso.
 
 ```{r}
-library(ggplot2)
+set.seed(2027)
 
 n <- 31
 choices <- 4
@@ -57,64 +91,42 @@ correct <- 1
 
 # studente che risponde a tutto, a caso
 
-resp <- replicate(1e3, sample(1:choices, size = n, TRUE))
+resp <- replicate(1e4, sample(1:choices, size = n, TRUE))
 pts <- apply(resp, 2, function(x) sum(ifelse(x == 1, 1, -0.33)))
 
 data.frame(
   pts = pts
 ) |> 
   ggplot(aes(x = pts)) +
-  geom_density(fill = "dodgerblue") +
+  geom_histogram(bins = 18, col = "black", fill = "dodgerblue") +
   xlab("Voto") +
-  geom_vline(xintercept = median(pts), lty = "dotted")
+  geom_vline(xintercept = median(pts), lwd = 1.5, col = "firebrick") +
+  theme(axis.title.y = element_blank())
 ```
 
 ## Organizzazione esame
 
 - Gli appelli d'esame si terranno nei periodi stabiliti dalla Scuola di Psicologia:  sessione estiva (giugno-luglio), autunnale (settembre) e invernale (gennaio-febbraio). **Non sono previsti preappelli**!
 - Fate sempre riferimento al [sito ufficiale](https://agendastudentiunipd.easystaff.it/index.php?view=easytest&_lang=en) per date e variazioni.
-- Per poter fare l'esame **bisogna** essere regolarmente iscrittə su Uniweb entro i termini previsti
-- L'esame si svolgerà in una delle Aule Informatiche al computer. E' obbligatorio iscriversi al corso nella piattaforma Moodle esami (che non è Moodle normale)
+- Per poter fare l'esame **bisogna** essere regolarmente iscrittə su Uniweb entro i termini previsti.
+- In ogni caso, a ridosso della prima data d'esame ci saranno indicazioni pratiche/logistiche più precise.
+- L'esame si svolgerà in aula informativa. E' obbligatorio iscriversi al corso nella piattaforma Moodle esami (che non è Moodle normale)^[La piattaforma per gli esami sta cambiando, avrete informazioni precise più avanti].
 
 ## Esercizi, analisi dei dati ed R
 
-Durante il corso faremo lezioni pratiche e lezioni più applicate con un rapporto di 3:1 circa. Le lezioni pratiche consistono nell'implementare i metodi con dati reali tramite il software R.
-
-La conoscenza del linguaggio R non è necessaria per svolgere l'esame MA la comprensione degli esercizi e di output di analisi reali si.
-
-L'utilizzo di R è quindi facoltativo (lo uso io durante le lezioni spiegando tutto quello che faccio) ma fortemente consigliato per capire meglio i concetti.
-
-Tutto quello (quasi) che faccio in R si può fare in qualsiasi altro linguaggio/software (SPSS, Jamovi, JASP, Excel, etc.). Qualche volta vedremo qualche applicazione usando alternative (principalmente Jamovi).
-
-## ~ Programma
-
-A grandi linee^[In base a come procedede ci possono essere degli aggiustamenti. Ovviamente anche l'esame sarà adattato in base al programma svolto.] il programma sarà:
-
-- Introduzione all'analisi dei dati: utilità, disegni di ricerca, problematiche e aspetti importanti
-- Variabili, statistiche descrittive e grafici
-- Cenni di misurazione e testing psicologico
-- Inferenza statistica
-- Regressione Lineare
-- Cenni di regressione lineare multilivello
-- Metanalisi e metaricerca
-
-## ~ Programma
-
-Inoltre, se abbiamo tempo ci saranno degli approfondimenti molto pratici:
-
-- come usare (e come non usare) chatGPT e simili nell'analisi dei dati
-- introduzione ad R
-- cenni ad altri argomenti utili quando si analizzano dati in ambito di comunità
+- Durante il corso faremo lezioni teoriche e pratiche con un rapporto di 3:1 circa. Le lezioni pratiche consistono nell'implementare i metodi con dati reali tramite il software R/Jamovi.
+- La conoscenza di R o Jamovi non è necessaria per svolgere l'esame. Tuttavia rispondere alle domande sarà sicuramente più semplice seguendo anche la parte pratica.
+- L'utilizzo di R/Jamovi verrà usato principalmente da me per la parte pratica. Vi consiglio quindi di installare R e Jamovi (istruzioni dopo) per potermi seguire e provare.
 
 # Regole del gioco
 
 ## 1. Quality over quantity
 
-Il programma è denso, tutte le slide e materiali saranno a disposizione. Tuttavia la mia priorità è passarvi al meglio i concetti principali.
+1. Il programma è denso, tutte le slide e materiali saranno a disposizione. Tuttavia la mia priorità è passarvi al meglio i concetti principali.
+2. Preferisco approfondire o chiarire maggiormente gli aspetti di base invece di fare esattamente tutto il programma previsto.
+3. In ogni caso, in presenza di modifiche al programma l'esame sarà sempre su quello che è stato effettivamente trattato a lezione.
 
-Preferisco rimanere di più su qualcosa di non chiaro piuttosto di procedere su molte cose poco chiare o completamente non chiare.
-
-## 2. Participation
+## 2. Partecipazione
 
 Il punto 1 di prima, è particolarmente vero a patto che io sappia quello che non è chiaro. Quindi:
 
@@ -126,31 +138,41 @@ Il punto 1 di prima, è particolarmente vero a patto che io sappia quello che no
 - partecipate
 - partecipate
 
-## 3. Questions
+## 3. Domande
 
-> There are no stupid questions, only stupid answers
+> " [...] every question is a cry to understand the world. There is no such thing as a dumb question"
+> <footer>— Carl Sagan</footer>
 
-Da psicologo abilitato assumo un atteggiamento genuinamente non giudicante. Le domande non sono intelligenti o stupide ma sono utili (quelle che vengono fatte) o inutili (quelle che non vengono fatte).
+Vi assicuro che la cosa più soddisfaciente per un docente è la partecipazione attiva ed il ricevere domande. Le domande possono essere di chiarimento, ripetizione o di approfondimento/curiosità. Cercherò di rispondere al meglio ad ognuna di queste.
 
 ## 3. Questions pt.2
 
-Per identificare meglio gli argomenti critici e quelli da ripetere ho creato una board su Padlet. Per ogni macro-argomento c'è una sezione e potete (in modo anonimo) mettere domande, dubbi, commenti.
+So che fare domande o partecipare non è sempre semplice (sono uno Psicologo alla fine). 
+Per identificare meglio gli argomenti critici e quelli da ripetere ho creato una board su Padlet. Per ogni macro-argomento c'è una sezione e potete (in modo anonimo) mettere domande, dubbi, commenti (il link è presente anche su Moodle).
 
-[https://unipd.padlet.org/filippogambarota/adcom2526](https://unipd.padlet.org/filippogambarota/adcom2526)
+<center>
 
-{{< qrcode https://unipd.padlet.org/filippogambarota/adcom2526 >}}
+[{{< var padlet >}}]({{< var padlet >}})
 
-Prima di cominciare la lezione, dedichiamo una decina di minuti a rivedere gli argomenti critici. L'idea è che scriviate le domande dopo la lezione, e le rivediamo in quella dopo.
+</center>
+
+Prima di cominciare la lezione, dedichiamo una decina di minuti a rivedere gli argomenti critici. Potete quindi inserire domande tra una lezione e l'altra.
 
 ## 3. Questions pt.3
 
-Se non emerge nessuna domanda a lezione (preferibilmente) o su Padlet, do per scontata sia per le lezioni future che per l'esame, l'assenza di dubbi e quindi la chiarezza di quell'argomento. Think carefully 🙃.
+Se non emerge nessuna domanda a lezione (preferibilmente) o su Padlet, do per scontata sia per le lezioni future che per l'esame, l'assenza di dubbi e quindi la chiarezza di quell'argomento. 
+
+</br>
+</br>
+</br>
+
+<center>
+Think carefully 🙃.
+</center>
 
 ## 4. Materiale
 
-Tutto il materiale come slides, esercizi, approfondimenti, etc. si trova su [Moodle]({{< var moodle >}}). In realtà, su moodle ci sono solo dei link al sito che ho creato per il corso [{{< var ghpages >}}]({{< var ghpages >}}).
-
-Trovate lo stesso materiale ma è più semplice e veloce accedere al sito esterno. Ci sono anche tutti i link utili come il Padlet, etc. Vi consiglio di metterlo tra i bookmarks.
+Tutto il materiale principale come slides, esercizi, approfondimenti, etc. si trova su [Moodle]({{< var moodle >}}). Tutto il materiale (oltre a cose aggiuntive che sono meno pratiche da gestire con moodle) si può trovare anche al seguente sito [{{< var ghpages >}}]({{< var ghpages >}}).
 
 ## 5. Logistica lezioni
 
@@ -162,23 +184,71 @@ Le lezioni saranno organizzate in questo modo:
 
 Nel caso di lezioni pratiche (1 ogni 3 circa), useremo un dataset il più possibile rilevante per l'ambito e di interesse e con R o altro applicheremo dei concetti studiati in precedenza.
 
-# Laboratorio
+## Libri di testo?
 
-## Laboratorio
+No non sono previsti libri di testo, il materiale di studio sono le slide usate durante la lezione.
+
+Tuttavia, per avere comunque dei riferimenti per approfondire:
+
+- [Pastore, M. (2015) Analisi dei Dati in Psicologia](https://www.mulino.it/isbn/9788815258984)
+- [Navarro, D. Learning Statistics with R](https://learningstatisticswithr.com/) [eng, disponibile gratuitamente]
+- [Navarro, D. & Foxcroft D.R. Learning Statistics with Jamovi](https://davidfoxcroft.github.io/lsj-book/) [eng, disponibile gratuitamente]
+
+# Laboratorio di analisi dei dati
+
+## Laboratorio di analisi dei dati
 
 Il laboratorio verrà introdotto direttamente alla prima lezione. L'obiettivo è quello di:
 
 - approfondire a livello pratico alcuni argomenti del corso (e.g., metanalisi)
-- approfondire l'utilizzo del software R per produrre report e rappresentazioni grafiche
+- approfondire l'utilizzo del software R
+- introduzione al software Quarto per produrre report, tesi e presentazioni
 
-Ovviamente seppur condividendo alcuni argomenti, il programma del corso e quello del laboratorio sono totalmente indipendenti.
+## Laboratorio di analisi dei dati
+
+ore lezione qui
 
 # Didattica integrativa
 
 ## Didattica integrativa
 
-Le attività di didattica integrativa sono considerate delle **ore aggiuntive** e **facoltative** per *chiarire*, *approfondire* ed *esercitarsi* sui contenuti del corso. Alcune precisazioni:
+Le attività di didattica integrativa sono considerate delle **ore aggiuntive** e **facoltative** per *chiarire*, *approfondire* ed *esercitarsi* sui contenuti del corso. Si tratta di 14 ore (~ 7 lezioni da 2 ore).
+
+Alcune precisazioni:
 
 - Eventuali approfondimenti non sono parte del programma ufficiale del corso e quindi dell'esame
 - La partecipazione ad uno o più incontri è totalmente facoltativa e non ci sarà un'iscrizione formale. Potrebbe essere solo richiesto, in modo anonimo, un sondaggio di presenza per ragioni organizzative (e.g., trovare l'aula adatta)
-- Il giorno e orario sarà fisso e non si sovrapporrà con i corsi previsti per il vostro anno/semestre. Tuttavia non ci potrà essere molta flessibilità per venire incontro ad altri vincoli che non siano le lezioni degli altri corsi.
+- Il giorno e orario sarà fisso e non ci potrà essere molta flessibilità. L'unica garanzia la non sovrapposizione con altre lezioni del vostro corso.
+
+# Getting started
+
+## Installare R ed R Studio
+
+Senza andare nei dettagli (vedremo nelle prossime lezioni) vi chiedo di installare R ed R Studio. Per farlo potete seguire la guida a questo [link](https://psicostat.github.io/Introduction2R/install.html). La fornisce le istruzioni per Windows, MacOS e Linux.
+
+- Installare R Studio da solo non è sufficiente. R Studio è solo l'interfaccia grafica (o IDE) ma il motore R deve essere installato.
+
+## R ed R Studio senza PC
+
+Se avete a disposizione un tablet (es. Ipad) probabilmente non sarete in grado di installare R ed R Studio. Ci sono due opzioni principali:
+
+- Se avete un PC a disposizione ed è possibile portate quello durante le lezioni
+- Se avete solo un tablet potete usare R Studio Cloud. Sostanzialmente è come avere R Studio Desktop ma lo utilizzate tramite browser. Ci sono alcune limitazioni ma per l'utilizzo (sopratutto in aula) dovrebbe andare più che bene.
+
+Per usare R Studio Cloud è sufficiente creare un account gratuito a questo [link](https://login.posit.cloud/register?product=cloud&redirect=%2Foauth%2Fauthorize%3Fredirect_uri%3Dhttps%253A%252F%252Fposit.cloud%252Flogin%26client_id%3Dposit-cloud%26response_type%3Dcode%26show_auth%3D0).
+
+Qui trovate un breve [video tutorial](https://drive.google.com/file/d/1BwUxn-H8LGQhrKM_CMB79ri1sQpL5C38/view?usp=drive_link) su come utilizzare R Studio Cloud.
+
+## Jamovi
+
+Nel caso di Jamovi vale lo stesso principio di R ed R Studio. Con un classico PC è sufficiente installare l'applicazione dal sito [https://www.jamovi.org/download.html](https://www.jamovi.org/download.html).
+
+Esiste anche nel caso di Jamovi una versione cloud ([https://www.jamovi.org/cloud.html](https://www.jamovi.org/cloud.html)) analoga a quella di R Studio ma sembra essere molto limitata. Può essere sufficiente per fare alcune prove ma per avere un ambiente di lavoro più stabile è consigliato utilizzare quella completa e locale.
+
+## Link utili (teneteli nei bookmarks)
+
+Ci sono una serie di link utili (presenti anche su Moodle) che useremo spesso:
+
+- [Padlet con domande]({{< var padlet >}})
+- [Sito del corso]({{< var ghpages >}}) (parallelo a Moodle)
+- [Programma lezioni e argomenti]({{< var timetable >}})

@@ -3,13 +3,13 @@ project:
   render:
     - "*.qmd"
     - "!local/"
-    - "!slides/"
+    - "slides/exploring-data.qmd"
 
 website:
-  favicon: resources/favicon.png
+  favicon: resources/hex.svg
   title: "ADCOM"
   navbar:
-    background: "#786fa6"
+    #background: "#786fa6"
     search: true
     right:
       - icon: github
@@ -31,7 +31,7 @@ execute:
 format:
   html:
     theme:
-      - cosmo
+      - pulse
       - brand
     css: styles.css
     toc: true

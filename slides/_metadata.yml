@@ -5,3 +5,5 @@ format:
 subtitle: "**ADCOM** \n {{< var academic-year >}}"
 date: last-modified
 date-format: "*[Ultimo aggiornamento:] MM-DD-YYYY*"
+crossref: 
+  eq-prefix: Eq.

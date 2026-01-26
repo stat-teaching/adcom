@@ -14,6 +14,8 @@ listing:
   id: slides
 ---
 
+![](resources/hex.svg){fig-align="center"}
+
 ```{r}
 #| message: false
 devtools::load_all()
@@ -25,19 +27,6 @@ In questo sito sarà presente tutto il materiale come slides, esercizi, approfon
 
 ## Slides
 
-::: {#sample-listings}
+::: {#slides}
 :::
-
-## Link utili
-
-- Moodle:
-- Didattica:
-
-## Contatti
-
-Per orari di ricevimento, proposte di tesi e comunicazioni ufficiali si faccia riferimento alla mia pagina ufficiale [Unipd]({{< var unipd >}}).
-
-Per contattarmi: {{< fa envelope >}} [{{< var unipd-mail >}}]({{< var unipd-mail >}})
-
-## FAQ
 

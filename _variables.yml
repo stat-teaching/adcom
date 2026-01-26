@@ -1,6 +1,9 @@
 moodle: https://quarto.org/docs/authoring/variables.html
-unipd: https://didattica.unipd.it/off/docente/5B6087F14CEBE76D28A2F158C10564D7
+unipd-website: https://www.unipd.it/en/contatti/rubrica/?detail=Y&ruolo=1&checkout=cerca&persona=GAMBAROTA&key=5B6087F14CEBE76D28A2F158C10564D7
 personal-website: https://filippogambarota.github.io/
 unipd-mail: filippo.gambarota@unipd.it
 academic-year: 2025-2026
 ghpages: https://stat-teaching.github.io/adcom
+syllabus: https://unipd.coursecatalogue.cineca.it/corsi/2025/9974/insegnamenti/2025/51499_485781_77383/2025/51499?coorte=2025
+padlet: https://padlet.com/unipd/adcom2526
+timetable: https://github.com/stat-teaching/adcom/orari

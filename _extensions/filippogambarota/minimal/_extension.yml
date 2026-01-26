@@ -1,14 +1,20 @@
 title: minimal
 author: filippogambarota
-version: 1.0.0
+version: 1.0.2
 quarto-required: ">=1.6.0"
 contributes:
   formats:
     revealjs:
       theme: [default, custom.scss]
-      template-partials:
-        - title-slide.html
       code-line-numbers: false
+      toc-title: Contents
+      toc-depth: 1
+      email-obfuscation: javascript
+      link-external-newwindow: true
+      citations-hover: true
+      template: minimal-template.html
+      fig-format: svg
+      fig-align: center
     beamer:
       include-in-header:
         - header.tex
@@ -22,3 +28,4 @@ contributes:
       link-citations: true
       toc-title: Contents
       slide-number: false
+      fig-align: center

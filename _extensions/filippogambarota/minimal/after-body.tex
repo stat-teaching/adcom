@@ -7,23 +7,10 @@ $if(email)$
 $endif$
 \vspace{10pt}
 \faGlobe \; \textbf{$web$} \\
-
-\vspace{15pt}
-
+\vspace{20pt}
 $if(final-slide-logo)$
-    \includegraphics[width=0.3\textwidth]{$final-slide-logo$} \\
-    \vspace{10pt}
+  \includegraphics[width=0.2\textwidth]{$final-slide-logo$}
 $endif$
-$if(qr-code)$
-    \centering
-    \textcolor{blue}{\qrcode[height=2cm]{$qr-code$}} \\[0.5em]
-    \textbf{Slides}
-$endif$
-
-$if(slides-update)$
-\scriptsize \textit{Last update: $slides-update$} \normalsize
-$endif$
-
 \vfill
 \end{centering}
 \end{frame}

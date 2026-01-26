@@ -29,10 +29,11 @@
 
 # Exploring data
 
+- statistica, parametro, etc.
 - statistiche descrittive
 - concetto di varianza, devianza e covarianza
 - rappresentazioni grafiche, quando e come usarle
-- suggerimenti per un buon grafico e come leggerli1
+- suggerimenti per un buon grafico e come leggerli
 - tipi di distribuzioni, con focus nella normale
 - standardizzazione
 - apa book e rules
@@ -72,7 +73,7 @@ Nell'introduzione fai esempio di:
 - interpretazione parametri, wald test, etc.
 - semplice, multipla, etc.
 	- concetto di slope, derivata b = dy/dx
-- concetto di confounder (pp. 385 ROS), mediatiore e moderatore (interazione)
+- concetto di confounder (pp. 385 ROS), mediatore e moderatore (interazione)
     - https://mentalhealth.bmj.com/content/12/3/68#ref-3
 - il concetto di adjusting/controlling for come aspetto fondamentale
 - predittori categoriali e numerici
