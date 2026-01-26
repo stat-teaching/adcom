@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://stat-teaching.github.io/adcom/notes/jamovi.html</loc>
-    <lastmod>2025-12-29T11:02:50.507Z</lastmod>
+    <loc>https://stat-teaching.github.io/adcom/slides/exploring-data.html</loc>
+    <lastmod>2026-01-23T10:57:01.370Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat-teaching.github.io/adcom/slides/02-intro-inferenza.html</loc>
+    <lastmod>2025-12-29T11:02:50.512Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat-teaching.github.io/adcom/slides/00-intro-corso.html</loc>
+    <lastmod>2026-01-26T18:05:23.076Z</lastmod>
   </url>
   <url>
     <loc>https://stat-teaching.github.io/adcom/index.html</loc>
-    <lastmod>2025-12-29T11:02:49.433Z</lastmod>
+    <lastmod>2026-01-26T18:28:15.218Z</lastmod>
   </url>
   <url>
     <loc>https://stat-teaching.github.io/adcom/data.html</loc>
@@ -19,5 +27,13 @@
   <url>
     <loc>https://stat-teaching.github.io/adcom/notes.html</loc>
     <lastmod>2025-12-29T11:02:50.485Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat-teaching.github.io/adcom/slides/01-intro-analisi-dati.html</loc>
+    <lastmod>2026-01-26T10:58:27.764Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat-teaching.github.io/adcom/slides/03-analisi-dati-comunita.html</loc>
+    <lastmod>2025-12-29T11:02:50.540Z</lastmod>
   </url>
 </urlset>

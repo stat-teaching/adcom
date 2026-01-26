@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./resources/favicon.png" rel="icon" type="image/png">
+<link href="./resources/hex.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
@@ -44,9 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-053b4e5772c1728823606598ba765ed8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e81d5102cd3fac90c9ec95736eec354c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,9 +82,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -178,9 +176,6 @@ window.Quarto = {
    
   <ul>
   <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#link-utili" id="toc-link-utili" class="nav-link" data-scroll-target="#link-utili">Link utili</a></li>
-  <li><a href="#contatti" id="toc-contatti" class="nav-link" data-scroll-target="#contatti">Contatti</a></li>
-  <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq">FAQ</a></li>
   </ul>
 </nav>
     </div>
@@ -219,51 +214,89 @@ window.Quarto = {
 </header>
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/hex.svg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>Materiale per il corso di Analisi dei Dati in Ambito di Comunità (ADCOM, 6 CFU) nel corso di Psicologia di Comunità, della Promozione del Benessere e del Cambiamento Sociale.</p>
 <p>In questo sito sarà presente tutto il materiale come slides, esercizi, approfondimenti, codici e dati. Per ogni comunicazione ufficiale si faccia sempre riferimento alla <a href="https://quarto.org/docs/authoring/variables.html">pagina Moodle del corso</a>.</p>
 <section id="slides" class="level2">
 <h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<div id="sample-listings">
-
-</div>
-</section>
-<section id="link-utili" class="level2">
-<h2 class="anchored" data-anchor-id="link-utili">Link utili</h2>
-<ul>
-<li>Moodle:</li>
-<li>Didattica:</li>
-</ul>
-</section>
-<section id="contatti" class="level2">
-<h2 class="anchored" data-anchor-id="contatti">Contatti</h2>
-<p>Per orari di ricevimento, proposte di tesi e comunicazioni ufficiali si faccia riferimento alla mia pagina ufficiale <a href="https://didattica.unipd.it/off/docente/5B6087F14CEBE76D28A2F158C10564D7">Unipd</a>.</p>
-<p>Per contattarmi: <i class="fa-solid fa-envelope" aria-label="envelope"></i> <a href="filippo.gambarota@unipd.it">filippo.gambarota@unipd.it</a></p>
-</section>
-<section id="faq" class="level2">
-<h2 class="anchored" data-anchor-id="faq">FAQ</h2>
-
-
-
-</section>
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-slides">
+<div id="listing-slides" class="quarto-listing quarto-listing-container-table">
 <div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+    <select id="listing-slides-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-slides'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+      <option value="" disabled="" selected="" hidden="">Order By</option>
+      <option value="index" data-direction="asc">Default</option>
+      <option value="listing-title-sort" data-direction="asc">
+        Title
+      </option>
+    </select>
+  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-<table class="quarto-listing-table table caption-top">
+<table class="quarto-listing-table table">
 <thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Title</th>
+<tr>
+
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+
 </tr>
 </thead>
 <tbody class="list">
+
+<tr data-index="0" data-listing-date-sort="1769450723000" data-listing-file-modified-sort="1769450723076" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1540" data-listing-title-sort="Introduzione al Corso" data-listing-filename-sort="00-intro-corso.qmd">
+<td>
+<a href="./slides/00-intro-corso.html" class="title listing-title">Introduzione al Corso</a>
+</td>
+
+</tr>
+
+<tr data-index="1" data-listing-date-sort="1769425107000" data-listing-file-modified-sort="1769425107764" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4768" data-listing-title-sort="Introduzione all'analisi dei dati" data-listing-filename-sort="01-intro-analisi-dati.qmd">
+<td>
+<a href="./slides/01-intro-analisi-dati.html" class="title listing-title">Introduzione all’analisi dei dati</a>
+</td>
+
+</tr>
+
+<tr data-index="2" data-listing-date-sort="1767006170000" data-listing-file-modified-sort="1767006170512" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="930" data-listing-title-sort="Richiami di inferenza" data-listing-filename-sort="02-intro-inferenza.qmd">
+<td>
+<a href="./slides/02-intro-inferenza.html" class="title listing-title">Richiami di inferenza</a>
+</td>
+
+</tr>
+
+<tr data-index="3" data-listing-date-sort="1767006170000" data-listing-file-modified-sort="1767006170540" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="765" data-listing-title-sort="Analisi dei dati in ambito di Comunità" data-listing-filename-sort="03-analisi-dati-comunita.qmd">
+<td>
+<a href="./slides/03-analisi-dati-comunita.html" class="title listing-title">Analisi dei dati in ambito di Comunità</a>
+</td>
+
+</tr>
+
+<tr data-index="4" data-listing-date-sort="1769165821000" data-listing-file-modified-sort="1769165821370" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1216" data-listing-title-sort="Exploring Data" data-listing-filename-sort="exploring-data.qmd">
+<td>
+<a href="./slides/exploring-data.html" class="title listing-title">Exploring Data</a>
+</td>
+
+</tr>
+
 </tbody>
 </table>
 <div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div>
+
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

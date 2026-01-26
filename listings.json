@@ -1,7 +1,13 @@
 [
   {
     "listing": "/index.html",
-    "items": []
+    "items": [
+      "/slides/00-intro-corso.html",
+      "/slides/01-intro-analisi-dati.html",
+      "/slides/02-intro-inferenza.html",
+      "/slides/03-analisi-dati-comunita.html",
+      "/slides/exploring-data.html"
+    ]
   },
   {
     "listing": "/data.html",
@@ -9,8 +15,6 @@
   },
   {
     "listing": "/notes.html",
-    "items": [
-      "/notes/jamovi.html"
-    ]
+    "items": []
   }
 ]
