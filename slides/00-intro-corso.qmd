@@ -76,7 +76,7 @@ L'esame è scritto e consiste di **31 domande a risposta multipla**. Per ogni do
 - -0.33 punti per ogni risposta sbagliata
 - 0 punti per ogni risposta non data
 
-La durata dell’esame è di **45 minuti**. L’utilizzo di internet o dell'intelligenza artificiale generativa non è consentito durante l’esame.
+Durante l'esame non è possibile utilizzare internet, l'intelligenza artificiale generativa o altro materiale cartaceo. La durata è di **45 minuti**.
 
 ## Esame (fun)
 
@@ -174,13 +174,17 @@ Think carefully 🙃.
 
 Tutto il materiale principale come slides, esercizi, approfondimenti, etc. si trova su [Moodle]({{< var moodle >}}). Tutto il materiale (oltre a cose aggiuntive che sono meno pratiche da gestire con moodle) si può trovare anche al seguente sito [{{< var ghpages >}}]({{< var ghpages >}}).
 
+Il materiale è in costruzione e continuo aggiornamento/miglioramento. Su Moodle o sul sito indicato prima le slide hanno sempre la data di ultimo aggiornamento. Se avete delle slide più datate, scaricate quelle più recenti. I cambiamenti comunque saranno minimi (piccoli errori, grafici migliori, miglioramenti, etc.)
+
+![](img/slide-date.png){fig-align="center"}
+
 ## 5. Logistica lezioni
 
 Le lezioni saranno organizzate in questo modo:
 
-- prima parte: revisione domande su Padlet + domande a voce
-- argomento del giorno in caso di lezioni teoriche/metodologiche
-- esempi con dati reali da articoli/libri
+- **prima parte**: revisione domande su Padlet + domande a voce
+- **argomento del giorno** in caso di lezioni teoriche/metodologiche
+- **esempi con dati** reali da articoli/libri
 
 Nel caso di lezioni pratiche (1 ogni 3 circa), useremo un dataset il più possibile rilevante per l'ambito e di interesse e con R o altro applicheremo dei concetti studiati in precedenza.
 
@@ -204,9 +208,7 @@ Il laboratorio verrà introdotto direttamente alla prima lezione. L'obiettivo è
 - approfondire l'utilizzo del software R
 - introduzione al software Quarto per produrre report, tesi e presentazioni
 
-## Laboratorio di analisi dei dati
-
-ore lezione qui
+Le lezioni saranno di 3 ore il Venerdì dalle 11:30 alle 14:30. Potete trovare a questo link [{{< var timetable >}}]({{< var timetable >}}) (anche su Moodle) un calendario con orari ed argomenti (aggiornati progressivamente) delle lezioni.
 
 # Didattica integrativa
 
@@ -252,3 +254,15 @@ Ci sono una serie di link utili (presenti anche su Moodle) che useremo spesso:
 - [Padlet con domande]({{< var padlet >}})
 - [Sito del corso]({{< var ghpages >}}) (parallelo a Moodle)
 - [Programma lezioni e argomenti]({{< var timetable >}})
+
+## Piccolo questionario
+
+Vi chiedo di fare un piccolo questionario totalmente anonimo. Non vi dico ancora a cosa servirà ma lo vedremo nelle prossime lezioni ma vi garantisco che sarà molto utile.
+
+Potete andare a questo link [github.com/stat-teaching/adcom/form/initial](github.com/stat-teaching/adcom/form/initial) oppure scannerizzare questo QRcode:
+
+<center>
+
+{{< qrcode https://forms.gle/TxhyNyjnzjiTi96c6 width=300 height=300 >}}
+
+</center>
