@@ -1,0 +1,18 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/slides/00-intro-corso.html",
+      "/slides/01-intro-analisi-dati.html",
+      "/slides/02-measurement-and-research-methods.html"
+    ]
+  },
+  {
+    "listing": "/data.html",
+    "items": []
+  },
+  {
+    "listing": "/notes.html",
+    "items": []
+  }
+]

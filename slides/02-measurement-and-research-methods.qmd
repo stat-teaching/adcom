@@ -1,0 +1,814 @@
+---
+title: Introduzione alla misurazione e metodologia della ricerca
+toc: true
+---
+
+# Processo scientifico
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(patchwork)
+library(dagitty)
+library(ggdag)
+devtools::load_all()
+
+qtab <- function(x, width = NULL, fontsize = 0.85){
+    tinytable::tt(x, width = width) |> 
+        tinytable::theme_striped() |> 
+        tinytable::style_tt(fontsize = fontsize)
+}
+
+knitr::opts_chunk$set(
+  fig.align = "center",
+  fig.dev = "svg"
+)
+
+theme_set(mtheme())
+```
+
+## Processo scientifico
+
+![Adapted from Jhangiani et al. [2019](https://opentext.wsu.edu/carriecuttler/chapter/a-model-of-scientific-research-in-psychology/)](img/scientific-process.png)
+
+## Letteratura <--> Domanda di ricerca
+
+Il punto di partenza è sempre la formulazione di domande di ricerca. 
+
+Questo processo è bidirezionale perchè la letteratura scientifica può essere fonte o de le nostre domande di ricerca.
+
+## Studio empirico
+
+Possiamo identificare 3 aree generali relative alla realizzazione di uno studio empirico:
+
+- **Disegno di ricerca**
+- **Raccolta dati e campionamento**
+- **Misurazione**
+
+## ... e l'analisi dei dati?
+
+Non ho messo l'analisi dei dati perchè è importante distinguere tra:
+
+- analisi dei dati come azione pratica: ho il dataset e applico il modello di analisi
+- analisi dei dati come mindset e *data literacy*
+
+Il primo è facile, è sufficiente conoscere uno strumento (R, SPSS, Jamovi, etc.) e sapere quello che si deve fare. 
+
+Il secondo invece richiede conoscenza, spritico critico, ragionamento e allenamento. Non è uno step separato ma accompagna tutti i momenti della ricerca. 
+
+Conoscere la statistica permette di valutare uno studio in letteratura, conoscere il disegno di ricerca migliore, valutare le misure migliori e cosi via. Questo è quello su cui ci focalizzeremo maggiormente durante il corso.
+
+## Data literacy
+
+> Data literacy is the ability to collect, manage, evaluate, and apply data, in a critical manner (Risdale et al., [2015](https://dalspaceb.library.dal.ca/server/api/core/bitstreams/7c0db868-79ac-4c3c-9ad0-f2a93cf2ccc6/content))
+
+## Terminologia
+
+Quando parliamo di esperimenti, ricerche e analisi dati la terminologia è importante:
+
+- $y$ sono gli **outcomes** (uno o più). Solitamente chiamate anche *variabili dipendenti* (ma preferisco *outcomes*)
+- $x$ sono i **predittori**. Solitamente chiamate anche variabili *indipendenti* (ma preferisco *predittori*)
+- $x_p$ significa il predittore $p$ ($p = 1, 2, \dots, p$)
+
+## Terminologia
+
+- **dataset** è la struttura dati di dimensione $n \times k$ dove $n$ sono le righe e $k$ le colonne (pensate ad un foglio Excel). I predittori $p$ sono una parte delle colonne $k$ (o una loro trasformazione) che utilizziamo in un modello statistico.
+- **unità statistiche** sono la l'elemento base o l'entità elementare su cui vengono misurati i caratteri oggetto di indagine all'interno di una popolazione statistica. Possono essere persone, animali, misurazioni nel tempo. A livello pratico è il significato delle $n$ righe nel dataset.
+
+## Terminologia
+
+- Per **costrutto o variabile latente** intendiamo qualcosa di *non direttamente osservabile* ma che risulta essere il nostro oggetto d'interesse. Senso di comunità, autostima, depressione, benessere, etc. sono tutte variabili latenti.
+- Essendo non direttamente osservabili dobbiamo usare degli **indicatori** che sono legati ed informativi della variabile latente. 
+- Il legame tra variabile latente e indicatori si chiama **operazionalizzazione** la qui bontà determina la *precisione con cui stimiamo la variabile latente*.
+
+# Misurazione Psicologica
+
+## Diverse variabili, diverse analisi
+
+Prima di imparare ad analizzare i dati è importante capire come i dati vengono raccolti e strutturati. Quando raccogliamo o trattiamo una variabile, chiediamoci sempre quale sia la tipologia. Il tipo di variabile influenza diversi aspetti, come:
+
+- quali statistiche descrittive sono sensate e quali sono più informative
+- le rappresentazioni grafiche più informative
+- il modello statistico più adeguato per quella variabile
+
+## Variabili, le tipologie principali
+
+Possiamo individuare 4 tipologie principali di variabili:
+
+- **nominale**
+- **ordinale**
+- **intervalli**
+- **rapporti**
+
+Questa viene anche chiamata tassonomia **NOIR**.
+
+::: aside
+Per un paper classico si veda @Stevens1946-te [{{< fa file-pdf >}}](`r pdf("../materials/stevens1946.pdf")`)
+:::
+
+## Variabili di tipo *nominale*
+
+Le variabili di tipologia *nominale* sono anche definite variabili *categoriali*. Sono quindi delle etichette, verbali o numeriche, che vengono assegnate ad una tipologia di osservazione. Ad esempio:
+
+- Regione di residenza
+- Colore degli occhi
+- Religione
+- Categoria diagnostica
+
+Le diverse categorie sono interscambiabili quindi *non c'è un ordine predefinito*.  L'unica operazione consentita è quella di contare le diverse categorie calcolando, in vari modi, distribuzioni di *frequenza*.
+
+## Variabili di tipo *nominale*, esempi:
+
+Lo vedremo meglio nelle prossime lezioni, ma possiamo rappresentare le frequenze tramite dei *barplot*:
+
+```{r}
+regione <- c("Veneto", "Sicilia", "Lombardia", "Marche", "Sardegna")
+regione <- sample(regione, 100, TRUE, c(0.5, 0.1, 0.1, 0.2, 0.2))
+
+diagnosi <- c("DDM", "DOC", "DCA", "DA")
+diagnosi <- sample(diagnosi, 100, TRUE)
+
+(ggbar(regione) + ggtitle("Regione")) + theme(axis.title.x = element_blank(), axis.text.x = element_text(angle = 90)) + (ggbar(diagnosi) + ggtitle("Diagnosi"))
+```
+
+## Variabili di tipo *nominale*, quali operazioni?
+
+::: {.callout-caution}
+Cosa succede, secondo voi, se dovessi calcolare la *media* di una variabile categoriale?
+
+E se dovessi calcolare la *varianza* o la *mediana*?
+:::
+
+. . .
+
+In sostanza, la tipologia di variabile è spesso legata anche a quali operazioni sono permesse, sensate o informative. In questo caso, calcolare la *regione media* non ha alcun senso.
+
+Rivedremo le statistiche descrittive ed i grafici ma è importante sapere che ogni tipologia di variabile ha il suo tipo di grafico/statistica.
+
+## Variabili di tipo *ordinale*
+
+Le variabili di tipo *ordinale* sono quelle più comunemente utilizzate in Psicologia ed anche quelle in un certo senso meno intuitive.
+
+Alcuni esempi:
+
+- Risposte su scale *likert*
+- Status socio-economico (e.g., alto, medio e basso)
+- Livello d'istruzione
+
+## Variabili di tipo *ordinale*
+
+Rispetto alle variabili categoriali, le variabili *ordinali* hanno un ordine. Possiamo quindi pensarle categorie alle quali assegnamo un numero progressivo.
+
+. . .
+
+Quello che non è definito per le variabili ordinali, è la *distanza* tra le categorie. Potremmo assegnare allo status socio-economico 1 = basso, 2 = medio e 3 = alto, come 1.5, 2, 2.1.
+
+. . .
+
+In altri termini, la distanza tra le categorie non è nota e quindi non è utilizzabile come informazione.
+
+## Variabili di tipo *ordinale*, esempi:
+
+Anche qui, lo vedremo meglio nelle prossime lezioni ma un grafico a barre, ordinato è un tipo di rappresentazione grafica utilizzabile.
+
+```{r}
+ses <- sample(c("basso", "medio", "alto"), 100, TRUE, c(0.6, 0.3, 0.1))
+ses <- factor(ses, levels = c("basso", "medio", "alto"))
+ggbar(ses) + rm_title_x() + ggtitle("Status Socio-Economico")
+```
+
+## Variabili su scala ad *intervalli*
+
+Questo è il primo tipo di variabile *numerica* in senso stretto. Le principali caratteristiche sono:
+
+- L'ordine è significativo (questo viene ereditato dalle variabili ordinali)
+- Le differenze (*intervalli*) tra due valori sono note e costanti per tutta la scala
+- Non c'è uno zero assoluto definito come assenza della proprietà misurata
+
+La mancanza di zero assoluto rende quindi non intepretabili i rapporti tra valori, mentre lo sono le differenze.
+
+## Variabili su scala ad *intervalli*: esempi
+
+Alcuni esempi sono:
+
+- Temperatura come ad esempio Celsius o Fahrenheit
+- In generale le misure psicologiche come intelligenza, personalità, etc.
+- Le date sul calendario
+
+Possiamo dire che la distanza tra un QI di 100 e 110 è la stessa rispetto ad un QI di 115 e 125 (sono 10 punti di QI). Non possiamo dire che una persona che ha QI di 200 sia il doppio più intelligente di un QI di 100.
+
+## Variabili su scala ad *intervalli*: esempi
+
+```{r}
+QI <- rnorm(1e3, 100, 10)
+gghist(QI) + xlab("QI")
+```
+
+## Variabili su scala a *rapporti*
+
+Questo è il tipo più completo di variabile numerica che solitamente si trova nelle misurazioni fisiche. Eredità tutte le proprietà precedenti aggiungendo la presenza di uno zero assoluto inteso come assenza della proprietà.
+
+Qualche esempio:
+
+- Il tempo inteso come minuti, secondi, millisecondi: tempi di reazione in esperimenti cognitivi
+- Segnale psicofisiologico come EEG, ECG, etc.
+
+La presenza dello zero assoluto permette di poter calcolare rapporti significativi. Possiamo dire che 20 secondi sono il doppio del tempo rispetto a 10 secondi.
+
+## Tipologia di variabili, riassunto:
+
+Le 4 tipologie di variabili sono gerarchicamente ordinate rispetto alle operazioni permissibili e significative:
+
+- *categoriali* --> uguaglianza: possiamo dire se due osservazioni sono nella stessa categoria
+- *ordinali* --> ranking: possiamo dire chi è maggiore tra due osservazioni
+- *intervalli* --> distanze: possiamo interpretare la distanza tra due osservazioni
+*rapporti* --> rapporti: possiamo calcolare il rapporto tra due osservazioni
+
+## Intervalli vs ordinale
+
+Questa tassonomia non viene sempre rispettata. Ad esempio, le variabili ordinali come le scale *likert* vengono comunemente trattate come scale ad intervalli o anche a rapporti. Ad esempio viene assunto che la differenza tra 1 (per niente) e 2 (poco) sia la stessa che per altri livelli.
+
+## Operazioni permissibili
+
+Vedremo meglio quando parleremo delle varie statistiche descrittive. Tuttavia, in base al tipo di variabile ci sono delle operazioni *permissibili*.
+
+![Fonte: @Stevens1946-te](img/stevens1948_table1.png)
+
+## Vediamo un esempio insieme
+
+Provate a cercare, scaricare il pdf di questo articolo @Robinette2025-wg:
+
+![](img/robinette2024.png){fig-align="center"}
+
+Cercate nel metodo e risultati i vari tipi di variabili utilizzate e classificatele in base al NOIR.
+
+## Misurazione Psicologica
+
+La misurazione in Psicologia è forse l'argomento più complesso, critico ed affascinante di tutta la ricerca Psicologica e della Psicometria.
+
+Lo scopo del corso non è quello di fornire una panoramica esaustiva riguardo la misurazione ed il testing ma di fornire uno sguardo critico rispetto alle misure che utilizziamo.
+
+Le differenti variabili (colonne) del nostro dataset sono delle *misurazioni più o meno precise* di *costrutti più o meno definiti*.
+
+Capire questo punto e capire come valutare la qualità delle nostre variabili è fondamentale per comprendere i risultati dell'analisi dei dati.
+
+## GIGO - **G**arbage **I**n, **G**arbage **O**ut
+
+Il GIGO è un principio cardine nell'analisi dei dati. L'idea è che non c'è analisi sofisticata, algoritmo o procedura che possa risolvere il problema della bassa qualità dei dati.
+
+![](img/gigo.png)
+
+## GIGO - **G**arbage **I**n, **G**arbage **O**ut
+
+In Psicologia, la qualità dei dati è sempre legata al tipo di strumento, alla sua affidabilità, precisione e alla procedura di acquisizione.
+
+Pensate ad un dataset dove una delle colonne identifica un punteggio ad un questionario di depressione. Vediamo che questo è, per esempio, maggiore in soggetti italiani vs stranieri.
+
+Concludiamo che, per qualche motivo culturale, genetico o psicologico gli italiani abbiano una tendenza maggiore alla depressione.
+
+## GIGO - **G**arbage **I**n, **G**arbage **O**ut
+
+Tuttavia, non abbiamo misurato la depressione come se misurassimo il peso o l'età ma un insieme di item che *in teoria* dovrebbero essere legati al costrutto depressione.
+
+L'assunzione implicita è quindi che:
+
+- il questionario misuri effettivamente e principalmente la depressione
+- che misurandola più volte, questa sia più o meno simile
+- che gli item vengano compresi allo stesso modo
+- che gli item siano abbastanza sensibili da differenziare le persone
+
+## Qualità della misura
+
+Quindi non è sufficiente avere una misura di depressione ma dobbiamo chiederci:
+
+- quanto è precisa la misura
+- quanto è valida e affidabile
+- quanto è specifica vs aspecifica
+- ...
+
+## Variabili latenti e osservate
+
+In Psicologia, nella maggior parte dei casi siamo interessati a costrutti detti *latenti*. Latenti perchè non sono direttamente osservabili.
+
+Non sono direttamente osservabili ma sono indirettamente osservabili tramite degli *indicatori*. La qualità della nostra osservazione quindi dipende dalla qualità degli indicatori.
+
+Gli indicatori sono ad esempio gli item di un questionario o un insieme di questionari. La variabile *latente* è ad esempio la depressione.
+
+## Un esempio
+
+Vediamo un esempio di item del BDI-II:
+
+0. Non sono più irrequieto o teso del solito.
+1. Mi sento più irrequieto o teso del solito.
+2. Sono così irrequieto o agitato che è difficile stare fermo.
+3. Sono così irrequieto o agitato che devo continuare a muovermi o a fare qualcosa.
+
+Perchè questo indicatore viene utilizzato per la depressione secondo voi?
+
+## Un esempio
+
+Teoricamente, tra le **manifestazioni cliniche della depressione** è presente agitazione e irrequietezza. Quindi, **se misurassi questa manifestazione mi aspetterei, in media, punteggi elevati in soggetti depressi**.
+
+Quindi il collegamento tra indicatore e costrutto latente è teorico e viene assunto o inferito dall'osservazione ma non è scontato.
+
+Inoltre, ci possono essere molti modi diversi di misurare l'irrequietezza che quindi concorrono a misurare (indirettamente) più o meno accuratamente il costrutto latente.
+
+## Errore di misurazione
+
+La *classical test theory* assume che il processo di misurazione porta a rilevare un risultato osservato $X$ (*observed score*) che è la somma del punteggio vero $T$ (*true score*) e dell'errore $E$.
+
+$$
+X = T + E
+$$
+
+Questo è un concetto fondamentale perchè l'obiettivo della statistica è quello di, partendo dal dato osservato $E$ stimare $T$ tenendo in considerazione l'errore $E$.
+
+## Dati, modelli e residui
+
+Più in generale, ma lo vedremo meglio più avanti, i modelli statistici sono rappresentazioni semplificate della realtà. I modelli $M$ partono dai dati osservati $D$ ed in modo più o meno complesso cercano di spiegare quello che succede. Essendo la spiegazione non sempre perfetta, quello che rimane si chiama errore o residuo $E$.
+
+$$
+D = M + E
+$$
+
+## Dati, modelli e residui
+
+La linea blue è il nostro modello $M$, i punti sono i dati $D$ e l'errore o residui sono i segmenti rossi $E$. Diversi modelli si adattano in modo migliore o peggiore ai dati.
+
+```{r}
+#| fig-width: 15
+#| fig-asp: 0.7
+x <- runif(100, 0, 10)
+y <- 10 + 0.1 * x + 4 * x^2 + 0.2 * x^3 + rnorm(100, 0 , 50)
+
+dd <- data.frame(x, y)
+
+fit0 <- lm(y ~ 1, data = dd)
+fit1 <- lm(y ~ x, data = dd)
+fit2 <- lm(y ~ poly(x, 3), data = dd)
+
+dd$y0 <- predict(fit0)
+dd$y1 <- predict(fit1)
+dd$y2 <- predict(fit2)
+dd$y3 <- dd$y
+
+dd$plot <- dd$x %in% sapply(seq(0, 10, length.out = 10), function(x) filor::closest_number(dd$x, x))
+
+ddl <- dd |> 
+    pivot_longer(c(y0, y1, y2, y3)) |> 
+    mutate(name = case_when(
+        name == "y0" ~ "Modello 1",
+        name == "y1" ~ "Modello 2",
+        name == "y2" ~ "Modello 3",
+        TRUE ~ "Modello 4"
+    ))
+
+ddl |> 
+    ggplot(aes(x = x, y = y)) +
+    geom_line(aes(y = value), col = "#3366FF") +
+    geom_segment(
+        data = ddl[ddl$plot, ],
+        aes(x = x, xend = x, y = y, yend = value),
+        col = "firebrick",
+        lty = "dotted"
+    ) +
+    facet_wrap(~name) +
+    geom_point() +
+    ylab("y") +
+    xlab("x")
+```
+
+# Validità e affidabilità
+
+## Validità, riferimenti
+
+Questa sezione è basata sui seguenti riferimenti (trovate anche il pdf):
+
+- @Petersen2024-fg in particolare il Capitolo 4 ([{{< fa file-pdf >}}](files/petersen2024_chapter4_validity.pdf))
+- @American-Educational-Research-Association2014-in in particolare il Capitolo 1 ([{{< fa file-pdf >}}](files/apa2024standards_chapter1_validity.pdf))
+
+## Validità
+
+La validità può essere intesa come *il grado in cui l'evidenza e la teoria supportano le interpretazioni dei punteggi dei test in vista degli usi proposti dei test stessi* [@American-Educational-Research-Association2014-in]. Spesso, semplificando, viene detto che la validità di una misura (ad esempio un questionario) è la sua capacità di misurare quello che si prefigge (teoricamente) di misurare. Ritornando all'esempio della bilancia, la validità si chiede lo scopo per cui viene misurato il peso (e.g., indicatore della salute) e non come viene misurato (*affidabilità*). 
+
+## Validità
+
+Ci sono diverse tipologie di *validità*:
+
+```{mermaid}
+%%| fig-align: center
+graph TB
+    A[Validità]
+    A --> B[Facciata]
+    A --> C[Contenuto]
+    A --> E[Costrutto]
+        E --> F(Convergente)
+        E --> G(Divergente)
+        E --> H(Fattoriale)
+    A --> D[Criterio]
+```
+
+## Affidabilità, riferimenti
+
+Questa sezione è basata sui seguenti riferimenti (trovate anche il pdf):
+
+- @Petersen2024-fg in particolare il Capitolo 3 ([{{< fa file-pdf >}}](files/petersen2024_chapter3_reliability.pdf))
+- @American-Educational-Research-Association2014-in in particolare il Capitolo 2 ([{{< fa file-pdf >}}](files/apa2024standards_chapter2_reliability.pdf))
+
+## Affidabilità
+
+La validità di una misura è la corrispondenza teorica con il costrutto latente. L'affidabilità invece fa riferimento al processo di misurazione. Rappresenta la parte di errore $E$ rispetto all'equazione $X = T + E$. Una misura *affidabile* è replicabile, consistente, e precisa. Una bilancia che restituisce il peso con $\pm$ 1 gr. è una misura più affidabile di una bilancia con un errore di 5 o 10 gr. La domanda non è cosa rappresenta il peso ma solo se è misurato in modo consistente e preciso. Ci sono diverse tipologie di *affidabilità* (in inglese *reliability*):
+
+```{mermaid}
+graph TB
+    A[Affidabilità]
+    A --> B[Test-retest]
+    A --> C[Interrater]
+    A --> D[Parallel form]
+    A --> E[Internal consistency]
+```
+
+## Validità e affidabilità
+
+La solita metafora del bersaglio rende molto l'idea. Il centro del bersaglio è il *costrutto latente* e le frecce sono gli item o indicatori. *Secondo voi è possibile avere una misura non affidabile ma valida?*
+
+```{r}
+# 1. Function to create the base target
+draw_target <- function(points_data, title_text) {
+  # Create concentric circles
+  circles <- data.frame(
+    r = seq(1, 5, length.out = 5)
+  )
+  
+  ggplot() +
+    # Draw the rings
+    ggforce::geom_circle(data = circles, aes(x0 = 0, y0 = 0, r = r), 
+                         color = "#8B0000", size = 1.5) +
+    # Add the shots (the black dots)
+    geom_point(data = points_data, aes(x, y), color = "black", size = 3) +
+    # Formatting
+    theme_void() +
+    labs(caption = title_text) +
+    theme(
+      plot.caption = element_text(hjust = 0.5, size = 14, face = "bold", margin = margin(t = 10)),
+      aspect.ratio = 1
+    ) +
+    coord_fixed() +
+    xlim(-6, 6) + ylim(-6, 6)
+}
+
+# 2. Define the data for each scenario
+set.seed(42)
+
+# Reliable, Not Valid: Tightly clustered, but far from center
+p1_data <- data.frame(x = rnorm(10, -3.5, 0.3), y = rnorm(10, 3.5, 0.3))
+
+# Low Validity, Low Reliability: Spread out and off-center
+p2_data <- data.frame(x = rnorm(10, 0.5, 1.2), y = rnorm(10, 0.5, 1.2))
+
+# Not Reliable, Not Valid: Very spread out
+p3_data <- data.frame(x = rnorm(10, 0, 2.5), y = rnorm(10, 2, 2.5))
+
+# Both Reliable and Valid: Tightly clustered in the center
+p4_data <- data.frame(x = rnorm(10, 0, 0.2), y = rnorm(10, 0, 0.2))
+
+# 3. Create the plots
+plot1 <- draw_target(p1_data, "Molto Affidabile\nNon Valida")
+plot2 <- draw_target(p2_data, "Poco Affidabile\n Poco Valida")
+plot3 <- draw_target(p3_data, "Non Affidabile\nNon Valida")
+plot4 <- draw_target(p4_data, "Molto Affidabile\nMolto valida")
+
+# 4. Combine using patchwork
+(plot1 | plot2 | plot3 | plot4)
+```
+
+## Validità di facciata (*face validity*)
+
+Una misura ha *validità di facciata* se una persona non esperta leggendo gli item capisce chiaramente cosa l'item sta cercando di misurare. In altri termini capisce in modo chiaro l'operazionalizzazione (il legame tra indicatore e costrutto latente).
+
+- Una misura con elevata validità di facciata è poco criticabile
+- La validità di facciata è quantificata in modo soggettivo (intutivo) e non basato sulla teoria
+- Essendo l'operazionalizzazione chiara e trasparente è più facile mentire o rispondere in funzione della desiderabilità sociale
+
+## Validità di contenuto
+
+La validità di contenuto rappresenta il grado di vicinanza tra gli items ed il costrutto latente che si intende misurare. Potremmo dire che è il grado di bontà dell'operazionalizzazione in senso stretto. Degli items validi sono selezionati e valutati da esperti di quei costrutti latenti.
+
+Una con validità di contenuto dovrebbe contenere items che coprono tutti gli aspetti (*facets*) di un certo costrutto latente e non sono legati ad aspetti di altri costrutti diversi.
+
+La validità di contenuto deve considerare anche la popolazione di riferimento. Lo stesso costrutto latente (e.g., depressione) potrebbe avere caratteristiche diverse che devono essere catturate da indicatori (items) adatti.
+
+## Validità di costrutto {.smaller}
+
+La validità di costrutto rappresenta quanto una misura è legata al costrutto di interesse. Viene quantificata non sulla singola misura ma in relazione ad altre misure. In particolare:
+
+- **Validità convergente**: Una misura ha validità convergente se è associata (i.e., correlazione) con altre misure che dovrebbero essere legate al costrutto d'interesse. Ad esempio, diverse misure di depressione dovrebbero correlare tra loro.
+- **Validità divergente**: Una misura ha validità divergente se non è associata con altre misure che non dovrebbero essere legate al costrutto d'interesse. Una misura di depressione non dovrebbe correlare con una misura di controllo degli impulsi se quest'ultimo costrutto non si presuppone essere teoricament legato alla depressione (esempio totalmente non evidence-based).
+- **validità fattoriale**: Questo tipo di validità è legata all'analisi fattoriale (che non vedremo). Indica però quanto la struttura fattoriale ipotizzata dalla teoria (e.g., la depressione ha 3 fattori) viene confermata dalla misura utilizzata.
+
+## Validità fattoriale, un esempio
+
+![](img/obst2004.png){fig-align="center"}
+
+@Obst2004-pu hanno revisionato la scala **Sense of Community Index** (SCI) notando che non sempre la struttura fattoriale ipotizzata dalla teoria [@McMillan1986-ug] venisse confermata dai dati notando che una soluzione a 4 fattori potrebbe essere più adeguata. In questo senso, la scala potrebbe avere validità fattoriale bassa. 
+
+E' importante verificare la validità delle misure che utilizziamo per poter avere conclusioni più solide e valide dalle nostre ricerche. Anche in ottica applicata, è sempre importante valutare la validità delle misure.
+
+## Affidabilità test-retest
+
+L'affidabilità test-retest indica la stabilità di una misurazione nel tempo. Se il costrutto latente si ipotizza essere stabile nel tempo considerato allora anche la sua misura dovrebbe essere consistente. Ovviamente questo tipo di affidabilità non è rilevante per costrutti che si ipotizza non essere stabili nel tempo (e.g., ansia di stato vs tratto).
+
+## Affidabilità tra giudici (interrater)
+
+Se diversi giudici/sperimentatori giungono a risultati simili usando un indicatore in modo indipendente, allora quell'indicatore ha una buona affidabilità. E' molto usata nel caso di procedure osservative o dove lo sperimentatore deve decidere autonomamente un certo giudizio o punteggio. La convergenza di diversi punteggi indipendenti migliora la misurazione ed il grado di similarità indica che la misura è stabile e/o che viene usata in modo consistente tra diversi giudici.
+
+## Affidabilità tra forme parallele
+
+Questo tipo di affidabilità si valuta con set di items equivalenti da un punto di vista di criterio e validità ma comunque formulati in modo diverso. Essendo, in teoria, validi allo stesso modo dovrebbero anche fornire misurazioni consistenti. 
+
+In modo simile all'affidabilità interrater, forme parallele dello stesso strumento permettono di attenuare e/o rilevare errori specifici di una certa formulazione di item. 
+
+## Consistenza interna
+
+Questo tipo di affidabilità rappresenta quanto simili sono le risposte tra soggetti agli stessi item. L'idea è che soggetti diversi (al netto di differenze individuali) dovrebbero rispondere in modo simile agli stessi item. 
+
+Solitamente vengono usati indici che potreste aver sentito come l'Alpha di Cronbach. Una misura ha consistenza interna se, ad esempio, chi risponde valori elevati ad un certo item risponde con valori elevati anche ad un'altro item (o il contrario).
+
+## Affidabilità e validità, alcuni esempi
+
+Pensate a voler misurare l'ansia con un solo item chiedendo:
+
+> quanto ti senti agitatə in questo momento?
+
+Questa misura è chiaramente valida (legata teoricamente al costrutto ansia) ma è molto instabile, poco precisa e può dipendere da molti fattori sia personali che contestuali.
+
+L'errore di misura dell'indicatore ansia sarebbe molto pur essendo un indicatore teoricamente valido.
+
+## Affidabilità e validità, alcuni esempi
+
+Un esempio invece di misure affidabili ma non per forza valide riguarda gli indici psicofisiogici. Immaginiamo di vedere la relazione tra indici psicofisiologici come il battito cardiaco e la depressione.
+
+La strumentazione per misurare il battito cardiaco può essere molto affidabile e con poco errore di misura. Tuttavia il legame tra battito cardiaco e depressione può essere meno chiaro e non per forza del tutto valido.
+
+# Altri aspetti della misurazione
+
+## Sensibilità e range delle misure
+
+Un'altro aspetto importante riguarda la *granularità* delle misure. In altri termini, se siamo interessati a misurare variazioni nel costrutto latente (differenza di depressione tra due gruppi di individui) dobbiamo assicurarci che l'indicatore sia abbastanza sensibile per cogliere queste differenze.
+
+Sarebbe come trovare la temperatura ideale ma possiamo regolarla solo di 5 gradi alla volta. Per quanto il termostato sia affidabile e valido come misura, la sua granularità non è adeguata.
+
+## Effetto soffitto o pavimento
+
+In un certo senso legato alla *granularità*, la mia misura deve poter differenziare le diverse osservazioni ovvero non devono esserci effetti *soffitto* o *pavimento*.
+
+Immaginate una domanda di matematica troppo difficile o troppo facile dove tuttə sbagliano o fanno corretto. Quella domanda non è una buona domande perchè non mi permette di distinguere le abilità delle mie osservazioni.
+
+## Effetto soffitto o pavimento
+
+Un test troppo facile o difficile o una misura tarata in modo sbagliato (misura per soggetti sani su soggetti malati) riduce drasticamente la *discriminatività*.
+
+```{r}
+set.seed(123)
+
+# 1. Generiamo 1000 studenti con abilità latente normale (Media 0, SD 1)
+n_studenti <- 100
+theta <- rnorm(n_studenti, mean = 0, sd = 1)
+
+# 2. Funzione per simulare l'esame
+# a = discriminazione (pendenza), b_center = difficoltà media, noise = errore casuale
+simula_voto <- function(theta, a, b_center, noise_sd = 0.5) {
+    # Calcoliamo un "voto latente" continuo
+    # Più 'a' è alto, più il voto dipende dall'abilità e meno dal caso
+    voto_continuo <- 24 + (a * (theta - b_center) * 3) + rnorm(length(theta), 0, noise_sd)
+    
+    # Arrotondiamo e applichiamo i limiti del sistema italiano (18-30)
+    voti <- round(voto_continuo)
+    voti[voti < 18] <- 17 # Usiamo 17 per indicare "Bocciato"
+    voti[voti > 30] <- 30
+    return(voti)
+}
+
+# 3. Creazione dei tre scenari
+df <- data.frame(
+    Studente = 1:n_studenti,
+    Abilita = theta,
+    # Esame Ottimale: Difficoltà media (0), Alta discriminazione (a=1.5)
+    Ottimale = simula_voto(theta, a = 1.5, b_center = 0),
+    # Esame Troppo Difficile (Floor): Difficoltà alta (2), i voti crollano verso il 18/bocciato
+    Difficile = simula_voto(theta, a = 1.0, b_center = 2.5),
+    # Esame Troppo Facile (Ceiling): Difficoltà bassa (-2.5), tutti verso il 30
+    Facile = simula_voto(theta, a = 1.0, b_center = -2.5)
+)
+
+
+df |> 
+    pivot_longer(c(Difficile, Facile, Ottimale)) |> 
+    mutate(name = factor(name, levels = c("Facile", "Ottimale", "Difficile"), labels = c("Facile", "Medio", "Difficile"))) |> 
+    ggplot(aes(x = ((Abilita - min(Abilita)) / (max(Abilita) - min(Abilita))) * 100, y = value)) +
+    geom_hline(yintercept = 18, lty = "dotted", col = "firebrick", lwd = 1) +
+    geom_point(position = position_jitter(height = 0.07), alpha = 0.5, size = 3) +
+    scale_y_continuous(breaks = seq(17, 30, 1)) +
+    xlab("Abilità") +
+    facet_wrap(~name) +
+    geom_smooth(se = FALSE)
+```
+
+## Sensibilità e range delle misure
+
+Il problema del range range è molto serio e può impattare l'interpretazione dei risultati. L'effetto può variare in funzione del range che consideriamo.
+
+```{r}
+age <- runif(2e3, 18, 60)
+y <- 10 + 0.05 * age + 0.02 * age^2 + 0.0001 * age^3 + rnorm(2e3, 0, 15)
+
+p1 <- data.frame(age, y) |> 
+    ggplot(aes(x = age, y = y)) +
+    geom_point(alpha = 0.3, size = 3) +
+    geom_smooth(se = FALSE, lwd = 2, formula = y ~ poly(x, 3), method = "lm") +
+    geom_vline(xintercept = c(20, 30), lty = "dotted", col = "firebrick", lwd = 1)
+
+p2 <- data.frame(age, y) |> 
+    subset(age < 30 & age > 20) |> 
+    ggplot(aes(x = age, y = y)) +
+    geom_point(alpha = 0.5, size = 3) +
+    geom_smooth(se = FALSE, lwd = 2, formula = y ~ x, method = "lm") +
+    geom_vline(xintercept = c(20, 30), lty = "dotted", col = "firebrick", lwd = 1)
+
+p1 + p2
+```
+
+# Disegni di ricerca
+
+## Disegni di ricerca
+
+Questo è uno schema riassuntivo ma non esaustivo dei diversi tipi di ricerca. I nodi decisionali sono quelli verdi mentre i vari disegni sono in rosso. Stiamo considerando qui ricerca di tipo quantitativo.
+
+![](img/research-design.png)
+
+## Primo nodo, intervento
+
+Il primo nodo decisionale riguarda la presenza o meno di un **intervento**. Un intervento viene inteso come una manipolazione sperimentale. In termini medici è un farmaco, un protocollo di cura, etc. In termini psicologici può essere un intervento educativo, psicoterapia, etc.
+
+L'aspetto fondamentale è la presenza di un qualcosa di esterno che, si presume, possa avere un impatto (effetto) su una certa variabile che viene misurata. L'obiettivo è solitamente quello di capire l'effetto causale dell'intervento, controllando o escludendo l'effetto di altre variabili.
+
+In caso non si faccia nessun intervento la ricerca viene definita osservazionale perchè l'interesse è sulla relazione non causale tra un insieme di variabili.
+
+## Secondo nodo, gruppo di controllo
+
+Il secondo nodo fa riferimento alla presenza di un **gruppo di controllo**. Il gruppo di controllo è un gruppo di soggetti dove non viene somministrata la manipolazione sperimentale/intervento (o ne viene somministrata una diversa/placebo).
+
+La presenza del gruppo di controllo serve per isolare il più possibile l'effetto della manipolazione sperimentale.
+
+## Terzo nodo, la randomizzazione
+
+Nel caso di un intervento e nel caso ci sia un gruppo di controllo, il terzo nodo decisionale riguarda la **randomizzazione**. Nella pratica significa che i soggetti sperimentali vengono assegnati in modo totalmente *casuale* alla condizione di controllo e sperimentale.
+
+La randomizzazione permette di limitare l'impatto di variabili non controllate sperimentalmente in modo da poter intepretare il più possibile in modo **causale** l'effetto della manipolazione sperimentale.
+
+## Randomizzazione, perchè funziona?
+
+Immaginate di avere 100 persone, un trattamento $x$ ed un outcome $y$. Immaginate che per qualche ragione, l'età abbia un impatto sull'outcome $y$, dove all'aumentare dell'età ci sia un aumento dell'outcome.
+
+```{r}
+n <- 100
+x <- rep(0:1, each = n/2)
+age_r <- round(runif(n, 18, 60))
+age_nr <- sort(age_r)
+
+y_nr <- 0.5 * x + 0.3 * age_nr + rnorm(n)
+y_r <- 0.5 * x + 0.3 * age_r + rnorm(n)
+
+dat <- data.frame(x = c(x, x), age = c(age_r, age_nr), y = c(y_r, y_nr),
+                  design = rep(c("rand", "non-rand"), each = n))
+
+dat |> 
+  ggplot(aes(x = age, y = y)) +
+  geom_point(size = 4) +
+  xlab("Age") +
+  ylab("Outcome")
+```
+
+## Randomizzazione, perchè funziona?
+
+La *randomizzazione* quindi mitiga (e in teoria rimuove) l'effetto di variabili non direttamente controllate assegnando gli individui in modo casuale al trattamento.
+
+```{r}
+dat |> 
+    mutate(x = ifelse(x == 0, "Controllo", "Sperimentale"),
+           design = ifelse(design == "rand", "Randomizzato", "Non Randomizzato")) |> 
+    ggplot(aes(x = x, y = y)) +
+    geom_point(position = position_jitter(width = 0.1),
+               aes(color = age)) +
+    facet_wrap(~design) +
+    labs(
+        color = "Age"
+    )
+```
+
+## Randomizzazione, vediamola in azione
+
+Andate a questo [link](https://docs.google.com/spreadsheets/d/1glh5LKlvnp0H7HGqAsm68o7SORLEE9MpaASWrWk_wU0/edit?usp=sharing) (con un account Google):
+
+<center>
+{{< qrcode https://docs.google.com/spreadsheets/d/1glh5LKlvnp0H7HGqAsm68o7SORLEE9MpaASWrWk_wU0/template/preview >}}
+</center>
+
+## Perchè non randomizziamo sempre?
+
+Ci sono delle condizioni dove non è possibile randomizzare per motivi etici o strettamente empirici.
+
+Immaginate di dover capire l'impatto sulla salute di un certo comportamento (e.g., mangiare un certo alimento). Idealmente dovreste prendere in modo casuale soggetti, assegnarli una dieta e vedere l'impatto.
+
+Quello che invece si fa è raccogliere su larga scala le abitudini di un campione di soggetti e vedere le *associazioni* con l'outcome retrospettivamente o in modo prospettivo ma senza nessuna manipolazione.
+
+## Perchè non randomizziamo sempre?
+
+Il problema è che non potendo randomizzare, non è possibile isolare chiaramente l'effetto del predittore d'interesse.
+
+In realtà possiamo:
+
+- Includere tutte le possibili variabili come predittore (*regressione multipla*) ma questo è valido solo se siamo sicuri di averle inserite tutte (molto poco plausibile)
+- Evidenziare un'associazione tra $x$ e $y$ ma senza poterne trarre una relazione causale.
+
+Vedremo quando parleremo di regressione cosa significa usare questi approcci.
+
+## Confounder e artefatti
+
+La validità di uno studio e di un'analisi dei dati può essere compromessa da *confounder* e *artefatti*. I confounder, come dice la parola, sono variabili che confondono la relazione che assumiamo e osserviamo tra $x$ e $y$.
+
+```{r}
+mdag(
+    y ~ x,
+    exposure = "x",
+    outcome = "y"
+)
+```
+
+## Confounder 
+
+L'idea è che se c'è una variabile $z$ che è legata sia ad $x$ che a $y$ ma io non la osservo/raccolgo. La relazione tra $x$ e $y$ è parzialmente o totalmente spuria.
+
+```{r}
+mdag(
+    y ~ x,
+    x ~ z,
+    y ~ z,
+    exposure = "x",
+    outcome = "y"
+)
+```
+
+## Confounder, un esempio
+
+Immaginate di raccogliere dei dati di bambinə e ragazzə dai 6 ai 18 anni. Raccogliete punteggi a test di matematica e raccogliete il peso. Non avete altre informazioni.
+
+<center>
+{{< qrcode https://docs.google.com/spreadsheets/d/16JRt1_tXYQntv2bcbvbqoOzPEZvcXPKFYpvolR16c5E/template/preview >}}
+<center>
+
+Andate a questo link e provate ad esplorare il dataset. Quali potrebbero essere dei confounder?
+
+## Confounder, un esempio
+
+In pratica, $z$ (l'età in questo caso) è una variabile legata sia a $x$ che a $y$ che non osserviamo ma spiega totalmente (o parzialmente) la relazione $y \sim x$. Vedremo come tenere conto di $z$ statisticamente ma i confounder possono renderci la vita molto complessa.
+
+```{r}
+set.seed(2025)
+
+N <- 1e3
+age <- sample(6:18, N, replace = TRUE)
+peso <- round(20 + 5 * (age - 6) + rnorm(N, 0, 5), 1)
+math <- 5 + (age - 6) * 8 + rnorm(N, 0, 10)
+math[math < 0] <- 0
+math[math > 100] <- 100
+math <- round(math)
+
+dat <- data.frame(
+    math, age, peso
+)
+
+dat <- dat[sample(1:nrow(dat), 1000, replace = TRUE), ]
+ggplot(dat, aes(x = age, y = math, color = peso)) +
+    geom_point(position = position_jitter(0.4), size = 3) +
+    scale_color_viridis_c()
+```
+
+# Qualche esempio di ricerca
+
+## Quasi-sperimentale
+
+https://pmc.ncbi.nlm.nih.gov/articles/PMC3287068/
+
+## Cluster-randomized controlled trial
+
+https://pmc.ncbi.nlm.nih.gov/articles/PMC4603966/pdf/12889_2015_Article_2395.pdf
+
+## Correlazionale (osservazionale)
+
+https://onlinelibrary.wiley.com/doi/full/10.1002/jcop.23089
+https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jcop.22817
+
+## Bibliografia

@@ -1,0 +1,933 @@
+[
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#processo-scientifico-1",
+    "href": "slides/02-measurement-and-research-methods.html#processo-scientifico-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Processo scientifico",
+    "text": "Processo scientifico\n\nAdapted from Jhangiani et al. 2019"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#letteratura-domanda-di-ricerca",
+    "href": "slides/02-measurement-and-research-methods.html#letteratura-domanda-di-ricerca",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Letteratura <–> Domanda di ricerca",
+    "text": "Letteratura &lt;–&gt; Domanda di ricerca\nIl punto di partenza è sempre la formulazione di domande di ricerca.\nQuesto processo è bidirezionale perchè la letteratura scientifica può essere fonte o de le nostre domande di ricerca."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#studio-empirico",
+    "href": "slides/02-measurement-and-research-methods.html#studio-empirico",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Studio empirico",
+    "text": "Studio empirico\nPossiamo identificare 3 aree generali relative alla realizzazione di uno studio empirico:\n\nDisegno di ricerca\nRaccolta dati e campionamento\nMisurazione"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#e-lanalisi-dei-dati",
+    "href": "slides/02-measurement-and-research-methods.html#e-lanalisi-dei-dati",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "… e l’analisi dei dati?",
+    "text": "… e l’analisi dei dati?\nNon ho messo l’analisi dei dati perchè è importante distinguere tra:\n\nanalisi dei dati come azione pratica: ho il dataset e applico il modello di analisi\nanalisi dei dati come mindset e data literacy\n\nIl primo è facile, è sufficiente conoscere uno strumento (R, SPSS, Jamovi, etc.) e sapere quello che si deve fare.\nIl secondo invece richiede conoscenza, spritico critico, ragionamento e allenamento. Non è uno step separato ma accompagna tutti i momenti della ricerca.\nConoscere la statistica permette di valutare uno studio in letteratura, conoscere il disegno di ricerca migliore, valutare le misure migliori e cosi via. Questo è quello su cui ci focalizzeremo maggiormente durante il corso."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#data-literacy",
+    "href": "slides/02-measurement-and-research-methods.html#data-literacy",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Data literacy",
+    "text": "Data literacy\n\nData literacy is the ability to collect, manage, evaluate, and apply data, in a critical manner (Risdale et al., 2015)"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#terminologia",
+    "href": "slides/02-measurement-and-research-methods.html#terminologia",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Terminologia",
+    "text": "Terminologia\nQuando parliamo di esperimenti, ricerche e analisi dati la terminologia è importante:\n\n\\(y\\) sono gli outcomes (uno o più). Solitamente chiamate anche variabili dipendenti (ma preferisco outcomes)\n\\(x\\) sono i predittori. Solitamente chiamate anche variabili indipendenti (ma preferisco predittori)\n\\(x_p\\) significa il predittore \\(p\\) (\\(p = 1, 2, \\dots, p\\))"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#terminologia-1",
+    "href": "slides/02-measurement-and-research-methods.html#terminologia-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Terminologia",
+    "text": "Terminologia\n\ndataset è la struttura dati di dimensione \\(n \\times k\\) dove \\(n\\) sono le righe e \\(k\\) le colonne (pensate ad un foglio Excel). I predittori \\(p\\) sono una parte delle colonne \\(k\\) (o una loro trasformazione) che utilizziamo in un modello statistico.\nunità statistiche sono la l’elemento base o l’entità elementare su cui vengono misurati i caratteri oggetto di indagine all’interno di una popolazione statistica. Possono essere persone, animali, misurazioni nel tempo. A livello pratico è il significato delle \\(n\\) righe nel dataset."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#terminologia-2",
+    "href": "slides/02-measurement-and-research-methods.html#terminologia-2",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Terminologia",
+    "text": "Terminologia\n\nPer costrutto o variabile latente intendiamo qualcosa di non direttamente osservabile ma che risulta essere il nostro oggetto d’interesse. Senso di comunità, autostima, depressione, benessere, etc. sono tutte variabili latenti.\nEssendo non direttamente osservabili dobbiamo usare degli indicatori che sono legati ed informativi della variabile latente.\nIl legame tra variabile latente e indicatori si chiama operazionalizzazione la qui bontà determina la precisione con cui stimiamo la variabile latente."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#diverse-variabili-diverse-analisi",
+    "href": "slides/02-measurement-and-research-methods.html#diverse-variabili-diverse-analisi",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Diverse variabili, diverse analisi",
+    "text": "Diverse variabili, diverse analisi\nPrima di imparare ad analizzare i dati è importante capire come i dati vengono raccolti e strutturati. Quando raccogliamo o trattiamo una variabile, chiediamoci sempre quale sia la tipologia. Il tipo di variabile influenza diversi aspetti, come:\n\nquali statistiche descrittive sono sensate e quali sono più informative\nle rappresentazioni grafiche più informative\nil modello statistico più adeguato per quella variabile"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#variabili-le-tipologie-principali",
+    "href": "slides/02-measurement-and-research-methods.html#variabili-le-tipologie-principali",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Variabili, le tipologie principali",
+    "text": "Variabili, le tipologie principali\nPossiamo individuare 4 tipologie principali di variabili:\n\nnominale\nordinale\nintervalli\nrapporti\n\nQuesta viene anche chiamata tassonomia NOIR.\n\n\nPer un paper classico si veda Stevens (1946)"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#variabili-di-tipo-nominale",
+    "href": "slides/02-measurement-and-research-methods.html#variabili-di-tipo-nominale",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Variabili di tipo nominale",
+    "text": "Variabili di tipo nominale\nLe variabili di tipologia nominale sono anche definite variabili categoriali. Sono quindi delle etichette, verbali o numeriche, che vengono assegnate ad una tipologia di osservazione. Ad esempio:\n\nRegione di residenza\nColore degli occhi\nReligione\nCategoria diagnostica\n\nLe diverse categorie sono interscambiabili quindi non c’è un ordine predefinito. L’unica operazione consentita è quella di contare le diverse categorie calcolando, in vari modi, distribuzioni di frequenza."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#variabili-di-tipo-nominale-esempi",
+    "href": "slides/02-measurement-and-research-methods.html#variabili-di-tipo-nominale-esempi",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Variabili di tipo nominale, esempi:",
+    "text": "Variabili di tipo nominale, esempi:\nLo vedremo meglio nelle prossime lezioni, ma possiamo rappresentare le frequenze tramite dei barplot:"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#variabili-di-tipo-nominale-quali-operazioni",
+    "href": "slides/02-measurement-and-research-methods.html#variabili-di-tipo-nominale-quali-operazioni",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Variabili di tipo nominale, quali operazioni?",
+    "text": "Variabili di tipo nominale, quali operazioni?\n\n\n\n\n\n\nCaution\n\n\nCosa succede, secondo voi, se dovessi calcolare la media di una variabile categoriale?\nE se dovessi calcolare la varianza o la mediana?\n\n\n\n\nIn sostanza, la tipologia di variabile è spesso legata anche a quali operazioni sono permesse, sensate o informative. In questo caso, calcolare la regione media non ha alcun senso.\nRivedremo le statistiche descrittive ed i grafici ma è importante sapere che ogni tipologia di variabile ha il suo tipo di grafico/statistica."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#variabili-di-tipo-ordinale",
+    "href": "slides/02-measurement-and-research-methods.html#variabili-di-tipo-ordinale",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Variabili di tipo ordinale",
+    "text": "Variabili di tipo ordinale\nLe variabili di tipo ordinale sono quelle più comunemente utilizzate in Psicologia ed anche quelle in un certo senso meno intuitive.\nAlcuni esempi:\n\nRisposte su scale likert\nStatus socio-economico (e.g., alto, medio e basso)\nLivello d’istruzione"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#variabili-di-tipo-ordinale-1",
+    "href": "slides/02-measurement-and-research-methods.html#variabili-di-tipo-ordinale-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Variabili di tipo ordinale",
+    "text": "Variabili di tipo ordinale\nRispetto alle variabili categoriali, le variabili ordinali hanno un ordine. Possiamo quindi pensarle categorie alle quali assegnamo un numero progressivo.\n\nQuello che non è definito per le variabili ordinali, è la distanza tra le categorie. Potremmo assegnare allo status socio-economico 1 = basso, 2 = medio e 3 = alto, come 1.5, 2, 2.1.\n\n\nIn altri termini, la distanza tra le categorie non è nota e quindi non è utilizzabile come informazione."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#variabili-di-tipo-ordinale-esempi",
+    "href": "slides/02-measurement-and-research-methods.html#variabili-di-tipo-ordinale-esempi",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Variabili di tipo ordinale, esempi:",
+    "text": "Variabili di tipo ordinale, esempi:\nAnche qui, lo vedremo meglio nelle prossime lezioni ma un grafico a barre, ordinato è un tipo di rappresentazione grafica utilizzabile."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#variabili-su-scala-ad-intervalli",
+    "href": "slides/02-measurement-and-research-methods.html#variabili-su-scala-ad-intervalli",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Variabili su scala ad intervalli",
+    "text": "Variabili su scala ad intervalli\nQuesto è il primo tipo di variabile numerica in senso stretto. Le principali caratteristiche sono:\n\nL’ordine è significativo (questo viene ereditato dalle variabili ordinali)\nLe differenze (intervalli) tra due valori sono note e costanti per tutta la scala\nNon c’è uno zero assoluto definito come assenza della proprietà misurata\n\nLa mancanza di zero assoluto rende quindi non intepretabili i rapporti tra valori, mentre lo sono le differenze."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#variabili-su-scala-ad-intervalli-esempi",
+    "href": "slides/02-measurement-and-research-methods.html#variabili-su-scala-ad-intervalli-esempi",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Variabili su scala ad intervalli: esempi",
+    "text": "Variabili su scala ad intervalli: esempi\nAlcuni esempi sono:\n\nTemperatura come ad esempio Celsius o Fahrenheit\nIn generale le misure psicologiche come intelligenza, personalità, etc.\nLe date sul calendario\n\nPossiamo dire che la distanza tra un QI di 100 e 110 è la stessa rispetto ad un QI di 115 e 125 (sono 10 punti di QI). Non possiamo dire che una persona che ha QI di 200 sia il doppio più intelligente di un QI di 100."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#variabili-su-scala-ad-intervalli-esempi-1",
+    "href": "slides/02-measurement-and-research-methods.html#variabili-su-scala-ad-intervalli-esempi-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Variabili su scala ad intervalli: esempi",
+    "text": "Variabili su scala ad intervalli: esempi"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#variabili-su-scala-a-rapporti",
+    "href": "slides/02-measurement-and-research-methods.html#variabili-su-scala-a-rapporti",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Variabili su scala a rapporti",
+    "text": "Variabili su scala a rapporti\nQuesto è il tipo più completo di variabile numerica che solitamente si trova nelle misurazioni fisiche. Eredità tutte le proprietà precedenti aggiungendo la presenza di uno zero assoluto inteso come assenza della proprietà.\nQualche esempio:\n\nIl tempo inteso come minuti, secondi, millisecondi: tempi di reazione in esperimenti cognitivi\nSegnale psicofisiologico come EEG, ECG, etc.\n\nLa presenza dello zero assoluto permette di poter calcolare rapporti significativi. Possiamo dire che 20 secondi sono il doppio del tempo rispetto a 10 secondi."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#tipologia-di-variabili-riassunto",
+    "href": "slides/02-measurement-and-research-methods.html#tipologia-di-variabili-riassunto",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Tipologia di variabili, riassunto:",
+    "text": "Tipologia di variabili, riassunto:\nLe 4 tipologie di variabili sono gerarchicamente ordinate rispetto alle operazioni permissibili e significative:\n\ncategoriali –&gt; uguaglianza: possiamo dire se due osservazioni sono nella stessa categoria\nordinali –&gt; ranking: possiamo dire chi è maggiore tra due osservazioni\nintervalli –&gt; distanze: possiamo interpretare la distanza tra due osservazioni rapporti –&gt; rapporti: possiamo calcolare il rapporto tra due osservazioni"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#intervalli-vs-ordinale",
+    "href": "slides/02-measurement-and-research-methods.html#intervalli-vs-ordinale",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Intervalli vs ordinale",
+    "text": "Intervalli vs ordinale\nQuesta tassonomia non viene sempre rispettata. Ad esempio, le variabili ordinali come le scale likert vengono comunemente trattate come scale ad intervalli o anche a rapporti. Ad esempio viene assunto che la differenza tra 1 (per niente) e 2 (poco) sia la stessa che per altri livelli."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#operazioni-permissibili",
+    "href": "slides/02-measurement-and-research-methods.html#operazioni-permissibili",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Operazioni permissibili",
+    "text": "Operazioni permissibili\nVedremo meglio quando parleremo delle varie statistiche descrittive. Tuttavia, in base al tipo di variabile ci sono delle operazioni permissibili.\n\nFonte: Stevens (1946)"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#vediamo-un-esempio-insieme",
+    "href": "slides/02-measurement-and-research-methods.html#vediamo-un-esempio-insieme",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Vediamo un esempio insieme",
+    "text": "Vediamo un esempio insieme\nProvate a cercare, scaricare il pdf di questo articolo Robinette et al. (2025):\n\nCercate nel metodo e risultati i vari tipi di variabili utilizzate e classificatele in base al NOIR."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#misurazione-psicologica-1",
+    "href": "slides/02-measurement-and-research-methods.html#misurazione-psicologica-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Misurazione Psicologica",
+    "text": "Misurazione Psicologica\nLa misurazione in Psicologia è forse l’argomento più complesso, critico ed affascinante di tutta la ricerca Psicologica e della Psicometria.\nLo scopo del corso non è quello di fornire una panoramica esaustiva riguardo la misurazione ed il testing ma di fornire uno sguardo critico rispetto alle misure che utilizziamo.\nLe differenti variabili (colonne) del nostro dataset sono delle misurazioni più o meno precise di costrutti più o meno definiti.\nCapire questo punto e capire come valutare la qualità delle nostre variabili è fondamentale per comprendere i risultati dell’analisi dei dati."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#gigo---garbage-in-garbage-out",
+    "href": "slides/02-measurement-and-research-methods.html#gigo---garbage-in-garbage-out",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "GIGO - Garbage In, Garbage Out",
+    "text": "GIGO - Garbage In, Garbage Out\nIl GIGO è un principio cardine nell’analisi dei dati. L’idea è che non c’è analisi sofisticata, algoritmo o procedura che possa risolvere il problema della bassa qualità dei dati."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#gigo---garbage-in-garbage-out-1",
+    "href": "slides/02-measurement-and-research-methods.html#gigo---garbage-in-garbage-out-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "GIGO - Garbage In, Garbage Out",
+    "text": "GIGO - Garbage In, Garbage Out\nIn Psicologia, la qualità dei dati è sempre legata al tipo di strumento, alla sua affidabilità, precisione e alla procedura di acquisizione.\nPensate ad un dataset dove una delle colonne identifica un punteggio ad un questionario di depressione. Vediamo che questo è, per esempio, maggiore in soggetti italiani vs stranieri.\nConcludiamo che, per qualche motivo culturale, genetico o psicologico gli italiani abbiano una tendenza maggiore alla depressione."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#gigo---garbage-in-garbage-out-2",
+    "href": "slides/02-measurement-and-research-methods.html#gigo---garbage-in-garbage-out-2",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "GIGO - Garbage In, Garbage Out",
+    "text": "GIGO - Garbage In, Garbage Out\nTuttavia, non abbiamo misurato la depressione come se misurassimo il peso o l’età ma un insieme di item che in teoria dovrebbero essere legati al costrutto depressione.\nL’assunzione implicita è quindi che:\n\nil questionario misuri effettivamente e principalmente la depressione\nche misurandola più volte, questa sia più o meno simile\nche gli item vengano compresi allo stesso modo\nche gli item siano abbastanza sensibili da differenziare le persone"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#qualità-della-misura",
+    "href": "slides/02-measurement-and-research-methods.html#qualità-della-misura",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Qualità della misura",
+    "text": "Qualità della misura\nQuindi non è sufficiente avere una misura di depressione ma dobbiamo chiederci:\n\nquanto è precisa la misura\nquanto è valida e affidabile\nquanto è specifica vs aspecifica\n…"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#variabili-latenti-e-osservate",
+    "href": "slides/02-measurement-and-research-methods.html#variabili-latenti-e-osservate",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Variabili latenti e osservate",
+    "text": "Variabili latenti e osservate\nIn Psicologia, nella maggior parte dei casi siamo interessati a costrutti detti latenti. Latenti perchè non sono direttamente osservabili.\nNon sono direttamente osservabili ma sono indirettamente osservabili tramite degli indicatori. La qualità della nostra osservazione quindi dipende dalla qualità degli indicatori.\nGli indicatori sono ad esempio gli item di un questionario o un insieme di questionari. La variabile latente è ad esempio la depressione."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#un-esempio",
+    "href": "slides/02-measurement-and-research-methods.html#un-esempio",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Un esempio",
+    "text": "Un esempio\nVediamo un esempio di item del BDI-II:\n\nNon sono più irrequieto o teso del solito.\nMi sento più irrequieto o teso del solito.\nSono così irrequieto o agitato che è difficile stare fermo.\nSono così irrequieto o agitato che devo continuare a muovermi o a fare qualcosa.\n\nPerchè questo indicatore viene utilizzato per la depressione secondo voi?"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#un-esempio-1",
+    "href": "slides/02-measurement-and-research-methods.html#un-esempio-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Un esempio",
+    "text": "Un esempio\nTeoricamente, tra le manifestazioni cliniche della depressione è presente agitazione e irrequietezza. Quindi, se misurassi questa manifestazione mi aspetterei, in media, punteggi elevati in soggetti depressi.\nQuindi il collegamento tra indicatore e costrutto latente è teorico e viene assunto o inferito dall’osservazione ma non è scontato.\nInoltre, ci possono essere molti modi diversi di misurare l’irrequietezza che quindi concorrono a misurare (indirettamente) più o meno accuratamente il costrutto latente."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#errore-di-misurazione",
+    "href": "slides/02-measurement-and-research-methods.html#errore-di-misurazione",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Errore di misurazione",
+    "text": "Errore di misurazione\nLa classical test theory assume che il processo di misurazione porta a rilevare un risultato osservato \\(X\\) (observed score) che è la somma del punteggio vero \\(T\\) (true score) e dell’errore \\(E\\).\n\\[\nX = T + E\n\\]\nQuesto è un concetto fondamentale perchè l’obiettivo della statistica è quello di, partendo dal dato osservato \\(E\\) stimare \\(T\\) tenendo in considerazione l’errore \\(E\\)."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#dati-modelli-e-residui",
+    "href": "slides/02-measurement-and-research-methods.html#dati-modelli-e-residui",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Dati, modelli e residui",
+    "text": "Dati, modelli e residui\nPiù in generale, ma lo vedremo meglio più avanti, i modelli statistici sono rappresentazioni semplificate della realtà. I modelli \\(M\\) partono dai dati osservati \\(D\\) ed in modo più o meno complesso cercano di spiegare quello che succede. Essendo la spiegazione non sempre perfetta, quello che rimane si chiama errore o residuo \\(E\\).\n\\[\nD = M + E\n\\]"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#dati-modelli-e-residui-1",
+    "href": "slides/02-measurement-and-research-methods.html#dati-modelli-e-residui-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Dati, modelli e residui",
+    "text": "Dati, modelli e residui\nLa linea blue è il nostro modello \\(M\\), i punti sono i dati \\(D\\) e l’errore o residui sono i segmenti rossi \\(E\\). Diversi modelli si adattano in modo migliore o peggiore ai dati."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#validità-riferimenti",
+    "href": "slides/02-measurement-and-research-methods.html#validità-riferimenti",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Validità, riferimenti",
+    "text": "Validità, riferimenti\nQuesta sezione è basata sui seguenti riferimenti (trovate anche il pdf):\n\nPetersen (2024) in particolare il Capitolo 4 ()\nAmerican Educational Research Association et al. (2014) in particolare il Capitolo 1 ()"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#validità",
+    "href": "slides/02-measurement-and-research-methods.html#validità",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Validità",
+    "text": "Validità\nLa validità può essere intesa come il grado in cui l’evidenza e la teoria supportano le interpretazioni dei punteggi dei test in vista degli usi proposti dei test stessi (American Educational Research Association et al., 2014). Spesso, semplificando, viene detto che la validità di una misura (ad esempio un questionario) è la sua capacità di misurare quello che si prefigge (teoricamente) di misurare. Ritornando all’esempio della bilancia, la validità si chiede lo scopo per cui viene misurato il peso (e.g., indicatore della salute) e non come viene misurato (affidabilità)."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#validità-1",
+    "href": "slides/02-measurement-and-research-methods.html#validità-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Validità",
+    "text": "Validità\nCi sono diverse tipologie di validità:\n\n\n\n\n\ngraph TB\n    A[Validità]\n    A --&gt; B[Facciata]\n    A --&gt; C[Contenuto]\n    A --&gt; E[Costrutto]\n        E --&gt; F(Convergente)\n        E --&gt; G(Divergente)\n        E --&gt; H(Fattoriale)\n    A --&gt; D[Criterio]"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#affidabilità-riferimenti",
+    "href": "slides/02-measurement-and-research-methods.html#affidabilità-riferimenti",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Affidabilità, riferimenti",
+    "text": "Affidabilità, riferimenti\nQuesta sezione è basata sui seguenti riferimenti (trovate anche il pdf):\n\nPetersen (2024) in particolare il Capitolo 3 ()\nAmerican Educational Research Association et al. (2014) in particolare il Capitolo 2 ()"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#affidabilità",
+    "href": "slides/02-measurement-and-research-methods.html#affidabilità",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Affidabilità",
+    "text": "Affidabilità\nLa validità di una misura è la corrispondenza teorica con il costrutto latente. L’affidabilità invece fa riferimento al processo di misurazione. Rappresenta la parte di errore \\(E\\) rispetto all’equazione \\(X = T + E\\). Una misura affidabile è replicabile, consistente, e precisa. Una bilancia che restituisce il peso con \\(\\pm\\) 1 gr. è una misura più affidabile di una bilancia con un errore di 5 o 10 gr. La domanda non è cosa rappresenta il peso ma solo se è misurato in modo consistente e preciso. Ci sono diverse tipologie di affidabilità (in inglese reliability):\n\n\n\n\n\ngraph TB\n    A[Affidabilità]\n    A --&gt; B[Test-retest]\n    A --&gt; C[Interrater]\n    A --&gt; D[Parallel form]\n    A --&gt; E[Internal consistency]"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#validità-e-affidabilità-1",
+    "href": "slides/02-measurement-and-research-methods.html#validità-e-affidabilità-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Validità e affidabilità",
+    "text": "Validità e affidabilità\nLa solita metafora del bersaglio rende molto l’idea. Il centro del bersaglio è il costrutto latente e le frecce sono gli item o indicatori. Secondo voi è possibile avere una misura non affidabile ma valida?"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#validità-di-facciata-face-validity",
+    "href": "slides/02-measurement-and-research-methods.html#validità-di-facciata-face-validity",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Validità di facciata (face validity)",
+    "text": "Validità di facciata (face validity)\nUna misura ha validità di facciata se una persona non esperta leggendo gli item capisce chiaramente cosa l’item sta cercando di misurare. In altri termini capisce in modo chiaro l’operazionalizzazione (il legame tra indicatore e costrutto latente).\n\nUna misura con elevata validità di facciata è poco criticabile\nLa validità di facciata è quantificata in modo soggettivo (intutivo) e non basato sulla teoria\nEssendo l’operazionalizzazione chiara e trasparente è più facile mentire o rispondere in funzione della desiderabilità sociale"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#validità-di-contenuto",
+    "href": "slides/02-measurement-and-research-methods.html#validità-di-contenuto",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Validità di contenuto",
+    "text": "Validità di contenuto\nLa validità di contenuto rappresenta il grado di vicinanza tra gli items ed il costrutto latente che si intende misurare. Potremmo dire che è il grado di bontà dell’operazionalizzazione in senso stretto. Degli items validi sono selezionati e valutati da esperti di quei costrutti latenti.\nUna con validità di contenuto dovrebbe contenere items che coprono tutti gli aspetti (facets) di un certo costrutto latente e non sono legati ad aspetti di altri costrutti diversi.\nLa validità di contenuto deve considerare anche la popolazione di riferimento. Lo stesso costrutto latente (e.g., depressione) potrebbe avere caratteristiche diverse che devono essere catturate da indicatori (items) adatti."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#validità-di-costrutto",
+    "href": "slides/02-measurement-and-research-methods.html#validità-di-costrutto",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Validità di costrutto",
+    "text": "Validità di costrutto\nLa validità di costrutto rappresenta quanto una misura è legata al costrutto di interesse. Viene quantificata non sulla singola misura ma in relazione ad altre misure. In particolare:\n\nValidità convergente: Una misura ha validità convergente se è associata (i.e., correlazione) con altre misure che dovrebbero essere legate al costrutto d’interesse. Ad esempio, diverse misure di depressione dovrebbero correlare tra loro.\nValidità divergente: Una misura ha validità divergente se non è associata con altre misure che non dovrebbero essere legate al costrutto d’interesse. Una misura di depressione non dovrebbe correlare con una misura di controllo degli impulsi se quest’ultimo costrutto non si presuppone essere teoricament legato alla depressione (esempio totalmente non evidence-based).\nvalidità fattoriale: Questo tipo di validità è legata all’analisi fattoriale (che non vedremo). Indica però quanto la struttura fattoriale ipotizzata dalla teoria (e.g., la depressione ha 3 fattori) viene confermata dalla misura utilizzata."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#validità-fattoriale-un-esempio",
+    "href": "slides/02-measurement-and-research-methods.html#validità-fattoriale-un-esempio",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Validità fattoriale, un esempio",
+    "text": "Validità fattoriale, un esempio\n\nObst & White (2004) hanno revisionato la scala Sense of Community Index (SCI) notando che non sempre la struttura fattoriale ipotizzata dalla teoria (McMillan & Chavis, 1986) venisse confermata dai dati notando che una soluzione a 4 fattori potrebbe essere più adeguata. In questo senso, la scala potrebbe avere validità fattoriale bassa.\nE’ importante verificare la validità delle misure che utilizziamo per poter avere conclusioni più solide e valide dalle nostre ricerche. Anche in ottica applicata, è sempre importante valutare la validità delle misure."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#affidabilità-test-retest",
+    "href": "slides/02-measurement-and-research-methods.html#affidabilità-test-retest",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Affidabilità test-retest",
+    "text": "Affidabilità test-retest\nL’affidabilità test-retest indica la stabilità di una misurazione nel tempo. Se il costrutto latente si ipotizza essere stabile nel tempo considerato allora anche la sua misura dovrebbe essere consistente. Ovviamente questo tipo di affidabilità non è rilevante per costrutti che si ipotizza non essere stabili nel tempo (e.g., ansia di stato vs tratto)."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#affidabilità-tra-giudici-interrater",
+    "href": "slides/02-measurement-and-research-methods.html#affidabilità-tra-giudici-interrater",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Affidabilità tra giudici (interrater)",
+    "text": "Affidabilità tra giudici (interrater)\nSe diversi giudici/sperimentatori giungono a risultati simili usando un indicatore in modo indipendente, allora quell’indicatore ha una buona affidabilità. E’ molto usata nel caso di procedure osservative o dove lo sperimentatore deve decidere autonomamente un certo giudizio o punteggio. La convergenza di diversi punteggi indipendenti migliora la misurazione ed il grado di similarità indica che la misura è stabile e/o che viene usata in modo consistente tra diversi giudici."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#affidabilità-tra-forme-parallele",
+    "href": "slides/02-measurement-and-research-methods.html#affidabilità-tra-forme-parallele",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Affidabilità tra forme parallele",
+    "text": "Affidabilità tra forme parallele\nQuesto tipo di affidabilità si valuta con set di items equivalenti da un punto di vista di criterio e validità ma comunque formulati in modo diverso. Essendo, in teoria, validi allo stesso modo dovrebbero anche fornire misurazioni consistenti.\nIn modo simile all’affidabilità interrater, forme parallele dello stesso strumento permettono di attenuare e/o rilevare errori specifici di una certa formulazione di item."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#consistenza-interna",
+    "href": "slides/02-measurement-and-research-methods.html#consistenza-interna",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Consistenza interna",
+    "text": "Consistenza interna\nQuesto tipo di affidabilità rappresenta quanto simili sono le risposte tra soggetti agli stessi item. L’idea è che soggetti diversi (al netto di differenze individuali) dovrebbero rispondere in modo simile agli stessi item.\nSolitamente vengono usati indici che potreste aver sentito come l’Alpha di Cronbach. Una misura ha consistenza interna se, ad esempio, chi risponde valori elevati ad un certo item risponde con valori elevati anche ad un’altro item (o il contrario)."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#affidabilità-e-validità-alcuni-esempi",
+    "href": "slides/02-measurement-and-research-methods.html#affidabilità-e-validità-alcuni-esempi",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Affidabilità e validità, alcuni esempi",
+    "text": "Affidabilità e validità, alcuni esempi\nPensate a voler misurare l’ansia con un solo item chiedendo:\n\nquanto ti senti agitatə in questo momento?\n\nQuesta misura è chiaramente valida (legata teoricamente al costrutto ansia) ma è molto instabile, poco precisa e può dipendere da molti fattori sia personali che contestuali.\nL’errore di misura dell’indicatore ansia sarebbe molto pur essendo un indicatore teoricamente valido."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#affidabilità-e-validità-alcuni-esempi-1",
+    "href": "slides/02-measurement-and-research-methods.html#affidabilità-e-validità-alcuni-esempi-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Affidabilità e validità, alcuni esempi",
+    "text": "Affidabilità e validità, alcuni esempi\nUn esempio invece di misure affidabili ma non per forza valide riguarda gli indici psicofisiogici. Immaginiamo di vedere la relazione tra indici psicofisiologici come il battito cardiaco e la depressione.\nLa strumentazione per misurare il battito cardiaco può essere molto affidabile e con poco errore di misura. Tuttavia il legame tra battito cardiaco e depressione può essere meno chiaro e non per forza del tutto valido."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#sensibilità-e-range-delle-misure",
+    "href": "slides/02-measurement-and-research-methods.html#sensibilità-e-range-delle-misure",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Sensibilità e range delle misure",
+    "text": "Sensibilità e range delle misure\nUn’altro aspetto importante riguarda la granularità delle misure. In altri termini, se siamo interessati a misurare variazioni nel costrutto latente (differenza di depressione tra due gruppi di individui) dobbiamo assicurarci che l’indicatore sia abbastanza sensibile per cogliere queste differenze.\nSarebbe come trovare la temperatura ideale ma possiamo regolarla solo di 5 gradi alla volta. Per quanto il termostato sia affidabile e valido come misura, la sua granularità non è adeguata."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#effetto-soffitto-o-pavimento",
+    "href": "slides/02-measurement-and-research-methods.html#effetto-soffitto-o-pavimento",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Effetto soffitto o pavimento",
+    "text": "Effetto soffitto o pavimento\nIn un certo senso legato alla granularità, la mia misura deve poter differenziare le diverse osservazioni ovvero non devono esserci effetti soffitto o pavimento.\nImmaginate una domanda di matematica troppo difficile o troppo facile dove tuttə sbagliano o fanno corretto. Quella domanda non è una buona domande perchè non mi permette di distinguere le abilità delle mie osservazioni."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#effetto-soffitto-o-pavimento-1",
+    "href": "slides/02-measurement-and-research-methods.html#effetto-soffitto-o-pavimento-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Effetto soffitto o pavimento",
+    "text": "Effetto soffitto o pavimento\nUn test troppo facile o difficile o una misura tarata in modo sbagliato (misura per soggetti sani su soggetti malati) riduce drasticamente la discriminatività."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#sensibilità-e-range-delle-misure-1",
+    "href": "slides/02-measurement-and-research-methods.html#sensibilità-e-range-delle-misure-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Sensibilità e range delle misure",
+    "text": "Sensibilità e range delle misure\nIl problema del range range è molto serio e può impattare l’interpretazione dei risultati. L’effetto può variare in funzione del range che consideriamo."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#disegni-di-ricerca-1",
+    "href": "slides/02-measurement-and-research-methods.html#disegni-di-ricerca-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Disegni di ricerca",
+    "text": "Disegni di ricerca\nQuesto è uno schema riassuntivo ma non esaustivo dei diversi tipi di ricerca. I nodi decisionali sono quelli verdi mentre i vari disegni sono in rosso. Stiamo considerando qui ricerca di tipo quantitativo."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#primo-nodo-intervento",
+    "href": "slides/02-measurement-and-research-methods.html#primo-nodo-intervento",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Primo nodo, intervento",
+    "text": "Primo nodo, intervento\nIl primo nodo decisionale riguarda la presenza o meno di un intervento. Un intervento viene inteso come una manipolazione sperimentale. In termini medici è un farmaco, un protocollo di cura, etc. In termini psicologici può essere un intervento educativo, psicoterapia, etc.\nL’aspetto fondamentale è la presenza di un qualcosa di esterno che, si presume, possa avere un impatto (effetto) su una certa variabile che viene misurata. L’obiettivo è solitamente quello di capire l’effetto causale dell’intervento, controllando o escludendo l’effetto di altre variabili.\nIn caso non si faccia nessun intervento la ricerca viene definita osservazionale perchè l’interesse è sulla relazione non causale tra un insieme di variabili."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#secondo-nodo-gruppo-di-controllo",
+    "href": "slides/02-measurement-and-research-methods.html#secondo-nodo-gruppo-di-controllo",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Secondo nodo, gruppo di controllo",
+    "text": "Secondo nodo, gruppo di controllo\nIl secondo nodo fa riferimento alla presenza di un gruppo di controllo. Il gruppo di controllo è un gruppo di soggetti dove non viene somministrata la manipolazione sperimentale/intervento (o ne viene somministrata una diversa/placebo).\nLa presenza del gruppo di controllo serve per isolare il più possibile l’effetto della manipolazione sperimentale."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#terzo-nodo-la-randomizzazione",
+    "href": "slides/02-measurement-and-research-methods.html#terzo-nodo-la-randomizzazione",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Terzo nodo, la randomizzazione",
+    "text": "Terzo nodo, la randomizzazione\nNel caso di un intervento e nel caso ci sia un gruppo di controllo, il terzo nodo decisionale riguarda la randomizzazione. Nella pratica significa che i soggetti sperimentali vengono assegnati in modo totalmente casuale alla condizione di controllo e sperimentale.\nLa randomizzazione permette di limitare l’impatto di variabili non controllate sperimentalmente in modo da poter intepretare il più possibile in modo causale l’effetto della manipolazione sperimentale."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#randomizzazione-perchè-funziona",
+    "href": "slides/02-measurement-and-research-methods.html#randomizzazione-perchè-funziona",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Randomizzazione, perchè funziona?",
+    "text": "Randomizzazione, perchè funziona?\nImmaginate di avere 100 persone, un trattamento \\(x\\) ed un outcome \\(y\\). Immaginate che per qualche ragione, l’età abbia un impatto sull’outcome \\(y\\), dove all’aumentare dell’età ci sia un aumento dell’outcome."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#randomizzazione-perchè-funziona-1",
+    "href": "slides/02-measurement-and-research-methods.html#randomizzazione-perchè-funziona-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Randomizzazione, perchè funziona?",
+    "text": "Randomizzazione, perchè funziona?\nLa randomizzazione quindi mitiga (e in teoria rimuove) l’effetto di variabili non direttamente controllate assegnando gli individui in modo casuale al trattamento."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#randomizzazione-vediamola-in-azione",
+    "href": "slides/02-measurement-and-research-methods.html#randomizzazione-vediamola-in-azione",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Randomizzazione, vediamola in azione",
+    "text": "Randomizzazione, vediamola in azione\nAndate a questo link (con un account Google):"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#perchè-non-randomizziamo-sempre",
+    "href": "slides/02-measurement-and-research-methods.html#perchè-non-randomizziamo-sempre",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Perchè non randomizziamo sempre?",
+    "text": "Perchè non randomizziamo sempre?\nCi sono delle condizioni dove non è possibile randomizzare per motivi etici o strettamente empirici.\nImmaginate di dover capire l’impatto sulla salute di un certo comportamento (e.g., mangiare un certo alimento). Idealmente dovreste prendere in modo casuale soggetti, assegnarli una dieta e vedere l’impatto.\nQuello che invece si fa è raccogliere su larga scala le abitudini di un campione di soggetti e vedere le associazioni con l’outcome retrospettivamente o in modo prospettivo ma senza nessuna manipolazione."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#perchè-non-randomizziamo-sempre-1",
+    "href": "slides/02-measurement-and-research-methods.html#perchè-non-randomizziamo-sempre-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Perchè non randomizziamo sempre?",
+    "text": "Perchè non randomizziamo sempre?\nIl problema è che non potendo randomizzare, non è possibile isolare chiaramente l’effetto del predittore d’interesse.\nIn realtà possiamo:\n\nIncludere tutte le possibili variabili come predittore (regressione multipla) ma questo è valido solo se siamo sicuri di averle inserite tutte (molto poco plausibile)\nEvidenziare un’associazione tra \\(x\\) e \\(y\\) ma senza poterne trarre una relazione causale.\n\nVedremo quando parleremo di regressione cosa significa usare questi approcci."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#confounder-e-artefatti",
+    "href": "slides/02-measurement-and-research-methods.html#confounder-e-artefatti",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Confounder e artefatti",
+    "text": "Confounder e artefatti\nLa validità di uno studio e di un’analisi dei dati può essere compromessa da confounder e artefatti. I confounder, come dice la parola, sono variabili che confondono la relazione che assumiamo e osserviamo tra \\(x\\) e \\(y\\)."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#confounder",
+    "href": "slides/02-measurement-and-research-methods.html#confounder",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Confounder",
+    "text": "Confounder\nL’idea è che se c’è una variabile \\(z\\) che è legata sia ad \\(x\\) che a \\(y\\) ma io non la osservo/raccolgo. La relazione tra \\(x\\) e \\(y\\) è parzialmente o totalmente spuria."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#confounder-un-esempio",
+    "href": "slides/02-measurement-and-research-methods.html#confounder-un-esempio",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Confounder, un esempio",
+    "text": "Confounder, un esempio\nImmaginate di raccogliere dei dati di bambinə e ragazzə dai 6 ai 18 anni. Raccogliete punteggi a test di matematica e raccogliete il peso. Non avete altre informazioni.\n\n\n\n    \n\nAndate a questo link e provate ad esplorare il dataset. Quali potrebbero essere dei confounder?"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#confounder-un-esempio-1",
+    "href": "slides/02-measurement-and-research-methods.html#confounder-un-esempio-1",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Confounder, un esempio",
+    "text": "Confounder, un esempio\nIn pratica, \\(z\\) (l’età in questo caso) è una variabile legata sia a \\(x\\) che a \\(y\\) che non osserviamo ma spiega totalmente (o parzialmente) la relazione \\(y \\sim x\\). Vedremo come tenere conto di \\(z\\) statisticamente ma i confounder possono renderci la vita molto complessa."
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#quasi-sperimentale",
+    "href": "slides/02-measurement-and-research-methods.html#quasi-sperimentale",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Quasi-sperimentale",
+    "text": "Quasi-sperimentale\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC3287068/"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#cluster-randomized-controlled-trial",
+    "href": "slides/02-measurement-and-research-methods.html#cluster-randomized-controlled-trial",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Cluster-randomized controlled trial",
+    "text": "Cluster-randomized controlled trial\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC4603966/pdf/12889_2015_Article_2395.pdf"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#correlazionale-osservazionale",
+    "href": "slides/02-measurement-and-research-methods.html#correlazionale-osservazionale",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Correlazionale (osservazionale)",
+    "text": "Correlazionale (osservazionale)\nhttps://onlinelibrary.wiley.com/doi/full/10.1002/jcop.23089 https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jcop.22817"
+  },
+  {
+    "objectID": "slides/02-measurement-and-research-methods.html#bibliografia",
+    "href": "slides/02-measurement-and-research-methods.html#bibliografia",
+    "title": "Introduzione alla misurazione e metodologia della ricerca",
+    "section": "Bibliografia",
+    "text": "Bibliografia\n\n\n\n\nAmerican Educational Research Association, American Psychological Association, National Council on Measurement in Education, & Joint Committee on Standards for Educational and Psychological Testing (U.S.). (2014). Standards for educational and psychological testing (American Educational Research Association, American Psychological Association, & National Council on Measurement in Education, Eds.). American Educational Research Association.\n\n\nMcMillan, D. W., & Chavis, D. M. (1986). Sense of community: A definition and theory. Journal of Community Psychology, 14, 6–23. https://doi.org/10.1002/1520-6629(198601)14:1&lt;6::aid-jcop2290140103&gt;3.0.co;2-i\n\n\nObst, P. L., & White, K. M. (2004). Revisiting the Sense of Community Index: A confirmatory factor analysis. Journal of Community Psychology, 32, 691–705. https://doi.org/10.1002/jcop.20027\n\n\nPetersen, I. T. (2024). Principles of psychological assessment: With applied examples in R (1st Edition). Chapman; Hall/CRC. https://doi.org/10.1201/9781003357421\n\n\nRobinette, J. W., Piazza, J. R., & Stawski, R. S. (2025). Community crime and safety: An investigation of gender differences in the daily stress process. Journal of Community Psychology, 53, e23158. https://doi.org/10.1002/jcop.23158\n\n\nStevens, S. S. (1946). On the theory of scales of measurement. Science (New York, N.Y.), 103, 677–680. https://doi.org/10.1126/science.103.2684.677"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#about-me",
+    "href": "slides/00-intro-corso.html#about-me",
+    "title": "Introduzione al Corso",
+    "section": "About me",
+    "text": "About me\n\nAttualmente sono Ricercatore (RTDa) in Psicometria presso il Dipartimento di Psicologia dello Sviluppo e della Socializzazione\nSono uno Psicologo Clinico (dello Sviluppo)\nHo fatto un Dottorato in Psicologia Sperimentale e Neuroscienze riguardo i correlati comportamentali e neurali di stimoli subliminali\nAttualmente mi occupo di analisi dei dati in Psicologia, in particolare metanalisi e simulazioni Monte Carlo"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#contatti",
+    "href": "slides/00-intro-corso.html#contatti",
+    "title": "Introduzione al Corso",
+    "section": "Contatti",
+    "text": "Contatti\n\nRicevimento il Venerdì 10:00 - 12:00 nell’ufficio 025 al 5° Piano del CLA. Il ricevimento si tiene in prezenza o alternativa su Zoom.\nPotete scrivermi a filippo.gambarota at unipd dot it o chiamarmi (weird) al +390498271221\n\nPer qualsiasi altra informazione:\n\nSito personale\nPagina docente Unipd"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#programma-1",
+    "href": "slides/00-intro-corso.html#programma-1",
+    "title": "Introduzione al Corso",
+    "section": "Programma",
+    "text": "Programma\n\nIl programma d’esame riguarda esclusivamente le slides ed i contenuti affrontati a lezione. Nel caso di materiale aggiuntivo, sarà espressamente indicato se parte o meno dell’esame.\nSulle slide a volte è presente il tag #extra. Questo significa che quella specifica slide o riferimento aggiuntivo indicato è utile, interessante ma non sarà oggetto d’esame.\n\nPotete trovare a questo link https://github.com/stat-teaching/adcom/orari (anche su Moodle) un calendario con orari ed argomenti (aggiornati progressivamente) delle lezioni."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#programma-2",
+    "href": "slides/00-intro-corso.html#programma-2",
+    "title": "Introduzione al Corso",
+    "section": "~ Programma",
+    "text": "~ Programma\nA grandi linee il programma sarà:\n\nIntroduzione all’analisi dei dati: utilità, disegni di ricerca, problematiche e aspetti importanti\nVariabili, statistiche descrittive e grafici\nCenni di misurazione e testing psicologico\nInferenza statistica\nRegressione Lineare\nCenni di regressione lineare multilivello *\nMetanalisi e metaricerca *\n\n\n\n* Questi argomenti, in caso di modifiche al programma, sono quelli che più facilmente possono essere saltati. L’eventuale materiale sarà comunque a disposizione."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#programma-3",
+    "href": "slides/00-intro-corso.html#programma-3",
+    "title": "Introduzione al Corso",
+    "section": "~ Programma",
+    "text": "~ Programma\nInoltre, se abbiamo tempo ci saranno degli approfondimenti molto pratici:\n\nCome usare (e come non usare) chatGPT (e simili) nello studio, scrittura e analisi dei dati\nIntroduzione ad R: qualche lezione mirata sulle basi di R\nData management\nBibliographic research"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#esame-1",
+    "href": "slides/00-intro-corso.html#esame-1",
+    "title": "Introduzione al Corso",
+    "section": "Esame",
+    "text": "Esame\nCome riportato nel syllabus:\nL’esame è scritto e consiste di 31 domande a risposta multipla. Per ogni domanda ci sono 4 alternative di risposta di cui solo una corretta. I punteggi sono assegnati nella seguente modalità:\n\n1 punto per ogni risposta corretta\n-0.33 punti per ogni risposta sbagliata\n0 punti per ogni risposta non data\n\nDurante l’esame non è possibile utilizzare internet, l’intelligenza artificiale generativa o altro materiale cartaceo. La durata è di 45 minuti."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#esame-fun",
+    "href": "slides/00-intro-corso.html#esame-fun",
+    "title": "Introduzione al Corso",
+    "section": "Esame (fun)",
+    "text": "Esame (fun)\nQuesta è la distribuzione simulata di 1000 student* che fanno questo esame, rispondendo totalmente a caso."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#organizzazione-esame",
+    "href": "slides/00-intro-corso.html#organizzazione-esame",
+    "title": "Introduzione al Corso",
+    "section": "Organizzazione esame",
+    "text": "Organizzazione esame\n\nGli appelli d’esame si terranno nei periodi stabiliti dalla Scuola di Psicologia: sessione estiva (giugno-luglio), autunnale (settembre) e invernale (gennaio-febbraio). Non sono previsti preappelli!\nFate sempre riferimento al sito ufficiale per date e variazioni.\nPer poter fare l’esame bisogna essere regolarmente iscrittə su Uniweb entro i termini previsti.\nIn ogni caso, a ridosso della prima data d’esame ci saranno indicazioni pratiche/logistiche più precise.\nL’esame si svolgerà in aula informativa. E’ obbligatorio iscriversi al corso nella piattaforma Moodle esami (che non è Moodle normale)1.\n\nLa piattaforma per gli esami sta cambiando, avrete informazioni precise più avanti"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#esercizi-analisi-dei-dati-ed-r",
+    "href": "slides/00-intro-corso.html#esercizi-analisi-dei-dati-ed-r",
+    "title": "Introduzione al Corso",
+    "section": "Esercizi, analisi dei dati ed R",
+    "text": "Esercizi, analisi dei dati ed R\n\nDurante il corso faremo lezioni teoriche e pratiche con un rapporto di 3:1 circa. Le lezioni pratiche consistono nell’implementare i metodi con dati reali tramite il software R/Jamovi.\nLa conoscenza di R o Jamovi non è necessaria per svolgere l’esame. Tuttavia rispondere alle domande sarà sicuramente più semplice seguendo anche la parte pratica.\nL’utilizzo di R/Jamovi verrà usato principalmente da me per la parte pratica. Vi consiglio quindi di installare R e Jamovi (istruzioni dopo) per potermi seguire e provare."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#quality-over-quantity",
+    "href": "slides/00-intro-corso.html#quality-over-quantity",
+    "title": "Introduzione al Corso",
+    "section": "1. Quality over quantity",
+    "text": "1. Quality over quantity\n\nIl programma è denso, tutte le slide e materiali saranno a disposizione. Tuttavia la mia priorità è passarvi al meglio i concetti principali.\nPreferisco approfondire o chiarire maggiormente gli aspetti di base invece di fare esattamente tutto il programma previsto.\nIn ogni caso, in presenza di modifiche al programma l’esame sarà sempre su quello che è stato effettivamente trattato a lezione."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#partecipazione",
+    "href": "slides/00-intro-corso.html#partecipazione",
+    "title": "Introduzione al Corso",
+    "section": "2. Partecipazione",
+    "text": "2. Partecipazione\nIl punto 1 di prima, è particolarmente vero a patto che io sappia quello che non è chiaro. Quindi:\n\npartecipate\nfate domande (vedi slide dopo)\nchiedete approfondimenti\ndatemi feedback\nsono sempre disponibile a ricevimento o via email MA preferirei una discussione partecipata in aula\npartecipate\npartecipate"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#domande",
+    "href": "slides/00-intro-corso.html#domande",
+    "title": "Introduzione al Corso",
+    "section": "3. Domande",
+    "text": "3. Domande\n\n” […] every question is a cry to understand the world. There is no such thing as a dumb question”\n\n— Carl Sagan\n\n\nVi assicuro che la cosa più soddisfaciente per un docente è la partecipazione attiva ed il ricevere domande. Le domande possono essere di chiarimento, ripetizione o di approfondimento/curiosità. Cercherò di rispondere al meglio ad ognuna di queste."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#questions-pt.2",
+    "href": "slides/00-intro-corso.html#questions-pt.2",
+    "title": "Introduzione al Corso",
+    "section": "3. Questions pt.2",
+    "text": "3. Questions pt.2\nSo che fare domande o partecipare non è sempre semplice (sono uno Psicologo alla fine). Per identificare meglio gli argomenti critici e quelli da ripetere ho creato una board su Padlet. Per ogni macro-argomento c’è una sezione e potete (in modo anonimo) mettere domande, dubbi, commenti (il link è presente anche su Moodle).\n\nhttps://padlet.com/unipd/adcom2526\n\nPrima di cominciare la lezione, dedichiamo una decina di minuti a rivedere gli argomenti critici. Potete quindi inserire domande tra una lezione e l’altra."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#questions-pt.3",
+    "href": "slides/00-intro-corso.html#questions-pt.3",
+    "title": "Introduzione al Corso",
+    "section": "3. Questions pt.3",
+    "text": "3. Questions pt.3\nSe non emerge nessuna domanda a lezione (preferibilmente) o su Padlet, do per scontata sia per le lezioni future che per l’esame, l’assenza di dubbi e quindi la chiarezza di quell’argomento.\n  \n\nThink carefully 🙃."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#materiale",
+    "href": "slides/00-intro-corso.html#materiale",
+    "title": "Introduzione al Corso",
+    "section": "4. Materiale",
+    "text": "4. Materiale\nTutto il materiale principale come slides, esercizi, approfondimenti, etc. si trova su Moodle. Tutto il materiale (oltre a cose aggiuntive che sono meno pratiche da gestire con moodle) si può trovare anche al seguente sito https://stat-teaching.github.io/adcom.\nIl materiale è in costruzione e continuo aggiornamento/miglioramento. Su Moodle o sul sito indicato prima le slide hanno sempre la data di ultimo aggiornamento. Se avete delle slide più datate, scaricate quelle più recenti. I cambiamenti comunque saranno minimi (piccoli errori, grafici migliori, miglioramenti, etc.)"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#logistica-lezioni",
+    "href": "slides/00-intro-corso.html#logistica-lezioni",
+    "title": "Introduzione al Corso",
+    "section": "5. Logistica lezioni",
+    "text": "5. Logistica lezioni\nLe lezioni saranno organizzate in questo modo:\n\nprima parte: revisione domande su Padlet + domande a voce\nargomento del giorno in caso di lezioni teoriche/metodologiche\nesempi con dati reali da articoli/libri\n\nNel caso di lezioni pratiche (1 ogni 3 circa), useremo un dataset il più possibile rilevante per l’ambito e di interesse e con R o altro applicheremo dei concetti studiati in precedenza."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#libri-di-testo",
+    "href": "slides/00-intro-corso.html#libri-di-testo",
+    "title": "Introduzione al Corso",
+    "section": "Libri di testo?",
+    "text": "Libri di testo?\nNo non sono previsti libri di testo, il materiale di studio sono le slide usate durante la lezione.\nTuttavia, per avere comunque dei riferimenti per approfondire:\n\nPastore, M. (2015) Analisi dei Dati in Psicologia\nNavarro, D. Learning Statistics with R [eng, disponibile gratuitamente]\nNavarro, D. & Foxcroft D.R. Learning Statistics with Jamovi [eng, disponibile gratuitamente]"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#libri-di-testo-1",
+    "href": "slides/00-intro-corso.html#libri-di-testo-1",
+    "title": "Introduzione al Corso",
+    "section": "Libri di testo?",
+    "text": "Libri di testo?\n\n\n\n\nIl capitolo VI I metodi di ricerca in Psicologia di Comunità fornisce una panoramica utile rispetto ai disegni di ricerca e l’approccio statistico per gestire dati a più livelli (situazione tipica in Psicologia di Comunità)."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#libri-di-testo-2",
+    "href": "slides/00-intro-corso.html#libri-di-testo-2",
+    "title": "Introduzione al Corso",
+    "section": "Libri di testo?",
+    "text": "Libri di testo?\n\n\n\n\nTesto in inglese molto completo ed interessante sulla metodologia della ricerca in Psicologia di Comunità. In particolare il capitolo 13 ()"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#laboratorio-di-analisi-dei-dati-1",
+    "href": "slides/00-intro-corso.html#laboratorio-di-analisi-dei-dati-1",
+    "title": "Introduzione al Corso",
+    "section": "Laboratorio di analisi dei dati",
+    "text": "Laboratorio di analisi dei dati\nIl laboratorio verrà introdotto direttamente alla prima lezione. L’obiettivo è quello di:\n\napprofondire a livello pratico alcuni argomenti del corso (e.g., metanalisi)\napprofondire l’utilizzo del software R\nintroduzione al software Quarto per produrre report, tesi e presentazioni\n\nLe lezioni saranno di 3 ore il Venerdì dalle 11:30 alle 14:30. Potete trovare a questo link https://github.com/stat-teaching/adcom/orari (anche su Moodle) un calendario con orari ed argomenti (aggiornati progressivamente) delle lezioni."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#didattica-integrativa-1",
+    "href": "slides/00-intro-corso.html#didattica-integrativa-1",
+    "title": "Introduzione al Corso",
+    "section": "Didattica integrativa",
+    "text": "Didattica integrativa\nLa didattica integrativa sarà gestita e tenuta dal Dr. Matteo Manente Potete scrivere a matteo.manente.3 at phd dot unipd dot it per informazioni. Eventuale materiale sarà comunque disponibile in Moodle con una sezione e forum dedicati.\nIl giorno previsto è martedì dalle 10:30 alle 12:30 e le attività partiranno dal 31/03/2026. Sono previsti circa 5 incontri da 2 ore accademiche."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#didattica-integrativa-2",
+    "href": "slides/00-intro-corso.html#didattica-integrativa-2",
+    "title": "Introduzione al Corso",
+    "section": "Didattica integrativa",
+    "text": "Didattica integrativa\nLe attività di didattica integrativa sono considerate delle ore aggiuntive e facoltative per chiarire, approfondire ed esercitarsi sui contenuti del corso e saranno gestite dal Dr. Matteo Manente. Eventuale materiale sarà comunque disponibile in Moodle. Se siete interessatə iscrivetevi al forum dedicato.\nAlcune precisazioni:\n\nEventuali approfondimenti non sono parte del programma ufficiale del corso e quindi dell’esame\nLa partecipazione ad uno o più incontri è totalmente facoltativa e non ci sarà un’iscrizione formale. Potrebbe essere solo richiesto, in modo anonimo, un sondaggio di presenza per ragioni organizzative (e.g., trovare l’aula adatta)\nIl giorno e orario sarà fisso e non ci potrà essere molta flessibilità. L’unica garanzia è la non sovrapposizione con altre lezioni del vostro corso.\n\nPotete scrivere a matteo.manente.3 at phd dot unipd dot it per informazioni."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#installare-r-ed-r-studio",
+    "href": "slides/00-intro-corso.html#installare-r-ed-r-studio",
+    "title": "Introduzione al Corso",
+    "section": "Installare R ed R Studio",
+    "text": "Installare R ed R Studio\nSenza andare nei dettagli (vedremo nelle prossime lezioni) vi chiedo di installare R ed R Studio. Per farlo potete seguire la guida a questo link. La fornisce le istruzioni per Windows, MacOS e Linux.\n\nInstallare R Studio da solo non è sufficiente. R Studio è solo l’interfaccia grafica (o IDE) ma il motore R deve essere installato."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#r-ed-r-studio-senza-pc",
+    "href": "slides/00-intro-corso.html#r-ed-r-studio-senza-pc",
+    "title": "Introduzione al Corso",
+    "section": "R ed R Studio senza PC",
+    "text": "R ed R Studio senza PC\nSe avete a disposizione un tablet (es. Ipad) probabilmente non sarete in grado di installare R ed R Studio. Ci sono due opzioni principali:\n\nSe avete un PC a disposizione ed è possibile portate quello durante le lezioni\nSe avete solo un tablet potete usare R Studio Cloud. Sostanzialmente è come avere R Studio Desktop ma lo utilizzate tramite browser. Ci sono alcune limitazioni ma per l’utilizzo (sopratutto in aula) dovrebbe andare più che bene.\n\nPer usare R Studio Cloud è sufficiente creare un account gratuito a questo link.\nQui trovate un breve video tutorial su come utilizzare R Studio Cloud."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#jamovi",
+    "href": "slides/00-intro-corso.html#jamovi",
+    "title": "Introduzione al Corso",
+    "section": "Jamovi",
+    "text": "Jamovi\nNel caso di Jamovi vale lo stesso principio di R ed R Studio. Con un classico PC è sufficiente installare l’applicazione dal sito https://www.jamovi.org/download.html.\nEsiste anche nel caso di Jamovi una versione cloud (https://www.jamovi.org/cloud.html) analoga a quella di R Studio ma sembra essere molto limitata. Può essere sufficiente per fare alcune prove ma per avere un ambiente di lavoro più stabile è consigliato utilizzare quella completa e locale."
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#link-utili-teneteli-nei-bookmarks",
+    "href": "slides/00-intro-corso.html#link-utili-teneteli-nei-bookmarks",
+    "title": "Introduzione al Corso",
+    "section": "Link utili (teneteli nei bookmarks)",
+    "text": "Link utili (teneteli nei bookmarks)\nCi sono una serie di link utili (presenti anche su Moodle) che useremo spesso:\n\nPadlet con domande\nSito del corso (parallelo a Moodle)\nProgramma lezioni e argomenti"
+  },
+  {
+    "objectID": "slides/00-intro-corso.html#piccolo-questionario",
+    "href": "slides/00-intro-corso.html#piccolo-questionario",
+    "title": "Introduzione al Corso",
+    "section": "Piccolo questionario",
+    "text": "Piccolo questionario\nVi chiedo di fare un piccolo questionario totalmente anonimo. Non vi dico ancora a cosa servirà ma lo vedremo nelle prossime lezioni ma vi garantisco che sarà molto utile.\nPotete andare a questo link github.com/stat-teaching/adcom/form/initial oppure scannerizzare questo QRcode:"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Analisi dei Dati in Ambito di Comunità",
+    "section": "",
+    "text": "Materiale per il corso di Analisi dei Dati in Ambito di Comunità (ADCOM, 6 CFU) nel corso di Psicologia di Comunità, della Promozione del Benessere e del Cambiamento Sociale.\nIn questo sito sarà presente tutto il materiale come slides, esercizi, approfondimenti, codici e dati. Per ogni comunicazione ufficiale si faccia sempre riferimento alla pagina Moodle del corso."
+  },
+  {
+    "objectID": "index.html#slides",
+    "href": "index.html#slides",
+    "title": "Analisi dei Dati in Ambito di Comunità",
+    "section": "Slides",
+    "text": "Slides\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\n\n\n\n\nIntroduzione alla misurazione e metodologia della ricerca\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Datasets",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Dataset\n      \n      \n        File\n      \n      \n        Online\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDataset\n\n\n\nFile\n\n\n\nOnline\n\n\n\n\n\n\n\n\nBerkeley admissions\n\n\nberkeley-admissions.xlsx\n\n\n\n\n\n\n\n\n\nDi Marco et al. (2020)\n\n\ndimarco2020.xlsx\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "extra.html",
+    "href": "extra.html",
+    "title": "Materiale extra",
+    "section": "",
+    "text": "Corso intensivo (20 ore) su R, parte dei corsi ARCA del Dipartimento di Psicologia dello Sviluppo e della Socializzazione (DPSS). Potete trovare tutto il materiale https://arca-dpss.github.io/course-R/.\nLibro in italiano riguardo R che supporta il corso ARCA https://psicostat.github.io/Introduction2R/"
+  },
+  {
+    "objectID": "extra.html#r",
+    "href": "extra.html#r",
+    "title": "Materiale extra",
+    "section": "",
+    "text": "Corso intensivo (20 ore) su R, parte dei corsi ARCA del Dipartimento di Psicologia dello Sviluppo e della Socializzazione (DPSS). Potete trovare tutto il materiale https://arca-dpss.github.io/course-R/.\nLibro in italiano riguardo R che supporta il corso ARCA https://psicostat.github.io/Introduction2R/"
+  },
+  {
+    "objectID": "notes.html",
+    "href": "notes.html",
+    "title": "Notes",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#la-psicologia-è-una-scienza-statistica",
+    "href": "slides/01-intro-analisi-dati.html#la-psicologia-è-una-scienza-statistica",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "La psicologia è una scienza statistica",
+    "text": "La psicologia è una scienza statistica\nRispetto al pensiero comune dove le hard-sciences (fisica, ingegneria, matematica) richiedono competenze di analisi dei dati, sono le scienze sociali sono altrettanto (se non di più) complesse:\n\nquantità direttamente non osservabili (variabili latenti) come depressione, autostima, senso di comunità\nelevate differenze individuali scomponibili a vari livelli in interazione (geni, ambiente, educazione, etc.)\nfenomeni sempre multivariati dove non sempre tutte le variabili coinvolte sono chiare e facilmente misurabili"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#devo-essere-unə-statisticə-per-fare-lə-psicologə",
+    "href": "slides/01-intro-analisi-dati.html#devo-essere-unə-statisticə-per-fare-lə-psicologə",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Devo essere unə statisticə per fare lə psicologə?",
+    "text": "Devo essere unə statisticə per fare lə psicologə?\nAssolutamente no. Una buona metafora è:\n\nLa statistica studia il funzionamento del motore sia in termini di funzionamento attuale che come migliorarlo. Lə scienziatə (ad esempio in Psicologia) deve essere un buon pilota.\n\nLa conoscenza tecnica può aiuta ad essere dei piloti migliori MA non è il principale oggetto di studio (almeno per la maggior parte)."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#perchè-capire-la-statistica",
+    "href": "slides/01-intro-analisi-dati.html#perchè-capire-la-statistica",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Perchè capire la statistica?",
+    "text": "Perchè capire la statistica?\nTanto quanto sapere l’inglese è necessario per conoscere la letteratura scientifica, conoscere la statistica è necessario per leggere in modo adeguato i risultati di un paper."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#lo-dice-anche-il-codice-deontologico",
+    "href": "slides/01-intro-analisi-dati.html#lo-dice-anche-il-codice-deontologico",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Lo dice anche il codice deontologico",
+    "text": "Lo dice anche il codice deontologico\n\nArticolo 5: Lo psicologo è tenuto a mantenere un livello adeguato di preparazione e aggiornamento professionale, con particolare riguardo ai settori nei quali opera. La violazione dell’obbligo di formazione continua, determina un illecito disciplinare che è sanzionato sulla base di quanto stabilito dall’ordinamento professionale. Riconosce i limiti della propria competenza e usa, pertanto solo strumenti teorico – pratici per i quali ha acquisito adeguata competenza e, ove necessario, formale autorizzazione. Lo psicologo impiega metodologie delle quali è in grado di indicare le fonti e riferimenti scientifici, e non suscita, nelle attese del cliente e/o utente, aspettative infondate."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#lo-dice-anche-il-codice-deontologico-1",
+    "href": "slides/01-intro-analisi-dati.html#lo-dice-anche-il-codice-deontologico-1",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Lo dice anche il codice deontologico",
+    "text": "Lo dice anche il codice deontologico\n\nArticolo 7: Nelle proprie attività professionali, nelle attività di ricerca e nelle comunicazioni dei risultati delle stesse, nonché nelle attività didattiche, lo psicologo valuta attentamente, anche in relazione al contesto, il grado di validità e di attendibilità di informazioni, dati e fonti su cui basa le conclusioni raggiunte; espone all’occorrenza, le ipotesi interpretative alternative, ed esplicita i limiti dei risultati. Lo psicologo, su casi specifici, esprime valutazioni e giudizi professionali solo se fondati sulla conoscenza professionale diretta ovvero su una documentazione adeguata ed attendibile."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#lo-dice-anche-il-codice-deontologico-2",
+    "href": "slides/01-intro-analisi-dati.html#lo-dice-anche-il-codice-deontologico-2",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Lo dice anche il codice deontologico",
+    "text": "Lo dice anche il codice deontologico\nPer avere un buon aggiornamento scientifico (richiesto dal codice deontologico) è necessario approcciare in modo critico le informazioni. Per avere un approccio critico riguardo informazioni scientifiche è necessario:\n\nconoscere la metodologia della ricerca\nconoscere l’analisi dei dati (pensate sempre alla metafora del motore)\nsaper intepretare i dati e integrare criticamente i risultati con la teoria"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#formule-formule-formule",
+    "href": "slides/01-intro-analisi-dati.html#formule-formule-formule",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Formule, formule, formule",
+    "text": "Formule, formule, formule\nTuttə voi conoscete e capite questa formula giusto? Possiamo dare per scontate queste cose?\n\\[\nL(\\mathbf{\\beta}, \\sigma^2 \\mid \\mathbf{y}) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi \\sigma^2}} \\exp\\left( -\\frac{(y_i - \\mathbf{x}_i^\\top \\mathbf{\\beta})^2}{2\\sigma^2} \\right)\n\\]\n\nIn realtà, nemmeno io la capisco fino in fondo. L’obiettivo di questo corso non è capire o studiare le formule ma capire più ad alto livello quello che implicano."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#formule-formule-formule-1",
+    "href": "slides/01-intro-analisi-dati.html#formule-formule-formule-1",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Formule, formule, formule",
+    "text": "Formule, formule, formule\nLe formule sono come dei modi di dire molto sintetici. Sono estremamente efficiaci ed eleganti per esprimere concetti complessi MA perdono la loro efficacia se non si ha un pochino di familiarità. Ad esempio:\n\\[\n\\bar x = \\frac{1}{n} \\sum^{n}_{i = 1} x_i\n\\]\nCosa significa questa formula? Ci sono dei simboli, delle convenzioni, c’è un iterazione \\(\\sum^{n}_{i = 1}\\). Quando questa grammatica di base diventa più chiara e familiare, le formule diventano molto utili."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#formule-formule-formule-2",
+    "href": "slides/01-intro-analisi-dati.html#formule-formule-formule-2",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Formule, formule, formule",
+    "text": "Formule, formule, formule\n\\[\n\\bar x = \\frac{1}{n} \\sum^{n}_{i = 1} x_i\n\\]\nIn questo caso, immaginate \\(\\sum^{n}_{i = 1}\\) come un ciclo di operazioni che si ripete \\(n\\) volte da 1 a \\(n\\). \\(i\\) identifica ogni giro di questo ciclo (primo giro \\(i = 1\\), secondo giro \\(i = 2\\), etc.). Gli elementi a destra di \\(\\sum^{n}_{i = 1}\\) sono quelli su cui fare l’operazione. L’operazione in questione è la somma, convenzionalmente come \\(\\sum\\).\nQuindi sarebbe come dire, \\(x\\) è un insieme di numeri di lunghezza \\(n\\). Prendi il primo elemento \\(x_1\\), poi sommalo al secondo \\(x_2\\), poi alla somma aggiungi il terzo \\(x_3\\) e così via fino all’ultimo (\\(n\\)). Questa somma di \\(n\\) numeri moltiplicala per \\(1/n\\) (ovvero dividi per \\(n\\)). Cosa otteniamo? La media aritmetica!"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#un-piccolo-esempio-1",
+    "href": "slides/01-intro-analisi-dati.html#un-piccolo-esempio-1",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Un piccolo esempio (1)",
+    "text": "Un piccolo esempio (1)\nImmaginate di leggere su un paper riguardo due studi dove un gruppo clinico e un gruppo di controllo vengono confrontati rispetto ad un certo costrutto psicologico misurato tramite una scala self-report. L’ipotesi degli autori dice che ci si aspetta un punteggio diverso tra gruppo clinico e gruppo di controllo.\nNel primo studio viene raccolto un campione di 30 soggetti. Nel secondo studio viene raccolto un campione di 300 soggetti.\n\nNel primo studio viene riportato che il gruppo clinico ha una misura significativamente maggiore nella variabile d’interesse, mentre il secondo studio non riporta differenze significative.\n\n\nSe doveste scommettere, quale dei due studi è maggiormente informativo? perchè"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#un-piccolo-esempio-2",
+    "href": "slides/01-intro-analisi-dati.html#un-piccolo-esempio-2",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Un piccolo esempio (2)",
+    "text": "Un piccolo esempio (2)\nUn gruppo di ricerca ha sviluppato un nuovo intervento per il potenziamento dell’autostima nella scuola secondaria di secondo grado. Raccoglie un gruppo di studenti e studentesse ad inizio dell’anno scolastico, somministra una serie di questionari pre-intervento, esegue il programma di potenziamento e poi somministra nuovamente i questionari alla fine dell’anno scolastico.\nI risultati dicono che i partecipanti migliorano significativamente la loro autostima. Voi siete un ipotetico ente finanziatore per programmi di questo tipo, finanziereste su larga scala il trattamento? Avete bisogno di altre informazioni? Che critiche potreste fare?"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#cosa-ci-dicono",
+    "href": "slides/01-intro-analisi-dati.html#cosa-ci-dicono",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Cosa ci dicono?",
+    "text": "Cosa ci dicono?\nQuesti due esempi ci dicono delle cose importanti che tratteremo e che sono estremante rilevanti:\n\nI costrutti vengono misurati ed interrogarsi sulla tipologia di misura è fondamentale\nLa numerosità campionaria è un indice (non il solo) che ci permette di avere più o meno confidenza in un risultato\nLa costruzione dell’esperimento/studio è fondamentale (oltre alle cose precedenti) per valutare un risultato come solido ed affidabile"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#simpsons-paradox",
+    "href": "slides/01-intro-analisi-dati.html#simpsons-paradox",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nNell’autunno del 1973, l’Università della California a Berkeley rese pubblici i dati relativi alle ammissioni ai corsi di laurea magistrale. Cosa potreste concludere guardando i dati aggregati?\n\n\n\n\n\n\n\n\n\n\n\nSi veda Bickel et al. (1975)"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#simpsons-paradox-1",
+    "href": "slides/01-intro-analisi-dati.html#simpsons-paradox-1",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nIn modo naive si potrebbe concludere che ci sia un bias verso l’ammissione di candidati di sesso maschile. Ci potrebbero però essere altre spiegazioni?\nVi ricordo che:\n\nabbiamo solo il sesso come informazione riguardo i partecipanti\ni dati sono qui aggregati ma sono anche disponibili i dati separati per corso di studio"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#simpsons-paradox-2",
+    "href": "slides/01-intro-analisi-dati.html#simpsons-paradox-2",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nVediamo cosa succede se disaggreghiamo e separiamo per corso di studio. Potete trovare il dataset con le percentuali di ammissione separato per dipartimento qui:\n\n\n\n    \n\nCosa potete notare?"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#simpsons-paradox-3",
+    "href": "slides/01-intro-analisi-dati.html#simpsons-paradox-3",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nFacciamo un grafico (un pochino complesso) dei dati in questione:"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#simpsons-paradox-4",
+    "href": "slides/01-intro-analisi-dati.html#simpsons-paradox-4",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nSostanzialmente, se ordiniamo i corsi per la % totale di ammissione (un indice della difficoltà ad entrare) vediamo che:\n\nGli studenti tendono ad applicare di più a dipartimenti più facili\nLe studentesse tendono ad applicare di più a dipartimenti più difficili\n\nAnzi, se calcoliamo la media della percentuale di ammissione tra corsi, è leggermente più alta per le studentesse."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#simpsons-paradox-5",
+    "href": "slides/01-intro-analisi-dati.html#simpsons-paradox-5",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nQuesto fenomeno si chiama Paradosso di Simpson e può accadere quando in presenza di un confounder (la difficoltà di ammissione) le conclusioni guardando i dati aggregati è diversa rispetto a guardare i dati disaggregati (in questo caso rispetto al corso).\nQuesto è un ottimo esempio di come conoscere o non conoscere l’analisi dei dati aiuta a trarre conclusioni più appropriate.\nPer approfondire, a questo link https://setosa.io/simpsons/ trovate una visualizzazione interattiva del Paradosso di Simpson"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#quali-tipi-di-domande-di-ricerca-1",
+    "href": "slides/01-intro-analisi-dati.html#quali-tipi-di-domande-di-ricerca-1",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Quali tipi di domande di ricerca?",
+    "text": "Quali tipi di domande di ricerca?\nIl capitolo Introduction to Quantitative Methods identifica i principali approcci quantitativi all’analisi dati in ambito di Psicologia di Comunità."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#e-possibile-una-ricerca-empirica",
+    "href": "slides/01-intro-analisi-dati.html#e-possibile-una-ricerca-empirica",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "E’ possibile una ricerca empirica?",
+    "text": "E’ possibile una ricerca empirica?\n\nOn the one hand, more action-oriented proponents in the field argue in favor of constructivist or relativistic paradigms to promote greater engagement with the contextual and community-based influences that impact our areas of study (Lincoln & Guba, 2000). From this perspective, there is concern about the potential limitations, or even the potential harms to those who are disenfranchised, of more objective experimental paradigms (e.g., positivism and postpositivisism). On the other hand, proponents of these quantitative methods argue that as a scientific discipline seeking to expand the influence of our field’s perspective on the way social and community research is conducted, we should embrace the strengths of methods based on these paradigms to facilitate rigorous hypothesis testing, produce research that is both internally valid and externally generalizable, and assess cause-and-effect relationships between constructs (Johnson & Onwuegbuzie, 2004)."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#quali-tipi-di-domande-di-ricerca-2",
+    "href": "slides/01-intro-analisi-dati.html#quali-tipi-di-domande-di-ricerca-2",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Quali tipi di domande di ricerca?",
+    "text": "Quali tipi di domande di ricerca?\nDi seguito, sono identificate le principali domande di ricerca:\n\nLa presenza e la forza della relazione tra due o più variabili\nLa presenza di differenze in variabili d’interesse tra due o più gruppi\nClassificazione dei soggetti in gruppi, basandosi su variabili di interesse\nMisurazione e strutture latenti di variabili e costrutti d’interesse\nL’andamento temporale (i.e., longitudinale) di effetti e variabili d’interesse"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#quali-tipi-di-domande-di-ricerca-3",
+    "href": "slides/01-intro-analisi-dati.html#quali-tipi-di-domande-di-ricerca-3",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Quali tipi di domande di ricerca?",
+    "text": "Quali tipi di domande di ricerca?\nQuelle che affronteremo principalmente sono:\n\nLa presenza e la forza della relazione tra due o più variabili\nLa presenza di differenze in variabili d’interesse tra due o più gruppi\nClassificazione dei soggetti in gruppi, basandosi su variabili di interesse\nMisurazione e strutture latenti di variabili e costrutti d’interesse\nL’andamento temporale (i.e., longitudinale) di effetti e variabili d’interesse"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#quali-tipi-di-domande-di-ricerca-4",
+    "href": "slides/01-intro-analisi-dati.html#quali-tipi-di-domande-di-ricerca-4",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Quali tipi di domande di ricerca",
+    "text": "Quali tipi di domande di ricerca\nInoltre, tratteremo altri due argomenti:\n\nStrutture dati multilivello: Questo è parzialmente compreso in (1) ma in Psicologia di Comunità spesso le domande di ricerca riguardano la relazione tra più livelli di analisi (e.g., come il contesto impatta il singolo e viceversa).\nMetanalisi: In un contesto dove ci sono sempre più ricerche pubblicate, sviluppare un meta-analytic thinking è essenziale. Il motto è che uno studio, anche il più ben fatto, non dice mai abbastanza sul fenomeno d’indagine."
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#relazione-tra-due-o-più-variabili",
+    "href": "slides/01-intro-analisi-dati.html#relazione-tra-due-o-più-variabili",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "1. Relazione tra due o più variabili",
+    "text": "1. Relazione tra due o più variabili\nPossiamo valutare la relazione tra criminalità percepita ed età anagrafica:"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#relazione-tra-due-o-più-variabili-1",
+    "href": "slides/01-intro-analisi-dati.html#relazione-tra-due-o-più-variabili-1",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "1. Relazione tra due o più variabili",
+    "text": "1. Relazione tra due o più variabili\nOppure vedere la relazione tra uso dei social media e depressione in diversi paesi. Questa è una struttura multilivello:"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#differenze-tra-gruppi",
+    "href": "slides/01-intro-analisi-dati.html#differenze-tra-gruppi",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "2. Differenze tra gruppi",
+    "text": "2. Differenze tra gruppi\nPossiamo indagare ad esempio punteggi di depressione e ansia in funzione del corso di laurea seguito:"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#metanalisi",
+    "href": "slides/01-intro-analisi-dati.html#metanalisi",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "3. Metanalisi",
+    "text": "3. Metanalisi\nPossiamo anche combinare diversi studi relativi ad uno specifico ambito di ricerca. Ad esempio, 10 studi che valutano l’impatto di uno specifico programma di prevenzione:"
+  },
+  {
+    "objectID": "slides/01-intro-analisi-dati.html#riferimenti",
+    "href": "slides/01-intro-analisi-dati.html#riferimenti",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Riferimenti",
+    "text": "Riferimenti\n\n\n\n\nBickel, P. J., Hammel, E. A., & O’connell, J. W. (1975). Sex bias in graduate admissions: data from berkeley: Measuring bias is harder than is usually assumed, and the evidence is sometimes contrary to expectation. Science (New York, N.Y.), 187, 398–404. https://doi.org/10.1126/science.187.4175.398"
+  }
+]

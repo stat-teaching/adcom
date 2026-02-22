@@ -1,9 +1,12 @@
 project:
   type: website
+  output-dir: docs
   render:
     - "*.qmd"
     - "!local/"
     - "slides/exploring-data.qmd"
+  # post-render:
+  #   - quarto-scripts/slide2pdf.r
 
 website:
   favicon: resources/hex.svg

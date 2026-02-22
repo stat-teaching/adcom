@@ -58,8 +58,6 @@
 
 # Regressione lineare
 
-Nell'introduzione fai esempio di:
-
 - varianza con e senza x
 - intepretazione geometrica
 - visualizzazione con misc/plot-reg.R
