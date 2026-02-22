@@ -8,6 +8,8 @@ project:
   pre-render:
     - quarto-scripts/papers.r
   #   - quarto-scripts/slide2pdf.r
+  resources:
+    papers/*.pdf
 
 website:
   favicon: resources/hex.svg
