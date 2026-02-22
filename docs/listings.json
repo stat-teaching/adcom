@@ -1,5 +1,13 @@
 [
   {
+    "listing": "/notes.html",
+    "items": []
+  },
+  {
+    "listing": "/data.html",
+    "items": []
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/slides/00-intro-corso.html",
@@ -8,11 +16,7 @@
     ]
   },
   {
-    "listing": "/data.html",
-    "items": []
-  },
-  {
-    "listing": "/notes.html",
+    "listing": "/papers.html",
     "items": []
   }
 ]

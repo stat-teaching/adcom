@@ -5,7 +5,8 @@ project:
     - "*.qmd"
     - "!local/"
     - "slides/exploring-data.qmd"
-  # post-render:
+  pre-render:
+    - quarto-scripts/papers.r
   #   - quarto-scripts/slide2pdf.r
 
 website:

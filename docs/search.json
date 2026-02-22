@@ -693,25 +693,11 @@
     "text": "Piccolo questionario\nVi chiedo di fare un piccolo questionario totalmente anonimo. Non vi dico ancora a cosa servirà ma lo vedremo nelle prossime lezioni ma vi garantisco che sarà molto utile.\nPotete andare a questo link github.com/stat-teaching/adcom/form/initial oppure scannerizzare questo QRcode:"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Analisi dei Dati in Ambito di Comunità",
+    "objectID": "notes.html",
+    "href": "notes.html",
+    "title": "Notes",
     "section": "",
-    "text": "Materiale per il corso di Analisi dei Dati in Ambito di Comunità (ADCOM, 6 CFU) nel corso di Psicologia di Comunità, della Promozione del Benessere e del Cambiamento Sociale.\nIn questo sito sarà presente tutto il materiale come slides, esercizi, approfondimenti, codici e dati. Per ogni comunicazione ufficiale si faccia sempre riferimento alla pagina Moodle del corso."
-  },
-  {
-    "objectID": "index.html#slides",
-    "href": "index.html#slides",
-    "title": "Analisi dei Dati in Ambito di Comunità",
-    "section": "Slides",
-    "text": "Slides\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\n\n\n\n\nIntroduzione alla misurazione e metodologia della ricerca\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "data.html",
-    "href": "data.html",
-    "title": "Datasets",
-    "section": "",
-    "text": "Order By\n      Default\n      \n        Dataset\n      \n      \n        File\n      \n      \n        Online\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDataset\n\n\n\nFile\n\n\n\nOnline\n\n\n\n\n\n\n\n\nBerkeley admissions\n\n\nberkeley-admissions.xlsx\n\n\n\n\n\n\n\n\n\nDi Marco et al. (2020)\n\n\ndimarco2020.xlsx\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "No matching items"
   },
   {
     "objectID": "extra.html",
@@ -728,11 +714,32 @@
     "text": "Corso intensivo (20 ore) su R, parte dei corsi ARCA del Dipartimento di Psicologia dello Sviluppo e della Socializzazione (DPSS). Potete trovare tutto il materiale https://arca-dpss.github.io/course-R/.\nLibro in italiano riguardo R che supporta il corso ARCA https://psicostat.github.io/Introduction2R/"
   },
   {
-    "objectID": "notes.html",
-    "href": "notes.html",
-    "title": "Notes",
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Datasets",
     "section": "",
-    "text": "No matching items"
+    "text": "Order By\n      Default\n      \n        Dataset\n      \n      \n        File\n      \n      \n        Online\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDataset\n\n\n\nFile\n\n\n\nOnline\n\n\n\n\n\n\n\n\nBerkeley admissions\n\n\nberkeley-admissions.xlsx\n\n\n\n\n\n\n\n\n\nDi Marco et al. (2020)\n\n\ndimarco2020.xlsx\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Analisi dei Dati in Ambito di Comunità",
+    "section": "",
+    "text": "Materiale per il corso di Analisi dei Dati in Ambito di Comunità (ADCOM, 6 CFU) nel corso di Psicologia di Comunità, della Promozione del Benessere e del Cambiamento Sociale.\nIn questo sito sarà presente tutto il materiale come slides, esercizi, approfondimenti, codici e dati. Per ogni comunicazione ufficiale si faccia sempre riferimento alla pagina Moodle del corso."
+  },
+  {
+    "objectID": "index.html#slides",
+    "href": "index.html#slides",
+    "title": "Analisi dei Dati in Ambito di Comunità",
+    "section": "Slides",
+    "text": "Slides\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\n\n\n\n\nIntroduzione alla misurazione e metodologia della ricerca\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "papers.html",
+    "href": "papers.html",
+    "title": "Papers",
+    "section": "",
+    "text": "In questa pagina trovate tutti i paper con pdf usati durante le lezioni.\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Paper\n      \n      \n        Titolo\n      \n      \n        PDF\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nPaper\n\n\n\nTitolo\n\n\n\nPDF\n\n\n\n\n\n\n\n\nRobinette et al. (2025)\n\n\nCommunity crime and safety: An investigation of gender differences in the daily stress process\n\n\n\n\n\n\n\n\n\nGoodnight et al. (2012)\n\n\nA quasi-experimental analysis of the influence of neighborhood disadvantage on child and adolescent conduct problems\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\nBibliografia\n\n\nGoodnight, J. A., Lahey, B. B., Van Hulle, C. A., Rodgers, J. L., Rathouz, P. J., Waldman, I. D., & D’Onofrio, B. M. (2012). A quasi-experimental analysis of the influence of neighborhood disadvantage on child and adolescent conduct problems. Journal of Abnormal Psychology, 121, 95–108. https://doi.org/10.1037/a0025078\n\n\nRobinette, J. W., Piazza, J. R., & Stawski, R. S. (2025). Community crime and safety: An investigation of gender differences in the daily stress process. Journal of Community Psychology, 53, e23158. https://doi.org/10.1002/jcop.23158"
   },
   {
     "objectID": "slides/01-intro-analisi-dati.html#la-psicologia-è-una-scienza-statistica",
