@@ -27,16 +27,65 @@ ghlink <- function(x) {
   sprintf("https://%s.github.io/%s/%s", dirname(url), basename(url), x)
 }
 
-mdag <- function(...) {
-  ggdag::dagify(
-    ...
-  ) |>
-    ggdag::ggdag_status(node_size = 20, text_size = 10) +
-    ggdag::theme_dag() +
-    ggplot2::theme(legend.position = "none")
-}
 
-html <- "_site/slides/00-intro-corso.html"
+mdag <- function(..., labels = NULL, focus = NULL) {
+  dots <- list(...)
+  if (!is.null(labels)) {
+    dots$labels <- labels
+  }
+
+  tdag <- do.call(dagify, dots) |>
+    ggdag::tidy_dagitty() |>
+    ggdag::node_status()
+
+  if (!is.null(labels)) {
+    tdag$data$label <- ifelse(
+      is.na(tdag$data$label),
+      tdag$data$name,
+      tdag$data$label
+    )
+  }
+
+  if (!is.null(focus)) {
+    tdag$data$status <- as.character(tdag$data$status)
+    tdag$data$status[tdag$data$name %in% focus] <- "focus"
+    tdag$data$status <- factor(tdag$data$status)
+  }
+
+  plt <- tdag |>
+    ggplot2::ggplot(ggplot2::aes(
+      x = x,
+      y = y,
+      xend = xend,
+      yend = yend,
+      color = status
+    )) +
+    ggdag::geom_dag_edges() +
+    ggdag::geom_dag_point(size = 20) +
+    ggdag::theme_dag() +
+
+    ggplot2::theme(legend.position = "none") +
+    ggplot2::scale_color_manual(
+      values = c(
+        "exposure" = "#0072B2",
+        "outcome" = "firebrick",
+        "latent" = "grey50",
+        "focus" = "#009E73"
+      ),
+      na.value = "grey80"
+    )
+
+  if (is.null(labels)) {
+    plt + ggdag::geom_dag_text(col = "white", size = 10)
+  } else {
+    plt +
+      ggdag::geom_dag_label(
+        ggplot2::aes(label = label),
+        check_overlap = TRUE,
+        col = "black"
+      )
+  }
+}
 
 reveal2pdf <- function(html) {
   pdf <- xfun::with_ext(html, "pdf")
@@ -71,4 +120,21 @@ slides_db <- function() {
   db$update <- !tools::md5sum(slides) == db$md5
   saveRDS(db, ".db/slides.rds")
   readRDS(".db/slides.rds")
+}
+
+
+get_slide_files <- function() {
+  files <- list.files(
+    here::here("slides/files"),
+    pattern = "*.pdf",
+    full.names = TRUE
+  )
+  files <- lapply(files, function(x) {
+    sprintf(
+      "https://stat-teaching.github.io/adcom/%s",
+      sub("^.*?slides/", "slides/", x)
+    )
+  })
+  names(files) <- sapply(files, basename)
+  files
 }

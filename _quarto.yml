@@ -4,12 +4,11 @@ project:
   render:
     - "*.qmd"
     - "!local/"
-    - "slides/exploring-data.qmd"
   pre-render:
     - quarto-scripts/papers.r
-  #   - quarto-scripts/slide2pdf.r
   resources:
-    papers/*.pdf
+    - papers/*.pdf
+    - slides/files/*.pdf
 
 website:
   favicon: resources/hex.svg
@@ -41,6 +40,7 @@ format:
       - brand
     css: styles.css
     toc: true
+    anchor-sections: true
 
 bibliography: "https://raw.githubusercontent.com/filippogambarota/bib-database/main/references.bib"
 csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl"

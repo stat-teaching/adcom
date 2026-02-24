@@ -1,6 +1,0 @@
----
-title: Notes
-listing:
-  contents: notes
-  type: table
----

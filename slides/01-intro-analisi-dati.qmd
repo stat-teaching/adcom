@@ -23,6 +23,8 @@ knitr::opts_chunk$set(
   fig.dev = "svg"
 )
 
+files <- get_slide_files()
+
 theme_set(mtheme())
 ```
 
@@ -166,10 +168,10 @@ Vi ricordo che:
 
 ## Simpson's Paradox
 
-Vediamo cosa succede se disaggreghiamo e separiamo per corso di studio. Potete trovare il dataset con le percentuali di ammissione separato per dipartimento qui:
+Vediamo cosa succede se separiamo per corso di studio. Potete trovare il dataset con le percentuali di ammissione separato per dipartimento qui:
 
 <center>
-{{< qrcode https://docs.google.com/spreadsheets/d/1bIzgoftBx0v87sbdgzz3eqH5nuzE7ZUHGgVoryLHCaY/edit?gid=0#gid=0 >}}
+{{< qrcode https://docs.google.com/spreadsheets/d/1bIzgoftBx0v87sbdgzz3eqH5nuzE7ZUHGgVoryLHCaY/edit?gid=0#gid=0 width=300 height=300 >}}
 </center>
 
 Cosa potete notare?
@@ -193,14 +195,24 @@ dat_dep <- dat |>
 dat_dep$Major <- factor(dat_dep$Major, levels = 
 unique(dat_dep$Major)[order(unique(dat_dep$p_admitted_tot))])
 
-dat_dep |> 
-  mutate(p_admitted = round(p_admitted * 100)) |> 
-  ggplot(aes(x = p_admitted_tot, y = Major)) +
-  geom_point(aes(x = p_admitted, color = Sex, size = n_admitted)) +
-  xlim(c(0, 100)) +
-  scale_size_continuous(range = c(2, 10)) +
-  xlab("% di ammissioni") +
-  ylab("Corso di studi")
+dat_dep |>
+  filter(Major != "Other") |> 
+  ggplot(aes(y = Major)) +
+  geom_vline(data = dat_summ, aes(xintercept = p_admitted, color = Sex), lwd = 1, lty = "dotted") +
+  geom_point(
+    aes(x = p_admitted, color = Sex, size = n_applications),
+    alpha = 0.9
+  ) +
+  coord_cartesian(xlim = c(0, 1)) +
+  scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_size_continuous(range = c(2, 10), guide = "none") +
+  labs(
+    x = "% di ammissioni",
+    y = "Corso di studi",
+    color = "Sesso",
+    size = "N domande"
+  ) +
+  scale_color_manual(values = c("#1abc9c", "#9b59b6"))
 ```
 
 ## Simpson's Paradox
@@ -224,7 +236,7 @@ Per approfondire, a questo link [https://setosa.io/simpsons/](https://setosa.io/
 
 ## Quali tipi di domande di ricerca?
 
-Il capitolo *Introduction to Quantitative Methods* identifica i principali approcci quantitativi all'analisi dati in ambito di Psicologia di Comunità.
+Il capitolo *Introduction to Quantitative Methods* [{{< fa file-pdf >}}](`r files$jason2016_chapter1_intro.pdf`) identifica i principali approcci quantitativi all'analisi dati in ambito di Psicologia di Comunità.
 
 ![](img/handbook-community-research.png){fig-align="center"}
 

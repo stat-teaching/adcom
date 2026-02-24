@@ -4,14 +4,29 @@ engine: knitr
 execute: 
   echo: false
   message: false
-
+anchor-sections: true
 listing:
-  contents: slides
-  type: table
-  sort:
-    - "filename"
-  fields: [title]
-  id: slides
+  - id: "papers"
+    contents:
+      - "papers/papers.yml"
+    type: table
+    field-display-names:
+      title: "Titolo"
+      key: "Paper"
+      file: "PDF"
+  - id: slides
+    contents: slides
+    type: table
+    sort:
+      - "filename"
+    fields: [title, date]
+    field-display-names:
+      title: "Titolo"
+      date: "Ultimo aggiornamento"
+  - id: data
+    contents: data/data.yml
+    type: table
+suppress-bibliography: true
 ---
 
 ![](resources/hex.svg){fig-align="center"}
@@ -25,8 +40,30 @@ Materiale per il corso di Analisi dei Dati in Ambito di Comunità (ADCOM, 6 CFU)
 
 In questo sito sarà presente tutto il materiale come slides, esercizi, approfondimenti, codici e dati. Per ogni comunicazione ufficiale si faccia sempre riferimento alla [pagina Moodle del corso]({{< var moodle >}}).
 
-## Slides
+# Slides
 
 ::: {#slides}
 :::
 
+# Papers
+
+::: {#papers}
+:::
+
+# Materiale extra
+
+## R
+
+- Corso intensivo (20 ore) su R, parte dei corsi [ARCA](https://www.dpss.unipd.it/applied-research-courses-academy-arca) del Dipartimento di Psicologia dello Sviluppo e della Socializzazione (DPSS). Potete trovare tutto il materiale [https://arca-dpss.github.io/course-R/](https://arca-dpss.github.io/course-R/).
+- Libro in italiano riguardo R che supporta il corso ARCA [https://psicostat.github.io/Introduction2R/](https://psicostat.github.io/Introduction2R/)
+- Corso ARCA su R [https://arca-dpss.github.io/course-R/](https://arca-dpss.github.io/course-R/)
+
+# Data
+
+::: {#data}
+:::
+
+# Links utili
+
+- [Padlet](https://padlet.com/unipd/adcom2526-8obpqgzm4mdnoyyl)
+- [Calendario](https://docs.google.com/spreadsheets/d/1rhXgzPZJYWaGu5bKYFfrJvaycTlxF838ap0lkPV2tyk/edit?gid=0#gid=0)

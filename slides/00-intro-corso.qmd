@@ -1,7 +1,6 @@
 ---
 title: Introduzione al Corso
 toc: true
-toc-title: Contenuti
 ---
 
 ```{r}
@@ -9,6 +8,7 @@ toc-title: Contenuti
 #| include: false
 
 library(tidyverse)
+devtools::load_all()
 
 theme_set(theme_bw(15))
 ```
@@ -248,22 +248,14 @@ Le lezioni saranno di 3 ore il Venerdì dalle 11:30 alle 14:30. Potete trovare a
 
 ## Didattica integrativa
 
-La didattica integrativa sarà gestita e tenuta dal Dr. [Matteo Manente](https://manentematteo.github.io/) Potete scrivere a [matteo.manente.3@phd.unipd.it](mailto:matteo.manente.3@phd.unipd.it) per informazioni. Eventuale materiale sarà comunque disponibile in [Moodle](https://psico.elearning.unipd.it/course/section.php?id=60321) con una sezione e forum dedicati.
+La didattica integrativa sarà gestita e tenuta dal Dr. [Matteo Manente](https://manentematteo.github.io/) Potete scrivere a [matteo.manente.3@phd.unipd.it](mailto:matteo.manente.3@phd.unipd.it) per informazioni. Eventuale materiale sarà comunque disponibile in [Moodle](https://psico.elearning.unipd.it/course/section.php?id=60321) con una sezione e forum dedicati. Se siete interessatə iscrivetevi al [forum dedicato](https://psico.elearning.unipd.it/mod/forum/view.php?id=268046).
 
-Il giorno previsto è martedì dalle 10:30 alle 12:30 e le attività partiranno dal 31/03/2026. Sono previsti circa 5 incontri da 2 ore accademiche.
-
+Eventuali approfondimenti non sono parte del programma ufficiale del corso e quindi dell'esame. Sono previsti materiali extra ed esercizi sul programma oltre a 1-2 lezioni su argomenti attuali e rilevanti per la ricerca psicologica.
 
 ## Didattica integrativa
 
-Le attività di didattica integrativa sono considerate delle **ore aggiuntive** e **facoltative** per *chiarire*, *approfondire* ed *esercitarsi* sui contenuti del corso e saranno gestite dal Dr. [Matteo Manente](https://manentematteo.github.io/). Eventuale materiale sarà comunque disponibile in [Moodle](https://psico.elearning.unipd.it/course/section.php?id=60321). Se siete interessatə iscrivetevi al [forum dedicato](https://psico.elearning.unipd.it/mod/forum/view.php?id=268046).
+Le attività di didattica integrativa sono considerate delle **ore aggiuntive** e **facoltative** per *chiarire*, *approfondire* ed *esercitarsi* sui contenuti del corso e saranno gestite dal Dr. [Matteo Manente](https://manentematteo.github.io/). Eventuale materiale sarà comunque disponibile in [Moodle](https://psico.elearning.unipd.it/course/section.php?id=60321). 
 
-Alcune precisazioni:
-
-- Eventuali approfondimenti non sono parte del programma ufficiale del corso e quindi dell'esame
-- La partecipazione ad uno o più incontri è totalmente facoltativa e non ci sarà un'iscrizione formale. Potrebbe essere solo richiesto, in modo anonimo, un sondaggio di presenza per ragioni organizzative (e.g., trovare l'aula adatta)
-- Il giorno e orario sarà fisso e non ci potrà essere molta flessibilità. L'unica garanzia è la non sovrapposizione con altre lezioni del vostro corso.
-
-Potete scrivere a [matteo.manente.3@phd.unipd.it](mailto:matteo.manente.3@phd.unipd.it) per informazioni.
 
 # Getting started
 
@@ -298,11 +290,19 @@ Ci sono una serie di link utili (presenti anche su Moodle) che useremo spesso:
 - [Sito del corso]({{< var ghpages >}}) (parallelo a Moodle)
 - [Programma lezioni e argomenti]({{< var timetable >}})
 
+## Qualche conoscenza statistica
+
+Mettiamoci alla prova con qualche domanda generale!
+
+<center>
+
+{{< qrcode https://app.wooclap.com/ADCOM00?from=instruction-slide width=300 height=300 >}}
+
+</center>
+
 ## Piccolo questionario
 
 Vi chiedo di fare un piccolo questionario totalmente anonimo. Non vi dico ancora a cosa servirà ma lo vedremo nelle prossime lezioni ma vi garantisco che sarà molto utile.
-
-Potete andare a questo link [github.com/stat-teaching/adcom/form/initial](github.com/stat-teaching/adcom/form/initial) oppure scannerizzare questo QRcode:
 
 <center>
 

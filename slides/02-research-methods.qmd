@@ -1,6 +1,9 @@
 ---
-title: Introduzione alla misurazione e metodologia della ricerca
+title: Introduzione alla metodologia della ricerca
 toc: true
+draft: true
+filters:
+  - bibentry
 ---
 
 # Processo scientifico
@@ -13,6 +16,10 @@ library(tidyverse)
 library(patchwork)
 library(dagitty)
 library(ggdag)
+library(RefManageR)
+library(here)
+library(viridis)
+
 devtools::load_all()
 
 qtab <- function(x, width = NULL, fontsize = 0.85){
@@ -27,6 +34,14 @@ knitr::opts_chunk$set(
 )
 
 theme_set(mtheme())
+
+bib <- ReadBib(here("papers/papers.bib"))
+NoCite(bib)
+
+papers <- yaml::read_yaml(here("papers/papers.yml"))
+names(papers) <- sapply(papers, function(x) x$key)
+
+files <- get_slide_files()
 ```
 
 ## Processo scientifico
@@ -56,7 +71,7 @@ Non ho messo l'analisi dei dati perchè è importante distinguere tra:
 
 Il primo è facile, è sufficiente conoscere uno strumento (R, SPSS, Jamovi, etc.) e sapere quello che si deve fare. 
 
-Il secondo invece richiede conoscenza, spritico critico, ragionamento e allenamento. Non è uno step separato ma accompagna tutti i momenti della ricerca. 
+Il secondo invece richiede conoscenza, spirito critico, ragionamento e allenamento. Non è uno step separato ma accompagna tutti i momenti della ricerca. 
 
 Conoscere la statistica permette di valutare uno studio in letteratura, conoscere il disegno di ricerca migliore, valutare le misure migliori e cosi via. Questo è quello su cui ci focalizzeremo maggiormente durante il corso.
 
@@ -64,24 +79,302 @@ Conoscere la statistica permette di valutare uno studio in letteratura, conoscer
 
 > Data literacy is the ability to collect, manage, evaluate, and apply data, in a critical manner (Risdale et al., [2015](https://dalspaceb.library.dal.ca/server/api/core/bitstreams/7c0db868-79ac-4c3c-9ad0-f2a93cf2ccc6/content))
 
+## Metodologia della ricerca
+
+All'interno della metodologia della ricerca possiamo individuare tre filoni fondamentali:
+
+- Ricerca qualitativa
+- Ricerca quantitativa
+- Mixed Methods (qualitativa + quantitativa)
+
+Noi ci focalizzeremo solo su quella *quantitativa* ma, soprattutto in Psicologia di Comunità è molto rilevante ed importante anche quella qualitativa. Da qui in poi, ci riferiamo a ricerca sperimentale come ricerca quantitativa.
+
+## Disegni di ricerca
+
+All'interno della ricerca quantitativa possiamo identificare:
+
+- Ricerca Sperimentale
+- Ricerca Quasi-Sperimentale
+- Ricerca Correlazionale
+
+## Ricerca sperimentale
+
+Possiamo identificare 4 aspetti centrali che caratterizzano la ricerca sperimentale:
+
+1. **Manipolazione**: una o più variabili vengono attivamente manipolate creando due o più condizioni (ad esempio trattamento vs placebo)
+2. **Misurazione**: una o più variabili vengono misurate (considerando tutti gli aspetti che abbiamo illustrato prima)
+3. **Confronto**: le condizioni create *manipolando* le variabili vengono confrontate rispetto alle variabili misurate (ad esempio performance nel gruppo trattato vs placebo)
+4. **Controllo**: le variabili che non vengono manipolate, vengono controllate. Ci sono varie modalità di controllo sperimentale.
+
+Questi 4 elementi permettono idealmente di poter trarre delle conclusioni **causa-effetto** della manipolazione sull'outcome.
+
 ## Terminologia
 
 Quando parliamo di esperimenti, ricerche e analisi dati la terminologia è importante:
 
 - $y$ sono gli **outcomes** (uno o più). Solitamente chiamate anche *variabili dipendenti* (ma preferisco *outcomes*)
 - $x$ sono i **predittori**. Solitamente chiamate anche variabili *indipendenti* (ma preferisco *predittori*)
-- $x_p$ significa il predittore $p$ ($p = 1, 2, \dots, p$)
+
+All'interno dei predittori possiamo trovare:
+
+- variabili che rappresentano **manipolazioni sperimentali**
+- variabili che non vengono manipolate e sono chiamate **estranee** ma possono avere un impatto su $x$ e/o $y$. Alcune di queste vengono misurate e diventano dei veri e propri predittori mentre altre esistono solo livello teorico ma non vengono misurate.
 
 ## Terminologia
 
-- **dataset** è la struttura dati di dimensione $n \times k$ dove $n$ sono le righe e $k$ le colonne (pensate ad un foglio Excel). I predittori $p$ sono una parte delle colonne $k$ (o una loro trasformazione) che utilizziamo in un modello statistico.
+- **dataset** è la struttura dati di dimensione $n \times k$ dove $n$ sono le righe e $k$ le colonne (pensate ad un foglio Excel). I predittori $x$ sono una parte delle colonne $k$ (o una loro trasformazione) che utilizziamo in un modello statistico.
 - **unità statistiche** sono la l'elemento base o l'entità elementare su cui vengono misurati i caratteri oggetto di indagine all'interno di una popolazione statistica. Possono essere persone, animali, misurazioni nel tempo. A livello pratico è il significato delle $n$ righe nel dataset.
 
 ## Terminologia
 
+Quando parliamo di variabili è importante anche distinguere tra **variabili osservate** e **latenti**. 
+
 - Per **costrutto o variabile latente** intendiamo qualcosa di *non direttamente osservabile* ma che risulta essere il nostro oggetto d'interesse. Senso di comunità, autostima, depressione, benessere, etc. sono tutte variabili latenti.
 - Essendo non direttamente osservabili dobbiamo usare degli **indicatori** che sono legati ed informativi della variabile latente. 
-- Il legame tra variabile latente e indicatori si chiama **operazionalizzazione** la qui bontà determina la *precisione con cui stimiamo la variabile latente*.
+- Il legame tra variabile latente e indicatori si chiama **operazionalizzazione**.
+- è importante distinguere variabili osservate/manifeste come l'età, peso, altezza, etc. rispetto a variabili osservate utilizzate come indicatori di costrutti latenti.
+
+## Esempio
+
+Il classico esempio è quello di un trattamento/intervento. La **manipolazione** consiste nel creare due condizioni (trattamento e controllo). Viene **misurata** una variabile che rappresenta l'*outcome* (esempio autostima). Si **confrontano** i punteggi tra le due condizioni **controllando** per tutte le altre variabili. Un'eventuale differenza tra le due condizioni è dovuta all'*effetto causale* della manipolazione sperimentale.
+
+<center>
+Riuscite a pensare a qualche esempio concreto?
+</center>
+
+## Ricerca sperimentale e oltre
+
+Questo è uno schema riassuntivo ma non esaustivo dei diversi tipi di ricerca. I nodi decisionali sono quelli verdi mentre i vari disegni sono in rosso.
+![](img/research-design.png)
+
+## Primo nodo, intervento
+
+Il primo nodo decisionale riguarda la presenza o meno di un **intervento**. Un intervento viene inteso come una manipolazione sperimentale. In termini medici è un farmaco, un protocollo di cura, etc. In termini psicologici può essere un intervento educativo, psicoterapia, etc.
+
+Possiamo anche considerare un intervento un evento esterno (catastrofe, nuova legge, cambiamento, etc.) che quindi crea delle condizioni sperimentali anche senza l'intervento sperimentale diretto. 
+
+In caso non si faccia nessun intervento la ricerca viene definita osservazionale o correlazionale perchè l'interesse è sulla relazione non causale tra un insieme di variabili.
+
+## Secondo nodo, il controllo delle variabili
+
+Il controllo delle variabili è una caratteristica degli esperimenti e quasi-esperimenti. Tuttavia ci sono diversi tipologie di controllo sperimentale:
+
+- **Randomizzazione**: a priori, assegnare i soggetti in modo casuale alle condizioni sperimentali
+- **Fissazione**: a priori, selezionare i soggetti in modo che alcune variabili non possano avere un impatto
+- **Controllo statistico**: a posteriori, controllare l'impatto delle variabili (regressione multipla, lo vedremo)
+
+La randomizzazione (che vedremo a breve) è la tipologia di controllo sperimentale la cui presenza distingue gli esperimenti (puri) rispetto ai quasi-esperimenti. Nella pratica significa che i soggetti sperimentali vengono assegnati in modo totalmente *casuale* alle condizioni sperimentali (ad esempio gruppo sperimentale e controllo).
+
+## Perchè è necessario il controllo delle variabili?
+
+Immaginate di raccogliere dei dati di bambinə e ragazzə dai 6 ai 18 anni. Raccogliete punteggi a test di matematica e raccogliete il peso. Non avete altre informazioni.
+
+<center>
+{{< qrcode https://docs.google.com/spreadsheets/d/16JRt1_tXYQntv2bcbvbqoOzPEZvcXPKFYpvolR16c5E/template/preview width=300 height=300 >}}
+<center>
+
+Andate a questo link e provate ad esplorare il dataset. Cosa notate?
+
+## Perchè è necessario il controllo delle variabili?
+
+A questo link [https://www.tylervigen.com/spurious-correlations](https://www.tylervigen.com/spurious-correlations) sono presenti diversi esempi reali di quelle che si chiamano correlazioni spurie. Sono un bellissimo esempio del perchè, la relazione tra due variabili per essere interpretata in modo causale, necessita del controllo sperimentale.
+
+## Third-variable problem
+
+Esiste un problema noto in analisi dei dati che si chiama il third-variable problem e rappresenta il problema che abbiamo visto con le abilità matematiche e le correlazioni spurie. Più formalmente, la relazione tra un predittore $x$ (anche un intervento) e l'outcome $y$ può essere spiegata totalmente o in parte dalla presenza di una variabile *estranea* chiamata **confounder**.
+
+L'obiettivo del controllo sperimentale, in particolare della randomizzazione, è quello di limitare se non eliminare l'impatto dei confounder. Mentre fissare a priori alcune variabili o il controllo statistico richiedono di conoscere e misurare tutti i possibili confounders, la randomizzazione permette in teoria di eliminare l'impatto anche di variabili non misurate.
+
+## Confounder, un esempio
+
+In pratica, $z$ (l'età in questo caso) è una variabile legata sia a $x$ che a $y$ che non osserviamo ma spiega totalmente (o parzialmente) la relazione $y \sim x$. Vedremo come tenere conto di $z$ statisticamente ma i confounder possono renderci la vita molto complessa.
+
+```{r}
+set.seed(2025)
+
+N <- 1e3
+age <- sample(6:18, N, replace = TRUE)
+peso <- round(20 + 5 * (age - 6) + rnorm(N, 0, 5), 1)
+math <- 5 + (age - 6) * 8 + rnorm(N, 0, 10)
+math[math < 0] <- 0
+math[math > 100] <- 100
+math <- round(math)
+
+dat <- data.frame(
+    math, age, peso
+)
+
+dat <- dat[sample(1:nrow(dat), 1000, replace = TRUE), ]
+ggplot(dat, aes(x = age, y = math, color = peso)) +
+    geom_point(position = position_jitter(0.4), size = 3) +
+    scale_color_viridis_c()
+```
+
+## Directed acyclic graph
+
+Questo tipo di grafici sono molto utili per rappresentare graficamente modelli statistici ed ipotesi.
+
+```{r}
+mdag(
+  y ~ x,
+  y ~ z,
+  z ~ x,
+  m ~ x,
+  y ~ m,
+  outcome = "y",
+  exposure = "x"
+)
+```
+
+## Directed acyclic graph
+
+Non li vedremo nel dettaglio, ma sono utili per semplici modelli. Una piccola legenda:
+
+- la freccia $y \leftarrow x$ significa che $x$ ha un effetto causale su $y$
+- il colore rosso indica la variabile *outcome*
+- il colore blu indica una variabile *manipolata* (o trattamento)
+- il colore verde indica una variabile non manipolata ma d'interesse
+- il colore grigio indica una variabile *osservata* (ma non manipolata, ad esempio età)
+
+## Randomizzazione, perchè funziona?
+
+Immaginate di avere 100 persone, un trattamento $x$ ed un outcome $y$. Immaginate che per qualche ragione, l'età abbia un impatto sia sull'outcome $y$. Immaginate anche che i soggetti con età maggiore (in media) siano assegnati al gruppo di sperimentale.
+
+```{r}
+mdag(
+    y ~ x,
+    y ~ z,
+    x ~ z,
+    outcome = "y",
+    exposure = "x",
+    labels = c(
+        y = "outcome",
+        x = "trattamento",
+        z = "age"
+    )
+)
+```
+
+## Randomizzazione, perchè funziona?
+
+Nello scenario precedente non è possibile distinguere chiaramente l'effetto dell'età da quello del trattamento.
+
+```{r}
+n <- 100
+x <- rep(0:1, each = n/2)
+age_r <- round(runif(n, 18, 60))
+age_nr <- sort(age_r)
+
+y_nr <- 0.5 * x + 0.3 * age_nr + rnorm(n)
+y_r <- 0.5 * x + 0.3 * age_r + rnorm(n)
+
+dat <- data.frame(x = c(x, x), age = c(age_r, age_nr), y = c(y_r, y_nr),
+                  design = rep(c("rand", "non-rand"), each = n))
+
+dat |> 
+    filter(design == "non-rand") |> 
+  ggplot(aes(x = age, y = y, color = factor(x))) +
+  geom_point(size = 4) +
+  xlab("Age") +
+  ylab("Outcome") +
+  labs(color = "Trattamento")
+```
+
+## Randomizzazione, perchè funziona?
+
+La *randomizzazione* mitiga (e in teoria rimuove) l'effetto di variabili non direttamente controllate assegnando gli individui in modo casuale al trattamento.
+
+```{r}
+dat |> 
+    mutate(x = ifelse(x == 0, "Controllo", "Sperimentale"),
+           design = ifelse(design == "rand", "Randomizzato", "Non Randomizzato")) |> 
+    ggplot(aes(x = x, y = y)) +
+    geom_point(position = position_jitter(width = 0.1),
+               aes(color = age), size = 4) +
+    facet_wrap(~design) +
+    labs(
+        color = "Age"
+    )
+```
+
+## Randomizzazione, vediamola in azione
+
+Andate a questo [link](https://docs.google.com/spreadsheets/d/1glh5LKlvnp0H7HGqAsm68o7SORLEE9MpaASWrWk_wU0/template/preview ) (con un account Google):
+
+<center>
+{{< qrcode https://docs.google.com/spreadsheets/d/1glh5LKlvnp0H7HGqAsm68o7SORLEE9MpaASWrWk_wU0/template/preview width=300 height=300 >}}
+</center>
+
+## Randomizzazione e DAG
+
+```{r}
+non_rand <- mdag(
+    y ~ x,
+    y ~ z,
+    x ~ z,
+    exposure = "x",
+    outcome = "y"
+) + ggtitle("Non randomizzato") + theme(title = element_text(size = 20))
+
+rand <- mdag(
+    y ~ x,
+    y ~ z,
+    exposure = "x",
+    outcome = "y"
+) + ggtitle("Randomizzato") + theme(title = element_text(size = 20))
+
+non_rand + rand
+```
+
+## Perchè non randomizziamo sempre?
+
+Ci sono delle condizioni dove non è possibile randomizzare per motivi etici o empirici.
+
+Immaginate di dover capire l'impatto sulla salute di un certo comportamento (e.g., mangiare un certo alimento). Idealmente dovreste prendere in modo casuale soggetti, assegnarli una dieta e vedere l'impatto.
+
+## Perchè non randomizziamo sempre?
+
+Il problema è che non potendo randomizzare, non è possibile isolare chiaramente l'effetto del predittore d'interesse.
+
+In realtà possiamo:
+
+- Includere tutte le possibili variabili come predittore (*regressione multipla*) ma questo è valido solo se siamo sicuri di averle inserite tutte (molto poco plausibile)
+- Evidenziare un'associazione tra $x$ e $y$ ma senza poterne trarre una relazione causale.
+
+Vedremo quando parleremo di regressione cosa significa usare questi approcci.
+
+## Disegni quasi-sperimentali
+
+> Una scuola decide di implementare un nuovo protocollo di educazione sessuo-affettiva considerato innovativo e fondamentale per il benessere e lo sviluppo. Decide di implementare uno studio d'efficacia confrontando il nuovo protocollo con quello standard implementato in un'altra scuola.
+
+E' chiaro che, nonostante sia presente un *intervento* (il programma educativo) l'assegnazione al gruppo sperimentale e controllo non è casuale. Ci potrebbero essere delle differenze tra scuole che possono influenzare l'effetto del protocollo educativo. Differenze di tipo geografico, insegnanti, status-socio economico, etc.
+
+In questo caso, la relazione causale dimostrabile è più debole (non possiamo randomizzare) ma possiamo usare le altre modalità di controllo (fissazione e statistico).
+
+## Disegni correlazionali
+
+> Un gruppo di ricerca decide di studiare la relazione tra senso di comunità, benessere percepito e performance accademiche in un gruppo di studenti universitari. Raccoglie un campione, misura le variabili d'interesse e stima le relazioni tra le variabili.
+
+In questo caso non abbiamo ne intervento ne randomizzazione. Stiamo stimando le relazioni tra variabili senza poter trarre conclusioni di tipo causale. Questo tipo di ricerca è molto diffuso in Psicologia, soprattutto in Psicologia Sociale e di Comunità.
+
+## Validità dei disegni di ricerca
+
+Ci sono due tipi principali di validità quando si valuta un disegno di ricerca (e poi di conseguenza i risultati):
+
+- Validità Interna
+- Validità Esterna
+
+## Validità Interna
+
+La validità interna di uno studio fa riferimento alla possibilità di trarre conclusioni causali riguardo le relazioni tra variabili. All'aumentare del controllo sperimentale e delle manipolazioni aumenta la validità interna perche siamo in grado di isolare l'effetto di una o più variabili.
+
+## Validità Esterna
+
+La validità esterna fa riferimento al concetto di generalizzabilità. Quello che osservo in un contesto sperimentale, controllando le variabili ed isolando gli effetti può diventare meno generalizzabile. 
+
+> Ad esempio, se decido di studiare l'effetto della cannabis negli adolescenti e seleziono un campione ristretto controllando tutte le variabili posso trarre conclusioni più causali riguardo l'impatto della cannabis ma non posso generalizzare alla popolazione generale.
+
+Allo stesso modo, ridurre il controllo sperimentale mi permette di generalizzare maggiormente avendo incluso una popolazione più eterogenea, riducendo però la capacità di descrivere gli effetti in modo causale.
 
 # Misurazione Psicologica
 
@@ -105,7 +398,7 @@ Possiamo individuare 4 tipologie principali di variabili:
 Questa viene anche chiamata tassonomia **NOIR**.
 
 ::: aside
-Per un paper classico si veda @Stevens1946-te [{{< fa file-pdf >}}](`r pdf("../materials/stevens1946.pdf")`)
+Per un paper classico si veda @Stevens1946-te `r papers[["@Stevens1946-te"]]$file`
 :::
 
 ## Variabili di tipo *nominale*
@@ -159,7 +452,7 @@ Alcuni esempi:
 
 ## Variabili di tipo *ordinale*
 
-Rispetto alle variabili categoriali, le variabili *ordinali* hanno un ordine. Possiamo quindi pensarle categorie alle quali assegnamo un numero progressivo.
+Rispetto alle variabili categoriali, le variabili *ordinali* hanno un ordine. Possiamo quindi pensarle categorie alle quali assegniamo un numero progressivo.
 
 . . .
 
@@ -187,7 +480,7 @@ Questo è il primo tipo di variabile *numerica* in senso stretto. Le principali 
 - Le differenze (*intervalli*) tra due valori sono note e costanti per tutta la scala
 - Non c'è uno zero assoluto definito come assenza della proprietà misurata
 
-La mancanza di zero assoluto rende quindi non intepretabili i rapporti tra valori, mentre lo sono le differenze.
+La mancanza di zero assoluto rende quindi non interpretabili i rapporti tra valori, mentre lo sono le differenze.
 
 ## Variabili su scala ad *intervalli*: esempi
 
@@ -214,8 +507,6 @@ Qualche esempio:
 
 - Il tempo inteso come minuti, secondi, millisecondi: tempi di reazione in esperimenti cognitivi
 - Segnale psicofisiologico come EEG, ECG, etc.
-
-La presenza dello zero assoluto permette di poter calcolare rapporti significativi. Possiamo dire che 20 secondi sono il doppio del tempo rispetto a 10 secondi.
 
 ## Tipologia di variabili, riassunto:
 
@@ -323,7 +614,7 @@ $$
 X = T + E
 $$
 
-Questo è un concetto fondamentale perchè l'obiettivo della statistica è quello di, partendo dal dato osservato $E$ stimare $T$ tenendo in considerazione l'errore $E$.
+Questo è un concetto fondamentale perchè l'obiettivo della statistica è quello di, partendo dal dato osservato $X$ stimare $T$ tenendo in considerazione l'errore $E$.
 
 ## Dati, modelli e residui
 
@@ -335,7 +626,7 @@ $$
 
 ## Dati, modelli e residui
 
-La linea blue è il nostro modello $M$, i punti sono i dati $D$ e l'errore o residui sono i segmenti rossi $E$. Diversi modelli si adattano in modo migliore o peggiore ai dati.
+La linea blu è il nostro modello $M$, i punti sono i dati $D$ e l'errore o residui sono i segmenti rossi $E$. Diversi modelli si adattano in modo migliore o peggiore ai dati.
 
 ```{r}
 #| fig-width: 15
@@ -386,12 +677,12 @@ ddl |>
 
 Questa sezione è basata sui seguenti riferimenti (trovate anche il pdf):
 
-- @Petersen2024-fg in particolare il Capitolo 4 ([{{< fa file-pdf >}}](files/petersen2024_chapter4_validity.pdf))
-- @American-Educational-Research-Association2014-in in particolare il Capitolo 1 ([{{< fa file-pdf >}}](files/apa2024standards_chapter1_validity.pdf))
+- @Petersen2024-fg in particolare il Capitolo 4 ([{{< fa file-pdf >}}](`r files$petersen2024_chapter4_validity.pdf`))
+- @American-Educational-Research-Association2014-in in particolare il Capitolo 1 ([{{< fa file-pdf >}}](`r files$apa2024standards_chapter1_validity.pdf`))
 
 ## Validità
 
-La validità può essere intesa come *il grado in cui l'evidenza e la teoria supportano le interpretazioni dei punteggi dei test in vista degli usi proposti dei test stessi* [@American-Educational-Research-Association2014-in]. Spesso, semplificando, viene detto che la validità di una misura (ad esempio un questionario) è la sua capacità di misurare quello che si prefigge (teoricamente) di misurare. Ritornando all'esempio della bilancia, la validità si chiede lo scopo per cui viene misurato il peso (e.g., indicatore della salute) e non come viene misurato (*affidabilità*). 
+La validità può essere intesa come *il grado in cui l'evidenza e la teoria supportano le interpretazioni dei punteggi dei test in vista degli usi proposti dei test stessi* [@American-Educational-Research-Association2014-in]. Spesso, semplificando, viene detto che la validità di una misura (ad esempio un questionario) è la sua capacità di misurare quello che si prefigge (teoricamente) di misurare. Ritornando all'esempio della bilancia, la validità si chiede lo scopo per cui viene misurato il peso (e.g., indicatore della salute) e non come viene misurato (*affidabilità*).
 
 ## Validità
 
@@ -414,8 +705,8 @@ graph TB
 
 Questa sezione è basata sui seguenti riferimenti (trovate anche il pdf):
 
-- @Petersen2024-fg in particolare il Capitolo 3 ([{{< fa file-pdf >}}](files/petersen2024_chapter3_reliability.pdf))
-- @American-Educational-Research-Association2014-in in particolare il Capitolo 2 ([{{< fa file-pdf >}}](files/apa2024standards_chapter2_reliability.pdf))
+- @Petersen2024-fg in particolare il Capitolo 3 ([{{< fa file-pdf >}}](`r files$petersen2024_chapter3_reliability.pdf`))
+- @American-Educational-Research-Association2014-in in particolare il Capitolo 2 ([{{< fa file-pdf >}}](`r files$apa2024standards_chapter2_reliability.pdf`))
 
 ## Affidabilità
 
@@ -534,7 +825,7 @@ In modo simile all'affidabilità interrater, forme parallele dello stesso strume
 
 Questo tipo di affidabilità rappresenta quanto simili sono le risposte tra soggetti agli stessi item. L'idea è che soggetti diversi (al netto di differenze individuali) dovrebbero rispondere in modo simile agli stessi item. 
 
-Solitamente vengono usati indici che potreste aver sentito come l'Alpha di Cronbach. Una misura ha consistenza interna se, ad esempio, chi risponde valori elevati ad un certo item risponde con valori elevati anche ad un'altro item (o il contrario).
+Solitamente vengono usati indici che potreste aver sentito come l'Alpha di Cronbach. Una misura ha consistenza interna se, ad esempio, chi risponde valori elevati ad un certo item risponde con valori elevati anche ad un altro item (o il contrario).
 
 ## Affidabilità e validità, alcuni esempi
 
@@ -556,7 +847,7 @@ La strumentazione per misurare il battito cardiaco può essere molto affidabile 
 
 ## Sensibilità e range delle misure
 
-Un'altro aspetto importante riguarda la *granularità* delle misure. In altri termini, se siamo interessati a misurare variazioni nel costrutto latente (differenza di depressione tra due gruppi di individui) dobbiamo assicurarci che l'indicatore sia abbastanza sensibile per cogliere queste differenze.
+Un altro aspetto importante riguarda la *granularità* delle misure. In altri termini, se siamo interessati a misurare variazioni nel costrutto latente (differenza di depressione tra due gruppi di individui) dobbiamo assicurarci che l'indicatore sia abbastanza sensibile per cogliere queste differenze.
 
 Sarebbe come trovare la temperatura ideale ma possiamo regolarla solo di 5 gradi alla volta. Per quanto il termostato sia affidabile e valido come misura, la sua granularità non è adeguata.
 
@@ -640,175 +931,34 @@ p2 <- data.frame(age, y) |>
 p1 + p2
 ```
 
-# Disegni di ricerca
-
-## Disegni di ricerca
-
-Questo è uno schema riassuntivo ma non esaustivo dei diversi tipi di ricerca. I nodi decisionali sono quelli verdi mentre i vari disegni sono in rosso. Stiamo considerando qui ricerca di tipo quantitativo.
-
-![](img/research-design.png)
-
-## Primo nodo, intervento
-
-Il primo nodo decisionale riguarda la presenza o meno di un **intervento**. Un intervento viene inteso come una manipolazione sperimentale. In termini medici è un farmaco, un protocollo di cura, etc. In termini psicologici può essere un intervento educativo, psicoterapia, etc.
-
-L'aspetto fondamentale è la presenza di un qualcosa di esterno che, si presume, possa avere un impatto (effetto) su una certa variabile che viene misurata. L'obiettivo è solitamente quello di capire l'effetto causale dell'intervento, controllando o escludendo l'effetto di altre variabili.
-
-In caso non si faccia nessun intervento la ricerca viene definita osservazionale perchè l'interesse è sulla relazione non causale tra un insieme di variabili.
-
-## Secondo nodo, gruppo di controllo
-
-Il secondo nodo fa riferimento alla presenza di un **gruppo di controllo**. Il gruppo di controllo è un gruppo di soggetti dove non viene somministrata la manipolazione sperimentale/intervento (o ne viene somministrata una diversa/placebo).
-
-La presenza del gruppo di controllo serve per isolare il più possibile l'effetto della manipolazione sperimentale.
-
-## Terzo nodo, la randomizzazione
-
-Nel caso di un intervento e nel caso ci sia un gruppo di controllo, il terzo nodo decisionale riguarda la **randomizzazione**. Nella pratica significa che i soggetti sperimentali vengono assegnati in modo totalmente *casuale* alla condizione di controllo e sperimentale.
-
-La randomizzazione permette di limitare l'impatto di variabili non controllate sperimentalmente in modo da poter intepretare il più possibile in modo **causale** l'effetto della manipolazione sperimentale.
-
-## Randomizzazione, perchè funziona?
-
-Immaginate di avere 100 persone, un trattamento $x$ ed un outcome $y$. Immaginate che per qualche ragione, l'età abbia un impatto sull'outcome $y$, dove all'aumentare dell'età ci sia un aumento dell'outcome.
-
-```{r}
-n <- 100
-x <- rep(0:1, each = n/2)
-age_r <- round(runif(n, 18, 60))
-age_nr <- sort(age_r)
-
-y_nr <- 0.5 * x + 0.3 * age_nr + rnorm(n)
-y_r <- 0.5 * x + 0.3 * age_r + rnorm(n)
-
-dat <- data.frame(x = c(x, x), age = c(age_r, age_nr), y = c(y_r, y_nr),
-                  design = rep(c("rand", "non-rand"), each = n))
-
-dat |> 
-  ggplot(aes(x = age, y = y)) +
-  geom_point(size = 4) +
-  xlab("Age") +
-  ylab("Outcome")
-```
-
-## Randomizzazione, perchè funziona?
-
-La *randomizzazione* quindi mitiga (e in teoria rimuove) l'effetto di variabili non direttamente controllate assegnando gli individui in modo casuale al trattamento.
-
-```{r}
-dat |> 
-    mutate(x = ifelse(x == 0, "Controllo", "Sperimentale"),
-           design = ifelse(design == "rand", "Randomizzato", "Non Randomizzato")) |> 
-    ggplot(aes(x = x, y = y)) +
-    geom_point(position = position_jitter(width = 0.1),
-               aes(color = age)) +
-    facet_wrap(~design) +
-    labs(
-        color = "Age"
-    )
-```
-
-## Randomizzazione, vediamola in azione
-
-Andate a questo [link](https://docs.google.com/spreadsheets/d/1glh5LKlvnp0H7HGqAsm68o7SORLEE9MpaASWrWk_wU0/edit?usp=sharing) (con un account Google):
-
-<center>
-{{< qrcode https://docs.google.com/spreadsheets/d/1glh5LKlvnp0H7HGqAsm68o7SORLEE9MpaASWrWk_wU0/template/preview >}}
-</center>
-
-## Perchè non randomizziamo sempre?
-
-Ci sono delle condizioni dove non è possibile randomizzare per motivi etici o strettamente empirici.
-
-Immaginate di dover capire l'impatto sulla salute di un certo comportamento (e.g., mangiare un certo alimento). Idealmente dovreste prendere in modo casuale soggetti, assegnarli una dieta e vedere l'impatto.
-
-Quello che invece si fa è raccogliere su larga scala le abitudini di un campione di soggetti e vedere le *associazioni* con l'outcome retrospettivamente o in modo prospettivo ma senza nessuna manipolazione.
-
-## Perchè non randomizziamo sempre?
-
-Il problema è che non potendo randomizzare, non è possibile isolare chiaramente l'effetto del predittore d'interesse.
-
-In realtà possiamo:
-
-- Includere tutte le possibili variabili come predittore (*regressione multipla*) ma questo è valido solo se siamo sicuri di averle inserite tutte (molto poco plausibile)
-- Evidenziare un'associazione tra $x$ e $y$ ma senza poterne trarre una relazione causale.
-
-Vedremo quando parleremo di regressione cosa significa usare questi approcci.
-
-## Confounder e artefatti
-
-La validità di uno studio e di un'analisi dei dati può essere compromessa da *confounder* e *artefatti*. I confounder, come dice la parola, sono variabili che confondono la relazione che assumiamo e osserviamo tra $x$ e $y$.
-
-```{r}
-mdag(
-    y ~ x,
-    exposure = "x",
-    outcome = "y"
-)
-```
-
-## Confounder 
-
-L'idea è che se c'è una variabile $z$ che è legata sia ad $x$ che a $y$ ma io non la osservo/raccolgo. La relazione tra $x$ e $y$ è parzialmente o totalmente spuria.
-
-```{r}
-mdag(
-    y ~ x,
-    x ~ z,
-    y ~ z,
-    exposure = "x",
-    outcome = "y"
-)
-```
-
-## Confounder, un esempio
-
-Immaginate di raccogliere dei dati di bambinə e ragazzə dai 6 ai 18 anni. Raccogliete punteggi a test di matematica e raccogliete il peso. Non avete altre informazioni.
-
-<center>
-{{< qrcode https://docs.google.com/spreadsheets/d/16JRt1_tXYQntv2bcbvbqoOzPEZvcXPKFYpvolR16c5E/template/preview >}}
-<center>
-
-Andate a questo link e provate ad esplorare il dataset. Quali potrebbero essere dei confounder?
-
-## Confounder, un esempio
-
-In pratica, $z$ (l'età in questo caso) è una variabile legata sia a $x$ che a $y$ che non osserviamo ma spiega totalmente (o parzialmente) la relazione $y \sim x$. Vedremo come tenere conto di $z$ statisticamente ma i confounder possono renderci la vita molto complessa.
-
-```{r}
-set.seed(2025)
-
-N <- 1e3
-age <- sample(6:18, N, replace = TRUE)
-peso <- round(20 + 5 * (age - 6) + rnorm(N, 0, 5), 1)
-math <- 5 + (age - 6) * 8 + rnorm(N, 0, 10)
-math[math < 0] <- 0
-math[math > 100] <- 100
-math <- round(math)
-
-dat <- data.frame(
-    math, age, peso
-)
-
-dat <- dat[sample(1:nrow(dat), 1000, replace = TRUE), ]
-ggplot(dat, aes(x = age, y = math, color = peso)) +
-    geom_point(position = position_jitter(0.4), size = 3) +
-    scale_color_viridis_c()
-```
-
 # Qualche esempio di ricerca
 
 ## Quasi-sperimentale
 
-https://pmc.ncbi.nlm.nih.gov/articles/PMC3287068/
+Vediamo un esempio di ricerca quasi-sperimentale. Provate a trovare nel pdf `r papers[["@Robinette2025-wg"]]$file` i passaggi dove il disegno di ricerca è chiaramente spiegato.
+
+</br>
+
+[@Robinette2025-wg]{.bibentry}
 
 ## Cluster-randomized controlled trial
 
-https://pmc.ncbi.nlm.nih.gov/articles/PMC4603966/pdf/12889_2015_Article_2395.pdf
+Vediamo un esempio di randomized controlled trial (non esattamente quello classico). Provate a trovare nel pdf `r papers[["@Johnson2015-sm"]]$file` i passaggi dove il disegno di ricerca è chiaramente spiegato.
 
-## Correlazionale (osservazionale)
+</br>
 
-https://onlinelibrary.wiley.com/doi/full/10.1002/jcop.23089
-https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jcop.22817
+[@Johnson2015-sm]{.bibentry}
+
+## Correlazionale (osservazionale) 1
+
+Vediamo un esempio di ricerche osservazionali (correlazionali). Provate a trovare nel pdf `r papers[["@Hill2024-tl"]]$file` i passaggi dove il disegno di ricerca è chiaramente spiegato.
+
+[@Hill2024-tl]{.bibentry}
+
+## Correlazionale (osservazionale) 2
+
+Vediamo un esempio di ricerche osservazionali (correlazionali). Provate a trovare nel pdf `r papers[["@Benson2022-cl"]]$file` i passaggi dove il disegno di ricerca è chiaramente spiegato.
+
+[@Benson2022-cl]{.bibentry}
 
 ## Bibliografia
