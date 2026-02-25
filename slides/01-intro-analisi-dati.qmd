@@ -233,6 +233,62 @@ Questo è un ottimo esempio di come conoscere o non conoscere l'analisi dei dati
 
 Per approfondire, a questo link [https://setosa.io/simpsons/](https://setosa.io/simpsons/) trovate una visualizzazione interattiva del Paradosso di Simpson
 
+## Simpson's Paradox
+
+Vediamo una *simulazione* con due dipartimenti, uno facile e uno difficile. Il 50% dei maschi applica sempre a quello difficile. Vediamo cosa succede cambiando il tasso delle femmine.
+
+```{r}
+#| include: false
+bias <- 1 # > 1 bias for women
+hard <- 0.2
+easy <- 0.8
+p_wom_hard <- seq(0, 1, 0.1)
+p_man_hard <- rep(0.5, length(p_wom_hard))
+
+adm_m <- easy * (1 - p_man_hard) + hard * p_man_hard
+adm_f <- (easy * bias) * (1 - p_wom_hard) + (hard * bias) * p_wom_hard
+```
+
+```{r}
+#| fig-height: 8
+easy <- 0.8
+hard <- 0.2
+n <- 100
+
+dd <- expand.grid(
+    p_hard_f = seq(0, 1, 0.01),   # % donne che scelgono hard
+    p_hard_m = 0.5                # uomini fissati al 30% hard
+)
+
+dd <- dd |>
+    mutate(
+        # ammissioni donne
+        adm_f = n * (
+            p_hard_f * hard +
+                (1 - p_hard_f) * easy
+        ),
+        
+        # ammissioni uomini
+        adm_m = n * (
+            p_hard_m * hard +
+                (1 - p_hard_m) * easy
+        )
+    )
+
+dd |>
+    pivot_longer(c(adm_f, adm_m), names_to = "sex", values_to = "admissions") |>
+    ggplot(aes(p_hard_f, admissions, color = sex)) +
+    geom_line(lwd = 1.2) +
+    labs(
+        x = "% donne che scelgono dipartimenti difficili",
+        y = "Numero totale ammessi",
+        color = "Sesso"
+    ) +
+    ylim(c(0, 100)) +
+    ggtitle("% ammissione dip. facile    = 80%\n% ammissione dip. difficile = 20%") +
+    scale_color_manual(values = c("#1abc9c", "#9b59b6"), labels = c("F", "M"))
+```
+
 # Quali tipi di domande di ricerca?
 
 ## Quali tipi di domande di ricerca?

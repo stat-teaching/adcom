@@ -357,6 +357,13 @@
     "text": "Simpson’s Paradox\nQuesto fenomeno si chiama Paradosso di Simpson e può accadere quando in presenza di un confounder (la difficoltà di ammissione) le conclusioni guardando i dati aggregati è diversa rispetto a guardare i dati disaggregati (in questo caso rispetto al corso).\nQuesto è un ottimo esempio di come conoscere o non conoscere l’analisi dei dati aiuta a trarre conclusioni più appropriate.\nPer approfondire, a questo link https://setosa.io/simpsons/ trovate una visualizzazione interattiva del Paradosso di Simpson"
   },
   {
+    "objectID": "slides/01-intro-analisi-dati.html#simpsons-paradox-6",
+    "href": "slides/01-intro-analisi-dati.html#simpsons-paradox-6",
+    "title": "Introduzione all’analisi dei dati",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nVediamo una simulazione con due dipartimenti, uno facile e uno difficile. Il 50% dei maschi applica sempre a quello difficile. Vediamo cosa succede cambiando il tasso delle femmine."
+  },
+  {
     "objectID": "slides/01-intro-analisi-dati.html#quali-tipi-di-domande-di-ricerca-1",
     "href": "slides/01-intro-analisi-dati.html#quali-tipi-di-domande-di-ricerca-1",
     "title": "Introduzione all’analisi dei dati",
