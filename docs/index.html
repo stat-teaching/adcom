@@ -112,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-title','listing-date','listing-pdf',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
       searchColumns: ["listing-date","listing-title","listing-author"],
     };
@@ -147,6 +147,34 @@ ul.task-list li input[type="checkbox"] {
 
     window['quarto-listings'] = window['quarto-listings'] || {};
     window['quarto-listings']['listing-data'] = new List('listing-data', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-files .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-file',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-file"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-files'] = new List('listing-files', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -234,6 +262,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#files" id="toc-files" class="nav-link" data-scroll-target="#files">Files</a></li>
   <li><a href="#papers" id="toc-papers" class="nav-link" data-scroll-target="#papers">Papers</a></li>
   <li><a href="#materiale-extra" id="toc-materiale-extra" class="nav-link" data-scroll-target="#materiale-extra">Materiale extra</a>
   <ul class="collapse">
@@ -323,26 +352,209 @@ window.Quarto = {
 <a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Ultimo aggiornamento</a>
 </th>
 
+<th>
+PDF
+</th>
+
 </tr>
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-listing-date-sort="1771965818000" data-listing-file-modified-sort="1771965818585" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1744" data-listing-title-sort="Introduzione al Corso" data-listing-filename-sort="00-intro-corso.qmd">
+<tr data-index="0" data-listing-date-sort="1772012321000" data-listing-file-modified-sort="1772012321101" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1744" data-listing-title-sort="Introduzione al Corso" data-listing-filename-sort="00-intro-corso.qmd">
 <td>
 <a href="./slides/00-intro-corso.html" class="title listing-title">Introduzione al Corso</a>
 </td>
 <td>
-<span class="listing-date">Feb 24, 2026</span>
+<span class="listing-date">Feb 25, 2026</span>
+</td>
+<td>
+<span class="listing-pdf"><a href="slides/00-intro-corso.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
 </td>
 
 </tr>
 
-<tr data-index="1" data-listing-date-sort="1771965908000" data-listing-file-modified-sort="1771965908511" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2326" data-listing-title-sort="Introduzione all'analisi dei dati" data-listing-filename-sort="01-intro-analisi-dati.qmd">
+<tr data-index="1" data-listing-date-sort="1772011720000" data-listing-file-modified-sort="1772011720980" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2326" data-listing-title-sort="Introduzione all'analisi dei dati" data-listing-filename-sort="01-intro-analisi-dati.qmd">
 <td>
 <a href="./slides/01-intro-analisi-dati.html" class="title listing-title">Introduzione all’analisi dei dati</a>
 </td>
 <td>
-<span class="listing-date">Feb 24, 2026</span>
+<span class="listing-date">Feb 25, 2026</span>
+</td>
+<td>
+<span class="listing-pdf"><a href="slides/01-intro-analisi-dati.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="files" class="level1">
+<h1>Files</h1>
+<div id="listing-files" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+    <select id="listing-files-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-files'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+      <option value="" disabled="" selected="" hidden="">Order By</option>
+      <option value="index" data-direction="asc">Default</option>
+      <option value="listing-title-sort" data-direction="asc">
+        File
+      </option>
+      <option value="listing-file" data-direction="asc">
+        PDF
+      </option>
+    </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">File</a>
+</th>
+
+<th>
+<a class="sort" data-sort="listing-file" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">PDF</a>
+</th>
+
+</tr>
+</thead>
+<tbody class="list">
+
+<tr data-index="0" data-listing-title-sort="apa2024standards_chapter1_validity.pdf">
+<td>
+<span class="listing-title">apa2024standards_chapter1_validity.pdf</span>
+</td>
+<td>
+<span class="listing-file"><a href="https://stat-teaching.github.io/adcom/slides/files/apa2024standards_chapter1_validity.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
+</td>
+
+</tr>
+
+<tr data-index="1" data-listing-title-sort="apa2024standards_chapter2_reliability.pdf">
+<td>
+<span class="listing-title">apa2024standards_chapter2_reliability.pdf</span>
+</td>
+<td>
+<span class="listing-file"><a href="https://stat-teaching.github.io/adcom/slides/files/apa2024standards_chapter2_reliability.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
+</td>
+
+</tr>
+
+<tr data-index="2" data-listing-title-sort="glenwick2016_chapter13.pdf">
+<td>
+<span class="listing-title">glenwick2016_chapter13.pdf</span>
+</td>
+<td>
+<span class="listing-file"><a href="https://stat-teaching.github.io/adcom/slides/files/glenwick2016_chapter13.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
+</td>
+
+</tr>
+
+<tr data-index="3" data-listing-title-sort="gravetter2018_correlational.pdf">
+<td>
+<span class="listing-title">gravetter2018_correlational.pdf</span>
+</td>
+<td>
+<span class="listing-file"><a href="https://stat-teaching.github.io/adcom/slides/files/gravetter2018_correlational.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
+</td>
+
+</tr>
+
+<tr data-index="4" data-listing-title-sort="gravetter2018_experimental.pdf">
+<td>
+<span class="listing-title">gravetter2018_experimental.pdf</span>
+</td>
+<td>
+<span class="listing-file"><a href="https://stat-teaching.github.io/adcom/slides/files/gravetter2018_experimental.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
+</td>
+
+</tr>
+
+<tr data-index="5" data-listing-title-sort="gravetter2018_non_quasi_experimental.pdf">
+<td>
+<span class="listing-title">gravetter2018_non_quasi_experimental.pdf</span>
+</td>
+<td>
+<span class="listing-file"><a href="https://stat-teaching.github.io/adcom/slides/files/gravetter2018_non_quasi_experimental.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
+</td>
+
+</tr>
+
+<tr data-index="6" data-listing-title-sort="jason2016_chapter1_intro.pdf">
+<td>
+<span class="listing-title">jason2016_chapter1_intro.pdf</span>
+</td>
+<td>
+<span class="listing-file"><a href="https://stat-teaching.github.io/adcom/slides/files/jason2016_chapter1_intro.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
+</td>
+
+</tr>
+
+<tr data-index="7" data-listing-title-sort="jhangiani2019_experimental.pdf">
+<td>
+<span class="listing-title">jhangiani2019_experimental.pdf</span>
+</td>
+<td>
+<span class="listing-file"><a href="https://stat-teaching.github.io/adcom/slides/files/jhangiani2019_experimental.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
+</td>
+
+</tr>
+
+<tr data-index="8" data-listing-title-sort="jhangiani2019_non_experimental.pdf">
+<td>
+<span class="listing-title">jhangiani2019_non_experimental.pdf</span>
+</td>
+<td>
+<span class="listing-file"><a href="https://stat-teaching.github.io/adcom/slides/files/jhangiani2019_non_experimental.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
+</td>
+
+</tr>
+
+<tr data-index="9" data-listing-title-sort="jhangiani2019_quasi_experimental.pdf">
+<td>
+<span class="listing-title">jhangiani2019_quasi_experimental.pdf</span>
+</td>
+<td>
+<span class="listing-file"><a href="https://stat-teaching.github.io/adcom/slides/files/jhangiani2019_quasi_experimental.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
+</td>
+
+</tr>
+
+<tr data-index="10" data-listing-title-sort="navarro2015_chatper2_intro_research_design.pdf">
+<td>
+<span class="listing-title">navarro2015_chatper2_intro_research_design.pdf</span>
+</td>
+<td>
+<span class="listing-file"><a href="https://stat-teaching.github.io/adcom/slides/files/navarro2015_chatper2_intro_research_design.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
+</td>
+
+</tr>
+
+<tr data-index="11" data-listing-title-sort="petersen2024_chapter3_reliability.pdf">
+<td>
+<span class="listing-title">petersen2024_chapter3_reliability.pdf</span>
+</td>
+<td>
+<span class="listing-file"><a href="https://stat-teaching.github.io/adcom/slides/files/petersen2024_chapter3_reliability.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
+</td>
+
+</tr>
+
+<tr data-index="12" data-listing-title-sort="petersen2024_chapter4_validity.pdf">
+<td>
+<span class="listing-title">petersen2024_chapter4_validity.pdf</span>
+</td>
+<td>
+<span class="listing-file"><a href="https://stat-teaching.github.io/adcom/slides/files/petersen2024_chapter4_validity.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
 </td>
 
 </tr>

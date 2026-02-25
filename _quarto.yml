@@ -6,6 +6,9 @@ project:
     - "!local/"
   pre-render:
     - quarto-scripts/papers.r
+    - quarto-scripts/files.r
+  post-render: 
+    - quarto-scripts/reveal2pdf.r
   resources:
     - papers/*.pdf
     - slides/files/*.pdf

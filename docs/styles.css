@@ -1,0 +1,4 @@
+.quarto-listing-table thead th, 
+.quarto-listing-table thead th a {
+  font-weight: bold!important;
+}

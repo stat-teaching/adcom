@@ -1,6 +1,7 @@
 ---
 title: Introduzione al Corso
 toc: true
+pdf: "[{{< fa file-pdf >}}](slides/00-intro-corso.pdf)"
 ---
 
 ```{r}

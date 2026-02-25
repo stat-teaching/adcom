@@ -2,6 +2,7 @@
 title: Introduzione alla metodologia della ricerca
 toc: true
 draft: true
+pdf: "[{{< fa file-pdf >}}](slides/02-research-methods.pdf)"
 filters:
   - bibentry
 ---
@@ -43,6 +44,28 @@ names(papers) <- sapply(papers, function(x) x$key)
 
 files <- get_slide_files()
 ```
+
+## Qualche riferimento
+
+[@Gravetter2018-ak]{.bibentry}
+
+- Ricerca correlazionale ([{{< fa file-pdf >}}](`r files$gravetter2018_correlational.pdf`))
+- Ricerca sperimentale ([{{< fa file-pdf >}}](`r files$gravetter2018_experimental.pdf`))
+- Ricerca quasi-sperimentale ([{{< fa file-pdf >}}](`r files$gravetter2018_non_quasi_experimental.pdf`))
+
+## Qualche riferimento
+
+[@Navarro2013-rh]{.bibentry}
+
+- Introduzione alla metodologia della ricerca ([{{< fa file-pdf >}}](`r files$navarro2015_chatper2_intro_research_design.pdf`))
+
+## Qualche riferimento
+
+[@Jhangiani2019-sa]{.bibentry}
+
+- Ricerca sperimentale ([{{< fa file-pdf >}}](`r files$files$jhangiani2019_experimental.pdf`))
+- Ricerca non-sperimentale ([{{< fa file-pdf >}}](`r files$files$jhangiani2019_non_experimental.pdf`))
+- Ricerca quasi-sperimentale ([{{< fa file-pdf >}}](`r files$files$jhangiani2019_quasi_experimental.pdf`))
 
 ## Processo scientifico
 
