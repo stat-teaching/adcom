@@ -1,5 +1,621 @@
 [
   {
+    "objectID": "slides/02-research-methods.html#qualche-riferimento",
+    "href": "slides/02-research-methods.html#qualche-riferimento",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Qualche riferimento",
+    "text": "Qualche riferimento\n\nGravetter, F. J., & Forzano, L.-A. B. (2018). Research methods for the behavioral sciences. Cengage Learning.\n\nGravetter & Forzano (2018)\n\n\n\nRicerca correlazionale ()\nRicerca sperimentale ()\nRicerca quasi-sperimentale ()"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#qualche-riferimento-1",
+    "href": "slides/02-research-methods.html#qualche-riferimento-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Qualche riferimento",
+    "text": "Qualche riferimento\n\nNavarro, D. (2013). Learning Statistics with R. Lulu.com.\n\nNavarro (2013)\n\n\n\nIntroduzione alla metodologia della ricerca ()"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#qualche-riferimento-2",
+    "href": "slides/02-research-methods.html#qualche-riferimento-2",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Qualche riferimento",
+    "text": "Qualche riferimento\n\nJhangiani, R., Chiang, I.-C. A., Cuttler, C., & Leighton, D. C. (2019). Research methods in psychology.\n\nJhangiani et al. (2019)\n\n\n\nRicerca sperimentale ()\nRicerca non-sperimentale ()\nRicerca quasi-sperimentale ()"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#processo-scientifico-1",
+    "href": "slides/02-research-methods.html#processo-scientifico-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Processo scientifico",
+    "text": "Processo scientifico\n\nAdapted from Jhangiani et al. 2019"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#letteratura-domanda-di-ricerca",
+    "href": "slides/02-research-methods.html#letteratura-domanda-di-ricerca",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Letteratura <–> Domanda di ricerca",
+    "text": "Letteratura &lt;–&gt; Domanda di ricerca\nIl punto di partenza è sempre la formulazione di domande di ricerca.\nQuesto processo è bidirezionale perchè la letteratura scientifica può essere fonte o de le nostre domande di ricerca."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#studio-empirico",
+    "href": "slides/02-research-methods.html#studio-empirico",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Studio empirico",
+    "text": "Studio empirico\nPossiamo identificare 3 aree generali relative alla realizzazione di uno studio empirico:\n\nDisegno di ricerca\nRaccolta dati e campionamento\nMisurazione"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#e-lanalisi-dei-dati",
+    "href": "slides/02-research-methods.html#e-lanalisi-dei-dati",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "… e l’analisi dei dati?",
+    "text": "… e l’analisi dei dati?\nNon ho messo l’analisi dei dati perchè è importante distinguere tra:\n\nanalisi dei dati come azione pratica: ho il dataset e applico il modello di analisi\nanalisi dei dati come mindset e data literacy\n\nIl primo è facile, è sufficiente conoscere uno strumento (R, SPSS, Jamovi, etc.) e sapere quello che si deve fare.\nIl secondo invece richiede conoscenza, spirito critico, ragionamento e allenamento. Non è uno step separato ma accompagna tutti i momenti della ricerca.\nConoscere la statistica permette di valutare uno studio in letteratura, conoscere il disegno di ricerca migliore, valutare le misure migliori e cosi via. Questo è quello su cui ci focalizzeremo maggiormente durante il corso."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#data-literacy",
+    "href": "slides/02-research-methods.html#data-literacy",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Data literacy",
+    "text": "Data literacy\n\nData literacy is the ability to collect, manage, evaluate, and apply data, in a critical manner (Risdale et al., 2015)"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#metodologia-della-ricerca",
+    "href": "slides/02-research-methods.html#metodologia-della-ricerca",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Metodologia della ricerca",
+    "text": "Metodologia della ricerca\nAll’interno della metodologia della ricerca possiamo individuare tre filoni fondamentali:\n\nRicerca qualitativa\nRicerca quantitativa\nMixed Methods (qualitativa + quantitativa)\n\nNoi ci focalizzeremo solo su quella quantitativa ma, soprattutto in Psicologia di Comunità è molto rilevante ed importante anche quella qualitativa. Da qui in poi, ci riferiamo a ricerca sperimentale come ricerca quantitativa."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#disegni-di-ricerca",
+    "href": "slides/02-research-methods.html#disegni-di-ricerca",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Disegni di ricerca",
+    "text": "Disegni di ricerca\nAll’interno della ricerca quantitativa possiamo identificare:\n\nRicerca Sperimentale\nRicerca Quasi-Sperimentale\nRicerca Correlazionale"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#ricerca-sperimentale",
+    "href": "slides/02-research-methods.html#ricerca-sperimentale",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Ricerca sperimentale",
+    "text": "Ricerca sperimentale\nPossiamo identificare 4 aspetti centrali che caratterizzano la ricerca sperimentale:\n\nManipolazione: una o più variabili vengono attivamente manipolate creando due o più condizioni (ad esempio trattamento vs placebo)\nMisurazione: una o più variabili vengono misurate (considerando tutti gli aspetti che abbiamo illustrato prima)\nConfronto: le condizioni create manipolando le variabili vengono confrontate rispetto alle variabili misurate (ad esempio performance nel gruppo trattato vs placebo)\nControllo: le variabili che non vengono manipolate, vengono controllate. Ci sono varie modalità di controllo sperimentale.\n\nQuesti 4 elementi permettono idealmente di poter trarre delle conclusioni causa-effetto della manipolazione sull’outcome."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#terminologia",
+    "href": "slides/02-research-methods.html#terminologia",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Terminologia",
+    "text": "Terminologia\nQuando parliamo di esperimenti, ricerche e analisi dati la terminologia è importante:\n\n\\(y\\) sono gli outcomes (uno o più). Solitamente chiamate anche variabili dipendenti (ma preferisco outcomes)\n\\(x\\) sono i predittori. Solitamente chiamate anche variabili indipendenti (ma preferisco predittori)\n\nAll’interno dei predittori possiamo trovare:\n\nvariabili che rappresentano manipolazioni sperimentali\nvariabili che non vengono manipolate e sono chiamate estranee ma possono avere un impatto su \\(x\\) e/o \\(y\\). Alcune di queste vengono misurate e diventano dei veri e propri predittori mentre altre esistono solo livello teorico ma non vengono misurate."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#terminologia-1",
+    "href": "slides/02-research-methods.html#terminologia-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Terminologia",
+    "text": "Terminologia\n\ndataset è la struttura dati di dimensione \\(n \\times k\\) dove \\(n\\) sono le righe e \\(k\\) le colonne (pensate ad un foglio Excel). I predittori \\(x\\) sono una parte delle colonne \\(k\\) (o una loro trasformazione) che utilizziamo in un modello statistico.\nunità statistiche sono la l’elemento base o l’entità elementare su cui vengono misurati i caratteri oggetto di indagine all’interno di una popolazione statistica. Possono essere persone, animali, misurazioni nel tempo. A livello pratico è il significato delle \\(n\\) righe nel dataset."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#terminologia-2",
+    "href": "slides/02-research-methods.html#terminologia-2",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Terminologia",
+    "text": "Terminologia\nQuando parliamo di variabili è importante anche distinguere tra variabili osservate e latenti.\n\nPer costrutto o variabile latente intendiamo qualcosa di non direttamente osservabile ma che risulta essere il nostro oggetto d’interesse. Senso di comunità, autostima, depressione, benessere, etc. sono tutte variabili latenti.\nEssendo non direttamente osservabili dobbiamo usare degli indicatori che sono legati ed informativi della variabile latente.\nIl legame tra variabile latente e indicatori si chiama operazionalizzazione.\nè importante distinguere variabili osservate/manifeste come l’età, peso, altezza, etc. rispetto a variabili osservate utilizzate come indicatori di costrutti latenti."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#esempio",
+    "href": "slides/02-research-methods.html#esempio",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Esempio",
+    "text": "Esempio\nIl classico esempio è quello di un trattamento/intervento. La manipolazione consiste nel creare due condizioni (trattamento e controllo). Viene misurata una variabile che rappresenta l’outcome (esempio autostima). Si confrontano i punteggi tra le due condizioni controllando per tutte le altre variabili. Un’eventuale differenza tra le due condizioni è dovuta all’effetto causale della manipolazione sperimentale.\n\nRiuscite a pensare a qualche esempio concreto?"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#ricerca-sperimentale-e-oltre",
+    "href": "slides/02-research-methods.html#ricerca-sperimentale-e-oltre",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Ricerca sperimentale e oltre",
+    "text": "Ricerca sperimentale e oltre\nQuesto è uno schema riassuntivo ma non esaustivo dei diversi tipi di ricerca. I nodi decisionali sono quelli verdi mentre i vari disegni sono in rosso."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#primo-nodo-intervento",
+    "href": "slides/02-research-methods.html#primo-nodo-intervento",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Primo nodo, intervento",
+    "text": "Primo nodo, intervento\nIl primo nodo decisionale riguarda la presenza o meno di un intervento. Un intervento viene inteso come una manipolazione sperimentale. In termini medici è un farmaco, un protocollo di cura, etc. In termini psicologici può essere un intervento educativo, psicoterapia, etc.\nPossiamo anche considerare un intervento un evento esterno (catastrofe, nuova legge, cambiamento, etc.) che quindi crea delle condizioni sperimentali anche senza l’intervento sperimentale diretto.\nIn caso non si faccia nessun intervento la ricerca viene definita osservazionale o correlazionale perchè l’interesse è sulla relazione non causale tra un insieme di variabili."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#secondo-nodo-il-controllo-delle-variabili",
+    "href": "slides/02-research-methods.html#secondo-nodo-il-controllo-delle-variabili",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Secondo nodo, il controllo delle variabili",
+    "text": "Secondo nodo, il controllo delle variabili\nIl controllo delle variabili è una caratteristica degli esperimenti e quasi-esperimenti. Tuttavia ci sono diversi tipologie di controllo sperimentale:\n\nRandomizzazione: a priori, assegnare i soggetti in modo casuale alle condizioni sperimentali\nFissazione: a priori, selezionare i soggetti in modo che alcune variabili non possano avere un impatto\nControllo statistico: a posteriori, controllare l’impatto delle variabili (regressione multipla, lo vedremo)\n\nLa randomizzazione (che vedremo a breve) è la tipologia di controllo sperimentale la cui presenza distingue gli esperimenti (puri) rispetto ai quasi-esperimenti. Nella pratica significa che i soggetti sperimentali vengono assegnati in modo totalmente casuale alle condizioni sperimentali (ad esempio gruppo sperimentale e controllo)."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#perchè-è-necessario-il-controllo-delle-variabili",
+    "href": "slides/02-research-methods.html#perchè-è-necessario-il-controllo-delle-variabili",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Perchè è necessario il controllo delle variabili?",
+    "text": "Perchè è necessario il controllo delle variabili?\nImmaginate di raccogliere dei dati di bambinə e ragazzə dai 6 ai 18 anni. Raccogliete punteggi a test di matematica e raccogliete il peso. Non avete altre informazioni.\n\n\n\n    \n\nAndate a questo link e provate ad esplorare il dataset. Cosa notate?"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#perchè-è-necessario-il-controllo-delle-variabili-1",
+    "href": "slides/02-research-methods.html#perchè-è-necessario-il-controllo-delle-variabili-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Perchè è necessario il controllo delle variabili?",
+    "text": "Perchè è necessario il controllo delle variabili?\nA questo link https://www.tylervigen.com/spurious-correlations sono presenti diversi esempi reali di quelle che si chiamano correlazioni spurie. Sono un bellissimo esempio del perchè, la relazione tra due variabili per essere interpretata in modo causale, necessita del controllo sperimentale."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#third-variable-problem",
+    "href": "slides/02-research-methods.html#third-variable-problem",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Third-variable problem",
+    "text": "Third-variable problem\nEsiste un problema noto in analisi dei dati che si chiama il third-variable problem e rappresenta il problema che abbiamo visto con le abilità matematiche e le correlazioni spurie. Più formalmente, la relazione tra un predittore \\(x\\) (anche un intervento) e l’outcome \\(y\\) può essere spiegata totalmente o in parte dalla presenza di una variabile estranea chiamata confounder.\nL’obiettivo del controllo sperimentale, in particolare della randomizzazione, è quello di limitare se non eliminare l’impatto dei confounder. Mentre fissare a priori alcune variabili o il controllo statistico richiedono di conoscere e misurare tutti i possibili confounders, la randomizzazione permette in teoria di eliminare l’impatto anche di variabili non misurate."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#confounder-un-esempio",
+    "href": "slides/02-research-methods.html#confounder-un-esempio",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Confounder, un esempio",
+    "text": "Confounder, un esempio\nIn pratica, \\(z\\) (l’età in questo caso) è una variabile legata sia a \\(x\\) che a \\(y\\) che non osserviamo ma spiega totalmente (o parzialmente) la relazione \\(y \\sim x\\). Vedremo come tenere conto di \\(z\\) statisticamente ma i confounder possono renderci la vita molto complessa."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#directed-acyclic-graph",
+    "href": "slides/02-research-methods.html#directed-acyclic-graph",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Directed acyclic graph",
+    "text": "Directed acyclic graph\nQuesto tipo di grafici sono molto utili per rappresentare graficamente modelli statistici ed ipotesi."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#directed-acyclic-graph-1",
+    "href": "slides/02-research-methods.html#directed-acyclic-graph-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Directed acyclic graph",
+    "text": "Directed acyclic graph\nNon li vedremo nel dettaglio, ma sono utili per semplici modelli. Una piccola legenda:\n\nla freccia \\(y \\leftarrow x\\) significa che \\(x\\) ha un effetto causale su \\(y\\)\nil colore rosso indica la variabile outcome\nil colore blu indica una variabile manipolata (o trattamento)\nil colore verde indica una variabile non manipolata ma d’interesse\nil colore grigio indica una variabile osservata (ma non manipolata, ad esempio età)"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#randomizzazione-perchè-funziona",
+    "href": "slides/02-research-methods.html#randomizzazione-perchè-funziona",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Randomizzazione, perchè funziona?",
+    "text": "Randomizzazione, perchè funziona?\nImmaginate di avere 100 persone, un trattamento \\(x\\) ed un outcome \\(y\\). Immaginate che per qualche ragione, l’età abbia un impatto sia sull’outcome \\(y\\). Immaginate anche che i soggetti con età maggiore (in media) siano assegnati al gruppo di sperimentale."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#randomizzazione-perchè-funziona-1",
+    "href": "slides/02-research-methods.html#randomizzazione-perchè-funziona-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Randomizzazione, perchè funziona?",
+    "text": "Randomizzazione, perchè funziona?\nNello scenario precedente non è possibile distinguere chiaramente l’effetto dell’età da quello del trattamento."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#randomizzazione-perchè-funziona-2",
+    "href": "slides/02-research-methods.html#randomizzazione-perchè-funziona-2",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Randomizzazione, perchè funziona?",
+    "text": "Randomizzazione, perchè funziona?\nLa randomizzazione mitiga (e in teoria rimuove) l’effetto di variabili non direttamente controllate assegnando gli individui in modo casuale al trattamento."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#randomizzazione-vediamola-in-azione",
+    "href": "slides/02-research-methods.html#randomizzazione-vediamola-in-azione",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Randomizzazione, vediamola in azione",
+    "text": "Randomizzazione, vediamola in azione\nAndate a questo link (con un account Google):"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#randomizzazione-e-dag",
+    "href": "slides/02-research-methods.html#randomizzazione-e-dag",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Randomizzazione e DAG",
+    "text": "Randomizzazione e DAG"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#perchè-non-randomizziamo-sempre",
+    "href": "slides/02-research-methods.html#perchè-non-randomizziamo-sempre",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Perchè non randomizziamo sempre?",
+    "text": "Perchè non randomizziamo sempre?\nCi sono delle condizioni dove non è possibile randomizzare per motivi etici o empirici.\nImmaginate di dover capire l’impatto sulla salute di un certo comportamento (e.g., mangiare un certo alimento). Idealmente dovreste prendere in modo casuale soggetti, assegnarli una dieta e vedere l’impatto."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#perchè-non-randomizziamo-sempre-1",
+    "href": "slides/02-research-methods.html#perchè-non-randomizziamo-sempre-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Perchè non randomizziamo sempre?",
+    "text": "Perchè non randomizziamo sempre?\nIl problema è che non potendo randomizzare, non è possibile isolare chiaramente l’effetto del predittore d’interesse.\nIn realtà possiamo:\n\nIncludere tutte le possibili variabili come predittore (regressione multipla) ma questo è valido solo se siamo sicuri di averle inserite tutte (molto poco plausibile)\nEvidenziare un’associazione tra \\(x\\) e \\(y\\) ma senza poterne trarre una relazione causale.\n\nVedremo quando parleremo di regressione cosa significa usare questi approcci."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#disegni-quasi-sperimentali",
+    "href": "slides/02-research-methods.html#disegni-quasi-sperimentali",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Disegni quasi-sperimentali",
+    "text": "Disegni quasi-sperimentali\n\nUna scuola decide di implementare un nuovo protocollo di educazione sessuo-affettiva considerato innovativo e fondamentale per il benessere e lo sviluppo. Decide di implementare uno studio d’efficacia confrontando il nuovo protocollo con quello standard implementato in un’altra scuola.\n\nE’ chiaro che, nonostante sia presente un intervento (il programma educativo) l’assegnazione al gruppo sperimentale e controllo non è casuale. Ci potrebbero essere delle differenze tra scuole che possono influenzare l’effetto del protocollo educativo. Differenze di tipo geografico, insegnanti, status-socio economico, etc.\nIn questo caso, la relazione causale dimostrabile è più debole (non possiamo randomizzare) ma possiamo usare le altre modalità di controllo (fissazione e statistico)."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#disegni-correlazionali",
+    "href": "slides/02-research-methods.html#disegni-correlazionali",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Disegni correlazionali",
+    "text": "Disegni correlazionali\n\nUn gruppo di ricerca decide di studiare la relazione tra senso di comunità, benessere percepito e performance accademiche in un gruppo di studenti universitari. Raccoglie un campione, misura le variabili d’interesse e stima le relazioni tra le variabili.\n\nIn questo caso non abbiamo ne intervento ne randomizzazione. Stiamo stimando le relazioni tra variabili senza poter trarre conclusioni di tipo causale. Questo tipo di ricerca è molto diffuso in Psicologia, soprattutto in Psicologia Sociale e di Comunità."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#validità-dei-disegni-di-ricerca",
+    "href": "slides/02-research-methods.html#validità-dei-disegni-di-ricerca",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Validità dei disegni di ricerca",
+    "text": "Validità dei disegni di ricerca\nCi sono due tipi principali di validità quando si valuta un disegno di ricerca (e poi di conseguenza i risultati):\n\nValidità Interna\nValidità Esterna"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#validità-interna",
+    "href": "slides/02-research-methods.html#validità-interna",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Validità Interna",
+    "text": "Validità Interna\nLa validità interna di uno studio fa riferimento alla possibilità di trarre conclusioni causali riguardo le relazioni tra variabili. All’aumentare del controllo sperimentale e delle manipolazioni aumenta la validità interna perche siamo in grado di isolare l’effetto di una o più variabili."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#validità-esterna",
+    "href": "slides/02-research-methods.html#validità-esterna",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Validità Esterna",
+    "text": "Validità Esterna\nLa validità esterna fa riferimento al concetto di generalizzabilità. Quello che osservo in un contesto sperimentale, controllando le variabili ed isolando gli effetti può diventare meno generalizzabile.\n\nAd esempio, se decido di studiare l’effetto della cannabis negli adolescenti e seleziono un campione ristretto controllando tutte le variabili posso trarre conclusioni più causali riguardo l’impatto della cannabis ma non posso generalizzare alla popolazione generale.\n\nAllo stesso modo, ridurre il controllo sperimentale mi permette di generalizzare maggiormente avendo incluso una popolazione più eterogenea, riducendo però la capacità di descrivere gli effetti in modo causale."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#diverse-variabili-diverse-analisi",
+    "href": "slides/02-research-methods.html#diverse-variabili-diverse-analisi",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Diverse variabili, diverse analisi",
+    "text": "Diverse variabili, diverse analisi\nPrima di imparare ad analizzare i dati è importante capire come i dati vengono raccolti e strutturati. Quando raccogliamo o trattiamo una variabile, chiediamoci sempre quale sia la tipologia. Il tipo di variabile influenza diversi aspetti, come:\n\nquali statistiche descrittive sono sensate e quali sono più informative\nle rappresentazioni grafiche più informative\nil modello statistico più adeguato per quella variabile"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#variabili-le-tipologie-principali",
+    "href": "slides/02-research-methods.html#variabili-le-tipologie-principali",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Variabili, le tipologie principali",
+    "text": "Variabili, le tipologie principali\nPossiamo individuare 4 tipologie principali di variabili:\n\nnominale\nordinale\nintervalli\nrapporti\n\nQuesta viene anche chiamata tassonomia NOIR.\n\n\nPer un paper classico si veda Stevens (1946)"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#variabili-di-tipo-nominale",
+    "href": "slides/02-research-methods.html#variabili-di-tipo-nominale",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Variabili di tipo nominale",
+    "text": "Variabili di tipo nominale\nLe variabili di tipologia nominale sono anche definite variabili categoriali. Sono quindi delle etichette, verbali o numeriche, che vengono assegnate ad una tipologia di osservazione. Ad esempio:\n\nRegione di residenza\nColore degli occhi\nReligione\nCategoria diagnostica\n\nLe diverse categorie sono interscambiabili quindi non c’è un ordine predefinito. L’unica operazione consentita è quella di contare le diverse categorie calcolando, in vari modi, distribuzioni di frequenza."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#variabili-di-tipo-nominale-esempi",
+    "href": "slides/02-research-methods.html#variabili-di-tipo-nominale-esempi",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Variabili di tipo nominale, esempi:",
+    "text": "Variabili di tipo nominale, esempi:\nLo vedremo meglio nelle prossime lezioni, ma possiamo rappresentare le frequenze tramite dei barplot:"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#variabili-di-tipo-nominale-quali-operazioni",
+    "href": "slides/02-research-methods.html#variabili-di-tipo-nominale-quali-operazioni",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Variabili di tipo nominale, quali operazioni?",
+    "text": "Variabili di tipo nominale, quali operazioni?\n\n\n\n\n\n\nCaution\n\n\nCosa succede, secondo voi, se dovessi calcolare la media di una variabile categoriale?\nE se dovessi calcolare la varianza o la mediana?\n\n\n\n\nIn sostanza, la tipologia di variabile è spesso legata anche a quali operazioni sono permesse, sensate o informative. In questo caso, calcolare la regione media non ha alcun senso.\nRivedremo le statistiche descrittive ed i grafici ma è importante sapere che ogni tipologia di variabile ha il suo tipo di grafico/statistica."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#variabili-di-tipo-ordinale",
+    "href": "slides/02-research-methods.html#variabili-di-tipo-ordinale",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Variabili di tipo ordinale",
+    "text": "Variabili di tipo ordinale\nLe variabili di tipo ordinale sono quelle più comunemente utilizzate in Psicologia ed anche quelle in un certo senso meno intuitive.\nAlcuni esempi:\n\nRisposte su scale likert\nStatus socio-economico (e.g., alto, medio e basso)\nLivello d’istruzione"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#variabili-di-tipo-ordinale-1",
+    "href": "slides/02-research-methods.html#variabili-di-tipo-ordinale-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Variabili di tipo ordinale",
+    "text": "Variabili di tipo ordinale\nRispetto alle variabili categoriali, le variabili ordinali hanno un ordine. Possiamo quindi pensarle categorie alle quali assegniamo un numero progressivo.\n\nQuello che non è definito per le variabili ordinali, è la distanza tra le categorie. Potremmo assegnare allo status socio-economico 1 = basso, 2 = medio e 3 = alto, come 1.5, 2, 2.1.\n\n\nIn altri termini, la distanza tra le categorie non è nota e quindi non è utilizzabile come informazione."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#variabili-di-tipo-ordinale-esempi",
+    "href": "slides/02-research-methods.html#variabili-di-tipo-ordinale-esempi",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Variabili di tipo ordinale, esempi:",
+    "text": "Variabili di tipo ordinale, esempi:\nAnche qui, lo vedremo meglio nelle prossime lezioni ma un grafico a barre, ordinato è un tipo di rappresentazione grafica utilizzabile."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#variabili-su-scala-ad-intervalli",
+    "href": "slides/02-research-methods.html#variabili-su-scala-ad-intervalli",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Variabili su scala ad intervalli",
+    "text": "Variabili su scala ad intervalli\nQuesto è il primo tipo di variabile numerica in senso stretto. Le principali caratteristiche sono:\n\nL’ordine è significativo (questo viene ereditato dalle variabili ordinali)\nLe differenze (intervalli) tra due valori sono note e costanti per tutta la scala\nNon c’è uno zero assoluto definito come assenza della proprietà misurata\n\nLa mancanza di zero assoluto rende quindi non interpretabili i rapporti tra valori, mentre lo sono le differenze."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#variabili-su-scala-ad-intervalli-esempi",
+    "href": "slides/02-research-methods.html#variabili-su-scala-ad-intervalli-esempi",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Variabili su scala ad intervalli: esempi",
+    "text": "Variabili su scala ad intervalli: esempi\nAlcuni esempi sono:\n\nTemperatura come ad esempio Celsius o Fahrenheit\nIn generale le misure psicologiche come intelligenza, personalità, etc.\nLe date sul calendario\n\nPossiamo dire che la distanza tra un QI di 100 e 110 è la stessa rispetto ad un QI di 115 e 125 (sono 10 punti di QI). Non possiamo dire che una persona che ha QI di 200 sia il doppio più intelligente di un QI di 100."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#variabili-su-scala-ad-intervalli-esempi-1",
+    "href": "slides/02-research-methods.html#variabili-su-scala-ad-intervalli-esempi-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Variabili su scala ad intervalli: esempi",
+    "text": "Variabili su scala ad intervalli: esempi"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#variabili-su-scala-a-rapporti",
+    "href": "slides/02-research-methods.html#variabili-su-scala-a-rapporti",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Variabili su scala a rapporti",
+    "text": "Variabili su scala a rapporti\nQuesto è il tipo più completo di variabile numerica che solitamente si trova nelle misurazioni fisiche. Eredità tutte le proprietà precedenti aggiungendo la presenza di uno zero assoluto inteso come assenza della proprietà.\nQualche esempio:\n\nIl tempo inteso come minuti, secondi, millisecondi: tempi di reazione in esperimenti cognitivi\nSegnale psicofisiologico come EEG, ECG, etc."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#tipologia-di-variabili-riassunto",
+    "href": "slides/02-research-methods.html#tipologia-di-variabili-riassunto",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Tipologia di variabili, riassunto:",
+    "text": "Tipologia di variabili, riassunto:\nLe 4 tipologie di variabili sono gerarchicamente ordinate rispetto alle operazioni permissibili e significative:\n\ncategoriali –&gt; uguaglianza: possiamo dire se due osservazioni sono nella stessa categoria\nordinali –&gt; ranking: possiamo dire chi è maggiore tra due osservazioni\nintervalli –&gt; distanze: possiamo interpretare la distanza tra due osservazioni rapporti –&gt; rapporti: possiamo calcolare il rapporto tra due osservazioni"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#intervalli-vs-ordinale",
+    "href": "slides/02-research-methods.html#intervalli-vs-ordinale",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Intervalli vs ordinale",
+    "text": "Intervalli vs ordinale\nQuesta tassonomia non viene sempre rispettata. Ad esempio, le variabili ordinali come le scale likert vengono comunemente trattate come scale ad intervalli o anche a rapporti. Ad esempio viene assunto che la differenza tra 1 (per niente) e 2 (poco) sia la stessa che per altri livelli."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#operazioni-permissibili",
+    "href": "slides/02-research-methods.html#operazioni-permissibili",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Operazioni permissibili",
+    "text": "Operazioni permissibili\nVedremo meglio quando parleremo delle varie statistiche descrittive. Tuttavia, in base al tipo di variabile ci sono delle operazioni permissibili.\n\nFonte: Stevens (1946)"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#vediamo-un-esempio-insieme",
+    "href": "slides/02-research-methods.html#vediamo-un-esempio-insieme",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Vediamo un esempio insieme",
+    "text": "Vediamo un esempio insieme\nProvate a cercare, scaricare il pdf di questo articolo Robinette et al. (2025):\n\nCercate nel metodo e risultati i vari tipi di variabili utilizzate e classificatele in base al NOIR."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#misurazione-psicologica-1",
+    "href": "slides/02-research-methods.html#misurazione-psicologica-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Misurazione Psicologica",
+    "text": "Misurazione Psicologica\nLa misurazione in Psicologia è forse l’argomento più complesso, critico ed affascinante di tutta la ricerca Psicologica e della Psicometria.\nLo scopo del corso non è quello di fornire una panoramica esaustiva riguardo la misurazione ed il testing ma di fornire uno sguardo critico rispetto alle misure che utilizziamo.\nLe differenti variabili (colonne) del nostro dataset sono delle misurazioni più o meno precise di costrutti più o meno definiti.\nCapire questo punto e capire come valutare la qualità delle nostre variabili è fondamentale per comprendere i risultati dell’analisi dei dati."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#gigo---garbage-in-garbage-out",
+    "href": "slides/02-research-methods.html#gigo---garbage-in-garbage-out",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "GIGO - Garbage In, Garbage Out",
+    "text": "GIGO - Garbage In, Garbage Out\nIl GIGO è un principio cardine nell’analisi dei dati. L’idea è che non c’è analisi sofisticata, algoritmo o procedura che possa risolvere il problema della bassa qualità dei dati."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#gigo---garbage-in-garbage-out-1",
+    "href": "slides/02-research-methods.html#gigo---garbage-in-garbage-out-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "GIGO - Garbage In, Garbage Out",
+    "text": "GIGO - Garbage In, Garbage Out\nIn Psicologia, la qualità dei dati è sempre legata al tipo di strumento, alla sua affidabilità, precisione e alla procedura di acquisizione.\nPensate ad un dataset dove una delle colonne identifica un punteggio ad un questionario di depressione. Vediamo che questo è, per esempio, maggiore in soggetti italiani vs stranieri.\nConcludiamo che, per qualche motivo culturale, genetico o psicologico gli italiani abbiano una tendenza maggiore alla depressione."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#gigo---garbage-in-garbage-out-2",
+    "href": "slides/02-research-methods.html#gigo---garbage-in-garbage-out-2",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "GIGO - Garbage In, Garbage Out",
+    "text": "GIGO - Garbage In, Garbage Out\nTuttavia, non abbiamo misurato la depressione come se misurassimo il peso o l’età ma un insieme di item che in teoria dovrebbero essere legati al costrutto depressione.\nL’assunzione implicita è quindi che:\n\nil questionario misuri effettivamente e principalmente la depressione\nche misurandola più volte, questa sia più o meno simile\nche gli item vengano compresi allo stesso modo\nche gli item siano abbastanza sensibili da differenziare le persone"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#qualità-della-misura",
+    "href": "slides/02-research-methods.html#qualità-della-misura",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Qualità della misura",
+    "text": "Qualità della misura\nQuindi non è sufficiente avere una misura di depressione ma dobbiamo chiederci:\n\nquanto è precisa la misura\nquanto è valida e affidabile\nquanto è specifica vs aspecifica\n…"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#variabili-latenti-e-osservate",
+    "href": "slides/02-research-methods.html#variabili-latenti-e-osservate",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Variabili latenti e osservate",
+    "text": "Variabili latenti e osservate\nIn Psicologia, nella maggior parte dei casi siamo interessati a costrutti detti latenti. Latenti perchè non sono direttamente osservabili.\nNon sono direttamente osservabili ma sono indirettamente osservabili tramite degli indicatori. La qualità della nostra osservazione quindi dipende dalla qualità degli indicatori.\nGli indicatori sono ad esempio gli item di un questionario o un insieme di questionari. La variabile latente è ad esempio la depressione."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#un-esempio",
+    "href": "slides/02-research-methods.html#un-esempio",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Un esempio",
+    "text": "Un esempio\nVediamo un esempio di item del BDI-II:\n\nNon sono più irrequieto o teso del solito.\nMi sento più irrequieto o teso del solito.\nSono così irrequieto o agitato che è difficile stare fermo.\nSono così irrequieto o agitato che devo continuare a muovermi o a fare qualcosa.\n\nPerchè questo indicatore viene utilizzato per la depressione secondo voi?"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#un-esempio-1",
+    "href": "slides/02-research-methods.html#un-esempio-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Un esempio",
+    "text": "Un esempio\nTeoricamente, tra le manifestazioni cliniche della depressione è presente agitazione e irrequietezza. Quindi, se misurassi questa manifestazione mi aspetterei, in media, punteggi elevati in soggetti depressi.\nQuindi il collegamento tra indicatore e costrutto latente è teorico e viene assunto o inferito dall’osservazione ma non è scontato.\nInoltre, ci possono essere molti modi diversi di misurare l’irrequietezza che quindi concorrono a misurare (indirettamente) più o meno accuratamente il costrutto latente."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#errore-di-misurazione",
+    "href": "slides/02-research-methods.html#errore-di-misurazione",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Errore di misurazione",
+    "text": "Errore di misurazione\nLa classical test theory assume che il processo di misurazione porta a rilevare un risultato osservato \\(X\\) (observed score) che è la somma del punteggio vero \\(T\\) (true score) e dell’errore \\(E\\).\n\\[\nX = T + E\n\\]\nQuesto è un concetto fondamentale perchè l’obiettivo della statistica è quello di, partendo dal dato osservato \\(X\\) stimare \\(T\\) tenendo in considerazione l’errore \\(E\\)."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#dati-modelli-e-residui",
+    "href": "slides/02-research-methods.html#dati-modelli-e-residui",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Dati, modelli e residui",
+    "text": "Dati, modelli e residui\nPiù in generale, ma lo vedremo meglio più avanti, i modelli statistici sono rappresentazioni semplificate della realtà. I modelli \\(M\\) partono dai dati osservati \\(D\\) ed in modo più o meno complesso cercano di spiegare quello che succede. Essendo la spiegazione non sempre perfetta, quello che rimane si chiama errore o residuo \\(E\\).\n\\[\nD = M + E\n\\]"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#dati-modelli-e-residui-1",
+    "href": "slides/02-research-methods.html#dati-modelli-e-residui-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Dati, modelli e residui",
+    "text": "Dati, modelli e residui\nLa linea blu è il nostro modello \\(M\\), i punti sono i dati \\(D\\) e l’errore o residui sono i segmenti rossi \\(E\\). Diversi modelli si adattano in modo migliore o peggiore ai dati."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#validità-riferimenti",
+    "href": "slides/02-research-methods.html#validità-riferimenti",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Validità, riferimenti",
+    "text": "Validità, riferimenti\nQuesta sezione è basata sui seguenti riferimenti (trovate anche il pdf):\n\nPetersen (2024) in particolare il Capitolo 4 ()\nAmerican Educational Research Association et al. (2014) in particolare il Capitolo 1 ()"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#validità",
+    "href": "slides/02-research-methods.html#validità",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Validità",
+    "text": "Validità\nLa validità può essere intesa come il grado in cui l’evidenza e la teoria supportano le interpretazioni dei punteggi dei test in vista degli usi proposti dei test stessi (American Educational Research Association et al., 2014). Spesso, semplificando, viene detto che la validità di una misura (ad esempio un questionario) è la sua capacità di misurare quello che si prefigge (teoricamente) di misurare. Ritornando all’esempio della bilancia, la validità si chiede lo scopo per cui viene misurato il peso (e.g., indicatore della salute) e non come viene misurato (affidabilità)."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#validità-1",
+    "href": "slides/02-research-methods.html#validità-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Validità",
+    "text": "Validità\nCi sono diverse tipologie di validità:\n\n\n\n\n\ngraph TB\n    A[Validità]\n    A --&gt; B[Facciata]\n    A --&gt; C[Contenuto]\n    A --&gt; E[Costrutto]\n        E --&gt; F(Convergente)\n        E --&gt; G(Divergente)\n        E --&gt; H(Fattoriale)\n    A --&gt; D[Criterio]"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#affidabilità-riferimenti",
+    "href": "slides/02-research-methods.html#affidabilità-riferimenti",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Affidabilità, riferimenti",
+    "text": "Affidabilità, riferimenti\nQuesta sezione è basata sui seguenti riferimenti (trovate anche il pdf):\n\nPetersen (2024) in particolare il Capitolo 3 ()\nAmerican Educational Research Association et al. (2014) in particolare il Capitolo 2 ()"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#affidabilità",
+    "href": "slides/02-research-methods.html#affidabilità",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Affidabilità",
+    "text": "Affidabilità\nLa validità di una misura è la corrispondenza teorica con il costrutto latente. L’affidabilità invece fa riferimento al processo di misurazione. Rappresenta la parte di errore \\(E\\) rispetto all’equazione \\(X = T + E\\). Una misura affidabile è replicabile, consistente, e precisa. Una bilancia che restituisce il peso con \\(\\pm\\) 1 gr. è una misura più affidabile di una bilancia con un errore di 5 o 10 gr. La domanda non è cosa rappresenta il peso ma solo se è misurato in modo consistente e preciso. Ci sono diverse tipologie di affidabilità (in inglese reliability):\n\n\n\n\n\ngraph TB\n    A[Affidabilità]\n    A --&gt; B[Test-retest]\n    A --&gt; C[Interrater]\n    A --&gt; D[Parallel form]\n    A --&gt; E[Internal consistency]"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#validità-e-affidabilità-1",
+    "href": "slides/02-research-methods.html#validità-e-affidabilità-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Validità e affidabilità",
+    "text": "Validità e affidabilità\nLa solita metafora del bersaglio rende molto l’idea. Il centro del bersaglio è il costrutto latente e le frecce sono gli item o indicatori. Secondo voi è possibile avere una misura non affidabile ma valida?"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#validità-di-facciata-face-validity",
+    "href": "slides/02-research-methods.html#validità-di-facciata-face-validity",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Validità di facciata (face validity)",
+    "text": "Validità di facciata (face validity)\nUna misura ha validità di facciata se una persona non esperta leggendo gli item capisce chiaramente cosa l’item sta cercando di misurare. In altri termini capisce in modo chiaro l’operazionalizzazione (il legame tra indicatore e costrutto latente).\n\nUna misura con elevata validità di facciata è poco criticabile\nLa validità di facciata è quantificata in modo soggettivo (intutivo) e non basato sulla teoria\nEssendo l’operazionalizzazione chiara e trasparente è più facile mentire o rispondere in funzione della desiderabilità sociale"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#validità-di-contenuto",
+    "href": "slides/02-research-methods.html#validità-di-contenuto",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Validità di contenuto",
+    "text": "Validità di contenuto\nLa validità di contenuto rappresenta il grado di vicinanza tra gli items ed il costrutto latente che si intende misurare. Potremmo dire che è il grado di bontà dell’operazionalizzazione in senso stretto. Degli items validi sono selezionati e valutati da esperti di quei costrutti latenti.\nUna con validità di contenuto dovrebbe contenere items che coprono tutti gli aspetti (facets) di un certo costrutto latente e non sono legati ad aspetti di altri costrutti diversi.\nLa validità di contenuto deve considerare anche la popolazione di riferimento. Lo stesso costrutto latente (e.g., depressione) potrebbe avere caratteristiche diverse che devono essere catturate da indicatori (items) adatti."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#validità-di-costrutto",
+    "href": "slides/02-research-methods.html#validità-di-costrutto",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Validità di costrutto",
+    "text": "Validità di costrutto\nLa validità di costrutto rappresenta quanto una misura è legata al costrutto di interesse. Viene quantificata non sulla singola misura ma in relazione ad altre misure. In particolare:\n\nValidità convergente: Una misura ha validità convergente se è associata (i.e., correlazione) con altre misure che dovrebbero essere legate al costrutto d’interesse. Ad esempio, diverse misure di depressione dovrebbero correlare tra loro.\nValidità divergente: Una misura ha validità divergente se non è associata con altre misure che non dovrebbero essere legate al costrutto d’interesse. Una misura di depressione non dovrebbe correlare con una misura di controllo degli impulsi se quest’ultimo costrutto non si presuppone essere teoricament legato alla depressione (esempio totalmente non evidence-based).\nvalidità fattoriale: Questo tipo di validità è legata all’analisi fattoriale (che non vedremo). Indica però quanto la struttura fattoriale ipotizzata dalla teoria (e.g., la depressione ha 3 fattori) viene confermata dalla misura utilizzata."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#validità-fattoriale-un-esempio",
+    "href": "slides/02-research-methods.html#validità-fattoriale-un-esempio",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Validità fattoriale, un esempio",
+    "text": "Validità fattoriale, un esempio\n\nObst & White (2004) hanno revisionato la scala Sense of Community Index (SCI) notando che non sempre la struttura fattoriale ipotizzata dalla teoria (McMillan & Chavis, 1986) venisse confermata dai dati notando che una soluzione a 4 fattori potrebbe essere più adeguata. In questo senso, la scala potrebbe avere validità fattoriale bassa.\nE’ importante verificare la validità delle misure che utilizziamo per poter avere conclusioni più solide e valide dalle nostre ricerche. Anche in ottica applicata, è sempre importante valutare la validità delle misure."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#affidabilità-test-retest",
+    "href": "slides/02-research-methods.html#affidabilità-test-retest",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Affidabilità test-retest",
+    "text": "Affidabilità test-retest\nL’affidabilità test-retest indica la stabilità di una misurazione nel tempo. Se il costrutto latente si ipotizza essere stabile nel tempo considerato allora anche la sua misura dovrebbe essere consistente. Ovviamente questo tipo di affidabilità non è rilevante per costrutti che si ipotizza non essere stabili nel tempo (e.g., ansia di stato vs tratto)."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#affidabilità-tra-giudici-interrater",
+    "href": "slides/02-research-methods.html#affidabilità-tra-giudici-interrater",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Affidabilità tra giudici (interrater)",
+    "text": "Affidabilità tra giudici (interrater)\nSe diversi giudici/sperimentatori giungono a risultati simili usando un indicatore in modo indipendente, allora quell’indicatore ha una buona affidabilità. E’ molto usata nel caso di procedure osservative o dove lo sperimentatore deve decidere autonomamente un certo giudizio o punteggio. La convergenza di diversi punteggi indipendenti migliora la misurazione ed il grado di similarità indica che la misura è stabile e/o che viene usata in modo consistente tra diversi giudici."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#affidabilità-tra-forme-parallele",
+    "href": "slides/02-research-methods.html#affidabilità-tra-forme-parallele",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Affidabilità tra forme parallele",
+    "text": "Affidabilità tra forme parallele\nQuesto tipo di affidabilità si valuta con set di items equivalenti da un punto di vista di criterio e validità ma comunque formulati in modo diverso. Essendo, in teoria, validi allo stesso modo dovrebbero anche fornire misurazioni consistenti.\nIn modo simile all’affidabilità interrater, forme parallele dello stesso strumento permettono di attenuare e/o rilevare errori specifici di una certa formulazione di item."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#consistenza-interna",
+    "href": "slides/02-research-methods.html#consistenza-interna",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Consistenza interna",
+    "text": "Consistenza interna\nQuesto tipo di affidabilità rappresenta quanto simili sono le risposte tra soggetti agli stessi item. L’idea è che soggetti diversi (al netto di differenze individuali) dovrebbero rispondere in modo simile agli stessi item.\nSolitamente vengono usati indici che potreste aver sentito come l’Alpha di Cronbach. Una misura ha consistenza interna se, ad esempio, chi risponde valori elevati ad un certo item risponde con valori elevati anche ad un altro item (o il contrario)."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#affidabilità-e-validità-alcuni-esempi",
+    "href": "slides/02-research-methods.html#affidabilità-e-validità-alcuni-esempi",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Affidabilità e validità, alcuni esempi",
+    "text": "Affidabilità e validità, alcuni esempi\nPensate a voler misurare l’ansia con un solo item chiedendo:\n\nquanto ti senti agitatə in questo momento?\n\nQuesta misura è chiaramente valida (legata teoricamente al costrutto ansia) ma è molto instabile, poco precisa e può dipendere da molti fattori sia personali che contestuali.\nL’errore di misura dell’indicatore ansia sarebbe molto pur essendo un indicatore teoricamente valido."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#affidabilità-e-validità-alcuni-esempi-1",
+    "href": "slides/02-research-methods.html#affidabilità-e-validità-alcuni-esempi-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Affidabilità e validità, alcuni esempi",
+    "text": "Affidabilità e validità, alcuni esempi\nUn esempio invece di misure affidabili ma non per forza valide riguarda gli indici psicofisiogici. Immaginiamo di vedere la relazione tra indici psicofisiologici come il battito cardiaco e la depressione.\nLa strumentazione per misurare il battito cardiaco può essere molto affidabile e con poco errore di misura. Tuttavia il legame tra battito cardiaco e depressione può essere meno chiaro e non per forza del tutto valido."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#sensibilità-e-range-delle-misure",
+    "href": "slides/02-research-methods.html#sensibilità-e-range-delle-misure",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Sensibilità e range delle misure",
+    "text": "Sensibilità e range delle misure\nUn altro aspetto importante riguarda la granularità delle misure. In altri termini, se siamo interessati a misurare variazioni nel costrutto latente (differenza di depressione tra due gruppi di individui) dobbiamo assicurarci che l’indicatore sia abbastanza sensibile per cogliere queste differenze.\nSarebbe come trovare la temperatura ideale ma possiamo regolarla solo di 5 gradi alla volta. Per quanto il termostato sia affidabile e valido come misura, la sua granularità non è adeguata."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#effetto-soffitto-o-pavimento",
+    "href": "slides/02-research-methods.html#effetto-soffitto-o-pavimento",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Effetto soffitto o pavimento",
+    "text": "Effetto soffitto o pavimento\nIn un certo senso legato alla granularità, la mia misura deve poter differenziare le diverse osservazioni ovvero non devono esserci effetti soffitto o pavimento.\nImmaginate una domanda di matematica troppo difficile o troppo facile dove tuttə sbagliano o fanno corretto. Quella domanda non è una buona domande perchè non mi permette di distinguere le abilità delle mie osservazioni."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#effetto-soffitto-o-pavimento-1",
+    "href": "slides/02-research-methods.html#effetto-soffitto-o-pavimento-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Effetto soffitto o pavimento",
+    "text": "Effetto soffitto o pavimento\nUn test troppo facile o difficile o una misura tarata in modo sbagliato (misura per soggetti sani su soggetti malati) riduce drasticamente la discriminatività."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#sensibilità-e-range-delle-misure-1",
+    "href": "slides/02-research-methods.html#sensibilità-e-range-delle-misure-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Sensibilità e range delle misure",
+    "text": "Sensibilità e range delle misure\nIl problema del range range è molto serio e può impattare l’interpretazione dei risultati. L’effetto può variare in funzione del range che consideriamo."
+  },
+  {
+    "objectID": "slides/02-research-methods.html#quasi-sperimentale",
+    "href": "slides/02-research-methods.html#quasi-sperimentale",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Quasi-sperimentale",
+    "text": "Quasi-sperimentale\nVediamo un esempio di ricerca quasi-sperimentale. Provate a trovare nel pdf  i passaggi dove il disegno di ricerca è chiaramente spiegato.\n\n\nRobinette, J. W., Piazza, J. R., & Stawski, R. S. (2025). Community crime and safety: An investigation of gender differences in the daily stress process. Journal of Community Psychology, 53, e23158. https://doi.org/10.1002/jcop.23158\n\nRobinette et al. (2025)"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#cluster-randomized-controlled-trial",
+    "href": "slides/02-research-methods.html#cluster-randomized-controlled-trial",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Cluster-randomized controlled trial",
+    "text": "Cluster-randomized controlled trial\nVediamo un esempio di randomized controlled trial (non esattamente quello classico). Provate a trovare nel pdf  i passaggi dove il disegno di ricerca è chiaramente spiegato.\n\n\nJohnson, J. K., Nápoles, A. M., Stewart, A. L., Max, W. B., Santoyo-Olsson, J., Freyre, R., Allison, T. A., & Gregorich, S. E. (2015). Study protocol for a cluster randomized trial of the Community of Voices choir intervention to promote the health and well-being of diverse older adults. BMC Public Health, 15, 1049. https://doi.org/10.1186/s12889-015-2395-9\n\nJohnson et al. (2015)"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#correlazionale-osservazionale-1",
+    "href": "slides/02-research-methods.html#correlazionale-osservazionale-1",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Correlazionale (osservazionale) 1",
+    "text": "Correlazionale (osservazionale) 1\nVediamo un esempio di ricerche osservazionali (correlazionali). Provate a trovare nel pdf  i passaggi dove il disegno di ricerca è chiaramente spiegato.\n\nHill, T. G., & MacGillivray, M. (2024). Loneliness and sense of community are not two sides of the same coin: Identifying different determinants using the 2019 Nova Scotia Quality of Life data. Journal of Community Psychology, 52, 134–153. https://doi.org/10.1002/jcop.23089\n\nHill & MacGillivray (2024)"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#correlazionale-osservazionale-2",
+    "href": "slides/02-research-methods.html#correlazionale-osservazionale-2",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Correlazionale (osservazionale) 2",
+    "text": "Correlazionale (osservazionale) 2\nVediamo un esempio di ricerche osservazionali (correlazionali). Provate a trovare nel pdf  i passaggi dove il disegno di ricerca è chiaramente spiegato.\n\nBenson, O. M., & Whitson, M. L. (2022). The protective role of sense of community and access to resources on college student stress and COVID-19-related daily life disruptions. Journal of Community Psychology, 50, 2746–2764. https://doi.org/10.1002/jcop.22817\n\nBenson & Whitson (2022)"
+  },
+  {
+    "objectID": "slides/02-research-methods.html#bibliografia",
+    "href": "slides/02-research-methods.html#bibliografia",
+    "title": "Introduzione alla metodologia della ricerca",
+    "section": "Bibliografia",
+    "text": "Bibliografia\n\n\n\n\nAmerican Educational Research Association, American Psychological Association, National Council on Measurement in Education, & Joint Committee on Standards for Educational and Psychological Testing (U.S.). (2014). Standards for educational and psychological testing (American Educational Research Association, American Psychological Association, & National Council on Measurement in Education, Eds.). American Educational Research Association.\n\n\nBenson, O. M., & Whitson, M. L. (2022). The protective role of sense of community and access to resources on college student stress and COVID-19-related daily life disruptions. Journal of Community Psychology, 50, 2746–2764. https://doi.org/10.1002/jcop.22817\n\n\nGravetter, F. J., & Forzano, L.-A. B. (2018). Research methods for the behavioral sciences. Cengage Learning.\n\n\nHill, T. G., & MacGillivray, M. (2024). Loneliness and sense of community are not two sides of the same coin: Identifying different determinants using the 2019 Nova Scotia Quality of Life data. Journal of Community Psychology, 52, 134–153. https://doi.org/10.1002/jcop.23089\n\n\nJhangiani, R., Chiang, I.-C. A., Cuttler, C., & Leighton, D. C. (2019). Research methods in psychology.\n\n\nJohnson, J. K., Nápoles, A. M., Stewart, A. L., Max, W. B., Santoyo-Olsson, J., Freyre, R., Allison, T. A., & Gregorich, S. E. (2015). Study protocol for a cluster randomized trial of the Community of Voices choir intervention to promote the health and well-being of diverse older adults. BMC Public Health, 15, 1049. https://doi.org/10.1186/s12889-015-2395-9\n\n\nMcMillan, D. W., & Chavis, D. M. (1986). Sense of community: A definition and theory. Journal of Community Psychology, 14, 6–23. https://doi.org/10.1002/1520-6629(198601)14:1&lt;6::aid-jcop2290140103&gt;3.0.co;2-i\n\n\nNavarro, D. (2013). Learning Statistics with R. Lulu.com.\n\n\nObst, P. L., & White, K. M. (2004). Revisiting the Sense of Community Index: A confirmatory factor analysis. Journal of Community Psychology, 32, 691–705. https://doi.org/10.1002/jcop.20027\n\n\nPetersen, I. T. (2024). Principles of psychological assessment: With applied examples in R (1st Edition). Chapman; Hall/CRC. https://doi.org/10.1201/9781003357421\n\n\nRobinette, J. W., Piazza, J. R., & Stawski, R. S. (2025). Community crime and safety: An investigation of gender differences in the daily stress process. Journal of Community Psychology, 53, e23158. https://doi.org/10.1002/jcop.23158\n\n\nStevens, S. S. (1946). On the theory of scales of measurement. Science (New York, N.Y.), 103, 677–680. https://doi.org/10.1126/science.103.2684.677"
+  },
+  {
     "objectID": "slides/00-intro-corso.html#about-me",
     "href": "slides/00-intro-corso.html#about-me",
     "title": "Introduzione al Corso",
@@ -196,27 +812,6 @@
     "text": "Piccolo questionario\nVi chiedo di fare un piccolo questionario totalmente anonimo. Non vi dico ancora a cosa servirà ma lo vedremo nelle prossime lezioni ma vi garantisco che sarà molto utile."
   },
   {
-    "objectID": "extra.html",
-    "href": "extra.html",
-    "title": "Materiale extra",
-    "section": "",
-    "text": "Corso intensivo (20 ore) su R, parte dei corsi ARCA del Dipartimento di Psicologia dello Sviluppo e della Socializzazione (DPSS). Potete trovare tutto il materiale https://arca-dpss.github.io/course-R/.\nLibro in italiano riguardo R che supporta il corso ARCA https://psicostat.github.io/Introduction2R/"
-  },
-  {
-    "objectID": "extra.html#r",
-    "href": "extra.html#r",
-    "title": "Materiale extra",
-    "section": "",
-    "text": "Corso intensivo (20 ore) su R, parte dei corsi ARCA del Dipartimento di Psicologia dello Sviluppo e della Socializzazione (DPSS). Potete trovare tutto il materiale https://arca-dpss.github.io/course-R/.\nLibro in italiano riguardo R che supporta il corso ARCA https://psicostat.github.io/Introduction2R/"
-  },
-  {
-    "objectID": "data.html",
-    "href": "data.html",
-    "title": "Datasets",
-    "section": "",
-    "text": "Order By\n      Default\n      \n        Dataset\n      \n      \n        File\n      \n      \n        Online\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDataset\n\n\n\nFile\n\n\n\nOnline\n\n\n\n\n\n\n\n\nBerkeley admissions\n\n\nberkeley-admissions.xlsx\n\n\n\n\n\n\n\n\n\nDi Marco et al. (2020)\n\n\ndimarco2020.xlsx\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Analisi dei Dati in Ambito di Comunità",
@@ -229,6 +824,13 @@
     "title": "Analisi dei Dati in Ambito di Comunità",
     "section": "R",
     "text": "R\n\nCorso intensivo (20 ore) su R, parte dei corsi ARCA del Dipartimento di Psicologia dello Sviluppo e della Socializzazione (DPSS). Potete trovare tutto il materiale https://arca-dpss.github.io/course-R/.\nLibro in italiano riguardo R che supporta il corso ARCA https://psicostat.github.io/Introduction2R/\nCorso ARCA su R https://arca-dpss.github.io/course-R/"
+  },
+  {
+    "objectID": "internal.html",
+    "href": "internal.html",
+    "title": "Internal",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nFeb 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nFeb 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nFeb 26, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides/01-intro-analisi-dati.html#la-psicologia-è-una-scienza-statistica",

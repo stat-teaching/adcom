@@ -1,6 +1,7 @@
 ---
 title: Introduzione all'analisi dei dati
 pdf: "[{{< fa file-pdf >}}](slides/01-intro-analisi-dati.pdf)"
+#pdf-pages: 3
 ---
 
 ```{r}

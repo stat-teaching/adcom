@@ -9,9 +9,11 @@ project:
     - quarto-scripts/files.r
   post-render: 
     - quarto-scripts/reveal2pdf.r
+    - quarto-scripts/pdfsubset.r
   resources:
     - papers/*.pdf
     - slides/files/*.pdf
+    - slides/sharing
 
 website:
   favicon: resources/hex.svg

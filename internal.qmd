@@ -1,0 +1,14 @@
+---
+title: Internal
+listing:
+  - id: slides
+    contents: slides
+    type: table
+    sort:
+      - "filename"
+    fields: [title, date, pdf]
+    field-display-names:
+      title: "Titolo"
+      date: "Ultimo aggiornamento"
+      pdf: "PDF"
+---

@@ -1,10 +1,10 @@
 ---
 title: Introduzione alla metodologia della ricerca
 toc: true
-draft: true
 pdf: "[{{< fa file-pdf >}}](slides/02-research-methods.pdf)"
 filters:
   - bibentry
+pdf-pages: 19
 ---
 
 # Processo scientifico

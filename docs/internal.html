@@ -8,7 +8,7 @@
 
 <meta name="author" content="Filippo Gambarota PhD">
 
-<title>Datasets – ADCOM</title>
+<title>Internal – ADCOM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,20 +77,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-slides .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-Dataset','listing-File','listing-Online',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-title','listing-date','listing-pdf',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-Dataset","listing-File","listing-Online"],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-slides'] = new List('listing-slides', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -180,7 +180,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Datasets</h1>
+<h1 class="title">Internal</h1>
 </div>
 
 
@@ -214,21 +214,21 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+<div class="quarto-listing quarto-listing-container-table" id="listing-slides">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+    <select id="listing-slides-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-slides'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
       <option value="" disabled="" selected="" hidden="">Order By</option>
       <option value="index" data-direction="asc">Default</option>
-      <option value="listing-Dataset" data-direction="asc">
-        Dataset
+      <option value="listing-date-sort" data-direction="asc">
+        Ultimo aggiornamento - Oldest
       </option>
-      <option value="listing-File" data-direction="asc">
-        File
+      <option value="listing-date-sort" data-direction="desc">
+        Ultimo aggiornamento - Newest
       </option>
-      <option value="listing-Online" data-direction="asc">
-        Online
+      <option value="listing-title-sort" data-direction="asc">
+        Titolo
       </option>
     </select>
   </div>
@@ -242,43 +242,56 @@ window.Quarto = {
 <tr>
 
 <th>
-<a class="sort" data-sort="listing-Dataset" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Dataset</a>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Titolo</a>
 </th>
 
 <th>
-<a class="sort" data-sort="listing-File" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">File</a>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Ultimo aggiornamento</a>
 </th>
 
 <th>
-<a class="sort" data-sort="listing-Online" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Online</a>
+PDF
 </th>
 
 </tr>
 </thead>
 <tbody class="list">
 
-<tr data-index="0">
+<tr data-index="0" data-listing-date-sort="1772109341000" data-listing-file-modified-sort="1772109341614" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1744" data-listing-title-sort="Introduzione al Corso" data-listing-filename-sort="00-intro-corso.qmd">
 <td>
-<span class="listing-Dataset">Berkeley admissions</span>
+<a href="./slides/00-intro-corso.html" class="title listing-title">Introduzione al Corso</a>
 </td>
 <td>
-<span class="listing-File"><a href="data/berkeley-admissions.xlsx">berkeley-admissions.xlsx</a></span>
+<span class="listing-date">Feb 26, 2026</span>
 </td>
 <td>
-<span class="listing-Online"><a href="https://docs.google.com/spreadsheets/d/1bIzgoftBx0v87sbdgzz3eqH5nuzE7ZUHGgVoryLHCaY/edit?gid=0#gid=0"><i class="fa-solid fa-globe" aria-label="globe"></i></a></span>
+<span class="listing-pdf"><a href="slides/00-intro-corso.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
 </td>
 
 </tr>
 
-<tr data-index="1">
+<tr data-index="1" data-listing-date-sort="1772109264000" data-listing-file-modified-sort="1772109264651" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2712" data-listing-title-sort="Introduzione all'analisi dei dati" data-listing-filename-sort="01-intro-analisi-dati.qmd">
 <td>
-<span class="listing-Dataset">Di Marco et al.&nbsp;(2020)</span>
+<a href="./slides/01-intro-analisi-dati.html" class="title listing-title">Introduzione all’analisi dei dati</a>
 </td>
 <td>
-<span class="listing-File"><a href="data/dimarco2020.xlsx">dimarco2020.xlsx</a></span>
+<span class="listing-date">Feb 26, 2026</span>
 </td>
 <td>
-<span class="listing-Online"><a href="https://docs.google.com/spreadsheets/d/1Zba8n2u7_Krc6iqnlyF9bu-wxD5SMx3n-QqEHAVJx-E/edit?gid=436198876#gid=436198876"><i class="fa-solid fa-globe" aria-label="globe"></i></a></span>
+<span class="listing-pdf"><a href="slides/01-intro-analisi-dati.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
+</td>
+
+</tr>
+
+<tr data-index="2" data-listing-date-sort="1772112110000" data-listing-file-modified-sort="1772112110049" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="32" data-listing-word-count-sort="6383" data-listing-title-sort="Introduzione alla metodologia della ricerca" data-listing-filename-sort="02-research-methods.qmd">
+<td>
+<a href="./slides/02-research-methods.html" class="title listing-title">Introduzione alla metodologia della ricerca</a>
+</td>
+<td>
+<span class="listing-date">Feb 26, 2026</span>
+</td>
+<td>
+<span class="listing-pdf"><a href="slides/02-research-methods.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
 </td>
 
 </tr>

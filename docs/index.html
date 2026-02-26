@@ -112,9 +112,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-date','listing-pdf',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-project','listing-website','listing-author','listing-institute','listing-execute','listing-format','listing-bibliography','listing-csl','listing-_quarto-vars','listing-language','listing-subtitle','listing-date','listing-date-format','listing-crossref','listing-toc-title','listing-title','listing-toc','listing-pdf','listing-path','listing-outputHref','listing-date-modified','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count','listing-filters','listing-pdf-pages',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author"],
+      searchColumns: ["listing-project","listing-website","listing-author","listing-institute","listing-execute","listing-format","listing-bibliography","listing-csl","listing-_quarto-vars","listing-language","listing-subtitle","listing-date","listing-date-format","listing-crossref","listing-toc-title","listing-title","listing-toc","listing-pdf","listing-path","listing-outputHref","listing-date-modified","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-filters","listing-pdf-pages"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -317,77 +317,18 @@ window.Quarto = {
 <p>In questo sito sarà presente tutto il materiale come slides, esercizi, approfondimenti, codici e dati. Per ogni comunicazione ufficiale si faccia sempre riferimento alla <a href="https://psico.elearning.unipd.it/course/view.php?id=6170">pagina Moodle del corso</a>.</p>
 <section id="slides" class="level1">
 <h1>Slides</h1>
-<div id="listing-slides" class="quarto-listing quarto-listing-container-table">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-slides-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-slides'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Order By</option>
-      <option value="index" data-direction="asc">Default</option>
-      <option value="listing-date-sort" data-direction="asc">
-        Ultimo aggiornamento - Oldest
-      </option>
-      <option value="listing-date-sort" data-direction="desc">
-        Ultimo aggiornamento - Newest
-      </option>
-      <option value="listing-title-sort" data-direction="asc">
-        Titolo
-      </option>
-    </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Titolo</a>
-</th>
-
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Ultimo aggiornamento</a>
-</th>
-
-<th>
-PDF
-</th>
-
-</tr>
-</thead>
-<tbody class="list">
-
-<tr data-index="0" data-listing-date-sort="1772024715000" data-listing-file-modified-sort="1772024715534" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1744" data-listing-title-sort="Introduzione al Corso" data-listing-filename-sort="00-intro-corso.qmd">
-<td>
-<a href="./slides/00-intro-corso.html" class="title listing-title">Introduzione al Corso</a>
-</td>
-<td>
-<span class="listing-date">Feb 25, 2026</span>
-</td>
-<td>
-<span class="listing-pdf"><a href="slides/00-intro-corso.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
-</td>
-
-</tr>
-
-<tr data-index="1" data-listing-date-sort="1772050396000" data-listing-file-modified-sort="1772050396616" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2712" data-listing-title-sort="Introduzione all'analisi dei dati" data-listing-filename-sort="01-intro-analisi-dati.qmd">
-<td>
-<a href="./slides/01-intro-analisi-dati.html" class="title listing-title">Introduzione all’analisi dei dati</a>
-</td>
-<td>
-<span class="listing-date">Feb 25, 2026</span>
-</td>
-<td>
-<span class="listing-pdf"><a href="slides/01-intro-analisi-dati.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></span>
-</td>
-
-</tr>
-
-</tbody>
-</table>
+<div id="listing-slides" class="quarto-listing quarto-listing-container-custom">
+<ul>
+<li>
+<a href="https://stat-teaching.github.io/adcom/slides/sharing/00-intro-corso.pdf">Introduzione al Corso</a>
+</li>
+<li>
+<a href="https://stat-teaching.github.io/adcom/slides/sharing/01-intro-analisi-dati.pdf">Introduzione all’analisi dei dati</a>
+</li>
+<li>
+<a href="https://stat-teaching.github.io/adcom/slides/sharing/02-research-methods.pdf">Introduzione alla metodologia della ricerca</a>
+</li>
+</ul>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>

@@ -1,6 +1,7 @@
 ---
 title: Introduzione al Corso
 toc: true
+#pdf-pages: 3
 pdf: "[{{< fa file-pdf >}}](slides/00-intro-corso.pdf)"
 ---
 

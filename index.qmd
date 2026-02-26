@@ -14,16 +14,10 @@ listing:
       title: "Titolo"
       key: "Paper"
       file: "PDF"
-  - id: slides
-    contents: slides
-    type: table
-    sort:
-      - "filename"
-    fields: [title, date, pdf]
-    field-display-names:
-      title: "Titolo"
-      date: "Ultimo aggiornamento"
-      pdf: "PDF"
+  - id: "slides"
+    contents:
+      - "slides"
+    template: resources/listing.ejs
   - id: data
     contents: data/data.yml
     type: table

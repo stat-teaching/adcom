@@ -1,0 +1,11 @@
+<ul>
+  <% for (const item of items) { %>
+    <% 
+      const filename = item.path.split('/').pop().replace(/\.[^/.]+$/, "");
+      const customPath = "https://stat-teaching.github.io/adcom/slides/sharing/" + filename + ".pdf";
+    %>
+    <li>
+      <a href="<%- customPath %>"><%= item.title %></a>
+    </li>
+  <% } %>
+</ul>
