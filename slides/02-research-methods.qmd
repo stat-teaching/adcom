@@ -233,6 +233,14 @@ ggplot(dat, aes(x = age, y = math, color = peso)) +
     scale_color_viridis_c()
 ```
 
+## Variabili estranee, confounder e covariate
+
+Una variabile estranea (non manipolata e non outcome) quindi può essere diverse cose:
+
+- rimanere una variabile **estranea**: ha un possibile impatto sull'outcome ma non viene considerata/controllata
+- un **confounder**: se ha impatto sia sulla variabile outcome che sulla variabile intervento/trattamento
+- una **covariata**: se ha un possibile impatto sull'outcome e viene considerata/controllata, solitamente con **controllo statistico**
+
 ## Directed acyclic graph
 
 Questo tipo di grafici sono molto utili per rappresentare graficamente modelli statistici ed ipotesi.
@@ -241,11 +249,7 @@ Questo tipo di grafici sono molto utili per rappresentare graficamente modelli s
 mdag(
   y ~ x,
   y ~ z,
-  z ~ x,
-  m ~ x,
-  y ~ m,
-  outcome = "y",
-  exposure = "x"
+  outcome = "y"
 )
 ```
 
@@ -258,6 +262,24 @@ Non li vedremo nel dettaglio, ma sono utili per semplici modelli. Una piccola le
 - il colore blu indica una variabile *manipolata* (o trattamento)
 - il colore verde indica una variabile non manipolata ma d'interesse
 - il colore grigio indica una variabile *osservata* (ma non manipolata, ad esempio età)
+
+## Directed acyclic graph, covariata e confounder
+
+Nel caso della covariata (sinistra) questa ha un impatto sull'outcome ($y$) ma non ha un effetto su altri predittori. Il confounder invece ha un effetto sia su altri predittori che sull'outcome. Ovviamente ci sono potenziali confounder o covariate che non misuriamo o consideriamo (rimangono estranee).
+
+```{r}
+mdag(
+  y ~ x,
+  y ~ z,
+  y ~ x,
+  outcome = "y"
+) +
+mdag(
+  y ~ z,
+  x ~ z,
+  outcome = "y"
+)
+```
 
 ## Randomizzazione, perchè funziona?
 

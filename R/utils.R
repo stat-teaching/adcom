@@ -34,7 +34,7 @@ mdag <- function(..., labels = NULL, focus = NULL) {
     dots$labels <- labels
   }
 
-  tdag <- do.call(dagify, dots) |>
+  tdag <- do.call(ggdag::dagify, dots) |>
     ggdag::tidy_dagitty() |>
     ggdag::node_status()
 
@@ -137,4 +137,22 @@ get_slide_files <- function() {
   })
   names(files) <- sapply(files, basename)
   files
+}
+
+sdag <- function(..., n = 100, standardized = TRUE, empirical = FALSE) {
+  ffl <- list(...)
+  ffl <- sapply(ffl, formula.tools:::as.character.formula)
+  ffl <- paste(ffl, collapse = "\n")
+  lavaan::simulateData(
+    ffl,
+    standardized = standardized,
+    sample.nobs = n,
+    empirical = empirical
+  )
+}
+
+tab <- function(x, nbin = max(1, x, na.rm = TRUE)) {
+  w <- tabulate(x, nbins = nbin)
+  x <- sort(unique(x))
+  list(x = x, w = w)
 }
