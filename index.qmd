@@ -18,6 +18,11 @@ listing:
     contents:
       - "slides"
     template: resources/listing.ejs
+  - id: "notes"
+    contents:
+      - "notes"
+    template: notes/notes.ejs
+    type: table
   - id: data
     contents: data/data.yml
     type: table
@@ -73,3 +78,8 @@ In questo sito sarà presente tutto il materiale come slides, esercizi, approfon
 
 - [Padlet](https://padlet.com/unipd/adcom2526-8obpqgzm4mdnoyyl)
 - [Calendario](https://docs.google.com/spreadsheets/d/1rhXgzPZJYWaGu5bKYFfrJvaycTlxF838ap0lkPV2tyk/edit?gid=0#gid=0)
+
+# Notes
+
+::: {#notes}
+:::

@@ -133,6 +133,34 @@ ul.task-list li input[type="checkbox"] {
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-notes .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-website','listing-author','listing-institute','listing-execute','listing-format','listing-bibliography','listing-csl','listing-_quarto-vars','listing-language','listing-title','listing-crossref','listing-path','listing-outputHref','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-author","listing-institute","listing-execute","listing-format","listing-bibliography","listing-csl","listing-_quarto-vars","listing-language","listing-title","listing-crossref","listing-path","listing-outputHref","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-notes'] = new List('listing-notes', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
     const listingTargetEl = window.document.querySelector('#listing-data .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
@@ -270,6 +298,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#links-utili" id="toc-links-utili" class="nav-link" data-scroll-target="#links-utili">Links utili</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
   </ul>
 </nav>
     </div>
@@ -726,6 +755,17 @@ window.Quarto = {
 <li><a href="https://padlet.com/unipd/adcom2526-8obpqgzm4mdnoyyl">Padlet</a></li>
 <li><a href="https://docs.google.com/spreadsheets/d/1rhXgzPZJYWaGu5bKYFfrJvaycTlxF838ap0lkPV2tyk/edit?gid=0#gid=0">Calendario</a></li>
 </ul>
+</section>
+<section id="notes" class="level1">
+<h1>Notes</h1>
+<div id="listing-notes" class="quarto-listing quarto-listing-container-custom">
+<ul>
+<li>
+<a href="./notes/importing-data.html">Importare i dati in R</a>
+</li>
+</ul>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
 
 
 

@@ -28,14 +28,14 @@ ghlink <- function(x) {
 }
 
 
-mdag <- function(..., labels = NULL, focus = NULL) {
+mdag <- function(..., labels = NULL, focus = NULL, layout = "circle") {
   dots <- list(...)
   if (!is.null(labels)) {
     dots$labels <- labels
   }
 
   tdag <- do.call(ggdag::dagify, dots) |>
-    ggdag::tidy_dagitty() |>
+    ggdag::tidy_dagitty(layout = layout) |>
     ggdag::node_status()
 
   if (!is.null(labels)) {
@@ -155,4 +155,10 @@ tab <- function(x, nbin = max(1, x, na.rm = TRUE)) {
   w <- tabulate(x, nbins = nbin)
   x <- sort(unique(x))
   list(x = x, w = w)
+}
+
+bullet_files <- function(dir) {
+  fl <- list.files(dir, full.names = TRUE)
+  sprintf("- [%s](%s)", basename(fl), fl) |>
+    cat(sep = "\n")
 }

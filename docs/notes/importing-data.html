@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.21">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Filippo Gambarota PhD">
+
+<title>Importare i dati in R – ADCOM</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../resources/hex.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e81d5102cd3fac90c9ec95736eec354c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">ADCOM</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/stat-teaching/adcom"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduzione" id="toc-introduzione" class="nav-link active" data-scroll-target="#introduzione">Introduzione</a>
+  <ul class="collapse">
+  <li><a href="#la-logica" id="toc-la-logica" class="nav-link" data-scroll-target="#la-logica">La logica</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
+  <li><a href="#tipi-di-formato" id="toc-tipi-di-formato" class="nav-link" data-scroll-target="#tipi-di-formato">Tipi di formato</a></li>
+  <li><a href="#formato-r" id="toc-formato-r" class="nav-link" data-scroll-target="#formato-r">Formato R</a>
+  <ul class="collapse">
+  <li><a href="#rdata" id="toc-rdata" class="nav-link" data-scroll-target="#rdata"><code>.RData</code></a></li>
+  <li><a href="#rda" id="toc-rda" class="nav-link" data-scroll-target="#rda"><code>.rda</code></a></li>
+  <li><a href="#rds" id="toc-rds" class="nav-link" data-scroll-target="#rds"><code>.rds</code></a></li>
+  <li><a href="#tabella-riassuntiva" id="toc-tabella-riassuntiva" class="nav-link" data-scroll-target="#tabella-riassuntiva">Tabella riassuntiva</a></li>
+  </ul></li>
+  <li><a href="#formato-esterno" id="toc-formato-esterno" class="nav-link" data-scroll-target="#formato-esterno">Formato esterno</a>
+  <ul class="collapse">
+  <li><a href="#txt" id="toc-txt" class="nav-link" data-scroll-target="#txt"><code>.txt</code></a></li>
+  <li><a href="#csv" id="toc-csv" class="nav-link" data-scroll-target="#csv"><code>.csv</code></a></li>
+  <li><a href="#xsls" id="toc-xsls" class="nav-link" data-scroll-target="#xsls"><code>.xsls</code></a></li>
+  <li><a href="#sav" id="toc-sav" class="nav-link" data-scroll-target="#sav"><code>.sav</code></a></li>
+  </ul></li>
+  <li><a href="#elementi-comuni" id="toc-elementi-comuni" class="nav-link" data-scroll-target="#elementi-comuni">Elementi comuni</a></li>
+  </ul></li>
+  <li><a href="#dati" id="toc-dati" class="nav-link" data-scroll-target="#dati">Dati</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Importare i dati in R</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Filippo Gambarota PhD <a href="mailto:filippo.gambarota@unipd.it" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-6666-1747" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Università di Padova
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduzione" class="level1">
+<h1>Introduzione</h1>
+<p>Per operazioni semplici o per esercizi si possono creare strutture dati come <code>vettori</code>, <code>liste</code> o <code>dataframe</code> direttamente in R. Tuttavia per lavorare con R è solito <strong>importare</strong> i dati da fonti esterne come file e database.</p>
+<p>In R sono disponibili diverse funzioni per importare i dati nei principali formati come <code>.csv</code> o <code>.txt</code> assieme a diversi pacchetti con funzioni per importare dati nei formati provenienti da altri software come SPSS, Excel, etc. Insomma se esiste un formato specifico probabilmente esiste anche una funzione in R per importarlo.</p>
+<section id="la-logica" class="level2">
+<h2 class="anchored" data-anchor-id="la-logica">La logica</h2>
+<p>A prescindere dal formato specifico, la logica è che un certo tipo di file ha un’estensione che identifica la tipologia come <em>file di testo</em> <code>.txt</code>, <em>comma-separated values</em> <code>.csv</code>, <em>Excel</em> <code>.xlsx</code>. Questo file organizza i dati in un modo specifico e quindi è importante utilizzare la funzione giusta con i giusti argomenti per poter far interpretare ad R i dati in modo corretto.</p>
+</section>
+<section id="rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio">RStudio</h2>
+<p>RStudio permette di importare qualsiasi tipo di dato tramite interfaccia grafica. All’inizio può essere utile ma quando si lavora all’interno di uno script è meglio automatizzare tramite comandi qualsiasi operazione sia per salvare che per importare i dati. Potete trovare il menù di importazione con <code>file &gt;. import dataset</code> come in <a href="#fig-rstudio-import" class="quarto-xref">Figura&nbsp;Figura</a>.</p>
+<div id="fig-rstudio-import" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-import-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/rstudio_import.png" id="fig-rstudio-import" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-rstudio-import-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;Figura
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="tipi-di-formato" class="level2">
+<h2 class="anchored" data-anchor-id="tipi-di-formato">Tipi di formato</h2>
+<p>Le tipologie di formato dati sono tantissime ma possiamo organizzarle in 2 categorie:</p>
+<ul>
+<li><code>formati esterni</code>: sono tutti quei formati non R-specifici</li>
+<li><code>formato R</code>: sono quei formati che sono creati da R e direttamente compatibili</li>
+</ul>
+</section>
+<section id="formato-r" class="level2">
+<h2 class="anchored" data-anchor-id="formato-r">Formato R</h2>
+<p>Partiamo dai formati specifici di R perchè sono quelli più semplici da creare e importare. Il principale difetto è quello che sono appunto leggibili (principalmente) solo all’interno dell’ambiente R. Se abbiamo la necessità di lavorare con software o linguaggi diversi è probabilmente meglio usare un formato più generico.</p>
+<section id="rdata" class="level3">
+<h3 class="anchored" data-anchor-id="rdata"><code>.RData</code></h3>
+<p>Questo è il formato più generico e permette di salvare l’intera sessione di lavoro in un file unico per poi essere eventualmente ripristinata. Non è un vero e proprio formato specifico e corrisponde più a fare una fotografia (~backup) alla sessione di lavoro. In generale non consiglio di usare questo formato ma di lavorare con singoli file da salvare/importare ma in generale più essere utile a volte.</p>
+<p>Per salvare si più usare <code>save.image()</code> semplicemente specificando il percorso e il nome del file con estensione <code>.RData</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save.image</span>(<span class="at">file =</span> <span class="st">"data/sessione.RData"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Per ripristinare la sessione si può usare la funzione <code>load()</code> specificando il percorso del file.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">"data/sessione.RData"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="rda" class="level3">
+<h3 class="anchored" data-anchor-id="rda"><code>.rda</code></h3>
+<p>Il formato <code>.rda</code> è quello più comune in R e permette di salvare <strong>uno o più oggetti</strong> all’interno di un unico file per poi ricaricarlo/i direttamente. Il principio è lo stesso dei file <code>.RData</code> ma al contrario del precedente permette di salvare solo alcuni oggetti. Il comando per salvare è <code>save()</code> dove vanno inseriti gli oggetti separati da virgola e poi il nome ed il percorso del file da salvare. Salviamo il dataset <code>iris</code>, un vettore <code>my_vect</code> e la stringa <code>"hello world"</code> dentro un unico oggetto <code>my_obj.rda</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>iris <span class="ot">&lt;-</span> iris</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>my_vect <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>my_string <span class="ot">&lt;-</span> <span class="st">"hello world"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(iris, my_vect, my_string, <span class="at">file =</span> <span class="st">"data/my_obj.rda"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Se vogliamo ricaricare questo insieme di oggetti all’interno di R possiamo usare la funzione <code>load()</code> specificando il percorso del file. Gli oggetti saranno non solo caricati ma salvati direttamente nel global environment:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">"data/my_obj.rda"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>I lati positivi di questo approccio sono l’estrema semplicità nel salvare e caricare i file mentre l’aspetto negativo è che non possiamo cambiare i nomi con cui i file vengono importati.</p>
+</section>
+<section id="rds" class="level3">
+<h3 class="anchored" data-anchor-id="rds"><code>.rds</code></h3>
+<p>Il formato <code>.rds</code> è molto simile al precedente ma leggermente meno flessibile. In particolare è possibile salvare <strong>un solo oggetto</strong> all’interno di un file <code>.rds</code>. Il lato negativo è quindi che non possiamo salvare una sessione intera di oggetti mentre il lato positivo è che possiamo rinominare l’oggetto quando viene importato. In generale ritengo migliore il formato <code>.rds</code> perchè nonostante la necessità di più file permette una gestione più flessibile di cosa importare e come viene rappresentato nell’ambiente di lavoro. La funzione per salvare è <code>saveRDS()</code> specificando l’oggetto e il percorso/nome e per importare <code>readRDS()</code> specificando il percorso del file. Salviamo il dataset <code>iris</code> come <code>iris.rds</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(iris, <span class="at">file =</span> <span class="st">"data/iris.rds"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Re-importiamo il dataset <code>iris</code> ma chiamandolo <code>my_iris</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>my_iris <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/iris.rds"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Come vedete è necessario assegnare <code>&lt;-</code> il risultato ad un oggetto altrimenti non è possibile avere disponibile l’oggetto nell’ambiente di lavoro.</p>
+</section>
+<section id="tabella-riassuntiva" class="level3">
+<h3 class="anchored" data-anchor-id="tabella-riassuntiva">Tabella riassuntiva</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 17%">
+<col style="width: 10%">
+<col style="width: 22%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Formato</th>
+<th>Estensione</th>
+<th>Salvataggio</th>
+<th>Importazione</th>
+<th>Pro</th>
+<th>Contro</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>RDS</td>
+<td><code>.rds</code></td>
+<td><code>saveRDS(oggetto, file)</code></td>
+<td><code>readRDS(file)</code></td>
+<td>Importando si decide il nome</td>
+<td>Un solo oggetto per file</td>
+</tr>
+<tr class="even">
+<td>RDA</td>
+<td><code>.rda</code></td>
+<td><code>save(oggetto/i, file)</code></td>
+<td><code>load(file)</code></td>
+<td>Salvare insieme più file</td>
+<td>Carica direttamente i file con i nomi salvati</td>
+</tr>
+<tr class="odd">
+<td>RData</td>
+<td><code>.RData</code></td>
+<td><code>save.image(file)</code></td>
+<td><code>load(file)</code></td>
+<td>Salvare tutta la sessione</td>
+<td>Carica direttamente i file con i nomi salvati</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="formato-esterno" class="level2">
+<h2 class="anchored" data-anchor-id="formato-esterno">Formato esterno</h2>
+<p>Trattare i formati esterni è sicuramente complicato sia per la differenza tra i vari formati che la quantità di formati diversi. L’idea di base è che solitamente per importare i dati bisogna capire come il formato specifico rappresenta dati, caratteri speciali, elementi che separano un singolo dato dall’altro e così via.</p>
+<p>Se prendiamo il seguente vettore <code>x &lt;- c(1,2,3)</code> noi capiamo che <code>x</code> ha 3 elementi essendo la virgola non un dato ma un modo per separare dati. Ecco anche i vari formati hanno delle modalità per separare e organizzare i dati ed R deve capire (lo dobbiamo dire noi) quale modalità specifica è utilizzata nel tipo di dato che stiamo cercando di importare.</p>
+<section id="txt" class="level3">
+<h3 class="anchored" data-anchor-id="txt"><code>.txt</code></h3>
+<p>Partiamo dal formato più semplice <code>.txt</code> e proviamo ad importare un singolo vettore da <code>.txt</code> a R come oggetto.</p>
+<p>Vediamo il file di testo <code>comma_vector.txt</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>1,2,3,4,5,6,7,8,9,10</code></pre>
+</div>
+</div>
+<p>Come vedete ci sono dei numeri separati da virgole. Per leggere questo dato in <code>R</code> possiamo usare la funzione <code>scan(file, sep)</code>. In particolare dobbiamo specificare il file ovviamente e l’argomento <code>sep =</code> per specificare quale carattere venga interpretato come <strong>separatore</strong>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>right <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="st">'data/comma_vector.txt'</span>, <span class="at">sep=</span><span class="st">","</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>right</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>wrong <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="st">'data/comma_vector.txt'</span>, <span class="at">sep=</span><span class="st">";"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in scan("data/comma_vector.txt", sep = ";", quiet = TRUE): scan() expected 'a real', got '1,2,3,4,5,6,7,8,9,10'</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>wrong</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'wrong' not found</code></pre>
+</div>
+</div>
+<p>Come vedete specificando un separatore errato dice a R di importare anche <code>,</code> e ovviamente non è compatibile con il resto dei dati.</p>
+<p>Solitamente è inutile importare un singolo vettore ma questo concetto di capire come è codificato il file da importare è alla base di tutti i tipi di importazione.</p>
+<p>Un modo più complesso di organizzare i dati sempre nei file <code>.txt</code> è quello di ricreare un vero e proprio dataset. Il file <code>comma_table.txt</code> rappresenta un esempio più realistico (in piccolo) di quello che potrebbe essere un dataset vero da importare:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>id, nome, age, corso
+1,filippo,20,psicologia
+2,andrea,22,ingegneria
+3,anna,30,informatica
+4,francesca,23,dams</code></pre>
+</div>
+</div>
+<p>Come vedete abbiamo delle stringhe che idealmente rappresentano i nomi delle colonne e poi i dati effettivi. Come in precedenza in questo caso abbiamo la virgola come separatore di dato ma dobbiamo in qualche modo dire ad R che la prima riga non fa parte dei dati sono i nomi delle colonne. Per importare questo tipo di dato possiamo usare il comando <code>read.table(file, sep, header)</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read.table</span>(<span class="st">"data/comma_table.txt"</span>, <span class="at">sep =</span> <span class="st">","</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  V1        V2   V3          V4
+1 id      nome  age       corso
+2  1   filippo   20  psicologia
+3  2    andrea   22  ingegneria
+4  3      anna   30 informatica
+5  4 francesca   23        dams</code></pre>
+</div>
+</div>
+<p>Come vedete R intepreta la prima riga come parte dei dati e aggiunge dei nomi standard per le colonne <code>V1, V2, etc.</code>. Aggiungendo l’argomento <code>header = TRUE</code> diciamo proprio questo a R.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/comma_table.txt"</span>, <span class="at">sep =</span> <span class="st">","</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>my_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  id      nome age       corso
+1  1   filippo  20  psicologia
+2  2    andrea  22  ingegneria
+3  3      anna  30 informatica
+4  4 francesca  23        dams</code></pre>
+</div>
+</div>
+<p>E’ importante notare che il carattere di separazione può essere qualsiasi altro carattere rispetto alla virgola come il punto e virgola <code>";"</code> o uno spazio <code>" "</code>. E’ solo importante capire il carattere corretto e impostare la funzione di importazione.</p>
+</section>
+<section id="csv" class="level3">
+<h3 class="anchored" data-anchor-id="csv"><code>.csv</code></h3>
+<p>I file <code>csv</code> sono più comuni per gestire dataset sopratutto perchè sono facilmente importabili e creabili da software come Excel. Il nome significa <strong>comma separated values</strong> perchè in modo simile ai file che abbiamo visto in precedenza si utilizza la virgola <code>","</code> per separare i dati. Un file <code>csv</code> si presenta in questo modo:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>"Sepal.Length";"Sepal.Width";"Petal.Length";"Petal.Width";"Species"
+5.1;3.5;1.4;0.2;"setosa"
+4.9;3;1.4;0.2;"setosa"
+4.7;3.2;1.3;0.2;"setosa"
+4.6;3.1;1.5;0.2;"setosa"
+5;3.6;1.4;0.2;"setosa"
+5.4;3.9;1.7;0.4;"setosa"
+4.6;3.4;1.4;0.3;"setosa"
+5;3.4;1.5;0.2;"setosa"
+4.4;2.9;1.4;0.2;"setosa"
+4.9;3.1;1.5;0.1;"setosa"</code></pre>
+</div>
+</div>
+<p>Come vedete il file è estremamente simile al <code>txt</code> che abbiamo importato in precedenza con la differenza che le stringe sono racchiuse tra virgolette. Il comando per leggere file <code>csv</code> è <code>read.csv(file, sep, header)</code> dove il <code>sep = ","</code> predefinito è la virgola (ma si può cambiare) e anche qui dobbiamo specificare il parametro <code>header = TRUE</code> se vogliamo importare la prima riga come nomi delle colonne. Assegnando ad un oggetto come per <code>read.table()</code> avremo in automatico un dataframe.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>my_csv <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/csv_example.csv"</span>, <span class="at">header =</span> T) <span class="co"># sep di default è virgola</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>my_csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Sepal.Length.Sepal.Width.Petal.Length.Petal.Width.Species
+1                                     5.1;3.5;1.4;0.2;setosa
+2                                       4.9;3;1.4;0.2;setosa
+3                                     4.7;3.2;1.3;0.2;setosa
+4                                     4.6;3.1;1.5;0.2;setosa
+5                                       5;3.6;1.4;0.2;setosa
+6                                     5.4;3.9;1.7;0.4;setosa
+7                                     4.6;3.4;1.4;0.3;setosa
+8                                       5;3.4;1.5;0.2;setosa
+9                                     4.4;2.9;1.4;0.2;setosa
+10                                    4.9;3.1;1.5;0.1;setosa</code></pre>
+</div>
+</div>
+</section>
+<section id="xsls" class="level3">
+<h3 class="anchored" data-anchor-id="xsls"><code>.xsls</code></h3>
+<p>Esistono diverse funzioni per importare file direttamente dal formato Excel. Solitamente è possibile evitare di utilizzare funzioni o pacchetti aggiuntivi semplicemente salvando il file Excel come <code>csv</code> e usare le funzioni di importazione precedenti. Tuttavia a volte è comodo importare direttamente il file nel formato originale. Sono disponibili diversi pacchetti e funzioni:</p>
+<p>Il pacchetto <a href="https://readxl.tidyverse.org/"><code>readxl</code></a> con le funzioni <code>readxl::read_excel()</code>, <code>readxl::read_xls()</code> e <code>readxl::read_xlsx()</code>. Rispetto ai <code>csv</code> i file Excel sono più complessi e permettono di avere più “fogli”. Queste funzioni permettono anche di importare un foglio specifico (argomento <code>sheet =</code>) oppure un range specifico nel foglio di destinazione (argomento <code>range =</code>) Excel identifica infatti le righe in modo numerico <code>1,2,3,4...</code> e le colonne con le lettere dell’alfabeto in modo progressivo <code>A, B, C ...</code></p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>my_excel <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"data/excel_example.xlsx"</span>, <span class="at">range =</span> <span class="st">"A1:D10"</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>my_excel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 4
+  Sepal.Length Sepal.Width Petal.Length Petal.Width
+         &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
+1          5.1         3.5          1.4         0.2
+2          4.9         3            1.4         0.2
+3          4.7         3.2          1.3         0.2
+4          4.6         3.1          1.5         0.2
+5          5           3.6          1.4         0.2
+6          5.4         3.9          1.7         0.4
+7          4.6         3.4          1.4         0.3
+8          5           3.4          1.5         0.2
+9          4.4         2.9          1.4         0.2</code></pre>
+</div>
+</div>
+<p>In alternativa è presente anche il pacchetto <a href="https://cran.r-project.org/web/packages/xlsx/xlsx.pdf"><code>xlsx</code></a> che permette le stesse funzionalità ma in generale il pacchetto <code>readxl</code> è il migliore. L’unica differenza riguarda la capacità di <em>scrivere</em> quindi creare file excel da un oggetto R. Finora abbiamo solo parlato di lettura di file ma R permette anche di creare tutti i formati che legge. In questo caso il pacchetto <code>readxl</code> permette solo di leggere mentre <code>xlsx</code> anche di scrivere. Il pacchetto <a href="WriteXLS"><code>WriteXLS</code></a> come dice il nome invece è specifico per la scrittura di file.</p>
+</section>
+<section id="sav" class="level3">
+<h3 class="anchored" data-anchor-id="sav"><code>.sav</code></h3>
+<p>Il formato <code>.sav</code> è specifico del software SPSS e può essere gestito con il pacchetto <a href="https://haven.tidyverse.org/"><code>haven</code></a> che permette di leggere e scrivere file in questo formato. In questo caso, in modo simile all’excel, non ci sono particolari opzioni per leggere/scrivere se non specificare il percorso del file.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>my_sav <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="at">file =</span> <span class="st">"data/sav_example.sav"</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>my_sav</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 150 × 5
+   Sepal.Length Sepal.Width Petal.Length Petal.Width Species   
+          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl+lbl&gt; 
+ 1          5.1         3.5          1.4         0.2 1 [setosa]
+ 2          4.9         3            1.4         0.2 1 [setosa]
+ 3          4.7         3.2          1.3         0.2 1 [setosa]
+ 4          4.6         3.1          1.5         0.2 1 [setosa]
+ 5          5           3.6          1.4         0.2 1 [setosa]
+ 6          5.4         3.9          1.7         0.4 1 [setosa]
+ 7          4.6         3.4          1.4         0.3 1 [setosa]
+ 8          5           3.4          1.5         0.2 1 [setosa]
+ 9          4.4         2.9          1.4         0.2 1 [setosa]
+10          4.9         3.1          1.5         0.1 1 [setosa]
+# ℹ 140 more rows</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="elementi-comuni" class="level2">
+<h2 class="anchored" data-anchor-id="elementi-comuni">Elementi comuni</h2>
+<p>A prescindere dal formato o dalla funzione utilizzata, abbiamo visto che generalmente sono importanti alcune informazioni:</p>
+<ul>
+<li><code>tipo di separatore</code>: ovvero il carattere utilizzato per separare un’informazione dall’altra. Nel caso dei file <code>csv</code> ad esempio è la virgola.</li>
+<li><code>NA</code>: quando importiamo dei dati possiamo usare qualsiasi modalità per identificare dati mancanti (in R <code>NA</code>). E’ importante dire alla funzione di importazione in che modo noi abbiamo rappresentato gli <code>NA</code> nel file di origine in modo che vengano gestiti direttamente in R. Se non facciamo questo R intepreterà come dati normali questi valori creando degli ipotetici problemi. Vediamo un esempio:</li>
+</ul>
+<p>Immaginiamo di avere il dataset <code>my_iris</code> con dei valori <code>NA</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>my_iris <span class="ot">&lt;-</span> iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, ]</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>my_iris <span class="ot">&lt;-</span> filor<span class="sc">::</span><span class="fu">add_random_na</span>(my_iris, <span class="dv">10</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>my_iris</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1           5.1         3.5          1.4         0.2  setosa
+2            NA         3.0          1.4         0.2  setosa
+3           4.7         3.2          1.3          NA    &lt;NA&gt;
+4           4.6         3.1          1.5         0.2    &lt;NA&gt;
+5           5.0          NA           NA         0.2    &lt;NA&gt;
+6           5.4         3.9          1.7         0.4  setosa
+7           4.6         3.4           NA         0.3  setosa
+8            NA         3.4          1.5         0.2  setosa
+9           4.4         2.9          1.4         0.2  setosa
+10          4.9         3.1           NA         0.1  setosa</code></pre>
+</div>
+</div>
+<p>Ora scriviamo il file come <code>csv</code> specificando un certo tipo di stringa per gli <code>NA</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(my_iris, <span class="at">file =</span> <span class="st">"data/na_csv_example.csv"</span>, <span class="at">na =</span> <span class="st">"NA"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Ora vediamo il risultato:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>"Sepal.Length","Sepal.Width","Petal.Length","Petal.Width","Species"
+5.1,3.5,1.4,0.2,"setosa"
+NA,3,1.4,0.2,"setosa"
+4.7,3.2,1.3,NA,NA
+4.6,3.1,1.5,0.2,NA
+5,NA,NA,0.2,NA
+5.4,3.9,1.7,0.4,"setosa"
+4.6,3.4,NA,0.3,"setosa"
+NA,3.4,1.5,0.2,"setosa"
+4.4,2.9,1.4,0.2,"setosa"
+4.9,3.1,NA,0.1,"setosa"</code></pre>
+</div>
+</div>
+<p>Come vedete abbiamo il dataset e in mezzo dei valori <code>NA</code>. Proviamo a immaginare di non aver creato questo file e dobbiamo importarlo per la prima volta in R:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>my_csv <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">"data/na_csv_example.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(my_csv, typeof)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sepal.Length  Sepal.Width Petal.Length  Petal.Width      Species 
+    "double"     "double"     "double"     "double"  "character" </code></pre>
+</div>
+</div>
+<p>Come vedete R interpreta correttamente i valori <code>NA</code> mantenendo il tipo di colonna (quindi non intepretando <code>NA</code> come stringa) perchè è il modo di default di gestione. Proviamo a scrivere un’altro file usando un modo diverso di gestire gli <code>NA</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(my_iris, <span class="at">file =</span> <span class="st">"data/na_csv_example.csv"</span>, <span class="at">na =</span> <span class="st">"NO"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Ora gli <code>NA</code> sono rappresentati come <code>NO</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>"Sepal.Length","Sepal.Width","Petal.Length","Petal.Width","Species"
+5.1,3.5,1.4,0.2,"setosa"
+NO,3,1.4,0.2,"setosa"
+4.7,3.2,1.3,NO,NO
+4.6,3.1,1.5,0.2,NO
+5,NO,NO,0.2,NO
+5.4,3.9,1.7,0.4,"setosa"
+4.6,3.4,NO,0.3,"setosa"
+NO,3.4,1.5,0.2,"setosa"
+4.4,2.9,1.4,0.2,"setosa"
+4.9,3.1,NO,0.1,"setosa"</code></pre>
+</div>
+</div>
+<p>Infatti se importiamo con la stessa funzione abbiamo un risultato strano:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>my_csv <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">"data/na_csv_example.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>my_csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1           5.1         3.5          1.4         0.2  setosa
+2            NO           3          1.4         0.2  setosa
+3           4.7         3.2          1.3          NO      NO
+4           4.6         3.1          1.5         0.2      NO
+5             5          NO           NO         0.2      NO
+6           5.4         3.9          1.7         0.4  setosa
+7           4.6         3.4           NO         0.3  setosa
+8            NO         3.4          1.5         0.2  setosa
+9           4.4         2.9          1.4         0.2  setosa
+10          4.9         3.1           NO         0.1  setosa</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(my_csv, typeof)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sepal.Length  Sepal.Width Petal.Length  Petal.Width      Species 
+ "character"  "character"  "character"  "character"  "character" </code></pre>
+</div>
+</div>
+<p>Tutte le colonne sono intepretate come stringhe perche <code>"NO"</code> è gestito come tale. Per importare correttamente dobbiamo specificare la stringa giusta:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>my_csv <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">"data/na_csv_example.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">na.strings =</span> <span class="st">"NO"</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>my_csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1           5.1         3.5          1.4         0.2  setosa
+2            NA         3.0          1.4         0.2  setosa
+3           4.7         3.2          1.3          NA    &lt;NA&gt;
+4           4.6         3.1          1.5         0.2    &lt;NA&gt;
+5           5.0          NA           NA         0.2    &lt;NA&gt;
+6           5.4         3.9          1.7         0.4  setosa
+7           4.6         3.4           NA         0.3  setosa
+8            NA         3.4          1.5         0.2  setosa
+9           4.4         2.9          1.4         0.2  setosa
+10          4.9         3.1           NA         0.1  setosa</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(my_csv, typeof)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sepal.Length  Sepal.Width Petal.Length  Petal.Width      Species 
+    "double"     "double"     "double"     "double"  "character" </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="dati" class="level1">
+<h1>Dati</h1>
+<p>Potete scaricare i dati usati in questo documento di seguito:</p>
+<div class="cell" data-layout-align="center">
+<ul>
+<li><a href="data/comma_table.txt">comma_table.txt</a></li>
+<li><a href="data/comma_vector.txt">comma_vector.txt</a></li>
+<li><a href="data/csv_example.csv">csv_example.csv</a></li>
+<li><a href="data/dat_new.csv">dat_new.csv</a></li>
+<li><a href="data/dat_new.rds">dat_new.rds</a></li>
+<li><a href="data/excel_example.xlsx">excel_example.xlsx</a></li>
+<li><a href="data/iris.rds">iris.rds</a></li>
+<li><a href="data/my_obj.rda">my_obj.rda</a></li>
+<li><a href="data/na_csv_example.csv">na_csv_example.csv</a></li>
+<li><a href="data/sav_example.sav">sav_example.sav</a></li>
+<li><a href="data/sessione.RData">sessione.RData</a></li>
+</ul>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
