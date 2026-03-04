@@ -9,26 +9,12 @@ pdf: "[{{< fa file-pdf >}}](slides/01-intro-analisi-dati.pdf)"
 #| include: false
 
 library(tidyverse)
-library(patchwork)
 library(dagitty)
 library(ggdag)
 devtools::load_all()
-
-qtab <- function(x, width = NULL, fontsize = 0.85){
-    tinytable::tt(x, width = width) |> 
-        tinytable::theme_striped() |> 
-        tinytable::style_tt(fontsize = fontsize)
-}
-
-knitr::opts_chunk$set(
-  fig.align = "center",
-  fig.dev = "svg"
-)
-
-files <- get_slide_files()
-
-theme_set(mtheme())
 ```
+
+{{< include _common.qmd >}}
 
 # Perchè imparare analisi dei dati?
 

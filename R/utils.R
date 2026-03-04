@@ -162,3 +162,169 @@ bullet_files <- function(dir) {
   sprintf("- [%s](%s)", basename(fl), fl) |>
     cat(sep = "\n")
 }
+
+mass_density_plot <- function(
+  N,
+  mean = 0,
+  sd = 1,
+  b = 10,
+  xlab = NULL,
+  hg = b / 2,
+  max_digits = 4
+) {
+  xlab <- if (is.null(xlab)) "x" else xlab
+
+  df <- data.frame(x = rnorm(N, mean, sd))
+  brks <- seq(min(df$x), max(df$x), length.out = b + 1)
+  binw <- diff(brks)[1]
+
+  bins0 <- hist(df$x, breaks = brks, plot = FALSE)
+  bins <- data.frame(
+    mids = bins0$mids,
+    density = bins0$density,
+    count = bins0$counts
+  )
+
+  xlims <- range(brks)
+  brks_lbl <- brks[seq(1, length(brks), by = 2)]
+
+  # Pick digits based on bin width (smaller bin width -> more digits)
+  digits <- max(0, min(max_digits, ceiling(-log10(binw))))
+  acc <- 10^(-digits)
+
+  lab_x <- scales::label_number(accuracy = acc, trim = TRUE)
+
+  bins$lbl <- sprintf(
+    "$\\frac{prob.\\ mass}{bin\\ width} = \\frac{%s / %s}{%.3f} = %.3f$",
+    bins$count,
+    N,
+    binw,
+    (bins$count / N) / binw
+  )
+
+  p_up <- ggplot(df, aes(x, seq_along(x))) +
+    geom_point(alpha = 0.3, col = "dodgerblue") +
+    geom_vline(xintercept = brks) +
+    geom_text(
+      data = bins,
+      aes(x = mids, y = N / 2, label = count),
+      angle = 90
+    ) +
+    scale_x_continuous(
+      limits = xlims,
+      breaks = brks_lbl,
+      labels = lab_x,
+      expand = c(0, 0)
+    ) +
+    xlab(xlab) +
+    ylab(sprintf("# %s", xlab)) +
+    coord_cartesian(clip = "off")
+
+  p_down <- ggplot(df, aes(x, after_stat(density))) +
+    geom_histogram(breaks = brks, fill = "dodgerblue", col = "black") +
+    geom_point(data = bins, aes(mids, density), size = 3) +
+    geom_point(
+      data = bins[hg, ],
+      aes(mids, density),
+      col = "firebrick",
+      size = 4
+    ) +
+    xlab(xlab) +
+    ylab("Density") +
+    scale_x_continuous(
+      limits = xlims,
+      breaks = brks_lbl,
+      labels = lab_x,
+      expand = c(0, 0)
+    ) +
+    annotate(
+      "text",
+      x = mean - 2 * sd,
+      y = quantile(bins$density, 0.90),
+      size = 4,
+      label = latex2exp::TeX(bins$lbl[hg], output = "character"),
+      parse = TRUE
+    )
+
+  p_up /
+    p_down +
+    patchwork::plot_layout(heights = c(0.3, 0.7), axes = "collect")
+}
+
+
+coin_table <- function(n, theta = NULL, table = TRUE) {
+  space <- gtools::permutations(
+    n = 2,
+    r = n,
+    v = c(0, 1),
+    repeats.allowed = TRUE
+  )
+  S <- space
+  S[S == 0] <- "⚪"
+  S[S == 1] <- "🔵"
+  D <- data.frame(S)
+  colnames(D) <- sprintf("n%s", 1:ncol(D))
+  D$E <- 1:nrow(D)
+  D$k <- apply(space, 1, sum)
+
+  if (!is.null(theta)) {
+    p <- lapply(theta, function(p) p^(D$k) * (1 - p)^(n - D$k))
+    names(p) <- sprintf("theta %s", theta)
+    D <- cbind(D, p)
+  }
+  if (table) {
+    tinytable::tt(D)
+  } else {
+    D$event <- apply(D[, sprintf("n%s", 1:ncol(S))], 1, paste, collapse = "")
+    D
+  }
+}
+
+
+# Funzione per disegnare l'albero
+coin_tree <- function(n, p = 0.5) {
+  plot(
+    NULL,
+    xlim = c(0, n + 0.5),
+    ylim = c(-(2^n), 2^n),
+    xlab = "",
+    ylab = "",
+    axes = FALSE,
+    main = paste(n, "Lanci di Moneta")
+  )
+
+  # Funzione ricorsiva interna per i rami
+  plot_branch <- function(x, y, step, n) {
+    if (x < n) {
+      # Calcoliamo le posizioni verticali dei nuovi nodi
+      y_top <- y + 2^(n - x - 1)
+      y_bottom <- y - 2^(n - x - 1)
+
+      # Disegniamo i segmenti (i rami)
+      segments(x, y, x + 1, y_top)
+      segments(x, y, x + 1, y_bottom)
+
+      # Scriviamo le etichette T e C
+      text(x + 1, y_top, "T", pos = 3, font = 2)
+      text(x + 1, y_bottom, "C", pos = 1, font = 2)
+
+      # Continuiamo la ricorsione
+      plot_branch(x + 1, y_top, step, n)
+      plot_branch(x + 1, y_bottom, step, n)
+    } else {
+      # Siamo alla fine: scriviamo la probabilità finale
+      prob_finale <- p^n
+      text(
+        x,
+        y,
+        paste0("p=", prob_finale),
+        pos = 4,
+        col = "firebrick",
+        cex = 0.8
+      )
+    }
+  }
+
+  text(0, 0, "S", pos = 2)
+  plot_branch(0, 0, 1, n)
+}

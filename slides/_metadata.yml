@@ -1,8 +1,14 @@
 format: 
   #minimal-beamer: default
-  minimal-revealjs: default
+  minimal-revealjs:
+    html-math-method: mathjax
     # comments:
     #   hypothesis: true
+
+filters:
+  - bibentry
+
+slide-number: true
 
 subtitle: "**ADCOM** \n {{< var academic-year >}}"
 date: last-modified

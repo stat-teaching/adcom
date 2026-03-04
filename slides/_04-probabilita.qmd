@@ -1,0 +1,144 @@
+---
+title: Probabilità e distribuzioni di probabilità
+draft: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(patchwork)
+library(dagitty)
+library(ggdag)
+library(here)
+library(latex2exp)
+library(scales)
+
+devtools::load_all()
+
+qtab <- function(x, width = NULL, fontsize = 0.85, caption = NULL){
+    tinytable::tt(x, width = width, caption = caption) |> 
+        tinytable::theme_striped() |> 
+        tinytable::style_tt(fontsize = fontsize)
+}
+
+theme_set(mtheme())
+```
+
+# Probabilità
+
+## Introduzione
+
+- In termini generali, la **probabilità** può essere vista come una **misura dell'incertezza** riguardante il **manifestarsi di un evento**.
+- Dato un fenomeno casuale (ad esempio, un lancio di un dado), l'insieme di tutti i possibili *esiti* è detto **spazio campionario** ($S$)
+- Gli elementi di $S$ devono essere tra loro **mutuamente esclusivi** e **complessivamente esaustivi**
+- Un evento ($E$) è un sottoinsieme di $S$
+
+## Spazi campionari discreti e continui
+
+- Uno spazio campionario si dice discreto se i suoi elementi sono numerabili in categorie
+- Uno spazio campionario si dice continuo se i suoi elementi non sono direttamente numerabili, ma rappresentano un continuo di valori
+
+## Probabilità
+
+La probabilità, $P(\cdot)$, è una funzione matematica che assegna dei valori numerici a degli esiti possibili di un fenomeno casuale
+
+Affinchè tali numeri possano essere definiti probabilità, devono sussistere le seguenti condizioni (Kolmogorv, 1956):
+
+- Un valore di probabilità deve essere non negativo
+- La somma delle probabilità di tutti gli esiti dello spazio campionario deve essere pari a 1. Almeno uno degli eventi dello spazio campionario deve accadere, altrimenti la somma non è 1.
+- Dati due eventi mutuamente esclusivi dello spazio campionario, la probabilità che si verifichi uno o l'altro evento è pari alla somma delle probabilità dei singoli eventi
+
+## Distribuzioni di probabilità
+
+Una forma generale per capire come leggere le distribuzioni di probabilità è:
+
+$$
+f(x \mid \boldsymbol{\theta})
+$$
+
+Dove $x$ rappresenta uno dei possibili eventi previsti da quella distribuzione, $f(\cdot)$ è una certa funzione che viene applicata ad ogni $x$ e $\theta$ è un insieme (1 o più) *parametri* che definiscono quella distribuzione.
+
+## Distribuzione Gaussiana
+
+Nel caso della distribuzione Gaussiana (o Normale) abbiamo la seguente funzione di probabilità (densità):
+
+$$
+p(x \mid \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+$$
+
+Come vedete i parametri sono $\mu$ (media) e $\sigma$ (deviazione standard). Ci sono anche delle costanti ($\pi$, $e$). Chiaramente in funzione di $\mu$, e $\sigma^2$ lo stesso $x$ sarà associato a $f(x)$ diverse.
+
+## Distribuzioni di probabilità discrete e continue
+
+- Una distribuzione di probabilità associata ad un spazio campionario S discreto è detta distribuzione discreta di probabilità o distribuzione di massa di probabilità (PMF, probability mass function)
+- Una distribuzione di probabilità associata ad un spazio campionario S continuo è detta distribuzione continua di probabilità o distribuzione di densità di probabilità (PDF, provavility density function)
+
+## Esempio
+
+```{r}
+mass_density_plot(N = 1e4, mean = 170, sd = 10, b = 15)
+```
+
+## Esempio, lancio di una moneta
+
+```{r}
+N <- 1:250
+X <- rbinom(N, 1, 0.5)
+P <- cumsum(X) / N
+
+data.frame(
+    X, P, N
+) |> 
+    ggplot(aes(x = N, y = P)) +
+    geom_point() +
+    geom_line() +
+    ylim(c(0, 1)) +
+    geom_hline(yintercept = 0.5, lty = "dotted") +
+    scale_x_log10(
+        breaks = c(1, 2, 5, 10, 20, 50, 100, 250),
+        labels = c(1, 2, 5, 10, 20, 50, 100, 250)
+    ) +
+    xlab("Numero di lanci") +
+    ylab("P(testa)")
+```
+
+## Distribuzione di probabilità discreta
+
+Un esempio di distribuzione di probabilità discreta è quella Binomiale con probability mass function (PMF):
+
+$$
+P(x=k\mid n,\theta)=\binom{n}{k}\theta^{k}(1-\theta)^{\,n-k}
+$$
+
+Descrive il numero di successi $k$ ($k=0,1,\ldots,n$) su $n$ esperimenti indipendenti con due possibili esiti (0 e 1). L'esito 1 (successo) ha probabilità $\theta$ ($0\le \theta \le 1$).
+
+## Distribuzione di probabilità discreta
+
+```{r}
+#| echo: true
+theta <- 0.7
+n <- 15
+k <- 1:n
+p <- dbinom(k, n, theta) # probabilità per ogni possibile esito
+p
+sum(p) # somma a 1
+```
+
+## Distribuzione di probabilità discreta
+
+Vediamo come possiamo rappresentarla:
+
+```{r}
+data.frame(
+    p, k
+) |> 
+    ggplot(aes(x = k, y = p)) +
+    geom_segment(aes(x = k, xend = k, y = 0, yend = p),
+    lwd = 1.5, col = "dodgerblue") +
+    geom_point(size = 4) +
+    xlab("numero di successi (k)") +
+    ylab("Probabilità (massa)") +
+    ggtitle(TeX(sprintf("n = %s, $\\theta = %s$", n, theta)))
+```

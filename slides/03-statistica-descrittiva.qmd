@@ -1,0 +1,346 @@
+---
+title: Statistica Descrittiva
+draft: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(patchwork)
+library(dagitty)
+library(ggdag)
+library(here)
+devtools::load_all()
+```
+
+{{< include _common.qmd >}}
+
+# Statistiche, parametri, popolazioni e campioni
+
+## Popolazione e campioni
+
+La popolazione è l'insieme di riferimento/target dal quale eventualmente estraiamo il nostro campione. La popolazione può essere infinita o finita. Nella maggior parte dei casi, pur essendo in linea di principio finita (ad esempio le persone iscritte a Unipd) si lavora comunque su un campione.
+
+Tramite **campionamento**, il **campione** viene selezionato/estratto dalla popolazione e diventa oggetto di misurazione e analisi. Pur essendoci diversi tipi di campionamento, la caratteristica fondamentale è la **rappresentatività**.
+
+Un campione rappresentativo viene definito come **un'immagine ridotta e fedele** della popolazione da cui è stato estratto. L'altra caratteristica importante di un campione è la **numerosità** (che indichiamo con $N$) che indica il numero di unità statistiche.
+
+## Tipologie di campionamento
+
+## Statistiche e parametri
+
+La popolazione di riferimento è associata ad alcune caratteristiche *incognite* chiamate **parametri** e solitamente rappresentati con lettere greche $\mu$, $\sigma$, etc.
+
+Una **statistica** è una caratteristica del campione. Mentre il parametro (ad esempio l'altezza media) è *incognito*, la statistica (altezza media del campione) è nota e calcolabile. Le statistiche sono stimatori dei parametri incogniti e si indicano solitamente con lettere latine minuscole ($\bar x$, $s^2$, etc.).
+
+Il concetto di **stima** è sempre e inevitabilmente associato al concetto di errore. L'errore può essere di tipo sistematico e/o casuale. Una buona stima (fatta su un campione) non ha un errore sistematico e riduce il più possibile quello casuale.
+
+## Esempi di statistiche
+
+Qualsiasi operazione applicata su un campione che ne descrive una caratteristica è definita come una statistica che, con un certo grado di errore, stima il rispettivo parametro della popolazione. Ad esempio:
+
+- media
+- mediana
+- massimo
+- minimo
+- ...
+
+Sono tutte statistiche calcolate su un campione che descrivono parametri della popolazione.
+
+## Statistiche come domande
+
+Le statistiche quindi sono dei modi per **ridurre la complessità** di un certo dato ed **estrarre delle informazioni di interesse**. 
+
+Un modo interessante di vederle è come se fossero delle **domande** fatte ai nostri dati. Queste domande sono fatte in modo molto mirato e forniscono risposte molto mirate.
+
+La qualità, i limiti e la quantità di informazione della risposta sono funzione di quanto la domanda è adatta a quello che veramente voglio. In un certo senso possiamo parlare di *validità* delle statistiche.
+
+## Statistiche come riduzione di complessità
+
+Le statistiche permettono di riassumere centinaia, migliaia, milioni di dati in pochi numeri. Il prezzo da pagare è quello di capire esattamente:
+
+- il significato di quella statistica
+- i limiti e le criticità di quella statistica
+- il fatto che sto perdendo informazione (ridurre la complessità = perdita informazione)
+- il fatto che più statistiche sono sempre meglio di una sola (minore riduzione di complessità)
+
+> Come analogia, un abstract o riassunto di un articolo è molto cognitivamente conveniente per avere un'idea generale. Per capire veramente l'argomento è necessario leggerlo interamente e magari leggerne più di uno.
+
+## Un esempio
+
+Immaginiamo di avere tutta la popolazione Padovana e di voler capire il numero di cocktails bevuti a settimana in funzione dell'età. Qui vediamo la distribuzione marginale dell'età:
+
+```{r}
+N <- 1e6
+age_bins <- c("< 20", "20-30", "30-40", "40-50", "> 50")
+age <- sample(age_bins, N, TRUE, prob = c(0.2, 0.4, 0.2, 0.1, 0.1))
+age <- factor(age, levels = age_bins)
+drinks <- c(10, 10, 5, 4, 1)
+names(drinks) <- age_bins
+drinks <- drinks[age] + round(rnorm(N, 0, 2))
+drinks[drinks < 0] <- 0
+
+dat <- data.frame(
+  age, drinks
+)
+
+dat |> 
+    count(age) |> 
+    mutate(tot = sum(n),
+    p = (n / tot)*100) |> 
+        ggplot(aes(x = age, y = p)) +
+        geom_col() +
+        xlab("Età (in fascie)") +
+        ylab("%")
+```
+
+## Un esempio
+
+Qui vediamo la distribuzione marginale dei cocktails. La media è di circa `r round(mean(dat$drinks), 1)`:
+
+```{r}
+dat |> 
+    count(drinks) |> 
+    mutate(p = (n/sum(n))*100) |> 
+    ggplot(aes(x = drinks, y = p)) +
+    geom_col() +
+    xlab("Cocktails (a settimana)") +
+    ylab("%") |> 
+    geom_vline(xintercept = mean(dat$drinks), lwd = 2, col = "dodgerblue")
+```
+
+## Un esempio
+
+Infine vediamo la relazione tra cocktail ed età in fascie:
+
+```{r}
+ggplot(dat, aes(x = age, y = drinks, fill = age)) +
+  geom_boxplot(outliers = FALSE) +
+  xlab("Età (in fascie)") +
+  ylab("Cocktails (a settimana)") +
+  theme(legend.position = "none")
+```
+
+## Un esempio
+
+```{r}
+dats_ran <- dat[sample.int(nrow(dat), size = 500), ]
+```
+
+Ora immaginiamo di selezionare un campione di $N = 500$ da questa popolazione in modo totalmente casuale. La media è di circa `r round(mean(dats_ran$drinks), 1)`:
+
+```{r}
+p_ran <- dats_ran |> 
+    count(drinks) |> 
+    mutate(p = (n/sum(n))*100) |> 
+    ggplot(aes(x = drinks, y = p)) +
+    geom_col() +
+    xlab("Cocktails (a settimana)") +
+    ylab("%") +
+    geom_vline(xintercept = mean(dats_ran$drinks), lwd = 2, col = "dodgerblue") +
+    xlim(c(0, 20)) +
+    ylim(c(0, 20))
+p_ran
+```
+
+## Un esempio
+
+```{r}
+w <- c(0.45, 0.4, 0.05, 0.05, 0.05)
+names(w) <- age_bins
+dat$w <- w[dat$age]
+dats_non_ran <- dat[rbinom(N, 1, dat$w) == 1, ]
+```
+
+Vediamo invece, campionando in modo non casuale, selezionando con più probabilità giovani (< 30 anni)La media è di circa `r round(mean(dats_non_ran$drinks), 1)`:
+
+```{r}
+p_non_ran <- dats_non_ran |> 
+    count(drinks) |> 
+    mutate(p = (n/sum(n))*100) |> 
+    ggplot(aes(x = drinks, y = p)) +
+    geom_col() +
+    xlab("Cocktails (a settimana)") +
+    ylab("%") +
+    geom_vline(xintercept = mean(dats_non_ran$drinks), lwd = 2, col = "dodgerblue") +
+    xlim(c(0, 20)) +
+    ylim(c(0, 20))
+p_non_ran
+```
+
+## Un esempio
+
+```{r}
+p_ran / p_non_ran + patchwork::plot_layout(axes = "collect")
+```
+
+## Un esempio
+
+Per stimare in modo adeguato il parametro media di cocktails bevuti nella popolazione di riferimento, il campione dovrebbe essere rappresentativo per tutte quelle caratteristiche che hanno un impatto (età in questo caso).
+
+```{r}
+d1 <- dat |> 
+    group_by(age) |> 
+    summarise(n = n(),
+              drinks = mean(drinks)) |> 
+    mutate(`%` = round(n / (sum(n)), 1)) |> 
+    select(age, `%`, drinks)
+
+d2 <- dats_ran |> 
+    group_by(age) |> 
+    summarise(n = n(),
+              drinks = mean(drinks)) |> 
+    mutate(`%` = round(n / (sum(n)), 1)) |> 
+    select(age, `%`, drinks)
+
+d3 <- dats_non_ran |> 
+    group_by(age) |> 
+    summarise(n = n(),
+              drinks = mean(drinks)) |> 
+    mutate(`%` = round(n / (sum(n)), 1)) |> 
+    select(age, `%`, drinks)
+
+d1$avg <- mean(dat$drinks)
+d2$avg <- mean(dats_ran$drinks)
+d3$avg <- mean(dats_non_ran$drinks)
+
+td1 <- qtab(d1, caption = "Popolazione") |> tinytable::tt_format(digits = 1)
+td2 <- qtab(d2, caption = "Campione Rap.") |> tinytable::tt_format(digits = 1)
+td3 <- qtab(d3, caption = "Campione non Rap.") |> tinytable::tt_format(digits = 1)
+```
+
+```{r}
+#| layout-ncol: 3
+
+td1
+td2
+td3
+```
+
+# Exploratory data analysis (EDA)
+
+## EDA, the big picture
+
+![](img/eda.svg){fig-align="center"}
+
+## EDA, principi
+
+In generale, l'esplorazione (dovrebbe) è il primo passo quando si affronta un dataset. Anche nell'esplorazione ci sono degli step, quello che consiglio:
+
+1. Individuare chiaramente la tipologia di variabile/i
+2. Rappresentare con un grafico (*adeguato*)
+3. Calcolare statistiche descrittive (*adeguate*)
+4. Eventualmente integrare grafici e statistiche
+
+## Un esempio, @Di-Marco2020-wu
+
+```{r}
+dimarco2020 <- readRDS(here("data/dimarco2020.rds"))
+```
+
+L’articolo di @Di-Marco2020-wu esamina come le risorse psicosociali dei volontari (inclusi benessere professionale, senso di comunità ed esperienze traumatiche) siano correlate alla loro qualità della vita complessiva.
+
+I dati sono disponibili direttamente sul sito della rivista [link](https://doi.org/10.1016/j.dib.2020.105522). Ho pulito e sistemato un pochino il dataset, lo potete trovare [qui](../data.qmd):
+
+{{< qrcode https://docs.google.com/spreadsheets/d/1Zba8n2u7_Krc6iqnlyF9bu-wxD5SMx3n-QqEHAVJx-E/edit?gid=436198876#gid=436198876 >}}
+
+## 0. Dataset
+
+Intanto le prime cosa da fare sono quelle di capire quante righe e quante colonne ha il dataset. In questo caso abbiamo `r nrow(dimarco2020)` righe (osservazioni/soggetti) e `r ncol(dimarco2020)` colonne (variabili).
+
+## 1. Tipologia di variabili
+
+Proviamo ad esplorare ed individuare qualche tipologia di variabili.
+
+- `education`
+- `age`
+- `residence`
+- `attachment` (in questo caso intesa come senso di comunità)
+
+## 1. Tipologia di variabili
+
+- `education`: è una variabile **ordinale** con **3 modalità** (o livelli) `sec_school` < `high_school` < `degree`.
+- `age`: è una variabile **numerica** su **scala a rapporti**. In questo caso espressa in anni (quindi numeri interi).
+- `residence`: è una variabile nominale (o categoriale) con 3 modalità (o livelli) `north`, `central` e `south`
+- `attachment`: tecnicamente è una media o somma di *item* ordinali. Nella pratica (ma ci sono obiezioni) viene considerata una **scala ad intervalli**.
+
+## Esplorazione univariata
+
+Con esplorazione **univariata** si intende esplorare una o più variabili **singolarmente** ovvero senza considerare allo stesso tempo altre variabili. L'obiettivo è quello di:
+
+- assicurarsi che la variabile sia stata correttamente intepretata dal software che stiamo utilizzando
+- controllare la presenza di errori, valori anomali e/o impossibili
+- controllare la presenza di dati mancanti
+- esplorare caratteristiche della variabile usando **statistiche descrittive**
+
+## Intepretazione del software
+
+## Presenza di errori e/o valori anomali
+
+Questo punto è molto importante. La presenza di valori anomali o errori può impattare notevolmente le analisi ed i risultati (vedremo poi un esempio). Un punto di partenza è:
+
+- **ci sono dei limiti (in senso matematico) oggettivi nella variabile?** Ad esempio, avere nella variabile età valori molto alti (70-80) quando ho raccolto dati nelle scuole o avere valori impossibili (e.g., 200). Soprautto se i dati sono raccolti o inseriti manualmente può succedere.
+- **ci sono dei valori anomali in termini di tipologia di dato?** Ad esempio lettere o stringhe dove dovrebbero esserci numeri e viceversa? Questo può essere molto problematico.
+
+## Presenza di errori e/o valori anomali
+
+- **Sopratutto per i questionari, il massimo e minimo sono consistenti?** Se un questionario ha 10 item con likert 1-5, il minimo è 10 ed il massimo è 50. Valori minori o maggiori sono probabilmente errori o dati mancanti.
+- **Ci sono dati mancanti?** Quanti sono, dove, e se possibile capire il motivo. I partecipanti potevano non rispondere? Sono errori di salvataggio/inserimento? Possono avere un significato o sono totalmente casuali? I dati mancanti possono essere molto problematici.
+
+## Statistiche descrittive
+
+Una statistica descrittiva è una funzione dei dati osservati che ha lo scopo di riassumere, sintetizzare o rappresentare in modo compatto le caratteristiche principali di un insieme di dati. Quindi:
+
+- è una funzione --> un insieme di calcoli
+- riassumere/sintetizzare --> di solito 1/2 valori che rappresentano una proprieta specifica
+- è di natura descrittiva, senza l'obiettivo di trarre conclusioni o inferenze
+
+::: {.content-hidden when-profile="sharing"}
+
+::: {.callout title="❓ Question Time"}
+
+**Conoscete qualche statistica descrittiva?**
+
+:::
+
+:::
+
+## Statistiche di tendenza centrale
+
+Le statistiche di tendenza centrale restituiscono un valore rappresentativo o *centrale* di una distribuzione di dati. Questo valore può essere posizionato al centro, rappresentare un valore tipico o quello più ricorrente. Solitamente ci sono tre principali statistiche di tendenza centrale:
+
+- Media
+- Mediana
+- Moda
+
+## Media
+
+L' @eq-mean illustra come calcolare la media di una variabile $x$ misurata su un campione di numerosità $n$.
+
+$$
+\bar x = \frac{\sum^n_{i = 1} x_i}{n}
+$$ {#eq-mean}
+
+Quindi prendiamo tutti ($n$) gli $x$, sommiamo i loro valori e dividuamo per il numero $n$. Quello che otteniamo è un valore che, sulla scala della variabile, rappresenta la quantità media.
+
+## Off-topic: come leggere le formule
+
+Useremo poche formule ma è importante avere una notazione chiara e consistente e saperla leggere. Una volta che è abbastanza chiaro, le formule sono un modo sintetico ed efficace di rappresentare un concetto complesso.
+
+- $x$ è una variabile generica, può essere qualsiasi lettera (latina solitamente)
+- La barra sopra $\bar x$ indica solitamente la media della variabile $x$
+- $\sum^n_{i = 1}$ indica che facciamo la somma partendo da $i = 1$. Quindi $i = 1 \quad x_1$, poi $i = 2 \quad x_1 + x_2$, $i = 3 \quad x_1 + x_2 + x_3$ fino a $i = n \quad x_1 + x_2 + \dots + x_n$.
+
+## Media
+
+Secondo voi, la media di questa distribuzione di dati dove si potrebbe posizionare?
+
+```{r}
+data.frame(x = rnorm(1e4, 100, 30)) |> 
+    ggplot(aes(x = x)) +
+    geom_histogram(bins = 30, fill = "dodgerblue", col = "black")
+```
+
+## References

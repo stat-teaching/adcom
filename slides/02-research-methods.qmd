@@ -22,28 +22,9 @@ library(here)
 library(viridis)
 
 devtools::load_all()
-
-qtab <- function(x, width = NULL, fontsize = 0.85){
-    tinytable::tt(x, width = width) |> 
-        tinytable::theme_striped() |> 
-        tinytable::style_tt(fontsize = fontsize)
-}
-
-knitr::opts_chunk$set(
-  fig.align = "center",
-  fig.dev = "svg"
-)
-
-theme_set(mtheme())
-
-bib <- ReadBib(here("papers/papers.bib"))
-NoCite(bib)
-
-papers <- yaml::read_yaml(here("papers/papers.yml"))
-names(papers) <- sapply(papers, function(x) x$key)
-
-files <- get_slide_files()
 ```
+
+{{< include _common.qmd >}}
 
 ## Qualche riferimento
 

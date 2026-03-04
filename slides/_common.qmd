@@ -1,0 +1,26 @@
+```{r}
+#| include: false
+
+devtools::load_all()
+
+qtab <- function(x, width = NULL, fontsize = 0.85, caption = NULL){
+    tinytable::tt(x, width = width, caption = caption) |> 
+        tinytable::theme_striped() |> 
+        tinytable::style_tt(fontsize = fontsize)
+}
+
+ggplot2::theme_set(mtheme())
+options(tinytable_html_mathjax = TRUE)
+files <- get_slide_files()
+
+knitr::opts_chunk$set(
+  fig.align = "center",
+  fig.dev = "svg"
+)
+
+bib <- RefManageR::ReadBib(here::here("papers/papers.bib"))
+RefManageR::NoCite(bib)
+
+papers <- yaml::read_yaml(here::here("papers/papers.yml"))
+names(papers) <- sapply(papers, function(x) x$key)
+```

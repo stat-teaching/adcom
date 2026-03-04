@@ -11,9 +11,9 @@ pdf: "[{{< fa file-pdf >}}](slides/00-intro-corso.pdf)"
 
 library(tidyverse)
 devtools::load_all()
-
-theme_set(theme_bw(15))
 ```
+
+{{< include _common.qmd >}}
 
 # Informazioni generali
 

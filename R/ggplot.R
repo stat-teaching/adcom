@@ -1,4 +1,4 @@
 mtheme <- function(size = 20) {
-  theme_minimal(base_size = size) +
-    theme(legend.position = "bottom")
+  ggplot2::theme_minimal(base_size = size) +
+    ggplot2::theme(legend.position = "bottom")
 }
