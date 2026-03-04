@@ -4,7 +4,6 @@ toc: true
 pdf: "[{{< fa file-pdf >}}](slides/02-research-methods.pdf)"
 filters:
   - bibentry
-pdf-pages: 19
 ---
 
 # Processo scientifico
@@ -44,9 +43,9 @@ devtools::load_all()
 
 [@Jhangiani2019-sa]{.bibentry}
 
-- Ricerca sperimentale ([{{< fa file-pdf >}}](`r files$files$jhangiani2019_experimental.pdf`))
-- Ricerca non-sperimentale ([{{< fa file-pdf >}}](`r files$files$jhangiani2019_non_experimental.pdf`))
-- Ricerca quasi-sperimentale ([{{< fa file-pdf >}}](`r files$files$jhangiani2019_quasi_experimental.pdf`))
+- Ricerca sperimentale ([{{< fa file-pdf >}}](`r files$jhangiani2019_experimental.pdf`))
+- Ricerca non-sperimentale ([{{< fa file-pdf >}}](`r files$jhangiani2019_non_experimental.pdf`))
+- Ricerca quasi-sperimentale ([{{< fa file-pdf >}}](`r files$jhangiani2019_quasi_experimental.pdf`))
 
 ## Processo scientifico
 
@@ -177,7 +176,7 @@ Immaginate di raccogliere dei dati di bambinə e ragazzə dai 6 ai 18 anni. Racc
 {{< qrcode https://docs.google.com/spreadsheets/d/16JRt1_tXYQntv2bcbvbqoOzPEZvcXPKFYpvolR16c5E/template/preview width=300 height=300 >}}
 <center>
 
-Andate a questo link e provate ad esplorare il dataset. Cosa notate?
+Andate a questo [link](https://docs.google.com/spreadsheets/d/16JRt1_tXYQntv2bcbvbqoOzPEZvcXPKFYpvolR16c5E/template/preview) e provate ad esplorare il dataset. Cosa notate?
 
 ## Perchè è necessario il controllo delle variabili?
 
@@ -325,7 +324,7 @@ dat |>
 
 ## Randomizzazione, vediamola in azione
 
-Andate a questo [link](https://docs.google.com/spreadsheets/d/1glh5LKlvnp0H7HGqAsm68o7SORLEE9MpaASWrWk_wU0/template/preview ) (con un account Google):
+Andate a questo [link](https://docs.google.com/spreadsheets/d/1glh5LKlvnp0H7HGqAsm68o7SORLEE9MpaASWrWk_wU0/template/preview) (con un account Google):
 
 <center>
 {{< qrcode https://docs.google.com/spreadsheets/d/1glh5LKlvnp0H7HGqAsm68o7SORLEE9MpaASWrWk_wU0/template/preview width=300 height=300 >}}
