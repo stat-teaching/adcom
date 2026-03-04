@@ -223,7 +223,7 @@ td3
 
 ## EDA, the big picture
 
-![](img/eda.svg){fig-align="center"}
+![](img/eda.png){fig-align="center"}
 
 ## EDA, principi
 
@@ -244,7 +244,11 @@ L’articolo di @Di-Marco2020-wu esamina come le risorse psicosociali dei volont
 
 I dati sono disponibili direttamente sul sito della rivista [link](https://doi.org/10.1016/j.dib.2020.105522). Ho pulito e sistemato un pochino il dataset, lo potete trovare [qui](../data.qmd):
 
+<center>
+
 {{< qrcode https://docs.google.com/spreadsheets/d/1Zba8n2u7_Krc6iqnlyF9bu-wxD5SMx3n-QqEHAVJx-E/edit?gid=436198876#gid=436198876 >}}
+
+</center>
 
 ## 0. Dataset
 
@@ -320,7 +324,7 @@ Le statistiche di tendenza centrale restituiscono un valore rappresentativo o *c
 L' @eq-mean illustra come calcolare la media di una variabile $x$ misurata su un campione di numerosità $n$.
 
 $$
-\bar x = \frac{\sum^n_{i = 1} x_i}{n}
+\bar x = \frac{1}{n} \sum^n_{i = 1} x_i
 $$ {#eq-mean}
 
 Quindi prendiamo tutti ($n$) gli $x$, sommiamo i loro valori e dividuamo per il numero $n$. Quello che otteniamo è un valore che, sulla scala della variabile, rappresenta la quantità media.

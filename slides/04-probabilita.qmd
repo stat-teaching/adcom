@@ -633,3 +633,5 @@ ggplot() +
                 args = list(shape1 = 20, shape2 = 10), lwd = 1) +
                   ylab("Densità")
 ```
+
+## References
