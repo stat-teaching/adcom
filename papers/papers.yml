@@ -16,3 +16,6 @@
 - key: '@Stevens1946-te'
   title: 'On the theory of scales of measurement'
   file: '[{{< fa file-pdf >}}](https://stat-teaching.github.io/adcom/papers/stevens-1946-on-the-theory-of-scales-of-measurement.pdf)'
+- key: '@Di-Marco2020-wu'
+  title: 'Dataset on the relationship between psychosocial resources of volunteers and their quality of life'
+  file: '[{{< fa file-pdf >}}](https://stat-teaching.github.io/adcom/papers/di-marco-2020-dataset-on-the-relationship-between-psychosocial-resources-of-volunteers-and-their-quality-of-life.pdf)'

@@ -328,3 +328,49 @@ coin_tree <- function(n, p = 0.5) {
   text(0, 0, "S", pos = 2)
   plot_branch(0, 0, 1, n)
 }
+
+exact_rnorm <- function(n, mean = 0, sd = 1, empirical = TRUE) {
+  MASS::mvrnorm(n, mean, sd^2, empirical = empirical)[, 1]
+}
+
+rsum <- function(n, sum) {
+  cuts <- runif(n - 1, min = 0, max = sum)
+  sc <- sort(c(0, cuts, sum))
+  diff(sc)
+}
+
+new_mean <- function(x, nm, n = 1) {
+  nn <- length(x) + n
+  xn <- (nm * nn) - sum(x)
+  c(x, rsum(n, xn))
+}
+
+entropy <- function(x, probs = FALSE, relative = TRUE) {
+  if (!probs) {
+    p <- prop.table(table(x))
+  } else {
+    p <- x
+  }
+  E <- -sum(p * log(p))
+  if (relative) {
+    E <- E / log(length(p))
+  }
+  E[is.nan(E)] <- 0
+  E
+}
+
+index_plot <- function(x, xlim = NULL) {
+  xn <- deparse(substitute(x))
+  dat <- data.frame(x, id = 1:length(x))
+  dat$m <- mean(dat$x)
+  dat$r <- dat$x - dat$m
+  plot(
+    id ~ x,
+    data = dat,
+    cex = 1.5,
+    xlab = xn,
+    xlim = xlim
+  )
+  abline(v = mean(dat$x), lwd = 2, col = "firebrick")
+  segments(dat$x, dat$id, dat$m, dat$id, lty = "dotted")
+}

@@ -30,6 +30,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -170,7 +236,7 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
     </div>
 </div>
 
-  <p class="date"><em>Ultimo aggiornamento: 03-04-2026</em></p>
+  <p class="date"><em>Ultimo aggiornamento: 03-11-2026</em></p>
 </section>
 
 
@@ -184,9 +250,6 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 <p>La popolazione è l’insieme di riferimento/target dal quale eventualmente estraiamo il nostro campione. La popolazione può essere infinita o finita. Nella maggior parte dei casi, pur essendo in linea di principio finita (ad esempio le persone iscritte a Unipd) si lavora comunque su un campione.</p>
 <p>Tramite <strong>campionamento</strong>, il <strong>campione</strong> viene selezionato/estratto dalla popolazione e diventa oggetto di misurazione e analisi. Pur essendoci diversi tipi di campionamento, la caratteristica fondamentale è la <strong>rappresentatività</strong>.</p>
 <p>Un campione rappresentativo viene definito come <strong>un’immagine ridotta e fedele</strong> della popolazione da cui è stato estratto. L’altra caratteristica importante di un campione è la <strong>numerosità</strong> (che indichiamo con <span class="math inline">\(N\)</span>) che indica il numero di unità statistiche.</p>
-</section>
-<section id="tipologie-di-campionamento" class="slide level2">
-<h2>Tipologie di campionamento</h2>
 </section>
 <section id="statistiche-e-parametri" class="slide level2">
 <h2>Statistiche e parametri</h2>
@@ -229,31 +292,31 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 <h2>Un esempio</h2>
 <p>Immaginiamo di avere tutta la popolazione Padovana e di voler capire il numero di cocktails bevuti a settimana in funzione dell’età. Qui vediamo la distribuzione marginale dell’età:</p>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-2-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-3-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="un-esempio-1" class="slide level2">
 <h2>Un esempio</h2>
 <p>Qui vediamo la distribuzione marginale dei cocktails. La media è di circa 7.5:</p>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-3-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-4-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="un-esempio-2" class="slide level2">
 <h2>Un esempio</h2>
-<p>Infine vediamo la relazione tra cocktail ed età in fascie:</p>
+<p>Infine vediamo la relazione tra cocktail ed età in fasce:</p>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-4-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-5-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="un-esempio-3" class="slide level2">
 <h2>Un esempio</h2>
-<p>Ora immaginiamo di selezionare un campione di <span class="math inline">\(N = 500\)</span> da questa popolazione in modo totalmente casuale. La media è di circa 7.3:</p>
+<p>Ora immaginiamo di selezionare un campione di <span class="math inline">\(N = 500\)</span> da questa popolazione in modo totalmente casuale. La media è di circa 7.7:</p>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-6-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-7-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="un-esempio-4" class="slide level2">
 <h2>Un esempio</h2>
 <p>Vediamo invece, campionando in modo non casuale, selezionando con più probabilità giovani (&lt; 30 anni)La media è di circa 9.5:</p>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-8-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-9-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="un-esempio-5" class="slide level2">
 <h2>Un esempio</h2>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-9-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-10-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="un-esempio-6" class="slide level2">
 <h2>Un esempio</h2>
 <p>Per stimare in modo adeguato il parametro media di cocktails bevuti nella popolazione di riferimento, il campione dovrebbe essere rappresentativo per tutte quelle caratteristiche che hanno un impatto (età in questo caso).</p>
@@ -278,8 +341,8 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 
     <script>
 
-      function styleCell_9wacfmyeh6psf45w37uw(i, j, css_id) {
-          var table = document.getElementById("tinytable_9wacfmyeh6psf45w37uw");
+      function styleCell_r0wichqr8630zwyslt7o(i, j, css_id) {
+          var table = document.getElementById("tinytable_r0wichqr8630zwyslt7o");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -288,8 +351,8 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function spanCell_9wacfmyeh6psf45w37uw(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_9wacfmyeh6psf45w37uw");
+      function spanCell_r0wichqr8630zwyslt7o(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_r0wichqr8630zwyslt7o");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -320,16 +383,16 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_jtaq3m2cz2iqqzu21zwi',}, 
-          { positions: [ { i: '4', j: 0 }, { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '4', j: 3 },  ], css_id: 'tinytable_css_s30esczzo16htineo23i',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '3', j: 1 }, { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '1', j: 3 },  ], css_id: 'tinytable_css_3fwz05asht26xnyn4xx5',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_87wmhvs72odz0aqlk4lc',}, 
+          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_3vl5k6spipqofrvpqhgk',}, 
+          { positions: [ { i: '4', j: 0 }, { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '4', j: 3 },  ], css_id: 'tinytable_css_11bzvf7d2siuys3dus8r',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '3', j: 1 }, { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '1', j: 3 },  ], css_id: 'tinytable_css_gqaatjlekszcl41rfv00',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_lclj4i3bfbfowsh8v0o4',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_9wacfmyeh6psf45w37uw(cell.i, cell.j, group.css_id);
+                  styleCell_r0wichqr8630zwyslt7o(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -337,13 +400,13 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_jtaq3m2cz2iqqzu21zwi, .table th.tinytable_css_jtaq3m2cz2iqqzu21zwi { background-color: #ededed; font-size: 0.85em; border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_s30esczzo16htineo23i, .table th.tinytable_css_s30esczzo16htineo23i { font-size: 0.85em; }
-      .table td.tinytable_css_3fwz05asht26xnyn4xx5, .table th.tinytable_css_3fwz05asht26xnyn4xx5 { background-color: #ededed; font-size: 0.85em; }
-      .table td.tinytable_css_87wmhvs72odz0aqlk4lc, .table th.tinytable_css_87wmhvs72odz0aqlk4lc { font-size: 0.85em; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_3vl5k6spipqofrvpqhgk, .table th.tinytable_css_3vl5k6spipqofrvpqhgk { background-color: #ededed; font-size: 0.85em; border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_11bzvf7d2siuys3dus8r, .table th.tinytable_css_11bzvf7d2siuys3dus8r { font-size: 0.85em; }
+      .table td.tinytable_css_gqaatjlekszcl41rfv00, .table th.tinytable_css_gqaatjlekszcl41rfv00 { background-color: #ededed; font-size: 0.85em; }
+      .table td.tinytable_css_lclj4i3bfbfowsh8v0o4, .table th.tinytable_css_lclj4i3bfbfowsh8v0o4 { font-size: 0.85em; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; }
     </style>
     <div class="container">
-      <table class="table table-striped" id="tinytable_9wacfmyeh6psf45w37uw" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-striped" id="tinytable_r0wichqr8630zwyslt7o" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         </thead><caption>Popolazione</caption>
               <tbody><tr>
@@ -409,8 +472,8 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 
     <script>
 
-      function styleCell_fcmz1ms1rtvn3cnioi22(i, j, css_id) {
-          var table = document.getElementById("tinytable_fcmz1ms1rtvn3cnioi22");
+      function styleCell_0oh0a432uheqyl1hbply(i, j, css_id) {
+          var table = document.getElementById("tinytable_0oh0a432uheqyl1hbply");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -419,8 +482,8 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function spanCell_fcmz1ms1rtvn3cnioi22(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_fcmz1ms1rtvn3cnioi22");
+      function spanCell_0oh0a432uheqyl1hbply(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_0oh0a432uheqyl1hbply");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -451,16 +514,16 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_pmxjxrd22njkf8hjedjw',}, 
-          { positions: [ { i: '4', j: 0 }, { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '4', j: 3 },  ], css_id: 'tinytable_css_cle5nir37xi0r28uhsg6',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '3', j: 1 }, { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '1', j: 3 },  ], css_id: 'tinytable_css_y34f6navm77wjzluz47d',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_9f178pupwzm6r8pbb0sa',}, 
+          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_bqh46qjya0ctx3smg06q',}, 
+          { positions: [ { i: '4', j: 0 }, { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '4', j: 3 },  ], css_id: 'tinytable_css_zqq2qbixq59pd8hmvowh',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '3', j: 1 }, { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '1', j: 3 },  ], css_id: 'tinytable_css_7lmv1nql2z5ottywnyqr',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_dx1dm9s9qvzazvpf8obb',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_fcmz1ms1rtvn3cnioi22(cell.i, cell.j, group.css_id);
+                  styleCell_0oh0a432uheqyl1hbply(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -468,13 +531,13 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_pmxjxrd22njkf8hjedjw, .table th.tinytable_css_pmxjxrd22njkf8hjedjw { background-color: #ededed; font-size: 0.85em; border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_cle5nir37xi0r28uhsg6, .table th.tinytable_css_cle5nir37xi0r28uhsg6 { font-size: 0.85em; }
-      .table td.tinytable_css_y34f6navm77wjzluz47d, .table th.tinytable_css_y34f6navm77wjzluz47d { background-color: #ededed; font-size: 0.85em; }
-      .table td.tinytable_css_9f178pupwzm6r8pbb0sa, .table th.tinytable_css_9f178pupwzm6r8pbb0sa { font-size: 0.85em; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_bqh46qjya0ctx3smg06q, .table th.tinytable_css_bqh46qjya0ctx3smg06q { background-color: #ededed; font-size: 0.85em; border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_zqq2qbixq59pd8hmvowh, .table th.tinytable_css_zqq2qbixq59pd8hmvowh { font-size: 0.85em; }
+      .table td.tinytable_css_7lmv1nql2z5ottywnyqr, .table th.tinytable_css_7lmv1nql2z5ottywnyqr { background-color: #ededed; font-size: 0.85em; }
+      .table td.tinytable_css_dx1dm9s9qvzazvpf8obb, .table th.tinytable_css_dx1dm9s9qvzazvpf8obb { font-size: 0.85em; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; }
     </style>
     <div class="container">
-      <table class="table table-striped" id="tinytable_fcmz1ms1rtvn3cnioi22" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-striped" id="tinytable_0oh0a432uheqyl1hbply" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         </thead><caption>Campione Rap.</caption>
               <tbody><tr>
@@ -490,31 +553,31 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
                   <td data-row="1" data-col="0">&lt; 20</td>
                   <td data-row="1" data-col="1">0.2</td>
                   <td data-row="1" data-col="2">10</td>
-                  <td data-row="1" data-col="3">7</td>
+                  <td data-row="1" data-col="3">8</td>
                 </tr>
                 <tr>
                   <td data-row="2" data-col="0">20-30</td>
                   <td data-row="2" data-col="1">0.4</td>
                   <td data-row="2" data-col="2">10</td>
-                  <td data-row="2" data-col="3">7</td>
+                  <td data-row="2" data-col="3">8</td>
                 </tr>
                 <tr>
                   <td data-row="3" data-col="0">30-40</td>
                   <td data-row="3" data-col="1">0.2</td>
                   <td data-row="3" data-col="2">5</td>
-                  <td data-row="3" data-col="3">7</td>
+                  <td data-row="3" data-col="3">8</td>
                 </tr>
                 <tr>
                   <td data-row="4" data-col="0">40-50</td>
                   <td data-row="4" data-col="1">0.1</td>
                   <td data-row="4" data-col="2">4</td>
-                  <td data-row="4" data-col="3">7</td>
+                  <td data-row="4" data-col="3">8</td>
                 </tr>
                 <tr>
                   <td data-row="5" data-col="0">&gt; 50</td>
                   <td data-row="5" data-col="1">0.1</td>
                   <td data-row="5" data-col="2">1</td>
-                  <td data-row="5" data-col="3">7</td>
+                  <td data-row="5" data-col="3">8</td>
                 </tr>
         </tbody>
       </table>
@@ -540,8 +603,8 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 
     <script>
 
-      function styleCell_xv3a4ow8mpabqbhed8rr(i, j, css_id) {
-          var table = document.getElementById("tinytable_xv3a4ow8mpabqbhed8rr");
+      function styleCell_qnwagbrqqrop1fz2skxp(i, j, css_id) {
+          var table = document.getElementById("tinytable_qnwagbrqqrop1fz2skxp");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -550,8 +613,8 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function spanCell_xv3a4ow8mpabqbhed8rr(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_xv3a4ow8mpabqbhed8rr");
+      function spanCell_qnwagbrqqrop1fz2skxp(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_qnwagbrqqrop1fz2skxp");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -582,16 +645,16 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_jzb944u2vchbqy15xcy0',}, 
-          { positions: [ { i: '4', j: 0 }, { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '4', j: 3 },  ], css_id: 'tinytable_css_9n2ygqx4u38b6328e26z',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '3', j: 1 }, { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '1', j: 3 },  ], css_id: 'tinytable_css_c5apcvxtqznzcv2krxtu',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_vi773df8t1f5u72v6ybe',}, 
+          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_q2vlpxn9sprgfeqy2gzt',}, 
+          { positions: [ { i: '4', j: 0 }, { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '4', j: 3 },  ], css_id: 'tinytable_css_j4g87oae7ja2gu6u9tvz',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '3', j: 1 }, { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '1', j: 3 },  ], css_id: 'tinytable_css_bxcfwgu1qcd4dw9qiiah',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_rla2ffe2v22ub9ea1i41',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_xv3a4ow8mpabqbhed8rr(cell.i, cell.j, group.css_id);
+                  styleCell_qnwagbrqqrop1fz2skxp(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -599,13 +662,13 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_jzb944u2vchbqy15xcy0, .table th.tinytable_css_jzb944u2vchbqy15xcy0 { background-color: #ededed; font-size: 0.85em; border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_9n2ygqx4u38b6328e26z, .table th.tinytable_css_9n2ygqx4u38b6328e26z { font-size: 0.85em; }
-      .table td.tinytable_css_c5apcvxtqznzcv2krxtu, .table th.tinytable_css_c5apcvxtqznzcv2krxtu { background-color: #ededed; font-size: 0.85em; }
-      .table td.tinytable_css_vi773df8t1f5u72v6ybe, .table th.tinytable_css_vi773df8t1f5u72v6ybe { font-size: 0.85em; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_q2vlpxn9sprgfeqy2gzt, .table th.tinytable_css_q2vlpxn9sprgfeqy2gzt { background-color: #ededed; font-size: 0.85em; border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_j4g87oae7ja2gu6u9tvz, .table th.tinytable_css_j4g87oae7ja2gu6u9tvz { font-size: 0.85em; }
+      .table td.tinytable_css_bxcfwgu1qcd4dw9qiiah, .table th.tinytable_css_bxcfwgu1qcd4dw9qiiah { background-color: #ededed; font-size: 0.85em; }
+      .table td.tinytable_css_rla2ffe2v22ub9ea1i41, .table th.tinytable_css_rla2ffe2v22ub9ea1i41 { font-size: 0.85em; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; }
     </style>
     <div class="container">
-      <table class="table table-striped" id="tinytable_xv3a4ow8mpabqbhed8rr" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-striped" id="tinytable_qnwagbrqqrop1fz2skxp" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         </thead><caption>Campione non Rap.</caption>
               <tbody><tr>
@@ -676,15 +739,20 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 </section>
 <section id="un-esempio-di-marco2020-wu" class="slide level2">
 <h2>Un esempio, <span class="citation" data-cites="Di-Marco2020-wu">Di Marco et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span></h2>
-<p>L’articolo di <span class="citation" data-cites="Di-Marco2020-wu">Di Marco et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span> esamina come le risorse psicosociali dei volontari (inclusi benessere professionale, senso di comunità ed esperienze traumatiche) siano correlate alla loro qualità della vita complessiva.</p>
-<p>I dati sono disponibili direttamente sul sito della rivista <a href="https://doi.org/10.1016/j.dib.2020.105522">link</a>. Ho pulito e sistemato un pochino il dataset, lo potete trovare <a href="../data.qmd">qui</a>:</p>
+<div>
+<p>Di Marco, G., Hichy, Z., &amp; Sciacca, F. (2020). <span class="nocase">Dataset on the relationship between psychosocial resources of volunteers and their quality of life</span>. <em>Data in Brief</em>, <em>30</em>, 105522. <a href="https://doi.org/10.1016/j.dib.2020.105522">https://doi.org/10.1016/j.dib.2020.105522</a></p>
+<div style="position:absolute;left:-10000px;top:-10000px;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">
+<p><span class="bibentry"><span class="citation" data-cites="Di-Marco2020-wu">Di Marco et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span></span></p>
+</div>
+</div>
+<p><span class="citation" data-cites="Di-Marco2020-wu">Di Marco et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span> esamina come le risorse psicosociali dei volontari (inclusi benessere professionale, senso di comunità ed esperienze traumatiche) siano correlate alla loro qualità della vita complessiva. I dati sono disponibili direttamente sul sito della rivista <a href="https://doi.org/10.1016/j.dib.2020.105522">link</a>. Ho pulito e sistemato un pochino il dataset, lo potete trovare qui <a href="https://stat-teaching.github.io/adcom/#data">https://stat-teaching.github.io/adcom/#data</a> oppure al QR code.</p>
 <center>
 <div id="" class="qrcode"></div>
 <script type="text/javascript">
 (function() {
   var script = document.currentScript;
   var qrcode = script.previousElementSibling;
-  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#000000","colorLight":"#ffffff","height":128,"text":"https://docs.google.com/spreadsheets/d/1Zba8n2u7_Krc6iqnlyF9bu-wxD5SMx3n-QqEHAVJx-E/edit?gid=436198876#gid=436198876","width":128});
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#000000","colorLight":"#ffffff","height":"200","text":"https://docs.google.com/spreadsheets/d/1Zba8n2u7_Krc6iqnlyF9bu-wxD5SMx3n-QqEHAVJx-E/edit?gid=436198876#gid=436198876","width":"200"});
   script.remove();
 })();
 </script>
@@ -694,6 +762,22 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 <section id="dataset" class="slide level2">
 <h2>0. Dataset</h2>
 <p>Intanto le prime cosa da fare sono quelle di capire quante righe e quante colonne ha il dataset. In questo caso abbiamo 96 righe (osservazioni/soggetti) e 24 colonne (variabili).</p>
+</section>
+<section id="importare-un-dataset" class="slide level2">
+<h2>Importare un dataset</h2>
+<p>Importare un dataset è il primo step e non è sempre un’operazione semplice. Ho preparato del materiale riguardo gestione dei file e importare dati in R. Trovate le slide qui:</p>
+<center>
+<div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#000000","colorLight":"#ffffff","height":"200","text":"https://docs.google.com/presentation/d/1QnyVS6DdK9WMdDvDmmc30SYgLzMNXYWVbayOMB6AkDk/view?slide=id.p#slide=id.p","width":"200"});
+  script.remove();
+})();
+</script>
+    
+</center>
 </section>
 <section id="tipologia-di-variabili" class="slide level2">
 <h2>1. Tipologia di variabili</h2>
@@ -723,9 +807,6 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 <li>controllare la presenza di dati mancanti</li>
 <li>esplorare caratteristiche della variabile usando <strong>statistiche descrittive</strong></li>
 </ul>
-</section>
-<section id="intepretazione-del-software" class="slide level2">
-<h2>Intepretazione del software</h2>
 </section>
 <section id="presenza-di-errori-eo-valori-anomali" class="slide level2">
 <h2>Presenza di errori e/o valori anomali</h2>
@@ -762,9 +843,14 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="misure-di-tendenza-centrale" class="title-slide slide level1 center">
+<h1>Misure di tendenza centrale</h1>
+
 </section>
-<section id="statistiche-di-tendenza-centrale" class="slide level2">
-<h2>Statistiche di tendenza centrale</h2>
+<section id="misure-di-tendenza-centrale-1" class="slide level2">
+<h2>Misure di tendenza centrale</h2>
 <p>Le statistiche di tendenza centrale restituiscono un valore rappresentativo o <em>centrale</em> di una distribuzione di dati. Questo valore può essere posizionato al centro, rappresentare un valore tipico o quello più ricorrente. Solitamente ci sono tre principali statistiche di tendenza centrale:</p>
 <ul>
 <li>Media</li>
@@ -791,9 +877,1187 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 </section>
 <section id="media-1" class="slide level2">
 <h2>Media</h2>
-<p>Secondo voi, la media di questa distribuzione di dati dove si potrebbe posizionare?</p>
+<p>Secondo voi, la media di questa distribuzione di dati dove si potrebbe posizionare? Perchè?</p>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-13-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-14-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="media-2" class="slide level2">
+<h2>Media</h2>
+<p>In R la media si calcola con la funzione <code>mean</code> oppure manualmente con la funzione <code>sum</code> e <code>length</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dimarco2020<span class="sc">$</span>age, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 53 60 40 57 60 46 53 33 48 60</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dimarco2020<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 49.29167</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dimarco2020<span class="sc">$</span>age)<span class="sc">/</span><span class="fu">length</span>(dimarco2020<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 49.29167</code></pre>
+</div>
+</div>
+</section>
+<section id="quantili" class="slide level2">
+<h2>Quantili</h2>
+<p>I quantili sono un modo per dividere in base all’ordine una certa variabile. Per calcolare un certo quantile <span class="math inline">\(Q_p\)</span> con <span class="math inline">\(p \in (0, 1)\)</span> è necessario:</p>
+<ul>
+<li>ordinare i dati in senso crescente</li>
+<li>calcolare la proporzione di dati minore o uguale a <span class="math inline">\(p\)</span></li>
+<li>il valore associato <span class="math inline">\(Q\)</span> è il <span class="math inline">\(p\)</span>-esimo quantile</li>
+</ul>
+<p>Di solito si utilizzano i percentili ovvero si esprimono in percentuale ma la logica è la stessa. Ad esempio <span class="math inline">\(Q_{40} = x\)</span> indica che il valore <span class="math inline">\(x\)</span> ha il 40% di dati che sono minori o uguali</p>
+</section>
+<section id="quantili-1" class="slide level2">
+<h2>Quantili</h2>
+<p>Facciamo un esempio con la variabile <span class="math inline">\(x\)</span> che rappresenta il numero di errori in un test cognitivo:</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-16-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="quantili-2" class="slide level2">
+<h2>Quantili</h2>
+<p>Aggiungiamo i percentili <span class="math inline">\(Q_{10}, Q_{50}, Q_{70}, Q_{90}\)</span> direttamente sull’istogramma:</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-17-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="quantili-3" class="slide level2">
+<h2>Quantili</h2>
+<p>Un modo più diretto di rappresentare e capire i quantili/percentili è il grafico della distribuzione cumulata empirica dei dati.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-18-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="quantili-4" class="slide level2">
+<h2>Quantili</h2>
+<p>Per combinare quantili ed istogramma, possiamo rappresentare in questo modo. Vedete che ad ogni step è come aggiungere l’altezza dell’istogramma.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-19-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="mediana" class="slide level2">
+<h2>Mediana</h2>
+<p>I quantili ci permettono di capire immediatamente il concetto di mediana. La mediana è il valore al di sotto (e quindi anche al di sopra) del quale abbiamo il 50% dei dati. In pratica corrisponde al 50-esimo <span class="math inline">\(Q_{50}\)</span> percentile. Vediamo in R:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># 25esimo, 50esimo e 75esimo percentile</span></span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(dimarco2020<span class="sc">$</span>age, <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>25% 50% 75% 
+ 41  50  57 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(dimarco2020<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 50</code></pre>
+</div>
+</div>
+<p>Questo significa che il 50% dei soggetti ha un’età minore o uguale a 50 anni.</p>
+</section>
+<section id="mediana-precisazione" class="slide level2">
+<h2>Mediana, precisazione</h2>
+<p>Quando la numerosità <span class="math inline">\(n\)</span> è dispari la mediana è sempre un valore esistente (ad esempio 50 anni). Quando <span class="math inline">\(n\)</span> è pari, la mediana non è un valore esistente. In questo caso si prende la media dei due valori adiacenti.</p>
+<p><span class="math display">\[
+x = [18_1, 33_2, 35_3, 36_4, 44_5, {\color{red}\mathbf{48_6}}, 53_7, 55_8, 59_9, 60_{10}, 93_{11}] \quad n = 11
+\]</span></p>
+<p><span class="math display">\[
+x = [18_1, 33_2, 35_3, 36_4, {\color{red}\mathbf{44_5, 48_6}}, 53_7, 55_8, 59_9, 60_{10}] \quad n = 10
+\]</span></p>
+<p>In questo secondo caso la mediana è <span class="math inline">\(\frac{44 + 48}{2} = 46\)</span></p>
+</section>
+<section id="media-e-mediana" class="slide level2">
+<h2>Media e mediana</h2>
+<p>Prendiamo la variabile <code>age</code> del dataset <code>dimarco2020</code> e rappresentiamola graficamente:</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-21-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="media-e-mediana-1" class="slide level2">
+<h2>Media e mediana</h2>
+<p>Ora possiamo aggiungere la media e la mediana sul grafico. I valori sono abbastanza simili perchè la distribuzione è abbastanza simmetrica.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-22-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="media-e-mediana-2" class="slide level2">
+<h2>Media e mediana</h2>
+<p>Vediamo lo stesso ma per una variabile meno simmetrica come <code>intrinsic</code>:</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-23-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section>
+<section id="misure-di-variabilità" class="title-slide slide level1 center">
+<h1>Misure di variabilità</h1>
+
+</section>
+<section id="misure-di-variabilità-1" class="slide level2">
+<h2>Misure di variabilità</h2>
+<p>Per descrivere una distribuzione di dati le misure di tendenza centrale non sono (spesso) sufficienti. Queste 4 distribuzioni di dati hanno la stessa media.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-24-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="misure-di-variabilità-2" class="slide level2">
+<h2>Misure di variabilità</h2>
+<p>Per descrivere in modo più esaustivo i dati abbiamo bisogno di indici che ci informino sulla <strong>dispersione</strong> (o variabilità) attorno agli indici di tendenza centrale. Alcuni indici comunemente usati:</p>
+<ul>
+<li>Range</li>
+<li>Scarto interquartile (IQR, <em>interquartile range</em>)</li>
+<li>Deviazione standard e varianza</li>
+<li>Coefficiente di variazione</li>
+<li>Entropia di Shannon</li>
+</ul>
+</section>
+<section id="range" class="slide level2">
+<h2>Range</h2>
+<p>Il range è la misura più semplice di variabilità e si calcola come la differenza tra massimo e minimo di una distribuzione di dati:</p>
+<p><span class="math display">\[
+R = max(x) - min(x)
+\]</span></p>
+<p>Ovviamente risente molto dei valori estremi prendendo semplicemente il massimo e minimo a prescindere da come sono concentrati i valori.</p>
+</section>
+<section id="range-1" class="slide level2">
+<h2>Range</h2>
+<p>In R calcolare il range è molto semplice:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(x) <span class="sc">-</span> <span class="fu">min</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  0 14</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14</code></pre>
+</div>
+</div>
+</section>
+<section id="range-2" class="slide level2">
+<h2>Range</h2>
+<p>Vediamo come la presenza di qualche valore estremo faccia cambiare completamente il range. Comunque è informativo della gamma dei dati.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-26-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="scarto-range-interquartile-iqr" class="slide level2">
+<h2>Scarto (range) interquartile (IQR)</h2>
+<p>Come la mediana, IQR è un indice più robusto di variabilità perchè si basa sui quantili. In particolare è la differenza tra il 3 e 1 quartile o 75° e 25° percentile.</p>
+<p><span class="math display">\[
+\mbox{IQR} = Q_{75}(x) - Q_{25}(x)
+\]</span></p>
+<p>Questi due quartili ci dicono dove è compreso il 50% di una certa distribuzione e la differenza ci dice quanto è ampio il range del 50% dei dati.</p>
+</section>
+<section id="scarto-range-interquartile-iqr-1" class="slide level2">
+<h2>Scarto (range) interquartile (IQR)</h2>
+<p>In R:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 13.4253</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">quantile</span>(x, <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>))</span>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(q)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    75% 
+13.4253 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>q[<span class="dv">2</span>] <span class="sc">-</span> q[<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    75% 
+13.4253 </code></pre>
+</div>
+</div>
+</section>
+<section id="scarto-range-interquartile-iqr-2" class="slide level2">
+<h2>Scarto (range) interquartile (IQR)</h2>
+<p>In questo caso la differenza è praticamente nulla, IQR si definisce un indice di variabilità <em>robusto</em>.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-28-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="varianza" class="slide level2">
+<h2>Varianza</h2>
+<p>La varianza è probabilmente uno dei concetti più importanti sia dal punto di vista descrittivo che dal punto di vista del modello lineare. Vediamo direttamente la formula e poi scomponiamola:</p>
+<p><span class="math display">\[
+S^2_x = \frac{1}{n} \sum^n_{i = 1} (x_i - \bar{x})^2
+\]</span></p>
+<p>Nella maggior parte dei casi, la varianza viene calcolata usando <span class="math inline">\(n - 1\)</span> e non <span class="math inline">\(n\)</span>. Questo garantisce di rimuovere un bias nella stima ma non è necessario approfondire.</p>
+<p><span class="math display">\[
+S^2_x = \frac{1}{n - 1} \sum^n_{i = 1} (x_i - \bar{x})^2
+\]</span></p>
+</section>
+<section id="devianza" class="slide level2">
+<h2>Devianza</h2>
+<p>Partiamo dall’elemento a destra ovvero <span class="math inline">\(\sum^n_{i = 1} (x_i - \mu_x)^2\)</span>. Questa quantità viene definita devianza o somma dei quadrati (<span class="math inline">\(SS\)</span>, sum of squares). L’idea è quella di calcolare la distanza di ogni valore rispetto alla sua media, fare al quadrato per togliere il segno e poi sommare.</p>
+<p>Questo valore è compreso tra 0 (incluso) e <span class="math inline">\(+ \infty\)</span> ed aumenta all’aumentare delle distanze dei valori dalla media.</p>
+<p>La devianza può essere intesa come la somma totale degli <em>errori</em> rispetto alla media.</p>
+</section>
+<section id="devianza-1" class="slide level2">
+<h2>Devianza</h2>
+<p>La devianza non ha una funzione in R direttamente implementata (ma di solito non viene calcolata come statistica descrittiva). Vediamo con la variabile <code>age</code> del dataset <code>dimarco2020</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dimarco2020<span class="sc">$</span>age, <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 53 60 40 57 60</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a>SS <span class="ot">&lt;-</span> <span class="fu">sum</span>((dimarco2020<span class="sc">$</span>age <span class="sc">-</span> <span class="fu">mean</span>(dimarco2020<span class="sc">$</span>age))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a>SS</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8391.833</code></pre>
+</div>
+</div>
+</section>
+<section id="varianza-divisione-per-n-o-n---1" class="slide level2">
+<h2>Varianza, divisione per <span class="math inline">\(n\)</span> o <span class="math inline">\(n - 1\)</span></h2>
+<p>Se la devianza <span class="math inline">\(SS_x\)</span> è la dispersione totale, dividendo per <span class="math inline">\(n\)</span> ottengo la dispersione media ovvero la distanza media (al quadrato) dalla media.</p>
+<p>Come per la devianza anche la varianza è compreso tra 0 (incluso) e <span class="math inline">\(+ \infty\)</span>. Varianza maggiore indica una maggiore distanza media dalla media. Ovviamente essendo una media eredita le problematiche (e.g., sensibilità agli outlier) della media come tendenza centrale. Infatti la possiamo intendere come la tendenza centrale delle distanze dalla media.</p>
+</section>
+<section id="varianza-1" class="slide level2">
+<h2>Varianza</h2>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-30-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="varianza-2" class="slide level2">
+<h2>Varianza</h2>
+<p>Per la varianza in R abbiamo la funzione <code>var()</code>. Come vedete, di default in R è implementata la versione della varianza corretta che divide per <span class="math inline">\(n - 1\)</span>:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 88.33509</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 88.33509</code></pre>
+</div>
+</div>
+</section>
+<section id="deviazione-standard" class="slide level2">
+<h2>Deviazione standard</h2>
+<p>Infine possiamo fare la radice quadrata della varianza per ottenere la deviazione standard:</p>
+<p><span class="math display">\[
+S_x = \sqrt{\frac{1}{n - 1} \sum^n_{i = 1} (x_i - \bar{x})^2}
+\]</span></p>
+<p>La deviazione standard, al contrario della varianza, è direttamente intepretabile nella scala della variabile (non al quadrato) e quindi si utilizza per descrivere la variabilità.</p>
+</section>
+<section id="deviazione-standard-1" class="slide level2">
+<h2>Deviazione standard</h2>
+<p>Possiamo vederlo chiaramente in questo grafico. La deviazione standard torna ad essere nella metrica della variabile intesa come scarto (non al quadrato) dalla media.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-32-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="deviazione-standard-2" class="slide level2">
+<h2>Deviazione standard</h2>
+<p>In R abbiamo la funzione <code>sd()</code> che analogalmente a <code>var()</code> utilizza <span class="math inline">\(n - 1\)</span> come denominatore:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(dimarco2020<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9.398675</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">var</span>(dimarco2020<span class="sc">$</span>age))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9.398675</code></pre>
+</div>
+</div>
+</section>
+<section id="coefficiente-di-variazione" class="slide level2">
+<h2>Coefficiente di variazione</h2>
+<p>Un “problema” della varianza e deviazione standard è quello di essere legate alla scala della variabile. Sono una misura diretta di variabilità ma nell’unità di misura delle variabile. Viene calcolato come:</p>
+<p><span class="math display">\[
+CV = \frac{S}{|\bar{x}|}
+\]</span></p>
+<p>Ovvero la deviazione standard divisa per il valore assoluto della media (per evitare valori negativi). il CV rappresenta quindi la grandezza relativa della deviazione standard rispetto alla media.</p>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Attenzione che il CV è sensato solo con variabili su scala a <em>rapporti</em> quindi con zero inteso come assenza della proprietà misurata.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="coefficiente-di-variazione-1" class="slide level2">
+<h2>Coefficiente di variazione</h2>
+<p>Vediamo un esempio (banale ma utile). Abbiamo altezza in cm e m:</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-34-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="coefficiente-di-variazione-2" class="slide level2">
+<h2>Coefficiente di variazione</h2>
+<p>Se calcoliamo il CV per le due variabili (ignorando che sappiamo essere una trasformazione):</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(altezza, <span class="dv">5</span>)</span>
+<span id="cb33-2"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 179.1692 166.1026 162.4394 160.9176 172.9293</span></span>
+<span id="cb33-3"><a aria-hidden="true" tabindex="-1"></a>altezza_m <span class="ot">&lt;-</span> altezza<span class="sc">/</span><span class="dv">100</span></span>
+<span id="cb33-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(altezza_m, <span class="dv">5</span>)</span>
+<span id="cb33-5"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1.791692 1.661026 1.624394 1.609176 1.729293</span></span>
+<span id="cb33-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(altezza)</span>
+<span id="cb33-8"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 10</span></span>
+<span id="cb33-9"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(altezza_m)</span>
+<span id="cb33-10"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.1</span></span>
+<span id="cb33-11"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-12"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(altezza) <span class="sc">/</span> <span class="fu">abs</span>(<span class="fu">mean</span>(altezza))</span>
+<span id="cb33-13"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.05882353</span></span>
+<span id="cb33-14"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(altezza_m) <span class="sc">/</span> <span class="fu">abs</span>(<span class="fu">mean</span>(altezza_m))</span>
+<span id="cb33-15"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.05882353</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Il coefficiente di variazione è lo stesso quindi le due variabili sono ugualmente disperse.</p>
+</section></section>
+<section>
+<section id="trasformazioni" class="title-slide slide level1 center">
+<h1>Trasformazioni</h1>
+
+</section>
+<section id="trasformazioni-1" class="slide level2">
+<h2>Trasformazioni</h2>
+<p>Un aspetto importante dal punto di vista univariato è quello della trasformazione delle variabili. Le trasformazioni sono operazioni che cambiano ad esempio la scala della variabile per migliorare l’intepretabilità o risolvere problemi di scala.</p>
+</section>
+<section id="centrare" class="slide level2">
+<h2>Centrare</h2>
+<p>Una prima operazione comune è quella di centrare le variabili su un determinato valore. L’idea è semplice. Chiamiamo <span class="math inline">\(x_t\)</span> la variabile <span class="math inline">\(x\)</span> trasformata:</p>
+<p><span class="math display">\[
+x_{t_i} = x_i - c
+\]</span></p>
+<p>Dove <span class="math inline">\(c\)</span> è un valore sul quale si decide di centrare la variabile. Questa operazione permette di posizionare lo zero in un punto arbitrario. Di solito si utilizza la media (<em>mean-centering</em>).</p>
+</section>
+<section id="centrare-1" class="slide level2">
+<h2>Centrare</h2>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-36-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="centrare-2" class="slide level2">
+<h2>Centrare</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dimarco2020<span class="sc">$</span>burnout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.8 1.4 2.7 1.9 2.6 2.1</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a>xt1 <span class="ot">&lt;-</span> dimarco2020<span class="sc">$</span>burnout <span class="sc">-</span> <span class="fu">mean</span>(dimarco2020<span class="sc">$</span>burnout)</span>
+<span id="cb36-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(xt1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.11520833 -0.51520833  0.78479167 -0.01520833  0.68479167  0.18479167</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a aria-hidden="true" tabindex="-1"></a>xt2 <span class="ot">&lt;-</span> dimarco2020<span class="sc">$</span>burnout <span class="sc">-</span> <span class="fu">median</span>(dimarco2020<span class="sc">$</span>burnout)</span>
+<span id="cb38-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(xt2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.1 -0.5  0.8  0.0  0.7  0.2</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a aria-hidden="true" tabindex="-1"></a>xt3 <span class="ot">&lt;-</span> dimarco2020<span class="sc">$</span>burnout <span class="sc">-</span> <span class="fu">mean</span>(dimarco2020<span class="sc">$</span>burnout)</span>
+<span id="cb40-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(xt3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.11520833 -0.51520833  0.78479167 -0.01520833  0.68479167  0.18479167</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a aria-hidden="true" tabindex="-1"></a>xt4 <span class="ot">&lt;-</span> dimarco2020<span class="sc">$</span>burnout <span class="sc">-</span> <span class="fu">min</span>(dimarco2020<span class="sc">$</span>burnout)</span>
+<span id="cb42-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(xt4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.1 0.7 2.0 1.2 1.9 1.4</code></pre>
+</div>
+</div>
+</section>
+<section id="standardizzare" class="slide level2">
+<h2>Standardizzare</h2>
+<p>Standardizzare invece richiede di dividere per una quantità che diventerà la nuova unità di misura della variabile. Anche qui si possono fare diverse operazioni, la più comune è quella di dividere per la deviazione standard.</p>
+<p><span class="math display">\[
+x_{t_i} = \frac{x_i}{s_x}
+\]</span></p>
+<p>La nuova variabile sarà espressa in multipli di deviazioni standard.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(dimarco2020<span class="sc">$</span>burnout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5807835</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a aria-hidden="true" tabindex="-1"></a>xt <span class="ot">&lt;-</span> dimarco2020<span class="sc">$</span>burnout <span class="sc">/</span> <span class="fu">sd</span>(dimarco2020<span class="sc">$</span>burnout)</span>
+<span id="cb46-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dimarco2020<span class="sc">$</span>burnout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.8 1.4 2.7 1.9 2.6 2.1</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(xt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.099262 2.410537 4.648893 3.271443 4.476711 3.615805</code></pre>
+</div>
+</div>
+</section>
+<section id="standardizzare-punti-z" class="slide level2">
+<h2>Standardizzare, punti <span class="math inline">\(z\)</span></h2>
+<p>Se combiniamo la centratura rispetto alla media e la standardizzazione con la deviazione standard, otteniamo una quantità conosciuta come punti <span class="math inline">\(z\)</span>. Questi non sono altro che una trasformazione dei dati grezzi in unità di deviazione standard rispetto alla media.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dimarco2020<span class="sc">$</span>burnout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.8 1.4 2.7 1.9 2.6 2.1</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> (dimarco2020<span class="sc">$</span>burnout <span class="sc">-</span> <span class="fu">mean</span>(dimarco2020<span class="sc">$</span>burnout)) <span class="sc">/</span> <span class="fu">sd</span>(dimarco2020<span class="sc">$</span>burnout)</span>
+<span id="cb52-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(z)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.19836710 -0.88709195  1.35126380 -0.02618589  1.17908259  0.31817653</code></pre>
+</div>
+</div>
+</section>
+<section id="standardizzare-punti-z-1" class="slide level2">
+<h2>Standardizzare, punti <span class="math inline">\(z\)</span></h2>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-40-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="standardizzare-punti-z-2" class="slide level2">
+<h2>Standardizzare, punti <span class="math inline">\(z\)</span></h2>
+<p>Il vantaggio di esprimere i valori in punti <span class="math inline">\(z\)</span> (o valori standardizzati) è quello di avere subito un’idea di come quel valore si posizione nella distribuzione. Un valore di <span class="math inline">\(\pm 1\)</span> ci dice che quell’osservazione è 1 deviazione standard sotto o sopra la media.</p>
+<p>Assumendo la normalità (chiaramente un’assunzione e potenzialmente un limite) sappiamo come sono i <em>quantili</em> di una distribuzione normale standard (<span class="math inline">\(\mu = 0\)</span>, <span class="math inline">\(\sigma^2 = 1\)</span>) e quindi sappiamo quanto <em>anomala</em> può essere un’osservazione.</p>
+</section>
+<section id="standardizzare-punti-z-3" class="slide level2">
+<h2>Standardizzare, punti <span class="math inline">\(z\)</span></h2>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-41-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="variabili-categoriali-nominali" class="slide level2">
+<h2>Variabili categoriali (nominali)</h2>
+<p>Abbiamo parlato principalmente di variabili numeriche intese come principalmente intervalli o rapporti (ma anche ordinali in un certo senso). Tuttavia ci sono anche statistiche descrittive che sono specifiche per le variabili categoriali.</p>
+<ul>
+<li>Frequenze assolute e relative (anche cumulate)</li>
+<li>Entropia di Shannon</li>
+</ul>
+</section>
+<section id="frequenze" class="slide level2">
+<h2>Frequenze</h2>
+<p>Quando abbiamo una variabile categoriale la cosa più semplice da calcolare è la frequenza per ogni modalità <span class="math inline">\(j\)</span> (livello). Se <span class="math inline">\(N\)</span> è il numero totale di osservazioni ed <span class="math inline">\(n_j\)</span> è il numero di osservazione per la modalità <span class="math inline">\(j\)</span> allora <span class="math inline">\(f_j = n_j\)</span></p>
+<p>In R è molto semplice possiamo usare la funzione <code>table()</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dimarco2020<span class="sc">$</span>residence, <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      3       1       1       1       1 
+"south" "north" "north" "north" "north" </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dimarco2020<span class="sc">$</span>residence)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+central   north   south 
+     28      47      21 </code></pre>
+</div>
+</div>
+</section>
+<section id="frequenze-relative" class="slide level2">
+<h2>Frequenze relative</h2>
+<p>Le frequenze relative riscalano il totale rispetto a 1 (o 100%) semplicemente dividendo <span class="math inline">\(f_j\)</span> per il totale:</p>
+<p><span class="math display">\[
+p_j = \frac{f_j}{N}
+\]</span></p>
+<p>In R possiamo farlo manualmente o usando la funzione <code>prop.table()</code></p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(dimarco2020)</span>
+<span id="cb58-2"><a aria-hidden="true" tabindex="-1"></a>Fa <span class="ot">&lt;-</span> <span class="fu">table</span>(dimarco2020<span class="sc">$</span>residence) <span class="co"># frequenze assolute</span></span>
+<span id="cb58-3"><a aria-hidden="true" tabindex="-1"></a>Fa <span class="sc">/</span> N</span>
+<span id="cb58-4"><a aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb58-5"><a aria-hidden="true" tabindex="-1"></a><span class="do">##   central     north     south </span></span>
+<span id="cb58-6"><a aria-hidden="true" tabindex="-1"></a><span class="do">## 0.2916667 0.4895833 0.2187500</span></span>
+<span id="cb58-7"><a aria-hidden="true" tabindex="-1"></a>Fr <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(Fa)</span>
+<span id="cb58-8"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(Fa) <span class="co"># somma è N</span></span>
+<span id="cb58-9"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 96</span></span>
+<span id="cb58-10"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(Fr) <span class="co"># la somma è 1</span></span>
+<span id="cb58-11"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="moda" class="slide level2">
+<h2>Moda</h2>
+<p>La moda è semplicemente la modalità (livello) della variabile associato alla frequenza massima. Non esiste una funzione in R ma possiamo facilmente calcolarla manualmente:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># questo è un trick del fatto che table() restituisce nomi</span></span>
+<span id="cb59-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">which.max</span>(<span class="fu">table</span>(dimarco2020<span class="sc">$</span>residence)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "north"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># più "elegante"</span></span>
+<span id="cb61-2"><a aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">unique</span>(dimarco2020<span class="sc">$</span>residence)</span>
+<span id="cb61-3"><a aria-hidden="true" tabindex="-1"></a>u <span class="co"># valori unici, senza ripetizione</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "south"   "north"   "central"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a aria-hidden="true" tabindex="-1"></a>u[<span class="fu">which.max</span>(<span class="fu">table</span>(dimarco2020<span class="sc">$</span>residence))]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "north"</code></pre>
+</div>
+</div>
+</section>
+<section id="moda-1" class="slide level2">
+<h2>Moda</h2>
+<p>Nel caso di più modalità associate alla frequenza massima si riportano tutte le mode e la distribuzione si definisce multimodale. Attenzione che per quanto la moda sia definita anche per variabili continue/numeriche di solito è meno utilizzata.</p>
+<p>Per gestire il caso multimodale potremmo scrivere una funzioncina di questo tipo:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a aria-hidden="true" tabindex="-1"></a>moda <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb65-2"><a aria-hidden="true" tabindex="-1"></a>    xu <span class="ot">&lt;-</span> <span class="fu">unique</span>(x)</span>
+<span id="cb65-3"><a aria-hidden="true" tabindex="-1"></a>    xf <span class="ot">&lt;-</span> <span class="fu">table</span>(x)</span>
+<span id="cb65-4"><a aria-hidden="true" tabindex="-1"></a>    xu[xf <span class="sc">==</span> <span class="fu">max</span>(xf)]</span>
+<span id="cb65-5"><a aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb65-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">moda</span>(dimarco2020<span class="sc">$</span>residence)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "north"</code></pre>
+</div>
+</div>
+</section>
+<section id="entropia-di-shannon" class="slide level2">
+<h2>Entropia di Shannon</h2>
+<p>L’indice di entropia di Shannon permette di valutare la variabilità di variabili categoriali. La variabilità qui è intesa in termini di entropia ovvero grado di informazione. <span class="math inline">\(p_j\)</span> è la frequenza relativa della modalità <span class="math inline">\(j\)</span>.</p>
+<p><span class="math display">\[
+E = - \sum^j_{i = 1} p_i \ln{(p_i)}
+\]</span></p>
+<p>L’idea è che entropia massima si trova quando tutte le <span class="math inline">\(j\)</span> modalità hanno lo stesso valore di probabilità mentre il valore minimo (<span class="math inline">\(E = 0\)</span>) si ottiene quando la frequenza è concentrata su una sola modalità.</p>
+</section>
+<section id="entropia-di-shannon-1" class="slide level2">
+<h2>Entropia di Shannon</h2>
+<p>Vediamo in R:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a aria-hidden="true" tabindex="-1"></a>(p <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(<span class="fu">table</span>(dimarco2020<span class="sc">$</span>residence)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  central     north     south 
+0.2916667 0.4895833 0.2187500 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a aria-hidden="true" tabindex="-1"></a>E <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">sum</span>(p <span class="sc">*</span> <span class="fu">log</span>(p))</span>
+<span id="cb69-2"><a aria-hidden="true" tabindex="-1"></a>E</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.041498</code></pre>
+</div>
+</div>
+<p>Possiamo anche calcolare un indice normalizzato che va da 0 (minima entropia) a 1 (massima entropia) dividendo per <span class="math inline">\(\ln(j)\)</span> (numero di modalità):</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9480122</code></pre>
+</div>
+</div>
+</section>
+<section id="entropia-di-shannon-2" class="slide level2">
+<h2>Entropia di Shannon</h2>
+<p>Vediamo graficamente:</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-48-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="entropia-di-shannon-3" class="slide level2">
+<h2>Entropia di Shannon</h2>
+<p>Vediamo qui un esempio di come l’entropia varia al concentrarsi/disperdersi delle frequenze relative tra le modalità:</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-49-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section>
+<section id="rappresentazioni-grafiche" class="title-slide slide level1 center">
+<h1>Rappresentazioni Grafiche</h1>
+
+</section>
+<section id="rappresentazioni-grafiche-1" class="slide level2">
+<h2>Rappresentazioni Grafiche</h2>
+<p>Il modo sicuramente più efficace di affrontare un dataset è quello di rappresentare graficamente le variabili in modo univariato o multivariato (dove possibile). Qualche precisazione rispetto ai grafici:</p>
+<ul>
+<li>i grafici non sono solo soluzioni <em>estetiche</em> ma strumenti per descrivere ma anche per imparare dai dati</li>
+<li>non ci sono soluzioni generali e spesso servono aggiustamenti caso-specifici</li>
+<li>alcuni grafici possono essere fuorvianti o poco informativi</li>
+<li>se complessi, devono essere sempre spiegati chiaramente</li>
+</ul>
+</section>
+<section id="dove-partiamo" class="slide level2">
+<h2>Dove partiamo?</h2>
+<p>Partiamo con un grafico molto semplice, semplicemente rappresentiamo i valori ordinati. Non è un grafico molto utile, mancano diverse informazini importanti. Abbiamo un’idea solo del range dei dati.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-50-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="istogramma" class="slide level2">
+<h2>Istogramma</h2>
+<p>Il modo più immediato per rappresentare una variabile quantitativa è l’istogramma. L’idea è quella di dividere in <strong>bins</strong> una variabile numerica e rappresentare la frequenza delle osservazioni comprese in quel bin.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb72-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dimarco2020<span class="sc">$</span>perc_collective_efficacy, <span class="at">breaks =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+</section>
+<section id="istogramma-output" class="slide level2 output-location-slide"><h2>Istogramma</h2><div class="cell output-location-slide" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-51-1.svg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="istogramma-1" class="slide level2">
+<h2>Istogramma</h2>
+<p>Il parametro fondamentale qui è il numero di bin. All’aumentare del numero di bin l’informazione diventa più precisa ma diminuisce il numero di osservazioni per bin.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb73-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dimarco2020<span class="sc">$</span>perc_collective_efficacy, <span class="at">breaks =</span> <span class="dv">2</span>)</span>
+<span id="cb73-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dimarco2020<span class="sc">$</span>perc_collective_efficacy, <span class="at">breaks =</span> <span class="dv">25</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+</section>
+<section id="istogramma-1-output" class="slide level2 output-location-slide"><h2>Istogramma</h2><div class="cell output-location-slide" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-52-1.svg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="istogramma-2" class="slide level2">
+<h2>Istogramma</h2>
+<p>Questo si vede in modo particolare per variabili con molti valori tra due interi:</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-53-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="istogramma-densità" class="slide level2">
+<h2>Istogramma, densità</h2>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-54-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="boxplot" class="slide level2">
+<h2>Boxplot</h2>
+<p>Il boxplot è una rappresentazione grafica tanto “semplice” quanto informativa, soprattutto rispetto all’istogramma.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(dimarco2020<span class="sc">$</span>perc_collective_efficacy)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-55-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="boxplot-1" class="slide level2">
+<h2>Boxplot</h2>
+
+<img data-src="img/boxplot.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="barplot" class="slide level2">
+<h2>Barplot</h2>
+<p>Il grafico a barre (o <em>barplot</em>) è la rappresentazione fondamentale per quanto riguarda variabili di tipo categoriale o ordinale. Da non confondere con l’istogramma con <em>bins</em> di larghezza variabile, il grafico a barre rappresenta la frequenza (relativa o assoluta) di una certa modalità/livello di una variabile categoriale.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb75-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(dimarco2020<span class="sc">$</span>residence), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">nrow</span>(dimarco2020)))</span>
+<span id="cb75-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">prop.table</span>(<span class="fu">table</span>(dimarco2020<span class="sc">$</span>residence)), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+</section>
+<section id="barplot-output" class="slide level2 output-location-slide"><h2>Barplot</h2><div class="cell output-location-slide" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-56-1.svg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="barplot-1" class="slide level2">
+<h2>Barplot</h2>
+<p>Il barplot può essere sensato anche per variabili quantitative ma con numeri solo interi. Se usato con numeri con la virgola, diventa sempre meno informativo e difficile da leggere.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-57-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section>
+<section id="relazioni-bivariate" class="title-slide slide level1 center">
+<h1>Relazioni Bivariate</h1>
+
+</section>
+<section id="relazioni-bivariate-1" class="slide level2">
+<h2>Relazioni Bivariate</h2>
+<p>La principale tipologia di relazione bivariata è sicuramente la correlazione ma possiamo avere relazioni bivariate tra:</p>
+<ul>
+<li>variabili numeriche</li>
+<li>variabili categoriali</li>
+<li>variabili numeriche e categoriali</li>
+</ul>
+</section>
+<section id="relazione-tra-due-variabili-categoriali" class="slide level2">
+<h2>Relazione tra due variabili categoriali</h2>
+<p>Il modo più semplice di rappresentare la relazione tra due variabili categoriali è una <strong>tabella di contingenza</strong>. Ad esempio vediamo la relazione tra <code>residence</code> e <code>status</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top" style="border-collapse:collapse; border:none;">
+<tbody>
+<tr class="odd">
+<th rowspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: italic; font-weight: normal; border-bottom: 1px solid;">residence</th>
+<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: italic; font-weight: normal;">status</th>
+<th rowspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: italic; font-weight: normal; font-weight: bolder; font-style: italic; border-bottom: 1px solid;">Total</th>
+</tr>
+<tr class="even">
+<td style="text-align: center; border-bottom: 1px solid; padding: 0.2cm;">1</td>
+<td style="text-align: center; border-bottom: 1px solid; padding: 0.2cm;">2</td>
+<td style="text-align: center; border-bottom: 1px solid; padding: 0.2cm;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: middle;">central</td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">4</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">24</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">0</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">28</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: middle;">north</td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">4</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">41</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">2</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">47</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: middle;">south</td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">2</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">19</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">0</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">21</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; border-bottom: double; font-weight: bolder; font-style: italic; vertical-align: middle;">Total</td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">10</span></td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">84</span></td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">2</span></td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">96</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Questa tabella conta la frequenza assoluta di tutti i possibili incroci tra due variabili categoriali.</p>
+</section>
+<section id="relazione-tra-due-variabili-categoriali-1" class="slide level2">
+<h2>Relazione tra due variabili categoriali</h2>
+
+<img data-src="img/contingency.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="relazione-tra-due-variabili-categoriali-2" class="slide level2">
+<h2>Relazione tra due variabili categoriali</h2>
+<p>Possiamo anche calcolare le frequenze relative. Rispetto al caso univariato però abbiamo diversi modi di farlo: per riga, per colonna o totale. Partiamo dal totale:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top" style="border-collapse:collapse; border:none;">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<th rowspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: italic; font-weight: normal; border-bottom: 1px solid;">residence</th>
+<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: italic; font-weight: normal;">status</th>
+<th rowspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: italic; font-weight: normal; font-weight: bolder; font-style: italic; border-bottom: 1px solid;">Total</th>
+</tr>
+<tr class="even">
+<td style="text-align: center; border-bottom: 1px solid; padding: 0.2cm;">1</td>
+<td style="text-align: center; border-bottom: 1px solid; padding: 0.2cm;">2</td>
+<td style="text-align: center; border-bottom: 1px solid; padding: 0.2cm;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: middle;">central</td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">4</span><br>
+<span style="color:#993333;">4.2&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">24</span><br>
+<span style="color:#993333;">25&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">0</span><br>
+<span style="color:#993333;">0&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">28</span><br>
+<span style="color:#993333;">29.2&nbsp;%</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: middle;">north</td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">4</span><br>
+<span style="color:#993333;">4.2&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">41</span><br>
+<span style="color:#993333;">42.7&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">2</span><br>
+<span style="color:#993333;">2.1&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">47</span><br>
+<span style="color:#993333;">49&nbsp;%</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: middle;">south</td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">2</span><br>
+<span style="color:#993333;">2.1&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">19</span><br>
+<span style="color:#993333;">19.8&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">0</span><br>
+<span style="color:#993333;">0&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">21</span><br>
+<span style="color:#993333;">21.9&nbsp;%</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; border-bottom: double; font-weight: bolder; font-style: italic; vertical-align: middle;">Total</td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">10</span><br>
+<span style="color:#993333;">10.4&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">84</span><br>
+<span style="color:#993333;">87.5&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">2</span><br>
+<span style="color:#993333;">2.1&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">96</span><br>
+<span style="color:#993333;">100&nbsp;%</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="relazione-tra-due-variabili-categoriali-3" class="slide level2">
+<h2>Relazione tra due variabili categoriali</h2>
+<p>Poi possiamo vedere per riga. Di base ogni riga somma a 1 (100%) e vediamo per ogni modalità della colonna la sua percentuale.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top" style="border-collapse:collapse; border:none;">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<th rowspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: italic; font-weight: normal; border-bottom: 1px solid;">residence</th>
+<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: italic; font-weight: normal;">status</th>
+<th rowspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: italic; font-weight: normal; font-weight: bolder; font-style: italic; border-bottom: 1px solid;">Total</th>
+</tr>
+<tr class="even">
+<td style="text-align: center; border-bottom: 1px solid; padding: 0.2cm;">1</td>
+<td style="text-align: center; border-bottom: 1px solid; padding: 0.2cm;">2</td>
+<td style="text-align: center; border-bottom: 1px solid; padding: 0.2cm;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: middle;">central</td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">4</span><br>
+<span style="color:#333399;">14.3&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">24</span><br>
+<span style="color:#333399;">85.7&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">0</span><br>
+<span style="color:#333399;">0&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">28</span><br>
+<span style="color:#333399;">100&nbsp;%</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: middle;">north</td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">4</span><br>
+<span style="color:#333399;">8.5&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">41</span><br>
+<span style="color:#333399;">87.2&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">2</span><br>
+<span style="color:#333399;">4.3&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">47</span><br>
+<span style="color:#333399;">100&nbsp;%</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: middle;">south</td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">2</span><br>
+<span style="color:#333399;">9.5&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">19</span><br>
+<span style="color:#333399;">90.5&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">0</span><br>
+<span style="color:#333399;">0&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">21</span><br>
+<span style="color:#333399;">100&nbsp;%</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; border-bottom: double; font-weight: bolder; font-style: italic; vertical-align: middle;">Total</td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">10</span><br>
+<span style="color:#333399;">10.4&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">84</span><br>
+<span style="color:#333399;">87.5&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">2</span><br>
+<span style="color:#333399;">2.1&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">96</span><br>
+<span style="color:#333399;">100&nbsp;%</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="relazione-tra-due-variabili-categoriali-4" class="slide level2">
+<h2>Relazione tra due variabili categoriali</h2>
+<p>Per colonna, possiamo fare lo stesso:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top" style="border-collapse:collapse; border:none;">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<th rowspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: italic; font-weight: normal; border-bottom: 1px solid;">residence</th>
+<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: italic; font-weight: normal;">status</th>
+<th rowspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: italic; font-weight: normal; font-weight: bolder; font-style: italic; border-bottom: 1px solid;">Total</th>
+</tr>
+<tr class="even">
+<td style="text-align: center; border-bottom: 1px solid; padding: 0.2cm;">1</td>
+<td style="text-align: center; border-bottom: 1px solid; padding: 0.2cm;">2</td>
+<td style="text-align: center; border-bottom: 1px solid; padding: 0.2cm;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: middle;">central</td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">4</span><br>
+<span style="color:#339933;">40&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">24</span><br>
+<span style="color:#339933;">28.6&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">0</span><br>
+<span style="color:#339933;">0&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">28</span><br>
+<span style="color:#339933;">29.2&nbsp;%</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: middle;">north</td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">4</span><br>
+<span style="color:#339933;">40&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">41</span><br>
+<span style="color:#339933;">48.8&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">2</span><br>
+<span style="color:#339933;">100&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">47</span><br>
+<span style="color:#339933;">49&nbsp;%</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: middle;">south</td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">2</span><br>
+<span style="color:#339933;">20&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">19</span><br>
+<span style="color:#339933;">22.6&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">0</span><br>
+<span style="color:#339933;">0&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm;"><span style="color:black;">21</span><br>
+<span style="color:#339933;">21.9&nbsp;%</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; border-bottom: double; font-weight: bolder; font-style: italic; vertical-align: middle;">Total</td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">10</span><br>
+<span style="color:#339933;">100&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">84</span><br>
+<span style="color:#339933;">100&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">2</span><br>
+<span style="color:#339933;">100&nbsp;%</span></td>
+<td style="text-align: center; padding: 0.2cm; border-bottom: double;"><span style="color:black;">96</span><br>
+<span style="color:#339933;">100&nbsp;%</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="barplot-2" class="slide level2">
+<h2>Barplot</h2>
+<p>Possiamo anche rappresentare due variabili con un barplot:</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-63-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="barplot-3" class="slide level2">
+<h2>Barplot</h2>
+<p>Vediamo quelle relative (totale):</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-64-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="barplot-4" class="slide level2">
+<h2>Barplot</h2>
+<p>Relative per colonna:</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-65-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="barplot-5" class="slide level2">
+<h2>Barplot</h2>
+<p>Relative per riga:</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-66-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="relazione-tra-due-variabili-quantitative" class="slide level2">
+<h2>Relazione tra due variabili quantitative</h2>
+<p>Il modo più semplice per visualizzare una relazione tra due variabili quantitative è lo <strong>scatter plot</strong>:</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-67-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="correlazione" class="slide level2">
+<h2>Correlazione</h2>
+<p>In questo caso vediamo chiaramente che c’è un trend. All’aumentare del <code>burnout</code> diminuisce la <code>satisfaction</code>. Un modo per quantificare questa relazione è l’indice di correlazione di Pearson <span class="math inline">\(r\)</span>. La correlazione tra due variabili <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> è:</p>
+<p><span class="math display">\[
+r_{xy} = \frac{s_{xy}}{s_x s_y}
+\]</span></p>
+<p>Dove <span class="math inline">\(s_{xy}\)</span> è la covarianza (ora lo vediamo) e <span class="math inline">\(s\)</span> è la deviazione standard.</p>
+</section>
+<section id="covarianza" class="slide level2">
+<h2>Covarianza</h2>
+<p>Partiamo dalla covarianza <span class="math inline">\(s_{xy}\)</span> che viene definita come:</p>
+<p><span class="math display">\[
+s_{xy} = \frac{\sum^n_{i = 1} (x_i - \bar{x})(y_i - \bar{y})}{n - 1}
+\]</span></p>
+<p>Dove <span class="math inline">\(\sum^n_{i = 1} (x_i - \bar{x})(y_i - \bar{y})\)</span> viene definita codevianza.</p>
+</section>
+<section id="covarianza-1" class="slide level2">
+<h2>Covarianza</h2>
+<p>A livello univariato abbiamo definito la varianza come la media degli scarti al quadrato dalla media. In pratica è un modo per quantificare la dispersione dei dati attorno alla loro media.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-68-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="covarianza-2" class="slide level2">
+<h2>Covarianza</h2>
+<p>Se due variabili sono legate allora l’idea è che due valori di due coppie di variabili co-varino allo stesso modo rispetto alla loro media. Questo è quello che dice la codevianza <span class="math inline">\(\sum^n_{i = 1} (x_i - \bar{x})(y_i - \bar{y})\)</span>. Stiamo moltiplicando lo scarto della media su <span class="math inline">\(x\)</span> con lo scarto dalla media su <span class="math inline">\(y\)</span>.</p>
+</section>
+<section id="covarianza-3" class="slide level2">
+<h2>Covarianza</h2>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-69-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="covarianza-4" class="slide level2">
+<h2>Covarianza</h2>
+<p>La moltiplicazione degli scarti, per ogni osservazione ci restituisce un valore con un segno. Il numeratore (codevianza) cattura quindi il segno (direzione) del prodotto degli scarti dalla media.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-70-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="covarianza-5" class="slide level2">
+<h2>Covarianza</h2>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-71-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="covarianza-6" class="slide level2">
+<h2>Covarianza</h2>
+<p>Quindi la nostra codevianza può essere:</p>
+<ul>
+<li>0: quindi i segni del prodotto degli scarti sono + e - in modo simile, in media sono 0</li>
+<li>positivi: quindi i segni del prodotto degli scarti sono maggiormente +, la somma è positiva</li>
+<li>negativi: quindi i segni del prodotto degli scarti sono maggiormente -, la somma è negativa</li>
+</ul>
+<p>Come per la <em>devianza</em>, la codevianza è una somma che rappresenta la dispersione combinata di due variabili e come co-deviano assieme.</p>
+<p>Dividendo per <span class="math inline">\(n - 1\)</span> otteniamo la covarianza che indica la forza della co-variazione di due variabili. Ovviamente dipende dalla scala della variabile e non è direttamente intepretabile se non per il segno.</p>
+</section>
+<section id="correlazione-1" class="slide level2">
+<h2>Correlazione</h2>
+<p>Per intepretare la covarianza quello che viene fatto è standardizzarla rispetto alla variazione delle singole variabili. Ovvero dividiamo la covarianza (media del prodotto degli scarti) per il prodotto delle deviazioni standard.</p>
+<p>On in alternativa potete vederla come la covarianza di due variabili che sono state standardizzate.</p>
+</section>
+<section id="correlazione-e-covarianza-in-r" class="slide level2">
+<h2>Correlazione e covarianza in R</h2>
+<p>In R possiamo usare le funzioni <code>cov()</code> e <code>cor()</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># covarianza</span></span>
+<span id="cb76-2"><a aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">cov</span>(dimarco2020<span class="sc">$</span>burnout, dimarco2020<span class="sc">$</span>satisfaction)</span>
+<span id="cb76-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># correlazione</span></span>
+<span id="cb76-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(dimarco2020<span class="sc">$</span>burnout, dimarco2020<span class="sc">$</span>satisfaction)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.5549457</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a aria-hidden="true" tabindex="-1"></a>ss <span class="sc">/</span> (<span class="fu">sd</span>(dimarco2020<span class="sc">$</span>burnout) <span class="sc">*</span> <span class="fu">sd</span>(dimarco2020<span class="sc">$</span>satisfaction))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.5549457</code></pre>
+</div>
+</div>
+</section>
+<section id="correlazione-2" class="slide level2">
+<h2>Correlazione</h2>
+<p>La correlazione è un indice, compreso tra -1 (perfetta correlazione negativa) e +1 (perfetta correlazione positiva). Questo indice rappresenta la relazione <strong>lineare</strong> tra due variabili e non una relazione generica. Due variabili potrebbero essere associate non linearmente ma avere una correlazione bassa.</p>
+</section>
+<section id="correlazione-3" class="slide level2">
+<h2>Correlazione</h2>
+<p>In questo caso la relazione è chiaramente non lineare (quadratica) e la correlazione è praticamente a zero.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-73-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section>
+<section id="relazione-tra-più-variabili" class="title-slide slide level1 center">
+<h1>Relazione tra più variabili</h1>
+
+</section>
+<section id="matrici-di-correlazione" class="slide level2">
+<h2>Matrici di correlazione</h2>
+<p>Le matrici di correlazione sono il modo principale per rappresentare la relazione tra più di due variabili.</p>
+
+<img data-src="img/cmat.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="matrici-di-correlazione-1" class="slide level2">
+<h2>Matrici di correlazione</h2>
+<p>Se abbiamo <span class="math inline">\(p\)</span> variabili, abbiamo una matrice quadrata <span class="math inline">\(p \times p\)</span>.</p>
+<p>Di queste correlazioni, quelle informative (escludendo le ripetizioni) sono <span class="math inline">\((2^p - p) / 2\)</span> perchè teniamo solo il triangolo superiore/inferiore e togliamo la diagonale.</p>
+<p>La correlazione di una variabile con se stessa è per definizione 1 quindi la diagonale non è informativa.</p>
+</section>
+<section id="matrici-di-correlazione-2" class="slide level2">
+<h2>Matrici di correlazione</h2>
+<p>In R possiamo sempre usare la funzione <code>cor()</code> su più variabili (solitamente colonne di un dataframe):</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">cor</span>(dimarco2020[, <span class="fu">c</span>(<span class="st">"bonds"</span>, <span class="st">"burnout"</span>, <span class="st">"satisfaction"</span>, <span class="st">"trauma"</span>)])</span>
+<span id="cb80-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(R, <span class="dv">2</span>) <span class="co"># solo per visualizzazione</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             bonds burnout satisfaction trauma
+bonds         1.00   -0.41         0.46  -0.23
+burnout      -0.41    1.00        -0.55   0.66
+satisfaction  0.46   -0.55         1.00  -0.15
+trauma       -0.23    0.66        -0.15   1.00</code></pre>
+</div>
+</div>
+</section>
+<section id="matrici-di-correlazione-3" class="slide level2">
+<h2>Matrici di correlazione</h2>
+<p>Possiamo anche visualizzare graficamente con il pacchetto <code>corrplot</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb82-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(R, <span class="at">order =</span> <span class="st">'AOE'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-75-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="matrici-di-correlazione-4" class="slide level2">
+<h2>Matrici di correlazione</h2>
+<p>Possiamo anche visualizzare degli scatterplot a coppie:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(dimarco2020[, <span class="fu">c</span>(<span class="st">"bonds"</span>, <span class="st">"burnout"</span>, <span class="st">"satisfaction"</span>, <span class="st">"trauma"</span>)], )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-76-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="matrici-di-varianza-covarianza" class="slide level2">
+<h2>Matrici di varianza-covarianza</h2>
+<p>La matrice di correlazione non deve essere confusa con quella di varianza-covarianza. La struttura è la stessa ovvero una matrice quadrata <span class="math inline">\(p \times p\)</span> dove <span class="math inline">\(p\)</span> è il numero di variabili. Però la diagonale non è 1 (la covarianza di una variabile con se stessa non è 1) e gli elementi fuori dalla diagonale non sono la correlazione (&gt; 1 o &lt; -1).</p>
+
+<img data-src="img/vcov.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="matrici-di-varianza-covarianza-1" class="slide level2">
+<h2>Matrici di varianza-covarianza</h2>
+<p>In R possiamo sempre usare la funzione <code>cov()</code> su più variabili (come per <code>cor()</code>):</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fu">cov</span>(dimarco2020[, <span class="fu">c</span>(<span class="st">"bonds"</span>, <span class="st">"burnout"</span>, <span class="st">"satisfaction"</span>, <span class="st">"trauma"</span>)])</span>
+<span id="cb84-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(S, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             bonds burnout satisfaction trauma
+bonds         0.11   -0.08         0.08  -0.06
+burnout      -0.08    0.34        -0.17   0.30
+satisfaction  0.08   -0.17         0.28  -0.06
+trauma       -0.06    0.30        -0.06   0.61</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(R, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             bonds burnout satisfaction trauma
+bonds         1.00   -0.41         0.46  -0.23
+burnout      -0.41    1.00        -0.55   0.66
+satisfaction  0.46   -0.55         1.00  -0.15
+trauma       -0.23    0.66        -0.15   1.00</code></pre>
+</div>
+</div>
+</section>
+<section id="matrici-di-varianza-covarianza-2" class="slide level2">
+<h2>Matrici di varianza-covarianza</h2>
+<p>Il primo punto da capire è la diagonale. La correlazione di una variabile con se stessa è 1. La covarianza di una variabile con se stessa cosa rappresenta? Vediamolo:</p>
+<p><span class="math display">\[
+\begin{aligned}
+s_{xx} &amp;= \frac{1}{n - 1} \sum^n_{i = 1} (x_i - \bar{x}) (x_i - \bar{x}) \\
+&amp;= \frac{1}{n - 1} \sum^n_{i = 1} (x_i - \bar{x})^2 \\
+\end{aligned}
+\]</span></p>
+<p>Vi ricorda qualcosa? E’ esattamente la formula della varianza. Nella diagonale di una matrice di varianza covarianza abbiamo le varianze delle <span class="math inline">\(p\)</span> variabili.</p>
+</section>
+<section id="matrici-di-varianza-covarianza-3" class="slide level2">
+<h2>Matrici di varianza-covarianza</h2>
+<p>Gli altri elementi (sempre simmetrici) sono le covarianze. Anche qui, possiamo scomporre la formula per renderla più chiara e legarla alla matrice di correlazione. La correlazione è:</p>
+<p><span class="math display">\[
+r_{xy} = \frac{s_{xy}}{s_x s_y}
+\]</span></p>
+<p>Quindi, la covarianza può essere espressa (risolvendo l’equazione per <span class="math inline">\(s_{xy}\)</span>) come il prodotto della correlazione e delle due deviazioni standard.</p>
+<p><span class="math display">\[
+s_{xy} = r_{xy} s_x s_y
+\]</span></p>
+</section>
+<section id="matrici-di-varianza-covarianza-4" class="slide level2">
+<h2>Matrici di varianza-covarianza</h2>
+<p>La matrice di covarianza quindi contiene molta più informazione ed è sufficiente anche per calcolare quella di correlazione. Senza avere le deviazioni standard invece, non è possibile passare da quella di correlazione a quella di covarianza.</p>
+
+<img data-src="img/vcov2.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="matrici-di-varianza-covarianza-5" class="slide level2 smaller">
+<h2>Matrici di varianza-covarianza</h2>
+<p>Tornando a R, vediamo che possiamo passare da una all’altra:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(R, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             bonds burnout satisfaction trauma
+bonds         1.00   -0.41         0.46  -0.23
+burnout      -0.41    1.00        -0.55   0.66
+satisfaction  0.46   -0.55         1.00  -0.15
+trauma       -0.23    0.66        -0.15   1.00</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">cov2cor</span>(S), <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             bonds burnout satisfaction trauma
+bonds         1.00   -0.41         0.46  -0.23
+burnout      -0.41    1.00        -0.55   0.66
+satisfaction  0.46   -0.55         1.00  -0.15
+trauma       -0.23    0.66        -0.15   1.00</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># correlazione tra bonds e burnout</span></span>
+<span id="cb92-2"><a aria-hidden="true" tabindex="-1"></a>r12 <span class="ot">&lt;-</span> R[<span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb92-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-4"><a aria-hidden="true" tabindex="-1"></a>r12 <span class="sc">*</span> <span class="fu">sd</span>(dimarco2020<span class="sc">$</span>bonds) <span class="sc">*</span> <span class="fu">sd</span>(dimarco2020<span class="sc">$</span>burnout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.08034901</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a aria-hidden="true" tabindex="-1"></a>S[<span class="dv">1</span>, <span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.08034901</code></pre>
+</div>
+</div>
+</section>
+<section id="qualche-esempio" class="slide level2">
+<h2>Qualche esempio</h2>
+<p>Qui riportano una matrice di correlazione:</p>
+<div>
+<p>Kelada, L., Schiff, M., Gilbar, O., Pat-Horenczyk, R., &amp; Benbenishty, R. (2023). <span class="nocase">University students’ psychological distress during the COVID-19 pandemic: A structural equation model of the role of resource loss and gain</span>. <em>Journal of Community Psychology</em>, <em>51</em>, 3012–3028. <a href="https://doi.org/10.1002/jcop.23076">https://doi.org/10.1002/jcop.23076</a></p>
+<div style="position:absolute;left:-10000px;top:-10000px;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">
+<p><span class="bibentry"><span class="citation" data-cites="Kelada2023-ew">Kelada et al. (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span></span></p>
+</div>
+</div>
+<p>Conoscendo anche le varianze possiamo costruire una matrice di varianza covarianza e quindi avere in una matrice tutta (più o meno) l’informazione necessaria.</p>
+</section>
+<section id="correlazione-e-covarianza-disclaimer" class="slide level2">
+<h2>Correlazione e covarianza, disclaimer</h2>
+<p>Attenzione che, nonostante le matrici che abbiamo visto possano essere usate per riportare e visualizzare le relazioni tra <span class="math inline">\(p\)</span> variabili sono comunque <strong>relazioni bivariate</strong>. Nel senso che la correlazione <span class="math inline">\(r_{xy}\)</span> sta considerando solo <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> ignorando la presenza di altre variabili.</p>
+<p>Quindi la matrice di varianza-covarianza non rappresenta delle relazioni multivariate ma sempre bivariate. Vi ricordo il <em>third-variable</em> problem.</p>
+<p>Una certa correlazione potrebbe cambiare o sparire quando viene considerata una terza (o quarta) variabile. Questo è quello che vedremo con la regressione lineare.</p>
+</section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 
@@ -801,6 +2065,9 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Di-Marco2020-wu" class="csl-entry" role="listitem">
 Di Marco, G., Hichy, Z., &amp; Sciacca, F. (2020). <span class="nocase">Dataset on the relationship between psychosocial resources of volunteers and their quality of life</span>. <em>Data in Brief</em>, <em>30</em>, 105522. <a href="https://doi.org/10.1016/j.dib.2020.105522">https://doi.org/10.1016/j.dib.2020.105522</a>
+</div>
+<div id="ref-Kelada2023-ew" class="csl-entry" role="listitem">
+Kelada, L., Schiff, M., Gilbar, O., Pat-Horenczyk, R., &amp; Benbenishty, R. (2023). <span class="nocase">University students’ psychological distress during the COVID-19 pandemic: A structural equation model of the role of resource loss and gain</span>. <em>Journal of Community Psychology</em>, <em>51</em>, 3012–3028. <a href="https://doi.org/10.1002/jcop.23076">https://doi.org/10.1002/jcop.23076</a>
 </div>
 </div>
 </section></section>
