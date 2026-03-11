@@ -830,7 +830,7 @@
     "href": "internal.html",
     "title": "Internal",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 4, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 4, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 4, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 4, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 4, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 4, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 11, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -1097,5 +1097,978 @@
     "title": "Introduzione all’analisi dei dati",
     "section": "Riferimenti",
     "text": "Riferimenti\n\n\n\n\nBickel, P. J., Hammel, E. A., & O’connell, J. W. (1975). Sex bias in graduate admissions: data from berkeley: Measuring bias is harder than is usually assumed, and the evidence is sometimes contrary to expectation. Science (New York, N.Y.), 187, 398–404. https://doi.org/10.1126/science.187.4175.398"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#popolazione-e-campioni",
+    "href": "slides/03-statistica-descrittiva.html#popolazione-e-campioni",
+    "title": "Statistica Descrittiva",
+    "section": "Popolazione e campioni",
+    "text": "Popolazione e campioni\nLa popolazione è l’insieme di riferimento/target dal quale eventualmente estraiamo il nostro campione. La popolazione può essere infinita o finita. Nella maggior parte dei casi, pur essendo in linea di principio finita (ad esempio le persone iscritte a Unipd) si lavora comunque su un campione.\nTramite campionamento, il campione viene selezionato/estratto dalla popolazione e diventa oggetto di misurazione e analisi. Pur essendoci diversi tipi di campionamento, la caratteristica fondamentale è la rappresentatività.\nUn campione rappresentativo viene definito come un’immagine ridotta e fedele della popolazione da cui è stato estratto. L’altra caratteristica importante di un campione è la numerosità (che indichiamo con \\(N\\)) che indica il numero di unità statistiche."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#statistiche-e-parametri",
+    "href": "slides/03-statistica-descrittiva.html#statistiche-e-parametri",
+    "title": "Statistica Descrittiva",
+    "section": "Statistiche e parametri",
+    "text": "Statistiche e parametri\nLa popolazione di riferimento è associata ad alcune caratteristiche incognite chiamate parametri e solitamente rappresentati con lettere greche \\(\\mu\\), \\(\\sigma\\), etc.\nUna statistica è una caratteristica del campione. Mentre il parametro (ad esempio l’altezza media) è incognito, la statistica (altezza media del campione) è nota e calcolabile. Le statistiche sono stimatori dei parametri incogniti e si indicano solitamente con lettere latine minuscole (\\(\\bar x\\), \\(s^2\\), etc.).\nIl concetto di stima è sempre e inevitabilmente associato al concetto di errore. L’errore può essere di tipo sistematico e/o casuale. Una buona stima (fatta su un campione) non ha un errore sistematico e riduce il più possibile quello casuale."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#esempi-di-statistiche",
+    "href": "slides/03-statistica-descrittiva.html#esempi-di-statistiche",
+    "title": "Statistica Descrittiva",
+    "section": "Esempi di statistiche",
+    "text": "Esempi di statistiche\nQualsiasi operazione applicata su un campione che ne descrive una caratteristica è definita come una statistica che, con un certo grado di errore, stima il rispettivo parametro della popolazione. Ad esempio:\n\nmedia\nmediana\nmassimo\nminimo\n…\n\nSono tutte statistiche calcolate su un campione che descrivono parametri della popolazione."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#statistiche-come-domande",
+    "href": "slides/03-statistica-descrittiva.html#statistiche-come-domande",
+    "title": "Statistica Descrittiva",
+    "section": "Statistiche come domande",
+    "text": "Statistiche come domande\nLe statistiche quindi sono dei modi per ridurre la complessità di un certo dato ed estrarre delle informazioni di interesse.\nUn modo interessante di vederle è come se fossero delle domande fatte ai nostri dati. Queste domande sono fatte in modo molto mirato e forniscono risposte molto mirate.\nLa qualità, i limiti e la quantità di informazione della risposta sono funzione di quanto la domanda è adatta a quello che veramente voglio. In un certo senso possiamo parlare di validità delle statistiche."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#statistiche-come-riduzione-di-complessità",
+    "href": "slides/03-statistica-descrittiva.html#statistiche-come-riduzione-di-complessità",
+    "title": "Statistica Descrittiva",
+    "section": "Statistiche come riduzione di complessità",
+    "text": "Statistiche come riduzione di complessità\nLe statistiche permettono di riassumere centinaia, migliaia, milioni di dati in pochi numeri. Il prezzo da pagare è quello di capire esattamente:\n\nil significato di quella statistica\ni limiti e le criticità di quella statistica\nil fatto che sto perdendo informazione (ridurre la complessità = perdita informazione)\nil fatto che più statistiche sono sempre meglio di una sola (minore riduzione di complessità)\n\n\nCome analogia, un abstract o riassunto di un articolo è molto cognitivamente conveniente per avere un’idea generale. Per capire veramente l’argomento è necessario leggerlo interamente e magari leggerne più di uno."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#un-esempio",
+    "href": "slides/03-statistica-descrittiva.html#un-esempio",
+    "title": "Statistica Descrittiva",
+    "section": "Un esempio",
+    "text": "Un esempio\nImmaginiamo di avere tutta la popolazione Padovana e di voler capire il numero di cocktails bevuti a settimana in funzione dell’età. Qui vediamo la distribuzione marginale dell’età:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#un-esempio-1",
+    "href": "slides/03-statistica-descrittiva.html#un-esempio-1",
+    "title": "Statistica Descrittiva",
+    "section": "Un esempio",
+    "text": "Un esempio\nQui vediamo la distribuzione marginale dei cocktails. La media è di circa 7.5:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#un-esempio-2",
+    "href": "slides/03-statistica-descrittiva.html#un-esempio-2",
+    "title": "Statistica Descrittiva",
+    "section": "Un esempio",
+    "text": "Un esempio\nInfine vediamo la relazione tra cocktail ed età in fasce:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#un-esempio-3",
+    "href": "slides/03-statistica-descrittiva.html#un-esempio-3",
+    "title": "Statistica Descrittiva",
+    "section": "Un esempio",
+    "text": "Un esempio\nOra immaginiamo di selezionare un campione di \\(N = 500\\) da questa popolazione in modo totalmente casuale. La media è di circa 7.7:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#un-esempio-4",
+    "href": "slides/03-statistica-descrittiva.html#un-esempio-4",
+    "title": "Statistica Descrittiva",
+    "section": "Un esempio",
+    "text": "Un esempio\nVediamo invece, campionando in modo non casuale, selezionando con più probabilità giovani (&lt; 30 anni)La media è di circa 9.5:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#un-esempio-5",
+    "href": "slides/03-statistica-descrittiva.html#un-esempio-5",
+    "title": "Statistica Descrittiva",
+    "section": "Un esempio",
+    "text": "Un esempio"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#un-esempio-6",
+    "href": "slides/03-statistica-descrittiva.html#un-esempio-6",
+    "title": "Statistica Descrittiva",
+    "section": "Un esempio",
+    "text": "Un esempio\nPer stimare in modo adeguato il parametro media di cocktails bevuti nella popolazione di riferimento, il campione dovrebbe essere rappresentativo per tutte quelle caratteristiche che hanno un impatto (età in questo caso).\n\n\n\n\n\n    \n    \n    \n    \n\n    \n\n    \n    \n      \n        \n        Popolazione\n              \n                age\n                %\n                drinks\n                avg\n              \n        \n        \n        \n                \n                  &lt; 20\n                  0.2\n                  10\n                  8\n                \n                \n                  20-30\n                  0.4\n                  10\n                  8\n                \n                \n                  30-40\n                  0.2\n                  5\n                  8\n                \n                \n                  40-50\n                  0.1\n                  4\n                  8\n                \n                \n                  &gt; 50\n                  0.1\n                  1\n                  8\n                \n        \n      \n    \n\n\n\n\n\n    \n    \n    \n    \n\n    \n\n    \n    \n      \n        \n        Campione Rap.\n              \n                age\n                %\n                drinks\n                avg\n              \n        \n        \n        \n                \n                  &lt; 20\n                  0.2\n                  10\n                  8\n                \n                \n                  20-30\n                  0.4\n                  10\n                  8\n                \n                \n                  30-40\n                  0.2\n                  5\n                  8\n                \n                \n                  40-50\n                  0.1\n                  4\n                  8\n                \n                \n                  &gt; 50\n                  0.1\n                  1\n                  8\n                \n        \n      \n    \n\n\n\n\n\n    \n    \n    \n    \n\n    \n\n    \n    \n      \n        \n        Campione non Rap.\n              \n                age\n                %\n                drinks\n                avg\n              \n        \n        \n        \n                \n                  &lt; 20\n                  0.3\n                  10\n                  10\n                \n                \n                  20-30\n                  0.6\n                  10\n                  10\n                \n                \n                  30-40\n                  0\n                  5\n                  10\n                \n                \n                  40-50\n                  0\n                  4\n                  10\n                \n                \n                  &gt; 50\n                  0\n                  1\n                  10"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#eda-the-big-picture",
+    "href": "slides/03-statistica-descrittiva.html#eda-the-big-picture",
+    "title": "Statistica Descrittiva",
+    "section": "EDA, the big picture",
+    "text": "EDA, the big picture"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#eda-principi",
+    "href": "slides/03-statistica-descrittiva.html#eda-principi",
+    "title": "Statistica Descrittiva",
+    "section": "EDA, principi",
+    "text": "EDA, principi\nIn generale, l’esplorazione (dovrebbe) è il primo passo quando si affronta un dataset. Anche nell’esplorazione ci sono degli step, quello che consiglio:\n\nIndividuare chiaramente la tipologia di variabile/i\nRappresentare con un grafico (adeguato)\nCalcolare statistiche descrittive (adeguate)\nEventualmente integrare grafici e statistiche"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#un-esempio-di-marco2020-wu",
+    "href": "slides/03-statistica-descrittiva.html#un-esempio-di-marco2020-wu",
+    "title": "Statistica Descrittiva",
+    "section": "Un esempio, Di Marco et al. (2020)",
+    "text": "Un esempio, Di Marco et al. (2020)\n\nDi Marco, G., Hichy, Z., & Sciacca, F. (2020). Dataset on the relationship between psychosocial resources of volunteers and their quality of life. Data in Brief, 30, 105522. https://doi.org/10.1016/j.dib.2020.105522\n\nDi Marco et al. (2020)\n\n\nDi Marco et al. (2020) esamina come le risorse psicosociali dei volontari (inclusi benessere professionale, senso di comunità ed esperienze traumatiche) siano correlate alla loro qualità della vita complessiva. I dati sono disponibili direttamente sul sito della rivista link. Ho pulito e sistemato un pochino il dataset, lo potete trovare qui https://stat-teaching.github.io/adcom/#data oppure al QR code."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#dataset",
+    "href": "slides/03-statistica-descrittiva.html#dataset",
+    "title": "Statistica Descrittiva",
+    "section": "0. Dataset",
+    "text": "0. Dataset\nIntanto le prime cosa da fare sono quelle di capire quante righe e quante colonne ha il dataset. In questo caso abbiamo 96 righe (osservazioni/soggetti) e 24 colonne (variabili)."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#importare-un-dataset",
+    "href": "slides/03-statistica-descrittiva.html#importare-un-dataset",
+    "title": "Statistica Descrittiva",
+    "section": "Importare un dataset",
+    "text": "Importare un dataset\nImportare un dataset è il primo step e non è sempre un’operazione semplice. Ho preparato del materiale riguardo gestione dei file e importare dati in R. Trovate le slide qui:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#tipologia-di-variabili",
+    "href": "slides/03-statistica-descrittiva.html#tipologia-di-variabili",
+    "title": "Statistica Descrittiva",
+    "section": "1. Tipologia di variabili",
+    "text": "1. Tipologia di variabili\nProviamo ad esplorare ed individuare qualche tipologia di variabili.\n\neducation\nage\nresidence\nattachment (in questo caso intesa come senso di comunità)"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#tipologia-di-variabili-1",
+    "href": "slides/03-statistica-descrittiva.html#tipologia-di-variabili-1",
+    "title": "Statistica Descrittiva",
+    "section": "1. Tipologia di variabili",
+    "text": "1. Tipologia di variabili\n\neducation: è una variabile ordinale con 3 modalità (o livelli) sec_school &lt; high_school &lt; degree.\nage: è una variabile numerica su scala a rapporti. In questo caso espressa in anni (quindi numeri interi).\nresidence: è una variabile nominale (o categoriale) con 3 modalità (o livelli) north, central e south\nattachment: tecnicamente è una media o somma di item ordinali. Nella pratica (ma ci sono obiezioni) viene considerata una scala ad intervalli."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#esplorazione-univariata",
+    "href": "slides/03-statistica-descrittiva.html#esplorazione-univariata",
+    "title": "Statistica Descrittiva",
+    "section": "Esplorazione univariata",
+    "text": "Esplorazione univariata\nCon esplorazione univariata si intende esplorare una o più variabili singolarmente ovvero senza considerare allo stesso tempo altre variabili. L’obiettivo è quello di:\n\nassicurarsi che la variabile sia stata correttamente intepretata dal software che stiamo utilizzando\ncontrollare la presenza di errori, valori anomali e/o impossibili\ncontrollare la presenza di dati mancanti\nesplorare caratteristiche della variabile usando statistiche descrittive"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#presenza-di-errori-eo-valori-anomali",
+    "href": "slides/03-statistica-descrittiva.html#presenza-di-errori-eo-valori-anomali",
+    "title": "Statistica Descrittiva",
+    "section": "Presenza di errori e/o valori anomali",
+    "text": "Presenza di errori e/o valori anomali\nQuesto punto è molto importante. La presenza di valori anomali o errori può impattare notevolmente le analisi ed i risultati (vedremo poi un esempio). Un punto di partenza è:\n\nci sono dei limiti (in senso matematico) oggettivi nella variabile? Ad esempio, avere nella variabile età valori molto alti (70-80) quando ho raccolto dati nelle scuole o avere valori impossibili (e.g., 200). Soprautto se i dati sono raccolti o inseriti manualmente può succedere.\nci sono dei valori anomali in termini di tipologia di dato? Ad esempio lettere o stringhe dove dovrebbero esserci numeri e viceversa? Questo può essere molto problematico."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#presenza-di-errori-eo-valori-anomali-1",
+    "href": "slides/03-statistica-descrittiva.html#presenza-di-errori-eo-valori-anomali-1",
+    "title": "Statistica Descrittiva",
+    "section": "Presenza di errori e/o valori anomali",
+    "text": "Presenza di errori e/o valori anomali\n\nSopratutto per i questionari, il massimo e minimo sono consistenti? Se un questionario ha 10 item con likert 1-5, il minimo è 10 ed il massimo è 50. Valori minori o maggiori sono probabilmente errori o dati mancanti.\nCi sono dati mancanti? Quanti sono, dove, e se possibile capire il motivo. I partecipanti potevano non rispondere? Sono errori di salvataggio/inserimento? Possono avere un significato o sono totalmente casuali? I dati mancanti possono essere molto problematici."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#statistiche-descrittive",
+    "href": "slides/03-statistica-descrittiva.html#statistiche-descrittive",
+    "title": "Statistica Descrittiva",
+    "section": "Statistiche descrittive",
+    "text": "Statistiche descrittive\nUna statistica descrittiva è una funzione dei dati osservati che ha lo scopo di riassumere, sintetizzare o rappresentare in modo compatto le caratteristiche principali di un insieme di dati. Quindi:\n\nè una funzione –&gt; un insieme di calcoli\nriassumere/sintetizzare –&gt; di solito 1/2 valori che rappresentano una proprieta specifica\nè di natura descrittiva, senza l’obiettivo di trarre conclusioni o inferenze\n\n\n\n\n\n❓ Question Time\n\n\nConoscete qualche statistica descrittiva?"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#misure-di-tendenza-centrale-1",
+    "href": "slides/03-statistica-descrittiva.html#misure-di-tendenza-centrale-1",
+    "title": "Statistica Descrittiva",
+    "section": "Misure di tendenza centrale",
+    "text": "Misure di tendenza centrale\nLe statistiche di tendenza centrale restituiscono un valore rappresentativo o centrale di una distribuzione di dati. Questo valore può essere posizionato al centro, rappresentare un valore tipico o quello più ricorrente. Solitamente ci sono tre principali statistiche di tendenza centrale:\n\nMedia\nMediana\nModa"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#media",
+    "href": "slides/03-statistica-descrittiva.html#media",
+    "title": "Statistica Descrittiva",
+    "section": "Media",
+    "text": "Media\nL’ Eq. 1 illustra come calcolare la media di una variabile \\(x\\) misurata su un campione di numerosità \\(n\\).\n\\[\n\\bar x = \\frac{1}{n} \\sum^n_{i = 1} x_i\n\\tag{1}\\]\nQuindi prendiamo tutti (\\(n\\)) gli \\(x\\), sommiamo i loro valori e dividuamo per il numero \\(n\\). Quello che otteniamo è un valore che, sulla scala della variabile, rappresenta la quantità media."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#off-topic-come-leggere-le-formule",
+    "href": "slides/03-statistica-descrittiva.html#off-topic-come-leggere-le-formule",
+    "title": "Statistica Descrittiva",
+    "section": "Off-topic: come leggere le formule",
+    "text": "Off-topic: come leggere le formule\nUseremo poche formule ma è importante avere una notazione chiara e consistente e saperla leggere. Una volta che è abbastanza chiaro, le formule sono un modo sintetico ed efficace di rappresentare un concetto complesso.\n\n\\(x\\) è una variabile generica, può essere qualsiasi lettera (latina solitamente)\nLa barra sopra \\(\\bar x\\) indica solitamente la media della variabile \\(x\\)\n\\(\\sum^n_{i = 1}\\) indica che facciamo la somma partendo da \\(i = 1\\). Quindi \\(i = 1 \\quad x_1\\), poi \\(i = 2 \\quad x_1 + x_2\\), \\(i = 3 \\quad x_1 + x_2 + x_3\\) fino a \\(i = n \\quad x_1 + x_2 + \\dots + x_n\\)."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#media-1",
+    "href": "slides/03-statistica-descrittiva.html#media-1",
+    "title": "Statistica Descrittiva",
+    "section": "Media",
+    "text": "Media\nSecondo voi, la media di questa distribuzione di dati dove si potrebbe posizionare? Perchè?"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#media-2",
+    "href": "slides/03-statistica-descrittiva.html#media-2",
+    "title": "Statistica Descrittiva",
+    "section": "Media",
+    "text": "Media\nIn R la media si calcola con la funzione mean oppure manualmente con la funzione sum e length:\n\nhead(dimarco2020$age, 10)\n\n [1] 53 60 40 57 60 46 53 33 48 60\n\nmean(dimarco2020$age)\n\n[1] 49.29167\n\nsum(dimarco2020$age)/length(dimarco2020$age)\n\n[1] 49.29167"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#quantili",
+    "href": "slides/03-statistica-descrittiva.html#quantili",
+    "title": "Statistica Descrittiva",
+    "section": "Quantili",
+    "text": "Quantili\nI quantili sono un modo per dividere in base all’ordine una certa variabile. Per calcolare un certo quantile \\(Q_p\\) con \\(p \\in (0, 1)\\) è necessario:\n\nordinare i dati in senso crescente\ncalcolare la proporzione di dati minore o uguale a \\(p\\)\nil valore associato \\(Q\\) è il \\(p\\)-esimo quantile\n\nDi solito si utilizzano i percentili ovvero si esprimono in percentuale ma la logica è la stessa. Ad esempio \\(Q_{40} = x\\) indica che il valore \\(x\\) ha il 40% di dati che sono minori o uguali"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#quantili-1",
+    "href": "slides/03-statistica-descrittiva.html#quantili-1",
+    "title": "Statistica Descrittiva",
+    "section": "Quantili",
+    "text": "Quantili\nFacciamo un esempio con la variabile \\(x\\) che rappresenta il numero di errori in un test cognitivo:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#quantili-2",
+    "href": "slides/03-statistica-descrittiva.html#quantili-2",
+    "title": "Statistica Descrittiva",
+    "section": "Quantili",
+    "text": "Quantili\nAggiungiamo i percentili \\(Q_{10}, Q_{50}, Q_{70}, Q_{90}\\) direttamente sull’istogramma:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#quantili-3",
+    "href": "slides/03-statistica-descrittiva.html#quantili-3",
+    "title": "Statistica Descrittiva",
+    "section": "Quantili",
+    "text": "Quantili\nUn modo più diretto di rappresentare e capire i quantili/percentili è il grafico della distribuzione cumulata empirica dei dati."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#quantili-4",
+    "href": "slides/03-statistica-descrittiva.html#quantili-4",
+    "title": "Statistica Descrittiva",
+    "section": "Quantili",
+    "text": "Quantili\nPer combinare quantili ed istogramma, possiamo rappresentare in questo modo. Vedete che ad ogni step è come aggiungere l’altezza dell’istogramma."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#mediana",
+    "href": "slides/03-statistica-descrittiva.html#mediana",
+    "title": "Statistica Descrittiva",
+    "section": "Mediana",
+    "text": "Mediana\nI quantili ci permettono di capire immediatamente il concetto di mediana. La mediana è il valore al di sotto (e quindi anche al di sopra) del quale abbiamo il 50% dei dati. In pratica corrisponde al 50-esimo \\(Q_{50}\\) percentile. Vediamo in R:\n\n# 25esimo, 50esimo e 75esimo percentile\nquantile(dimarco2020$age, c(0.25, 0.5, 0.75))\n\n25% 50% 75% \n 41  50  57 \n\nmedian(dimarco2020$age)\n\n[1] 50\n\n\nQuesto significa che il 50% dei soggetti ha un’età minore o uguale a 50 anni."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#mediana-precisazione",
+    "href": "slides/03-statistica-descrittiva.html#mediana-precisazione",
+    "title": "Statistica Descrittiva",
+    "section": "Mediana, precisazione",
+    "text": "Mediana, precisazione\nQuando la numerosità \\(n\\) è dispari la mediana è sempre un valore esistente (ad esempio 50 anni). Quando \\(n\\) è pari, la mediana non è un valore esistente. In questo caso si prende la media dei due valori adiacenti.\n\\[\nx = [18_1, 33_2, 35_3, 36_4, 44_5, {\\color{red}\\mathbf{48_6}}, 53_7, 55_8, 59_9, 60_{10}, 93_{11}] \\quad n = 11\n\\]\n\\[\nx = [18_1, 33_2, 35_3, 36_4, {\\color{red}\\mathbf{44_5, 48_6}}, 53_7, 55_8, 59_9, 60_{10}] \\quad n = 10\n\\]\nIn questo secondo caso la mediana è \\(\\frac{44 + 48}{2} = 46\\)"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#media-e-mediana",
+    "href": "slides/03-statistica-descrittiva.html#media-e-mediana",
+    "title": "Statistica Descrittiva",
+    "section": "Media e mediana",
+    "text": "Media e mediana\nPrendiamo la variabile age del dataset dimarco2020 e rappresentiamola graficamente:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#media-e-mediana-1",
+    "href": "slides/03-statistica-descrittiva.html#media-e-mediana-1",
+    "title": "Statistica Descrittiva",
+    "section": "Media e mediana",
+    "text": "Media e mediana\nOra possiamo aggiungere la media e la mediana sul grafico. I valori sono abbastanza simili perchè la distribuzione è abbastanza simmetrica."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#media-e-mediana-2",
+    "href": "slides/03-statistica-descrittiva.html#media-e-mediana-2",
+    "title": "Statistica Descrittiva",
+    "section": "Media e mediana",
+    "text": "Media e mediana\nVediamo lo stesso ma per una variabile meno simmetrica come intrinsic:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#misure-di-variabilità-1",
+    "href": "slides/03-statistica-descrittiva.html#misure-di-variabilità-1",
+    "title": "Statistica Descrittiva",
+    "section": "Misure di variabilità",
+    "text": "Misure di variabilità\nPer descrivere una distribuzione di dati le misure di tendenza centrale non sono (spesso) sufficienti. Queste 4 distribuzioni di dati hanno la stessa media."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#misure-di-variabilità-2",
+    "href": "slides/03-statistica-descrittiva.html#misure-di-variabilità-2",
+    "title": "Statistica Descrittiva",
+    "section": "Misure di variabilità",
+    "text": "Misure di variabilità\nPer descrivere in modo più esaustivo i dati abbiamo bisogno di indici che ci informino sulla dispersione (o variabilità) attorno agli indici di tendenza centrale. Alcuni indici comunemente usati:\n\nRange\nScarto interquartile (IQR, interquartile range)\nDeviazione standard e varianza\nCoefficiente di variazione\nEntropia di Shannon"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#range",
+    "href": "slides/03-statistica-descrittiva.html#range",
+    "title": "Statistica Descrittiva",
+    "section": "Range",
+    "text": "Range\nIl range è la misura più semplice di variabilità e si calcola come la differenza tra massimo e minimo di una distribuzione di dati:\n\\[\nR = max(x) - min(x)\n\\]\nOvviamente risente molto dei valori estremi prendendo semplicemente il massimo e minimo a prescindere da come sono concentrati i valori."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#range-1",
+    "href": "slides/03-statistica-descrittiva.html#range-1",
+    "title": "Statistica Descrittiva",
+    "section": "Range",
+    "text": "Range\nIn R calcolare il range è molto semplice:\n\nmax(x) - min(x)\n\n[1] 12\n\nrange(x)\n\n[1]  0 12\n\ndiff(range(x))\n\n[1] 12"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#range-2",
+    "href": "slides/03-statistica-descrittiva.html#range-2",
+    "title": "Statistica Descrittiva",
+    "section": "Range",
+    "text": "Range\nVediamo come la presenza di qualche valore estremo faccia cambiare completamente il range. Comunque è informativo della gamma dei dati."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#scarto-range-interquartile-iqr",
+    "href": "slides/03-statistica-descrittiva.html#scarto-range-interquartile-iqr",
+    "title": "Statistica Descrittiva",
+    "section": "Scarto (range) interquartile (IQR)",
+    "text": "Scarto (range) interquartile (IQR)\nCome la mediana, IQR è un indice più robusto di variabilità perchè si basa sui quantili. In particolare è la differenza tra il 3 e 1 quartile o 75° e 25° percentile.\n\\[\n\\mbox{IQR} = Q_{75}(x) - Q_{25}(x)\n\\]\nQuesti due quartili ci dicono dove è compreso il 50% di una certa distribuzione e la differenza ci dice quanto è ampio il range del 50% dei dati."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#scarto-range-interquartile-iqr-1",
+    "href": "slides/03-statistica-descrittiva.html#scarto-range-interquartile-iqr-1",
+    "title": "Statistica Descrittiva",
+    "section": "Scarto (range) interquartile (IQR)",
+    "text": "Scarto (range) interquartile (IQR)\nIn R:\n\nIQR(x)\n\n[1] 13.5845\n\nq &lt;- quantile(x, c(0.25, 0.75))\ndiff(q)\n\n    75% \n13.5845 \n\nq[2] - q[1]\n\n    75% \n13.5845"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#scarto-range-interquartile-iqr-2",
+    "href": "slides/03-statistica-descrittiva.html#scarto-range-interquartile-iqr-2",
+    "title": "Statistica Descrittiva",
+    "section": "Scarto (range) interquartile (IQR)",
+    "text": "Scarto (range) interquartile (IQR)\nIn questo caso la differenza è praticamente nulla, IQR si definisce un indice di variabilità robusto."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#varianza",
+    "href": "slides/03-statistica-descrittiva.html#varianza",
+    "title": "Statistica Descrittiva",
+    "section": "Varianza",
+    "text": "Varianza\nLa varianza è probabilmente uno dei concetti più importanti sia dal punto di vista descrittivo che dal punto di vista del modello lineare. Vediamo direttamente la formula e poi scomponiamola:\n\\[\nS^2_x = \\frac{1}{n} \\sum^n_{i = 1} (x_i - \\bar{x})^2\n\\]\nNella maggior parte dei casi, la varianza viene calcolata usando \\(n - 1\\) e non \\(n\\). Questo garantisce di rimuovere un bias nella stima ma non è necessario approfondire.\n\\[\nS^2_x = \\frac{1}{n - 1} \\sum^n_{i = 1} (x_i - \\bar{x})^2\n\\]"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#devianza",
+    "href": "slides/03-statistica-descrittiva.html#devianza",
+    "title": "Statistica Descrittiva",
+    "section": "Devianza",
+    "text": "Devianza\nPartiamo dall’elemento a destra ovvero \\(\\sum^n_{i = 1} (x_i - \\mu_x)^2\\). Questa quantità viene definita devianza o somma dei quadrati (\\(SS\\), sum of squares). L’idea è quella di calcolare la distanza di ogni valore rispetto alla sua media, fare al quadrato per togliere il segno e poi sommare.\nQuesto valore è compreso tra 0 (incluso) e \\(+ \\infty\\) ed aumenta all’aumentare delle distanze dei valori dalla media.\nLa devianza può essere intesa come la somma totale degli errori rispetto alla media."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#devianza-1",
+    "href": "slides/03-statistica-descrittiva.html#devianza-1",
+    "title": "Statistica Descrittiva",
+    "section": "Devianza",
+    "text": "Devianza\nLa devianza non ha una funzione in R direttamente implementata (ma di solito non viene calcolata come statistica descrittiva). Vediamo con la variabile age del dataset dimarco2020:\n\nhead(dimarco2020$age, 5)\n\n[1] 53 60 40 57 60\n\nSS &lt;- sum((dimarco2020$age - mean(dimarco2020$age))^2)\nSS\n\n[1] 8391.833"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#varianza-divisione-per-n-o-n---1",
+    "href": "slides/03-statistica-descrittiva.html#varianza-divisione-per-n-o-n---1",
+    "title": "Statistica Descrittiva",
+    "section": "Varianza, divisione per \\(n\\) o \\(n - 1\\)",
+    "text": "Varianza, divisione per \\(n\\) o \\(n - 1\\)\nSe la devianza \\(SS_x\\) è la dispersione totale, dividendo per \\(n\\) ottengo la dispersione media ovvero la distanza media (al quadrato) dalla media.\nCome per la devianza anche la varianza è compreso tra 0 (incluso) e \\(+ \\infty\\). Varianza maggiore indica una maggiore distanza media dalla media. Ovviamente essendo una media eredita le problematiche (e.g., sensibilità agli outlier) della media come tendenza centrale. Infatti la possiamo intendere come la tendenza centrale delle distanze dalla media."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#varianza-1",
+    "href": "slides/03-statistica-descrittiva.html#varianza-1",
+    "title": "Statistica Descrittiva",
+    "section": "Varianza",
+    "text": "Varianza"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#varianza-2",
+    "href": "slides/03-statistica-descrittiva.html#varianza-2",
+    "title": "Statistica Descrittiva",
+    "section": "Varianza",
+    "text": "Varianza\nPer la varianza in R abbiamo la funzione var(). Come vedete, di default in R è implementata la versione della varianza corretta che divide per \\(n - 1\\):\n\n\n[1] 88.33509\n\n\n[1] 88.33509"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#deviazione-standard",
+    "href": "slides/03-statistica-descrittiva.html#deviazione-standard",
+    "title": "Statistica Descrittiva",
+    "section": "Deviazione standard",
+    "text": "Deviazione standard\nInfine possiamo fare la radice quadrata della varianza per ottenere la deviazione standard:\n\\[\nS_x = \\sqrt{\\frac{1}{n - 1} \\sum^n_{i = 1} (x_i - \\bar{x})^2}\n\\]\nLa deviazione standard, al contrario della varianza, è direttamente intepretabile nella scala della variabile (non al quadrato) e quindi si utilizza per descrivere la variabilità."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#deviazione-standard-1",
+    "href": "slides/03-statistica-descrittiva.html#deviazione-standard-1",
+    "title": "Statistica Descrittiva",
+    "section": "Deviazione standard",
+    "text": "Deviazione standard\nPossiamo vederlo chiaramente in questo grafico. La deviazione standard torna ad essere nella metrica della variabile intesa come scarto (non al quadrato) dalla media."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#deviazione-standard-2",
+    "href": "slides/03-statistica-descrittiva.html#deviazione-standard-2",
+    "title": "Statistica Descrittiva",
+    "section": "Deviazione standard",
+    "text": "Deviazione standard\nIn R abbiamo la funzione sd() che analogalmente a var() utilizza \\(n - 1\\) come denominatore:\n\nsd(dimarco2020$age)\n\n[1] 9.398675\n\nsqrt(var(dimarco2020$age))\n\n[1] 9.398675"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#coefficiente-di-variazione",
+    "href": "slides/03-statistica-descrittiva.html#coefficiente-di-variazione",
+    "title": "Statistica Descrittiva",
+    "section": "Coefficiente di variazione",
+    "text": "Coefficiente di variazione\nUn “problema” della varianza e deviazione standard è quello di essere legate alla scala della variabile. Sono una misura diretta di variabilità ma nell’unità di misura delle variabile. Viene calcolato come:\n\\[\nCV = \\frac{S}{|\\bar{x}|}\n\\]\nOvvero la deviazione standard divisa per il valore assoluto della media (per evitare valori negativi). il CV rappresenta quindi la grandezza relativa della deviazione standard rispetto alla media.\n\n\n\n\n\n\nWarning\n\n\nAttenzione che il CV è sensato solo con variabili su scala a rapporti quindi con zero inteso come assenza della proprietà misurata."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#coefficiente-di-variazione-1",
+    "href": "slides/03-statistica-descrittiva.html#coefficiente-di-variazione-1",
+    "title": "Statistica Descrittiva",
+    "section": "Coefficiente di variazione",
+    "text": "Coefficiente di variazione\nVediamo un esempio (banale ma utile). Abbiamo altezza in cm e m:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#coefficiente-di-variazione-2",
+    "href": "slides/03-statistica-descrittiva.html#coefficiente-di-variazione-2",
+    "title": "Statistica Descrittiva",
+    "section": "Coefficiente di variazione",
+    "text": "Coefficiente di variazione\nSe calcoliamo il CV per le due variabili (ignorando che sappiamo essere una trasformazione):\n\nhead(altezza, 5)\n## [1] 155.2871 170.9915 163.5975 160.8444 176.7359\naltezza_m &lt;- altezza/100\nhead(altezza_m, 5)\n## [1] 1.552871 1.709915 1.635975 1.608444 1.767359\n\nsd(altezza)\n## [1] 10\nsd(altezza_m)\n## [1] 0.1\n\nsd(altezza) / abs(mean(altezza))\n## [1] 0.05882353\nsd(altezza_m) / abs(mean(altezza_m))\n## [1] 0.05882353\n\nIl coefficiente di variazione è lo stesso quindi le due variabili sono ugualmente disperse."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#trasformazioni-1",
+    "href": "slides/03-statistica-descrittiva.html#trasformazioni-1",
+    "title": "Statistica Descrittiva",
+    "section": "Trasformazioni",
+    "text": "Trasformazioni\nUn aspetto importante dal punto di vista univariato è quello della trasformazione delle variabili. Le trasformazioni sono operazioni che cambiano ad esempio la scala della variabile per migliorare l’intepretabilità o risolvere problemi di scala."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#centrare",
+    "href": "slides/03-statistica-descrittiva.html#centrare",
+    "title": "Statistica Descrittiva",
+    "section": "Centrare",
+    "text": "Centrare\nUna prima operazione comune è quella di centrare le variabili su un determinato valore. L’idea è semplice. Chiamiamo \\(x_t\\) la variabile \\(x\\) trasformata:\n\\[\nx_{t_i} = x_i - c\n\\]\nDove \\(c\\) è un valore sul quale si decide di centrare la variabile. Questa operazione permette di posizionare lo zero in un punto arbitrario. Di solito si utilizza la media (mean-centering)."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#centrare-1",
+    "href": "slides/03-statistica-descrittiva.html#centrare-1",
+    "title": "Statistica Descrittiva",
+    "section": "Centrare",
+    "text": "Centrare"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#centrare-2",
+    "href": "slides/03-statistica-descrittiva.html#centrare-2",
+    "title": "Statistica Descrittiva",
+    "section": "Centrare",
+    "text": "Centrare\n\nhead(dimarco2020$burnout)\n\n[1] 1.8 1.4 2.7 1.9 2.6 2.1\n\nxt1 &lt;- dimarco2020$burnout - mean(dimarco2020$burnout)\nhead(xt1)\n\n[1] -0.11520833 -0.51520833  0.78479167 -0.01520833  0.68479167  0.18479167\n\nxt2 &lt;- dimarco2020$burnout - median(dimarco2020$burnout)\nhead(xt2)\n\n[1] -0.1 -0.5  0.8  0.0  0.7  0.2\n\nxt3 &lt;- dimarco2020$burnout - mean(dimarco2020$burnout)\nhead(xt3)\n\n[1] -0.11520833 -0.51520833  0.78479167 -0.01520833  0.68479167  0.18479167\n\nxt4 &lt;- dimarco2020$burnout - min(dimarco2020$burnout)\nhead(xt4)\n\n[1] 1.1 0.7 2.0 1.2 1.9 1.4"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#standardizzare",
+    "href": "slides/03-statistica-descrittiva.html#standardizzare",
+    "title": "Statistica Descrittiva",
+    "section": "Standardizzare",
+    "text": "Standardizzare\nStandardizzare invece richiede di dividere per una quantità che diventerà la nuova unità di misura della variabile. Anche qui si possono fare diverse operazioni, la più comune è quella di dividere per la deviazione standard.\n\\[\nx_{t_i} = \\frac{x_i}{s_x}\n\\]\nLa nuova variabile sarà espressa in multipli di deviazioni standard.\n\nsd(dimarco2020$burnout)\n\n[1] 0.5807835\n\nxt &lt;- dimarco2020$burnout / sd(dimarco2020$burnout)\nhead(dimarco2020$burnout)\n\n[1] 1.8 1.4 2.7 1.9 2.6 2.1\n\nhead(xt)\n\n[1] 3.099262 2.410537 4.648893 3.271443 4.476711 3.615805"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#standardizzare-punti-z",
+    "href": "slides/03-statistica-descrittiva.html#standardizzare-punti-z",
+    "title": "Statistica Descrittiva",
+    "section": "Standardizzare, punti \\(z\\)",
+    "text": "Standardizzare, punti \\(z\\)\nSe combiniamo la centratura rispetto alla media e la standardizzazione con la deviazione standard, otteniamo una quantità conosciuta come punti \\(z\\). Questi non sono altro che una trasformazione dei dati grezzi in unità di deviazione standard rispetto alla media.\n\nhead(dimarco2020$burnout)\n\n[1] 1.8 1.4 2.7 1.9 2.6 2.1\n\nz &lt;- (dimarco2020$burnout - mean(dimarco2020$burnout)) / sd(dimarco2020$burnout)\nhead(z)\n\n[1] -0.19836710 -0.88709195  1.35126380 -0.02618589  1.17908259  0.31817653"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#standardizzare-punti-z-1",
+    "href": "slides/03-statistica-descrittiva.html#standardizzare-punti-z-1",
+    "title": "Statistica Descrittiva",
+    "section": "Standardizzare, punti \\(z\\)",
+    "text": "Standardizzare, punti \\(z\\)"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#standardizzare-punti-z-2",
+    "href": "slides/03-statistica-descrittiva.html#standardizzare-punti-z-2",
+    "title": "Statistica Descrittiva",
+    "section": "Standardizzare, punti \\(z\\)",
+    "text": "Standardizzare, punti \\(z\\)\nIl vantaggio di esprimere i valori in punti \\(z\\) (o valori standardizzati) è quello di avere subito un’idea di come quel valore si posizione nella distribuzione. Un valore di \\(\\pm 1\\) ci dice che quell’osservazione è 1 deviazione standard sotto o sopra la media.\nAssumendo la normalità (chiaramente un’assunzione e potenzialmente un limite) sappiamo come sono i quantili di una distribuzione normale standard (\\(\\mu = 0\\), \\(\\sigma^2 = 1\\)) e quindi sappiamo quanto anomala può essere un’osservazione."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#standardizzare-punti-z-3",
+    "href": "slides/03-statistica-descrittiva.html#standardizzare-punti-z-3",
+    "title": "Statistica Descrittiva",
+    "section": "Standardizzare, punti \\(z\\)",
+    "text": "Standardizzare, punti \\(z\\)"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#variabili-categoriali-nominali",
+    "href": "slides/03-statistica-descrittiva.html#variabili-categoriali-nominali",
+    "title": "Statistica Descrittiva",
+    "section": "Variabili categoriali (nominali)",
+    "text": "Variabili categoriali (nominali)\nAbbiamo parlato principalmente di variabili numeriche intese come principalmente intervalli o rapporti (ma anche ordinali in un certo senso). Tuttavia ci sono anche statistiche descrittive che sono specifiche per le variabili categoriali.\n\nFrequenze assolute e relative (anche cumulate)\nEntropia di Shannon"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#frequenze",
+    "href": "slides/03-statistica-descrittiva.html#frequenze",
+    "title": "Statistica Descrittiva",
+    "section": "Frequenze",
+    "text": "Frequenze\nQuando abbiamo una variabile categoriale la cosa più semplice da calcolare è la frequenza per ogni modalità \\(j\\) (livello). Se \\(N\\) è il numero totale di osservazioni ed \\(n_j\\) è il numero di osservazione per la modalità \\(j\\) allora \\(f_j = n_j\\)\nIn R è molto semplice possiamo usare la funzione table():\n\nhead(dimarco2020$residence, 5)\n\n      3       1       1       1       1 \n\"south\" \"north\" \"north\" \"north\" \"north\" \n\ntable(dimarco2020$residence)\n\n\ncentral   north   south \n     28      47      21"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#frequenze-relative",
+    "href": "slides/03-statistica-descrittiva.html#frequenze-relative",
+    "title": "Statistica Descrittiva",
+    "section": "Frequenze relative",
+    "text": "Frequenze relative\nLe frequenze relative riscalano il totale rispetto a 1 (o 100%) semplicemente dividendo \\(f_j\\) per il totale:\n\\[\np_j = \\frac{f_j}{N}\n\\]\nIn R possiamo farlo manualmente o usando la funzione prop.table()\n\nN &lt;- nrow(dimarco2020)\nFa &lt;- table(dimarco2020$residence) # frequenze assolute\nFa / N\n## \n##   central     north     south \n## 0.2916667 0.4895833 0.2187500\nFr &lt;- prop.table(Fa)\nsum(Fa) # somma è N\n## [1] 96\nsum(Fr) # la somma è 1\n## [1] 1"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#moda",
+    "href": "slides/03-statistica-descrittiva.html#moda",
+    "title": "Statistica Descrittiva",
+    "section": "Moda",
+    "text": "Moda\nLa moda è semplicemente la modalità (livello) della variabile associato alla frequenza massima. Non esiste una funzione in R ma possiamo facilmente calcolarla manualmente:\n\n# questo è un trick del fatto che table() restituisce nomi\nnames(which.max(table(dimarco2020$residence)))\n\n[1] \"north\"\n\n# più \"elegante\"\nu &lt;- unique(dimarco2020$residence)\nu # valori unici, senza ripetizione\n\n[1] \"south\"   \"north\"   \"central\"\n\nu[which.max(table(dimarco2020$residence))]\n\n[1] \"north\""
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#moda-1",
+    "href": "slides/03-statistica-descrittiva.html#moda-1",
+    "title": "Statistica Descrittiva",
+    "section": "Moda",
+    "text": "Moda\nNel caso di più modalità associate alla frequenza massima si riportano tutte le mode e la distribuzione si definisce multimodale. Attenzione che per quanto la moda sia definita anche per variabili continue/numeriche di solito è meno utilizzata.\nPer gestire il caso multimodale potremmo scrivere una funzioncina di questo tipo:\n\nmoda &lt;- function(x){\n    xu &lt;- unique(x)\n    xf &lt;- table(x)\n    xu[xf == max(xf)]\n}\n\nmoda(dimarco2020$residence)\n\n[1] \"north\""
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#entropia-di-shannon",
+    "href": "slides/03-statistica-descrittiva.html#entropia-di-shannon",
+    "title": "Statistica Descrittiva",
+    "section": "Entropia di Shannon",
+    "text": "Entropia di Shannon\nL’indice di entropia di Shannon permette di valutare la variabilità di variabili categoriali. La variabilità qui è intesa in termini di entropia ovvero grado di informazione. \\(p_j\\) è la frequenza relativa della modalità \\(j\\).\n\\[\nE = - \\sum^j_{i = 1} p_i \\ln{(p_i)}\n\\]\nL’idea è che entropia massima si trova quando tutte le \\(j\\) modalità hanno lo stesso valore di probabilità mentre il valore minimo (\\(E = 0\\)) si ottiene quando la frequenza è concentrata su una sola modalità."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#entropia-di-shannon-1",
+    "href": "slides/03-statistica-descrittiva.html#entropia-di-shannon-1",
+    "title": "Statistica Descrittiva",
+    "section": "Entropia di Shannon",
+    "text": "Entropia di Shannon\nVediamo in R:\n\n(p &lt;- prop.table(table(dimarco2020$residence)))\n\n\n  central     north     south \n0.2916667 0.4895833 0.2187500 \n\nE &lt;- -sum(p * log(p))\nE\n\n[1] 1.041498\n\n\nPossiamo anche calcolare un indice normalizzato che va da 0 (minima entropia) a 1 (massima entropia) dividendo per \\(\\ln(j)\\) (numero di modalità):\n\n\n[1] 0.9480122"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#entropia-di-shannon-2",
+    "href": "slides/03-statistica-descrittiva.html#entropia-di-shannon-2",
+    "title": "Statistica Descrittiva",
+    "section": "Entropia di Shannon",
+    "text": "Entropia di Shannon\nVediamo graficamente:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#entropia-di-shannon-3",
+    "href": "slides/03-statistica-descrittiva.html#entropia-di-shannon-3",
+    "title": "Statistica Descrittiva",
+    "section": "Entropia di Shannon",
+    "text": "Entropia di Shannon\nVediamo qui un esempio di come l’entropia varia al concentrarsi/disperdersi delle frequenze relative tra le modalità:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#rappresentazioni-grafiche-1",
+    "href": "slides/03-statistica-descrittiva.html#rappresentazioni-grafiche-1",
+    "title": "Statistica Descrittiva",
+    "section": "Rappresentazioni Grafiche",
+    "text": "Rappresentazioni Grafiche\nIl modo sicuramente più efficace di affrontare un dataset è quello di rappresentare graficamente le variabili in modo univariato o multivariato (dove possibile). Qualche precisazione rispetto ai grafici:\n\ni grafici non sono solo soluzioni estetiche ma strumenti per descrivere ma anche per imparare dai dati\nnon ci sono soluzioni generali e spesso servono aggiustamenti caso-specifici\nalcuni grafici possono essere fuorvianti o poco informativi\nse complessi, devono essere sempre spiegati chiaramente"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#dove-partiamo",
+    "href": "slides/03-statistica-descrittiva.html#dove-partiamo",
+    "title": "Statistica Descrittiva",
+    "section": "Dove partiamo?",
+    "text": "Dove partiamo?\nPartiamo con un grafico molto semplice, semplicemente rappresentiamo i valori ordinati. Non è un grafico molto utile, mancano diverse informazini importanti. Abbiamo un’idea solo del range dei dati."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#istogramma",
+    "href": "slides/03-statistica-descrittiva.html#istogramma",
+    "title": "Statistica Descrittiva",
+    "section": "Istogramma",
+    "text": "Istogramma\nIl modo più immediato per rappresentare una variabile quantitativa è l’istogramma. L’idea è quella di dividere in bins una variabile numerica e rappresentare la frequenza delle osservazioni comprese in quel bin.\n\npar(mfrow = c(1, 1))\nhist(dimarco2020$perc_collective_efficacy, breaks = 5)"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#istogramma-output",
+    "href": "slides/03-statistica-descrittiva.html#istogramma-output",
+    "title": "Statistica Descrittiva",
+    "section": "Istogramma",
+    "text": "Istogramma"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#istogramma-1",
+    "href": "slides/03-statistica-descrittiva.html#istogramma-1",
+    "title": "Statistica Descrittiva",
+    "section": "Istogramma",
+    "text": "Istogramma\nIl parametro fondamentale qui è il numero di bin. All’aumentare del numero di bin l’informazione diventa più precisa ma diminuisce il numero di osservazioni per bin.\n\npar(mfrow = c(1, 2))\nhist(dimarco2020$perc_collective_efficacy, breaks = 2)\nhist(dimarco2020$perc_collective_efficacy, breaks = 25)"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#istogramma-1-output",
+    "href": "slides/03-statistica-descrittiva.html#istogramma-1-output",
+    "title": "Statistica Descrittiva",
+    "section": "Istogramma",
+    "text": "Istogramma"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#istogramma-2",
+    "href": "slides/03-statistica-descrittiva.html#istogramma-2",
+    "title": "Statistica Descrittiva",
+    "section": "Istogramma",
+    "text": "Istogramma\nQuesto si vede in modo particolare per variabili con molti valori tra due interi:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#istogramma-densità",
+    "href": "slides/03-statistica-descrittiva.html#istogramma-densità",
+    "title": "Statistica Descrittiva",
+    "section": "Istogramma, densità",
+    "text": "Istogramma, densità"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#boxplot",
+    "href": "slides/03-statistica-descrittiva.html#boxplot",
+    "title": "Statistica Descrittiva",
+    "section": "Boxplot",
+    "text": "Boxplot\nIl boxplot è una rappresentazione grafica tanto “semplice” quanto informativa, soprattutto rispetto all’istogramma.\n\nboxplot(dimarco2020$perc_collective_efficacy)"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#boxplot-1",
+    "href": "slides/03-statistica-descrittiva.html#boxplot-1",
+    "title": "Statistica Descrittiva",
+    "section": "Boxplot",
+    "text": "Boxplot"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#barplot",
+    "href": "slides/03-statistica-descrittiva.html#barplot",
+    "title": "Statistica Descrittiva",
+    "section": "Barplot",
+    "text": "Barplot\nIl grafico a barre (o barplot) è la rappresentazione fondamentale per quanto riguarda variabili di tipo categoriale o ordinale. Da non confondere con l’istogramma con bins di larghezza variabile, il grafico a barre rappresenta la frequenza (relativa o assoluta) di una certa modalità/livello di una variabile categoriale.\n\npar(mfrow = c(1, 2))\nbarplot(table(dimarco2020$residence), ylim = c(0, nrow(dimarco2020)))\nbarplot(prop.table(table(dimarco2020$residence)), ylim = c(0, 1))"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#barplot-output",
+    "href": "slides/03-statistica-descrittiva.html#barplot-output",
+    "title": "Statistica Descrittiva",
+    "section": "Barplot",
+    "text": "Barplot"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#barplot-1",
+    "href": "slides/03-statistica-descrittiva.html#barplot-1",
+    "title": "Statistica Descrittiva",
+    "section": "Barplot",
+    "text": "Barplot\nIl barplot può essere sensato anche per variabili quantitative ma con numeri solo interi. Se usato con numeri con la virgola, diventa sempre meno informativo e difficile da leggere."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#qq-plot",
+    "href": "slides/03-statistica-descrittiva.html#qq-plot",
+    "title": "Statistica Descrittiva",
+    "section": "QQ Plot",
+    "text": "QQ Plot\nIl modo migliore per indagare la forma di una distribuzione oltre a rappresentarla graficamente ad esempio con un istogramma è il Q-Q Plot (quantile-quantile plot). Questo plot rappresenta i quantili empirici dei dati con i quantili teorici di una distribuzione normale. Possiamo usare qqnorm() in R:\n\nqqnorm(dimarco2020$burnout)\nqqline(dimarco2020$burnout, col = \"firebrick\", lwd = 2)"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#qq-plot-1",
+    "href": "slides/03-statistica-descrittiva.html#qq-plot-1",
+    "title": "Statistica Descrittiva",
+    "section": "QQ Plot",
+    "text": "QQ Plot\nIn caso di una distribuzione normale perfetta i punti dovrebbero stare sulla linea, come se avessere una correlazione perfetta. Deviazioni dalla linea indicano deviazioni da una distribuzione normale."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#qq-plot-2",
+    "href": "slides/03-statistica-descrittiva.html#qq-plot-2",
+    "title": "Statistica Descrittiva",
+    "section": "QQ Plot",
+    "text": "QQ Plot\nL’interpretazione parte dal concetto di standardizzazione. Un punto \\(z\\) lo abbiamo definito come:\n\\[\nz_i = \\frac{x_i - \\bar{x}}{s_x}\n\\]\nQuesto significa anche che, assumendo una distribuzione normale dove \\(z = 2\\) e \\(z = -2\\) equivalgono alla stessa distanza dalla media, quindi:\n\\[\nx_i = \\bar{x} + z_i s_x\n\\]\nQuindi dato un punto \\(z\\) possiamo sapere (assumendo normalità) quale sarebbe il valore previsto."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#qq-plot-3",
+    "href": "slides/03-statistica-descrittiva.html#qq-plot-3",
+    "title": "Statistica Descrittiva",
+    "section": "QQ Plot",
+    "text": "QQ Plot\nInoltre sappiamo che, data la normalità (teorica) abbiamo questo tipo di relazione tra quantili e probabilità cumulata. Quindi un punto \\(z = 1\\) con \\(\\mu = 100\\) e \\(\\sigma = 15\\) equivale ad un valore di 115."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#qq-plot-4",
+    "href": "slides/03-statistica-descrittiva.html#qq-plot-4",
+    "title": "Statistica Descrittiva",
+    "section": "QQ Plot",
+    "text": "QQ Plot\nVediamolo con la variabile burnout che ha media 1.92 e deviazione standard 0.58. Con \\(z = 1\\) ci aspettiamo (assumendo normalità) un valore di circa \\(x = 2.5\\)."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#qq-plot-5",
+    "href": "slides/03-statistica-descrittiva.html#qq-plot-5",
+    "title": "Statistica Descrittiva",
+    "section": "QQ Plot",
+    "text": "QQ Plot\nOra possiamo confrontare questo valore teorico con il valore empirico ovvero il valore di x che è associato ad una probabilità cumulata di circa ~84%.\n\np &lt;- pnorm(1) # lo vedremo più avanti\n# valore empirico associato ad una probabilità cumulata di circa 84%\nquantile(dimarco2020$burnout, p)\n\n84.13447% \n  2.43711 \n\n\nSe facciamo questo per ogni valore otteniamo il risultato di qqnorm(). Se i valori empirici sono distanti dalla linea teorica, significa che il valore empirico è distante da quello teorico assumendo la normalità."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#qq-plot-6",
+    "href": "slides/03-statistica-descrittiva.html#qq-plot-6",
+    "title": "Statistica Descrittiva",
+    "section": "QQ Plot",
+    "text": "QQ Plot\nIl confronto con l’istogramma rende ancora più intuitivo cosa sta succedendo:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#misure-di-forma-1",
+    "href": "slides/03-statistica-descrittiva.html#misure-di-forma-1",
+    "title": "Statistica Descrittiva",
+    "section": "Misure di forma",
+    "text": "Misure di forma\nLe misure di forma ci forniscono informazioni riguardo la forma della distribuzione dei dati. Indici di tendenza centrale e dispersione possono essere influenzati dalla forma della distribuzione. Tendenzialmente la forma viene intesa come deviazione dalla simmetria di una distribuzione normale. Gli aspetti principali sono:\n\nasimmetria o skewness\ncurtosi o kurtosis\n\nEntrambi questi indici sono rapportati alla distribuzione normale. La distribuzione normale per definizione non ha ne asimmetria ne curtosi."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#asimmetria",
+    "href": "slides/03-statistica-descrittiva.html#asimmetria",
+    "title": "Statistica Descrittiva",
+    "section": "Asimmetria",
+    "text": "Asimmetria\nL’asimmetria indica una deviazione dalla simmetria della normale. Possiamo avere asimmetria negativa e positiva:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#asimmetria-1",
+    "href": "slides/03-statistica-descrittiva.html#asimmetria-1",
+    "title": "Statistica Descrittiva",
+    "section": "Asimmetria",
+    "text": "Asimmetria\nIl calcolo effettivo è più complesso e ci sono diversi modi di calcolarlo (https://en.wikipedia.org/wiki/Skewness). In R invece è molto semplice usando il pacchetto psych:\n\nlibrary(psych)\nskew(dimarco2020$burnout)\n\n[1] 0.6331557\n\n\nIl segno indica il tipo di asimmetria. Valori vicini a zero indicano la simmetria."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#curtosi",
+    "href": "slides/03-statistica-descrittiva.html#curtosi",
+    "title": "Statistica Descrittiva",
+    "section": "Curtosi",
+    "text": "Curtosi\nLa curtosi indica il grado di appuntimento rispetto alla distribuzione normale. In pratica si intende quanti dati ci sono sulle code rispetto alla distribuzione normale. Ci sono due tipi di curtosi:\n\nDistribuzioni leptocurtiche (curtosi &gt; 0)\nDistribuzioni platicurtiche (curtosi &lt; 0)"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#curtosi-1",
+    "href": "slides/03-statistica-descrittiva.html#curtosi-1",
+    "title": "Statistica Descrittiva",
+    "section": "Curtosi",
+    "text": "Curtosi"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#curtosi-2",
+    "href": "slides/03-statistica-descrittiva.html#curtosi-2",
+    "title": "Statistica Descrittiva",
+    "section": "Curtosi",
+    "text": "Curtosi\nIl calcolo effettivo è più complesso e ci sono diversi modi di calcolarla (https://en.wikipedia.org/wiki/Kurtosis). In R invece è molto semplice usando il pacchetto psych:\n\nlibrary(psych)\nkurtosi(dimarco2020$burnout)\n\n[1] 0.7006264\n\n\nIl segno indica il tipo di curtosi. Valori vicini a zero indicano assenza di curtosi."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#relazioni-bivariate-1",
+    "href": "slides/03-statistica-descrittiva.html#relazioni-bivariate-1",
+    "title": "Statistica Descrittiva",
+    "section": "Relazioni Bivariate",
+    "text": "Relazioni Bivariate\nLa principale tipologia di relazione bivariata è sicuramente la correlazione ma possiamo avere relazioni bivariate tra:\n\nvariabili numeriche\nvariabili categoriali\nvariabili numeriche e categoriali"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#relazione-tra-due-variabili-categoriali",
+    "href": "slides/03-statistica-descrittiva.html#relazione-tra-due-variabili-categoriali",
+    "title": "Statistica Descrittiva",
+    "section": "Relazione tra due variabili categoriali",
+    "text": "Relazione tra due variabili categoriali\nIl modo più semplice di rappresentare la relazione tra due variabili categoriali è una tabella di contingenza. Ad esempio vediamo la relazione tra residence e status:\n\n\n\n\n\nresidence\nstatus\nTotal\n\n\n1\n2\n3\n\n\ncentral\n4\n24\n0\n28\n\n\nnorth\n4\n41\n2\n47\n\n\nsouth\n2\n19\n0\n21\n\n\nTotal\n10\n84\n2\n96\n\n\n\n\n\nQuesta tabella conta la frequenza assoluta di tutti i possibili incroci tra due variabili categoriali."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#relazione-tra-due-variabili-categoriali-1",
+    "href": "slides/03-statistica-descrittiva.html#relazione-tra-due-variabili-categoriali-1",
+    "title": "Statistica Descrittiva",
+    "section": "Relazione tra due variabili categoriali",
+    "text": "Relazione tra due variabili categoriali"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#relazione-tra-due-variabili-categoriali-2",
+    "href": "slides/03-statistica-descrittiva.html#relazione-tra-due-variabili-categoriali-2",
+    "title": "Statistica Descrittiva",
+    "section": "Relazione tra due variabili categoriali",
+    "text": "Relazione tra due variabili categoriali\nPossiamo anche calcolare le frequenze relative. Rispetto al caso univariato però abbiamo diversi modi di farlo: per riga, per colonna o totale. Partiamo dal totale:\n\n\n\n\n\n\n\n\n\n\n\n\nresidence\nstatus\nTotal\n\n\n1\n2\n3\n\n\ncentral\n4\n4.2 %\n24\n25 %\n0\n0 %\n28\n29.2 %\n\n\nnorth\n4\n4.2 %\n41\n42.7 %\n2\n2.1 %\n47\n49 %\n\n\nsouth\n2\n2.1 %\n19\n19.8 %\n0\n0 %\n21\n21.9 %\n\n\nTotal\n10\n10.4 %\n84\n87.5 %\n2\n2.1 %\n96\n100 %"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#relazione-tra-due-variabili-categoriali-3",
+    "href": "slides/03-statistica-descrittiva.html#relazione-tra-due-variabili-categoriali-3",
+    "title": "Statistica Descrittiva",
+    "section": "Relazione tra due variabili categoriali",
+    "text": "Relazione tra due variabili categoriali\nPoi possiamo vedere per riga. Di base ogni riga somma a 1 (100%) e vediamo per ogni modalità della colonna la sua percentuale.\n\n\n\n\n\n\n\n\n\n\n\n\nresidence\nstatus\nTotal\n\n\n1\n2\n3\n\n\ncentral\n4\n14.3 %\n24\n85.7 %\n0\n0 %\n28\n100 %\n\n\nnorth\n4\n8.5 %\n41\n87.2 %\n2\n4.3 %\n47\n100 %\n\n\nsouth\n2\n9.5 %\n19\n90.5 %\n0\n0 %\n21\n100 %\n\n\nTotal\n10\n10.4 %\n84\n87.5 %\n2\n2.1 %\n96\n100 %"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#relazione-tra-due-variabili-categoriali-4",
+    "href": "slides/03-statistica-descrittiva.html#relazione-tra-due-variabili-categoriali-4",
+    "title": "Statistica Descrittiva",
+    "section": "Relazione tra due variabili categoriali",
+    "text": "Relazione tra due variabili categoriali\nPer colonna, possiamo fare lo stesso:\n\n\n\n\n\n\n\n\n\n\n\n\nresidence\nstatus\nTotal\n\n\n1\n2\n3\n\n\ncentral\n4\n40 %\n24\n28.6 %\n0\n0 %\n28\n29.2 %\n\n\nnorth\n4\n40 %\n41\n48.8 %\n2\n100 %\n47\n49 %\n\n\nsouth\n2\n20 %\n19\n22.6 %\n0\n0 %\n21\n21.9 %\n\n\nTotal\n10\n100 %\n84\n100 %\n2\n100 %\n96\n100 %"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#barplot-2",
+    "href": "slides/03-statistica-descrittiva.html#barplot-2",
+    "title": "Statistica Descrittiva",
+    "section": "Barplot",
+    "text": "Barplot\nPossiamo anche rappresentare due variabili con un barplot:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#barplot-3",
+    "href": "slides/03-statistica-descrittiva.html#barplot-3",
+    "title": "Statistica Descrittiva",
+    "section": "Barplot",
+    "text": "Barplot\nVediamo quelle relative (totale):"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#barplot-4",
+    "href": "slides/03-statistica-descrittiva.html#barplot-4",
+    "title": "Statistica Descrittiva",
+    "section": "Barplot",
+    "text": "Barplot\nRelative per colonna:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#barplot-5",
+    "href": "slides/03-statistica-descrittiva.html#barplot-5",
+    "title": "Statistica Descrittiva",
+    "section": "Barplot",
+    "text": "Barplot\nRelative per riga:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#relazione-tra-due-variabili-quantitative",
+    "href": "slides/03-statistica-descrittiva.html#relazione-tra-due-variabili-quantitative",
+    "title": "Statistica Descrittiva",
+    "section": "Relazione tra due variabili quantitative",
+    "text": "Relazione tra due variabili quantitative\nIl modo più semplice per visualizzare una relazione tra due variabili quantitative è lo scatter plot:"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#correlazione",
+    "href": "slides/03-statistica-descrittiva.html#correlazione",
+    "title": "Statistica Descrittiva",
+    "section": "Correlazione",
+    "text": "Correlazione\nIn questo caso vediamo chiaramente che c’è un trend. All’aumentare del burnout diminuisce la satisfaction. Un modo per quantificare questa relazione è l’indice di correlazione di Pearson \\(r\\). La correlazione tra due variabili \\(x\\) e \\(y\\) è:\n\\[\nr_{xy} = \\frac{s_{xy}}{s_x s_y}\n\\]\nDove \\(s_{xy}\\) è la covarianza (ora lo vediamo) e \\(s\\) è la deviazione standard."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#covarianza",
+    "href": "slides/03-statistica-descrittiva.html#covarianza",
+    "title": "Statistica Descrittiva",
+    "section": "Covarianza",
+    "text": "Covarianza\nPartiamo dalla covarianza \\(s_{xy}\\) che viene definita come:\n\\[\ns_{xy} = \\frac{\\sum^n_{i = 1} (x_i - \\bar{x})(y_i - \\bar{y})}{n - 1}\n\\]\nDove \\(\\sum^n_{i = 1} (x_i - \\bar{x})(y_i - \\bar{y})\\) viene definita codevianza."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#covarianza-1",
+    "href": "slides/03-statistica-descrittiva.html#covarianza-1",
+    "title": "Statistica Descrittiva",
+    "section": "Covarianza",
+    "text": "Covarianza\nA livello univariato abbiamo definito la varianza come la media degli scarti al quadrato dalla media. In pratica è un modo per quantificare la dispersione dei dati attorno alla loro media."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#covarianza-2",
+    "href": "slides/03-statistica-descrittiva.html#covarianza-2",
+    "title": "Statistica Descrittiva",
+    "section": "Covarianza",
+    "text": "Covarianza\nSe due variabili sono legate allora l’idea è che due valori di due coppie di variabili co-varino allo stesso modo rispetto alla loro media. Questo è quello che dice la codevianza \\(\\sum^n_{i = 1} (x_i - \\bar{x})(y_i - \\bar{y})\\). Stiamo moltiplicando lo scarto della media su \\(x\\) con lo scarto dalla media su \\(y\\)."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#covarianza-3",
+    "href": "slides/03-statistica-descrittiva.html#covarianza-3",
+    "title": "Statistica Descrittiva",
+    "section": "Covarianza",
+    "text": "Covarianza"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#covarianza-4",
+    "href": "slides/03-statistica-descrittiva.html#covarianza-4",
+    "title": "Statistica Descrittiva",
+    "section": "Covarianza",
+    "text": "Covarianza\nLa moltiplicazione degli scarti, per ogni osservazione ci restituisce un valore con un segno. Il numeratore (codevianza) cattura quindi il segno (direzione) del prodotto degli scarti dalla media."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#covarianza-5",
+    "href": "slides/03-statistica-descrittiva.html#covarianza-5",
+    "title": "Statistica Descrittiva",
+    "section": "Covarianza",
+    "text": "Covarianza"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#covarianza-6",
+    "href": "slides/03-statistica-descrittiva.html#covarianza-6",
+    "title": "Statistica Descrittiva",
+    "section": "Covarianza",
+    "text": "Covarianza\nQuindi la nostra codevianza può essere:\n\n0: quindi i segni del prodotto degli scarti sono + e - in modo simile, in media sono 0\npositivi: quindi i segni del prodotto degli scarti sono maggiormente +, la somma è positiva\nnegativi: quindi i segni del prodotto degli scarti sono maggiormente -, la somma è negativa\n\nCome per la devianza, la codevianza è una somma che rappresenta la dispersione combinata di due variabili e come co-deviano assieme.\nDividendo per \\(n - 1\\) otteniamo la covarianza che indica la forza della co-variazione di due variabili. Ovviamente dipende dalla scala della variabile e non è direttamente intepretabile se non per il segno."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#correlazione-1",
+    "href": "slides/03-statistica-descrittiva.html#correlazione-1",
+    "title": "Statistica Descrittiva",
+    "section": "Correlazione",
+    "text": "Correlazione\nPer intepretare la covarianza quello che viene fatto è standardizzarla rispetto alla variazione delle singole variabili. Ovvero dividiamo la covarianza (media del prodotto degli scarti) per il prodotto delle deviazioni standard.\nOn in alternativa potete vederla come la covarianza di due variabili che sono state standardizzate."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#correlazione-e-covarianza-in-r",
+    "href": "slides/03-statistica-descrittiva.html#correlazione-e-covarianza-in-r",
+    "title": "Statistica Descrittiva",
+    "section": "Correlazione e covarianza in R",
+    "text": "Correlazione e covarianza in R\nIn R possiamo usare le funzioni cov() e cor():\n\n# covarianza\nss &lt;- cov(dimarco2020$burnout, dimarco2020$satisfaction)\n\n# correlazione\ncor(dimarco2020$burnout, dimarco2020$satisfaction)\n\n[1] -0.5549457\n\nss / (sd(dimarco2020$burnout) * sd(dimarco2020$satisfaction))\n\n[1] -0.5549457"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#correlazione-2",
+    "href": "slides/03-statistica-descrittiva.html#correlazione-2",
+    "title": "Statistica Descrittiva",
+    "section": "Correlazione",
+    "text": "Correlazione\nLa correlazione è un indice, compreso tra -1 (perfetta correlazione negativa) e +1 (perfetta correlazione positiva). Questo indice rappresenta la relazione lineare tra due variabili e non una relazione generica. Due variabili potrebbero essere associate non linearmente ma avere una correlazione bassa."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#correlazione-3",
+    "href": "slides/03-statistica-descrittiva.html#correlazione-3",
+    "title": "Statistica Descrittiva",
+    "section": "Correlazione",
+    "text": "Correlazione\nIn questo caso la relazione è chiaramente non lineare (quadratica) e la correlazione è praticamente a zero."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#matrici-di-correlazione",
+    "href": "slides/03-statistica-descrittiva.html#matrici-di-correlazione",
+    "title": "Statistica Descrittiva",
+    "section": "Matrici di correlazione",
+    "text": "Matrici di correlazione\nLe matrici di correlazione sono il modo principale per rappresentare la relazione tra più di due variabili."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#matrici-di-correlazione-1",
+    "href": "slides/03-statistica-descrittiva.html#matrici-di-correlazione-1",
+    "title": "Statistica Descrittiva",
+    "section": "Matrici di correlazione",
+    "text": "Matrici di correlazione\nSe abbiamo \\(p\\) variabili, abbiamo una matrice quadrata \\(p \\times p\\).\nDi queste correlazioni, quelle informative (escludendo le ripetizioni) sono \\((2^p - p) / 2\\) perchè teniamo solo il triangolo superiore/inferiore e togliamo la diagonale.\nLa correlazione di una variabile con se stessa è per definizione 1 quindi la diagonale non è informativa."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#matrici-di-correlazione-2",
+    "href": "slides/03-statistica-descrittiva.html#matrici-di-correlazione-2",
+    "title": "Statistica Descrittiva",
+    "section": "Matrici di correlazione",
+    "text": "Matrici di correlazione\nIn R possiamo sempre usare la funzione cor() su più variabili (solitamente colonne di un dataframe):\n\nR &lt;- cor(dimarco2020[, c(\"bonds\", \"burnout\", \"satisfaction\", \"trauma\")])\nround(R, 2) # solo per visualizzazione\n\n             bonds burnout satisfaction trauma\nbonds         1.00   -0.41         0.46  -0.23\nburnout      -0.41    1.00        -0.55   0.66\nsatisfaction  0.46   -0.55         1.00  -0.15\ntrauma       -0.23    0.66        -0.15   1.00"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#matrici-di-correlazione-3",
+    "href": "slides/03-statistica-descrittiva.html#matrici-di-correlazione-3",
+    "title": "Statistica Descrittiva",
+    "section": "Matrici di correlazione",
+    "text": "Matrici di correlazione\nPossiamo anche visualizzare graficamente con il pacchetto corrplot:\n\nlibrary(corrplot)\ncorrplot.mixed(R, order = 'AOE')"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#matrici-di-correlazione-4",
+    "href": "slides/03-statistica-descrittiva.html#matrici-di-correlazione-4",
+    "title": "Statistica Descrittiva",
+    "section": "Matrici di correlazione",
+    "text": "Matrici di correlazione\nPossiamo anche visualizzare degli scatterplot a coppie:\n\npairs(dimarco2020[, c(\"bonds\", \"burnout\", \"satisfaction\", \"trauma\")], )"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#matrici-di-varianza-covarianza",
+    "href": "slides/03-statistica-descrittiva.html#matrici-di-varianza-covarianza",
+    "title": "Statistica Descrittiva",
+    "section": "Matrici di varianza-covarianza",
+    "text": "Matrici di varianza-covarianza\nLa matrice di correlazione non deve essere confusa con quella di varianza-covarianza. La struttura è la stessa ovvero una matrice quadrata \\(p \\times p\\) dove \\(p\\) è il numero di variabili. Però la diagonale non è 1 (la covarianza di una variabile con se stessa non è 1) e gli elementi fuori dalla diagonale non sono la correlazione (&gt; 1 o &lt; -1)."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#matrici-di-varianza-covarianza-1",
+    "href": "slides/03-statistica-descrittiva.html#matrici-di-varianza-covarianza-1",
+    "title": "Statistica Descrittiva",
+    "section": "Matrici di varianza-covarianza",
+    "text": "Matrici di varianza-covarianza\nIn R possiamo sempre usare la funzione cov() su più variabili (come per cor()):\n\nS &lt;- cov(dimarco2020[, c(\"bonds\", \"burnout\", \"satisfaction\", \"trauma\")])\nround(S, 2)\n\n             bonds burnout satisfaction trauma\nbonds         0.11   -0.08         0.08  -0.06\nburnout      -0.08    0.34        -0.17   0.30\nsatisfaction  0.08   -0.17         0.28  -0.06\ntrauma       -0.06    0.30        -0.06   0.61\n\nround(R, 2)\n\n             bonds burnout satisfaction trauma\nbonds         1.00   -0.41         0.46  -0.23\nburnout      -0.41    1.00        -0.55   0.66\nsatisfaction  0.46   -0.55         1.00  -0.15\ntrauma       -0.23    0.66        -0.15   1.00"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#matrici-di-varianza-covarianza-2",
+    "href": "slides/03-statistica-descrittiva.html#matrici-di-varianza-covarianza-2",
+    "title": "Statistica Descrittiva",
+    "section": "Matrici di varianza-covarianza",
+    "text": "Matrici di varianza-covarianza\nIl primo punto da capire è la diagonale. La correlazione di una variabile con se stessa è 1. La covarianza di una variabile con se stessa cosa rappresenta? Vediamolo:\n\\[\n\\begin{aligned}\ns_{xx} &= \\frac{1}{n - 1} \\sum^n_{i = 1} (x_i - \\bar{x}) (x_i - \\bar{x}) \\\\\n&= \\frac{1}{n - 1} \\sum^n_{i = 1} (x_i - \\bar{x})^2 \\\\\n\\end{aligned}\n\\]\nVi ricorda qualcosa? E’ esattamente la formula della varianza. Nella diagonale di una matrice di varianza covarianza abbiamo le varianze delle \\(p\\) variabili."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#matrici-di-varianza-covarianza-3",
+    "href": "slides/03-statistica-descrittiva.html#matrici-di-varianza-covarianza-3",
+    "title": "Statistica Descrittiva",
+    "section": "Matrici di varianza-covarianza",
+    "text": "Matrici di varianza-covarianza\nGli altri elementi (sempre simmetrici) sono le covarianze. Anche qui, possiamo scomporre la formula per renderla più chiara e legarla alla matrice di correlazione. La correlazione è:\n\\[\nr_{xy} = \\frac{s_{xy}}{s_x s_y}\n\\]\nQuindi, la covarianza può essere espressa (risolvendo l’equazione per \\(s_{xy}\\)) come il prodotto della correlazione e delle due deviazioni standard.\n\\[\ns_{xy} = r_{xy} s_x s_y\n\\]"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#matrici-di-varianza-covarianza-4",
+    "href": "slides/03-statistica-descrittiva.html#matrici-di-varianza-covarianza-4",
+    "title": "Statistica Descrittiva",
+    "section": "Matrici di varianza-covarianza",
+    "text": "Matrici di varianza-covarianza\nLa matrice di covarianza quindi contiene molta più informazione ed è sufficiente anche per calcolare quella di correlazione. Senza avere le deviazioni standard invece, non è possibile passare da quella di correlazione a quella di covarianza."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#matrici-di-varianza-covarianza-5",
+    "href": "slides/03-statistica-descrittiva.html#matrici-di-varianza-covarianza-5",
+    "title": "Statistica Descrittiva",
+    "section": "Matrici di varianza-covarianza",
+    "text": "Matrici di varianza-covarianza\nTornando a R, vediamo che possiamo passare da una all’altra:\n\nround(R, 2)\n\n             bonds burnout satisfaction trauma\nbonds         1.00   -0.41         0.46  -0.23\nburnout      -0.41    1.00        -0.55   0.66\nsatisfaction  0.46   -0.55         1.00  -0.15\ntrauma       -0.23    0.66        -0.15   1.00\n\nround(cov2cor(S), 2)\n\n             bonds burnout satisfaction trauma\nbonds         1.00   -0.41         0.46  -0.23\nburnout      -0.41    1.00        -0.55   0.66\nsatisfaction  0.46   -0.55         1.00  -0.15\ntrauma       -0.23    0.66        -0.15   1.00\n\n# correlazione tra bonds e burnout\nr12 &lt;- R[1, 2]\n\nr12 * sd(dimarco2020$bonds) * sd(dimarco2020$burnout)\n\n[1] -0.08034901\n\nS[1, 2]\n\n[1] -0.08034901"
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#qualche-esempio",
+    "href": "slides/03-statistica-descrittiva.html#qualche-esempio",
+    "title": "Statistica Descrittiva",
+    "section": "Qualche esempio",
+    "text": "Qualche esempio\nQui riportano una matrice di correlazione:\n\nKelada, L., Schiff, M., Gilbar, O., Pat-Horenczyk, R., & Benbenishty, R. (2023). University students’ psychological distress during the COVID-19 pandemic: A structural equation model of the role of resource loss and gain. Journal of Community Psychology, 51, 3012–3028. https://doi.org/10.1002/jcop.23076\n\nKelada et al. (2023)\n\n\nConoscendo anche le varianze possiamo costruire una matrice di varianza covarianza e quindi avere in una matrice tutta (più o meno) l’informazione necessaria."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#correlazione-e-covarianza-disclaimer",
+    "href": "slides/03-statistica-descrittiva.html#correlazione-e-covarianza-disclaimer",
+    "title": "Statistica Descrittiva",
+    "section": "Correlazione e covarianza, disclaimer",
+    "text": "Correlazione e covarianza, disclaimer\nAttenzione che, nonostante le matrici che abbiamo visto possano essere usate per riportare e visualizzare le relazioni tra \\(p\\) variabili sono comunque relazioni bivariate. Nel senso che la correlazione \\(r_{xy}\\) sta considerando solo \\(x\\) e \\(y\\) ignorando la presenza di altre variabili.\nQuindi la matrice di varianza-covarianza non rappresenta delle relazioni multivariate ma sempre bivariate. Vi ricordo il third-variable problem.\nUna certa correlazione potrebbe cambiare o sparire quando viene considerata una terza (o quarta) variabile. Questo è quello che vedremo con la regressione lineare."
+  },
+  {
+    "objectID": "slides/03-statistica-descrittiva.html#references",
+    "href": "slides/03-statistica-descrittiva.html#references",
+    "title": "Statistica Descrittiva",
+    "section": "References",
+    "text": "References\n\n\n\n\nDi Marco, G., Hichy, Z., & Sciacca, F. (2020). Dataset on the relationship between psychosocial resources of volunteers and their quality of life. Data in Brief, 30, 105522. https://doi.org/10.1016/j.dib.2020.105522\n\n\nKelada, L., Schiff, M., Gilbar, O., Pat-Horenczyk, R., & Benbenishty, R. (2023). University students’ psychological distress during the COVID-19 pandemic: A structural equation model of the role of resource loss and gain. Journal of Community Psychology, 51, 3012–3028. https://doi.org/10.1002/jcop.23076"
   }
 ]

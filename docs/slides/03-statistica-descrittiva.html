@@ -8,7 +8,9 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
+<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
+<link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.21">
 
   <meta name="author" content="Filippo Gambarota PhD">
@@ -341,8 +343,8 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 
     <script>
 
-      function styleCell_r0wichqr8630zwyslt7o(i, j, css_id) {
-          var table = document.getElementById("tinytable_r0wichqr8630zwyslt7o");
+      function styleCell_4bq4evj28rrko0lh29yy(i, j, css_id) {
+          var table = document.getElementById("tinytable_4bq4evj28rrko0lh29yy");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -351,8 +353,8 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function spanCell_r0wichqr8630zwyslt7o(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_r0wichqr8630zwyslt7o");
+      function spanCell_4bq4evj28rrko0lh29yy(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_4bq4evj28rrko0lh29yy");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -383,16 +385,16 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_3vl5k6spipqofrvpqhgk',}, 
-          { positions: [ { i: '4', j: 0 }, { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '4', j: 3 },  ], css_id: 'tinytable_css_11bzvf7d2siuys3dus8r',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '3', j: 1 }, { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '1', j: 3 },  ], css_id: 'tinytable_css_gqaatjlekszcl41rfv00',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_lclj4i3bfbfowsh8v0o4',}, 
+          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_n6wu4qvgvtqlhbhq0t50',}, 
+          { positions: [ { i: '4', j: 0 }, { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '4', j: 3 },  ], css_id: 'tinytable_css_o5f5dbo1iewlittvi7ka',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '3', j: 1 }, { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '1', j: 3 },  ], css_id: 'tinytable_css_xeeyf4kstnk8vmkmha6p',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_zic428tw4puvsxdw4ukw',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_r0wichqr8630zwyslt7o(cell.i, cell.j, group.css_id);
+                  styleCell_4bq4evj28rrko0lh29yy(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -400,13 +402,13 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_3vl5k6spipqofrvpqhgk, .table th.tinytable_css_3vl5k6spipqofrvpqhgk { background-color: #ededed; font-size: 0.85em; border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_11bzvf7d2siuys3dus8r, .table th.tinytable_css_11bzvf7d2siuys3dus8r { font-size: 0.85em; }
-      .table td.tinytable_css_gqaatjlekszcl41rfv00, .table th.tinytable_css_gqaatjlekszcl41rfv00 { background-color: #ededed; font-size: 0.85em; }
-      .table td.tinytable_css_lclj4i3bfbfowsh8v0o4, .table th.tinytable_css_lclj4i3bfbfowsh8v0o4 { font-size: 0.85em; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_n6wu4qvgvtqlhbhq0t50, .table th.tinytable_css_n6wu4qvgvtqlhbhq0t50 { background-color: #ededed; font-size: 0.85em; border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_o5f5dbo1iewlittvi7ka, .table th.tinytable_css_o5f5dbo1iewlittvi7ka { font-size: 0.85em; }
+      .table td.tinytable_css_xeeyf4kstnk8vmkmha6p, .table th.tinytable_css_xeeyf4kstnk8vmkmha6p { background-color: #ededed; font-size: 0.85em; }
+      .table td.tinytable_css_zic428tw4puvsxdw4ukw, .table th.tinytable_css_zic428tw4puvsxdw4ukw { font-size: 0.85em; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; }
     </style>
     <div class="container">
-      <table class="table table-striped" id="tinytable_r0wichqr8630zwyslt7o" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-striped" id="tinytable_4bq4evj28rrko0lh29yy" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         </thead><caption>Popolazione</caption>
               <tbody><tr>
@@ -472,8 +474,8 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 
     <script>
 
-      function styleCell_0oh0a432uheqyl1hbply(i, j, css_id) {
-          var table = document.getElementById("tinytable_0oh0a432uheqyl1hbply");
+      function styleCell_ewy52pg85ny632aayvsz(i, j, css_id) {
+          var table = document.getElementById("tinytable_ewy52pg85ny632aayvsz");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -482,8 +484,8 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function spanCell_0oh0a432uheqyl1hbply(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_0oh0a432uheqyl1hbply");
+      function spanCell_ewy52pg85ny632aayvsz(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_ewy52pg85ny632aayvsz");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -514,16 +516,16 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_bqh46qjya0ctx3smg06q',}, 
-          { positions: [ { i: '4', j: 0 }, { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '4', j: 3 },  ], css_id: 'tinytable_css_zqq2qbixq59pd8hmvowh',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '3', j: 1 }, { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '1', j: 3 },  ], css_id: 'tinytable_css_7lmv1nql2z5ottywnyqr',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_dx1dm9s9qvzazvpf8obb',}, 
+          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_zvaroiv6nia9ok3qocfy',}, 
+          { positions: [ { i: '4', j: 0 }, { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '4', j: 3 },  ], css_id: 'tinytable_css_fkkkgbw97rjd8ip60eg0',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '3', j: 1 }, { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '1', j: 3 },  ], css_id: 'tinytable_css_fpf2tv4j3kdd54smglpo',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_91ccsznehkbb5wvcuk7q',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_0oh0a432uheqyl1hbply(cell.i, cell.j, group.css_id);
+                  styleCell_ewy52pg85ny632aayvsz(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -531,13 +533,13 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_bqh46qjya0ctx3smg06q, .table th.tinytable_css_bqh46qjya0ctx3smg06q { background-color: #ededed; font-size: 0.85em; border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_zqq2qbixq59pd8hmvowh, .table th.tinytable_css_zqq2qbixq59pd8hmvowh { font-size: 0.85em; }
-      .table td.tinytable_css_7lmv1nql2z5ottywnyqr, .table th.tinytable_css_7lmv1nql2z5ottywnyqr { background-color: #ededed; font-size: 0.85em; }
-      .table td.tinytable_css_dx1dm9s9qvzazvpf8obb, .table th.tinytable_css_dx1dm9s9qvzazvpf8obb { font-size: 0.85em; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_zvaroiv6nia9ok3qocfy, .table th.tinytable_css_zvaroiv6nia9ok3qocfy { background-color: #ededed; font-size: 0.85em; border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_fkkkgbw97rjd8ip60eg0, .table th.tinytable_css_fkkkgbw97rjd8ip60eg0 { font-size: 0.85em; }
+      .table td.tinytable_css_fpf2tv4j3kdd54smglpo, .table th.tinytable_css_fpf2tv4j3kdd54smglpo { background-color: #ededed; font-size: 0.85em; }
+      .table td.tinytable_css_91ccsznehkbb5wvcuk7q, .table th.tinytable_css_91ccsznehkbb5wvcuk7q { font-size: 0.85em; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; }
     </style>
     <div class="container">
-      <table class="table table-striped" id="tinytable_0oh0a432uheqyl1hbply" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-striped" id="tinytable_ewy52pg85ny632aayvsz" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         </thead><caption>Campione Rap.</caption>
               <tbody><tr>
@@ -603,8 +605,8 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 
     <script>
 
-      function styleCell_qnwagbrqqrop1fz2skxp(i, j, css_id) {
-          var table = document.getElementById("tinytable_qnwagbrqqrop1fz2skxp");
+      function styleCell_4dhefi1mziy0gwfsytcq(i, j, css_id) {
+          var table = document.getElementById("tinytable_4dhefi1mziy0gwfsytcq");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -613,8 +615,8 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function spanCell_qnwagbrqqrop1fz2skxp(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_qnwagbrqqrop1fz2skxp");
+      function spanCell_4dhefi1mziy0gwfsytcq(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_4dhefi1mziy0gwfsytcq");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -645,16 +647,16 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_q2vlpxn9sprgfeqy2gzt',}, 
-          { positions: [ { i: '4', j: 0 }, { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '4', j: 3 },  ], css_id: 'tinytable_css_j4g87oae7ja2gu6u9tvz',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '3', j: 1 }, { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '1', j: 3 },  ], css_id: 'tinytable_css_bxcfwgu1qcd4dw9qiiah',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_rla2ffe2v22ub9ea1i41',}, 
+          { positions: [ { i: '5', j: 0 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_8u58unf0ziaecbjrt44j',}, 
+          { positions: [ { i: '4', j: 0 }, { i: '2', j: 0 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '4', j: 3 },  ], css_id: 'tinytable_css_ucodw99uszeyki6r4mbe',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '3', j: 0 }, { i: '3', j: 1 }, { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '1', j: 3 },  ], css_id: 'tinytable_css_v67e2wen4yjk8gu6fssw',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_4uhupl4iuyz1bosq0r34',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_qnwagbrqqrop1fz2skxp(cell.i, cell.j, group.css_id);
+                  styleCell_4dhefi1mziy0gwfsytcq(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -662,13 +664,13 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_q2vlpxn9sprgfeqy2gzt, .table th.tinytable_css_q2vlpxn9sprgfeqy2gzt { background-color: #ededed; font-size: 0.85em; border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_j4g87oae7ja2gu6u9tvz, .table th.tinytable_css_j4g87oae7ja2gu6u9tvz { font-size: 0.85em; }
-      .table td.tinytable_css_bxcfwgu1qcd4dw9qiiah, .table th.tinytable_css_bxcfwgu1qcd4dw9qiiah { background-color: #ededed; font-size: 0.85em; }
-      .table td.tinytable_css_rla2ffe2v22ub9ea1i41, .table th.tinytable_css_rla2ffe2v22ub9ea1i41 { font-size: 0.85em; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_8u58unf0ziaecbjrt44j, .table th.tinytable_css_8u58unf0ziaecbjrt44j { background-color: #ededed; font-size: 0.85em; border-bottom: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_ucodw99uszeyki6r4mbe, .table th.tinytable_css_ucodw99uszeyki6r4mbe { font-size: 0.85em; }
+      .table td.tinytable_css_v67e2wen4yjk8gu6fssw, .table th.tinytable_css_v67e2wen4yjk8gu6fssw { background-color: #ededed; font-size: 0.85em; }
+      .table td.tinytable_css_4uhupl4iuyz1bosq0r34, .table th.tinytable_css_4uhupl4iuyz1bosq0r34 { font-size: 0.85em; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; border-bottom: solid #d3d8dc 0.1em; }
     </style>
     <div class="container">
-      <table class="table table-striped" id="tinytable_qnwagbrqqrop1fz2skxp" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-striped" id="tinytable_4dhefi1mziy0gwfsytcq" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         </thead><caption>Campione non Rap.</caption>
               <tbody><tr>
@@ -1006,15 +1008,15 @@ R = max(x) - min(x)
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(x) <span class="sc">-</span> <span class="fu">min</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 14</code></pre>
+<pre><code>[1] 12</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  0 14</code></pre>
+<pre><code>[1]  0 12</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 14</code></pre>
+<pre><code>[1] 12</code></pre>
 </div>
 </div>
 </section>
@@ -1037,18 +1039,18 @@ R = max(x) - min(x)
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 13.4253</code></pre>
+<pre><code>[1] 13.5845</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">quantile</span>(x, <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>))</span>
 <span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(q)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    75% 
-13.4253 </code></pre>
+13.5845 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>q[<span class="dv">2</span>] <span class="sc">-</span> q[<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    75% 
-13.4253 </code></pre>
+13.5845 </code></pre>
 </div>
 </div>
 </section>
@@ -1168,10 +1170,10 @@ CV = \frac{S}{|\bar{x}|}
 <p>Se calcoliamo il CV per le due variabili (ignorando che sappiamo essere una trasformazione):</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(altezza, <span class="dv">5</span>)</span>
-<span id="cb33-2"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 179.1692 166.1026 162.4394 160.9176 172.9293</span></span>
+<span id="cb33-2"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 155.2871 170.9915 163.5975 160.8444 176.7359</span></span>
 <span id="cb33-3"><a aria-hidden="true" tabindex="-1"></a>altezza_m <span class="ot">&lt;-</span> altezza<span class="sc">/</span><span class="dv">100</span></span>
 <span id="cb33-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(altezza_m, <span class="dv">5</span>)</span>
-<span id="cb33-5"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1.791692 1.661026 1.624394 1.609176 1.729293</span></span>
+<span id="cb33-5"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1.552871 1.709915 1.635975 1.608444 1.767359</span></span>
 <span id="cb33-6"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(altezza)</span>
 <span id="cb33-8"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 10</span></span>
@@ -1512,6 +1514,116 @@ E = - \sum^j_{i = 1} p_i \ln{(p_i)}
 
 <img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-57-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
 <section>
+<section id="misure-di-forma" class="title-slide slide level1 center">
+<h1>Misure di forma</h1>
+
+</section>
+<section id="qq-plot" class="slide level2">
+<h2>QQ Plot</h2>
+<p>Il modo migliore per indagare la forma di una distribuzione oltre a rappresentarla graficamente ad esempio con un istogramma è il Q-Q Plot (quantile-quantile plot). Questo plot rappresenta i quantili empirici dei dati con i quantili <em>teorici</em> di una distribuzione normale. Possiamo usare <code>qqnorm()</code> in R:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(dimarco2020<span class="sc">$</span>burnout)</span>
+<span id="cb76-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(dimarco2020<span class="sc">$</span>burnout, <span class="at">col =</span> <span class="st">"firebrick"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-58-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="qq-plot-1" class="slide level2">
+<h2>QQ Plot</h2>
+<p>In caso di una distribuzione normale <em>perfetta</em> i punti dovrebbero stare sulla linea, come se avessere una correlazione perfetta. Deviazioni dalla linea indicano deviazioni da una distribuzione normale.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-59-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="qq-plot-2" class="slide level2">
+<h2>QQ Plot</h2>
+<p>L’interpretazione parte dal concetto di standardizzazione. Un punto <span class="math inline">\(z\)</span> lo abbiamo definito come:</p>
+<p><span class="math display">\[
+z_i = \frac{x_i - \bar{x}}{s_x}
+\]</span></p>
+<p>Questo significa anche che, assumendo una distribuzione normale dove <span class="math inline">\(z = 2\)</span> e <span class="math inline">\(z = -2\)</span> equivalgono alla stessa distanza dalla media, quindi:</p>
+<p><span class="math display">\[
+x_i = \bar{x} + z_i s_x
+\]</span></p>
+<p>Quindi dato un punto <span class="math inline">\(z\)</span> possiamo sapere (assumendo normalità) quale sarebbe il valore previsto.</p>
+</section>
+<section id="qq-plot-3" class="slide level2">
+<h2>QQ Plot</h2>
+<p>Inoltre sappiamo che, data la normalità (teorica) abbiamo questo tipo di relazione tra quantili e probabilità cumulata. Quindi un punto <span class="math inline">\(z = 1\)</span> con <span class="math inline">\(\mu = 100\)</span> e <span class="math inline">\(\sigma = 15\)</span> equivale ad un valore di 115.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-60-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="qq-plot-4" class="slide level2">
+<h2>QQ Plot</h2>
+<p>Vediamolo con la variabile <code>burnout</code> che ha media 1.92 e deviazione standard 0.58. Con <span class="math inline">\(z = 1\)</span> ci aspettiamo (assumendo normalità) un valore di circa <span class="math inline">\(x = 2.5\)</span>.</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-61-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="qq-plot-5" class="slide level2">
+<h2>QQ Plot</h2>
+<p>Ora possiamo confrontare questo valore teorico con il valore empirico ovvero il valore di x che è associato ad una probabilità cumulata di circa ~84%.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="dv">1</span>) <span class="co"># lo vedremo più avanti</span></span>
+<span id="cb77-2"><a aria-hidden="true" tabindex="-1"></a><span class="co"># valore empirico associato ad una probabilità cumulata di circa 84%</span></span>
+<span id="cb77-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(dimarco2020<span class="sc">$</span>burnout, p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>84.13447% 
+  2.43711 </code></pre>
+</div>
+</div>
+<p>Se facciamo questo per ogni valore otteniamo il risultato di <code>qqnorm()</code>. Se i valori empirici sono distanti dalla linea teorica, significa che il valore empirico è distante da quello teorico assumendo la normalità.</p>
+</section>
+<section id="qq-plot-6" class="slide level2">
+<h2>QQ Plot</h2>
+<p>Il confronto con l’istogramma rende ancora più intuitivo cosa sta succedendo:</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-63-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="misure-di-forma-1" class="slide level2">
+<h2>Misure di forma</h2>
+<p>Le misure di forma ci forniscono informazioni riguardo la forma della distribuzione dei dati. Indici di tendenza centrale e dispersione possono essere influenzati dalla forma della distribuzione. Tendenzialmente la forma viene intesa come deviazione dalla simmetria di una distribuzione normale. Gli aspetti principali sono:</p>
+<ul>
+<li>asimmetria o <em>skewness</em></li>
+<li>curtosi o <em>kurtosis</em></li>
+</ul>
+<p>Entrambi questi indici sono rapportati alla distribuzione normale. La distribuzione normale per definizione non ha ne asimmetria ne curtosi.</p>
+</section>
+<section id="asimmetria" class="slide level2">
+<h2>Asimmetria</h2>
+<p>L’asimmetria indica una deviazione dalla simmetria della normale. Possiamo avere asimmetria negativa e positiva:</p>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-64-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="asimmetria-1" class="slide level2">
+<h2>Asimmetria</h2>
+<p>Il calcolo effettivo è più complesso e ci sono diversi modi di calcolarlo (<a href="https://en.wikipedia.org/wiki/Skewness">https://en.wikipedia.org/wiki/Skewness</a>). In R invece è molto semplice usando il pacchetto <code>psych</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb79-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">skew</span>(dimarco2020<span class="sc">$</span>burnout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6331557</code></pre>
+</div>
+</div>
+<p>Il segno indica il tipo di asimmetria. Valori vicini a zero indicano la <em>simmetria</em>.</p>
+</section>
+<section id="curtosi" class="slide level2">
+<h2>Curtosi</h2>
+<p>La curtosi indica il grado di <em>appuntimento</em> rispetto alla distribuzione normale. In pratica si intende quanti dati ci sono sulle code rispetto alla distribuzione normale. Ci sono due tipi di curtosi:</p>
+<ul>
+<li>Distribuzioni leptocurtiche (curtosi &gt; 0)</li>
+<li>Distribuzioni platicurtiche (curtosi &lt; 0)</li>
+</ul>
+</section>
+<section id="curtosi-1" class="slide level2">
+<h2>Curtosi</h2>
+
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-66-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="curtosi-2" class="slide level2">
+<h2>Curtosi</h2>
+<p>Il calcolo effettivo è più complesso e ci sono diversi modi di calcolarla (<a href="https://en.wikipedia.org/wiki/Kurtosis">https://en.wikipedia.org/wiki/Kurtosis</a>). In R invece è molto semplice usando il pacchetto <code>psych</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb81-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">kurtosi</span>(dimarco2020<span class="sc">$</span>burnout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7006264</code></pre>
+</div>
+</div>
+<p>Il segno indica il tipo di curtosi. Valori vicini a zero indicano assenza di curtosi.</p>
+</section></section>
+<section>
 <section id="relazioni-bivariate" class="title-slide slide level1 center">
 <h1>Relazioni Bivariate</h1>
 
@@ -1803,27 +1915,27 @@ E = - \sum^j_{i = 1} p_i \ln{(p_i)}
 <h2>Barplot</h2>
 <p>Possiamo anche rappresentare due variabili con un barplot:</p>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-63-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-73-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="barplot-3" class="slide level2">
 <h2>Barplot</h2>
 <p>Vediamo quelle relative (totale):</p>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-64-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-74-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="barplot-4" class="slide level2">
 <h2>Barplot</h2>
 <p>Relative per colonna:</p>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-65-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-75-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="barplot-5" class="slide level2">
 <h2>Barplot</h2>
 <p>Relative per riga:</p>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-66-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-76-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="relazione-tra-due-variabili-quantitative" class="slide level2">
 <h2>Relazione tra due variabili quantitative</h2>
 <p>Il modo più semplice per visualizzare una relazione tra due variabili quantitative è lo <strong>scatter plot</strong>:</p>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-67-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-77-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="correlazione" class="slide level2">
 <h2>Correlazione</h2>
 <p>In questo caso vediamo chiaramente che c’è un trend. All’aumentare del <code>burnout</code> diminuisce la <code>satisfaction</code>. Un modo per quantificare questa relazione è l’indice di correlazione di Pearson <span class="math inline">\(r\)</span>. La correlazione tra due variabili <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> è:</p>
@@ -1844,7 +1956,7 @@ s_{xy} = \frac{\sum^n_{i = 1} (x_i - \bar{x})(y_i - \bar{y})}{n - 1}
 <h2>Covarianza</h2>
 <p>A livello univariato abbiamo definito la varianza come la media degli scarti al quadrato dalla media. In pratica è un modo per quantificare la dispersione dei dati attorno alla loro media.</p>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-68-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-78-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="covarianza-2" class="slide level2">
 <h2>Covarianza</h2>
 <p>Se due variabili sono legate allora l’idea è che due valori di due coppie di variabili co-varino allo stesso modo rispetto alla loro media. Questo è quello che dice la codevianza <span class="math inline">\(\sum^n_{i = 1} (x_i - \bar{x})(y_i - \bar{y})\)</span>. Stiamo moltiplicando lo scarto della media su <span class="math inline">\(x\)</span> con lo scarto dalla media su <span class="math inline">\(y\)</span>.</p>
@@ -1852,16 +1964,16 @@ s_{xy} = \frac{\sum^n_{i = 1} (x_i - \bar{x})(y_i - \bar{y})}{n - 1}
 <section id="covarianza-3" class="slide level2">
 <h2>Covarianza</h2>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-69-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-79-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="covarianza-4" class="slide level2">
 <h2>Covarianza</h2>
 <p>La moltiplicazione degli scarti, per ogni osservazione ci restituisce un valore con un segno. Il numeratore (codevianza) cattura quindi il segno (direzione) del prodotto degli scarti dalla media.</p>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-70-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-80-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="covarianza-5" class="slide level2">
 <h2>Covarianza</h2>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-71-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-81-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="covarianza-6" class="slide level2">
 <h2>Covarianza</h2>
 <p>Quindi la nostra codevianza può essere:</p>
@@ -1882,15 +1994,15 @@ s_{xy} = \frac{\sum^n_{i = 1} (x_i - \bar{x})(y_i - \bar{y})}{n - 1}
 <h2>Correlazione e covarianza in R</h2>
 <p>In R possiamo usare le funzioni <code>cov()</code> e <code>cor()</code>:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># covarianza</span></span>
-<span id="cb76-2"><a aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">cov</span>(dimarco2020<span class="sc">$</span>burnout, dimarco2020<span class="sc">$</span>satisfaction)</span>
-<span id="cb76-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># correlazione</span></span>
-<span id="cb76-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(dimarco2020<span class="sc">$</span>burnout, dimarco2020<span class="sc">$</span>satisfaction)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># covarianza</span></span>
+<span id="cb83-2"><a aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">cov</span>(dimarco2020<span class="sc">$</span>burnout, dimarco2020<span class="sc">$</span>satisfaction)</span>
+<span id="cb83-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># correlazione</span></span>
+<span id="cb83-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(dimarco2020<span class="sc">$</span>burnout, dimarco2020<span class="sc">$</span>satisfaction)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.5549457</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a aria-hidden="true" tabindex="-1"></a>ss <span class="sc">/</span> (<span class="fu">sd</span>(dimarco2020<span class="sc">$</span>burnout) <span class="sc">*</span> <span class="fu">sd</span>(dimarco2020<span class="sc">$</span>satisfaction))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a aria-hidden="true" tabindex="-1"></a>ss <span class="sc">/</span> (<span class="fu">sd</span>(dimarco2020<span class="sc">$</span>burnout) <span class="sc">*</span> <span class="fu">sd</span>(dimarco2020<span class="sc">$</span>satisfaction))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.5549457</code></pre>
 </div>
@@ -1904,7 +2016,7 @@ s_{xy} = \frac{\sum^n_{i = 1} (x_i - \bar{x})(y_i - \bar{y})}{n - 1}
 <h2>Correlazione</h2>
 <p>In questo caso la relazione è chiaramente non lineare (quadratica) e la correlazione è praticamente a zero.</p>
 
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-73-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-83-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
 <section>
 <section id="relazione-tra-più-variabili" class="title-slide slide level1 center">
 <h1>Relazione tra più variabili</h1>
@@ -1925,8 +2037,8 @@ s_{xy} = \frac{\sum^n_{i = 1} (x_i - \bar{x})(y_i - \bar{y})}{n - 1}
 <h2>Matrici di correlazione</h2>
 <p>In R possiamo sempre usare la funzione <code>cor()</code> su più variabili (solitamente colonne di un dataframe):</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">cor</span>(dimarco2020[, <span class="fu">c</span>(<span class="st">"bonds"</span>, <span class="st">"burnout"</span>, <span class="st">"satisfaction"</span>, <span class="st">"trauma"</span>)])</span>
-<span id="cb80-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(R, <span class="dv">2</span>) <span class="co"># solo per visualizzazione</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">cor</span>(dimarco2020[, <span class="fu">c</span>(<span class="st">"bonds"</span>, <span class="st">"burnout"</span>, <span class="st">"satisfaction"</span>, <span class="st">"trauma"</span>)])</span>
+<span id="cb87-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(R, <span class="dv">2</span>) <span class="co"># solo per visualizzazione</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             bonds burnout satisfaction trauma
 bonds         1.00   -0.41         0.46  -0.23
@@ -1940,19 +2052,19 @@ trauma       -0.23    0.66        -0.15   1.00</code></pre>
 <h2>Matrici di correlazione</h2>
 <p>Possiamo anche visualizzare graficamente con il pacchetto <code>corrplot</code>:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
-<span id="cb82-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(R, <span class="at">order =</span> <span class="st">'AOE'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb89-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(R, <span class="at">order =</span> <span class="st">'AOE'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-75-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-85-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="matrici-di-correlazione-4" class="slide level2">
 <h2>Matrici di correlazione</h2>
 <p>Possiamo anche visualizzare degli scatterplot a coppie:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(dimarco2020[, <span class="fu">c</span>(<span class="st">"bonds"</span>, <span class="st">"burnout"</span>, <span class="st">"satisfaction"</span>, <span class="st">"trauma"</span>)], )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(dimarco2020[, <span class="fu">c</span>(<span class="st">"bonds"</span>, <span class="st">"burnout"</span>, <span class="st">"satisfaction"</span>, <span class="st">"trauma"</span>)], )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-76-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="03-statistica-descrittiva_files/figure-revealjs/unnamed-chunk-86-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="matrici-di-varianza-covarianza" class="slide level2">
 <h2>Matrici di varianza-covarianza</h2>
 <p>La matrice di correlazione non deve essere confusa con quella di varianza-covarianza. La struttura è la stessa ovvero una matrice quadrata <span class="math inline">\(p \times p\)</span> dove <span class="math inline">\(p\)</span> è il numero di variabili. Però la diagonale non è 1 (la covarianza di una variabile con se stessa non è 1) e gli elementi fuori dalla diagonale non sono la correlazione (&gt; 1 o &lt; -1).</p>
@@ -1962,8 +2074,8 @@ trauma       -0.23    0.66        -0.15   1.00</code></pre>
 <h2>Matrici di varianza-covarianza</h2>
 <p>In R possiamo sempre usare la funzione <code>cov()</code> su più variabili (come per <code>cor()</code>):</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fu">cov</span>(dimarco2020[, <span class="fu">c</span>(<span class="st">"bonds"</span>, <span class="st">"burnout"</span>, <span class="st">"satisfaction"</span>, <span class="st">"trauma"</span>)])</span>
-<span id="cb84-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(S, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fu">cov</span>(dimarco2020[, <span class="fu">c</span>(<span class="st">"bonds"</span>, <span class="st">"burnout"</span>, <span class="st">"satisfaction"</span>, <span class="st">"trauma"</span>)])</span>
+<span id="cb91-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(S, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             bonds burnout satisfaction trauma
 bonds         0.11   -0.08         0.08  -0.06
@@ -1971,7 +2083,7 @@ burnout      -0.08    0.34        -0.17   0.30
 satisfaction  0.08   -0.17         0.28  -0.06
 trauma       -0.06    0.30        -0.06   0.61</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(R, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(R, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             bonds burnout satisfaction trauma
 bonds         1.00   -0.41         0.46  -0.23
@@ -2012,7 +2124,7 @@ s_{xy} = r_{xy} s_x s_y
 <h2>Matrici di varianza-covarianza</h2>
 <p>Tornando a R, vediamo che possiamo passare da una all’altra:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(R, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(R, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             bonds burnout satisfaction trauma
 bonds         1.00   -0.41         0.46  -0.23
@@ -2020,7 +2132,7 @@ burnout      -0.41    1.00        -0.55   0.66
 satisfaction  0.46   -0.55         1.00  -0.15
 trauma       -0.23    0.66        -0.15   1.00</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">cov2cor</span>(S), <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">cov2cor</span>(S), <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             bonds burnout satisfaction trauma
 bonds         1.00   -0.41         0.46  -0.23
@@ -2028,14 +2140,14 @@ burnout      -0.41    1.00        -0.55   0.66
 satisfaction  0.46   -0.55         1.00  -0.15
 trauma       -0.23    0.66        -0.15   1.00</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># correlazione tra bonds e burnout</span></span>
-<span id="cb92-2"><a aria-hidden="true" tabindex="-1"></a>r12 <span class="ot">&lt;-</span> R[<span class="dv">1</span>, <span class="dv">2</span>]</span>
-<span id="cb92-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb92-4"><a aria-hidden="true" tabindex="-1"></a>r12 <span class="sc">*</span> <span class="fu">sd</span>(dimarco2020<span class="sc">$</span>bonds) <span class="sc">*</span> <span class="fu">sd</span>(dimarco2020<span class="sc">$</span>burnout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># correlazione tra bonds e burnout</span></span>
+<span id="cb99-2"><a aria-hidden="true" tabindex="-1"></a>r12 <span class="ot">&lt;-</span> R[<span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb99-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-4"><a aria-hidden="true" tabindex="-1"></a>r12 <span class="sc">*</span> <span class="fu">sd</span>(dimarco2020<span class="sc">$</span>bonds) <span class="sc">*</span> <span class="fu">sd</span>(dimarco2020<span class="sc">$</span>burnout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.08034901</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a aria-hidden="true" tabindex="-1"></a>S[<span class="dv">1</span>, <span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a aria-hidden="true" tabindex="-1"></a>S[<span class="dv">1</span>, <span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.08034901</code></pre>
 </div>

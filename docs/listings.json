@@ -4,7 +4,8 @@
     "items": [
       "/slides/00-intro-corso.html",
       "/slides/01-intro-analisi-dati.html",
-      "/slides/02-research-methods.html"
+      "/slides/02-research-methods.html",
+      "/slides/03-statistica-descrittiva.html"
     ]
   },
   {
@@ -13,6 +14,7 @@
       "/slides/00-intro-corso.html",
       "/slides/01-intro-analisi-dati.html",
       "/slides/02-research-methods.html",
+      "/slides/03-statistica-descrittiva.html",
       "/notes/importing-data.html"
     ]
   }

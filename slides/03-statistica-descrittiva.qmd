@@ -1,6 +1,7 @@
 ---
 title: Statistica Descrittiva
-draft: true
+pdf: "[{{< fa file-pdf >}}](slides/02-research-methods.pdf)"
+pdf-pages: 16
 filters:
   - bibentry
 ---
@@ -1215,6 +1216,201 @@ par(mfrow = c(1, 2))
 barplot(table(dimarco2020$age), xlab = "Età")
 barplot(table(dimarco2020$perc_collective_efficacy), xlab = "Perceived collective efficacy")
 ```
+
+# Misure di forma
+
+## QQ Plot
+
+Il modo migliore per indagare la forma di una distribuzione oltre a rappresentarla graficamente ad esempio con un istogramma è il Q-Q Plot (quantile-quantile plot). Questo plot rappresenta i quantili empirici dei dati con i quantili *teorici* di una distribuzione normale. Possiamo usare `qqnorm()` in R:
+
+```{r}
+#| echo: true
+
+qqnorm(dimarco2020$burnout)
+qqline(dimarco2020$burnout, col = "firebrick", lwd = 2)
+```
+
+## QQ Plot
+
+In caso di una distribuzione normale *perfetta* i punti dovrebbero stare sulla linea, come se avessere una correlazione perfetta. Deviazioni dalla linea indicano deviazioni da una distribuzione normale.
+
+```{r}
+par(mfrow = c(1, 2))
+
+hist(dimarco2020$burnout, freq = FALSE, xlim = c(-1, 5))
+curve(dnorm(x, mean(dimarco2020$burnout), sd(dimarco2020$burnout)), add = TRUE, col = "firebrick", lwd = 2)
+qqnorm(dimarco2020$burnout)
+qqline(dimarco2020$burnout, col = "firebrick", lwd = 2)
+```
+
+## QQ Plot
+
+L'interpretazione parte dal concetto di standardizzazione. Un punto $z$ lo abbiamo definito come:
+
+$$
+z_i = \frac{x_i - \bar{x}}{s_x}
+$$
+
+Questo significa anche che, assumendo una distribuzione normale dove $z = 2$ e $z = -2$ equivalgono alla stessa distanza dalla media, quindi:
+
+$$
+x_i = \bar{x} + z_i s_x
+$$
+
+Quindi dato un punto $z$ possiamo sapere (assumendo normalità) quale sarebbe il valore previsto.
+
+## QQ Plot
+
+Inoltre sappiamo che, data la normalità (teorica) abbiamo questo tipo di relazione tra quantili e probabilità cumulata. Quindi un punto $z = 1$ con $\mu = 100$ e $\sigma = 15$ equivale ad un valore di 115. 
+
+```{r}
+ggplot() +
+  stat_function(fun = pnorm, args = list(mean = 100, sd = 15)) +
+  scale_x_continuous(name = 'x', 
+                     limits = c(100 - 15 * 4, 100 + 15 * 4), 
+                     n.breaks = 10,
+                     sec.axis = sec_axis(~ (. - 100)/15, name = 'z')) +
+  geom_vline(xintercept = 115, lty = "dotted") +
+  geom_hline(yintercept = pnorm(1), lty = "dotted") +
+  geom_point(aes(x = 115, y = pnorm(1)), color = "firebrick", size = 5) +
+  ylab("Probabilità cumulata")
+```
+
+## QQ Plot
+
+Vediamolo con la variabile `burnout` che ha media `r round(mean(dimarco2020$burnout), 2)` e deviazione standard `r round(sd(dimarco2020$burnout), 2)`. Con $z = 1$ ci aspettiamo (assumendo normalità) un valore di circa $x = 2.5$.
+
+```{r}
+m <- mean(dimarco2020$burnout)
+s <- sd(dimarco2020$burnout)
+
+ggplot() +
+  stat_function(fun = pnorm, args = list(mean = m, sd = s)) +
+  scale_x_continuous(name = 'x', 
+                     limits = c(m - s * 4, m + s * 4), 
+                     n.breaks = 10,
+                     sec.axis = sec_axis(~ (. - m)/s, name = 'z')) +
+  geom_vline(xintercept = 2.5, lty = "dotted") +
+  geom_hline(yintercept = pnorm(1), lty = "dotted") +
+  geom_point(aes(x = 2.5, y = pnorm(1)), color = "firebrick", size = 5) +
+  ylab("Probabilità cumulata")
+```
+
+## QQ Plot
+
+Ora possiamo confrontare questo valore teorico con il valore empirico ovvero il valore di x che è associato ad una probabilità cumulata di circa ~84%.
+
+```{r}
+#| echo: true
+
+p <- pnorm(1) # lo vedremo più avanti
+# valore empirico associato ad una probabilità cumulata di circa 84%
+quantile(dimarco2020$burnout, p)
+```
+
+Se facciamo questo per ogni valore otteniamo il risultato di `qqnorm()`. Se i valori empirici sono distanti dalla linea teorica, significa che il valore empirico è distante da quello teorico assumendo la normalità.
+
+## QQ Plot
+
+Il confronto con l'istogramma rende ancora più intuitivo cosa sta succedendo:
+
+```{r}
+par(mfrow = c(1, 2))
+hist(dimarco2020$burnout, breaks = 10, freq = FALSE, xlim = c(0, 5))
+curve(dnorm(x, m, s), add = TRUE, lwd = 2, col = "firebrick")
+qqnorm(dimarco2020$burnout)
+qqline(dimarco2020$burnout, lwd = 2, col = "firebrick")
+```
+
+## Misure di forma
+
+Le misure di forma ci forniscono informazioni riguardo la forma della distribuzione dei dati. Indici di tendenza centrale e dispersione possono essere influenzati dalla forma della distribuzione. Tendenzialmente la forma viene intesa come deviazione dalla simmetria di una distribuzione normale. Gli aspetti principali sono:
+
+- asimmetria o *skewness*
+- curtosi o *kurtosis*
+
+Entrambi questi indici sono rapportati alla distribuzione normale. La distribuzione normale per definizione non ha ne asimmetria ne curtosi.
+
+## Asimmetria
+
+L'asimmetria indica una deviazione dalla simmetria della normale. Possiamo avere asimmetria negativa e positiva:
+
+```{r}
+par(mfrow = c(1, 3))
+
+a <- 2
+b <- 9
+curve(dbeta(x, a, b), yaxt = "n", ylab = "", xaxt = "n", xlab = "Asimmetria Positiva")
+abline(v = a / (b + a), col = "red")
+abline(v = qbeta(0.5, a, b), col = "green")
+
+a <- 5
+b <- 5
+curve(dbeta(x, a, b), yaxt = "n", ylab = "", xaxt = "n", xlab = "No Asimmetria")
+abline(v = a / (b + a), col = "red")
+abline(v = qbeta(0.505,a, b), col = "green")
+
+a <- 9
+b <- 2
+curve(dbeta(x, a, b), yaxt = "n", ylab = "", xaxt = "n", xlab = "Asimmetria Negativa")
+abline(v = a / (b + a), col = "red")
+abline(v = qbeta(0.50,a, b), col = "green")
+
+legend("topleft", legend = c("Media", "Mediana"), fill = c("red", "green"))
+```
+
+## Asimmetria
+
+Il calcolo effettivo è più complesso e ci sono diversi modi di calcolarlo ([https://en.wikipedia.org/wiki/Skewness](https://en.wikipedia.org/wiki/Skewness)). In R invece è molto semplice usando il pacchetto `psych`:
+
+```{r}
+#| echo: true
+
+library(psych)
+skew(dimarco2020$burnout)
+```
+
+Il segno indica il tipo di asimmetria. Valori vicini a zero indicano la *simmetria*.
+
+## Curtosi
+
+La curtosi indica il grado di *appuntimento* rispetto alla distribuzione normale. In pratica si intende quanti dati ci sono sulle code rispetto alla distribuzione normale. Ci sono due tipi di curtosi:
+
+- Distribuzioni leptocurtiche (curtosi > 0)
+- Distribuzioni platicurtiche (curtosi < 0)
+
+## Curtosi
+
+```{r}
+par(mfrow = c(2, 2))
+x <- rt(1e4, 7)
+hist(x, freq = FALSE, ylim = c(0, 0.4), main = "Leptocurtica")
+curve(dnorm(x), add = TRUE, lwd = 2, col = "firebrick")
+qqnorm(x)
+qqline(x, lwd = 2, col = "firebrick")
+
+
+x <- rbeta(1e4, 3, 3)
+x_scaled <- (x - mean(x)) / sd(x)
+hist(x_scaled, freq = FALSE, breaks = 40, xlim = c(-3, 3), ylim = c(0, 0.5), xlab = "", 
+     main = "Platicurtica")
+curve(dnorm(x), add = TRUE, lwd = 2, col = "firebrick")
+qqnorm(x_scaled)
+qqline(x_scaled, lwd = 2, col = "firebrick")
+```
+
+## Curtosi
+
+Il calcolo effettivo è più complesso e ci sono diversi modi di calcolarla ([https://en.wikipedia.org/wiki/Kurtosis](https://en.wikipedia.org/wiki/Kurtosis)). In R invece è molto semplice usando il pacchetto `psych`:
+
+```{r}
+#| echo: true
+
+library(psych)
+kurtosi(dimarco2020$burnout)
+```
+
+Il segno indica il tipo di curtosi. Valori vicini a zero indicano assenza di curtosi.
 
 # Relazioni Bivariate
 
