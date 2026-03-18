@@ -374,3 +374,54 @@ index_plot <- function(x, xlim = NULL) {
   abline(v = mean(dat$x), lwd = 2, col = "firebrick")
   segments(dat$x, dat$id, dat$m, dat$id, lty = "dotted")
 }
+
+
+ggnorm <- function(
+  mean = 0,
+  sd = 1,
+  xlab = NULL,
+  ylab = NULL,
+  lwd = 0.5,
+  lty = "solid"
+) {
+  xlab <- if (is.null(xlab)) "x"
+  ylab <- if (is.null(ylab)) "Density"
+  xlim <- c(
+    mean - sd * 4,
+    mean + sd * 4
+  )
+  ggplot2::ggplot() +
+    ggplot2::stat_function(
+      fun = dnorm,
+      args = list(
+        mean = mean,
+        sd = sd
+      ),
+      lwd = lwd,
+      lty = lty
+    ) +
+    ggplot2::xlim(xlim) +
+    ggplot2::xlab(xlab) +
+    ggplot2::ylab(ylab) +
+    ggplot2::ggtitle(sprintf("mean = %s, sd = %s", mean, sd))
+}
+
+ggnorm_area <- function(mean = 0, sd = 1, area, fill = "black", alpha = 0.5) {
+  xlim <- c(
+    mean - sd * 4,
+    mean + sd * 4
+  )
+  area[area == -Inf] <- xlim[1]
+  area[area == Inf] <- xlim[2]
+  ggplot2::stat_function(
+    geom = "area",
+    fun = dnorm,
+    args = list(
+      mean = mean,
+      sd = sd
+    ),
+    xlim = area,
+    fill = fill,
+    alpha = alpha
+  )
+}

@@ -1,0 +1,14 @@
+---
+title: Script Lezioni
+format:
+    html:
+        code-overflow: wrap
+---
+
+## 06 Inferenza - Questionario iniziale
+
+{{< downloadthis samp-dist.R dname="samp-dist" label="Scarica il file .R" >}}
+
+```r
+{{< include samp-dist.R >}}
+```

@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.21">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Filippo Gambarota PhD">
+
+<title>Script Lezioni – ADCOM</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../resources/hex.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-4276be3105625b7ba5c8b357c7f4b5b8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">ADCOM</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/stat-teaching/adcom"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#inferenza---questionario-iniziale" id="toc-inferenza---questionario-iniziale" class="nav-link active" data-scroll-target="#inferenza---questionario-iniziale">06 Inferenza - Questionario iniziale</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Script Lezioni</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Filippo Gambarota PhD <a href="mailto:filippo.gambarota@unipd.it" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-6666-1747" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Università di Padova
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="inferenza---questionario-iniziale" class="level2">
+<h2 class="anchored" data-anchor-id="inferenza---questionario-iniziale">06 Inferenza - Questionario iniziale</h2>
+<p><a href="#dnldts34801" onclick="fetch('data:text/plain;base64,IyBwdWxpYW1vIGwnYW1iaWVudGUKcm0obGlzdCA9IGxzKCkpCgojIGltcG9ydGlhbW8gaSBkYXRpCmRhdCA8LSByZWFkUkRTKCJkYXRhL2FkY29tLnJkcyIpCgojIG9yYSBpbW1hZ2luaWFtbyBjaGUgZGF0IHNpYSBsYSBwb3BvbGF6aW9uZSBlIG5vbiB1biBjYW1waW9uZQojIGUgZGEgZGF0IHByZW5kaWFtbyB1biBjYW1waW9uZSBkaSBvc3NlcnZhemlvbmkuIFF1aW5kaSBkYXQKIyDDqCBsYSAidmVyaXTDoCIgc29saXRhbWVudGUgaW5jb2duaXRhIGNoZSB2b2dsaWFtbyBzdGltYXJlIG1lbnRyZQojIGlsIGNhbXBpb25lIMOoIHF1ZWxsbyBjaGUgc29saXRhbWVudGUgcG9zc2lhbW8gb3NzZXJ2YXJlCgojIG51bWVyb3NpdMOgIGRlbCBub3N0cm8gY2FtcGlvbmUKbiA8LSAxNQoKIyBwb3NzaWFtbyB1c2FyZSBsYSBmdW56aW9uZSBzYW1wbGUoKSBwZXIgZXN0cmFycmUgZGVsbGUgcmlnaGUgY2FzdWFsaQojIGRhbCBub3N0cm8gZGF0YWZyYW1lCgojIGFkIGVzZW1waW8sIHF1ZXN0byBlc3RyYWUgNSBudW1lcmkgZGEgMSBhIDEwMCBkb3ZlIG9nbnVubyBoYSBsYSBzdGVzc2EKIyBwcm9iYWJpbGl0w6AgZGkgZXNzZXJlIGVzdHJhdHRvLiBPZ25pIHZvbHRhIGNoZSBsYW5jaWFtbyBsYSBmdW56aW9uZSBpbAojIHJpc3VsdGF0byDDqCBkaXZlcnNvCgpzYW1wbGUoMToxMDAsIDUpCnNhbXBsZSgxOjEwMCwgNSkKc2FtcGxlKDE6MTAwLCA1KQoKIyBvcmEgcGVyIGVzdHJhcnJlIHVuIGNhbXBpb25lIHVzaWFtbyBxdWVzdGEgbG9naWNhLiBpbCBub3N0cm8gZGF0YXNldCBoYQojIE4gcmlnaGUuIHF1aW5kaSBzZSBlc3RyaWFtbyBhIGNhc28gbiBudW1lcmkgZGEgMSBhIE4gZSB0ZW5pYW1vIHF1ZWxsZSByaWdoZQojIHN0aWFtbyBjYW1waW9uYW5kbyBjYXN1YWxtZW50ZS4KCiMgcG9wb2xhemlvbmUKTiA8LSBucm93KGRhdCkKCmlkeCA8LSBzYW1wbGUoMTpOLCBuLCByZXBsYWNlID0gRkFMU0UpCgojIHF1ZXN0ZSBzb25vIGxlIHJpZ2hlIGNoZSB0ZW5pYW1vIGRhbGxhIHByaW1hIGVzdHJhemlvbmUuIHBvc3NpYW1vIHVzYXJlIGlkeAojIHBlciBzZWxlemlvbmFyZSBsZSByaWdoZSBkYWwgZGF0YWZyYW1lCgojIHF1ZXN0byDDqCBpbCBub3N0cm8gY2FtcGlvbmUgZWQgw6ggcXVlbGxvIGNoZSBzdWNjZWRlIG5vcm1hbG1lbnRlLgoKZGF0W2lkeCwgXQoKIyBmYWNjaWFtb2NpIHVuYSBmdW56aW9uY2luYSBjaGUgZXNlZ3VlIHF1ZXN0YSBvcGVyYXppb25lCgpjYW1waW9uYSA8LSBmdW5jdGlvbihuLCBkYXRhKXsKICAgIGlkeCA8LSBzYW1wbGUoMTpucm93KGRhdGEpLCBuLCByZXBsYWNlID0gRkFMU0UpCiAgICBkYXRhW2lkeCwgXQp9CgpjYW1waW9uYSgxMCwgZGF0KQpjYW1waW9uYSgxMCwgZGF0KQpjYW1waW9uYSgxMCwgZGF0KQoKIyBvcmEgaW1tYWdpbmlhbW8gZGkgdm9sZXIgc3RpbWFyZSBsJ2FsdGV6emEgbWVkaWEgZGVsbGEgbm9zdHJhCiMgcG9wb2xhemlvbmUuIGlsIHBhcmFtZXRybyBkaSBzb2xpdG8gw6ggaW5jb2duaXRvIG1hIGluIHF1ZXN0YSBzaW11bGF6aW9uZSBub2kgbG8KIyBzYXBwaWFtbywgY2hpYW1pYW1vbG8gbXUuCgptdSA8LSBtZWFuKGRhdCRhbHRlenphKQptdQoKIyBvcmEgcHJvdmlhbW8gYWQgZXN0cmFycmUgdW4gY2FtcGlvbmUgZGkgbnVtZXJvc2l0w6AgbiBlIHZlZGlhbW8gbGEgbm9zdHJhIHN0aW1hCgpjYW1wIDwtIGNhbXBpb25hKG4sIGRhdCkKeGJhciA8LSBtZWFuKGNhbXAkYWx0ZXp6YSkKeGJhcgoKIyBjb21lIHZlZGV0ZSBub24gw6ggZXNhdHRhbWVudGUgbG8gc3Rlc3NvIHZhbG9yZSBzdGlhbW8gZmFjZW5kbyB1bmEgc3RpbWEgZSBwZXIKIyBkZWZpbml6aW9uZSBub24gw6ggcG9zc2liaWxlIG90dGVuZXJlIGxvIHN0ZXNzbyB2YWxvcmUuIG9yYSBwcm92aWFtbyBhIHJpcGV0ZXJlCiMgcXVlc3RhIHN0aW1hCgpjYW1wIDwtIGNhbXBpb25hKG4sIGRhdCkKeGJhciA8LSBtZWFuKGNhbXAkYWx0ZXp6YSkKeGJhcgoKIyBjb21lIHZlZGV0ZSBhbmNvcmEgZGl2ZXJzYSwgY2VydGUgdm9sdGUgZGkgcGnDuSBlIGNlcnRlIHZvbHRlIGRpIG1lbm8uIHByb3ZpYW1vCiMgYSByaXBldGVybGEgbW9sdGUgdm9sdGUuIHVzaWFtbyBsYSBmdW56aW9uZSByZXBsaWNhdGUoKQoKeHNhbXAgPC0gcmVwbGljYXRlKDEwMDAsIHsKICAgIGNhbXAgPC0gY2FtcGlvbmEobiwgZGF0KQogICAgbWVhbihjYW1wJGNvZmZlZSkKfSkKCiMgYWJiaWFtbyByaXBldHV0byBpbCBjYW1waW9uYW1lbnRvIGVkIGlsIGNhbGNvbG8gZGVsbGEgbWVkaWEgcGVyIDEwMDAgdm9sdGUgZQojIGUgcXVpbmRpIGFiYmlhbW8gb3R0ZW51dG8gMTAwMCBtZWRpZS4gY29tZSBwb3RldGUgaW50dWlyZSBxdWVzdGUgMTAwMCBtZWRpZQojIG5vbiBzb25vIHR1dHRlIHVndWFsaSwgcXVpbmRpIHByb3ZpYW1vIGEgdmVkZXJlIHF1ZXN0YSBkaXN0cmlidXppb25lCgpoaXN0KHhzYW1wLCBicmVha3MgPSAxNSkKCiMgdmVkaWFtbyBjaGUgbGUgc3RpbWUgbm9uIHNpIGRpc3RyaWJ1aXNjb25vIGNhc3VhbG1lbnRlCiMgLSBsYSBkaXN0cmlidXppb25lIMOoIHRlbmRlbnppYWxtZW50ZSBub3JtYWxlCiMgLSBoYSB1bmEgY2VydGEgbWVkaWEgZSB1bmEgY2VydGEgdmFyaWFuemEKIyAtIHZhbG9yaSBlc3RyZW1pIHNvbm8gcG9jbyBmcmVxdWVudGkKCiMgdmVkaWFtbyBvcmEgZG92ZSBzaSBjb2xsb2NhIGxhIG1lZGlhICJ2ZXJhIiBvdnZlcm8gcXVlbGxhIGRlbGxhIHBvcG9sYXppb25lCgphYmxpbmUodiA9IG11LCBsd2QgPSAyLCBjb2wgPSAiZmlyZWJyaWNrIikKCiMgY29tZSB2ZWRldGUsIGxhIG1lZGlhIChpbmNvZ25pdGEpIGRlbGxhIHBvcG9sYXppb25lIMOoIG1vbHRvIHNpbWlsZSBhbGxhIG1lZGlhCiMgZGkgdHV0dGUgbGUgc3RpbWUgKGRlbGxhIG1lZGlhKS4gYWdnaXVuZ2lhbW8gYW5jaGUgcXVlbGxhCgphYmxpbmUodiA9IG1lYW4oeHNhbXApLCBsd2QgPSAyLCBjb2wgPSAiZG9kZ2VyYmx1ZSIpCgojIG1ldHRpYW1vIHR1dHRvIGRlbnRybyB1bmEgZnVuemlvbmUgZSB2ZWRpYW1vIGNvc2Egc3VjY2VkZS4KCnNhbXBkIDwtIGZ1bmN0aW9uKG4sIHgsIGRhdGEpewogICAgcmVwbGljYXRlKDUwMDAsIHsKICAgICAgICBjYW1wIDwtIGNhbXBpb25hKG4sIGRhdGEpCiAgICAgICAgbWVhbihjYW1wW1t4XV0pCiAgICB9KQp9CgojIG9yYSBwb3NzaWFtbyBmYXJlIHR1dHRvIGluIG1vZG8gcGnDuSBzZW1wbGljZSBlIGNhbWJpYW5kbyBpIHBhcmFtZXRyaQojIHZlZGlhbW8gY29zYSBzdWNjZWRlIGZhY2VuZG8gbGEgc3Rlc3NhIG9wZXJhemlvbmUgY29uIG4gZGl2ZXJzaQoKbm4gPC0gYyg1LCAxNSwgMzAsIDUwKQpyZXMgPC0gbGFwcGx5KG5uLCBzYW1wZCwgImFsdGV6emEiLCBkYXQpCgojIGNhbGNvbGlhbW8gbWVkaWUgZSBkZXZpYXppb25pIHN0YW5kYXJkIHBlciBvZ25pIG4KCnNhcHBseShyZXMsIG1lYW4pCnNhcHBseShyZXMsIHNkKQoKIyBjb21lIHZlZGV0ZSwgbGEgbWVkaWEgc2VtYnJhIGVzc2VyZSBwcmF0aWNhbWVudGUgc2VtcHJlIGlkZW50aWNhLiBsYSBkZXZpYXppb25lCiMgc3RhbmRhcmQgaW52ZWNlIMOoIGNoaWFyYW1lbnRlIGRpdmVyc2EsIGluIG1vZG8gZGVjcmVzY2VudGUuIHBpw7kgYXVtZW50aWFtbyBuCiMgcGnDuSBsZSBzdGltZSBzb25vIGNvbmNlbnRyYXRlIGF0dG9ybm8gYWxsYSBtZWRpYS4gdmVkaWFtb2xvIGFuY2hlIGdyYWZpY2FtZW50ZQoKcGFyKG1mcm93ID0gYygyLCAyKSkKCnhsaW0gPC0gYyhtaW4ocmVzW1sxXV0pLCBtYXgocmVzW1sxXV0pKQoKaGlzdChyZXNbWzFdXSwgeGxpbSA9IHhsaW0sIG1haW4gPSBublsxXSkKaGlzdChyZXNbWzJdXSwgeGxpbSA9IHhsaW0sIG1haW4gPSBublsyXSkKaGlzdChyZXNbWzNdXSwgeGxpbSA9IHhsaW0sIG1haW4gPSBublszXSkKaGlzdChyZXNbWzRdXSwgeGxpbSA9IHhsaW0sIG1haW4gPSBubls0XSkKCiMgcXVhbGkgY29uY2x1c2lvbmkgcG9zc2lhbW8gdHJhcnJlPwojIAojIGFsbCdhdW1lbnRhcmUgZGVsIGNhbXBpb25lIChjYXN1YWxlKSBsYSBub3N0cmEgc3RpbWEKIyBkaXZlbnRhIG1lbm8gdmFyaWFiaWxlLiBDb211bnF1ZSBhYmJpYW1vIGRlbGxlIHZhcmlhemlvbmkgKGVycm9yZSkKCgojIHF1ZXN0byDDqCBsJ3VuaWNvIGNhc28gKGltcG9zc2liaWxlKSBkb3ZlIGxhIHN0aW1hIG5vbiBoYSB2YXJpYWJpbGl0w6AuCnNhbXBkKE4sICJjb2ZmZWUiLCBkYXQpCgojIGFuY2hlIHVuJ29zc2VydmF6aW9uZSBpbiBtZW5vIGNyZWEgZGVsbCdlcnJvcmUgZGkgc3RpbWEKc2FtcGQoTiAtIDEsICJjb2ZmZWUiLCBkYXQpCgojIGFiYmlhbW8gdHJvdmF0byAiZW1waXJpY2FtZW50ZSIgdW5hIHF1YW50aXTDoCBmb25kYW1lbnRhbGUgaW4KIyBpbmZlcmVuemEgb3Z2ZXJvIHF1ZWxsYSBkaSBlcnJvcmUgZGkgc3RpbWEuIHNvbGl0YW1lbnRlIHF1ZXN0YQojIHZpZW5lIGNoaWFtYXRhIGVycm9yZSBzdGFuZGFyZC4gbmVsIGNhc28gZGVsbGEgbWVkaWEgbGEgZm9ybXVsYQojIMOoIHNlbXBsaWNlCiMgCiMgc2UgPSBzZCAvIHNxcnQobikKIyBkb3ZlIHNkIMOoIGxhIGRldmlhemlvbmUgc3RhbmRhcmQgZGVsbGEgcG9wb2xhemlvbmUgZSBuIMOoIGxhIG51bWVyb3NpdMOgIGNhbXBpb25hcmlhLiBDaGlhcmFtZW50ZSBpbiBvdHRpY2EgYXBwbGljYXRhIHNpIHVzYQojIGxhIGRldmlhemlvbmUgc3RhbmRhcmQgZGVsIGNhbXBpb25lIGNvbWUgc3RpbWEgZGkgcXVlbGxhIGRlbGxhCiMgcG9wb2xhemlvbmUuIG1hIG5vaSBhYmJpYW1vIGFuY2hlIHF1ZWxsYSB2ZXJhLgoKbiA8LSAxNQpzIDwtIHNkKGRhdCRhbHRlenphKQoKc2UgPC0gKHMgLyBzcXJ0KG4pKQpzZQoKIyB2ZWRpYW1vIHF1ZWxsYSAiZW1waXJpY2EiCgpyZXMgPC0gc2FtcGQobiwgImFsdGV6emEiLCBkYXQpCnNkKHJlcykKCiMgY29tZSB2ZWRldGUgbCdlcnJvcmUgc3RhbmRhcmQgY2hlIHN0aW1pYW1vIGNvbiBsYSBmb3JtdWxhIMOoIGVzYXR0YW1lbnRlIHF1ZWxsbwojIGNoZSBzdGltaWFtbyBlbXBpcmljYW1lbnRlLiDDqCBpbXBvcnRhbnRlIG5vdGFyZSBjaGUgcXVlc3RhIHN0aW1hICJlbXBpcmljYSIgbm9uCiMgw6ggcG9zc2liaWxlIGZhcmxhIG5lbGxhIHJlYWx0w6AuIG1hIGFzc3VtZW5kbyBjaGUgaWwgY2FtcGlvbmFtZW50byBzaWEgY2FzdWFsZQojIHZlZGlhbW8gY2hlIGxhIG1lZGlhIGRlbGxlIG1lZGllIMOoIHVndWFsZSBhbGxhIG1lZGlhIHZlcmEgZSBsJ2Vycm9yZSBkaSBzdGltYQojIMOoIHBvc3NpYmlsZSBxdWFudGlmaWNhcmxvLgoKIyB2ZWRpYW1vIGNvc2Egc3VjY2VkZSBjb24gdW4gY2FtcGlvbmFtZW50byBub24gY2FzdWFsZS4gUHJvdmlhbW8gYSBjcmVhcmUgZGVpCiMgY2FtcGlvbmkgZG92ZSBsYSAlIGRpIG1hc2NoaSDDqCBtYWdnaW9yZSBkaSBxdWVsbG8gY2hlIGRvdnJlYmJlIGVzc2VyZS4KCmNhbXBpb25hX2JpYXMgPC0gZnVuY3Rpb24obiwgZGF0YSl7CiAgICBwIDwtIGlmZWxzZShkYXRhJHNleCA9PSAiTWFzY2hpbGUiLCAwLjksIDAuMSkKICAgIGlkeCA8LSBzYW1wbGUoMTpucm93KGRhdGEpLCBuLCByZXBsYWNlID0gRkFMU0UsIHByb2IgPSBwKQogICAgZGF0YVtpZHgsIF0KfQoKZGNhbXAgPC0gcmVwbGljYXRlKDEwMDAsIHsKICAgIGNhbXAgPC0gY2FtcGlvbmFfYmlhcygyMCwgZGF0KQogICAgbWVhbihjYW1wJGFsdGV6emEpCn0pCgptdQptZWFuKGRjYW1wKQoKcGFyKG1mcm93ID0gYygxLCAxKSkKaGlzdChkY2FtcCkKYWJsaW5lKHYgPSBtZWFuKGRjYW1wKSwgbHdkID0gMywgY29sID0gImRvZGdlcmJsdWUiKQphYmxpbmUodiA9IG11LCBsd2QgPSAzLCBjb2wgPSAiZmlyZWJyaWNrIikKCiMgYWJiaWFtbyBpbnRyb2RvdHRvIHVuIGJpYXMgc2lzdGVtYXRpY28sIG5vbiDDqCBjYXN1YWxlLiBxdWVzdG8gw6ggcXVlbGxvCiMgY2hlIHN1Y2NlZGUgcXVhbmRvIHN0aW1pYW1vIHF1YWxjb3NhIGNhbXBpb25hZG8gaW4gbW9kbyBub24gY2FzdWFsZQo=').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'samp-dist.R'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-default downloadthis  " id="dnldts34801"><i class="bi bi-download"></i> Scarica il file .R </button></a></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># puliamo l'ambiente</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># importiamo i dati</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/adcom.rds"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ora immaginiamo che dat sia la popolazione e non un campione</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># e da dat prendiamo un campione di osservazioni. Quindi dat</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># è la "verità" solitamente incognita che vogliamo stimare mentre</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># il campione è quello che solitamente possiamo osservare</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># numerosità del nostro campione</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># possiamo usare la funzione sample() per estrarre delle righe casuali</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># dal nostro dataframe</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ad esempio, questo estrae 5 numeri da 1 a 100 dove ognuno ha la stessa</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># probabilità di essere estratto. Ogni volta che lanciamo la funzione il</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># risultato è diverso</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">5</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">5</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">5</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># ora per estrarre un campione usiamo questa logica. il nostro dataset ha</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># N righe. quindi se estriamo a caso n numeri da 1 a N e teniamo quelle righe</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># stiamo campionando casualmente.</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># popolazione</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(dat)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>N, n, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># queste sono le righe che teniamo dalla prima estrazione. possiamo usare idx</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># per selezionare le righe dal dataframe</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co"># questo è il nostro campione ed è quello che succede normalmente.</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>dat[idx, ]</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co"># facciamoci una funzioncina che esegue questa operazione</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>campiona <span class="ot">&lt;-</span> <span class="cf">function</span>(n, data){</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    idx <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data), n, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    data[idx, ]</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="fu">campiona</span>(<span class="dv">10</span>, dat)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu">campiona</span>(<span class="dv">10</span>, dat)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">campiona</span>(<span class="dv">10</span>, dat)</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="co"># ora immaginiamo di voler stimare l'altezza media della nostra</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="co"># popolazione. il parametro di solito è incognito ma in questa simulazione noi lo</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="co"># sappiamo, chiamiamolo mu.</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">mean</span>(dat<span class="sc">$</span>altezza)</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>mu</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="co"># ora proviamo ad estrarre un campione di numerosità n e vediamo la nostra stima</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>camp <span class="ot">&lt;-</span> <span class="fu">campiona</span>(n, dat)</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>xbar <span class="ot">&lt;-</span> <span class="fu">mean</span>(camp<span class="sc">$</span>altezza)</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>xbar</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="co"># come vedete non è esattamente lo stesso valore stiamo facendo una stima e per</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="co"># definizione non è possibile ottenere lo stesso valore. ora proviamo a ripetere</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="co"># questa stima</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>camp <span class="ot">&lt;-</span> <span class="fu">campiona</span>(n, dat)</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>xbar <span class="ot">&lt;-</span> <span class="fu">mean</span>(camp<span class="sc">$</span>altezza)</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>xbar</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="co"># come vedete ancora diversa, certe volte di più e certe volte di meno. proviamo</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="co"># a ripeterla molte volte. usiamo la funzione replicate()</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>xsamp <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, {</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    camp <span class="ot">&lt;-</span> <span class="fu">campiona</span>(n, dat)</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mean</span>(camp<span class="sc">$</span>coffee)</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="co"># abbiamo ripetuto il campionamento ed il calcolo della media per 1000 volte e</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="co"># e quindi abbiamo ottenuto 1000 medie. come potete intuire queste 1000 medie</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="co"># non sono tutte uguali, quindi proviamo a vedere questa distribuzione</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(xsamp, <span class="at">breaks =</span> <span class="dv">15</span>)</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="co"># vediamo che le stime non si distribuiscono casualmente</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="co"># - la distribuzione è tendenzialmente normale</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="co"># - ha una certa media e una certa varianza</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="co"># - valori estremi sono poco frequenti</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="co"># vediamo ora dove si colloca la media "vera" ovvero quella della popolazione</span></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> mu, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"firebrick"</span>)</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="co"># come vedete, la media (incognita) della popolazione è molto simile alla media</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="co"># di tutte le stime (della media). aggiungiamo anche quella</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="fu">mean</span>(xsamp), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"dodgerblue"</span>)</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="co"># mettiamo tutto dentro una funzione e vediamo cosa succede.</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>sampd <span class="ot">&lt;-</span> <span class="cf">function</span>(n, x, data){</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>    <span class="fu">replicate</span>(<span class="dv">5000</span>, {</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>        camp <span class="ot">&lt;-</span> <span class="fu">campiona</span>(n, data)</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mean</span>(camp[[x]])</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="co"># ora possiamo fare tutto in modo più semplice e cambiando i parametri</span></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="co"># vediamo cosa succede facendo la stessa operazione con n diversi</span></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>nn <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">50</span>)</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">lapply</span>(nn, sampd, <span class="st">"altezza"</span>, dat)</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="co"># calcoliamo medie e deviazioni standard per ogni n</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(res, mean)</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(res, sd)</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="co"># come vedete, la media sembra essere praticamente sempre identica. la deviazione</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="co"># standard invece è chiaramente diversa, in modo decrescente. più aumentiamo n</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="co"># più le stime sono concentrate attorno alla media. vediamolo anche graficamente</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>xlim <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">min</span>(res[[<span class="dv">1</span>]]), <span class="fu">max</span>(res[[<span class="dv">1</span>]]))</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(res[[<span class="dv">1</span>]], <span class="at">xlim =</span> xlim, <span class="at">main =</span> nn[<span class="dv">1</span>])</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(res[[<span class="dv">2</span>]], <span class="at">xlim =</span> xlim, <span class="at">main =</span> nn[<span class="dv">2</span>])</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(res[[<span class="dv">3</span>]], <span class="at">xlim =</span> xlim, <span class="at">main =</span> nn[<span class="dv">3</span>])</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(res[[<span class="dv">4</span>]], <span class="at">xlim =</span> xlim, <span class="at">main =</span> nn[<span class="dv">4</span>])</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="co"># quali conclusioni possiamo trarre?</span></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="co"># all'aumentare del campione (casuale) la nostra stima</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="co"># diventa meno variabile. Comunque abbiamo delle variazioni (errore)</span></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="co"># questo è l'unico caso (impossibile) dove la stima non ha variabilità.</span></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="fu">sampd</span>(N, <span class="st">"coffee"</span>, dat)</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="co"># anche un'osservazione in meno crea dell'errore di stima</span></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="fu">sampd</span>(N <span class="sc">-</span> <span class="dv">1</span>, <span class="st">"coffee"</span>, dat)</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="co"># abbiamo trovato "empiricamente" una quantità fondamentale in</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="co"># inferenza ovvero quella di errore di stima. solitamente questa</span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="co"># viene chiamata errore standard. nel caso della media la formula</span></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="co"># è semplice</span></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="co"># se = sd / sqrt(n)</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="co"># dove sd è la deviazione standard della popolazione e n è la numerosità campionaria. Chiaramente in ottica applicata si usa</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="co"># la deviazione standard del campione come stima di quella della</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="co"># popolazione. ma noi abbiamo anche quella vera.</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">sd</span>(dat<span class="sc">$</span>altezza)</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> (s <span class="sc">/</span> <span class="fu">sqrt</span>(n))</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>se</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="co"># vediamo quella "empirica"</span></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">sampd</span>(n, <span class="st">"altezza"</span>, dat)</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(res)</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="co"># come vedete l'errore standard che stimiamo con la formula è esattamente quello</span></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="co"># che stimiamo empiricamente. è importante notare che questa stima "empirica" non</span></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="co"># è possibile farla nella realtà. ma assumendo che il campionamento sia casuale</span></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="co"># vediamo che la media delle medie è uguale alla media vera e l'errore di stima</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a><span class="co"># è possibile quantificarlo.</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a><span class="co"># vediamo cosa succede con un campionamento non casuale. Proviamo a creare dei</span></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="co"># campioni dove la % di maschi è maggiore di quello che dovrebbe essere.</span></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>campiona_bias <span class="ot">&lt;-</span> <span class="cf">function</span>(n, data){</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(data<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Maschile"</span>, <span class="fl">0.9</span>, <span class="fl">0.1</span>)</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    idx <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data), n, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">prob =</span> p)</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    data[idx, ]</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>dcamp <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, {</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>    camp <span class="ot">&lt;-</span> <span class="fu">campiona_bias</span>(<span class="dv">20</span>, dat)</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mean</span>(camp<span class="sc">$</span>altezza)</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>mu</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dcamp)</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dcamp)</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="fu">mean</span>(dcamp), <span class="at">lwd =</span> <span class="dv">3</span>, <span class="at">col =</span> <span class="st">"dodgerblue"</span>)</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> mu, <span class="at">lwd =</span> <span class="dv">3</span>, <span class="at">col =</span> <span class="st">"firebrick"</span>)</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="co"># abbiamo introdotto un bias sistematico, non è casuale. questo è quello</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="co"># che succede quando stimiamo qualcosa campionado in modo non casuale</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
