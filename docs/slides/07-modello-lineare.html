@@ -7,14 +7,11 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
-<link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.21">
 
   <meta name="author" content="Filippo Gambarota PhD">
-  <title>ADCOM – Introduzione all’analisi dei dati</title>
+  <title>ADCOM – Modello di Regressione Lineare</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -32,27 +29,7 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
+  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-38aae41c7f244e387608eb2b1713ee2f.css">
 
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -155,7 +132,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduzione all’analisi dei dati</h1>
+  <h1 class="title">Modello di Regressione Lineare</h1>
   <p class="subtitle"><strong>ADCOM</strong> 2025-2026</p>
 
 <div class="quarto-title-authors">
@@ -176,247 +153,11 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 </section>
 
 
-<section>
-<section id="perchè-imparare-analisi-dei-dati" class="title-slide slide level1 center">
-<h1>Perchè imparare analisi dei dati?</h1>
-
-</section>
-<section id="la-psicologia-è-una-scienza-statistica" class="slide level2">
-<h2>La psicologia è una scienza statistica</h2>
-<p>Rispetto al pensiero comune dove le hard-sciences (fisica, ingegneria, matematica) richiedono competenze di analisi dei dati, sono le scienze sociali sono altrettanto (se non di più) complesse:</p>
-<ul>
-<li><strong>quantità direttamente non osservabili</strong> (<em>variabili latenti</em>) come depressione, autostima, senso di comunità</li>
-<li><strong>elevate differenze individuali</strong> scomponibili a vari livelli in interazione (geni, ambiente, educazione, etc.)</li>
-<li><strong>fenomeni sempre multivariati</strong> dove non sempre tutte le variabili coinvolte sono chiare e facilmente misurabili</li>
-</ul>
-</section>
-<section id="devo-essere-unə-statisticə-per-fare-lə-psicologə" class="slide level2">
-<h2>Devo essere unə statisticə per fare lə psicologə?</h2>
-<p>Assolutamente no. Una buona metafora è:</p>
-<blockquote>
-<p>La statistica studia il funzionamento del motore sia in termini di funzionamento attuale che come migliorarlo. Lə scienziatə (ad esempio in Psicologia) deve essere un buon pilota.</p>
-</blockquote>
-<p>La conoscenza tecnica può aiuta ad essere dei piloti migliori MA non è il principale oggetto di studio (almeno per la maggior parte).</p>
-</section>
-<section id="perchè-capire-la-statistica" class="slide level2">
-<h2>Perchè capire la statistica?</h2>
-<p>Tanto quanto sapere l’inglese è necessario per conoscere la letteratura scientifica, conoscere la statistica è necessario per leggere in modo adeguato i risultati di un paper.</p>
-</section>
-<section id="lo-dice-anche-il-codice-deontologico" class="slide level2">
-<h2>Lo dice anche il codice deontologico</h2>
-<blockquote>
-<p><strong>Articolo 5</strong>: Lo psicologo è tenuto a mantenere un livello adeguato di preparazione e <strong>aggiornamento professionale</strong>, con particolare riguardo ai settori nei quali opera. La violazione dell’obbligo di formazione continua, determina un illecito disciplinare che è sanzionato sulla base di quanto stabilito dall’ordinamento professionale. Riconosce i limiti della propria competenza e usa, pertanto solo strumenti teorico – pratici per i quali ha acquisito adeguata competenza e, ove necessario, formale autorizzazione. <strong>Lo psicologo impiega metodologie delle quali è in grado di indicare le fonti e riferimenti scientifici, e non suscita, nelle attese del cliente e/o utente, aspettative infondate.</strong></p>
-</blockquote>
-</section>
-<section id="lo-dice-anche-il-codice-deontologico-1" class="slide level2">
-<h2>Lo dice anche il codice deontologico</h2>
-<blockquote>
-<p><strong>Articolo 7</strong>: Nelle proprie attività professionali, nelle attività di ricerca e nelle comunicazioni dei risultati delle stesse, nonché nelle attività didattiche, <strong>lo psicologo valuta attentamente, anche in relazione al contesto, il grado di validità e di attendibilità di informazioni, dati e fonti su cui basa le conclusioni raggiunte</strong>; espone all’occorrenza, le ipotesi interpretative alternative, ed esplicita i limiti dei risultati. Lo psicologo, su casi specifici, esprime valutazioni e giudizi professionali solo se fondati sulla conoscenza professionale diretta ovvero su una documentazione adeguata ed attendibile.</p>
-</blockquote>
-</section>
-<section id="lo-dice-anche-il-codice-deontologico-2" class="slide level2">
-<h2>Lo dice anche il codice deontologico</h2>
-<p>Per avere un buon aggiornamento scientifico (richiesto dal codice deontologico) è necessario approcciare in modo critico le informazioni. Per avere un approccio critico riguardo informazioni scientifiche è necessario:</p>
-<ul>
-<li>conoscere la metodologia della ricerca</li>
-<li>conoscere l’analisi dei dati (pensate sempre alla metafora del motore)</li>
-<li>saper intepretare i dati e integrare criticamente i risultati con la teoria</li>
-</ul>
-</section>
-<section id="formule-formule-formule" class="slide level2">
-<h2>Formule, formule, formule</h2>
-<p>Tuttə voi conoscete e capite questa formula giusto? Possiamo dare per scontate queste cose?</p>
-<p><span class="math display">\[
-L(\mathbf{\beta}, \sigma^2 \mid \mathbf{y}) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left( -\frac{(y_i - \mathbf{x}_i^\top \mathbf{\beta})^2}{2\sigma^2} \right)
-\]</span></p>
-<div class="fragment">
-<p>In realtà, nemmeno io la capisco fino in fondo. L’obiettivo di questo corso non è capire o studiare le formule ma capire più ad alto livello quello che implicano.</p>
-</div>
-</section>
-<section id="formule-formule-formule-1" class="slide level2">
-<h2>Formule, formule, formule</h2>
-<p>Le formule sono come dei modi di dire molto sintetici. Sono estremamente efficiaci ed eleganti per esprimere concetti complessi MA perdono la loro efficacia se non si ha un pochino di familiarità. Ad esempio:</p>
-<p><span class="math display">\[
-\bar x = \frac{1}{n} \sum^{n}_{i = 1} x_i
-\]</span></p>
-<p>Cosa significa questa formula? Ci sono dei simboli, delle convenzioni, c’è un iterazione <span class="math inline">\(\sum^{n}_{i = 1}\)</span>. Quando questa grammatica di base diventa più chiara e familiare, le formule diventano molto utili.</p>
-</section>
-<section id="formule-formule-formule-2" class="slide level2">
-<h2>Formule, formule, formule</h2>
-<p><span class="math display">\[
-\bar x = \frac{1}{n} \sum^{n}_{i = 1} x_i
-\]</span></p>
-<p>In questo caso, immaginate <span class="math inline">\(\sum^{n}_{i = 1}\)</span> come un ciclo di operazioni che si ripete <span class="math inline">\(n\)</span> volte da 1 a <span class="math inline">\(n\)</span>. <span class="math inline">\(i\)</span> identifica ogni giro di questo ciclo (primo giro <span class="math inline">\(i = 1\)</span>, secondo giro <span class="math inline">\(i = 2\)</span>, etc.). Gli elementi a destra di <span class="math inline">\(\sum^{n}_{i = 1}\)</span> sono quelli su cui fare l’operazione. L’operazione in questione è la somma, convenzionalmente come <span class="math inline">\(\sum\)</span>.</p>
-<p>Quindi sarebbe come dire, <span class="math inline">\(x\)</span> è un insieme di numeri di lunghezza <span class="math inline">\(n\)</span>. Prendi il primo elemento <span class="math inline">\(x_1\)</span>, poi sommalo al secondo <span class="math inline">\(x_2\)</span>, poi alla somma aggiungi il terzo <span class="math inline">\(x_3\)</span> e così via fino all’ultimo (<span class="math inline">\(n\)</span>). Questa somma di <span class="math inline">\(n\)</span> numeri moltiplicala per <span class="math inline">\(1/n\)</span> (ovvero dividi per <span class="math inline">\(n\)</span>). Cosa otteniamo? La media aritmetica!</p>
-</section>
-<section id="un-piccolo-esempio-1" class="slide level2">
-<h2>Un piccolo esempio (1)</h2>
-<p>Immaginate di leggere su un paper riguardo <strong>due studi</strong> dove un <em>gruppo clinico</em> e un <em>gruppo di controllo</em> vengono <strong>confrontati</strong> rispetto ad un certo <em>costrutto psicologico</em> <strong>misurato</strong> tramite una scala self-report. L’<strong>ipotesi</strong> degli autori dice che ci si aspetta un punteggio diverso tra gruppo clinico e gruppo di controllo.</p>
-<p>Nel <strong>primo studio</strong> viene raccolto un campione di <em>30 soggetti</em>. Nel <strong>secondo studio</strong> viene raccolto un campione di <em>300 soggetti</em>.</p>
-<div class="fragment">
-<p>Nel primo studio viene riportato che il gruppo clinico ha una misura <em>significativamente</em> maggiore nella variabile d’interesse, mentre il secondo studio non riporta differenze <em>significative</em>.</p>
-</div>
-<div class="fragment">
-<p>Se doveste scommettere, quale dei due studi è maggiormente informativo? perchè</p>
-</div>
-</section>
-<section id="un-piccolo-esempio-2" class="slide level2">
-<h2>Un piccolo esempio (2)</h2>
-<p>Un gruppo di ricerca ha sviluppato un nuovo intervento per il potenziamento dell’autostima nella scuola secondaria di secondo grado. Raccoglie un gruppo di studenti e studentesse ad inizio dell’anno scolastico, somministra una serie di questionari pre-intervento, esegue il programma di potenziamento e poi somministra nuovamente i questionari alla fine dell’anno scolastico.</p>
-<p>I risultati dicono che i partecipanti migliorano <em>significativamente</em> la loro autostima. Voi siete un ipotetico ente finanziatore per programmi di questo tipo, finanziereste su larga scala il trattamento? Avete bisogno di altre informazioni? Che critiche potreste fare?</p>
-</section>
-<section id="cosa-ci-dicono" class="slide level2">
-<h2>Cosa ci dicono?</h2>
-<p>Questi due esempi ci dicono delle cose importanti che tratteremo e che sono estremante rilevanti:</p>
-<ul>
-<li>I costrutti vengono misurati ed interrogarsi sulla tipologia di misura è fondamentale</li>
-<li>La numerosità campionaria è un indice (non il solo) che ci permette di avere più o meno confidenza in un risultato</li>
-<li>La costruzione dell’esperimento/studio è fondamentale (oltre alle cose precedenti) per valutare un risultato come solido ed affidabile</li>
-</ul>
-</section>
-<section id="simpsons-paradox" class="slide level2">
-<h2>Simpson’s Paradox</h2>
-<p>Nell’autunno del 1973, l’Università della California a Berkeley rese pubblici i dati relativi alle ammissioni ai <strong>corsi di laurea magistrale</strong>. Cosa potreste concludere guardando i dati aggregati?</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="01-intro-analisi-dati_files/figure-revealjs/unnamed-chunk-2-1.svg" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-
-<aside><div>
-<p>Si veda <span class="citation" data-cites="Bickel1975-or">Bickel et al. (<a href="#/riferimenti" role="doc-biblioref" onclick="">1975</a>)</span></p>
-</div></aside></section>
-<section id="simpsons-paradox-1" class="slide level2">
-<h2>Simpson’s Paradox</h2>
-<p>In modo <em>naive</em> si potrebbe concludere che ci sia un bias verso l’ammissione di candidati di sesso maschile. Ci potrebbero però essere altre spiegazioni?</p>
-<p>Vi ricordo che:</p>
-<ul>
-<li>abbiamo solo il sesso come informazione riguardo i partecipanti</li>
-<li>i dati sono qui aggregati ma sono anche disponibili i dati separati per corso di studio</li>
-</ul>
-</section>
-<section id="simpsons-paradox-2" class="slide level2">
-<h2>Simpson’s Paradox</h2>
-<p>Vediamo cosa succede se separiamo per corso di studio. Potete trovare il dataset con le percentuali di ammissione separato per dipartimento qui:</p>
-<center>
-<div id="" class="qrcode"></div>
-<script type="text/javascript">
-(function() {
-  var script = document.currentScript;
-  var qrcode = script.previousElementSibling;
-  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#000000","colorLight":"#ffffff","height":"300","text":"https://docs.google.com/spreadsheets/d/1bIzgoftBx0v87sbdgzz3eqH5nuzE7ZUHGgVoryLHCaY/edit?gid=0#gid=0","width":"300"});
-  script.remove();
-})();
-</script>
-    
-</center>
-<p>Cosa potete notare?</p>
-</section>
-<section id="simpsons-paradox-3" class="slide level2">
-<h2>Simpson’s Paradox</h2>
-<p>Facciamo un grafico (un pochino complesso) dei dati in questione:</p>
-
-<img data-src="01-intro-analisi-dati_files/figure-revealjs/unnamed-chunk-3-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="simpsons-paradox-4" class="slide level2">
-<h2>Simpson’s Paradox</h2>
-<p>Sostanzialmente, se ordiniamo i corsi per la % totale di ammissione (un indice della difficoltà ad entrare) vediamo che:</p>
-<ul>
-<li>Gli studenti tendono ad applicare di più a dipartimenti più facili</li>
-<li>Le studentesse tendono ad applicare di più a dipartimenti più difficili</li>
-</ul>
-<p>Anzi, se calcoliamo la media della percentuale di ammissione tra corsi, è leggermente più alta per le studentesse.</p>
-</section>
-<section id="simpsons-paradox-5" class="slide level2">
-<h2>Simpson’s Paradox</h2>
-<p>Questo fenomeno si chiama Paradosso di Simpson e può accadere quando in presenza di un <em>confounder</em> (la difficoltà di ammissione) le conclusioni guardando i dati aggregati è diversa rispetto a guardare i dati disaggregati (in questo caso rispetto al corso).</p>
-<p>Questo è un ottimo esempio di come conoscere o non conoscere l’analisi dei dati aiuta a trarre conclusioni più appropriate.</p>
-<p>Per approfondire, a questo link <a href="https://setosa.io/simpsons/">https://setosa.io/simpsons/</a> trovate una visualizzazione interattiva del Paradosso di Simpson</p>
-</section>
-<section id="simpsons-paradox-6" class="slide level2">
-<h2>Simpson’s Paradox</h2>
-<p>Vediamo una <em>simulazione</em> con due dipartimenti, uno facile e uno difficile. Il 50% dei maschi applica sempre a quello difficile. Vediamo cosa succede cambiando il tasso delle femmine.</p>
-
-<img data-src="01-intro-analisi-dati_files/figure-revealjs/unnamed-chunk-5-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
-<section>
-<section id="quali-tipi-di-domande-di-ricerca" class="title-slide slide level1 center">
-<h1>Quali tipi di domande di ricerca?</h1>
-
-</section>
-<section id="quali-tipi-di-domande-di-ricerca-1" class="slide level2">
-<h2>Quali tipi di domande di ricerca?</h2>
-<p>Il capitolo <em>Introduction to Quantitative Methods</em> <a href="https://stat-teaching.github.io/adcom/slides/files/jason2016_chapter1_intro.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a> identifica i principali approcci quantitativi all’analisi dati in ambito di Psicologia di Comunità.</p>
-
-<img data-src="img/handbook-community-research.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="e-possibile-una-ricerca-empirica" class="slide level2">
-<h2>E’ possibile una ricerca empirica?</h2>
-<blockquote>
-<p>On the one hand, more action-oriented proponents in the field argue in favor of constructivist or relativistic paradigms to promote greater engagement with the contextual and community-based influences that impact our areas of study (Lincoln &amp; Guba, 2000). From this perspective, there is concern about the potential limitations, or even the potential harms to those who are disenfranchised, of more objective experimental paradigms (e.g., positivism and postpositivisism). On the other hand, proponents of these quantitative methods argue that as a scientific discipline seeking to expand the influence of our field’s perspective on the way social and community research is conducted, we should embrace the strengths of methods based on these paradigms to facilitate rigorous hypothesis testing, produce research that is both internally valid and externally generalizable, and assess cause-and-effect relationships between constructs (Johnson &amp; Onwuegbuzie, 2004).</p>
-</blockquote>
-</section>
-<section id="quali-tipi-di-domande-di-ricerca-2" class="slide level2">
-<h2>Quali tipi di domande di ricerca?</h2>
-<p>Di seguito, sono identificate le principali domande di ricerca:</p>
-<ol type="1">
-<li>La presenza e la forza della relazione tra due o più variabili</li>
-<li>La presenza di differenze in variabili d’interesse tra due o più gruppi</li>
-<li>Classificazione dei soggetti in gruppi, basandosi su variabili di interesse</li>
-<li>Misurazione e strutture latenti di variabili e costrutti d’interesse</li>
-<li>L’andamento temporale (i.e., longitudinale) di effetti e variabili d’interesse</li>
-</ol>
-</section>
-<section id="quali-tipi-di-domande-di-ricerca-3" class="slide level2">
-<h2>Quali tipi di domande di ricerca?</h2>
-<p>Quelle che affronteremo principalmente sono:</p>
-<ol type="1">
-<li><strong>La presenza e la forza della relazione tra due o più variabili</strong></li>
-<li><strong>La presenza di differenze in variabili d’interesse tra due o più gruppi</strong></li>
-<li>Classificazione dei soggetti in gruppi, basandosi su variabili di interesse</li>
-<li>Misurazione e strutture latenti di variabili e costrutti d’interesse</li>
-<li>L’andamento temporale (i.e., longitudinale) di effetti e variabili d’interesse</li>
-</ol>
-</section>
-<section id="quali-tipi-di-domande-di-ricerca-4" class="slide level2">
-<h2>Quali tipi di domande di ricerca</h2>
-<p>Inoltre, tratteremo altri due argomenti:</p>
-<ul>
-<li><strong>Strutture dati multilivello</strong>: Questo è parzialmente compreso in (1) ma in Psicologia di Comunità spesso le domande di ricerca riguardano la relazione tra più livelli di analisi (e.g., come il contesto impatta il singolo e viceversa).</li>
-<li><strong>Metanalisi</strong>: In un contesto dove ci sono sempre più ricerche pubblicate, sviluppare un meta-analytic thinking è essenziale. Il motto è che uno studio, anche il più ben fatto, non dice mai abbastanza sul fenomeno d’indagine.</li>
-</ul>
-</section>
-<section id="relazione-tra-due-o-più-variabili" class="slide level2">
-<h2>1. Relazione tra due o più variabili</h2>
-<p>Possiamo valutare la relazione tra criminalità percepita ed età anagrafica:</p>
-
-<img data-src="01-intro-analisi-dati_files/figure-revealjs/unnamed-chunk-6-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="relazione-tra-due-o-più-variabili-1" class="slide level2">
-<h2>1. Relazione tra due o più variabili</h2>
-<p>Oppure vedere la relazione tra uso dei social media e depressione in diversi paesi. Questa è una struttura multilivello:</p>
-
-<img data-src="01-intro-analisi-dati_files/figure-revealjs/unnamed-chunk-7-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="differenze-tra-gruppi" class="slide level2">
-<h2>2. Differenze tra gruppi</h2>
-<p>Possiamo indagare ad esempio punteggi di depressione e ansia in funzione del corso di laurea seguito:</p>
-
-<img data-src="01-intro-analisi-dati_files/figure-revealjs/unnamed-chunk-8-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="metanalisi" class="slide level2">
-<h2>3. Metanalisi</h2>
-<p>Possiamo anche combinare diversi studi relativi ad uno specifico ambito di ricerca. Ad esempio, 10 studi che valutano l’impatto di uno specifico programma di prevenzione:</p>
-
-<img data-src="01-intro-analisi-dati_files/figure-revealjs/unnamed-chunk-9-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="riferimenti" class="slide level2 smaller scrollable">
-<h2>Riferimenti</h2>
+<section class="slide level2">
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-Bickel1975-or" class="csl-entry" role="listitem">
-Bickel, P. J., Hammel, E. A., &amp; O’connell, J. W. (1975). <span class="nocase">Sex bias in graduate admissions: data from berkeley: Measuring bias is harder than is usually assumed, and the evidence is sometimes contrary to expectation</span>. <em>Science (New York, N.Y.)</em>, <em>187</em>, 398–404. <a href="https://doi.org/10.1126/science.187.4175.398">https://doi.org/10.1126/science.187.4175.398</a>
-</div>
-</div>
-</section></section>
+
+</section>
 
 
     </div>
@@ -634,44 +375,6 @@ Bickel, P. J., Hammel, E. A., &amp; O’connell, J. W. (1975). <span class="noca
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

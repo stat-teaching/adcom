@@ -1,7 +1,7 @@
 ---
 title: Statistica Descrittiva
 pdf: "[{{< fa file-pdf >}}](slides/02-research-methods.pdf)"
-pdf-pages: 48
+pdf-pages: 86
 filters:
   - bibentry
 ---
