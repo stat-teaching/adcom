@@ -5,6 +5,16 @@ format:
         code-overflow: wrap
 ---
 
+## 03 Statistica Descrittiva
+
+{{< downloadthis eda.R dname="eda" label="Scarica il file .R" >}}
+
+```r
+{{< include eda.R >}}
+```
+
+<!--
+
 ## 06 Inferenza - Questionario iniziale
 
 {{< downloadthis samp-dist.R dname="samp-dist" label="Scarica il file .R" >}}
@@ -12,3 +22,4 @@ format:
 ```r
 {{< include samp-dist.R >}}
 ```
+-->
