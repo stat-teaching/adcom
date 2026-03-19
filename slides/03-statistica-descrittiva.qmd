@@ -1,7 +1,6 @@
 ---
 title: Statistica Descrittiva
 pdf: "[{{< fa file-pdf >}}](slides/02-research-methods.pdf)"
-pdf-pages: 86
 filters:
   - bibentry
 ---
@@ -749,6 +748,8 @@ p1 + p2 + p3 + plot_layout(axes = "collect")
 Per la varianza in R abbiamo la funzione `var()`. Come vedete, di default in R è implementata la versione della varianza corretta che divide per $n - 1$:
 
 ```{r}
+#| echo: true
+
 var(dimarco2020$age)
 # in alternativa
 n <- nrow(dimarco2020)
