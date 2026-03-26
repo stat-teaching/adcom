@@ -13,12 +13,12 @@
   {
     "listing": "/index.html",
     "items": [
-      "/slides/05-normale.html",
       "/slides/00-intro-corso.html",
       "/slides/01-intro-analisi-dati.html",
       "/slides/02-research-methods.html",
-      "/slides/04-probability.html",
       "/slides/03-statistica-descrittiva.html",
+      "/slides/04-probability.html",
+      "/slides/05-normale.html",
       "/notes/importing-data.html"
     ]
   }

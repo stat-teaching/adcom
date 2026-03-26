@@ -17,6 +17,7 @@ listing:
   - id: "slides"
     contents:
       - "slides"
+    sort: filename
     template: resources/listing.ejs
   - id: "notes"
     contents:
