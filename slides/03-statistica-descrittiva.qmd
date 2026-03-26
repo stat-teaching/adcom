@@ -1384,20 +1384,23 @@ La curtosi indica il grado di *appuntimento* rispetto alla distribuzione normale
 
 ```{r}
 par(mfrow = c(2, 2))
-x <- rt(1e4, 7)
-hist(x, freq = FALSE, ylim = c(0, 0.4), main = "Leptocurtica")
-curve(dnorm(x), add = TRUE, lwd = 2, col = "firebrick")
-qqnorm(x)
-qqline(x, lwd = 2, col = "firebrick")
 
-
-x <- rbeta(1e4, 3, 3)
-x_scaled <- (x - mean(x)) / sd(x)
-hist(x_scaled, freq = FALSE, breaks = 40, xlim = c(-3, 3), ylim = c(0, 0.5), xlab = "", 
-     main = "Platicurtica")
+x_lep <- rt(1e4, 6)
+hist(x_lep, freq = FALSE, ylim = c(0, 0.4), breaks = 40, main = "Leptocurtica")
 curve(dnorm(x), add = TRUE, lwd = 2, col = "firebrick")
-qqnorm(x_scaled)
-qqline(x_scaled, lwd = 2, col = "firebrick")
+
+qqnorm(x_lep)
+qqline(x_lep, lwd = 2, col = "firebrick")
+
+x_raw <- rbeta(1e4, 3, 3)
+x_pla <- (x_raw - mean(x_raw)) / sd(x_raw)
+
+hist(x_pla, freq = FALSE, breaks = 40, ylim = c(0, 0.5), 
+     xlab = "", main = "Platicurtica")
+curve(dnorm(x), add = TRUE, lwd = 2, col = "firebrick")
+
+qqnorm(x_pla)
+qqline(x_pla, lwd = 2, col = "firebrick")
 ```
 
 ## Curtosi
@@ -1698,7 +1701,7 @@ Le matrici di correlazione sono il modo principale per rappresentare la relazion
 
 Se abbiamo $p$ variabili, abbiamo una matrice quadrata $p \times p$. 
 
-Di queste correlazioni, quelle informative (escludendo le ripetizioni) sono $(2^p - p) / 2$ perchè teniamo solo il triangolo superiore/inferiore e togliamo la diagonale.
+Di queste correlazioni, quelle informative (escludendo le ripetizioni) sono $(p^2 - p) / 2$ perchè teniamo solo il triangolo superiore/inferiore e togliamo la diagonale.
 
 La correlazione di una variabile con se stessa è per definizione 1 quindi la diagonale non è informativa.
 
