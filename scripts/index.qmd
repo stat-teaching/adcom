@@ -5,12 +5,20 @@ format:
         code-overflow: wrap
 ---
 
-## 03 Statistica Descrittiva
+## 2026-03-18
 
-{{< downloadthis eda.R dname="eda" label="Scarica il file .R" >}}
+{{< downloadthis 2026-03-18.R dname="eda" label="Scarica il file .R" >}}
 
 ```r
-{{< include eda.R >}}
+{{< include 2026-03-18.R >}}
+```
+
+## 2026-03-26
+
+{{< downloadthis 2026-03-26.R dname="eda" label="Scarica il file .R" >}}
+
+```r
+{{< include 2026-03-26.R >}}
 ```
 
 <!--

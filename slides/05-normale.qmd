@@ -1,6 +1,6 @@
 ---
 title: Distribuzione Normale
-draft: true
+pdf: "[{{< fa file-pdf >}}](slides/05-normale.pdf)"
 ---
 
 ```{r}

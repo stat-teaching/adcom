@@ -1,5 +1,3 @@
-# 18 Marzo 2026
-
 # Carico dimarco2020 -----------------------------------------------------
 
 ## qui dovete mettere il percorso dove è localizzato il file

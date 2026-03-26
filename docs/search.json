@@ -1,5 +1,103 @@
 [
   {
+    "objectID": "slides/05-normale.html#distribuzione-normale",
+    "href": "slides/05-normale.html#distribuzione-normale",
+    "title": "Distribuzione Normale",
+    "section": "Distribuzione Normale",
+    "text": "Distribuzione Normale\nLa distribuzione Normale o Gaussiana è una delle principali distribuzioni di probabilità. E’ una distribuzione di probabilità continua che dipende da due parametri \\(\\mu\\) e \\(\\sigma\\). La PDF (probability density function) è:\n\\[\nf(x \\mid \\mu, \\sigma^2) = \\frac{1}{\\sqrt{2\\pi{\\color{red}{\\sigma^2}}}} e^{-\\frac{(x-{\\color{red}{\\mu}})^2}{2{\\color{red}{\\sigma^2}}}}\n\\]\nI valori ammessi sono compresi tra \\(-\\infty\\) e \\(\\infty\\) e sono simmetrici rispetto alla media."
+  },
+  {
+    "objectID": "slides/05-normale.html#distribuzione-normale-1",
+    "href": "slides/05-normale.html#distribuzione-normale-1",
+    "title": "Distribuzione Normale",
+    "section": "Distribuzione Normale",
+    "text": "Distribuzione Normale\nPossiamo calcolare la densità \\(f(x)\\) dati i valori di \\(\\mu\\) e \\(\\sigma\\). Per \\(x = 0\\) la densità è circa 4."
+  },
+  {
+    "objectID": "slides/05-normale.html#distribuzione-normale-cdf",
+    "href": "slides/05-normale.html#distribuzione-normale-cdf",
+    "title": "Distribuzione Normale",
+    "section": "Distribuzione Normale, CDF",
+    "text": "Distribuzione Normale, CDF\nOltre alla densità presentata prima, possiamo calcolare la probabilità cumulata fino al valore \\(x\\):\n\\[\n\\Phi(x) = \\frac{1}{\\sqrt{2\\pi}} \\int_{-\\infty}^{x} e^{-\\frac{t^2}{2}} dt\n\\]\nQuesto è lo stesso concetto dei percentili e dei ranghi percentili. Questa funzione risponde alla domanda, quanta probabilità c’è di avere un valore \\(\\leq x\\) (o \\(&gt; x\\)) avendo una Normale con media \\(\\mu\\) e deviazione standard \\(\\sigma\\)?"
+  },
+  {
+    "objectID": "slides/05-normale.html#distribuzione-normale-cdf-1",
+    "href": "slides/05-normale.html#distribuzione-normale-cdf-1",
+    "title": "Distribuzione Normale",
+    "section": "Distribuzione Normale, CDF",
+    "text": "Distribuzione Normale, CDF\nProbabilità cumulata fino a \\(x = 0\\) è del 50%."
+  },
+  {
+    "objectID": "slides/05-normale.html#distribuzione-normale-cdf-inversa",
+    "href": "slides/05-normale.html#distribuzione-normale-cdf-inversa",
+    "title": "Distribuzione Normale",
+    "section": "Distribuzione Normale, CDF inversa",
+    "text": "Distribuzione Normale, CDF inversa\nOvviamente, esiste anche una funzione che data la probabilità cumulata restituisce il valore di \\(x\\) associato. \\(x = -1\\) è il valore che si lascia a sinistra il ~16% di probabilità cumulata."
+  },
+  {
+    "objectID": "slides/05-normale.html#distribuzione-normale-2",
+    "href": "slides/05-normale.html#distribuzione-normale-2",
+    "title": "Distribuzione Normale",
+    "section": "Distribuzione Normale",
+    "text": "Distribuzione Normale\nTutto questo è possibile, ovviamente, assumendo di conoscere \\(\\mu\\) e \\(\\sigma\\). Sono formule che permettono di calcolare queste quantità (densità, probabilità cumulata e inverso) per normali teoriche.\nCon dati empirici i quantili e ranghi percentili svolgono una funzione simile. Più la distribuzione è effettivamente normale, più queste approssimazioni teoriche sono vicine al dato empirico."
+  },
+  {
+    "objectID": "slides/05-normale.html#distribuzioni-in-r",
+    "href": "slides/05-normale.html#distribuzioni-in-r",
+    "title": "Distribuzione Normale",
+    "section": "Distribuzioni in R",
+    "text": "Distribuzioni in R\nIn R sono implementate le principali distribuzioni di probabilità, tra cui chiaramente quella Normale.\nInoltre ci sono 4 funzioni per lavorare con le distribuzioni normali:\n\nd + nome della distribuzione ad esempio dnorm: calcola la densità di un certo valore \\(x\\)\np + nome della distribuzione ad esempio pnorm: calcola la probabilità cumulata fino al valore \\(x\\)\nq + nome della distribuzione ad esempio qnorm: calcola il valore \\(x\\) associato ad una certa probabilità cumulata\nr + nome della distribuzione ad esempio rnorm: genera \\(n\\) numeri casuali da una distribuzione normale."
+  },
+  {
+    "objectID": "slides/05-normale.html#distribuzioni-in-r-1",
+    "href": "slides/05-normale.html#distribuzioni-in-r-1",
+    "title": "Distribuzione Normale",
+    "section": "Distribuzioni in R",
+    "text": "Distribuzioni in R\nAd esempio, calcoliamo la densità di probabilità del valore \\(x = 100\\) per una normale con \\(\\mu = 80\\) e \\(\\sigma = 10\\):\n\ndnorm(x = 100, mean = 80, sd = 10)\n\n[1] 0.005399097\n\ndnorm(x = 80, mean = 80, sd = 10)\n\n[1] 0.03989423\n\ndnorm(x = 1, mean = 80, sd = 10)\n\n[1] 1.118796e-15"
+  },
+  {
+    "objectID": "slides/05-normale.html#distribuzioni-in-r-2",
+    "href": "slides/05-normale.html#distribuzioni-in-r-2",
+    "title": "Distribuzione Normale",
+    "section": "Distribuzioni in R",
+    "text": "Distribuzioni in R\nOra calcoliamo la probabilità cumulata fino a \\(x = 100\\) sempre per la stessa distribuzione:\n\npnorm(q = 100, mean = 80, sd = 10)\n\n[1] 0.9772499\n\npnorm(q = 80, mean = 80, sd = 10)\n\n[1] 0.5\n\npnorm(q = 5, mean = 80, sd = 10)\n\n[1] 3.190892e-14"
+  },
+  {
+    "objectID": "slides/05-normale.html#distribuzioni-in-r-3",
+    "href": "slides/05-normale.html#distribuzioni-in-r-3",
+    "title": "Distribuzione Normale",
+    "section": "Distribuzioni in R",
+    "text": "Distribuzioni in R\nOra calcoliamo l’inverso:\n\nqnorm(p = 0.5, mean = 80, sd = 10)\n\n[1] 80\n\nqnorm(p = 0.2, mean = 80, sd = 10)\n\n[1] 71.58379\n\nqnorm(p = 0.9, mean = 80, sd = 10)\n\n[1] 92.81552\n\n\nOvviamente c’è una corrispondenza diretta tra qnorm e pnorm:\n\n(q &lt;- qnorm(0.2, 80, 10))\n\n[1] 71.58379\n\npnorm(q, 80, 10)\n\n[1] 0.2"
+  },
+  {
+    "objectID": "slides/05-normale.html#normale-standard",
+    "href": "slides/05-normale.html#normale-standard",
+    "title": "Distribuzione Normale",
+    "section": "Normale standard",
+    "text": "Normale standard\nLa distribuzione Normale standard è un tipo particolare di distribuzione normale con \\(\\mu = 0\\) e \\(\\sigma = 1\\). La cosa interessante è che tutte le distribuzioni normali possono trasformarsi in normali standard e viceversa.\nI valori \\(x\\) di una normale standard (o punti \\(z\\)):\n\\[\nz = \\frac{x - \\mu}{\\sigma}\n\\]\nQuindi \\(\\mu\\) semplicemente sposta la distribuzione e \\(\\sigma\\) la riscala. Ogni \\(x\\) può anche essere definito come:\n\\[\nx = \\mu + z\\sigma\n\\]"
+  },
+  {
+    "objectID": "slides/05-normale.html#normale-standard-1",
+    "href": "slides/05-normale.html#normale-standard-1",
+    "title": "Distribuzione Normale",
+    "section": "Normale standard",
+    "text": "Normale standard\nSe proviamo a visualizzarla il rapporto tra \\(x\\) e \\(z\\) è chiaro:"
+  },
+  {
+    "objectID": "slides/05-normale.html#normale-standard-2",
+    "href": "slides/05-normale.html#normale-standard-2",
+    "title": "Distribuzione Normale",
+    "section": "Normale standard",
+    "text": "Normale standard\nQuindi un punto \\(z = -3\\) significa che siamo 3 deviazioni standard sotto la media. Nel caso di \\(\\mu = 100\\) e \\(\\sigma = 10\\) quindi abbiamo che \\(z = -3\\) significa \\(x = 100 - 3 \\times 10 = 70\\).\nOvviamente, sappiamo anche che dire \\(z = -3\\) significa sapere che solo il 0.13% ha valori uguali o più piccoli.\n\npnorm(-3) # di default, mean = 0 sd = 1\n\n[1] 0.001349898\n\n\nLavorare in punti \\(z\\) è chiaramente più comodo. Ragioniamo in una nuova unità di misura ovvero la deviazione standard."
+  },
+  {
+    "objectID": "slides/05-normale.html#normale-standard-3",
+    "href": "slides/05-normale.html#normale-standard-3",
+    "title": "Distribuzione Normale",
+    "section": "Normale standard",
+    "text": "Normale standard\nNel caso di dati veri, la normalità può essere assunta ma comunque possiamo calcolare i punti \\(z\\):\n\n# 5 numeri casuali\nx &lt;- rnorm(5, mean = 100, sd = 10)\nx\n\n[1]  98.61862 106.85311 115.01468  91.35710 118.94106\n\n# non esattamente i valori veri, solo 10 osservazioni\nmean(x)\n\n[1] 106.1569\n\nsd(x)\n\n[1] 11.38244\n\n# punti z empirici, non teorici\nz &lt;- (x - mean(x)) / sd(x)\nz\n\n[1] -0.66227385  0.06116381  0.77819612 -1.30023265  1.12314656"
+  },
+  {
     "objectID": "slides/03-statistica-descrittiva.html#popolazione-e-campioni",
     "href": "slides/03-statistica-descrittiva.html#popolazione-e-campioni",
     "title": "Statistica Descrittiva",
@@ -60,14 +158,14 @@
     "href": "slides/03-statistica-descrittiva.html#un-esempio-3",
     "title": "Statistica Descrittiva",
     "section": "Un esempio",
-    "text": "Un esempio\nOra immaginiamo di selezionare un campione di \\(N = 500\\) da questa popolazione in modo totalmente casuale. La media è di circa 7.6:"
+    "text": "Un esempio\nOra immaginiamo di selezionare un campione di \\(N = 500\\) da questa popolazione in modo totalmente casuale. La media è di circa 7.5:"
   },
   {
     "objectID": "slides/03-statistica-descrittiva.html#un-esempio-4",
     "href": "slides/03-statistica-descrittiva.html#un-esempio-4",
     "title": "Statistica Descrittiva",
     "section": "Un esempio",
-    "text": "Un esempio\nVediamo invece, campionando in modo non casuale, selezionando con più probabilità giovani (&lt; 30 anni)La media è di circa 9.5:"
+    "text": "Un esempio\nVediamo invece, campionando in modo non casuale, selezionando con più probabilità giovani (&lt; 30 anni)La media è di circa 9.6:"
   },
   {
     "objectID": "slides/03-statistica-descrittiva.html#un-esempio-5",
@@ -81,7 +179,7 @@
     "href": "slides/03-statistica-descrittiva.html#un-esempio-6",
     "title": "Statistica Descrittiva",
     "section": "Un esempio",
-    "text": "Un esempio\nPer stimare in modo adeguato il parametro media di cocktails bevuti nella popolazione di riferimento, il campione dovrebbe essere rappresentativo per tutte quelle caratteristiche che hanno un impatto (età in questo caso).\n\n\n\n\n\n    \n    \n    \n    \n\n    \n\n    \n\n    \n    \n    \n      \n        Popolazione\n        \n              \n                age\n                %\n                drinks\n                avg\n              \n        \n        \n        \n                \n                  &lt; 20\n                  0.2\n                  10\n                  8\n                \n                \n                  20-30\n                  0.4\n                  10\n                  8\n                \n                \n                  30-40\n                  0.2\n                  5\n                  8\n                \n                \n                  40-50\n                  0.1\n                  4\n                  8\n                \n                \n                  &gt; 50\n                  0.1\n                  1\n                  8\n                \n        \n      \n    \n\n\n\n\n\n    \n    \n    \n    \n\n    \n\n    \n\n    \n    \n    \n      \n        Campione Rap.\n        \n              \n                age\n                %\n                drinks\n                avg\n              \n        \n        \n        \n                \n                  &lt; 20\n                  0.2\n                  10\n                  8\n                \n                \n                  20-30\n                  0.4\n                  10\n                  8\n                \n                \n                  30-40\n                  0.2\n                  5\n                  8\n                \n                \n                  40-50\n                  0.1\n                  4\n                  8\n                \n                \n                  &gt; 50\n                  0.1\n                  1\n                  8\n                \n        \n      \n    \n\n\n\n\n\n    \n    \n    \n    \n\n    \n\n    \n\n    \n    \n    \n      \n        Campione non Rap.\n        \n              \n                age\n                %\n                drinks\n                avg\n              \n        \n        \n        \n                \n                  &lt; 20\n                  0.3\n                  10\n                  10\n                \n                \n                  20-30\n                  0.6\n                  10\n                  10\n                \n                \n                  30-40\n                  0\n                  5\n                  10\n                \n                \n                  40-50\n                  0\n                  4\n                  10\n                \n                \n                  &gt; 50\n                  0\n                  1\n                  10"
+    "text": "Un esempio\nPer stimare in modo adeguato il parametro media di cocktails bevuti nella popolazione di riferimento, il campione dovrebbe essere rappresentativo per tutte quelle caratteristiche che hanno un impatto (età in questo caso).\n\n\n\n\n\n    \n    \n    \n    \n\n    \n\n    \n    \n      \n        \n        Popolazione\n              \n                age\n                %\n                drinks\n                avg\n              \n        \n        \n        \n                \n                  &lt; 20\n                  0.2\n                  10\n                  8\n                \n                \n                  20-30\n                  0.4\n                  10\n                  8\n                \n                \n                  30-40\n                  0.2\n                  5\n                  8\n                \n                \n                  40-50\n                  0.1\n                  4\n                  8\n                \n                \n                  &gt; 50\n                  0.1\n                  1\n                  8\n                \n        \n      \n    \n\n\n\n\n\n    \n    \n    \n    \n\n    \n\n    \n    \n      \n        \n        Campione Rap.\n              \n                age\n                %\n                drinks\n                avg\n              \n        \n        \n        \n                \n                  &lt; 20\n                  0.2\n                  10\n                  8\n                \n                \n                  20-30\n                  0.4\n                  10\n                  8\n                \n                \n                  30-40\n                  0.2\n                  5\n                  8\n                \n                \n                  40-50\n                  0.1\n                  4\n                  8\n                \n                \n                  &gt; 50\n                  0.1\n                  1\n                  8\n                \n        \n      \n    \n\n\n\n\n\n    \n    \n    \n    \n\n    \n\n    \n    \n      \n        \n        Campione non Rap.\n              \n                age\n                %\n                drinks\n                avg\n              \n        \n        \n        \n                \n                  &lt; 20\n                  0.3\n                  10\n                  10\n                \n                \n                  20-30\n                  0.6\n                  10\n                  10\n                \n                \n                  30-40\n                  0\n                  5\n                  10\n                \n                \n                  40-50\n                  0\n                  4\n                  10\n                \n                \n                  &gt; 50\n                  0\n                  1\n                  10"
   },
   {
     "objectID": "slides/03-statistica-descrittiva.html#eda-the-big-picture",
@@ -291,7 +389,7 @@
     "href": "slides/03-statistica-descrittiva.html#range-1",
     "title": "Statistica Descrittiva",
     "section": "Range",
-    "text": "Range\nIn R calcolare il range è molto semplice:\n\nmax(x) - min(x)\n\n[1] 12\n\nrange(x)\n\n[1]  0 12\n\ndiff(range(x))\n\n[1] 12"
+    "text": "Range\nIn R calcolare il range è molto semplice:\n\nmax(x) - min(x)\n\n[1] 13\n\nrange(x)\n\n[1]  0 13\n\ndiff(range(x))\n\n[1] 13"
   },
   {
     "objectID": "slides/03-statistica-descrittiva.html#range-2",
@@ -312,7 +410,7 @@
     "href": "slides/03-statistica-descrittiva.html#scarto-range-interquartile-iqr-1",
     "title": "Statistica Descrittiva",
     "section": "Scarto (range) interquartile (IQR)",
-    "text": "Scarto (range) interquartile (IQR)\nIn R:\n\nIQR(x)\n\n[1] 13.64332\n\nq &lt;- quantile(x, c(0.25, 0.75))\ndiff(q)\n\n     75% \n13.64332 \n\nq[2] - q[1]\n\n     75% \n13.64332"
+    "text": "Scarto (range) interquartile (IQR)\nIn R:\n\nIQR(x)\n\n[1] 13.44254\n\nq &lt;- quantile(x, c(0.25, 0.75))\ndiff(q)\n\n     75% \n13.44254 \n\nq[2] - q[1]\n\n     75% \n13.44254"
   },
   {
     "objectID": "slides/03-statistica-descrittiva.html#scarto-range-interquartile-iqr-2",
@@ -403,7 +501,7 @@
     "href": "slides/03-statistica-descrittiva.html#coefficiente-di-variazione-2",
     "title": "Statistica Descrittiva",
     "section": "Coefficiente di variazione",
-    "text": "Coefficiente di variazione\nSe calcoliamo il CV per le due variabili (ignorando che sappiamo essere una trasformazione):\n\nhead(altezza, 5)\n## [1] 184.8689 171.3346 160.4851 192.9848 187.4776\naltezza_m &lt;- altezza/100\nhead(altezza_m, 5)\n## [1] 1.848689 1.713346 1.604851 1.929848 1.874776\n\nsd(altezza)\n## [1] 10\nsd(altezza_m)\n## [1] 0.1\n\nsd(altezza) / abs(mean(altezza))\n## [1] 0.05882353\nsd(altezza_m) / abs(mean(altezza_m))\n## [1] 0.05882353\n\nIl coefficiente di variazione è lo stesso quindi le due variabili sono ugualmente disperse."
+    "text": "Coefficiente di variazione\nSe calcoliamo il CV per le due variabili (ignorando che sappiamo essere una trasformazione):\n\nhead(altezza, 5)\n## [1] 165.5870 169.5775 162.2884 167.9476 161.5088\naltezza_m &lt;- altezza/100\nhead(altezza_m, 5)\n## [1] 1.655870 1.695775 1.622884 1.679476 1.615088\n\nsd(altezza)\n## [1] 10\nsd(altezza_m)\n## [1] 0.1\n\nsd(altezza) / abs(mean(altezza))\n## [1] 0.05882353\nsd(altezza_m) / abs(mean(altezza_m))\n## [1] 0.05882353\n\nIl coefficiente di variazione è lo stesso quindi le due variabili sono ugualmente disperse."
   },
   {
     "objectID": "slides/03-statistica-descrittiva.html#trasformazioni-1",
@@ -1180,21 +1278,28 @@
     "href": "scripts/index.html",
     "title": "Script Lezioni",
     "section": "",
-    "text": "Scarica il file .R \n# 18 Marzo 2026\n\n# Carico dimarco2020 -----------------------------------------------------\n\n## qui dovete mettere il percorso dove è localizzato il file\n\ndat &lt;- readxl::read_xlsx(\"data/dimarco2020.xlsx\")\n\n## istogramma, di default\n\nhist(dat$perc_collective_efficacy)\n\n## istogramma con bin più stretti (e quindi maggiore numero di bin)\n## più preciso avendo più intervalli\n\nhist(dat$perc_collective_efficacy, breaks = 10)\n\n# centrare e standardizzare ---------------------------------------------\n\n## mettiamo dentro oggetto x per comodità\n\nx &lt;- dat$perc_collective_efficacy\n\nxc &lt;- x - mean(x) # centrare sulla media\nxz &lt;- (x - mean(x)) / sd(x) # standardizzare\n\n## media 0, sd la stessa di x\nmean(xc)\nsd(xc)\n\n## media = 0, sd = 1 per definizione\n\nmean(xz)\nsd(xz)\n\n## in alternativa per centrare e standardizzare\nscale(x, center = TRUE, scale = TRUE)\n\n## solo centrare\nscale(x, center = TRUE, scale = FALSE)"
+    "text": "Scarica il file .R \n# Carico dimarco2020 -----------------------------------------------------\n\n## qui dovete mettere il percorso dove è localizzato il file\n\ndat &lt;- readxl::read_xlsx(\"data/dimarco2020.xlsx\")\n\n## istogramma, di default\n\nhist(dat$perc_collective_efficacy)\n\n## istogramma con bin più stretti (e quindi maggiore numero di bin)\n## più preciso avendo più intervalli\n\nhist(dat$perc_collective_efficacy, breaks = 10)\n\n# centrare e standardizzare ---------------------------------------------\n\n## mettiamo dentro oggetto x per comodità\n\nx &lt;- dat$perc_collective_efficacy\n\nxc &lt;- x - mean(x) # centrare sulla media\nxz &lt;- (x - mean(x)) / sd(x) # standardizzare\n\n## media 0, sd la stessa di x\nmean(xc)\nsd(xc)\n\n## media = 0, sd = 1 per definizione\n\nmean(xz)\nsd(xz)\n\n## in alternativa per centrare e standardizzare\nscale(x, center = TRUE, scale = TRUE)\n\n## solo centrare\nscale(x, center = TRUE, scale = FALSE)"
   },
   {
-    "objectID": "scripts/index.html#statistica-descrittiva",
-    "href": "scripts/index.html#statistica-descrittiva",
+    "objectID": "scripts/index.html#section",
+    "href": "scripts/index.html#section",
     "title": "Script Lezioni",
     "section": "",
-    "text": "Scarica il file .R \n# 18 Marzo 2026\n\n# Carico dimarco2020 -----------------------------------------------------\n\n## qui dovete mettere il percorso dove è localizzato il file\n\ndat &lt;- readxl::read_xlsx(\"data/dimarco2020.xlsx\")\n\n## istogramma, di default\n\nhist(dat$perc_collective_efficacy)\n\n## istogramma con bin più stretti (e quindi maggiore numero di bin)\n## più preciso avendo più intervalli\n\nhist(dat$perc_collective_efficacy, breaks = 10)\n\n# centrare e standardizzare ---------------------------------------------\n\n## mettiamo dentro oggetto x per comodità\n\nx &lt;- dat$perc_collective_efficacy\n\nxc &lt;- x - mean(x) # centrare sulla media\nxz &lt;- (x - mean(x)) / sd(x) # standardizzare\n\n## media 0, sd la stessa di x\nmean(xc)\nsd(xc)\n\n## media = 0, sd = 1 per definizione\n\nmean(xz)\nsd(xz)\n\n## in alternativa per centrare e standardizzare\nscale(x, center = TRUE, scale = TRUE)\n\n## solo centrare\nscale(x, center = TRUE, scale = FALSE)"
+    "text": "Scarica il file .R \n# Carico dimarco2020 -----------------------------------------------------\n\n## qui dovete mettere il percorso dove è localizzato il file\n\ndat &lt;- readxl::read_xlsx(\"data/dimarco2020.xlsx\")\n\n## istogramma, di default\n\nhist(dat$perc_collective_efficacy)\n\n## istogramma con bin più stretti (e quindi maggiore numero di bin)\n## più preciso avendo più intervalli\n\nhist(dat$perc_collective_efficacy, breaks = 10)\n\n# centrare e standardizzare ---------------------------------------------\n\n## mettiamo dentro oggetto x per comodità\n\nx &lt;- dat$perc_collective_efficacy\n\nxc &lt;- x - mean(x) # centrare sulla media\nxz &lt;- (x - mean(x)) / sd(x) # standardizzare\n\n## media 0, sd la stessa di x\nmean(xc)\nsd(xc)\n\n## media = 0, sd = 1 per definizione\n\nmean(xz)\nsd(xz)\n\n## in alternativa per centrare e standardizzare\nscale(x, center = TRUE, scale = TRUE)\n\n## solo centrare\nscale(x, center = TRUE, scale = FALSE)"
+  },
+  {
+    "objectID": "scripts/index.html#section-1",
+    "href": "scripts/index.html#section-1",
+    "title": "Script Lezioni",
+    "section": "2026-03-26",
+    "text": "2026-03-26\n Scarica il file .R \nlibrary(readxl)\n\n# leggo i dati (attenzione a dove voi li avete salvati)\ndat &lt;- read_xlsx(\"data/dimarco2020.xlsx\")\n\nhead(dat)\n\n# correlazione\nR &lt;- cov(dat[, 10:15])\n\n# boxplot condizionato\nboxplot(burnout ~ education, data = dat)"
   },
   {
     "objectID": "internal.html",
     "href": "internal.html",
     "title": "Internal",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -2084,5 +2189,313 @@
     "title": "Introduzione alla metodologia della ricerca",
     "section": "Bibliografia",
     "text": "Bibliografia\n\n\n\n\nAmerican Educational Research Association, American Psychological Association, National Council on Measurement in Education, & Joint Committee on Standards for Educational and Psychological Testing (U.S.). (2014). Standards for educational and psychological testing (American Educational Research Association, American Psychological Association, & National Council on Measurement in Education, Eds.). American Educational Research Association.\n\n\nBenson, O. M., & Whitson, M. L. (2022). The protective role of sense of community and access to resources on college student stress and COVID-19-related daily life disruptions. Journal of Community Psychology, 50, 2746–2764. https://doi.org/10.1002/jcop.22817\n\n\nGravetter, F. J., & Forzano, L.-A. B. (2018). Research methods for the behavioral sciences. Cengage Learning.\n\n\nHill, T. G., & MacGillivray, M. (2024). Loneliness and sense of community are not two sides of the same coin: Identifying different determinants using the 2019 Nova Scotia Quality of Life data. Journal of Community Psychology, 52, 134–153. https://doi.org/10.1002/jcop.23089\n\n\nJhangiani, R., Chiang, I.-C. A., Cuttler, C., & Leighton, D. C. (2019). Research methods in psychology.\n\n\nJohnson, J. K., Nápoles, A. M., Stewart, A. L., Max, W. B., Santoyo-Olsson, J., Freyre, R., Allison, T. A., & Gregorich, S. E. (2015). Study protocol for a cluster randomized trial of the Community of Voices choir intervention to promote the health and well-being of diverse older adults. BMC Public Health, 15, 1049. https://doi.org/10.1186/s12889-015-2395-9\n\n\nMcMillan, D. W., & Chavis, D. M. (1986). Sense of community: A definition and theory. Journal of Community Psychology, 14, 6–23. https://doi.org/10.1002/1520-6629(198601)14:1&lt;6::aid-jcop2290140103&gt;3.0.co;2-i\n\n\nNavarro, D. (2013). Learning Statistics with R. Lulu.com.\n\n\nObst, P. L., & White, K. M. (2004). Revisiting the Sense of Community Index: A confirmatory factor analysis. Journal of Community Psychology, 32, 691–705. https://doi.org/10.1002/jcop.20027\n\n\nPetersen, I. T. (2024). Principles of psychological assessment: With applied examples in R (1st Edition). Chapman; Hall/CRC. https://doi.org/10.1201/9781003357421\n\n\nRobinette, J. W., Piazza, J. R., & Stawski, R. S. (2025). Community crime and safety: An investigation of gender differences in the daily stress process. Journal of Community Psychology, 53, e23158. https://doi.org/10.1002/jcop.23158\n\n\nStevens, S. S. (1946). On the theory of scales of measurement. Science (New York, N.Y.), 103, 677–680. https://doi.org/10.1126/science.103.2684.677"
+  },
+  {
+    "objectID": "slides/04-probability.html#riferimenti",
+    "href": "slides/04-probability.html#riferimenti",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Riferimenti",
+    "text": "Riferimenti\nUn’ottima introduzione a questi temi si può trovare in:\n\nKruschke, J. K. (2015). Doing Bayesian Data Analysis. https://doi.org/10.1016/c2012-0-00477-2\n\nKruschke (2015)\n\n\n\nCapitolo 4, Introduzione alla probabilità ()\nCapitolo 5, Teorema di Bayes ()\n\n\n\nPer questa lezione ci concentriamo soprattutto sull’idea intuitiva di probabilità e distribuzione."
+  },
+  {
+    "objectID": "slides/04-probability.html#obiettivo",
+    "href": "slides/04-probability.html#obiettivo",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Obiettivo",
+    "text": "Obiettivo\nIntrodurre quattro idee fondamentali:\n\nche cos’è una distribuzione di probabilità\nche cosa significa assegnare probabilità a valori possibili\nla differenza tra variabili discrete e continue\nqualche esempio di distribuzione di probabilità (Normale e Binomiale)"
+  },
+  {
+    "objectID": "slides/04-probability.html#distribuzione-di-probabilità",
+    "href": "slides/04-probability.html#distribuzione-di-probabilità",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Distribuzione di probabilità",
+    "text": "Distribuzione di probabilità\nUna distribuzione di probabilità è un modo per descrivere:\n\nquali valori sono possibili\nquanto è plausibile ciascun valore\n\nIn altre parole, una distribuzione ci dice come si distribuisce la probabilità sui possibili risultati."
+  },
+  {
+    "objectID": "slides/04-probability.html#esempio-lancio-di-una-moneta",
+    "href": "slides/04-probability.html#esempio-lancio-di-una-moneta",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Esempio: lancio di una moneta",
+    "text": "Esempio: lancio di una moneta\nConsideriamo un singolo lancio di una moneta.\nI possibili risultati sono due:\n\ntesta 🔵\ncroce ⚪\n\nQuesto è un esempio di fenomeno casuale: prima del lancio non sappiamo quale risultato osserveremo."
+  },
+  {
+    "objectID": "slides/04-probability.html#spazio-campionario",
+    "href": "slides/04-probability.html#spazio-campionario",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Spazio campionario",
+    "text": "Spazio campionario\nL’insieme di tutti i risultati possibili si chiama spazio campionario \\(S\\).\nNel caso di un singolo lancio:\n\\[\nS = \\{\\text{testa}, \\text{croce}\\}\n\\]\nGli esiti devono essere:\n\nmutuamente esclusivi: in un singolo lancio non può uscire sia testa sia croce\nesaustivi: testa o croce coprono tutti i possibili risultati"
+  },
+  {
+    "objectID": "slides/04-probability.html#frequenza-relativa-e-probabilità",
+    "href": "slides/04-probability.html#frequenza-relativa-e-probabilità",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Frequenza relativa e probabilità",
+    "text": "Frequenza relativa e probabilità\nSe lanciamo la moneta molte volte, possiamo contare quante volte esce testa. Se il numero di teste è \\(k\\) su \\(n\\) lanci, allora\n\\[\n\\frac{k}{n}\n\\]\nè la frequenza relativa di testa. Quando il numero di lanci è molto grande, la frequenza relativa tende a stabilizzarsi attorno alla probabilità dell’evento."
+  },
+  {
+    "objectID": "slides/04-probability.html#tre-lanci-di-moneta",
+    "href": "slides/04-probability.html#tre-lanci-di-moneta",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Tre lanci di moneta",
+    "text": "Tre lanci di moneta\nOra immaginiamo di lanciare una moneta 3 volte.\nIn questo caso gli esiti elementari possibili sono:\n\n\n\n\n\n\n    \n    \n    \n    \n\n    \n\n    \n    \n      \n        \n        \n              \n                n1\n                n2\n                n3\n                E\n                k\n              \n        \n        \n        \n                \n                  ⚪\n                  ⚪\n                  ⚪\n                  1\n                  0\n                \n                \n                  ⚪\n                  ⚪\n                  🔵\n                  2\n                  1\n                \n                \n                  ⚪\n                  🔵\n                  ⚪\n                  3\n                  1\n                \n                \n                  ⚪\n                  🔵\n                  🔵\n                  4\n                  2\n                \n                \n                  🔵\n                  ⚪\n                  ⚪\n                  5\n                  1\n                \n                \n                  🔵\n                  ⚪\n                  🔵\n                  6\n                  2\n                \n                \n                  🔵\n                  🔵\n                  ⚪\n                  7\n                  2\n                \n                \n                  🔵\n                  🔵\n                  🔵\n                  8\n                  3\n                \n        \n      \n    \n\n\n\n\nAbbiamo:\n\\[\n2^3 = 8\n\\]\nsequenze possibili.\nQui l’ordine conta: ad esempio 🔵⚪🔵 e ⚪🔵🔵 sono due esiti diversi."
+  },
+  {
+    "objectID": "slides/04-probability.html#tre-lanci-di-moneta-1",
+    "href": "slides/04-probability.html#tre-lanci-di-moneta-1",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Tre lanci di moneta",
+    "text": "Tre lanci di moneta\nCon tre lanci possiamo fare due domande diverse.\n\nQuale sequenza è uscita?: possiamo quindi ottenere una delle 8 sequenze presentate in precedenza.\nQuante teste sono uscite?: possiamo contare il numero di teste \\(k\\) in ogni sequenza.\n\nIn questo secondo caso abbiamo:\n\\[\nk = \\{0, 1, 2, 3\\}\n\\]"
+  },
+  {
+    "objectID": "slides/04-probability.html#esiti-eventi-e-variabile-casuale",
+    "href": "slides/04-probability.html#esiti-eventi-e-variabile-casuale",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Esiti, eventi e variabile casuale",
+    "text": "Esiti, eventi e variabile casuale\nDistinguiamo tre idee:\n\nesito: un risultato specifico, ad esempio 🔵⚪🔵\nevento: un insieme di esiti, ad esempio “ottenere esattamente 2 teste”\nvariabile casuale: una regola che assegna un numero a ogni esito\n\nDefiniamo allora la variabile casuale:\n\\[\nK = \\text{numero di teste in 3 lanci}\n\\]"
+  },
+  {
+    "objectID": "slides/04-probability.html#la-variabile-casuale-k",
+    "href": "slides/04-probability.html#la-variabile-casuale-k",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "La variabile casuale \\(K\\)",
+    "text": "La variabile casuale \\(K\\)\nSe definiamo\n\\[\nK = \\text{numero di teste}\n\\]\nallora i possibili valori di \\(K\\) sono:\n\\[\n\\{0,1,2,3\\}\n\\]\nQuindi:\n\nlo spazio campionario dei tre lanci contiene 8 sequenze\nla variabile casuale \\(K\\) riassume queste 8 sequenze in 4 possibili valori"
+  },
+  {
+    "objectID": "slides/04-probability.html#un-esempio-concreto",
+    "href": "slides/04-probability.html#un-esempio-concreto",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Un esempio concreto",
+    "text": "Un esempio concreto\nL’evento “ottenere esattamente 2 teste” corrisponde a tre esiti:\n\n🔵🔵⚪\n🔵⚪🔵\n⚪🔵🔵\n\nQuindi un evento può contenere più esiti elementari."
+  },
+  {
+    "objectID": "slides/04-probability.html#se-la-moneta-è-equa",
+    "href": "slides/04-probability.html#se-la-moneta-è-equa",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Se la moneta è equa",
+    "text": "Se la moneta è equa\nSe assumiamo che la moneta sia equa, allora:\n\\[\np(\\text{testa}) = 0.5\n\\qquad\np(\\text{croce}) = 0.5\n\\]\nOgni sequenza di tre lanci ha probabilità:\n\\[\n0.5^3 = 0.125\n\\]\nPer esempio:\n\n\\(p(\\text{🔵🔵⚪}) = 0.125\\)\n\\(p(\\text{⚪⚪⚪}) = 0.125\\)"
+  },
+  {
+    "objectID": "slides/04-probability.html#introduciamo-un-parametro-theta",
+    "href": "slides/04-probability.html#introduciamo-un-parametro-theta",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Introduciamo un parametro: \\(\\theta\\)",
+    "text": "Introduciamo un parametro: \\(\\theta\\)\nIn generale possiamo chiamare\n\\[\n\\theta = p(\\text{testa})\n\\]\nAllora:\n\\[\np(\\text{croce}) = 1 - \\theta\n\\]\nSe \\(\\theta = 0.5\\), la moneta è equa.\nSe \\(\\theta \\neq 0.5\\), la moneta è sbilanciata."
+  },
+  {
+    "objectID": "slides/04-probability.html#probabilità-di-una-sequenza",
+    "href": "slides/04-probability.html#probabilità-di-una-sequenza",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Probabilità di una sequenza",
+    "text": "Probabilità di una sequenza\nSupponiamo di voler calcolare la probabilità della sequenza:\n🔵🔵⚪\nSe i lanci sono indipendenti, moltiplichiamo le probabilità dei singoli lanci:\n\\[\n\\theta \\times \\theta \\times (1 - \\theta)\n\\]\ncioè:\n\\[\n\\theta^2 (1-\\theta)\n\\]\nPiù in generale, una sequenza con \\(k\\) teste e \\(n-k\\) croci ha probabilità:\n\\[\n\\theta^k (1-\\theta)^{n-k}\n\\]"
+  },
+  {
+    "objectID": "slides/04-probability.html#probabilità-di-una-sequenza-1",
+    "href": "slides/04-probability.html#probabilità-di-una-sequenza-1",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Probabilità di una sequenza",
+    "text": "Probabilità di una sequenza\nDi solito non ci interessa una sequenza specifica ma qualcosa come:\n\nQual è la probabilità di ottenere 2 teste su 3 lanci?\n\nEssendo che non ci interessa la sequenza specifica, ci sono più modi di ottenere \\(k = 2\\) teste."
+  },
+  {
+    "objectID": "slides/04-probability.html#quante-sequenze-danno-2-teste",
+    "href": "slides/04-probability.html#quante-sequenze-danno-2-teste",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Quante sequenze danno 2 teste?",
+    "text": "Quante sequenze danno 2 teste?\nCon 3 lanci, “2 teste” può essere ottenuto in 3 modi:\n\n🔵🔵⚪\n🔵⚪🔵\n⚪🔵🔵\n\nQuindi:\n\\[\np(k=2) = 3 \\times \\theta^2 (1-\\theta)\n\\]\nSe \\(\\theta = 0.5\\):\n\\[\np(k=2) = 3 \\times 0.5^3 = 0.375\n\\]"
+  },
+  {
+    "objectID": "slides/04-probability.html#il-coefficiente-binomiale",
+    "href": "slides/04-probability.html#il-coefficiente-binomiale",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Il coefficiente binomiale",
+    "text": "Il coefficiente binomiale\nIn generale, il numero di modi in cui possiamo ottenere \\(k\\) successi in \\(n\\) prove è dato dal coefficiente binomiale:\n\\[\n{n \\choose k} = \\frac{n!}{k!(n-k)!}\n\\]\nLa formula di per se non è rilevante, serve solo capire che ci permette di contare le volte in cui otteniamo \\(k\\) successi in \\(n\\) lanci. Ovvero quante sequenze diverse producono lo stesso numero di successi."
+  },
+  {
+    "objectID": "slides/04-probability.html#la-distribuzione-binomiale",
+    "href": "slides/04-probability.html#la-distribuzione-binomiale",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "La distribuzione Binomiale",
+    "text": "La distribuzione Binomiale\nMettendo insieme i due pezzi:\n\nprobabilità di una singola sequenza con \\(k\\) successi\nnumero di sequenze che producono quei \\(k\\) successi\n\notteniamo:\n\\[\np(k \\mid \\theta, n) = {n \\choose k}\\theta^k(1-\\theta)^{n-k}\n\\]\nQuesta è la distribuzione Binomiale."
+  },
+  {
+    "objectID": "slides/04-probability.html#che-cosa-descrive-la-binomiale",
+    "href": "slides/04-probability.html#che-cosa-descrive-la-binomiale",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Che cosa descrive la Binomiale?",
+    "text": "Che cosa descrive la Binomiale?\nLa distribuzione Binomiale descrive la probabilità di ottenere:\n\\[\nk = 0,1,2,\\dots,n\n\\]\nsuccessi in \\(n\\) prove, quando:\n\nogni prova ha due possibili esiti\nla probabilità di successo è sempre la stessa\nle prove sono indipendenti"
+  },
+  {
+    "objectID": "slides/04-probability.html#esempio-con-n3-e-theta0.5",
+    "href": "slides/04-probability.html#esempio-con-n3-e-theta0.5",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Esempio con \\(n=3\\) e \\(\\theta=0.5\\)",
+    "text": "Esempio con \\(n=3\\) e \\(\\theta=0.5\\)"
+  },
+  {
+    "objectID": "slides/04-probability.html#come-leggere-questo-grafico",
+    "href": "slides/04-probability.html#come-leggere-questo-grafico",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Come leggere questo grafico",
+    "text": "Come leggere questo grafico\nQuesto grafico ci dice quanto è probabile osservare:\n\n0 teste\n1 testa\n2 teste\n3 teste\n\nLa somma di tutte queste probabilità è sempre uguale a 1 perchè una delle quattro possibilità deve necessariamente verificarsi."
+  },
+  {
+    "objectID": "slides/04-probability.html#se-cambia-theta-cambia-la-distribuzione",
+    "href": "slides/04-probability.html#se-cambia-theta-cambia-la-distribuzione",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Se cambia \\(\\theta\\), cambia la distribuzione",
+    "text": "Se cambia \\(\\theta\\), cambia la distribuzione\n\n\n\n\n    \n    \n    \n    \n\n    \n\n    \n    \n      \n        \n        \n              \n                n1\n                n2\n                n3\n                E\n                k\n                theta 0.2\n                theta 0.5\n                theta 0.8\n              \n        \n        \n        \n                \n                  ⚪\n                  ⚪\n                  ⚪\n                  1\n                  0\n                  0.512\n                  0.125\n                  0.008\n                \n                \n                  ⚪\n                  ⚪\n                  🔵\n                  2\n                  1\n                  0.128\n                  0.125\n                  0.032\n                \n                \n                  ⚪\n                  🔵\n                  ⚪\n                  3\n                  1\n                  0.128\n                  0.125\n                  0.032\n                \n                \n                  ⚪\n                  🔵\n                  🔵\n                  4\n                  2\n                  0.032\n                  0.125\n                  0.128\n                \n                \n                  🔵\n                  ⚪\n                  ⚪\n                  5\n                  1\n                  0.128\n                  0.125\n                  0.032\n                \n                \n                  🔵\n                  ⚪\n                  🔵\n                  6\n                  2\n                  0.032\n                  0.125\n                  0.128\n                \n                \n                  🔵\n                  🔵\n                  ⚪\n                  7\n                  2\n                  0.032\n                  0.125\n                  0.128\n                \n                \n                  🔵\n                  🔵\n                  🔵\n                  8\n                  3\n                  0.008\n                  0.125\n                  0.512"
+  },
+  {
+    "objectID": "slides/04-probability.html#stessa-idea-distribuzioni-diverse",
+    "href": "slides/04-probability.html#stessa-idea-distribuzioni-diverse",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Stessa idea, distribuzioni diverse",
+    "text": "Stessa idea, distribuzioni diverse"
+  },
+  {
+    "objectID": "slides/04-probability.html#che-cosè-allora-una-distribuzione",
+    "href": "slides/04-probability.html#che-cosè-allora-una-distribuzione",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Che cos’è, allora, una distribuzione?",
+    "text": "Che cos’è, allora, una distribuzione?\nIn questo esempio, la distribuzione è una funzione che assegna una probabilità a ciascun valore possibile di \\(K\\).\nIn simboli:\n\\[\np(k \\mid \\theta, n)\n\\]\nQuesta funzione dipende dai parametri:\n\n\\(n\\): numero di prove\n\\(\\theta\\): probabilità di successo\n\nSe cambiano i parametri, cambia la forma della distribuzione."
+  },
+  {
+    "objectID": "slides/04-probability.html#variabili-discrete",
+    "href": "slides/04-probability.html#variabili-discrete",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Variabili discrete",
+    "text": "Variabili discrete\nLa Binomiale è un esempio di distribuzione per una variabile discreta.\nUna variabile è discreta quando può assumere valori separati e numerabili, ad esempio:\n\nnumero di errori\nnumero di risposte corrette\nnumero di sintomi\nnumero di successi in un compito"
+  },
+  {
+    "objectID": "slides/04-probability.html#funzione-di-massa-di-probabilità",
+    "href": "slides/04-probability.html#funzione-di-massa-di-probabilità",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Funzione di massa di probabilità",
+    "text": "Funzione di massa di probabilità\nNel caso discreto, la funzione assegna una probabilità a ogni valore possibile.\nPer questo si parla di: funzione di massa di probabilità (PMF, Probability Mass Function)\nPer una variabile discreta:\n\n\\(p(x) \\ge 0\\)\nogni valore ha una probabilità\nla somma totale delle probabilità è 1"
+  },
+  {
+    "objectID": "slides/04-probability.html#variabili-continue",
+    "href": "slides/04-probability.html#variabili-continue",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Variabili continue",
+    "text": "Variabili continue\nAltre variabili invece sono continue.\nEsempi tipici in psicologia:\n\ntempo di reazione\ntempo trascorso\nintensità di una risposta fisiologica\npunteggi misurati su una scala continua\n\nQui i valori possibili non sono solo 0,1,2,… ma un insieme continuo di numeri."
+  },
+  {
+    "objectID": "slides/04-probability.html#un-punto-fondamentale",
+    "href": "slides/04-probability.html#un-punto-fondamentale",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Un punto fondamentale",
+    "text": "Un punto fondamentale\nNel caso discreto possiamo chiedere:\n\nqual è la probabilità di osservare esattamente \\(x\\)?\n\nNel caso continuo, invece, la probabilità di un singolo valore è:\n\\[\np(x)=0\n\\]\nNel continuo ha senso parlare della probabilità di un intervallo di valori."
+  },
+  {
+    "objectID": "slides/04-probability.html#un-esempio-semplice",
+    "href": "slides/04-probability.html#un-esempio-semplice",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Un esempio semplice",
+    "text": "Un esempio semplice\nImmaginiamo una variabile continua distribuita uniformemente tra 0 e 1."
+  },
+  {
+    "objectID": "slides/04-probability.html#un-esempio-semplice-1",
+    "href": "slides/04-probability.html#un-esempio-semplice-1",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Un esempio semplice",
+    "text": "Un esempio semplice\nImmaginiamo ora di creare un rettangolo di base \\(b = 0.2\\), l’area in questo caso sarebbe \\(0.2 \\times 1 = 0.2\\). Se sommiamo tutti questi rettangoli abbiamo 1 ovviamente."
+  },
+  {
+    "objectID": "slides/04-probability.html#un-esempio-semplice-2",
+    "href": "slides/04-probability.html#un-esempio-semplice-2",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Un esempio semplice",
+    "text": "Un esempio semplice\nOra proviamo a ridurre la base ancora. L’area ora è \\(0.02 \\times 1 = 0.02\\). Ma la somma di tutti i rettangoli è sempre 1."
+  },
+  {
+    "objectID": "slides/04-probability.html#probabilità-e-area",
+    "href": "slides/04-probability.html#probabilità-e-area",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Probabilità e area",
+    "text": "Probabilità e area\nNel caso continuo, l’altezza della curva non è una probabilità ma viene chiamata densità. La probabilità si ottiene invece come area sotto la curva.\nPer esempio, la probabilità che \\(x\\) cada in un certo intervallo corrisponde all’area della regione sotto la curva in quell’intervallo."
+  },
+  {
+    "objectID": "slides/04-probability.html#px-0",
+    "href": "slides/04-probability.html#px-0",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "\\(p(x)\\) = 0",
+    "text": "\\(p(x)\\) = 0\nSe restringiamo l’intervallo sempre di più, l’area diventa sempre più piccola.\nNel limite di un singolo punto, l’area diventa 0.\nQuindi, per variabili continue:\n\nla probabilità di un singolo valore è 0\nla probabilità riguarda intervalli\nla densità può anche essere maggiore di 1\nl’area totale sotto la curva resta sempre 1"
+  },
+  {
+    "objectID": "slides/04-probability.html#funzione-di-densità",
+    "href": "slides/04-probability.html#funzione-di-densità",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Funzione di densità",
+    "text": "Funzione di densità\nNel caso continuo si parla di funzione di densità di probabilità (PDF, Probability Density Function). La probabilità è definita nell’intervallo compreso tra due valori \\(a\\) e \\(b\\) è:\n\\[\np(a \\le x \\le b) = \\int_a^b f(x)\\,dx\n\\]\ne l’area totale sotto la curva è:\n\\[\n\\int_{-\\infty}^{+\\infty} f(x)\\,dx = 1\n\\]"
+  },
+  {
+    "objectID": "slides/04-probability.html#distribuzione-normale",
+    "href": "slides/04-probability.html#distribuzione-normale",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Distribuzione Normale",
+    "text": "Distribuzione Normale\nUn esempio classico è quello della distribuzione Normale che è determinata da due parametri:\n\n\\(\\mu\\): la media, cioè il centro della distribuzione\n\\(\\sigma\\): la deviazione standard, cioè quanto la distribuzione è larga o stretta\n\nNon è importante memorizzare la formula.\nÈ importante capire come questi parametri cambiano la forma della curva."
+  },
+  {
+    "objectID": "slides/04-probability.html#formula-della-normale",
+    "href": "slides/04-probability.html#formula-della-normale",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Formula della Normale",
+    "text": "Formula della Normale\n\\[\nf(x \\mid \\mu, \\sigma) =\n\\frac{1}{\\sigma\\sqrt{2\\pi}}\ne^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\n\\]\nAnche qui, il valore della funzione è una densità, non una probabilità puntuale."
+  },
+  {
+    "objectID": "slides/04-probability.html#come-cambia-la-normale",
+    "href": "slides/04-probability.html#come-cambia-la-normale",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Come cambia la Normale",
+    "text": "Come cambia la Normale"
+  },
+  {
+    "objectID": "slides/04-probability.html#un-punto-importante-sulla-densità",
+    "href": "slides/04-probability.html#un-punto-importante-sulla-densità",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Un punto importante sulla densità",
+    "text": "Un punto importante sulla densità\nUna curva più alta non significa e quindi con densità maggiore non significa una maggiore probabilità.\nLa stessa area totale (totale = 1) è concentrata in una regione più piccola.\nPer questo una densità può anche essere maggiore di 1 mentre l’area sotto la curva è sempre 1."
+  },
+  {
+    "objectID": "slides/04-probability.html#confronto-finale-discreto-vs-continuo",
+    "href": "slides/04-probability.html#confronto-finale-discreto-vs-continuo",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Confronto finale: discreto vs continuo",
+    "text": "Confronto finale: discreto vs continuo\n\n\n\n\n\n\n\n\n\nTipo di variabile\nEsempio\nFunzione\nInterpretazione\n\n\n\n\nDiscreta\nnumero di errori, numero di successi\n\\(p(x)\\)\nprobabilità del singolo valore\n\n\nContinua\ntempo di reazione, misure continue\n\\(f(x)\\)\ndensità; la probabilità è l’area su un intervallo"
+  },
+  {
+    "objectID": "slides/04-probability.html#qualche-altro-esempio-poisson-extra",
+    "href": "slides/04-probability.html#qualche-altro-esempio-poisson-extra",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Qualche altro esempio, Poisson [#extra]",
+    "text": "Qualche altro esempio, Poisson [#extra]\nLa distribuzione di Poisson descrive la probabilità (PMF) per eventi discreti. Si usa per contare il numero di eventi in un certo lasso di tempo. Lo spazio campionario è \\(\\{0, 1, 2, \\dots \\}\\):\n\\[\nf(x \\mid \\lambda) = p(x \\mid \\lambda) = \\frac{\\lambda^x e^{-\\lambda}}{x!}\n\\]\nLa formula è nuova (non la vedremo) ma la logica è la stessa. Per ogni possibile esito discreto \\(x\\), la funzione assegna una probabilità in funzione dell’unico parametro \\(\\lambda\\)."
+  },
+  {
+    "objectID": "slides/04-probability.html#qualche-altro-esempio-poisson-extra-1",
+    "href": "slides/04-probability.html#qualche-altro-esempio-poisson-extra-1",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Qualche altro esempio, Poisson [#extra]",
+    "text": "Qualche altro esempio, Poisson [#extra]"
+  },
+  {
+    "objectID": "slides/04-probability.html#qualche-altro-esempio-beta-extra",
+    "href": "slides/04-probability.html#qualche-altro-esempio-beta-extra",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Qualche altro esempio, Beta [#extra]",
+    "text": "Qualche altro esempio, Beta [#extra]\nLa distribuzione Beta è una distribuzione di probabilità continua ma compresa tra 0 e 1.\n\\[\nf(x \\mid \\alpha, \\beta) = \\frac{x^{\\alpha-1}(1-x)^{\\beta-1}}{B(\\alpha, \\beta)}\n\\]"
+  },
+  {
+    "objectID": "slides/04-probability.html#qualche-altro-esempio-beta-extra-1",
+    "href": "slides/04-probability.html#qualche-altro-esempio-beta-extra-1",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Qualche altro esempio, Beta [#extra]",
+    "text": "Qualche altro esempio, Beta [#extra]"
+  },
+  {
+    "objectID": "slides/04-probability.html#bibliografia",
+    "href": "slides/04-probability.html#bibliografia",
+    "title": "Probabilità e distribuzioni di probabilità",
+    "section": "Bibliografia",
+    "text": "Bibliografia\n\n\n\n\nKruschke, J. K. (2015). Doing Bayesian Data Analysis. https://doi.org/10.1016/c2012-0-00477-2"
   }
 ]

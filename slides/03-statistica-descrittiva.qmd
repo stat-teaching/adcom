@@ -1,6 +1,6 @@
 ---
 title: Statistica Descrittiva
-pdf: "[{{< fa file-pdf >}}](slides/02-research-methods.pdf)"
+pdf: "[{{< fa file-pdf >}}](slides/03-statistica-descrittiva.pdf)"
 filters:
   - bibentry
 ---

@@ -1,6 +1,6 @@
 ---
 title: Probabilità e distribuzioni di probabilità
-draft: true
+pdf: "[{{< fa file-pdf >}}](slides/04-probability.pdf)"
 ---
 
 ```{r}
