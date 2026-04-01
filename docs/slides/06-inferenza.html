@@ -509,7 +509,7 @@ H_0: \mu_p = \mu_c \quad\quad \mu_p - \mu_c = 0
 \]</span></p>
 <p>E anche un’ipotesi alternativa <span class="math inline">\(H_1\)</span>:</p>
 <p><span class="math display">\[
-H_0: \mu_p \neq \mu_c \quad\quad \mu_p - \mu_c \neq 0
+H_1: \mu_p \neq \mu_c \quad\quad \mu_p - \mu_c \neq 0
 \]</span></p>
 <p>In questo caso <span class="math inline">\(H_1\)</span> dice semplicemente che le due medie sono diverse, non fa riferimento alla direzione maggiore o minore. Questa è un’ipotesi alternativa <em>bidirezionale</em>.</p>
 </section>
@@ -719,11 +719,11 @@ t \sim \mathcal{T}(\nu)
 </div>
 <aside><ol class="aside-footnotes"><li id="fn3"><p><code>qnorm(p, mean, sd)</code> vi ricordo che vi restituisce il valore che è associato ad una probabilità cumulata di <code>p</code> per una normale con media <code>mean</code> e deviazione standard <code>sd</code>.</p></li></ol></aside></section>
 <section id="alpha-p-value-e-valore-critico-1" class="slide level2">
-<h2><span class="math inline">\(\alpha\)</span> p value e valore critico</h2>
+<h2><span class="math inline">\(\alpha\)</span>, p value e valore critico</h2>
 
 <img data-src="img/alpha-tcrit.svg" class="r-stretch"></section>
 <section id="alpha-p-value-e-valore-critico-2" class="slide level2">
-<h2><span class="math inline">\(\alpha\)</span> p value e valore critico</h2>
+<h2><span class="math inline">\(\alpha\)</span>, p value e valore critico</h2>
 <p>Quindi dire che <span class="math inline">\(p \leq \alpha\)</span> è equivalente a dire che <span class="math inline">\(t_{\text{oss}}\)</span> (osservato) è maggiore di <span class="math inline">\(t_{\text{crit}}\)</span> (critico). <span class="math inline">\(t_{\text{crit}}\)</span>, nella normale standard dipende solo da <span class="math inline">\(\alpha\)</span>.</p>
 
 <img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-29-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -1054,6 +1054,101 @@ sample estimates:
 <p>Inoltre, il p value è minore di <span class="math inline">\(\alpha\)</span> e quindi, rischiando di sbagliarci con una probabilità <span class="math inline">\(\alpha\)</span>, possiamo rifiutare l’ipotesi <span class="math inline">\(H_0\)</span> di uguaglianza delle medie delle popolazioni.</p>
 <p>In altri termini, se <span class="math inline">\(H_0\)</span> fosse vera, sarebbe poco probabile (p value) ottenere una differenza tra le medie <span class="math inline">\(b\)</span> tra i due campioni.</p>
 </section>
+<section id="potenza-ed-errore-di-2-tipo" class="slide level2">
+<h2>Potenza ed errore di 2 tipo</h2>
+<p>In questi esempi pratici, abbiamo parlato di errore di primo tipo <span class="math inline">\(\alpha\)</span>, ipotesi nulla e p value. Non abbiamo però fatto riferimento alla potenza (e quindi all’errore di secondo tipo).</p>
+<p>Il punto principale è che mentre <span class="math inline">\(H_0\)</span> possiamo assumerla come <em>assenza</em> dell’effetto (e.g., differenza tra medie). L’ipotesi alternativa, che ci permette di valutare potenza ed errore di secondo tipo, deve essere specificata chiaramente e non solo come maggiore, minore o diverso.</p>
+<p>Specificare <span class="math inline">\(H_1\)</span> però non è semplice per due motivi:</p>
+<ul>
+<li>deve essere fatto <em>a priori</em> ovvero prima di vedere i dati. <span class="math inline">\(H_1\)</span> deve rappresentare un ipotesi plausibile riguardo la direzione e la grandezza dell’effetto. Se le medie sono diverse (<span class="math inline">\(H_0\)</span> è falsa), quanto sono diverse?</li>
+<li>per essere specificata richiede conoscenza del fenomeno da esprimere in termini numerici</li>
+</ul>
+</section>
+<section id="effect-size" class="slide level2">
+<h2>Effect size</h2>
+<p>Un ultimo aspetto importante nell’inferenza infatti è il concetto di effect size. L’effect size non è altro che una statistica come le altre ma che viene usata essendo direttamente e “facilmente” interpretabile. Ci sono due tipo di effect size:</p>
+<ul>
+<li><strong>standardizzati</strong>: ad esempio il Cohen’s <span class="math inline">\(d\)</span>, correlazione, odds ratio, etc. Sono degli effect size che non dipendono dall’unità di misura originale. A prescindere da cosa sto correlando, una correlazione di 0.5 è interpretata, statisticamente, allo stesso modo.</li>
+<li><strong>non standardizzati</strong>: ad esempio la differenza semplice tra due medie. Dal punto di vista prettamente statistico sono preferibili ma non sempre sono intepretabili. Dire che due persone differiscono di 15cm in altezza è chiaro (effetto grande). Dire che due persone differiscono di 4 punti su una scala di depressione è meno chiaro.</li>
+</ul>
+</section>
+<section id="effect-size-1" class="slide level2">
+<h2>Effect size</h2>
+<p>L’effect size lo abbiamo già introdotto anche se non esplicitamente. Se riprendiamo la statistica test nel caso dei due campioni:</p>
+
+<img data-src="img/es-t.svg" class="r-stretch"></section>
+<section id="effect-size-2" class="slide level2">
+<h2>Effect size</h2>
+<p>Quindi, il <strong>numeratore <span class="math inline">\(b\)</span> è un effect size non standardizzato</strong> perchè ci dice la differenza tra le due medie sulla scala della variabile. Può essere utile, se è chiaro come intepretarlo.</p>
+<p><strong>L’informazione sul campione non ci serve</strong> perchè l’effect size deve dirci una caratteristica del fenomeno e non la sua precisione di stima.</p>
+<p>La deviazione standard (pooled) è una stima di quanto le due popolazioni variano. Quindi possiamo rapportare <span class="math inline">\(b\)</span> a <span class="math inline">\(s_p\)</span> per standardizzare la differenza tra medie grezza in base a quanto variano. E’ la stessa logica di un punto <span class="math inline">\(z\)</span>.</p>
+</section>
+<section id="effect-size-3" class="slide level2">
+<h2>Effect size</h2>
+<p>In formula possiamo calcolare questo effect size, chiamiamolo <span class="math inline">\(d\)</span>:</p>
+<p><span class="math display">\[
+d = \frac{b}{s_p}
+\]</span></p>
+<p>In pratica ci dice quanto separati sono i due gruppi (e quanto le popolazioni in termini di stima) in unità di deviazione standard.</p>
+<p>Possiamo anche ricavarlo dalla statistica <span class="math inline">\(t\)</span>:</p>
+<p><span class="math display">\[
+d = t \sqrt{\frac{1}{n_d} + \frac{1}{n_h}}
+\]</span></p>
+</section>
+<section id="effect-size-cohens-d" class="slide level2">
+<h2>Effect size, Cohen’s <span class="math inline">\(d\)</span></h2>
+<p>Questo effect size si chiama comunemente Cohen’s <span class="math inline">\(d\)</span> (o differenza tra medie standardizzate). E viene definito a livello della popolazione come:</p>
+<p><span class="math display">\[
+\delta = \frac{\mu_1 - \mu_0}{\sigma}
+\]</span></p>
+<p>Ovvero differenza tra medie standardizzata per la deviazione standard. Ci sono vari modi di calcolarlo, in particolare per stimare <span class="math inline">\(\sigma\)</span>. Il caso di <span class="math inline">\(s_p\)</span> è uno dei vari modi ma la logica è sempre la stessa.</p>
+</section>
+<section id="effect-size-cohens-d-1" class="slide level2">
+<h2>Effect size, Cohen’s <span class="math inline">\(d\)</span></h2>
+<p>Proviamo a calcolarlo in R sul t-test che abbiamo fatto prima. Possiamo usare il pacchetto <code>effectsize</code>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(effectsize)</span>
+<span id="cb55-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">cohens_d</span>(perc_self_efficacy <span class="sc">~</span> education, <span class="at">data =</span> dat2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cohen's d |         95% CI
+--------------------------
+-0.45     | [-0.87, -0.03]
+
+- Estimated using pooled SD.</code></pre>
+</div>
+</div>
+<p>Quindi i due gruppi hanno una differenza di 0.45 deviazioni standard.</p>
+</section>
+<section id="cohens-d" class="slide level2">
+<h2>Cohen’s <span class="math inline">\(d\)</span></h2>
+<p>Anche se standardizzato, questo effect size non è facilmente interpretabile come una correlazione (tra -1 e 1). Ci sono dei benchmark che possono essere utili:</p>
+<ul>
+<li>La differenza di altezza media tra maschi e femmine in Olanda è di 13cm o Cohen’s <span class="math inline">\(d = 2\)</span> <span class="citation" data-cites="Schonbeck2012-ht">(<a href="#/bibliografia" role="doc-biblioref" onclick="">Schönbeck et al., 2012</a>)</span><sup>1</sup></li>
+<li>Ci sono delle stime degli effect size medi in Psicologia attorno a 0.4 <span class="citation" data-cites="Richard2003-dq">(<a href="#/bibliografia" role="doc-biblioref" onclick="">Richard et al., 2003</a>)</span></li>
+</ul>
+<p>Queste sono solo indicazioni generali, ogni ambito di ricerca può avere degli effetti plausibili. Ovviamente diffidate degli effetti troppo ottimisti, sono poco plausibili.</p>
+<aside><ol class="aside-footnotes"><li id="fn4"><p><a href="https://lakens.github.io/statistical_inferences/06-effectsize.html">https://lakens.github.io/statistical_inferences/06-effectsize.html</a></p></li></ol></aside></section>
+<section id="effect-size-e-potenza" class="slide level2">
+<h2>Effect size e potenza</h2>
+<p>Torniamo alla nostra visualizzazione interattiva, nella sezione standardizzata:</p>
+<center>
+<p><a href="https://stat-teaching.github.io/statshiny/shiny/inference.html">https://stat-teaching.github.io/statshiny/shiny/inference.html</a></p>
+</center>
+</section>
+<section id="effect-size-e-potenza-1" class="slide level2">
+<h2>Effect size e potenza</h2>
+<p>Se noi standardizziamo e quindi esprimiamo le nostre distribuzioni campionarie in termini di Cohen’s <span class="math inline">\(d\)</span> ci rendiamo conto che <span class="math inline">\(\delta\)</span> (a livello della popolazione) è il livello di separazione delle due ipotesi.</p>
+<p>In altri termini, la potenza è una funzione matematica che dipende da:</p>
+<ul>
+<li><span class="math inline">\(\alpha\)</span></li>
+<li>la numerosità campionaria <span class="math inline">\(n\)</span></li>
+<li>il grado di separazione delle due ipotesi, riassumibile in modo standardizzato con <span class="math inline">\(\delta\)</span></li>
+</ul>
+<p>Ovviamente <span class="math inline">\(\delta\)</span> è a sua volta funzione di <span class="math inline">\(b\)</span> (effetto grezzo) e <span class="math inline">\(\sigma\)</span>.</p>
+</section>
+<section id="effect-size-e-potenza-2" class="slide level2">
+<h2>Effect size e potenza</h2>
+</section>
 <section id="bibliografia" class="slide level2 smaller scrollable">
 <h2>Bibliografia</h2>
 
@@ -1067,6 +1162,12 @@ Gigerenzer, G. (1993). <span class="nocase">The Superego, the Ego, and the Id in
 </div>
 <div id="ref-Gigerenzer2018-cj" class="csl-entry" role="listitem">
 Gigerenzer, G. (2018). <span class="nocase">Statistical rituals: The replication delusion and how we got there</span>. <em>Advances in Methods and Practices in Psychological Science</em>, <em>1</em>, 198–218. <a href="https://doi.org/10.1177/2515245918771329">https://doi.org/10.1177/2515245918771329</a>
+</div>
+<div id="ref-Richard2003-dq" class="csl-entry" role="listitem">
+Richard, F. D., Bond, C. F., Jr, &amp; Stokes-Zoota, J. J. (2003). <span class="nocase">One hundred years of social psychology quantitatively described</span>. <em>Review of General Psychology: Journal of Division 1, of the American Psychological Association</em>, <em>7</em>, 331–363. <a href="https://doi.org/10.1037/1089-2680.7.4.331">https://doi.org/10.1037/1089-2680.7.4.331</a>
+</div>
+<div id="ref-Schonbeck2012-ht" class="csl-entry" role="listitem">
+Schönbeck, Y., Talma, H., Dommelen, P. van, Bakker, B., Buitendijk, S. E., HiraSing, R. A., &amp; Buuren, S. van. (2012). <span class="nocase">The world’s tallest nation has stopped growing taller: the height of Dutch children from 1955 to <span>2009</span></span>. <em>Pediatric Research</em>, <em>73</em>, 371–377. <a href="https://doi.org/10.1038/pr.2012.189">https://doi.org/10.1038/pr.2012.189</a>
 </div>
 </div>
 </section></section>

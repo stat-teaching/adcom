@@ -388,7 +388,7 @@ $$
 E anche un'ipotesi alternativa $H_1$:
 
 $$
-H_0: \mu_p \neq \mu_c \quad\quad \mu_p - \mu_c \neq 0
+H_1: \mu_p \neq \mu_c \quad\quad \mu_p - \mu_c \neq 0
 $$
 
 In questo caso $H_1$ dice semplicemente che le due medie sono diverse, non fa riferimento alla direzione maggiore o minore. Questa è un'ipotesi alternativa *bidirezionale*.
@@ -729,11 +729,11 @@ alpha <- 0.05
 abs(qnorm(alpha/2))
 ```
 
-## $\alpha$ p value e valore critico
+## $\alpha$, p value e valore critico
 
 ![](img/alpha-tcrit.svg)
 
-## $\alpha$ p value e valore critico
+## $\alpha$, p value e valore critico
 
 Quindi dire che $p \leq \alpha$ è equivalente a dire che $t_{\text{oss}}$ (osservato) è maggiore di $t_{\text{crit}}$ (critico). $t_{\text{crit}}$, nella normale standard dipende solo da $\alpha$.
 
@@ -1219,5 +1219,109 @@ In questo caso quindi la statistica test è negativa, quindi `perc_self_efficacy
 Inoltre, il p value è minore di $\alpha$ e quindi, rischiando di sbagliarci con una probabilità $\alpha$, possiamo rifiutare l'ipotesi $H_0$ di uguaglianza delle medie delle popolazioni.
 
 In altri termini, se $H_0$ fosse vera, sarebbe poco probabile (p value) ottenere una differenza tra le medie $b$ tra i due campioni.
+
+## Potenza ed errore di 2 tipo
+
+In questi esempi pratici, abbiamo parlato di errore di primo tipo $\alpha$, ipotesi nulla e p value. Non abbiamo però fatto riferimento alla potenza (e quindi all'errore di secondo tipo).
+
+Il punto principale è che mentre $H_0$ possiamo assumerla come *assenza* dell'effetto (e.g., differenza tra medie). L'ipotesi alternativa, che ci permette di valutare potenza ed errore di secondo tipo, deve essere specificata chiaramente e non solo come maggiore, minore o diverso.
+
+Specificare $H_1$ però non è semplice per due motivi:
+
+- deve essere fatto *a priori* ovvero prima di vedere i dati. $H_1$ deve rappresentare un ipotesi plausibile riguardo la direzione e la grandezza dell'effetto. Se le medie sono diverse ($H_0$ è falsa), quanto sono diverse?
+- per essere specificata richiede conoscenza del fenomeno da esprimere in termini numerici
+
+## Effect size
+
+Un ultimo aspetto importante nell'inferenza infatti è il concetto di effect size. L'effect size non è altro che una statistica come le altre ma che viene usata essendo direttamente e "facilmente" interpretabile. Ci sono due tipo di effect size:
+
+- **standardizzati**: ad esempio il Cohen's $d$, correlazione, odds ratio, etc. Sono degli effect size che non dipendono dall'unità di misura originale. A prescindere da cosa sto correlando, una correlazione di 0.5 è interpretata, statisticamente, allo stesso modo.
+- **non standardizzati**: ad esempio la differenza semplice tra due medie. Dal punto di vista prettamente statistico sono preferibili ma non sempre sono intepretabili. Dire che due persone differiscono di 15cm in altezza è chiaro (effetto grande). Dire che due persone differiscono di 4 punti su una scala di depressione è meno chiaro.
+
+## Effect size
+
+L'effect size lo abbiamo già introdotto anche se non esplicitamente. Se riprendiamo la statistica test nel caso dei due campioni:
+
+![](img/es-t.svg)
+
+## Effect size
+
+Quindi, il **numeratore $b$ è un effect size non standardizzato** perchè ci dice la differenza tra le due medie sulla scala della variabile. Può essere utile, se è chiaro come intepretarlo.
+
+**L'informazione sul campione non ci serve** perchè l'effect size deve dirci una caratteristica del fenomeno e non la sua precisione di stima.
+
+La deviazione standard (pooled) è una stima di quanto le due popolazioni variano. Quindi possiamo rapportare $b$ a $s_p$ per standardizzare la differenza tra medie grezza in base a quanto variano. E' la stessa logica di un punto $z$.
+
+## Effect size
+
+In formula possiamo calcolare questo effect size, chiamiamolo $d$:
+
+$$
+d = \frac{b}{s_p}
+$$
+
+In pratica ci dice quanto separati sono i due gruppi (e quanto le popolazioni in termini di stima) in unità di deviazione standard.
+
+Possiamo anche ricavarlo dalla statistica $t$:
+
+$$
+d = t \sqrt{\frac{1}{n_d} + \frac{1}{n_h}}
+$$
+
+## Effect size, Cohen's $d$
+
+Questo effect size si chiama comunemente Cohen's $d$ (o differenza tra medie standardizzate). E viene definito a livello della popolazione come:
+
+$$
+\delta = \frac{\mu_1 - \mu_0}{\sigma}
+$$
+
+Ovvero differenza tra medie standardizzata per la deviazione standard. Ci sono vari modi di calcolarlo, in particolare per stimare $\sigma$. Il caso di $s_p$ è uno dei vari modi ma la logica è sempre la stessa.
+
+## Effect size, Cohen's $d$
+
+Proviamo a calcolarlo in R sul t-test che abbiamo fatto prima. Possiamo usare il pacchetto `effectsize`:
+
+```{r}
+#| echo: true
+
+library(effectsize)
+cohens_d(perc_self_efficacy ~ education, data = dat2)
+```
+
+Quindi i due gruppi hanno una differenza di 0.45 deviazioni standard.
+
+## Cohen's $d$
+
+Anche se standardizzato, questo effect size non è facilmente interpretabile come una correlazione (tra -1 e 1). Ci sono dei benchmark che possono essere utili:
+
+- La differenza di altezza media tra maschi e femmine in Olanda è di 13cm o Cohen's $d = 2$ [@Schonbeck2012-ht]^[[https://lakens.github.io/statistical_inferences/06-effectsize.html](https://lakens.github.io/statistical_inferences/06-effectsize.html)]
+- Ci sono delle stime degli effect size medi in Psicologia attorno a 0.4 [@Richard2003-dq]
+
+Queste sono solo indicazioni generali, ogni ambito di ricerca può avere degli effetti plausibili. Ovviamente diffidate degli effetti troppo ottimisti, sono poco plausibili.
+
+## Effect size e potenza
+
+Torniamo alla nostra visualizzazione interattiva, nella sezione standardizzata:
+
+<center>
+
+[https://stat-teaching.github.io/statshiny/shiny/inference.html](https://stat-teaching.github.io/statshiny/shiny/inference.html)
+
+</center>
+
+## Effect size e potenza
+
+Se noi standardizziamo e quindi esprimiamo le nostre distribuzioni campionarie in termini di Cohen's $d$ ci rendiamo conto che $\delta$ (a livello della popolazione) è il livello di separazione delle due ipotesi.
+
+In altri termini, la potenza è una funzione matematica che dipende da:
+
+- $\alpha$
+- la numerosità campionaria $n$
+- il grado di separazione delle due ipotesi, riassumibile in modo standardizzato con $\delta$
+
+Ovviamente $\delta$ è a sua volta funzione di $b$ (effetto grezzo) e $\sigma$.
+
+## Effect size e potenza
 
 ## Bibliografia
