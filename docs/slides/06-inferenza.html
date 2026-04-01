@@ -237,7 +237,7 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
     </div>
 </div>
 
-  <p class="date"><em>Ultimo aggiornamento: 03-26-2026</em></p>
+  <p class="date"><em>Ultimo aggiornamento: 04-01-2026</em></p>
 </section>
 
 
@@ -247,7 +247,7 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 <img data-src="img/inferenza-dg.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="inferenza" class="slide level2">
 <h2>Inferenza</h2>
-<p>L’inferenza è un aspetto distinto ma legato al concetto di <strong>stima</strong>. L’inferenza riguarda un processo <strong>decisionale</strong> rispetto ad un <strong>parametro stimato</strong>.</p>
+<p>L’inferenza è un aspetto legato al concetto di <strong>stima</strong>. L’inferenza riguarda un processo <strong>decisionale</strong> rispetto ad un <strong>parametro stimato</strong>.</p>
 <p>Fare inferenza quindi significa <em>prendere una decisione basandosi su una o più stime campionarie di parametri</em>. Essendo l’inferenza basata su stime, la decisione inferenziale ha, per definizione, una componente d’errore.</p>
 <p>In altri termini, quando si prende una decisione inferenziale (e.g., il trattamento funziona di più nel gruppo sperimentale, la correlazione è diversa da zero, etc.) è sempre necessario essere consapevoli della componente d’errore.</p>
 </section>
@@ -292,16 +292,25 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 <h2>Errore di stima</h2>
 <p>Il concetto principale per capire l’inferenza è quello di <strong>errore di stima</strong>. Possiamo distinguere due tipologie principali di errori di stima:</p>
 <ul>
-<li><strong>errore sistematico</strong>: la mia stima è sistematicamente minore o inferiore rispetto al valore vero (<em>parametro</em>) che voglio stimare</li>
+<li><strong>errore sistematico</strong>: la mia stima è sistematicamente minore o maggiore rispetto al valore vero (<em>parametro</em>) che voglio stimare</li>
 <li><strong>errore casuale</strong>: la mia stima è <em>in media</em> corretta ma qualche volta risulta maggiore, qualche volta minore in modo casuale</li>
 </ul>
-<p>Tendenzialmente quando si analizzano dati, si cerca di usare metodi che evitano l’errore di tipo sistematico e riducono più possibile quello casuale. Quando abbiamo detto che la misurazione (o stima) di qualcosa è <span class="math inline">\(D = M + E\)</span> (dati osservati = modello + errore), l’errore <span class="math inline">\(E\)</span> che consideriamo è di tipo casuale.</p>
+<p>Tendenzialmente quando si analizzano dati, si cerca di usare metodi che evitino l’errore di tipo sistematico e riducano il più possibile quello casuale. Quando abbiamo detto che la misurazione (o stima) di qualcosa è <span class="math inline">\(D = M + E\)</span> (dati osservati = modello + errore), l’errore <span class="math inline">\(E\)</span> che consideriamo è di tipo casuale.</p>
 </section>
-<section id="stima-popolazione-e-campione" class="slide level2">
-<h2>Stima, popolazione e campione</h2>
-<p>Ritornando a parametri e statistiche, ogni statistica è una stima (con errore) del rispettivo parametro della popolazione.</p>
-<p>Quando calcoliamo una media, una deviazione standard, etc. su un campione ricordiamoci sempre che, in ottica di stima, c’è una quota di incertezza. In modo generico definiamo <span class="math inline">\(\theta\)</span> come il parametro incognito che stiamo stimando e <span class="math inline">\(S\)</span> la sua stima fatta sul campione.</p>
-<p>Chiamiamo <span class="math inline">\(E\)</span> l’errore di stima ovvero una quantità che determina la precisione con cui <span class="math inline">\(S\)</span> è una stima di <span class="math inline">\(\theta\)</span>. Questa quantità viene anche chiamata <strong>errore standard</strong>.</p>
+<section id="errore-di-stima-2" class="slide level2">
+<h2>Errore di stima</h2>
+<p>Possiamo dire che il valore atteso (la media) in caso di errore casuale è zero mentre negli altri casi no.</p>
+
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-4-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="le-3-distribuzioni" class="slide level2">
+<h2>Le 3 distribuzioni</h2>
+<p>In tema inferenza è facile confondere i piani. Ogni volta che facciamo inferenza dobbiamo tenere a mente 3 tipologie di <em>distribuzioni</em> chiaramente distinte:</p>
+<ul>
+<li>La <strong>popolazione</strong>: l’insieme completo di tutti gli elementi, detti unità statistiche definita da <em>parametri</em> ignoti</li>
+<li>Distribuzione dei dati (<strong>campione</strong>): un sottoinsieme estratto dalla popolazione dove calcoliamo le <em>statistiche</em></li>
+<li><strong>Distribuzione campionaria</strong>: distribuzione che descrive l’incertezza nella stima di un parametro della popolazione tramite una statistica calcolata su un campione.</li>
+</ul>
+<p>Ora vedremo chiaramente questi concetti.</p>
 </section>
 <section id="dataset" class="slide level2">
 <h2>Dataset</h2>
@@ -341,6 +350,12 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 </div>
 </div>
 </section>
+<section id="stima-popolazione-e-campione" class="slide level2">
+<h2>Stima, popolazione e campione</h2>
+<p>Ritornando a parametri e statistiche, ogni statistica è una stima (con errore) del rispettivo parametro della popolazione.</p>
+<p>Quando calcoliamo una media, una deviazione standard, etc. su un campione ricordiamoci sempre che, in ottica di stima, c’è una quota di incertezza. In modo generico definiamo <span class="math inline">\(\theta\)</span> come il parametro incognito che stiamo stimando e <span class="math inline">\(t\)</span> la sua stima fatta sul campione.</p>
+<p>L’errore di stima ovvero una quantità che determina la precisione con cui <span class="math inline">\(t\)</span> è una stima di <span class="math inline">\(\theta\)</span> viene definita <strong>errore standard</strong>.</p>
+</section>
 <section id="errore-standard" class="slide level2">
 <h2>Errore standard</h2>
 <p>Più formalmente ed in modo generico, possiamo dire che l’errore standard di una statistica è:</p>
@@ -351,7 +366,7 @@ SE = \sqrt{\frac{\sigma^2}{n}} = \frac{\sigma}{\sqrt{n}}
 </section>
 <section id="errore-standard-1" class="slide level2">
 <h2>Errore standard</h2>
-<p>Facciamo un esempio decomponendo la formula, se prendiamo due variabili del nostro dataset e vediamo la variabilità (con coefficiente di variazione):</p>
+<p>Facciamo un esempio. Se prendiamo due variabili del nostro dataset e vediamo la variabilità (con coefficiente di variazione):</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(dat<span class="sc">$</span>scarpe) <span class="sc">/</span> <span class="fu">abs</span>(<span class="fu">mean</span>(dat<span class="sc">$</span>scarpe))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -366,7 +381,7 @@ SE = \sqrt{\frac{\sigma^2}{n}} = \frac{\sigma}{\sqrt{n}}
 </section>
 <section id="errore-standard-della-media" class="slide level2">
 <h2>Errore standard della media</h2>
-<p>Abbiamo visto dallo script che l’errore standard della media si calcola come:</p>
+<p>Abbiamo visto dallo script che l’errore standard della media si calcola (esattamente) così come la formulazione generica:</p>
 <p><span class="math display">\[
 SE = \sqrt{\frac{\sigma^2}{n}} = \frac{\sigma}{\sqrt{n}}
 \]</span></p>
@@ -376,24 +391,25 @@ SE = \sqrt{\frac{\sigma^2}{n}} = \frac{\sigma}{\sqrt{n}}
 <h2>Errore standard, nella pratica</h2>
 <p>A cosa serve l’errore standard nella pratica? Fondamentalmente a due processi:</p>
 <ul>
-<li>misurare e quindi comunicare l’errore di stima, fatta su un campione, di un certo parametro della popolazione</li>
-<li>prendere una decisione <em>inferenziale</em> riguardo il parametro, partendo dalla stima fatta sul campione. Non prendiamo una decisione sul campione (quello è noto, non incerto) ma sul parametro della popolazione. La decisione quindi è anch’essa incerta per definizione.</li>
+<li><strong>quantificare e quindi comunicare l’errore di stima</strong> di un certo parametro stimato con un campione</li>
+<li><strong>prendere una decisione inferenziale</strong> riguardo il parametro, partendo dalla stima fatta sul campione. Non prendiamo una decisione sul campione (quello è noto, non incerto) ma sul parametro della popolazione.</li>
 </ul>
 </section>
-<section id="distribuzione-campionara" class="slide level2">
-<h2>Distribuzione campionara</h2>
-<p>Un’altro concetto illustrato nell’esempio è quello di <strong>distribuzione campionaria</strong>. Nell’ipotesi di poter ripetere una misurazione un numero infinito (o molto elevato di volte) la distribuzione campionaria di una statistica è la distribuzione che si ottiene applicando quella statistica a tutti i campioni estratti. E’ un concetto teorico, nella pratica non possiamo ri-fare una misurazione infinite volte (a parte con le simulazioni, come nell’esempio)</p>
+<section id="distribuzione-campionaria" class="slide level2">
+<h2>Distribuzione campionaria</h2>
+<p>L’errore standard è anche la deviazione standard della distribuzione che si ottiene applicando una certa statistica <span class="math inline">\(t\)</span> a tutti i campioni possibili.</p>
+<p>Questa distribuzione si chiama <strong>distribuzione campionaria</strong> e contiene tutta l’informazione necessaria per quantificare l’incertezza di stima. Tendenzialmente:</p>
 <ol type="1">
-<li>la media delle stime fatte su tutti i campioni possibili coincide con il parametro vero</li>
-<li>la deviazione standard delle stime (deviazione standard della distribuzione campionaria) rappresenta l’errore di stima</li>
+<li>la media di <span class="math inline">\(t\)</span> applicata a tutti i campioni possibili coincide con <span class="math inline">\(\theta\)</span></li>
+<li>la deviazione standard di <span class="math inline">\(t\)</span> applicata a tutti i campioni possibili rappresenta l’errore standard.</li>
 </ol>
-<p>Chiaramente la stima in questo caso non ha errore sistematico (altrimenti 1 non sarebbe vero).</p>
+<p>Chiaramente la stima in questo caso <strong>non ha errore sistematico</strong> (altrimenti 1 non sarebbe vero).</p>
 </section>
-<section id="distribuzione-campionara-1" class="slide level2">
-<h2>Distribuzione campionara</h2>
-<p>Possiamo indicare in modo generico la distribuzione campionaria di una statistica come:</p>
+<section id="distribuzione-campionaria-1" class="slide level2">
+<h2>Distribuzione campionaria</h2>
+<p>Possiamo indicare in modo generico la distribuzione campionaria di una statistica <span class="math inline">\(t\)</span> come:</p>
 <p><span class="math display">\[
-S \sim \mathcal{D}(\boldsymbol{\nu})
+t \sim \mathcal{D}(\boldsymbol{\nu})
 \]</span></p>
 <p>Dove <span class="math inline">\(\sim\)</span> significa <em>distribuita come</em>, <span class="math inline">\(\mathcal{D}\)</span> è una certa distribuzione (esempio la Normale) e <span class="math inline">\(\boldsymbol{\nu}\)</span> è un vettore di uno o più parametri (nel caso della Normale, <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span>).</p>
 <p>Questa formulazione generica è solo utile a chiarire che il concetto di distribuzione campionaria è lo stesso ma <span class="math inline">\(\mathcal{D}\)</span> può essere diverse cose. Nel t-test, ad esempio, <span class="math inline">\(\mathcal{D}\)</span> è una t di Student.</p>
@@ -402,40 +418,48 @@ S \sim \mathcal{D}(\boldsymbol{\nu})
 <h2>Teorema del limite centrale</h2>
 <p>In alcuni casi, vale un teorema che si chiama <strong>teorema del limite centrale (TLC)</strong>. Il teorema dice che con una numerosità campionaria sufficientemente grande<sup>1</sup>, la distribuzione campionaria di una statistica si può approssimare come una Normale:</p>
 <p><span class="math display">\[
-S \sim \mathcal{N}(\theta, \mbox{SE}_S)
+t \sim \mathcal{N}(\theta, \mbox{SE}_t)
 \]</span></p>
 <p>Questo si legge come:</p>
 <blockquote>
-<p>La distribuzione campionaria di <span class="math inline">\(S\)</span> (una statistica generica, e.g., media) è distribuita come (<span class="math inline">\(\sim\)</span>) una Normale con media <span class="math inline">\(\theta\)</span> (il parametro) e deviazione standard l’errore standard.</p>
+<p>La distribuzione campionaria di <span class="math inline">\(t\)</span> (una statistica generica, e.g., media) è distribuita come (<span class="math inline">\(\sim\)</span>) una Normale con media <span class="math inline">\(\theta\)</span> (il parametro) e deviazione standard l’errore standard.</p>
 </blockquote>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>Solitamente, e ci sono motivi statistici la numerosità viene minima viene indicata a 30. Ma diffidate sempre delle soglie arbitrarie.</p></li></ol></aside></section>
+<section id="teorema-del-limite-centrale-1" class="slide level2">
+<h2>Teorema del limite centrale</h2>
+<p>In particolare, nell’esempio pratico con i dati del corso abbiamo visto che il TLC vale e ci dimostra come la distribuzione campionaria della media sia distribuita come:</p>
+<p><span class="math display">\[
+\bar{x} \sim \mathcal{N}(\mu, \text{SE}_{\bar{x}})
+\]</span></p>
+<p>Dove <span class="math inline">\(\mu\)</span> è la media vera della popolazione e <span class="math inline">\(\text{SE}_{\bar{x}}\)</span> l’errore standard della stima della media ovvero <span class="math inline">\(\text{SE}_{\bar{x}} = \sigma / \sqrt{n}\)</span> (<span class="math inline">\(s\)</span> viene usato come stima di <span class="math inline">\(\sigma\)</span>).</p>
+</section>
 <section id="intervallo-di-confidenza" class="slide level2">
 <h2>Intervallo di confidenza</h2>
-<p>Un ultimo concetto importante è quello di intervallo di confindenza (CI). Una volta compresa la distribuzione campionaria, l’intervallo di confidenza non è altro un modo di riassumerla, oltre che con la media ma sopratutto con l’errore standard.</p>
+<p>Un ultimo concetto importante è quello di intervallo di confidenza (CI). Una volta compresa la distribuzione campionaria, l’intervallo di confidenza non è altro che un modo di riassumerla, oltre che con la media ma soprattutto con l’errore standard.</p>
 <p>Formalmente, l’intervallo di confidenza si calcola come:</p>
 <p><span class="math display">\[
-\mbox{CI} = S \pm q SE_S
+\mbox{CI} = t \pm q \times SE_t
 \]</span></p>
-<p><span class="math inline">\(S\)</span> è la stima, <span class="math inline">\(SE_S\)</span> è l’errore standard. <span class="math inline">\(q\)</span> è un moltiplicatore dell’errore standard. Determina il livello dell’intervallo di confidenza.</p>
+<p><span class="math inline">\(t\)</span> è la stima, <span class="math inline">\(SE_t\)</span> è l’errore standard. <span class="math inline">\(q\)</span> è un moltiplicatore dell’errore standard. <span class="math inline">\(q\)</span> non è altro che il quantile associato ad una certa probabilità cumulata.</p>
 </section>
 <section id="intervallo-di-confidenza-1" class="slide level2">
 <h2>Intervallo di confidenza</h2>
 <p>Per capire <span class="math inline">\(q\)</span> dobbiamo ripensare alla normale (dato il TLC). In particolare alla distribuzione normale standard (<span class="math inline">\(\mu = 0\)</span> e <span class="math inline">\(\sigma = 1\)</span>):</p>
 
-<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-7-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-8-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="intervallo-di-confidenza-2" class="slide level2">
 <h2>Intervallo di confidenza</h2>
 <p>Ogni distribuzione (normale) può essere convertita alla normale standard tramite la standardizzazione. Ad esempio, una normale con <span class="math inline">\(\mu = 100\)</span> e <span class="math inline">\(\sigma = 15\)</span>:</p>
 
-<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-8-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-9-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="intervallo-di-confidenza-3" class="slide level2">
 <h2>Intervallo di confidenza</h2>
 <p>Quindi ad esempio, un valore <span class="math inline">\(q = 2\)</span> corrisponde a <span class="math inline">\(x = \mu + q \sigma = 100 + 2 \times 15 = 130\)</span>:</p>
 
-<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-9-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-10-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="intervallo-di-confidenza-4" class="slide level2">
 <h2>Intervallo di confidenza</h2>
-<p>Ora, esattamente come per i quantili (<span class="math inline">\(q\)</span> sono quantili infatti) possiamo sapere quale <span class="math inline">\(q\)</span> è associato ad una certa probabilità cumulata. Solitamente l’intervallo di confidenza si riporta al 5%. Quindi dobbiamo trovare <span class="math inline">\(q\)</span> dove la probabilità sia <span class="math inline">\(p(x) \leq q = 0.05\)</span>. Essendo la normale simmetrica, si distribuisce il 5% tra le due code.</p>
+<p>Ora, esattamente come per i quantili (<span class="math inline">\(q\)</span> sono quantili infatti) possiamo sapere quale <span class="math inline">\(q\)</span> è associato ad una certa probabilità cumulata. Solitamente l’intervallo di confidenza si riporta al 95%. Dobbiamo trovare <span class="math inline">\(q\)</span> che è associato a <span class="math inline">\(1 - 0.95 = 0.05\)</span> di probabilità cumulata. Distribuiamo il 0.05 tra le due code simmetriche della normale.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>q</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -449,7 +473,7 @@ S \sim \mathcal{N}(\theta, \mbox{SE}_S)
 <h2>Intervallo di confidenza</h2>
 <p>Vediamolo sul grafico, evidenziamo l’area.</p>
 
-<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-11-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-12-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="intervallo-di-confidenza-6" class="slide level2">
 <h2>Intervallo di confidenza</h2>
 <p>Tornando al nostro esempio pratico, il CI è l’intervallo sulla distribuzione campionaria che contiene una certa percentuale (e.g., 95%) di valori.</p>
@@ -460,18 +484,36 @@ S \sim \mathcal{N}(\theta, \mbox{SE}_S)
 </section>
 <section id="prendiamo-una-decisione" class="slide level2">
 <h2>Prendiamo una decisione</h2>
-<p>Ora, immaginiamo di voler prendere una decisione riguardo un parametro stimato. Ad esempio, facciamo l’inferenza che l’altezza media della popolazione è maggiore di 160cm. Anche qui noi conosciamo la “verità” ma assumiamo di basarci su un campione di numerosità <span class="math inline">\(n\)</span>. Quindi:</p>
+<p>Fino ad ora abbiamo quantificato l’incertezza nella stima di un parametro usando lo standard error e l’intervallo di confidenza. Ora possiamo provare a prendere una <em>decisione inferenziale</em>.</p>
+<p>Ad esempio, immaginiamo di conoscere l’altezza media della popolazione generale italiana <span class="math inline">\(\mu_p = 163\)</span>. Raccogliamo un campione e ci vogliamo chiedere se la popolazione da cui proviene il campione abbia una media uguale o diversa da <span class="math inline">\(\mu_p = 163\)</span>. Possiamo definire due mondi distinti:</p>
 <ul>
-<li>estraiamo un campione</li>
-<li>calcoliamo l’errore standard e costruiamo la distribuzione campionaria secondo il teorema del limite centrale</li>
+<li>Mondo <em>nullo</em> dove la popolazione generale e quella da cui è estratto il campione hanno la stessa media. <span class="math inline">\(\mu_p = \mu_c = 163\)</span>.</li>
+<li>Mondo <em>alternativo</em> dove la popolazione generale e quella da cui è estratto il campione hanno medie diverse <span class="math inline">\(\mu_p \neq \mu_c\)</span>.</li>
 </ul>
+</section>
+<section id="prendiamo-una-decisione-1" class="slide level2">
+<h2>Prendiamo una decisione</h2>
+<p>Quello che possiamo fare è prendere un campione di numerosità <span class="math inline">\(n\)</span>, calcolare l’altezza media e cercare di <em>inferire</em> cosa succede a livello della popolazione. Selezioniamo casualmente un campione dal dataset<sup>1</sup>:</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">30</span></span>
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(dat), n)</span>
-<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>camp <span class="ot">&lt;-</span> dat[idx, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>camp <span class="ot">&lt;-</span> dat[idx, ]</span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(camp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Ricordo che noi sappiamo la media <em>vera</em> in questo caso, ma stiamo simulando una situazione di inferenza reale.</p></li></ol></aside></section>
+<section id="prendiamo-una-decisione-2" class="slide level2">
+<h2>Prendiamo una decisione</h2>
+<p>Più formalmente abbiamo abbozzato un sistema di verifica d’ipotesi. Abbiamo definito un’ipotesi nulla:</p>
+<p><span class="math display">\[
+H_0: \mu_p = \mu_c \quad\quad \mu_p - \mu_c = 0
+\]</span></p>
+<p>E anche un’ipotesi alternativa <span class="math inline">\(H_1\)</span>:</p>
+<p><span class="math display">\[
+H_0: \mu_p \neq \mu_c \quad\quad \mu_p - \mu_c \neq 0
+\]</span></p>
+<p>In questo caso <span class="math inline">\(H_1\)</span> dice semplicemente che le due medie sono diverse, non fa riferimento alla direzione maggiore o minore. Questa è un’ipotesi alternativa <em>bidirezionale</em>.</p>
 </section>
-<section id="prendiamo-una-decisione-1" class="slide level2">
+<section id="prendiamo-una-decisione-3" class="slide level2">
 <h2>Prendiamo una decisione</h2>
 <p>Calcoliamo le statistiche sul campione:</p>
 <div class="cell" data-layout-align="center">
@@ -480,286 +522,551 @@ S \sim \mathcal{N}(\theta, \mbox{SE}_S)
 <span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> s <span class="sc">/</span> <span class="fu">sqrt</span>(n) <span class="co"># errore standard</span></span>
 <span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(m, s, se)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 165.833333   8.630672   1.575738</code></pre>
-</div>
-</div>
-<p>Ora possiamo anche costruire l’intervallo di confidenza al 95%, assumendo la normalità della distribuzione campionaria:</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fu">qnorm</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>)) <span class="co"># teniamolo positivo</span></span>
-<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">lb =</span> m <span class="sc">-</span> q <span class="sc">*</span> se,</span>
-<span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">ub =</span> m <span class="sc">+</span> q <span class="sc">*</span> se</span>
-<span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb17-7"><a aria-hidden="true" tabindex="-1"></a>ci</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>      lb       ub 
-162.7449 168.9217 </code></pre>
-</div>
-</div>
-</section>
-<section id="prendiamo-una-decisione-2" class="slide level2">
-<h2>Prendiamo una decisione</h2>
-<p>Visualizziamo anche la distribuzione campionaria, in blu l’intervallo di confidenza e in rosso il valore di confronto.</p>
-
-<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-15-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="prendiamo-una-decisione-3" class="slide level2">
-<h2>Prendiamo una decisione</h2>
-<p>Come prendiamo una decisione? La prima cosa che possiamo notare è la consistenza del valore 160cm rispetto alla distribuzione campionaria.</p>
-<p>Se ripetessi la misurazione un numero infinito di volte, il valore 160cm sarebbe poco probabile.</p>
-<p>In modo intuitivo, possiamo dire che sembra esserci evidenza che il valore 160cm sia poco consistente. Infatti la maggior parte delle medie è maggiore di 160.</p>
-</section>
-<section id="prendiamo-una-decisione-4" class="slide level2">
-<h2>Prendiamo una decisione</h2>
-<p>Vediamola in modo diverso. Immaginiamo un mondo dove la media della popolazione è nota ed è 160cm. Possiamo costruire la stessa distribuzione campionaria ma centrata su 160 e non sulla media del campione.</p>
-
-<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-16-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="prendiamo-una-decisione-5" class="slide level2">
-<h2>Prendiamo una decisione</h2>
-<p>Allo stesso modo possiamo dire che, se la popolazione avesse una media di 160cm, ottenere un campione con media <span class="math inline">\(\bar{x}\)</span> 165.83 è poco probabile.</p>
-<p>Possiamo anche calcolare la probabilità di ottenere un risultato uguale o maggiore a quello ottenuto, nell’ipotesi che la media della popolazione sia 160cm.</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) <span class="co"># per togliere notazione scientifica</span></span>
-<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(m, <span class="at">mean =</span> <span class="dv">160</span>, <span class="at">sd =</span> se, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.0001069663</code></pre>
-</div>
-</div>
-<p>Questa probabilità che abbiamo calcolato, si chiama <strong>p value</strong>.</p>
-</section>
-<section id="statistica-test" class="slide level2">
-<h2>Statistica test</h2>
-<p>Solitamente non si lavora con le statistiche grezze ma si calcola una statistica test (come la statistica <span class="math inline">\(t\)</span> ad esempio). Questa statistica test, come tutte le altre, ha una distribuzione campionaria e quindi un errore standard. Ad esempio:</p>
-<p><span class="math display">\[
-z = \frac{\bar{x} - \mu}{SE_{\bar{x}}}
-\]</span></p>
-<p>Questa statistica test semplicemente standardizza la differenza tra la media del campione e la media della popolazione che ipotizziamo (per il confronto) dividendo per l’errore standard.</p>
-</section>
-<section id="prendiamo-una-decisione-6" class="slide level2">
-<h2>Prendiamo una decisione</h2>
-<p>Il vantaggio è che, a prescindere da <span class="math inline">\(\bar{x}\)</span> e <span class="math inline">\(\mu\)</span>, questa statistica test standardizzata ha sempre la stessa distribuzione campionaria:</p>
-<p><span class="math display">\[
-z = \frac{\bar{x} - \mu}{SE_{\bar{x}}}
-\]</span></p>
-<p><span class="math display">\[
-z \sim \mathcal{N}(0, 1)
-\]</span></p>
-<p>Ovvero una normale standard (<span class="math inline">\(\mu = 0\)</span>, <span class="math inline">\(\sigma = 1\)</span>). Infatti possiamo calcolare il <strong>p value</strong>:</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">160</span></span>
-<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> (m <span class="sc">-</span> mu)<span class="sc">/</span>se</span>
-<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(z, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.0001069663</code></pre>
+<pre><code>[1] 166.366667   7.997773   1.460187</code></pre>
 </div>
 </div>
 </section>
 <section id="normale-disclaimer" class="slide level2">
 <h2>Normale, disclaimer</h2>
-<p>Questa è la logica per qualsiasi test statistico.Nella pratica a volte si usano altre distribuzioni come la <span class="math inline">\(t\)</span> di Student. La ragione principale è che l’approssimazione normale, sopratutto per campioni piccoli non è sempre giustificata.</p>
+<p>Una precisazione riguarda utilizzare la distribuzione campionaria Normale. In realtà, quando si utilizza <span class="math inline">\(s\)</span> come stima di <span class="math inline">\(\sigma\)</span> (il nostro caso) è necessario utilizzare la distribuzione <span class="math inline">\(t\)</span> di Student.</p>
+<p>L’idea è dovendo stimare sia <span class="math inline">\(\mu\)</span> (la media della popolazione) con <span class="math inline">\(\bar{x}\)</span> che <span class="math inline">\(\sigma\)</span> (la deviazione standard della popolazione) con <span class="math inline">\(s\)</span> abbiamo più incertezza che assumere <span class="math inline">\(\sigma\)</span> come nota.</p>
+<p>Per tenere conto di questa incertezza utilizziamo una distribuzione campionaria più <em>conservativa</em> rispetto alla Normale, ovvero la <span class="math inline">\(t\)</span> di Student.</p>
+</section>
+<section id="normale-disclaimer-1" class="slide level2">
+<h2>Normale, disclaimer</h2>
+<p>Mentre la Normale (quella standard) è fissa una volta definiti <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span>, la <span class="math inline">\(t\)</span> di Student può variare in funzione di un’altro parametro <span class="math inline">\(\nu\)</span> ovvero i gradi di libertà.</p>
+<p>I gradi di libertà sono un concetto complesso ma fondamentale. L’idea è che ogni volta che stimiamo un parametro ad esempio la media <span class="math inline">\(\mu\)</span> usiamo (e quindi spendiamo) informazione dal campione di numerosità <span class="math inline">\(n\)</span>.</p>
+<p>Nel caso del nostro esempio, noi stimiamo la media con <span class="math inline">\(\bar{x}\)</span> e anche la deviazione standard <span class="math inline">\(s\)</span> (che dipende dalla media). Quindi abbiamo <span class="math inline">\(\nu = n - 1\)</span> gradi di libertà.</p>
+</section>
+<section id="normale-disclaimer-2" class="slide level2">
+<h2>Normale, disclaimer</h2>
+<p>Vediamolo con un esempio piccolo, immaginiamo di avere 5 valori e calcolare la media:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>)</span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<p>Sappiamo che <span class="math inline">\(\sum^{n}_{i = 1} x_i - \bar{x} = 0\)</span>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>x <span class="sc">-</span> <span class="fu">mean</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1  0  1 -2  2</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x <span class="sc">-</span> <span class="fu">mean</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+</section>
+<section id="normale-disclaimer-3" class="slide level2">
+<h2>Normale, disclaimer</h2>
+<p>Ora, se immaginiamo di sapere che <span class="math inline">\(\sum^{n}_{i = 1} x_i - \bar{x} = 0\)</span> e vi dicessi il valore dei primi 4 scarti dalla media:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> x <span class="sc">-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>r[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1  0  1 -2</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># per forza deve essere 2 per dare la somma 0</span></span>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(r[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -2</code></pre>
+</div>
+</div>
+<p>L’ultimo valore (il quinto, <span class="math inline">\(n - 1\)</span>) è vincolato. Deve essere per forza <span class="math inline">\(x_5 - \bar{x} = 2\)</span>. Si sono ridotti i gradi di libertà nel momento in cui abbiamo stimato la media.</p>
+</section>
+<section id="normale-disclaimer-4" class="slide level2">
+<h2>Normale, disclaimer</h2>
+<p>Qui vediamo delle <span class="math inline">\(t\)</span> di Student con <span class="math inline">\(\nu\)</span> diversi e poi la Normale. Come vedete, all’aumentare di <span class="math inline">\(\nu\)</span> le due sono sempre più simili.</p>
 
 <img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-19-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="prendiamo-una-decisione-4" class="slide level2">
+<h2>Prendiamo una decisione</h2>
+<p>Tornando al nostro campione e assumendo la normalità possiamo visualizzare la distribuzione campionaria. In blu vediamo l’intervallo di confidenza al 95%.</p>
+
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-20-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="prendiamo-una-decisione-5" class="slide level2">
+<h2>Prendiamo una decisione</h2>
+<p>Cosa notiamo?</p>
+<ul>
+<li>la media del campione <span class="math inline">\(\bar{x}\)</span> (che è una stima di <span class="math inline">\(\mu_c\)</span>) è diversa da <span class="math inline">\(\mu_p\)</span> (ovviamente)</li>
+<li>la distribuzione campionaria costruita attorno a <span class="math inline">\(\bar{x}\)</span> ci fa capire che l’ipotesi <span class="math inline">\(H_0\)</span> è poco probabile. Infatti <span class="math inline">\(\mu_p = 163\)</span> è un valore che è sulle code estreme della distribuzione.</li>
+<li>questo è chiaro anche guardando l’intervallo di confidenza. Il valore <span class="math inline">\(\mu_p\)</span> è ampiamente fuori dall’intervallo. Possiamo dire che la probabilità di ottenere valori minori o uguali a <span class="math inline">\(\mu_p\)</span> è minore di <span class="math inline">\(1 - 0.95\)</span> quindi minore di <span class="math inline">\(0.05\)</span>.</li>
+</ul>
+</section>
+<section id="prendiamo-una-decisione-6" class="slide level2">
+<h2>Prendiamo una decisione</h2>
+<p>Ora ribaltiamo il discorso. Immaginiamo di costruire la stessa distribuzione campionaria ma assumendo come vera <span class="math inline">\(H_0\)</span>. L’idea è la stessa, semplicemente la distribuzione sarà centrata su <span class="math inline">\(\mu_p\)</span>.</p>
+
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-21-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="prendiamo-una-decisione-7" class="slide level2">
+<h2>Prendiamo una decisione</h2>
+<p>Perchè fare questo? Perchè <span class="math inline">\(H_0\)</span> e quindi <span class="math inline">\(\mu_p = 163\)</span> è definita (nota come nel caso di un punteggio normativo o assunta). Possiamo quindi assumerla come vera e vedere la consistenza dei dati rispetto a questa ipotesi.</p>
+<p>Siccome siamo in grado di lavorare con le distribuzioni normali (teoriche), possiamo ad esempio calcolare la probabilità assumendo <span class="math inline">\(H_0\)</span> come vera, di avere un campione con <span class="math inline">\(\bar{x}\)</span> maggiore o minore (ricordate la bidirezionalità) rispetto a quella osservata.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a>(p_minore <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="dv">163</span> <span class="sc">-</span> (m <span class="sc">-</span> <span class="dv">163</span>), <span class="at">mean =</span> <span class="dv">163</span>, <span class="at">sd =</span> se))</span>
+<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.01056535</span></span>
+<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a>(p_maggiore <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(m, <span class="at">mean =</span> <span class="dv">163</span>, <span class="at">sd =</span> se)))</span>
+<span id="cb27-4"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.01056535</span></span>
+<span id="cb27-5"><a aria-hidden="true" tabindex="-1"></a>p_minore <span class="sc">+</span> p_maggiore</span>
+<span id="cb27-6"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.0211307</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Questa probabilità che abbiamo calcolato, si chiama <strong>p value</strong>.</p>
+</section>
+<section id="prendiamo-una-decisione-8" class="slide level2">
+<h2>Prendiamo una decisione</h2>
+<p>Graficamente possiamo chiaramente vederlo:</p>
+
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-23-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="statistica-test" class="slide level2">
+<h2>Statistica test</h2>
+<p>Nel nostro esempio, stiamo lavorando con la media <span class="math inline">\(\bar{x}\)</span> del campione e la media della popolazione <span class="math inline">\(\mu_p\)</span> assumendo <span class="math inline">\(H_0\)</span> come vera.</p>
+<p>C’è un modo più intuitivo di lavorare e riguarda sempre la standardizzazione. Proviamo a standardizzare la nostra <span class="math inline">\(\bar{x}\)</span> usando la distribuzione campionaria. Calcoliamo una nuova statistica che chiamiamo genericamente <span class="math inline">\(t\)</span>:</p>
+<p><span class="math display">\[
+t = \frac{\bar{x} - \mu_p}{\text{SE}_{\bar{x}}}
+\]</span></p>
+<p>La <span class="math inline">\(t\)</span> non è altro che la differenza tra la media del campione e quella della popolazione (sotto <span class="math inline">\(H_0\)</span>) standardizzata con l’errore standard. E’ quindi espressa in unità di errore standard.</p>
+</section>
+<section id="statistica-test-1" class="slide level2">
+<h2>Statistica test</h2>
+<p>Nel nostro caso quindi possiamo facilmente calcolarla. L’interpretazione è come un punto <span class="math inline">\(z\)</span> ma siamo in unità di errore standard e non di deviazione standard.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>(t <span class="ot">&lt;-</span> (m <span class="sc">-</span> <span class="dv">163</span>)<span class="sc">/</span>se)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.305641</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a>m</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 166.3667</code></pre>
+</div>
+</div>
+<p>Quindi il nostro campione è ~2.3 errori standard maggiore rispetto alla media della popolazione se fosse vera <span class="math inline">\(H_0\)</span>. 2.3 è un valore decisamente grande e ci suggerisce che la media sia abbastanza distante dall’ipotesi nulla.</p>
+</section>
+<section id="statistica-test-2" class="slide level2">
+<h2>Statistica test</h2>
+<p>Solitamente non si lavora con le statistiche grezze ma si calcola una statistica test (come la statistica <span class="math inline">\(t\)</span> ad esempio). Questa statistica test, come tutte le altre, ha una distribuzione campionaria e quindi un errore standard. Ad esempio:</p>
+<p><span class="math display">\[
+t = \frac{\bar{x} - \mu}{SE_{\bar{x}}}
+\]</span></p>
+<p>Questa statistica test semplicemente standardizza la differenza tra la media del campione e la media della popolazione che ipotizziamo (per il confronto) dividendo per l’errore standard.</p>
+</section>
+<section id="prendiamo-una-decisione-9" class="slide level2">
+<h2>Prendiamo una decisione</h2>
+<p>Il vantaggio è che, a prescindere da <span class="math inline">\(\bar{x}\)</span> e <span class="math inline">\(\mu\)</span>, questa statistica test standardizzata ha sempre la stessa distribuzione campionaria. Assumendo la normalità, questa diventa una distribuzione normale standard:</p>
+<p><span class="math display">\[
+t \sim \mathcal{N}(0, 1)
+\]</span></p>
+<p>Se usassimo la distribuzione <span class="math inline">\(t\)</span> di Student (lasciamola stare per il momento) allora:</p>
+<p><span class="math display">\[
+t \sim \mathcal{T}(\nu)
+\]</span></p>
+<p>Dove <span class="math inline">\(\nu = n - 1 = 29\)</span></p>
+</section>
+<section id="prendiamo-una-decisione-10" class="slide level2">
+<h2>Prendiamo una decisione</h2>
+<p>Vediamo la distribuzione campionaria in questo caso.</p>
+
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-25-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="prendiamo-una-decisione-11" class="slide level2">
+<h2>Prendiamo una decisione</h2>
+<p>Possiamo calcolare il nostro p-value con la stessa logica ma ora possiamo fare riferimento direttamente alla distribuzione normale standard:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="sc">-</span>t) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(t))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0211307</code></pre>
+</div>
+</div>
+<p>La cosa utile è che possiamo esprimere tutto in termini di normale standard.</p>
+</section>
 <section id="errori-decisionali" class="slide level2">
 <h2>Errori decisionali</h2>
 <p>Quello che abbiamo fatto <em>artigianalmente</em> è un processo inferenziale:</p>
 <ul>
-<li>Abbiamo definito un’ipotesi nulla <span class="math inline">\(H_0\)</span> (<span class="math inline">\(\mu_0 = 160\)</span>, popolazione).</li>
+<li>Abbiamo definito un’ipotesi nulla <span class="math inline">\(H_0\)</span> (<span class="math inline">\(\mu_0 = 163\)</span>, popolazione).</li>
 <li>Basandoci su <span class="math inline">\(n\)</span> e su <span class="math inline">\(s\)</span> del campione abbiamo costruito la distribuzione campionaria (assumendo che <span class="math inline">\(H_0\)</span> sia vera)</li>
 <li>Abbiamo calcolato la probabilità di trovare un risultato uguale o maggiore di quello campionario, ovvero il p value.</li>
 </ul>
-<p>Possiamo intuire che tanto più il p value è piccolo tanto più il risultato del campione è <em>soprendente</em> assumendo <span class="math inline">\(H_0\)</span> come vera. Ma quanto piccolo deve essere il p value per rifiutare <span class="math inline">\(H_0\)</span>?</p>
+<p>Possiamo intuire che tanto più il p value è piccolo tanto più il risultato del campione è <em>sorprendente</em> assumendo <span class="math inline">\(H_0\)</span> come vera. Ma quanto piccolo deve essere il p value per rifiutare <span class="math inline">\(H_0\)</span>?</p>
 </section>
 <section id="errori-decisionali-1" class="slide level2">
 <h2>Errori decisionali</h2>
-<p>Fissiamo questo valore (totalmente a caso 😉) che chiamiamo <span class="math inline">\(\alpha = 0.05\)</span>. Questa è la nostra soglia decisionale. Se il p value <span class="math inline">\(p\)</span> è minore di <span class="math inline">\(\alpha\)</span> allora <strong>arbitrariamente</strong> decidiamo che i dati non sono consistenti con <span class="math inline">\(H_0\)</span>, e la rifiutiamo.</p>
-<p>Al contrario, se <span class="math inline">\(p\)</span> è maggiore di <span class="math inline">\(\alpha\)</span> allora non possiamo rifiutare <span class="math inline">\(H_0\)</span>. Ricordate che non esiste, in questo framework inferenziale, il concetto di accettare <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_0\)</span> è vera per definizione nel momento in cui calcoliamo <span class="math inline">\(p\)</span>.</p>
-<p>Quindi, assumendo vera <span class="math inline">\(H_0\)</span> significa che c’è sempre una probabilità che per quanto estremo sia il risultato del campione questo venga da una popolazione con media <span class="math inline">\(\mu_0\)</span>. Rifiutare in questo caso signica commettere un errore inferenziale. Errore noto come falso positivo o errore primo tipo.</p>
-</section>
-<section id="tutto-così-semplice" class="slide level2">
-<h2>Tutto così semplice?</h2>
-<p>Non esattamente. Ci sono alcuni problemi con questo approccio:</p>
+<p>Prendiamo una soglia che chiamiamo <span class="math inline">\(\alpha\)</span>. Questa soglia determina la nostra decisione. Se il p-value è minore di <span class="math inline">\(\alpha\)</span> prendiamo una decisione, altrimenti no.</p>
+<p>In termini pratici:</p>
 <ul>
-<li>Abbiamo definito solo <span class="math inline">\(H_0\)</span>, non abbiamo ipotesi di come potrebbe essere il mondo alternativo dove <span class="math inline">\(H_0\)</span> è falsa.</li>
-<li><span class="math inline">\(p\)</span> si basa su <span class="math inline">\(z\)</span> (o statistica test in generale) che a sua volta dipende da un numeratore e denominatore. Lo stesso <span class="math inline">\(p\)</span> si può ottenere con infinite combinazioni.</li>
-<li><span class="math inline">\(\alpha\)</span> è stato scelto in modo arbitrario</li>
+<li>Rifiutiamo <span class="math inline">\(H_0\)</span> quando <span class="math inline">\(p \leq \alpha\)</span></li>
+<li>Non rifiutiamo <span class="math inline">\(H_0\)</span> quando <span class="math inline">\(p &gt; \alpha\)</span></li>
 </ul>
-<p>Tutte ma non solo queste problematiche hanno contribuito a quella che viene definita crisi di replicabilità. L’uso improprio dell’inferenza è una delle principali ragioni.</p>
+<p>Il <em>non rifiutiamo</em> è importante perchè stiamo assumendo <span class="math inline">\(H_0\)</span> come vera. Possiamo solo dire che i nostri dati sono poco consistenti con <span class="math inline">\(H_0\)</span>.</p>
 </section>
-<section id="tutto-così-semplice-1" class="slide level2">
-<h2>Tutto così semplice?</h2>
-<p>Lo stesso p value può essere ottenuto con scenari molto diversi. Quindi il p value da solo non è sufficiente.</p>
+<section id="errori-decisionali-2" class="slide level2">
+<h2>Errori decisionali</h2>
+<p>Dove stanno possibili errori? Riprendiamo la distribuzione campionaria:</p>
 
-<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-20-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="ipotesi-alternativa" class="slide level2">
-<h2>Ipotesi alternativa</h2>
-<p>Ci manca un’ipotesi alternativa <span class="math inline">\(H_1\)</span> nei termini di un valore plausibile del parametro <span class="math inline">\(\mu_1\)</span> nel mondo dove <span class="math inline">\(H_0\)</span> è falsa e <span class="math inline">\(H_1\)</span> è vera. Importante, questo non è il valore del campione, ma un valore ipotetico e plausibile del parametro.</p>
-<p>Attenzione che dire <span class="math inline">\(H_0: \mu = 160\)</span> e <span class="math inline">\(H_1: \mu &gt; 160\)</span> non è sufficiente. <span class="math inline">\(H_1\)</span>, nel momento in cui definiamo l’ipotesi alternativa deve essere un valore definito ed empiricamente plausibile.</p>
-<p>Il motivo è che oltre all’errore di primo tipo o falso positivo abbiamo anche altri errori e questi sono definiti quando <span class="math inline">\(H_1\)</span> è definito.</p>
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-27-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="alpha-p-value-e-valore-critico" class="slide level2">
+<h2><span class="math inline">\(\alpha\)</span> p value e valore critico</h2>
+<p>Un’altro modo di prendere la stessa decisione è quello di usare i valori critici e non <span class="math inline">\(\alpha\)</span>. Se ci pensate, <span class="math inline">\(\alpha\)</span> è una probabilità cumulata che quindi è associata ad un certo quantile (i nostri <span class="math inline">\(t\)</span>).</p>
+<p>L’area grigia che rappresenta una probabilità di <span class="math inline">\(\alpha\)</span> (0.05 in questo caso) è associata ad un certo valore di <span class="math inline">\(t\)</span>. Questo valore si chiama valore critico. In R si calcola con <code>qnorm()</code><sup>1</sup></p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb34-2"><a aria-hidden="true" tabindex="-1"></a><span class="co"># divido a metà perchè la mia ipotesi è bidirezionale</span></span>
+<span id="cb34-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">abs</span>(<span class="fu">qnorm</span>(alpha<span class="sc">/</span><span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.959964</code></pre>
+</div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn3"><p><code>qnorm(p, mean, sd)</code> vi ricordo che vi restituisce il valore che è associato ad una probabilità cumulata di <code>p</code> per una normale con media <code>mean</code> e deviazione standard <code>sd</code>.</p></li></ol></aside></section>
+<section id="alpha-p-value-e-valore-critico-1" class="slide level2">
+<h2><span class="math inline">\(\alpha\)</span> p value e valore critico</h2>
+
+<img data-src="img/alpha-tcrit.svg" class="r-stretch"></section>
+<section id="alpha-p-value-e-valore-critico-2" class="slide level2">
+<h2><span class="math inline">\(\alpha\)</span> p value e valore critico</h2>
+<p>Quindi dire che <span class="math inline">\(p \leq \alpha\)</span> è equivalente a dire che <span class="math inline">\(t_{\text{oss}}\)</span> (osservato) è maggiore di <span class="math inline">\(t_{\text{crit}}\)</span> (critico). <span class="math inline">\(t_{\text{crit}}\)</span>, nella normale standard dipende solo da <span class="math inline">\(\alpha\)</span>.</p>
+
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-29-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="alpha-p-value-e-valore-critico-3" class="slide level2">
+<h2><span class="math inline">\(\alpha\)</span> p value e valore critico</h2>
+<p>Siccome valori <span class="math inline">\(\alpha &gt; 0.1\)</span> sono poco probabili, facciamo zoom sul grafico:</p>
+
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-30-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="alpha-p-value-e-intervallo-di-confidenza" class="slide level2">
+<h2><span class="math inline">\(\alpha\)</span> p value e intervallo di confidenza</h2>
+<p>Un ultimo modo per prendere la decisione (esattamente equivalente) è quello di basarsi sull’intervallo di confidenza costruito attorno alla stima <span class="math inline">\(\bar{x}\)</span>.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(</span>
+<span id="cb36-2"><a aria-hidden="true" tabindex="-1"></a>    m <span class="sc">-</span> se <span class="sc">*</span> q,</span>
+<span id="cb36-3"><a aria-hidden="true" tabindex="-1"></a>    m <span class="sc">+</span> se <span class="sc">*</span> q</span>
+<span id="cb36-4"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 163.5048 169.2286</code></pre>
+</div>
+</div>
+<p>Se l’intervallo di confidenza contiene il valore sotto <span class="math inline">\(H_0\)</span> equivale a dire che il p value è maggiore di <span class="math inline">\(\alpha\)</span> e il valore maggiore è minore del valore osservato.</p>
 </section>
-<section id="ipotesi-alternativa-1" class="slide level2">
-<h2>Ipotesi alternativa</h2>
-<p>Restando sull’esempio, immaginiamo che <span class="math inline">\(H_1: \mu = 165\)</span>. Quindi la media della popolazione è 170cm e non 160 (il valore <em>nullo</em>). Abbiamo quindi due distribuzioni campionarie:</p>
+<section id="alpha-p-value-e-intervallo-di-confidenza-1" class="slide level2">
+<h2><span class="math inline">\(\alpha\)</span> p value e intervallo di confidenza</h2>
+<p><span class="math inline">\(\alpha\)</span> e intervallo di confidenza sono legati. Se <span class="math inline">\(\alpha = 0.05\)</span> l’intervallo di confidenza è a livello <span class="math inline">\(1 - \alpha\)</span>.</p>
+
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-32-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="test-monodirezionali-e-bidirezionali" class="slide level2">
+<h2>Test monodirezionali e bidirezionali</h2>
+<p>Questa distinzione è fondamentale nel momento in cui costruiamo un test per la verifica d’ipotesi. Il punto è che una volta deciso <span class="math inline">\(\alpha\)</span> questo deve essere indipendente dal tipo di test.</p>
+
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-33-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="test-monodirezionali-e-bidirezionali-1" class="slide level2">
+<h2>Test monodirezionali e bidirezionali</h2>
+<p>Il grafico ci fa capire che anche il valore critico cambia in base al test. Essendo <span class="math inline">\(\alpha\)</span> fisso, spartire <span class="math inline">\(\alpha\)</span> tra due code o metterlo tutto in una coda fa aumentare o diminuire il valore critico. Possiamo farlo anche in R:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb38-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># monodirezionale sinistro</span></span>
+<span id="cb38-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(alpha)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.644854</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># monodirezionale destro</span></span>
+<span id="cb40-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> alpha)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.644854</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># bidirezionale, valore assoluto perchè simmetrico rispetto a 0</span></span>
+<span id="cb42-2"><a aria-hidden="true" tabindex="-1"></a><span class="co"># considero - e +</span></span>
+<span id="cb42-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">abs</span>(<span class="fu">qnorm</span>(alpha<span class="sc">/</span><span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.959964</code></pre>
+</div>
+</div>
+</section>
+<section id="test-monodirezionali-e-bidirezionali-2" class="slide level2">
+<h2>Test monodirezionali e bidirezionali</h2>
+<p>Emergono diverse cose:</p>
+<ul>
+<li>il valore critico espresso con la statistica test <span class="math inline">\(t\)</span> è simmetrico rispetto allo zero (ovviamente)</li>
+<li>il valore critico per un’ipotesi monodirezionale è più piccolo rispetto a quello bidirezionale</li>
+<li>a parità di <span class="math inline">\(\text{SE}\)</span> e <span class="math inline">\(\bar{x}\)</span> è più probabile rifiutare <span class="math inline">\(H_0\)</span> all’interno di un test monodirezionale.</li>
+</ul>
+<p>Dal punto di vista teorico, la direzione del test è funzione di quello che sappiamo sul fenomeno. Il test bidirezionale non richiede di esplicitare la direzione ma è più conservativo e quindi penalizza la nostra mancanza di informazioni.</p>
+</section>
+<section id="errori-decisionali-3" class="slide level2">
+<h2>Errori decisionali</h2>
+<p>Nel nostro caso il p value è minore di <span class="math inline">\(\alpha\)</span>. Ma nonostante questo, essendo che stiamo assumendo <span class="math inline">\(H_0\)</span> come vera, anche valori che sono associati ad un p value <span class="math inline">\(&lt; \alpha\)</span> sono comunque possibili (i.e., probabilità <span class="math inline">\(&gt; 0\)</span>).</p>
+<p>In termini pratici significa che, nonostante il mio campione sia sulle code della distribuzioni campionaria, comunque proviene da quella popolazione.</p>
+<p>Quindi potrei rifiutare <span class="math inline">\(H_0\)</span> perchè la mia soglia decisionale è stata passata ma prendere la decisione sbagliata nel caso <span class="math inline">\(H_0\)</span> sia effettivamente vera.</p>
+<p>Questo si chiama <strong>errore di primo tipo</strong> o falso positivo.</p>
+</section>
+<section id="errori-decisionali-4" class="slide level2">
+<h2>Errori decisionali</h2>
+<p>C’è solo questo tipo di errore? Rifiutare <span class="math inline">\(H_0\)</span> quando questa è vera? No, ci sono anche altri tipi di errore. Ci serve però spostarci nell’altro mondo ovvero quello dove <span class="math inline">\(H_0\)</span> è effettivamente falsa e <span class="math inline">\(H_1\)</span> è vera.</p>
+<p>Inoltre, non basta definire <span class="math inline">\(H_1\)</span> come maggiore, minore o diverso ma dobbiamo definire un valore puntuale che il parametro assume in questo altro mondo.</p>
+<p><span class="math display">\[
+\begin{aligned}
+H_0: \mu_p &amp;= = \mu_c = 163 \quad \quad \mu_c - \mu_p = 0 \\
+H_1: \mu_c &amp;= 165
+\end{aligned}
+\]</span></p>
+<p>Stiamo ipotizzando che, se <span class="math inline">\(H_0\)</span> è falsa allora il nostro campione proviene da una popolazione con media <span class="math inline">\(\mu_c = 165\)</span>.</p>
+</section>
+<section id="errori-decisionali-5" class="slide level2">
+<h2>Errori decisionali</h2>
+<p>Avendo due ipotesi con valori puntuali che possiamo assumere come vere in modo alternato (sono mutuamente esclusive) possiamo anche costruire:</p>
 <ul>
 <li>distribuzione campionaria della statistica test quando <span class="math inline">\(H_0\)</span> è vera (e quindi <span class="math inline">\(H_1\)</span> è falsa)</li>
 <li>distribuzione campionaria della statistica test quando <span class="math inline">\(H_1\)</span> è vera (e quindi <span class="math inline">\(H_0\)</span> è falsa)</li>
 </ul>
-<p>Inoltre abbiamo il nostro valore di <span class="math inline">\(\alpha\)</span> per la decisione inferenziale. Abbiamo costruito un sistema di verifica di ipotesi molto simile a quello proposto da Neyman e Pearson.</p>
+<p>Entrambe le distribuzioni campionarie avranno <span class="math inline">\(\text{SE}\)</span> come deviazione standard ma saranno centrate su valori diversi come media.</p>
 </section>
-<section id="ipotesi-alternativa-2" class="slide level2">
-<h2>Ipotesi alternativa</h2>
-<p>Nel nostro caso, ipotizziamo che <span class="math inline">\(H_1: \mu = 165\)</span>. Quindi possiamo disegnare entrambe le distribuzioni.</p>
+<section id="errori-decisionali-6" class="slide level2">
+<h2>Errori decisionali</h2>
 
-<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-21-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="ipotesi-nulla-e-alternativa" class="slide level2">
-<h2>Ipotesi nulla e alternativa</h2>
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-35-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="errori-inferenziali" class="slide level2">
+<h2>Errori inferenziali</h2>
+<p>Quindi:</p>
+<ul>
+<li>L’area <span style="display: inline-block; width: 20px; height: 20px; background-color: grey; vertical-align: middle;"></span> rappresenta la probabilità di rifiutare <span class="math inline">\(H_0\)</span> quando questa è vera. Questa è chiamato errore di primo tipo o <span class="math inline">\(\alpha\)</span></li>
+<li>L’area <span style="display: inline-block; width: 20px; height: 20px; background-color: lightblue; vertical-align: middle;"></span> rappresenta la probabilità di non rifiutare <span class="math inline">\(H_0\)</span> quando questa è falsa. Questa è chiamato errore di secondo tipo o <span class="math inline">\(\beta\)</span></li>
+<li>L’area <span style="display: inline-block; width: 20px; height: 20px; background-color: lightgreen; vertical-align: middle;"></span> rappresenta la probabilità di rifiutare <span class="math inline">\(H_0\)</span> quando questa è falsa. Questa è chiamata potenza statistica o <span class="math inline">\(1 - \beta\)</span></li>
+</ul>
+</section>
+<section id="errori-inferenziali-1" class="slide level2">
+<h2>Errori inferenziali</h2>
 <p>Quindi possiamo riassumere questo sistema in una tabella di contingenza 2x2:</p>
 
 <img data-src="img/inferenza.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="ipotesi-nulla-e-alternativa-1" class="slide level2">
-<h2>Ipotesi nulla e alternativa</h2>
-<p>Quindi, gli aspetti principali sono:</p>
-<ul>
-<li><span class="math inline">\(H_0\)</span> e <span class="math inline">\(H_1\)</span> sono mutualmente esclusive</li>
-<li>La potenza è la probabilità condizionata di rifiutare <span class="math inline">\(H_0\)</span> quando questa è falsa (quindi assumendo vera <span class="math inline">\(H_1\)</span>)</li>
-<li>L’errore di primo tipo è la probabilità di riufiutare <span class="math inline">\(H_0\)</span> quando questa è vera. Viene di solito fissato ad un valore</li>
-<li>il p value è la probabilità di ottenere un risultato uguale o più estremo se <span class="math inline">\(H_0\)</span> è vera</li>
-</ul>
-<p>L’obiettivo di un test è avere più potenza possibile mantenendo un livello accettabile di <span class="math inline">\(\alpha\)</span>.</p>
+<section id="errori-inferenziali-e-potenza" class="slide level2">
+<h2>Errori inferenziali e potenza</h2>
+<p>Potete trovare una visualizzazione interattiva di queste probabilità a questo link:</p>
+<center>
+<p><a href="https://stat-teaching.github.io/statshiny/shiny/inference.html">https://stat-teaching.github.io/statshiny/shiny/inference.html</a></p>
+</center>
 </section>
-<section id="come-si-calcola-la-potenza" class="slide level2 smaller">
-<h2>Come si calcola la potenza?</h2>
-<p>Di base, il calcolo è simile a quello del p value ma basato sull’ipotesi alternativa. Facciamo un esempio<sup>1</sup>:</p>
+<section id="esempio-con-di-marco2020-wu" class="slide level2">
+<h2>Esempio con <span class="citation" data-cites="Di-Marco2020-wu">Di Marco et al. (<a href="#/bibliografia" role="doc-biblioref" onclick="">2020</a>)</span></h2>
+<p>Lavoriamo con il solito dataset <span class="citation" data-cites="Di-Marco2020-wu">Di Marco et al. (<a href="#/bibliografia" role="doc-biblioref" onclick="">2020</a>)</span>:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a>mu0 <span class="ot">&lt;-</span> <span class="dv">160</span></span>
-<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>mu1 <span class="ot">&lt;-</span> <span class="dv">165</span></span>
-<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sd</span>(dat<span class="sc">$</span>altezza) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">nrow</span>(camp))</span>
-<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> (mu1 <span class="sc">-</span> mu0) <span class="sc">/</span> se</span>
-<span id="cb23-6"><a aria-hidden="true" tabindex="-1"></a>z <span class="co"># differenza tra le due ipotesi, standardizzata</span></span>
-<span id="cb23-7"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3.514177</span></span>
-<span id="cb23-8"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-9"><a aria-hidden="true" tabindex="-1"></a>zcrit <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fu">qnorm</span>(alpha<span class="sc">/</span><span class="dv">2</span>)) <span class="co"># valore critico standardizzato</span></span>
-<span id="cb23-10"><a aria-hidden="true" tabindex="-1"></a>zcrit</span>
-<span id="cb23-11"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1.959964</span></span>
-<span id="cb23-12"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-13"><a aria-hidden="true" tabindex="-1"></a><span class="co"># spostiamo i valori critici della normale standard in funzione della</span></span>
-<span id="cb23-14"><a aria-hidden="true" tabindex="-1"></a><span class="co"># differenza tra le due ipotesi (H1)</span></span>
-<span id="cb23-15"><a aria-hidden="true" tabindex="-1"></a>(power <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="sc">-</span>zcrit <span class="sc">+</span> z) <span class="sc">+</span> <span class="fu">pnorm</span>(zcrit <span class="sc">+</span> z, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span>
-<span id="cb23-16"><a aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.9399333</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"dimarco2020.xlsx"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>In questo caso la potenza è 0.94, quindi se fosse vera <span class="math inline">\(H_1: \mu = 165\)</span> avremmo probabilità del 94% di trovare l’effetto. Trovare l’effetto qui significa essere in grado di distinguerlo da quello <em>nullo</em> ovvero <span class="math inline">\(\mu_0 = 160\)</span>.</p>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>Calcolare o stimare la potenza non è sempre così semplice, ma la logica è sempre la stessa.</p></li></ol></aside></section>
-<section id="da-cosa-dipende-la-potenza" class="slide level2">
-<h2>Da cosa dipende la potenza?</h2>
-<p>La potenza dipende fondamentalmente da due aspetti:</p>
-<ul>
-<li>il valore di <span class="math inline">\(\alpha\)</span>: un valore di <span class="math inline">\(\alpha\)</span> maggiore significa una statistica test minore (in valore assoluto) e quindi maggiore probabilità di rifiutare <span class="math inline">\(H_0\)</span>. Però <span class="math inline">\(\alpha\)</span> generalmente è fisso e deciso a priori.</li>
-<li>il grado di separazione tra le due ipotesi, quindi la statistica test. Questa a sua volta dipende da:
-<ul>
-<li>numeratore: quindi il grado di separazione <em>grezzo</em> delle ipotesi</li>
-<li>denominatore (errore standard): quindi la numerosità campionaria <span class="math inline">\(n\)</span> e <span class="math inline">\(\sigma\)</span> ovvero il grado di variabilità del fenomeno.</li>
-</ul></li>
-</ul>
-<p>Quindi nella pratica, essendo <span class="math inline">\(\alpha\)</span> definito a priori, la separazione tra le ipotesi <span class="math inline">\(\mu_1 - \mu_0\)</span> definito a priori e <span class="math inline">\(\sigma\)</span> stimato (<span class="math inline">\(s\)</span>), l’aspetto cruciale è la numerosità campionaria <span class="math inline">\(n\)</span>.</p>
-</section>
-<section id="effect-size" class="slide level2">
-<h2>Effect size</h2>
-<p>Un ultimo aspetto importante nell’inferenza è il concetto di effect size. L’effect size non è altro che una statistica come le altre ma che viene usata essendo direttamente e “facilmente” interpretabile. Ci sono due tipo di effect size:</p>
-<ul>
-<li><strong>standardizzati</strong>: ad esempio il Cohen’s <span class="math inline">\(d\)</span>, correlazione, odds ratio, etc. Sono degli effect size che non dipendono dall’unità di misura originale. A prescindere da cosa sto correlando, una correlazione di 0.5 è intepretata, statisticamente, allo stesso modo.</li>
-<li><strong>non standardizzati</strong>: ad esempio la differenza semplice tra due medie. Dal punto di vista prettamente statistico sono preferibili ma non sempre sono intepretabili. Dire che due persone differiscono di 15cm in altezza è chiaro (effetto grande). Dire che due persone differiscono di 4 punti su una scala di depressione è meno chiaro.</li>
-</ul>
-</section>
-<section id="effect-size-cohens-d" class="slide level2">
-<h2>Effect size, Cohen’s <span class="math inline">\(d\)</span></h2>
-<p>Un esempio classico riguarda il Cohen’s <span class="math inline">\(d\)</span> (o differenza tra medie standardizzate). Immaginiamo di avere la situazione di prima con <span class="math inline">\(\mu_0 = 160\)</span> e <span class="math inline">\(\mu_1 = 165\)</span>. La differenza tra medie <em>grezza</em> è <span class="math inline">\(\Delta = \mu_1 - \mu_0 = 5\)</span>.</p>
-<p>Per standardizzare questa differenza tenendo conto del grado di variabilità possiamo dividere <span class="math inline">\(\Delta\)</span> per la deviazione standard della popolazione <span class="math inline">\(\sigma\)</span>. Quindi:</p>
-<p><span class="math display">\[
-\delta = \frac{\mu_1 - \mu_0}{\sigma}
-\]</span></p>
-<p>Quindi la differenza ora è espressa in unità standardizzate di deviazione standard e non più in centimetri.</p>
-</section>
-<section id="effect-size-cohens-d-1" class="slide level2">
-<h2>Effect size, Cohen’s <span class="math inline">\(d\)</span></h2>
-<p>Proviamo a calcolarlo:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fu">sd</span>(dat<span class="sc">$</span>altezza) <span class="co"># deviazione standard popolazione</span></span>
-<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> (mu1 <span class="sc">-</span> mu0) <span class="sc">/</span> sigma</span>
-<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a>delta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6415981</code></pre>
+<pre><code>  id age gender   education status residence period age_cat period_cat
+1  1  53   male high_school      2     south     31   51-60        &gt;31
+2  2  60   male      degree      2     north     27   51-60      21-30
+3  3  40 female      degree      2     north     13   31-40      11-15
+4  4  57   male      degree      2     north     20   51-60      16-20
+5  5  60   male high_school      2     north     20   51-60      16-20
+6  6  46   male      degree      2     north     14   41-50      11-15
+  attachment needs bonds perc_collective_efficacy perc_self_efficacy family
+1       3.67  3.33  3.33                      3.2               3.11   3.75
+2       4.00  3.33  4.00                      4.2               3.95   5.00
+3       4.00  2.67  3.50                      3.8               3.58   4.25
+4       4.00  4.00  3.50                      3.6               3.74   4.25
+5       3.33  3.00  3.33                      3.4               3.53   4.00
+6       4.00  3.33  3.33                      4.2               3.63   5.00
+  friends organization burnout trauma satisfaction extrinsic intrinsic quest
+1    4.00         4.00     1.8   2.11          4.0      2.75      6.00  1.67
+2    4.25         3.25     1.4   0.60          3.5      4.75      6.50  1.00
+3    4.50         4.50     2.7   2.30          3.6      5.75      5.50  5.00
+4    4.50         4.50     1.9   1.80          3.0      4.50      7.00  2.75
+5    3.25         3.75     2.6   2.30          2.7      4.25      3.75  4.50
+6    5.00         4.75     2.1   1.30          2.6      4.75      7.00  1.25
+  desiderability
+1           3.86
+2           4.00
+3           4.00
+4           3.14
+5           3.86
+6           3.57</code></pre>
 </div>
 </div>
-<p>Quindi <span class="math inline">\(\mu_1\)</span> è 0.64 deviazioni standard dall’ipotesi nulla. Questo valore è facilmente confrontabile a prescindere dal tipo di variabile.</p>
 </section>
-<section id="cohens-d-e-statistica-test" class="slide level2">
-<h2>Cohen’s <span class="math inline">\(d\)</span> e statistica test</h2>
-<p>Abbiamo definito prima una statistica test come:</p>
+<section id="esempio-con-di-marco2020-wu-1" class="slide level2">
+<h2>Esempio con <span class="citation" data-cites="Di-Marco2020-wu">Di Marco et al. (<a href="#/bibliografia" role="doc-biblioref" onclick="">2020</a>)</span></h2>
+<p>Quello che abbiamo fatto fino ad ora si chiama <strong>test ad un campione</strong>. Ovvero abbiamo un campione di numerosità <span class="math inline">\(n\)</span> che viene confrontato con una popolazione con una certa media <span class="math inline">\(\mu\)</span>.</p>
+<p>Lavoriamo con i punteggi di <code>perc_self_efficacy</code> e ipotizziamo che la media normativa di questi punteggi sia <span class="math inline">\(\mu = 3.5\)</span>.</p>
+<p>Vogliamo stimare la media del campione, quantificare l’incertezza e testare se questo campione sia consistente con la popolazione di riferimento.</p>
+</section>
+<section id="esempio-con-di-marco2020-wu-2" class="slide level2">
+<h2>Esempio con <span class="citation" data-cites="Di-Marco2020-wu">Di Marco et al. (<a href="#/bibliografia" role="doc-biblioref" onclick="">2020</a>)</span></h2>
+
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-39-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="esempio-con-di-marco2020-wu-3" class="slide level2">
+<h2>Esempio con <span class="citation" data-cites="Di-Marco2020-wu">Di Marco et al. (<a href="#/bibliografia" role="doc-biblioref" onclick="">2020</a>)</span></h2>
+<p>Facciamo quello che già sappiamo:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># media popolazione</span></span>
+<span id="cb47-2"><a aria-hidden="true" tabindex="-1"></a>mu0 <span class="ot">&lt;-</span> <span class="fl">3.5</span></span>
+<span id="cb47-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># numerosità</span></span>
+<span id="cb47-4"><a aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(dat)</span>
+<span id="cb47-5"><a aria-hidden="true" tabindex="-1"></a><span class="co"># media</span></span>
+<span id="cb47-6"><a aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">mean</span>(dat<span class="sc">$</span>perc_self_efficacy)</span>
+<span id="cb47-7"><a aria-hidden="true" tabindex="-1"></a><span class="co"># deviazione standard</span></span>
+<span id="cb47-8"><a aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">sd</span>(dat<span class="sc">$</span>perc_self_efficacy)</span>
+<span id="cb47-9"><a aria-hidden="true" tabindex="-1"></a><span class="co"># errore standard</span></span>
+<span id="cb47-10"><a aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> s <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span>
+<span id="cb47-11"><a aria-hidden="true" tabindex="-1"></a><span class="co"># statistica test</span></span>
+<span id="cb47-12"><a aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> (m <span class="sc">-</span> mu0) <span class="sc">/</span> se</span>
+<span id="cb47-13"><a aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="sc">-</span>t) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(t))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.860407e-13</code></pre>
+</div>
+</div>
+</section>
+<section id="esempio-con-di-marco2020-wu-4" class="slide level2">
+<h2>Esempio con <span class="citation" data-cites="Di-Marco2020-wu">Di Marco et al. (<a href="#/bibliografia" role="doc-biblioref" onclick="">2020</a>)</span></h2>
+<p>Chiaramente il p value in questo caso è molto piccolo essendo la statistica test decisamente poco consistente con la distribuzione campionaria.</p>
+
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-41-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="test-a-2-campioni" class="slide level2">
+<h2>Test a 2 campioni</h2>
+<p>Un test più comune di quello ad un campione è quello dove si confrontano due campioni. La logica è la stessa:</p>
+<ul>
+<li>Definiamo <span class="math inline">\(H_0\)</span> e <span class="math inline">\(H_1\)</span></li>
+<li>Definiamo la statistica test</li>
+<li>Definiamo la distribuzione campionaria assumendo <span class="math inline">\(H_0\)</span> come vera</li>
+<li>Calcoliamo il p value</li>
+</ul>
+</section>
+<section id="test-a-2-campioni-1" class="slide level2">
+<h2>Test a 2 campioni</h2>
+<p>Vogliamo vedere l’effetto di <code>education</code> su <code>perc_self_efficacy</code>. Quindi abbiamo due campioni di numerosità <span class="math inline">\(n_h\)</span> e <span class="math inline">\(n_d\)</span> (<code>high school</code> e <code>degree</code>).</p>
 <p><span class="math display">\[
-z = \frac{\mu_1 - \mu_0}{SE_{\mu_1}} = \frac{\mu_1 - \mu_0}{\frac{\sigma}{\sqrt{n}}}
+H_0: \mu_{\text{h}} = \mu_{\text{d}} \quad \mu_{\text{h}} - \mu_{\text{d}} = 0
 \]</span></p>
-<p>La formula è simile ma <span class="math inline">\(\delta\)</span> non contiene <span class="math inline">\(n\)</span>. Infatti, l’effect size è semplicemente una trasformazione standardizzata mentre la statistica test ingloba anche l’informazione della numerosità.</p>
-<p>Il punto è proprio questo, uno stesso effect size può essere (come per tutte le altre statistiche) stimato più o meno precisamente e quindi avere più o meno errore standard.</p>
+<p><span class="math display">\[
+H_1: \mu_{\text{h}} \neq \mu_{\text{d}} \quad \mu_{\text{h}} - \mu_{\text{d}} \neq 0
+\]</span></p>
+<p>Quindi, stiamo facendo inferenza sulle popolazioni da cui provengono i due campioni. L’ipotesi nulla è che i due campioni provengano da una popolazione con la stessa media, e quindi che non ci siano differenze.</p>
 </section>
-<section id="cohens-d" class="slide level2">
-<h2>Cohen’s <span class="math inline">\(d\)</span></h2>
-<p>Anche se standardizzato, questo effect size non è facilmente interpretabile come una correlazione (tra -1 e 1). Ci sono dei benchmark che possono essere utili:</p>
-<ul>
-<li>La differenza di altezza media tra maschi e femmine in Olanda è di 13cm o Cohen’s <span class="math inline">\(d = 2\)</span> <span class="citation" data-cites="Schonbeck2012-ht">(<a href="#/bibliografia" role="doc-biblioref" onclick="">Schönbeck et al., 2012</a>)</span><sup>1</sup></li>
-<li>Ci sono delle stime degli effect size medi in Psicologia attorno a 0.4 <span class="citation" data-cites="Richard2003-dq">(<a href="#/bibliografia" role="doc-biblioref" onclick="">Richard et al., 2003</a>)</span></li>
-</ul>
-<p>Queste sono solo indicazioni generali, ogni ambito di ricerca può avere degli effetti plausibili. Ovviamente diffidate degli effetti troppo ottimisti, sono poco plausibili.</p>
-<aside><ol class="aside-footnotes"><li id="fn3"><p><a href="https://lakens.github.io/statistical_inferences/06-effectsize.html">https://lakens.github.io/statistical_inferences/06-effectsize.html</a></p></li></ol></aside></section>
-<section id="cohens-d-e-potenza" class="slide level2">
-<h2>Cohen’s <span class="math inline">\(d\)</span> e potenza</h2>
-<p>Ora che abbiamo un valore standardizzato per esprimere il grado di separazione delle ipotesi <span class="math inline">\(H_0\)</span> e <span class="math inline">\(H_1\)</span>, vediamo come è legato alla potenza.</p>
+<section id="test-a-2-campioni-2" class="slide level2">
+<h2>Test a 2 campioni</h2>
+<p>Vediamo i dati per prima cosa, togliamo le osservazioni con <code>sec_school</code> così abbiamo 2 gruppi:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># togliamo sec_school cosi abbiamo 2 gruppi</span></span>
+<span id="cb49-2"><a aria-hidden="true" tabindex="-1"></a>dat2 <span class="ot">&lt;-</span> dat[dat<span class="sc">$</span>education <span class="sc">!=</span> <span class="st">"sec_school"</span>, ]</span>
+<span id="cb49-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(perc_self_efficacy <span class="sc">~</span> education, <span class="at">data =</span> dat2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
-<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-24-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="aspetti-cricici" class="slide level2">
-<h2>Aspetti cricici</h2>
-<p>Il primo aspetto da tenere a mente è: qualunque effetto (diverso da zero) con un certo <span class="math inline">\(n\)</span> sarà associato ad un <span class="math inline">\(p \leq \alpha\)</span>, quindi sarà significativo. Quindi il p value, da solo, non ci dice chiaramente la grandezza (e quindi la rilevanza) dell’effetto.</p>
+</section>
+<section id="test-a-2-campioni-2-output" class="slide level2 output-location-slide"><h2>Test a 2 campioni</h2><div class="cell output-location-slide" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-42-1.svg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="test-a-2-campioni-3" class="slide level2">
+<h2>Test a 2 campioni</h2>
+<p>Vediamo anche un grafico con le medie (rombi) e i singoli punti:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># calcolo la media per ogni gruppo</span></span>
+<span id="cb50-2"><a aria-hidden="true" tabindex="-1"></a>(m <span class="ot">&lt;-</span> <span class="fu">tapply</span>(dat2<span class="sc">$</span>perc_self_efficacy, dat2<span class="sc">$</span>education, mean))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     degree high_school 
+   3.720976    3.912800 </code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">stripchart</span>(perc_self_efficacy <span class="sc">~</span> education, <span class="at">data =</span> dat2, <span class="at">method =</span> <span class="st">"jitter"</span>, <span class="at">vertical =</span> <span class="cn">TRUE</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="dv">2</span>)</span>
+<span id="cb52-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">y =</span> m, <span class="at">pch =</span> <span class="dv">18</span>, <span class="at">cex =</span> <span class="dv">4</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
-<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-25-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="aspetti-cricici-1" class="slide level2">
-<h2>Aspetti cricici</h2>
-<p>Allo stesso tempo, se abbiamo campioni di numerosità limitata non è possibile stimare in modo affidabile effetti molto piccoli.</p>
+</section>
+<section id="test-a-2-campioni-3-output" class="slide level2 output-location-slide"><h2>Test a 2 campioni</h2><div class="cell output-location-slide" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-44-1.svg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="test-a-2-campioni-4" class="slide level2">
+<h2>Test a 2 campioni</h2>
+<p>Per quanto riguarda la statistica test, il discorso è leggermente più complesso. Rispetto al caso ad un campione, qui stiamo ragionando su una differenza tra due medie (e non una media vs un valore). Quindi la statistica test è una differenza:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\zeta = \mu_h - \mu_d \\
+b = \bar{x}_{d} - \bar{x}_h
+\end{aligned}
+\]</span></p>
+<p>Dove <span class="math inline">\(\zeta\)</span> è il parametro differenza tra medie e <span class="math inline">\(b\)</span> la sua stima al livello del campione. Dobbiamo quindi calcolare l’errore standard di <span class="math inline">\(b\)</span>.</p>
+</section>
+<section id="test-a-2-campioni-5" class="slide level2">
+<h2>Test a 2 campioni</h2>
+<p>La formula è più complessa di quella di una singola media ma la logica è la stessa. Ricordo che l’errore standard quantifica l’incertezza di stima combinando variabilità del fenomeno e numerosità campionaria. In questo caso abbiamo una doppia incertezza legata alla stima di due medie. Quindi:</p>
+<p><span class="math display">\[
+\text{SE}_{b} = \sqrt{\frac{s^2_{d}}{n_d} + \frac{s^2_{h}}{n_h}}
+\]</span></p>
+<p>Sostanzialmente sommiamo l’incertezza nella stima di entrambe le medie.</p>
+</section>
+<section id="test-a-2-campioni-6" class="slide level2">
+<h2>Test a 2 campioni</h2>
+<p>Assumendo che <span class="math inline">\(\sigma^2_d = \sigma^2_h\)</span> possiamo usare <span class="math inline">\(s_p\)</span> (<span class="math inline">\(p\)</span> per pooled/combinata) calcolata come:</p>
+<p><span class="math display">\[
+s_p = \sqrt{\frac{s^2_d (n_d - 1) + s^2_h (n_h - 1)}{n_d + n_h - 2}}
+\]</span></p>
+<p>Questa è una media pesata delle due varianze che viene calcolata assumendo che le due popolazioni abbiano la stessa varianza. Lo standard error diventa quindi:</p>
+<p><span class="math display">\[
+\text{SE}_b = s_p \sqrt{\frac{1}{n_d} + \frac{1}{n_h}}
+\]</span></p>
+</section>
+<section id="test-a-2-campioni-7" class="slide level2">
+<h2>Test a 2 campioni</h2>
+<p>Possiamo infine calcolare la statistica test come nel caso ad un campione:</p>
+<p><span class="math display">\[
+t = \frac{b}{\text{SE}_b} = \frac{\bar{x}_{d} - \bar{x}_h}{s_p \sqrt{\frac{1}{n_d} + \frac{1}{n_h}}}
+\]</span></p>
+<p>La distribuzione campionaria di <span class="math inline">\(t\)</span> è una <span class="math inline">\(t\)</span> di Student con <span class="math inline">\(\nu = n_d + n_h - 2\)</span> gradi di libertà. Potremmo anche assumere una distribuzione normale ma questo è quello che solitamente si fa.</p>
+</section>
+<section id="test-a-2-campioni-8" class="slide level2">
+<h2>Test a 2 campioni</h2>
+<p>Possiamo anche visualizzarla. Il punto rosso è la statistica test, le linee tratteggiate sono i valori critici con <span class="math inline">\(\alpha = 0.05\)</span></p>
 
-<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-26-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="aspetti-critici" class="slide level2">
-<h2>Aspetti critici</h2>
-<p>Un ultimo aspetto critico riguarda la <strong>selezione per la significatività</strong>. Se vengono pubblicati solo i risultati con <span class="math inline">\(p \leq \alpha\)</span> questo porta ad una sovrastima dell’effetto.</p>
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-45-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="test-a-2-campioni-9" class="slide level2">
+<h2>Test a 2 campioni</h2>
+<p>Ovviamente per fare tutto esistono delle funzioni già predisposte. Ad esempio in R:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(perc_self_efficacy <span class="sc">~</span> education, <span class="at">data =</span> dat2, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two Sample t-test
 
-<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-27-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="ricapitolando" class="slide level2">
-<h2>Ricapitolando</h2>
-
-<img data-src="img/inferenza-bp.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="ricapitolando-1" class="slide level2">
-<h2>Ricapitolando</h2>
-<ul>
-<li>L’inferenza dipende dalla grandezza dell’effetto e dalla qualità della stima (errore standard). Effetti più complessi (test ad un campione vs a due campioni) hanno generalmente potenza minore.</li>
-<li>La distribuzione campionaria non è sempre normale. Di solito si usa anche la t di Student ma la logica generale è la stessa.</li>
-<li>La potenza è una funzione che dipende da diversi parametri. Effetti piccoli (comuni in Psicologia), richiedono campioni grandi.</li>
-<li>Il p value da solo non è informativo rispetto alla rilevanza statistica ed empirica dell’effetto.</li>
-<li>Effetti grandi con campioni piccoli sono nella maggior parte dei casi sovrastime e non dovrebbero essere considerati affidabili.</li>
-</ul>
+data:  perc_self_efficacy by education
+t = -2.1404, df = 89, p-value = 0.03506
+alternative hypothesis: true difference in means between group degree and group high_school is not equal to 0
+95 percent confidence interval:
+ -0.36990164 -0.01374714
+sample estimates:
+     mean in group degree mean in group high_school 
+                 3.720976                  3.912800 </code></pre>
+</div>
+</div>
+</section>
+<section id="test-a-2-campioni-10" class="slide level2">
+<h2>Test a 2 campioni</h2>
+<p>In questo caso quindi la statistica test è negativa, quindi <code>perc_self_efficacy</code> è maggiore per il campione con <code>high_school</code>.</p>
+<p>Inoltre, il p value è minore di <span class="math inline">\(\alpha\)</span> e quindi, rischiando di sbagliarci con una probabilità <span class="math inline">\(\alpha\)</span>, possiamo rifiutare l’ipotesi <span class="math inline">\(H_0\)</span> di uguaglianza delle medie delle popolazioni.</p>
+<p>In altri termini, se <span class="math inline">\(H_0\)</span> fosse vera, sarebbe poco probabile (p value) ottenere una differenza tra le medie <span class="math inline">\(b\)</span> tra i due campioni.</p>
 </section>
 <section id="bibliografia" class="slide level2 smaller scrollable">
 <h2>Bibliografia</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Di-Marco2020-wu" class="csl-entry" role="listitem">
+Di Marco, G., Hichy, Z., &amp; Sciacca, F. (2020). <span class="nocase">Dataset on the relationship between psychosocial resources of volunteers and their quality of life</span>. <em>Data in Brief</em>, <em>30</em>, 105522. <a href="https://doi.org/10.1016/j.dib.2020.105522">https://doi.org/10.1016/j.dib.2020.105522</a>
+</div>
 <div id="ref-Gigerenzer1993-cr" class="csl-entry" role="listitem">
 Gigerenzer, G. (1993). <span class="nocase">The Superego, the Ego, and the Id in Statistical Reasoning</span>. In <em><span class="nocase">A Handbook for Data Analysis in the Behaviorial Sciences</span></em>. Psychology Press. <a href="https://doi.org/10.4324/9781315799582">https://doi.org/10.4324/9781315799582</a>
 </div>
 <div id="ref-Gigerenzer2018-cj" class="csl-entry" role="listitem">
 Gigerenzer, G. (2018). <span class="nocase">Statistical rituals: The replication delusion and how we got there</span>. <em>Advances in Methods and Practices in Psychological Science</em>, <em>1</em>, 198–218. <a href="https://doi.org/10.1177/2515245918771329">https://doi.org/10.1177/2515245918771329</a>
-</div>
-<div id="ref-Richard2003-dq" class="csl-entry" role="listitem">
-Richard, F. D., Bond, C. F., Jr, &amp; Stokes-Zoota, J. J. (2003). <span class="nocase">One hundred years of social psychology quantitatively described</span>. <em>Review of General Psychology: Journal of Division 1, of the American Psychological Association</em>, <em>7</em>, 331–363. <a href="https://doi.org/10.1037/1089-2680.7.4.331">https://doi.org/10.1037/1089-2680.7.4.331</a>
-</div>
-<div id="ref-Schonbeck2012-ht" class="csl-entry" role="listitem">
-Schönbeck, Y., Talma, H., Dommelen, P. van, Bakker, B., Buitendijk, S. E., HiraSing, R. A., &amp; Buuren, S. van. (2012). <span class="nocase">The world’s tallest nation has stopped growing taller: the height of Dutch children from 1955 to <span>2009</span></span>. <em>Pediatric Research</em>, <em>73</em>, 371–377. <a href="https://doi.org/10.1038/pr.2012.189">https://doi.org/10.1038/pr.2012.189</a>
 </div>
 </div>
 </section></section>
