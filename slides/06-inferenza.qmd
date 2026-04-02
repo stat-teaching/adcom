@@ -1,6 +1,8 @@
 ---
 title: Inferenza statistica
 draft: true
+pdf: "[{{< fa file-pdf >}}](slides/06-inferenza.pdf)"
+pdf-pages: 60
 ---
 
 ```{r}
@@ -133,13 +135,19 @@ Per capire al meglio il concetto di errore standard, facciamo un esempio con dei
 
 </br>
 </br>
-</br>
 
 <center>
 
 Trovate il dataset su Moodle o su [https://stat-teaching.github.io/adcom/#data](https://stat-teaching.github.io/adcom/#data).
 
 </center>
+
+<center>
+
+Qui trovate lo script R usato a lezione per illustrare la distribuzione campionaria: [https://stat-teaching.github.io/adcom/scripts/](https://stat-teaching.github.io/adcom/scripts/)
+
+</center>
+
 
 ::: aside
 Per rendere l'esempio ancora più efficace ho esteso il dataset moltiplicando le righe.
@@ -595,16 +603,6 @@ m
 
 Quindi il nostro campione è ~2.3 errori standard maggiore rispetto alla media della popolazione se fosse vera $H_0$. 2.3 è un valore decisamente grande e ci suggerisce che la media sia abbastanza distante dall'ipotesi nulla.
 
-## Statistica test
-
-Solitamente non si lavora con le statistiche grezze ma si calcola una statistica test (come la statistica $t$ ad esempio). Questa statistica test, come tutte le altre, ha una distribuzione campionaria e quindi un errore standard. Ad esempio:
-
-$$
-t = \frac{\bar{x} - \mu}{SE_{\bar{x}}}
-$$
-
-Questa statistica test semplicemente standardizza la differenza tra la media del campione e la media della popolazione che ipotizziamo (per il confronto) dividendo per l'errore standard.
-
 ## Prendiamo una decisione
 
 Il vantaggio è che, a prescindere da $\bar{x}$ e $\mu$, questa statistica test standardizzata ha sempre la stessa distribuzione campionaria. Assumendo la normalità, questa diventa una distribuzione normale standard:
@@ -926,7 +924,7 @@ Inoltre, non basta definire $H_1$ come maggiore, minore o diverso ma dobbiamo de
 
 $$
 \begin{aligned}
-H_0: \mu_p &= = \mu_c = 163 \quad \quad \mu_c - \mu_p = 0 \\
+H_0: \mu_p &= \mu_c = 163 \quad \quad \mu_c - \mu_p = 0 \\
 H_1: \mu_c &= 165
 \end{aligned}
 $$

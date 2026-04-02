@@ -237,7 +237,7 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
     </div>
 </div>
 
-  <p class="date"><em>Ultimo aggiornamento: 04-01-2026</em></p>
+  <p class="date"><em>Ultimo aggiornamento: 04-02-2026</em></p>
 </section>
 
 
@@ -315,9 +315,12 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
 <section id="dataset" class="slide level2">
 <h2>Dataset</h2>
 <p>Per capire al meglio il concetto di errore standard, facciamo un esempio con dei dati veri. Usiamo i dati del questionario fatto il primo giorno.</p>
-<p><br> <br> <br></p>
+<p><br> <br></p>
 <center>
 <p>Trovate il dataset su Moodle o su <a href="https://stat-teaching.github.io/adcom/#data">https://stat-teaching.github.io/adcom/#data</a>.</p>
+</center>
+<center>
+<p>Qui trovate lo script R usato a lezione per illustrare la distribuzione campionaria: <a href="https://stat-teaching.github.io/adcom/scripts/">https://stat-teaching.github.io/adcom/scripts/</a></p>
 </center>
 
 <aside><div>
@@ -644,14 +647,6 @@ t = \frac{\bar{x} - \mu_p}{\text{SE}_{\bar{x}}}
 </div>
 <p>Quindi il nostro campione è ~2.3 errori standard maggiore rispetto alla media della popolazione se fosse vera <span class="math inline">\(H_0\)</span>. 2.3 è un valore decisamente grande e ci suggerisce che la media sia abbastanza distante dall’ipotesi nulla.</p>
 </section>
-<section id="statistica-test-2" class="slide level2">
-<h2>Statistica test</h2>
-<p>Solitamente non si lavora con le statistiche grezze ma si calcola una statistica test (come la statistica <span class="math inline">\(t\)</span> ad esempio). Questa statistica test, come tutte le altre, ha una distribuzione campionaria e quindi un errore standard. Ad esempio:</p>
-<p><span class="math display">\[
-t = \frac{\bar{x} - \mu}{SE_{\bar{x}}}
-\]</span></p>
-<p>Questa statistica test semplicemente standardizza la differenza tra la media del campione e la media della popolazione che ipotizziamo (per il confronto) dividendo per l’errore standard.</p>
-</section>
 <section id="prendiamo-una-decisione-9" class="slide level2">
 <h2>Prendiamo una decisione</h2>
 <p>Il vantaggio è che, a prescindere da <span class="math inline">\(\bar{x}\)</span> e <span class="math inline">\(\mu\)</span>, questa statistica test standardizzata ha sempre la stessa distribuzione campionaria. Assumendo la normalità, questa diventa una distribuzione normale standard:</p>
@@ -804,7 +799,7 @@ t \sim \mathcal{T}(\nu)
 <p>Inoltre, non basta definire <span class="math inline">\(H_1\)</span> come maggiore, minore o diverso ma dobbiamo definire un valore puntuale che il parametro assume in questo altro mondo.</p>
 <p><span class="math display">\[
 \begin{aligned}
-H_0: \mu_p &amp;= = \mu_c = 163 \quad \quad \mu_c - \mu_p = 0 \\
+H_0: \mu_p &amp;= \mu_c = 163 \quad \quad \mu_c - \mu_p = 0 \\
 H_1: \mu_c &amp;= 165
 \end{aligned}
 \]</span></p>
