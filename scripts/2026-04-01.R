@@ -37,7 +37,7 @@ idx <- sample(1:N, n, replace = FALSE)
 
 # questo è il nostro campione ed è quello che succede normalmente.
 
-dat[idx, ]
+dat2 <- dat[idx, ]
 
 # facciamoci una funzioncina che esegue questa operazione
 
