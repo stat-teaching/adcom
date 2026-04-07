@@ -8,7 +8,7 @@
 
 <meta name="author" content="Filippo Gambarota PhD">
 
-<title>Script Lezioni – ADCOM</title>
+<title>Di Marco et al. (2020) – ADCOM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,42 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-</style>
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -77,8 +62,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4276be3105625b7ba5c8b357c7f4b5b8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e81d5102cd3fac90c9ec95736eec354c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -146,22 +130,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">2026-03-18</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2026-03-26</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Script Lezioni</h1>
+<h1 class="title"><span class="citation" data-cites="Di-Marco2020-wu">Di Marco et al. (<a href="#ref-Di-Marco2020-wu" role="doc-biblioref">2020</a>)</span></h1>
 </div>
 
 
@@ -191,291 +168,142 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section">2026-03-18</h2>
-<p><a href="#dnldts28071" onclick="fetch('data:text/plain;base64,IyBDYXJpY28gZGltYXJjbzIwMjAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KCiMjIHF1aSBkb3ZldGUgbWV0dGVyZSBpbCBwZXJjb3JzbyBkb3ZlIMOoIGxvY2FsaXp6YXRvIGlsIGZpbGUKCmRhdCA8LSByZWFkeGw6OnJlYWRfeGxzeCgiZGF0YS9kaW1hcmNvMjAyMC54bHN4IikKCiMjIGlzdG9ncmFtbWEsIGRpIGRlZmF1bHQKCmhpc3QoZGF0JHBlcmNfY29sbGVjdGl2ZV9lZmZpY2FjeSkKCiMjIGlzdG9ncmFtbWEgY29uIGJpbiBwacO5IHN0cmV0dGkgKGUgcXVpbmRpIG1hZ2dpb3JlIG51bWVybyBkaSBiaW4pCiMjIHBpw7kgcHJlY2lzbyBhdmVuZG8gcGnDuSBpbnRlcnZhbGxpCgpoaXN0KGRhdCRwZXJjX2NvbGxlY3RpdmVfZWZmaWNhY3ksIGJyZWFrcyA9IDEwKQoKIyBjZW50cmFyZSBlIHN0YW5kYXJkaXp6YXJlIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKIyMgbWV0dGlhbW8gZGVudHJvIG9nZ2V0dG8geCBwZXIgY29tb2RpdMOgCgp4IDwtIGRhdCRwZXJjX2NvbGxlY3RpdmVfZWZmaWNhY3kKCnhjIDwtIHggLSBtZWFuKHgpICMgY2VudHJhcmUgc3VsbGEgbWVkaWEKeHogPC0gKHggLSBtZWFuKHgpKSAvIHNkKHgpICMgc3RhbmRhcmRpenphcmUKCiMjIG1lZGlhIDAsIHNkIGxhIHN0ZXNzYSBkaSB4Cm1lYW4oeGMpCnNkKHhjKQoKIyMgbWVkaWEgPSAwLCBzZCA9IDEgcGVyIGRlZmluaXppb25lCgptZWFuKHh6KQpzZCh4eikKCiMjIGluIGFsdGVybmF0aXZhIHBlciBjZW50cmFyZSBlIHN0YW5kYXJkaXp6YXJlCnNjYWxlKHgsIGNlbnRlciA9IFRSVUUsIHNjYWxlID0gVFJVRSkKCiMjIHNvbG8gY2VudHJhcmUKc2NhbGUoeCwgY2VudGVyID0gVFJVRSwgc2NhbGUgPSBGQUxTRSkK').then(res => res.blob()).then(blob => {
-      const downloadURL = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      document.body.appendChild(a);
-      a.href = downloadURL;
-      a.download = 'eda.R'; a.click();
-      window.URL.revokeObjectURL(downloadURL);
-      document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts28071"><i class="bi bi-download"></i> Scarica il file .R </button></a></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carico dimarco2020 -----------------------------------------------------</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## qui dovete mettere il percorso dove è localizzato il file</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"data/dimarco2020.xlsx"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">## istogramma, di default</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dat<span class="sc">$</span>perc_collective_efficacy)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">## istogramma con bin più stretti (e quindi maggiore numero di bin)</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="do">## più preciso avendo più intervalli</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dat<span class="sc">$</span>perc_collective_efficacy, <span class="at">breaks =</span> <span class="dv">10</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># centrare e standardizzare ---------------------------------------------</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="do">## mettiamo dentro oggetto x per comodità</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> dat<span class="sc">$</span>perc_collective_efficacy</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>xc <span class="ot">&lt;-</span> x <span class="sc">-</span> <span class="fu">mean</span>(x) <span class="co"># centrare sulla media</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>xz <span class="ot">&lt;-</span> (x <span class="sc">-</span> <span class="fu">mean</span>(x)) <span class="sc">/</span> <span class="fu">sd</span>(x) <span class="co"># standardizzare</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="do">## media 0, sd la stessa di x</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(xc)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(xc)</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="do">## media = 0, sd = 1 per definizione</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(xz)</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(xz)</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="do">## in alternativa per centrare e standardizzare</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">scale</span>(x, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="do">## solo centrare</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">scale</span>(x, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="section-1" class="level2">
-<h2 class="anchored" data-anchor-id="section-1">2026-03-26</h2>
-<p><a href="#dnldts40777" onclick="fetch('data:text/plain;base64,bGlicmFyeShyZWFkeGwpCgojIGxlZ2dvIGkgZGF0aSAoYXR0ZW56aW9uZSBhIGRvdmUgdm9pIGxpIGF2ZXRlIHNhbHZhdGkpCmRhdCA8LSByZWFkX3hsc3goImRhdGEvZGltYXJjbzIwMjAueGxzeCIpCgpoZWFkKGRhdCkKCiMgY29ycmVsYXppb25lClIgPC0gY292KGRhdFssIDEwOjE1XSkKCiMgYm94cGxvdCBjb25kaXppb25hdG8KYm94cGxvdChidXJub3V0IH4gZWR1Y2F0aW9uLCBkYXRhID0gZGF0KQo=').then(res => res.blob()).then(blob => {
-      const downloadURL = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      document.body.appendChild(a);
-      a.href = downloadURL;
-      a.download = 'eda.R'; a.click();
-      window.URL.revokeObjectURL(downloadURL);
-      document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts40777"><i class="bi bi-download"></i> Scarica il file .R </button></a></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># leggo i dati (attenzione a dove voi li avete salvati)</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"data/dimarco2020.xlsx"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># correlazione</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">cov</span>(dat[, <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>])</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot condizionato</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(burnout <span class="sc">~</span> education, <span class="at">data =</span> dat)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<!--
-
-## 06 Inferenza - Questionario iniziale
-
-
-
-```r
-# puliamo l'ambiente
-rm(list = ls())
-
-# importiamo i dati
-dat <- readRDS("data/adcom.rds")
-
-# ora immaginiamo che dat sia la popolazione e non un campione
-# e da dat prendiamo un campione di osservazioni. Quindi dat
-# è la "verità" solitamente incognita che vogliamo stimare mentre
-# il campione è quello che solitamente possiamo osservare
-
-# numerosità del nostro campione
-n <- 15
-
-# possiamo usare la funzione sample() per estrarre delle righe casuali
-# dal nostro dataframe
-
-# ad esempio, questo estrae 5 numeri da 1 a 100 dove ognuno ha la stessa
-# probabilità di essere estratto. Ogni volta che lanciamo la funzione il
-# risultato è diverso
-
-sample(1:100, 5)
-sample(1:100, 5)
-sample(1:100, 5)
-
-# ora per estrarre un campione usiamo questa logica. il nostro dataset ha
-# N righe. quindi se estriamo a caso n numeri da 1 a N e teniamo quelle righe
-# stiamo campionando casualmente.
-
-# popolazione
-N <- nrow(dat)
-
-idx <- sample(1:N, n, replace = FALSE)
-
-# queste sono le righe che teniamo dalla prima estrazione. possiamo usare idx
-# per selezionare le righe dal dataframe
-
-# questo è il nostro campione ed è quello che succede normalmente.
-
-dat[idx, ]
-
-# facciamoci una funzioncina che esegue questa operazione
-
-campiona <- function(n, data){
-    idx <- sample(1:nrow(data), n, replace = FALSE)
-    data[idx, ]
-}
-
-campiona(10, dat)
-campiona(10, dat)
-campiona(10, dat)
-
-# ora immaginiamo di voler stimare l'altezza media della nostra
-# popolazione. il parametro di solito è incognito ma in questa simulazione noi lo
-# sappiamo, chiamiamolo mu.
-
-mu <- mean(dat$altezza)
-mu
-
-# ora proviamo ad estrarre un campione di numerosità n e vediamo la nostra stima
-
-camp <- campiona(n, dat)
-xbar <- mean(camp$altezza)
-xbar
-
-# come vedete non è esattamente lo stesso valore stiamo facendo una stima e per
-# definizione non è possibile ottenere lo stesso valore. ora proviamo a ripetere
-# questa stima
-
-camp <- campiona(n, dat)
-xbar <- mean(camp$altezza)
-xbar
-
-# come vedete ancora diversa, certe volte di più e certe volte di meno. proviamo
-# a ripeterla molte volte. usiamo la funzione replicate()
-
-xsamp <- replicate(1000, {
-    camp <- campiona(n, dat)
-    mean(camp$coffee)
-})
-
-# abbiamo ripetuto il campionamento ed il calcolo della media per 1000 volte e
-# e quindi abbiamo ottenuto 1000 medie. come potete intuire queste 1000 medie
-# non sono tutte uguali, quindi proviamo a vedere questa distribuzione
-
-hist(xsamp, breaks = 15)
-
-# vediamo che le stime non si distribuiscono casualmente
-# - la distribuzione è tendenzialmente normale
-# - ha una certa media e una certa varianza
-# - valori estremi sono poco frequenti
-
-# vediamo ora dove si colloca la media "vera" ovvero quella della popolazione
-
-abline(v = mu, lwd = 2, col = "firebrick")
-
-# come vedete, la media (incognita) della popolazione è molto simile alla media
-# di tutte le stime (della media). aggiungiamo anche quella
-
-abline(v = mean(xsamp), lwd = 2, col = "dodgerblue")
-
-# mettiamo tutto dentro una funzione e vediamo cosa succede.
-
-sampd <- function(n, x, data){
-    replicate(5000, {
-        camp <- campiona(n, data)
-        mean(camp[[x]])
-    })
-}
-
-# ora possiamo fare tutto in modo più semplice e cambiando i parametri
-# vediamo cosa succede facendo la stessa operazione con n diversi
-
-nn <- c(5, 15, 30, 50)
-res <- lapply(nn, sampd, "altezza", dat)
-
-# calcoliamo medie e deviazioni standard per ogni n
-
-sapply(res, mean)
-sapply(res, sd)
-
-# come vedete, la media sembra essere praticamente sempre identica. la deviazione
-# standard invece è chiaramente diversa, in modo decrescente. più aumentiamo n
-# più le stime sono concentrate attorno alla media. vediamolo anche graficamente
-
-par(mfrow = c(2, 2))
-
-xlim <- c(min(res[[1]]), max(res[[1]]))
-
-hist(res[[1]], xlim = xlim, main = nn[1])
-hist(res[[2]], xlim = xlim, main = nn[2])
-hist(res[[3]], xlim = xlim, main = nn[3])
-hist(res[[4]], xlim = xlim, main = nn[4])
-
-# quali conclusioni possiamo trarre?
-# 
-# all'aumentare del campione (casuale) la nostra stima
-# diventa meno variabile. Comunque abbiamo delle variazioni (errore)
-
-
-# questo è l'unico caso (impossibile) dove la stima non ha variabilità.
-sampd(N, "coffee", dat)
-
-# anche un'osservazione in meno crea dell'errore di stima
-sampd(N - 1, "coffee", dat)
-
-# abbiamo trovato "empiricamente" una quantità fondamentale in
-# inferenza ovvero quella di errore di stima. solitamente questa
-# viene chiamata errore standard. nel caso della media la formula
-# è semplice
-# 
-# se = sd / sqrt(n)
-# dove sd è la deviazione standard della popolazione e n è la numerosità campionaria. Chiaramente in ottica applicata si usa
-# la deviazione standard del campione come stima di quella della
-# popolazione. ma noi abbiamo anche quella vera.
-
-n <- 15
-s <- sd(dat$altezza)
-
-se <- (s / sqrt(n))
-se
-
-# vediamo quella "empirica"
-
-res <- sampd(n, "altezza", dat)
-sd(res)
-
-# come vedete l'errore standard che stimiamo con la formula è esattamente quello
-# che stimiamo empiricamente. è importante notare che questa stima "empirica" non
-# è possibile farla nella realtà. ma assumendo che il campionamento sia casuale
-# vediamo che la media delle medie è uguale alla media vera e l'errore di stima
-# è possibile quantificarlo.
-
-# vediamo cosa succede con un campionamento non casuale. Proviamo a creare dei
-# campioni dove la % di maschi è maggiore di quello che dovrebbe essere.
-
-campiona_bias <- function(n, data){
-    p <- ifelse(data$sex == "Maschile", 0.9, 0.1)
-    idx <- sample(1:nrow(data), n, replace = FALSE, prob = p)
-    data[idx, ]
-}
-
-dcamp <- replicate(1000, {
-    camp <- campiona_bias(20, dat)
-    mean(camp$altezza)
-})
-
-mu
-mean(dcamp)
-
-par(mfrow = c(1, 1))
-hist(dcamp)
-abline(v = mean(dcamp), lwd = 3, col = "dodgerblue")
-abline(v = mu, lwd = 3, col = "firebrick")
-
-# abbiamo introdotto un bias sistematico, non è casuale. questo è quello
-# che succede quando stimiamo qualcosa campionado in modo non casuale
-
-```
--->
-
-
-</section>
-
-</main> <!-- /main -->
+<p>Lo studio analizza un campione di 105 volontari italiani appartenenti a un’organizzazione cattolica di aiuto sociale e sanitario, con l’obiettivo di esaminare come qualità della vita nel lavoro di aiuto, senso di comunità, efficacia percepita, supporto sociale, orientamento religioso e desiderabilità sociale siano tra loro associate. I dati sono stati raccolti con questionario online anonimo e hanno natura osservazionale-correlazionale.</p>
+<ul>
+<li>dati qui in format <a href="../data/dimarco2020.xlsx">xlsx</a></li>
+<li>file <a href="../scripts/exploring-dimarco2020.omv">Jamovi</a> (con i dati all’interno)</li>
+<li>il paper, come riferimento, lo trovate <a href="../papers/di-marco-2020-dataset-on-the-relationship-between-psychosocial-resources-of-volunteers-and-their-quality-of-life.pdf">qui</a></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 28%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Colonna</th>
+<th>Cosa misura</th>
+<th>Breve descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>gender</code></td>
+<td>Genere</td>
+<td>Genere del partecipante.</td>
+</tr>
+<tr class="even">
+<td><code>education</code></td>
+<td>Titolo di studio</td>
+<td>Livello di istruzione raggiunto.</td>
+</tr>
+<tr class="odd">
+<td><code>age</code></td>
+<td>Fascia di età</td>
+<td>Età del partecipante in anni</td>
+</tr>
+<tr class="even">
+<td><code>status</code></td>
+<td>Stato civile</td>
+<td>Condizione matrimoniale del partecipante.</td>
+</tr>
+<tr class="odd">
+<td><code>residence</code></td>
+<td>Area di residenza</td>
+<td>Macro-area geografica di residenza in Italia.</td>
+</tr>
+<tr class="even">
+<td><code>period</code></td>
+<td>Anzianità di volontariato</td>
+<td>Numero di anni di esperienza nel volontariato, in classi.</td>
+</tr>
+<tr class="odd">
+<td><code>attachment</code></td>
+<td>Attaccamento all’organizzazione</td>
+<td>Senso di appartenenza e legame affettivo con l’organizzazione.</td>
+</tr>
+<tr class="even">
+<td><code>needs</code></td>
+<td>Soddisfazione dei bisogni</td>
+<td>Percezione che l’organizzazione risponda ai bisogni del volontario.</td>
+</tr>
+<tr class="odd">
+<td><code>bonds</code></td>
+<td>Legami sociali</td>
+<td>Qualità dei legami e delle relazioni con gli altri membri.</td>
+</tr>
+<tr class="even">
+<td><code>perc_collective_efficacy</code></td>
+<td>Efficacia collettiva percepita</td>
+<td>Percezione dell’efficacia del gruppo/organizzazione.</td>
+</tr>
+<tr class="odd">
+<td><code>perc_self_efficacy</code></td>
+<td>Autoefficacia percepita</td>
+<td>Percezione della propria efficacia personale come volontario.</td>
+</tr>
+<tr class="even">
+<td><code>family</code></td>
+<td>Supporto familiare</td>
+<td>Supporto sociale percepito dalla famiglia.</td>
+</tr>
+<tr class="odd">
+<td><code>friends</code></td>
+<td>Supporto dagli amici</td>
+<td>Supporto sociale percepito dagli amici.</td>
+</tr>
+<tr class="even">
+<td><code>organization</code></td>
+<td>Supporto dall’organizzazione</td>
+<td>Supporto sociale percepito dall’organizzazione.</td>
+</tr>
+<tr class="odd">
+<td><code>burnout</code></td>
+<td>Burnout</td>
+<td>Esaurimento e logoramento psicologico legato all’attività di aiuto.</td>
+</tr>
+<tr class="even">
+<td><code>trauma</code></td>
+<td>Trauma secondario</td>
+<td>Stress legato all’esposizione indiretta alla sofferenza altrui.</td>
+</tr>
+<tr class="odd">
+<td><code>satisfaction</code></td>
+<td>Soddisfazione nel lavoro di aiuto</td>
+<td>Gratificazione derivante dall’essere di aiuto agli altri.</td>
+</tr>
+<tr class="even">
+<td><code>estrinsic</code></td>
+<td>Religiosità estrinseca</td>
+<td>Religiosità orientata a benefici esterni o strumentali.</td>
+</tr>
+<tr class="odd">
+<td><code>intrinsic</code></td>
+<td>Religiosità intrinseca</td>
+<td>Religiosità vissuta come valore interiore centrale.</td>
+</tr>
+<tr class="even">
+<td><code>quest</code></td>
+<td>Religiosità di ricerca</td>
+<td>Religiosità intesa come ricerca aperta e riflessiva.</td>
+</tr>
+<tr class="odd">
+<td><code>desiderability</code></td>
+<td>Desiderabilità sociale</td>
+<td>Tendenza a presentarsi in modo socialmente desiderabile.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Di-Marco2020-wu" class="csl-entry" role="listitem">
+Di Marco, G., Hichy, Z., &amp; Sciacca, F. (2020). <span class="nocase">Dataset on the relationship between psychosocial resources of volunteers and their quality of life</span>. <em>Data in Brief</em>, <em>30</em>, 105522. <a href="https://doi.org/10.1016/j.dib.2020.105522">https://doi.org/10.1016/j.dib.2020.105522</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -1320,6 +1320,24 @@ In altri termini, la potenza è una funzione matematica che dipende da:
 
 Ovviamente $\delta$ è a sua volta funzione di $b$ (effetto grezzo) e $\sigma$.
 
-## Effect size e potenza
+## Correlazione
+
+La correlazione è già di per se una misura di effect size standardizzato. E' possibile costruire un test d'ipotesi con $H_0: \rho = \rho_0$ (solitamente con $\rho_0 = 0$). Posso usare la statistica test:
+
+$$
+t = \frac{r}{\text{SE}_r} \quad\quad \text{SE}_r = \frac{1 - r^2}{\sqrt{n - 2}}
+$$
+
+Quindi la correlazione diviso il suo errore standard, proprio come i t-test di prima. L'errore standard^[Da notare che ci sono diversi modi di calcolare l'errore standard e la statistica test, questo è uno dei tanti. La logica è sempre comunque la stessa.]. Sotto $H_0$ la correlazione si distribuisce come una t di Student con $\nu = n - 2$ gradi di libertà.
+
+## Correlazione
+
+In R posso usare la funzione `cor.test`:
+
+```{r}
+#| echo: true
+
+cor.test(dat$needs, dat$burnout)
+```
 
 ## Bibliografia

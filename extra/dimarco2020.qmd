@@ -1,0 +1,33 @@
+---
+title: "@Di-Marco2020-wu"
+---
+
+Lo studio analizza un campione di 105 volontari italiani appartenenti a un’organizzazione cattolica di aiuto sociale e sanitario, con l’obiettivo di esaminare come qualità della vita nel lavoro di aiuto, senso di comunità, efficacia percepita, supporto sociale, orientamento religioso e desiderabilità sociale siano tra loro associate. I dati sono stati raccolti con questionario online anonimo e hanno natura osservazionale-correlazionale.
+
+- dati qui in format [xlsx](../data/dimarco2020.xlsx)
+- file [Jamovi](../scripts/exploring-dimarco2020.omv) (con i dati all'interno)
+- il paper, come riferimento, lo trovate [qui](../papers/di-marco-2020-dataset-on-the-relationship-between-psychosocial-resources-of-volunteers-and-their-quality-of-life.pdf)
+
+| Colonna          | Cosa misura                       | Breve descrizione                                                   |
+| ---------------- | --------------------------------- | ------------------------------------------------------------------- |
+| `gender`         | Genere                            | Genere del partecipante.                                            |
+| `education`      | Titolo di studio                  | Livello di istruzione raggiunto.                                    |
+| `age`            | Fascia di età                     | Età del partecipante in anni                                        |
+| `status`         | Stato civile                      | Condizione matrimoniale del partecipante.                           |
+| `residence`      | Area di residenza                 | Macro-area geografica di residenza in Italia.                       |
+| `period`         | Anzianità di volontariato         | Numero di anni di esperienza nel volontariato, in classi.           |
+| `attachment`     | Attaccamento all’organizzazione   | Senso di appartenenza e legame affettivo con l’organizzazione.      |
+| `needs`          | Soddisfazione dei bisogni         | Percezione che l’organizzazione risponda ai bisogni del volontario. |
+| `bonds`          | Legami sociali                    | Qualità dei legami e delle relazioni con gli altri membri.          |
+| `perc_collective_efficacy`            | Efficacia collettiva percepita    | Percezione dell’efficacia del gruppo/organizzazione.                |
+| `perc_self_efficacy`            | Autoefficacia percepita           | Percezione della propria efficacia personale come volontario.       |
+| `family`         | Supporto familiare                | Supporto sociale percepito dalla famiglia.                          |
+| `friends`        | Supporto dagli amici              | Supporto sociale percepito dagli amici.                             |
+| `organization`   | Supporto dall’organizzazione      | Supporto sociale percepito dall’organizzazione.                     |
+| `burnout`        | Burnout                           | Esaurimento e logoramento psicologico legato all’attività di aiuto. |
+| `trauma`         | Trauma secondario                 | Stress legato all’esposizione indiretta alla sofferenza altrui.     |
+| `satisfaction`   | Soddisfazione nel lavoro di aiuto | Gratificazione derivante dall’essere di aiuto agli altri.           |
+| `estrinsic`      | Religiosità estrinseca            | Religiosità orientata a benefici esterni o strumentali.             |
+| `intrinsic`      | Religiosità intrinseca            | Religiosità vissuta come valore interiore centrale.                 |
+| `quest`          | Religiosità di ricerca            | Religiosità intesa come ricerca aperta e riflessiva.                |
+| `desiderability` | Desiderabilità sociale            | Tendenza a presentarsi in modo socialmente desiderabile.            |
