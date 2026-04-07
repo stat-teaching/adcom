@@ -21,13 +21,10 @@ format:
 {{< include 2026-03-26.R >}}
 ```
 
-<!--
+## 2026-04-01
 
-## 06 Inferenza - Questionario iniziale
-
-{{< downloadthis samp-dist.R dname="samp-dist" label="Scarica il file .R" >}}
+{{< downloadthis 2026-04-01.R dname="sampdist" label="Scarica il file .R" >}}
 
 ```r
-{{< include samp-dist.R >}}
+{{< include 2026-04-01.R >}}
 ```
--->
