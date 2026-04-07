@@ -1298,6 +1298,16 @@ Anche se standardizzato, questo effect size non è facilmente interpretabile com
 
 Queste sono solo indicazioni generali, ogni ambito di ricerca può avere degli effetti plausibili. Ovviamente diffidate degli effetti troppo ottimisti, sono poco plausibili.
 
+## Cohen's $d$
+
+Per capire meglio il Cohen's $d$ vi ho preparato questa visualizzazione interattiva:
+
+<center>
+
+[https://stat-teaching.github.io/statshiny/shiny/d.html](https://stat-teaching.github.io/statshiny/shiny/d.html)
+
+</center>
+
 ## Effect size e potenza
 
 Torniamo alla nostra visualizzazione interattiva, nella sezione standardizzata:
