@@ -425,3 +425,24 @@ ggnorm_area <- function(mean = 0, sd = 1, area, fill = "black", alpha = 0.5) {
     alpha = alpha
   )
 }
+
+n_from_p_d <- function(p, d, alternative = "two.sided") {
+  t_val <- t_from_p(p, alternative = alternative)
+  n <- (2 * t_val^2) / d^2
+  ceiling(n)
+}
+
+t_from_p <- function(p, df = NULL, alternative = "two.sided") {
+  alternative <- match.arg(alternative, c("two.sided", "less", "greater"))
+  if (is.null(df)) {
+    df <- Inf
+  }
+
+  if (alternative == "two.sided") {
+    abs(qt(p / 2, df = df))
+  } else if (alternative == "less") {
+    qt(p, df = df)
+  } else {
+    qt(1 - p, df = df)
+  }
+}

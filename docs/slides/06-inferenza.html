@@ -237,7 +237,7 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
     </div>
 </div>
 
-  <p class="date"><em>Ultimo aggiornamento: 04-07-2026</em></p>
+  <p class="date"><em>Ultimo aggiornamento: 04-09-2026</em></p>
 </section>
 
 
@@ -834,9 +834,9 @@ H_1: \mu_c &amp;= 165
 <img data-src="img/inferenza.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="errori-inferenziali-e-potenza" class="slide level2">
 <h2>Errori inferenziali e potenza</h2>
-<p>Potete trovare una visualizzazione interattiva di queste probabilità a questo link:</p>
+<p>Potete trovare una visualizzazione interattiva di queste probabilità a questo link. Impostate il flag solo su <span class="math inline">\(H_0\)</span>, vedremo dopo <span class="math inline">\(H_1\)</span></p>
 <center>
-<p><a href="https://stat-teaching.github.io/statshiny/shiny/inference.html">https://stat-teaching.github.io/statshiny/shiny/inference.html</a></p>
+<p><a href="https://stat-teaching.github.io/statshiny/shiny/ttest.html">https://stat-teaching.github.io/statshiny/shiny/ttest.html</a></p>
 </center>
 </section>
 <section id="esempio-con-di-marco2020-wu" class="slide level2">
@@ -1132,9 +1132,9 @@ d = t \sqrt{\frac{1}{n_d} + \frac{1}{n_h}}
 </section>
 <section id="effect-size-e-potenza" class="slide level2">
 <h2>Effect size e potenza</h2>
-<p>Torniamo alla nostra visualizzazione interattiva, nella sezione standardizzata:</p>
+<p>Torniamo alla nostra visualizzazione interattiva visualizzando sia <span class="math inline">\(H_0\)</span> che <span class="math inline">\(H_1\)</span> e quindi anche la potenza (ed errore di secondo tipo)</p>
 <center>
-<p><a href="https://stat-teaching.github.io/statshiny/shiny/inference.html">https://stat-teaching.github.io/statshiny/shiny/inference.html</a></p>
+<p><a href="https://stat-teaching.github.io/statshiny/shiny/ttest.html">https://stat-teaching.github.io/statshiny/shiny/ttest.html</a></p>
 </center>
 </section>
 <section id="effect-size-e-potenza-1" class="slide level2">
@@ -1176,6 +1176,108 @@ sample estimates:
 </div>
 </div>
 </section>
+<section id="potenza-in-pratica" class="slide level2">
+<h2>Potenza in pratica</h2>
+<p>I calcoli possono essere fatti usando le funzioni <code>pnorm</code> o <code>pt</code> in R (come per il p value) oppure con il pacchetto <code>pwr</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># install.package("pwr") # se non installato</span></span>
+<span id="cb59-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr)</span>
+<span id="cb59-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># potenza per t test a due campioni indipendenti</span></span>
+<span id="cb59-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.t.test</span>(</span>
+<span id="cb59-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="dv">50</span>, <span class="co"># numero di soggetti per gruppo</span></span>
+<span id="cb59-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">d =</span> <span class="fl">0.5</span> <span class="co"># effect size, cohens'd</span></span>
+<span id="cb59-8"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Two-sample t test power calculation 
+
+              n = 50
+              d = 0.5
+      sig.level = 0.05
+          power = 0.6968934
+    alternative = two.sided
+
+NOTE: n is number in *each* group</code></pre>
+</div>
+</div>
+</section>
+<section id="potenza-in-pratica-1" class="slide level2">
+<h2>Potenza in pratica</h2>
+<p>Si può anche calcolare per una correlazione:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a aria-hidden="true" tabindex="-1"></a>pwr<span class="sc">::</span><span class="fu">pwr.r.test</span>(</span>
+<span id="cb61-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="dv">30</span>, <span class="co"># numero di soggetti</span></span>
+<span id="cb61-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">r =</span> <span class="fl">0.2</span> <span class="co"># correlazione ipotizzata</span></span>
+<span id="cb61-4"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     approximate correlation power calculation (arctangh transformation) 
+
+              n = 30
+              r = 0.2
+      sig.level = 0.05
+          power = 0.1871222
+    alternative = two.sided</code></pre>
+</div>
+</div>
+</section>
+<section id="potenza-in-pratica-2" class="slide level2">
+<h2>Potenza in pratica</h2>
+<p>Possiamo anche definire la potenza, e trovare <span class="math inline">\(n\)</span>:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a aria-hidden="true" tabindex="-1"></a>pwr<span class="sc">::</span><span class="fu">pwr.r.test</span>(</span>
+<span id="cb63-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">power =</span> <span class="fl">0.8</span>, <span class="co"># potenza desiderata, 80%</span></span>
+<span id="cb63-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">r =</span> <span class="fl">0.2</span> <span class="co"># correlazione ipotizzata</span></span>
+<span id="cb63-4"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     approximate correlation power calculation (arctangh transformation) 
+
+              n = 193.0867
+              r = 0.2
+      sig.level = 0.05
+          power = 0.8
+    alternative = two.sided</code></pre>
+</div>
+</div>
+</section>
+<section id="potenza-in-pratica-3" class="slide level2">
+<h2>Potenza in pratica</h2>
+<p>E’ possibile fare questo anche in Jamovi con il pacchetto aggiuntivo <code>pamlj</code>:</p>
+
+<img data-src="img/jamovi-power.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="inferenza-un-riassunto" class="slide level2 smaller">
+<h2>Inferenza, un riassunto</h2>
+<ul>
+<li>quando definiamo <span class="math inline">\(H_0\)</span> e <span class="math inline">\(\alpha\)</span> abbiamo definito la probabilità di fare errore di primo tipo (<span class="math inline">\(\alpha\)</span>) e possiamo calcolare i valori critici ovvero quei valori della statistica test che sono associati ad <span class="math inline">\(\alpha\)</span>. I valori critici dipendono:
+<ul>
+<li>gradi di libertà (nel caso della t di Student) che ovviamente a loro volta dipendono dal numero di soggetti</li>
+<li>dalla distribuzione (Normale o t di Student)</li>
+<li>da <span class="math inline">\(\alpha\)</span></li>
+<li>dalla direzione di <span class="math inline">\(H_1\)</span> (bidirezionale o monodirezionale)</li>
+</ul></li>
+<li>definendo <span class="math inline">\(H_1\)</span> in modo puntuale (con un effect size standardizzato o meno) possiamo (e dobbiamo) anche stimare la potenza. La potenza è la probabilità di rifiutare l’ipotesi nulla quando questa è effettivamente falsa.</li>
+<li>una volta definite <span class="math inline">\(H_0\)</span> e <span class="math inline">\(H_1\)</span> e stimata la potenza possiamo raccogliere i dati, calcolare la statistica test osservata e procedere alla decisione inferenziale basata su:
+<ul>
+<li>calcolare il p value e confrontarlo con <span class="math inline">\(\alpha\)</span></li>
+<li>calcolare l’intervallo di confidenza e vedere se il valore nullo <span class="math inline">\(H_0\)</span> è compreso nell’intervallo</li>
+<li>calcolare il valore critico della statistica test e confrontarlo con quello osservato</li>
+</ul></li>
+</ul>
+<p>Vi ricordo che non sapendo se <span class="math inline">\(H_0\)</span> sia vera o falsa, è assunta come vera per il calcolo del p value e come falsa per il calcolo della potenza.</p>
+</section>
+<section id="criticità-inferenziali" class="slide level2">
+<h2>Criticità inferenziali</h2>
+<p>Un primo aspetto da considerare è che basarsi solo sul p value è molto fuorviante. Abbiamo visto che il p value è la probabilità di un valore uguale o più estremo a quello osservato se è vera l’ipotesi nulla. Il p value dipende principalmente da <span class="math inline">\(t\)</span>, la statistica test osservata calcolata come <span class="math inline">\(t = \frac{b}{\text{SE}_b}\)</span>. Dove <span class="math inline">\(b\)</span> è la statistica test grezza (e.g., differenza tra medie) e <span class="math inline">\(\text{SE}_b\)</span> il suo errore standard.</p>
+<p>Tuttavia la stessa <span class="math inline">\(t\)</span> essendo un rapporto può essere prodotta da infinite combinazioni di <span class="math inline">\(b\)</span> ed <span class="math inline">\(\text{SE}_b\)</span>. Di conseguenza, sapere il p value e al massimo la statistica test non è sufficiente per valutare il risultato di uno studio.</p>
+<p>Sapere l’effect size, ad esempio il Cohen’s <span class="math inline">\(d\)</span> diventa fondamentale per capire la grandezza dell’effetto stimata che ha prodotto quel p value.</p>
+</section>
+<section id="criticità-inferenziali-1" class="slide level2">
+<h2>Criticità inferenziali</h2>
+<p>In questo grafico ad esempio (i calcoli sono un pochino complessi) vedete che lo stesso p value (linee colorate) si può ottenere con combinazioni diverse di <span class="math inline">\(d\)</span> (effect size) e <span class="math inline">\(n\)</span> (numerosità).</p>
+
+<img data-src="06-inferenza_files/figure-revealjs/unnamed-chunk-52-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="bibliografia" class="slide level2 smaller scrollable">
 <h2>Bibliografia</h2>
 

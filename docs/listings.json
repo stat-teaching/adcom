@@ -7,7 +7,8 @@
       "/slides/02-research-methods.html",
       "/slides/03-statistica-descrittiva.html",
       "/slides/04-probability.html",
-      "/slides/05-normale.html"
+      "/slides/05-normale.html",
+      "/slides/06-inferenza.html"
     ]
   },
   {
@@ -19,6 +20,7 @@
       "/slides/03-statistica-descrittiva.html",
       "/slides/04-probability.html",
       "/slides/05-normale.html",
+      "/slides/06-inferenza.html",
       "/notes/importing-data.html"
     ]
   }

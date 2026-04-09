@@ -1306,7 +1306,7 @@
     "href": "internal.html",
     "title": "Internal",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nInferenza statistica\n\n\nApr 9, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "extra/dimarco2020.html",
@@ -2511,5 +2511,719 @@
     "title": "Probabilità e distribuzioni di probabilità",
     "section": "Bibliografia",
     "text": "Bibliografia\n\n\n\n\nKruschke, J. K. (2015). Doing Bayesian Data Analysis. https://doi.org/10.1016/c2012-0-00477-2"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#inferenza-the-big-picture",
+    "href": "slides/06-inferenza.html#inferenza-the-big-picture",
+    "title": "Inferenza statistica",
+    "section": "Inferenza, the big picture",
+    "text": "Inferenza, the big picture"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#inferenza",
+    "href": "slides/06-inferenza.html#inferenza",
+    "title": "Inferenza statistica",
+    "section": "Inferenza",
+    "text": "Inferenza\nL’inferenza è un aspetto legato al concetto di stima. L’inferenza riguarda un processo decisionale rispetto ad un parametro stimato.\nFare inferenza quindi significa prendere una decisione basandosi su una o più stime campionarie di parametri. Essendo l’inferenza basata su stime, la decisione inferenziale ha, per definizione, una componente d’errore.\nIn altri termini, quando si prende una decisione inferenziale (e.g., il trattamento funziona di più nel gruppo sperimentale, la correlazione è diversa da zero, etc.) è sempre necessario essere consapevoli della componente d’errore."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#approcci-di-inferenza-statistica",
+    "href": "slides/06-inferenza.html#approcci-di-inferenza-statistica",
+    "title": "Inferenza statistica",
+    "section": "Approcci di inferenza statistica",
+    "text": "Approcci di inferenza statistica\nL’inferenza statistica è caratterizzata sia storicamente ma anche attualmente da approcci diversi che possiamo riassumere in:\n\nApproccio Fisheriano\nApproccio di Neyman & Pearson\nApproccio basato sulla Likelihood (verosimiglianza)\nApproccio Bayesiano\n\nDiciamo che in Psicologia, viene utilizzato un ibrido tra l’approccio Fisheriano e quello di Neyman & Pearson chiamato Null Hypothesis Significance Testing (NHST) e in minoranza l’approccio Bayesiano.\n\n\nNoi ci baseremo sull’approccio di Neyman e Pearson, anche se non introdurremo formalmente tutti gli aspetti."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#per-approfondire-extra",
+    "href": "slides/06-inferenza.html#per-approfondire-extra",
+    "title": "Inferenza statistica",
+    "section": "Per approfondire [#extra]",
+    "text": "Per approfondire [#extra]\nPer approfondire i problemi legati all’inferenza in Psicologia:\n\nGigerenzer, G. (1993). The Superego, the Ego, and the Id in Statistical Reasoning. In A Handbook for Data Analysis in the Behaviorial Sciences. Psychology Press. https://doi.org/10.4324/9781315799582\n\nGigerenzer (1993)\n\n\n\n\nGigerenzer, G. (2018). Statistical rituals: The replication delusion and how we got there. Advances in Methods and Practices in Psychological Science, 1, 198–218. https://doi.org/10.1177/2515245918771329\n\nGigerenzer (2018)"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errore-di-stima-1",
+    "href": "slides/06-inferenza.html#errore-di-stima-1",
+    "title": "Inferenza statistica",
+    "section": "Errore di stima",
+    "text": "Errore di stima\nIl concetto principale per capire l’inferenza è quello di errore di stima. Possiamo distinguere due tipologie principali di errori di stima:\n\nerrore sistematico: la mia stima è sistematicamente minore o maggiore rispetto al valore vero (parametro) che voglio stimare\nerrore casuale: la mia stima è in media corretta ma qualche volta risulta maggiore, qualche volta minore in modo casuale\n\nTendenzialmente quando si analizzano dati, si cerca di usare metodi che evitino l’errore di tipo sistematico e riducano il più possibile quello casuale. Quando abbiamo detto che la misurazione (o stima) di qualcosa è \\(D = M + E\\) (dati osservati = modello + errore), l’errore \\(E\\) che consideriamo è di tipo casuale."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errore-di-stima-2",
+    "href": "slides/06-inferenza.html#errore-di-stima-2",
+    "title": "Inferenza statistica",
+    "section": "Errore di stima",
+    "text": "Errore di stima\nPossiamo dire che il valore atteso (la media) in caso di errore casuale è zero mentre negli altri casi no."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#le-3-distribuzioni",
+    "href": "slides/06-inferenza.html#le-3-distribuzioni",
+    "title": "Inferenza statistica",
+    "section": "Le 3 distribuzioni",
+    "text": "Le 3 distribuzioni\nIn tema inferenza è facile confondere i piani. Ogni volta che facciamo inferenza dobbiamo tenere a mente 3 tipologie di distribuzioni chiaramente distinte:\n\nLa popolazione: l’insieme completo di tutti gli elementi, detti unità statistiche definita da parametri ignoti\nDistribuzione dei dati (campione): un sottoinsieme estratto dalla popolazione dove calcoliamo le statistiche\nDistribuzione campionaria: distribuzione che descrive l’incertezza nella stima di un parametro della popolazione tramite una statistica calcolata su un campione.\n\nOra vedremo chiaramente questi concetti."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#dataset",
+    "href": "slides/06-inferenza.html#dataset",
+    "title": "Inferenza statistica",
+    "section": "Dataset",
+    "text": "Dataset\nPer capire al meglio il concetto di errore standard, facciamo un esempio con dei dati veri. Usiamo i dati del questionario fatto il primo giorno.\n \n\nTrovate il dataset su Moodle o su https://stat-teaching.github.io/adcom/#data.\n\n\nQui trovate lo script R usato a lezione per illustrare la distribuzione campionaria: https://stat-teaching.github.io/adcom/scripts/\n\n\n\nPer rendere l’esempio ancora più efficace ho esteso il dataset moltiplicando le righe."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#dataset-1",
+    "href": "slides/06-inferenza.html#dataset-1",
+    "title": "Inferenza statistica",
+    "section": "Dataset",
+    "text": "Dataset\n\nlibrary(readxl)\ndat &lt;- read_xlsx(\"data/adcom.xlsx\")\n\n\nnrow(dat)\n\n[1] 396\n\nncol(dat)\n\n[1] 7\n\nhead(dat)\n\n  id altezza scarpe coffee       sex residence analisi\n1  1     170     41      1 Femminile  Nord-est       5\n2  2     157     38      2 Femminile  Nord-est       4\n3  3     165     39      1 Femminile       Sud       4\n4  4     168     40      3 Femminile  Nord-est       4\n5  5     165     39      2 Femminile  Nord-est       3\n6  6     165     39      2 Femminile  Nord-est       3"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#stima-popolazione-e-campione",
+    "href": "slides/06-inferenza.html#stima-popolazione-e-campione",
+    "title": "Inferenza statistica",
+    "section": "Stima, popolazione e campione",
+    "text": "Stima, popolazione e campione\nRitornando a parametri e statistiche, ogni statistica è una stima (con errore) del rispettivo parametro della popolazione.\nQuando calcoliamo una media, una deviazione standard, etc. su un campione ricordiamoci sempre che, in ottica di stima, c’è una quota di incertezza. In modo generico definiamo \\(\\theta\\) come il parametro incognito che stiamo stimando e \\(t\\) la sua stima fatta sul campione.\nL’errore di stima ovvero una quantità che determina la precisione con cui \\(t\\) è una stima di \\(\\theta\\) viene definita errore standard."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errore-standard",
+    "href": "slides/06-inferenza.html#errore-standard",
+    "title": "Inferenza statistica",
+    "section": "Errore standard",
+    "text": "Errore standard\nPiù formalmente ed in modo generico, possiamo dire che l’errore standard di una statistica è:\n\\[\nSE = \\sqrt{\\frac{\\sigma^2}{n}} = \\frac{\\sigma}{\\sqrt{n}}\n\\]\nSostanzialmente quindi l’errore standard dipende dalla variabilità intrinseca di un fenomeno \\(\\sigma^2\\) e dal numero di osservazioni \\(n\\) utilizzate per stimare questo fenomeno."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errore-standard-1",
+    "href": "slides/06-inferenza.html#errore-standard-1",
+    "title": "Inferenza statistica",
+    "section": "Errore standard",
+    "text": "Errore standard\nFacciamo un esempio. Se prendiamo due variabili del nostro dataset e vediamo la variabilità (con coefficiente di variazione):\n\nsd(dat$scarpe) / abs(mean(dat$scarpe))\n\n[1] 0.0577459\n\nsd(dat$coffee) / abs(mean(dat$coffee))\n\n[1] 0.8430582\n\n\nVediamo che la variabilità del numero di caffè bevuti è molto maggiore rispetto al numero di scarpe. Quindi, a parità di campione, la stima del numero di caffè bevuti sarà sempre più incerta. Tuttavia, aumentando il denominatore (\\(n\\)) possiamo diminuire il nostro errore casuale facendo variare meno la stima. Questo rapporto tra variabilità e numerosità è fondamentale per capire la qualità delle stime."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errore-standard-della-media",
+    "href": "slides/06-inferenza.html#errore-standard-della-media",
+    "title": "Inferenza statistica",
+    "section": "Errore standard della media",
+    "text": "Errore standard della media\nAbbiamo visto dallo script che l’errore standard della media si calcola (esattamente) così come la formulazione generica:\n\\[\nSE = \\sqrt{\\frac{\\sigma^2}{n}} = \\frac{\\sigma}{\\sqrt{n}}\n\\]\nOvviamente \\(\\sigma^2\\) (la varianza della popolazione) viene stimata anch’essa dal campione. E’ importante capire che ogni statistica ha un suo errore standard che segue sempre questa logica. Le formule possono essere diverse (e non è necessario saperle) ma è sempre un rapporto tra varianza del fenomeno e numero di osservazioni usate per la stima."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errore-standard-nella-pratica",
+    "href": "slides/06-inferenza.html#errore-standard-nella-pratica",
+    "title": "Inferenza statistica",
+    "section": "Errore standard, nella pratica",
+    "text": "Errore standard, nella pratica\nA cosa serve l’errore standard nella pratica? Fondamentalmente a due processi:\n\nquantificare e quindi comunicare l’errore di stima di un certo parametro stimato con un campione\nprendere una decisione inferenziale riguardo il parametro, partendo dalla stima fatta sul campione. Non prendiamo una decisione sul campione (quello è noto, non incerto) ma sul parametro della popolazione."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#distribuzione-campionaria",
+    "href": "slides/06-inferenza.html#distribuzione-campionaria",
+    "title": "Inferenza statistica",
+    "section": "Distribuzione campionaria",
+    "text": "Distribuzione campionaria\nL’errore standard è anche la deviazione standard della distribuzione che si ottiene applicando una certa statistica \\(t\\) a tutti i campioni possibili.\nQuesta distribuzione si chiama distribuzione campionaria e contiene tutta l’informazione necessaria per quantificare l’incertezza di stima. Tendenzialmente:\n\nla media di \\(t\\) applicata a tutti i campioni possibili coincide con \\(\\theta\\)\nla deviazione standard di \\(t\\) applicata a tutti i campioni possibili rappresenta l’errore standard.\n\nChiaramente la stima in questo caso non ha errore sistematico (altrimenti 1 non sarebbe vero)."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#distribuzione-campionaria-1",
+    "href": "slides/06-inferenza.html#distribuzione-campionaria-1",
+    "title": "Inferenza statistica",
+    "section": "Distribuzione campionaria",
+    "text": "Distribuzione campionaria\nPossiamo indicare in modo generico la distribuzione campionaria di una statistica \\(t\\) come:\n\\[\nt \\sim \\mathcal{D}(\\boldsymbol{\\nu})\n\\]\nDove \\(\\sim\\) significa distribuita come, \\(\\mathcal{D}\\) è una certa distribuzione (esempio la Normale) e \\(\\boldsymbol{\\nu}\\) è un vettore di uno o più parametri (nel caso della Normale, \\(\\mu\\) e \\(\\sigma\\)).\nQuesta formulazione generica è solo utile a chiarire che il concetto di distribuzione campionaria è lo stesso ma \\(\\mathcal{D}\\) può essere diverse cose. Nel t-test, ad esempio, \\(\\mathcal{D}\\) è una t di Student."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#teorema-del-limite-centrale",
+    "href": "slides/06-inferenza.html#teorema-del-limite-centrale",
+    "title": "Inferenza statistica",
+    "section": "Teorema del limite centrale",
+    "text": "Teorema del limite centrale\nIn alcuni casi, vale un teorema che si chiama teorema del limite centrale (TLC). Il teorema dice che con una numerosità campionaria sufficientemente grande1, la distribuzione campionaria di una statistica si può approssimare come una Normale:\n\\[\nt \\sim \\mathcal{N}(\\theta, \\mbox{SE}_t)\n\\]\nQuesto si legge come:\n\nLa distribuzione campionaria di \\(t\\) (una statistica generica, e.g., media) è distribuita come (\\(\\sim\\)) una Normale con media \\(\\theta\\) (il parametro) e deviazione standard l’errore standard.\n\nSolitamente, e ci sono motivi statistici la numerosità viene minima viene indicata a 30. Ma diffidate sempre delle soglie arbitrarie."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#teorema-del-limite-centrale-1",
+    "href": "slides/06-inferenza.html#teorema-del-limite-centrale-1",
+    "title": "Inferenza statistica",
+    "section": "Teorema del limite centrale",
+    "text": "Teorema del limite centrale\nIn particolare, nell’esempio pratico con i dati del corso abbiamo visto che il TLC vale e ci dimostra come la distribuzione campionaria della media sia distribuita come:\n\\[\n\\bar{x} \\sim \\mathcal{N}(\\mu, \\text{SE}_{\\bar{x}})\n\\]\nDove \\(\\mu\\) è la media vera della popolazione e \\(\\text{SE}_{\\bar{x}}\\) l’errore standard della stima della media ovvero \\(\\text{SE}_{\\bar{x}} = \\sigma / \\sqrt{n}\\) (\\(s\\) viene usato come stima di \\(\\sigma\\))."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#intervallo-di-confidenza",
+    "href": "slides/06-inferenza.html#intervallo-di-confidenza",
+    "title": "Inferenza statistica",
+    "section": "Intervallo di confidenza",
+    "text": "Intervallo di confidenza\nUn ultimo concetto importante è quello di intervallo di confidenza (CI). Una volta compresa la distribuzione campionaria, l’intervallo di confidenza non è altro che un modo di riassumerla, oltre che con la media ma soprattutto con l’errore standard.\nFormalmente, l’intervallo di confidenza si calcola come:\n\\[\n\\mbox{CI} = t \\pm q \\times SE_t\n\\]\n\\(t\\) è la stima, \\(SE_t\\) è l’errore standard. \\(q\\) è un moltiplicatore dell’errore standard. \\(q\\) non è altro che il quantile associato ad una certa probabilità cumulata."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#intervallo-di-confidenza-1",
+    "href": "slides/06-inferenza.html#intervallo-di-confidenza-1",
+    "title": "Inferenza statistica",
+    "section": "Intervallo di confidenza",
+    "text": "Intervallo di confidenza\nPer capire \\(q\\) dobbiamo ripensare alla normale (dato il TLC). In particolare alla distribuzione normale standard (\\(\\mu = 0\\) e \\(\\sigma = 1\\)):"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#intervallo-di-confidenza-2",
+    "href": "slides/06-inferenza.html#intervallo-di-confidenza-2",
+    "title": "Inferenza statistica",
+    "section": "Intervallo di confidenza",
+    "text": "Intervallo di confidenza\nOgni distribuzione (normale) può essere convertita alla normale standard tramite la standardizzazione. Ad esempio, una normale con \\(\\mu = 100\\) e \\(\\sigma = 15\\):"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#intervallo-di-confidenza-3",
+    "href": "slides/06-inferenza.html#intervallo-di-confidenza-3",
+    "title": "Inferenza statistica",
+    "section": "Intervallo di confidenza",
+    "text": "Intervallo di confidenza\nQuindi ad esempio, un valore \\(q = 2\\) corrisponde a \\(x = \\mu + q \\sigma = 100 + 2 \\times 15 = 130\\):"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#intervallo-di-confidenza-4",
+    "href": "slides/06-inferenza.html#intervallo-di-confidenza-4",
+    "title": "Inferenza statistica",
+    "section": "Intervallo di confidenza",
+    "text": "Intervallo di confidenza\nOra, esattamente come per i quantili (\\(q\\) sono quantili infatti) possiamo sapere quale \\(q\\) è associato ad una certa probabilità cumulata. Solitamente l’intervallo di confidenza si riporta al 95%. Dobbiamo trovare \\(q\\) che è associato a \\(1 - 0.95 = 0.05\\) di probabilità cumulata. Distribuiamo il 0.05 tra le due code simmetriche della normale.\n\nq &lt;- qnorm(0.05/2, lower.tail = FALSE)\nq\n\n[1] 1.959964\n\n\nCon \\(q\\) di ~1.96 abbiamo una probabilità cumulata (a destra di \\(q\\) e a sinistra di \\(-q\\)) del 2.5%."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#intervallo-di-confidenza-5",
+    "href": "slides/06-inferenza.html#intervallo-di-confidenza-5",
+    "title": "Inferenza statistica",
+    "section": "Intervallo di confidenza",
+    "text": "Intervallo di confidenza\nVediamolo sul grafico, evidenziamo l’area."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#intervallo-di-confidenza-6",
+    "href": "slides/06-inferenza.html#intervallo-di-confidenza-6",
+    "title": "Inferenza statistica",
+    "section": "Intervallo di confidenza",
+    "text": "Intervallo di confidenza\nTornando al nostro esempio pratico, il CI è l’intervallo sulla distribuzione campionaria che contiene una certa percentuale (e.g., 95%) di valori.\nPiù formalmente:\n\nL’intervallo di confidenza al \\(p\\%\\) è quell’intervallo che, se ripetessi la misurazione un numero infinito di volte e calcolassi l’intervallo di confidenza, il \\(p\\%\\) delle volte l’intervallo conterrebbe il valore vero \\(\\theta\\)."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#prendiamo-una-decisione",
+    "href": "slides/06-inferenza.html#prendiamo-una-decisione",
+    "title": "Inferenza statistica",
+    "section": "Prendiamo una decisione",
+    "text": "Prendiamo una decisione\nFino ad ora abbiamo quantificato l’incertezza nella stima di un parametro usando lo standard error e l’intervallo di confidenza. Ora possiamo provare a prendere una decisione inferenziale.\nAd esempio, immaginiamo di conoscere l’altezza media della popolazione generale italiana \\(\\mu_p = 163\\). Raccogliamo un campione e ci vogliamo chiedere se la popolazione da cui proviene il campione abbia una media uguale o diversa da \\(\\mu_p = 163\\). Possiamo definire due mondi distinti:\n\nMondo nullo dove la popolazione generale e quella da cui è estratto il campione hanno la stessa media. \\(\\mu_p = \\mu_c = 163\\).\nMondo alternativo dove la popolazione generale e quella da cui è estratto il campione hanno medie diverse \\(\\mu_p \\neq \\mu_c\\)."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#prendiamo-una-decisione-1",
+    "href": "slides/06-inferenza.html#prendiamo-una-decisione-1",
+    "title": "Inferenza statistica",
+    "section": "Prendiamo una decisione",
+    "text": "Prendiamo una decisione\nQuello che possiamo fare è prendere un campione di numerosità \\(n\\), calcolare l’altezza media e cercare di inferire cosa succede a livello della popolazione. Selezioniamo casualmente un campione dal dataset1:\n\nn &lt;- 30\nidx &lt;- sample(1:nrow(dat), n)\ncamp &lt;- dat[idx, ]\nhead(camp)\n\nRicordo che noi sappiamo la media vera in questo caso, ma stiamo simulando una situazione di inferenza reale."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#prendiamo-una-decisione-2",
+    "href": "slides/06-inferenza.html#prendiamo-una-decisione-2",
+    "title": "Inferenza statistica",
+    "section": "Prendiamo una decisione",
+    "text": "Prendiamo una decisione\nPiù formalmente abbiamo abbozzato un sistema di verifica d’ipotesi. Abbiamo definito un’ipotesi nulla:\n\\[\nH_0: \\mu_p = \\mu_c \\quad\\quad \\mu_p - \\mu_c = 0\n\\]\nE anche un’ipotesi alternativa \\(H_1\\):\n\\[\nH_1: \\mu_p \\neq \\mu_c \\quad\\quad \\mu_p - \\mu_c \\neq 0\n\\]\nIn questo caso \\(H_1\\) dice semplicemente che le due medie sono diverse, non fa riferimento alla direzione maggiore o minore. Questa è un’ipotesi alternativa bidirezionale."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#prendiamo-una-decisione-3",
+    "href": "slides/06-inferenza.html#prendiamo-una-decisione-3",
+    "title": "Inferenza statistica",
+    "section": "Prendiamo una decisione",
+    "text": "Prendiamo una decisione\nCalcoliamo le statistiche sul campione:\n\nm &lt;- mean(camp$altezza) # media del campione\ns &lt;- sd(camp$altezza) # deviazione standard del campione\nse &lt;- s / sqrt(n) # errore standard\nc(m, s, se)\n\n[1] 166.366667   7.997773   1.460187"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#normale-disclaimer",
+    "href": "slides/06-inferenza.html#normale-disclaimer",
+    "title": "Inferenza statistica",
+    "section": "Normale, disclaimer",
+    "text": "Normale, disclaimer\nUna precisazione riguarda utilizzare la distribuzione campionaria Normale. In realtà, quando si utilizza \\(s\\) come stima di \\(\\sigma\\) (il nostro caso) è necessario utilizzare la distribuzione \\(t\\) di Student.\nL’idea è dovendo stimare sia \\(\\mu\\) (la media della popolazione) con \\(\\bar{x}\\) che \\(\\sigma\\) (la deviazione standard della popolazione) con \\(s\\) abbiamo più incertezza che assumere \\(\\sigma\\) come nota.\nPer tenere conto di questa incertezza utilizziamo una distribuzione campionaria più conservativa rispetto alla Normale, ovvero la \\(t\\) di Student."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#normale-disclaimer-1",
+    "href": "slides/06-inferenza.html#normale-disclaimer-1",
+    "title": "Inferenza statistica",
+    "section": "Normale, disclaimer",
+    "text": "Normale, disclaimer\nMentre la Normale (quella standard) è fissa una volta definiti \\(\\mu\\) e \\(\\sigma\\), la \\(t\\) di Student può variare in funzione di un’altro parametro \\(\\nu\\) ovvero i gradi di libertà.\nI gradi di libertà sono un concetto complesso ma fondamentale. L’idea è che ogni volta che stimiamo un parametro ad esempio la media \\(\\mu\\) usiamo (e quindi spendiamo) informazione dal campione di numerosità \\(n\\).\nNel caso del nostro esempio, noi stimiamo la media con \\(\\bar{x}\\) e anche la deviazione standard \\(s\\) (che dipende dalla media). Quindi abbiamo \\(\\nu = n - 1\\) gradi di libertà."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#normale-disclaimer-2",
+    "href": "slides/06-inferenza.html#normale-disclaimer-2",
+    "title": "Inferenza statistica",
+    "section": "Normale, disclaimer",
+    "text": "Normale, disclaimer\nVediamolo con un esempio piccolo, immaginiamo di avere 5 valori e calcolare la media:\n\nx &lt;- c(2, 3, 4, 1, 5)\nmean(x)\n\n[1] 3\n\n\nSappiamo che \\(\\sum^{n}_{i = 1} x_i - \\bar{x} = 0\\):\n\nx - mean(x)\n\n[1] -1  0  1 -2  2\n\nsum(x - mean(x))\n\n[1] 0"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#normale-disclaimer-3",
+    "href": "slides/06-inferenza.html#normale-disclaimer-3",
+    "title": "Inferenza statistica",
+    "section": "Normale, disclaimer",
+    "text": "Normale, disclaimer\nOra, se immaginiamo di sapere che \\(\\sum^{n}_{i = 1} x_i - \\bar{x} = 0\\) e vi dicessi il valore dei primi 4 scarti dalla media:\n\nr &lt;- x - mean(x)\nr[1:4]\n\n[1] -1  0  1 -2\n\n# per forza deve essere 2 per dare la somma 0\nsum(r[1:4])\n\n[1] -2\n\n\nL’ultimo valore (il quinto, \\(n - 1\\)) è vincolato. Deve essere per forza \\(x_5 - \\bar{x} = 2\\). Si sono ridotti i gradi di libertà nel momento in cui abbiamo stimato la media."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#normale-disclaimer-4",
+    "href": "slides/06-inferenza.html#normale-disclaimer-4",
+    "title": "Inferenza statistica",
+    "section": "Normale, disclaimer",
+    "text": "Normale, disclaimer\nQui vediamo delle \\(t\\) di Student con \\(\\nu\\) diversi e poi la Normale. Come vedete, all’aumentare di \\(\\nu\\) le due sono sempre più simili."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#prendiamo-una-decisione-4",
+    "href": "slides/06-inferenza.html#prendiamo-una-decisione-4",
+    "title": "Inferenza statistica",
+    "section": "Prendiamo una decisione",
+    "text": "Prendiamo una decisione\nTornando al nostro campione e assumendo la normalità possiamo visualizzare la distribuzione campionaria. In blu vediamo l’intervallo di confidenza al 95%."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#prendiamo-una-decisione-5",
+    "href": "slides/06-inferenza.html#prendiamo-una-decisione-5",
+    "title": "Inferenza statistica",
+    "section": "Prendiamo una decisione",
+    "text": "Prendiamo una decisione\nCosa notiamo?\n\nla media del campione \\(\\bar{x}\\) (che è una stima di \\(\\mu_c\\)) è diversa da \\(\\mu_p\\) (ovviamente)\nla distribuzione campionaria costruita attorno a \\(\\bar{x}\\) ci fa capire che l’ipotesi \\(H_0\\) è poco probabile. Infatti \\(\\mu_p = 163\\) è un valore che è sulle code estreme della distribuzione.\nquesto è chiaro anche guardando l’intervallo di confidenza. Il valore \\(\\mu_p\\) è ampiamente fuori dall’intervallo. Possiamo dire che la probabilità di ottenere valori minori o uguali a \\(\\mu_p\\) è minore di \\(1 - 0.95\\) quindi minore di \\(0.05\\)."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#prendiamo-una-decisione-6",
+    "href": "slides/06-inferenza.html#prendiamo-una-decisione-6",
+    "title": "Inferenza statistica",
+    "section": "Prendiamo una decisione",
+    "text": "Prendiamo una decisione\nOra ribaltiamo il discorso. Immaginiamo di costruire la stessa distribuzione campionaria ma assumendo come vera \\(H_0\\). L’idea è la stessa, semplicemente la distribuzione sarà centrata su \\(\\mu_p\\)."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#prendiamo-una-decisione-7",
+    "href": "slides/06-inferenza.html#prendiamo-una-decisione-7",
+    "title": "Inferenza statistica",
+    "section": "Prendiamo una decisione",
+    "text": "Prendiamo una decisione\nPerchè fare questo? Perchè \\(H_0\\) e quindi \\(\\mu_p = 163\\) è definita (nota come nel caso di un punteggio normativo o assunta). Possiamo quindi assumerla come vera e vedere la consistenza dei dati rispetto a questa ipotesi.\nSiccome siamo in grado di lavorare con le distribuzioni normali (teoriche), possiamo ad esempio calcolare la probabilità assumendo \\(H_0\\) come vera, di avere un campione con \\(\\bar{x}\\) maggiore o minore (ricordate la bidirezionalità) rispetto a quella osservata.\n\n(p_minore &lt;- pnorm(163 - (m - 163), mean = 163, sd = se))\n## [1] 0.01056535\n(p_maggiore &lt;- (1 - pnorm(m, mean = 163, sd = se)))\n## [1] 0.01056535\np_minore + p_maggiore\n## [1] 0.0211307\n\nQuesta probabilità che abbiamo calcolato, si chiama p value."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#prendiamo-una-decisione-8",
+    "href": "slides/06-inferenza.html#prendiamo-una-decisione-8",
+    "title": "Inferenza statistica",
+    "section": "Prendiamo una decisione",
+    "text": "Prendiamo una decisione\nGraficamente possiamo chiaramente vederlo:"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#statistica-test",
+    "href": "slides/06-inferenza.html#statistica-test",
+    "title": "Inferenza statistica",
+    "section": "Statistica test",
+    "text": "Statistica test\nNel nostro esempio, stiamo lavorando con la media \\(\\bar{x}\\) del campione e la media della popolazione \\(\\mu_p\\) assumendo \\(H_0\\) come vera.\nC’è un modo più intuitivo di lavorare e riguarda sempre la standardizzazione. Proviamo a standardizzare la nostra \\(\\bar{x}\\) usando la distribuzione campionaria. Calcoliamo una nuova statistica che chiamiamo genericamente \\(t\\):\n\\[\nt = \\frac{\\bar{x} - \\mu_p}{\\text{SE}_{\\bar{x}}}\n\\]\nLa \\(t\\) non è altro che la differenza tra la media del campione e quella della popolazione (sotto \\(H_0\\)) standardizzata con l’errore standard. E’ quindi espressa in unità di errore standard."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#statistica-test-1",
+    "href": "slides/06-inferenza.html#statistica-test-1",
+    "title": "Inferenza statistica",
+    "section": "Statistica test",
+    "text": "Statistica test\nNel nostro caso quindi possiamo facilmente calcolarla. L’interpretazione è come un punto \\(z\\) ma siamo in unità di errore standard e non di deviazione standard.\n\n(t &lt;- (m - 163)/se)\n\n[1] 2.305641\n\nm\n\n[1] 166.3667\n\n\nQuindi il nostro campione è ~2.3 errori standard maggiore rispetto alla media della popolazione se fosse vera \\(H_0\\). 2.3 è un valore decisamente grande e ci suggerisce che la media sia abbastanza distante dall’ipotesi nulla."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#prendiamo-una-decisione-9",
+    "href": "slides/06-inferenza.html#prendiamo-una-decisione-9",
+    "title": "Inferenza statistica",
+    "section": "Prendiamo una decisione",
+    "text": "Prendiamo una decisione\nIl vantaggio è che, a prescindere da \\(\\bar{x}\\) e \\(\\mu\\), questa statistica test standardizzata ha sempre la stessa distribuzione campionaria. Assumendo la normalità, questa diventa una distribuzione normale standard:\n\\[\nt \\sim \\mathcal{N}(0, 1)\n\\]\nSe usassimo la distribuzione \\(t\\) di Student (lasciamola stare per il momento) allora:\n\\[\nt \\sim \\mathcal{T}(\\nu)\n\\]\nDove \\(\\nu = n - 1 = 29\\)"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#prendiamo-una-decisione-10",
+    "href": "slides/06-inferenza.html#prendiamo-una-decisione-10",
+    "title": "Inferenza statistica",
+    "section": "Prendiamo una decisione",
+    "text": "Prendiamo una decisione\nVediamo la distribuzione campionaria in questo caso."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#prendiamo-una-decisione-11",
+    "href": "slides/06-inferenza.html#prendiamo-una-decisione-11",
+    "title": "Inferenza statistica",
+    "section": "Prendiamo una decisione",
+    "text": "Prendiamo una decisione\nPossiamo calcolare il nostro p-value con la stessa logica ma ora possiamo fare riferimento direttamente alla distribuzione normale standard:\n\npnorm(-t) + (1 - pnorm(t))\n\n[1] 0.0211307\n\n\nLa cosa utile è che possiamo esprimere tutto in termini di normale standard."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errori-decisionali",
+    "href": "slides/06-inferenza.html#errori-decisionali",
+    "title": "Inferenza statistica",
+    "section": "Errori decisionali",
+    "text": "Errori decisionali\nQuello che abbiamo fatto artigianalmente è un processo inferenziale:\n\nAbbiamo definito un’ipotesi nulla \\(H_0\\) (\\(\\mu_0 = 163\\), popolazione).\nBasandoci su \\(n\\) e su \\(s\\) del campione abbiamo costruito la distribuzione campionaria (assumendo che \\(H_0\\) sia vera)\nAbbiamo calcolato la probabilità di trovare un risultato uguale o maggiore di quello campionario, ovvero il p value.\n\nPossiamo intuire che tanto più il p value è piccolo tanto più il risultato del campione è sorprendente assumendo \\(H_0\\) come vera. Ma quanto piccolo deve essere il p value per rifiutare \\(H_0\\)?"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errori-decisionali-1",
+    "href": "slides/06-inferenza.html#errori-decisionali-1",
+    "title": "Inferenza statistica",
+    "section": "Errori decisionali",
+    "text": "Errori decisionali\nPrendiamo una soglia che chiamiamo \\(\\alpha\\). Questa soglia determina la nostra decisione. Se il p-value è minore di \\(\\alpha\\) prendiamo una decisione, altrimenti no.\nIn termini pratici:\n\nRifiutiamo \\(H_0\\) quando \\(p \\leq \\alpha\\)\nNon rifiutiamo \\(H_0\\) quando \\(p &gt; \\alpha\\)\n\nIl non rifiutiamo è importante perchè stiamo assumendo \\(H_0\\) come vera. Possiamo solo dire che i nostri dati sono poco consistenti con \\(H_0\\)."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errori-decisionali-2",
+    "href": "slides/06-inferenza.html#errori-decisionali-2",
+    "title": "Inferenza statistica",
+    "section": "Errori decisionali",
+    "text": "Errori decisionali\nDove stanno possibili errori? Riprendiamo la distribuzione campionaria:"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#alpha-p-value-e-valore-critico",
+    "href": "slides/06-inferenza.html#alpha-p-value-e-valore-critico",
+    "title": "Inferenza statistica",
+    "section": "\\(\\alpha\\) p value e valore critico",
+    "text": "\\(\\alpha\\) p value e valore critico\nUn’altro modo di prendere la stessa decisione è quello di usare i valori critici e non \\(\\alpha\\). Se ci pensate, \\(\\alpha\\) è una probabilità cumulata che quindi è associata ad un certo quantile (i nostri \\(t\\)).\nL’area grigia che rappresenta una probabilità di \\(\\alpha\\) (0.05 in questo caso) è associata ad un certo valore di \\(t\\). Questo valore si chiama valore critico. In R si calcola con qnorm()1\n\nalpha &lt;- 0.05\n# divido a metà perchè la mia ipotesi è bidirezionale\nabs(qnorm(alpha/2))\n\n[1] 1.959964\n\n\nqnorm(p, mean, sd) vi ricordo che vi restituisce il valore che è associato ad una probabilità cumulata di p per una normale con media mean e deviazione standard sd."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#alpha-p-value-e-valore-critico-1",
+    "href": "slides/06-inferenza.html#alpha-p-value-e-valore-critico-1",
+    "title": "Inferenza statistica",
+    "section": "\\(\\alpha\\), p value e valore critico",
+    "text": "\\(\\alpha\\), p value e valore critico"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#alpha-p-value-e-valore-critico-2",
+    "href": "slides/06-inferenza.html#alpha-p-value-e-valore-critico-2",
+    "title": "Inferenza statistica",
+    "section": "\\(\\alpha\\), p value e valore critico",
+    "text": "\\(\\alpha\\), p value e valore critico\nQuindi dire che \\(p \\leq \\alpha\\) è equivalente a dire che \\(t_{\\text{oss}}\\) (osservato) è maggiore di \\(t_{\\text{crit}}\\) (critico). \\(t_{\\text{crit}}\\), nella normale standard dipende solo da \\(\\alpha\\)."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#alpha-p-value-e-valore-critico-3",
+    "href": "slides/06-inferenza.html#alpha-p-value-e-valore-critico-3",
+    "title": "Inferenza statistica",
+    "section": "\\(\\alpha\\) p value e valore critico",
+    "text": "\\(\\alpha\\) p value e valore critico\nSiccome valori \\(\\alpha &gt; 0.1\\) sono poco probabili, facciamo zoom sul grafico:"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#alpha-p-value-e-intervallo-di-confidenza",
+    "href": "slides/06-inferenza.html#alpha-p-value-e-intervallo-di-confidenza",
+    "title": "Inferenza statistica",
+    "section": "\\(\\alpha\\) p value e intervallo di confidenza",
+    "text": "\\(\\alpha\\) p value e intervallo di confidenza\nUn ultimo modo per prendere la decisione (esattamente equivalente) è quello di basarsi sull’intervallo di confidenza costruito attorno alla stima \\(\\bar{x}\\).\n\nc(\n    m - se * q,\n    m + se * q\n)\n\n[1] 163.5048 169.2286\n\n\nSe l’intervallo di confidenza contiene il valore sotto \\(H_0\\) equivale a dire che il p value è maggiore di \\(\\alpha\\) e il valore maggiore è minore del valore osservato."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#alpha-p-value-e-intervallo-di-confidenza-1",
+    "href": "slides/06-inferenza.html#alpha-p-value-e-intervallo-di-confidenza-1",
+    "title": "Inferenza statistica",
+    "section": "\\(\\alpha\\) p value e intervallo di confidenza",
+    "text": "\\(\\alpha\\) p value e intervallo di confidenza\n\\(\\alpha\\) e intervallo di confidenza sono legati. Se \\(\\alpha = 0.05\\) l’intervallo di confidenza è a livello \\(1 - \\alpha\\)."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-monodirezionali-e-bidirezionali",
+    "href": "slides/06-inferenza.html#test-monodirezionali-e-bidirezionali",
+    "title": "Inferenza statistica",
+    "section": "Test monodirezionali e bidirezionali",
+    "text": "Test monodirezionali e bidirezionali\nQuesta distinzione è fondamentale nel momento in cui costruiamo un test per la verifica d’ipotesi. Il punto è che una volta deciso \\(\\alpha\\) questo deve essere indipendente dal tipo di test."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-monodirezionali-e-bidirezionali-1",
+    "href": "slides/06-inferenza.html#test-monodirezionali-e-bidirezionali-1",
+    "title": "Inferenza statistica",
+    "section": "Test monodirezionali e bidirezionali",
+    "text": "Test monodirezionali e bidirezionali\nIl grafico ci fa capire che anche il valore critico cambia in base al test. Essendo \\(\\alpha\\) fisso, spartire \\(\\alpha\\) tra due code o metterlo tutto in una coda fa aumentare o diminuire il valore critico. Possiamo farlo anche in R:\n\nalpha &lt;- 0.05\n\n# monodirezionale sinistro\nqnorm(alpha)\n\n[1] -1.644854\n\n# monodirezionale destro\nqnorm(1 - alpha)\n\n[1] 1.644854\n\n# bidirezionale, valore assoluto perchè simmetrico rispetto a 0\n# considero - e +\n\nabs(qnorm(alpha/2))\n\n[1] 1.959964"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-monodirezionali-e-bidirezionali-2",
+    "href": "slides/06-inferenza.html#test-monodirezionali-e-bidirezionali-2",
+    "title": "Inferenza statistica",
+    "section": "Test monodirezionali e bidirezionali",
+    "text": "Test monodirezionali e bidirezionali\nEmergono diverse cose:\n\nil valore critico espresso con la statistica test \\(t\\) è simmetrico rispetto allo zero (ovviamente)\nil valore critico per un’ipotesi monodirezionale è più piccolo rispetto a quello bidirezionale\na parità di \\(\\text{SE}\\) e \\(\\bar{x}\\) è più probabile rifiutare \\(H_0\\) all’interno di un test monodirezionale.\n\nDal punto di vista teorico, la direzione del test è funzione di quello che sappiamo sul fenomeno. Il test bidirezionale non richiede di esplicitare la direzione ma è più conservativo e quindi penalizza la nostra mancanza di informazioni."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errori-decisionali-3",
+    "href": "slides/06-inferenza.html#errori-decisionali-3",
+    "title": "Inferenza statistica",
+    "section": "Errori decisionali",
+    "text": "Errori decisionali\nNel nostro caso il p value è minore di \\(\\alpha\\). Ma nonostante questo, essendo che stiamo assumendo \\(H_0\\) come vera, anche valori che sono associati ad un p value \\(&lt; \\alpha\\) sono comunque possibili (i.e., probabilità \\(&gt; 0\\)).\nIn termini pratici significa che, nonostante il mio campione sia sulle code della distribuzioni campionaria, comunque proviene da quella popolazione.\nQuindi potrei rifiutare \\(H_0\\) perchè la mia soglia decisionale è stata passata ma prendere la decisione sbagliata nel caso \\(H_0\\) sia effettivamente vera.\nQuesto si chiama errore di primo tipo o falso positivo."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errori-decisionali-4",
+    "href": "slides/06-inferenza.html#errori-decisionali-4",
+    "title": "Inferenza statistica",
+    "section": "Errori decisionali",
+    "text": "Errori decisionali\nC’è solo questo tipo di errore? Rifiutare \\(H_0\\) quando questa è vera? No, ci sono anche altri tipi di errore. Ci serve però spostarci nell’altro mondo ovvero quello dove \\(H_0\\) è effettivamente falsa e \\(H_1\\) è vera.\nInoltre, non basta definire \\(H_1\\) come maggiore, minore o diverso ma dobbiamo definire un valore puntuale che il parametro assume in questo altro mondo.\n\\[\n\\begin{aligned}\nH_0: \\mu_p &= \\mu_c = 163 \\quad \\quad \\mu_c - \\mu_p = 0 \\\\\nH_1: \\mu_c &= 165\n\\end{aligned}\n\\]\nStiamo ipotizzando che, se \\(H_0\\) è falsa allora il nostro campione proviene da una popolazione con media \\(\\mu_c = 165\\)."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errori-decisionali-5",
+    "href": "slides/06-inferenza.html#errori-decisionali-5",
+    "title": "Inferenza statistica",
+    "section": "Errori decisionali",
+    "text": "Errori decisionali\nAvendo due ipotesi con valori puntuali che possiamo assumere come vere in modo alternato (sono mutuamente esclusive) possiamo anche costruire:\n\ndistribuzione campionaria della statistica test quando \\(H_0\\) è vera (e quindi \\(H_1\\) è falsa)\ndistribuzione campionaria della statistica test quando \\(H_1\\) è vera (e quindi \\(H_0\\) è falsa)\n\nEntrambe le distribuzioni campionarie avranno \\(\\text{SE}\\) come deviazione standard ma saranno centrate su valori diversi come media."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errori-decisionali-6",
+    "href": "slides/06-inferenza.html#errori-decisionali-6",
+    "title": "Inferenza statistica",
+    "section": "Errori decisionali",
+    "text": "Errori decisionali"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errori-inferenziali",
+    "href": "slides/06-inferenza.html#errori-inferenziali",
+    "title": "Inferenza statistica",
+    "section": "Errori inferenziali",
+    "text": "Errori inferenziali\nQuindi:\n\nL’area  rappresenta la probabilità di rifiutare \\(H_0\\) quando questa è vera. Questa è chiamato errore di primo tipo o \\(\\alpha\\)\nL’area  rappresenta la probabilità di non rifiutare \\(H_0\\) quando questa è falsa. Questa è chiamato errore di secondo tipo o \\(\\beta\\)\nL’area  rappresenta la probabilità di rifiutare \\(H_0\\) quando questa è falsa. Questa è chiamata potenza statistica o \\(1 - \\beta\\)"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errori-inferenziali-1",
+    "href": "slides/06-inferenza.html#errori-inferenziali-1",
+    "title": "Inferenza statistica",
+    "section": "Errori inferenziali",
+    "text": "Errori inferenziali\nQuindi possiamo riassumere questo sistema in una tabella di contingenza 2x2:"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#errori-inferenziali-e-potenza",
+    "href": "slides/06-inferenza.html#errori-inferenziali-e-potenza",
+    "title": "Inferenza statistica",
+    "section": "Errori inferenziali e potenza",
+    "text": "Errori inferenziali e potenza\nPotete trovare una visualizzazione interattiva di queste probabilità a questo link. Impostate il flag solo su \\(H_0\\), vedremo dopo \\(H_1\\)\n\nhttps://stat-teaching.github.io/statshiny/shiny/ttest.html"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#esempio-con-di-marco2020-wu",
+    "href": "slides/06-inferenza.html#esempio-con-di-marco2020-wu",
+    "title": "Inferenza statistica",
+    "section": "Esempio con Di Marco et al. (2020)",
+    "text": "Esempio con Di Marco et al. (2020)\nLavoriamo con il solito dataset Di Marco et al. (2020):\n\ndat &lt;- readxl::read_xlsx(\"dimarco2020.xlsx\")\n\n\nhead(dat)\n\n  id age gender   education status residence period age_cat period_cat\n1  1  53   male high_school      2     south     31   51-60        &gt;31\n2  2  60   male      degree      2     north     27   51-60      21-30\n3  3  40 female      degree      2     north     13   31-40      11-15\n4  4  57   male      degree      2     north     20   51-60      16-20\n5  5  60   male high_school      2     north     20   51-60      16-20\n6  6  46   male      degree      2     north     14   41-50      11-15\n  attachment needs bonds perc_collective_efficacy perc_self_efficacy family\n1       3.67  3.33  3.33                      3.2               3.11   3.75\n2       4.00  3.33  4.00                      4.2               3.95   5.00\n3       4.00  2.67  3.50                      3.8               3.58   4.25\n4       4.00  4.00  3.50                      3.6               3.74   4.25\n5       3.33  3.00  3.33                      3.4               3.53   4.00\n6       4.00  3.33  3.33                      4.2               3.63   5.00\n  friends organization burnout trauma satisfaction extrinsic intrinsic quest\n1    4.00         4.00     1.8   2.11          4.0      2.75      6.00  1.67\n2    4.25         3.25     1.4   0.60          3.5      4.75      6.50  1.00\n3    4.50         4.50     2.7   2.30          3.6      5.75      5.50  5.00\n4    4.50         4.50     1.9   1.80          3.0      4.50      7.00  2.75\n5    3.25         3.75     2.6   2.30          2.7      4.25      3.75  4.50\n6    5.00         4.75     2.1   1.30          2.6      4.75      7.00  1.25\n  desiderability\n1           3.86\n2           4.00\n3           4.00\n4           3.14\n5           3.86\n6           3.57"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#esempio-con-di-marco2020-wu-1",
+    "href": "slides/06-inferenza.html#esempio-con-di-marco2020-wu-1",
+    "title": "Inferenza statistica",
+    "section": "Esempio con Di Marco et al. (2020)",
+    "text": "Esempio con Di Marco et al. (2020)\nQuello che abbiamo fatto fino ad ora si chiama test ad un campione. Ovvero abbiamo un campione di numerosità \\(n\\) che viene confrontato con una popolazione con una certa media \\(\\mu\\).\nLavoriamo con i punteggi di perc_self_efficacy e ipotizziamo che la media normativa di questi punteggi sia \\(\\mu = 3.5\\).\nVogliamo stimare la media del campione, quantificare l’incertezza e testare se questo campione sia consistente con la popolazione di riferimento."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#esempio-con-di-marco2020-wu-2",
+    "href": "slides/06-inferenza.html#esempio-con-di-marco2020-wu-2",
+    "title": "Inferenza statistica",
+    "section": "Esempio con Di Marco et al. (2020)",
+    "text": "Esempio con Di Marco et al. (2020)"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#esempio-con-di-marco2020-wu-3",
+    "href": "slides/06-inferenza.html#esempio-con-di-marco2020-wu-3",
+    "title": "Inferenza statistica",
+    "section": "Esempio con Di Marco et al. (2020)",
+    "text": "Esempio con Di Marco et al. (2020)\nFacciamo quello che già sappiamo:\n\n# media popolazione\nmu0 &lt;- 3.5\n# numerosità\nn &lt;- nrow(dat)\n# media\nm &lt;- mean(dat$perc_self_efficacy)\n# deviazione standard\ns &lt;- sd(dat$perc_self_efficacy)\n# errore standard\nse &lt;- s / sqrt(n)\n# statistica test\nt &lt;- (m - mu0) / se\npnorm(-t) + (1 - pnorm(t))\n\n[1] 1.860407e-13"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#esempio-con-di-marco2020-wu-4",
+    "href": "slides/06-inferenza.html#esempio-con-di-marco2020-wu-4",
+    "title": "Inferenza statistica",
+    "section": "Esempio con Di Marco et al. (2020)",
+    "text": "Esempio con Di Marco et al. (2020)\nChiaramente il p value in questo caso è molto piccolo essendo la statistica test decisamente poco consistente con la distribuzione campionaria."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-a-2-campioni",
+    "href": "slides/06-inferenza.html#test-a-2-campioni",
+    "title": "Inferenza statistica",
+    "section": "Test a 2 campioni",
+    "text": "Test a 2 campioni\nUn test più comune di quello ad un campione è quello dove si confrontano due campioni. La logica è la stessa:\n\nDefiniamo \\(H_0\\) e \\(H_1\\)\nDefiniamo la statistica test\nDefiniamo la distribuzione campionaria assumendo \\(H_0\\) come vera\nCalcoliamo il p value"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-a-2-campioni-1",
+    "href": "slides/06-inferenza.html#test-a-2-campioni-1",
+    "title": "Inferenza statistica",
+    "section": "Test a 2 campioni",
+    "text": "Test a 2 campioni\nVogliamo vedere l’effetto di education su perc_self_efficacy. Quindi abbiamo due campioni di numerosità \\(n_h\\) e \\(n_d\\) (high school e degree).\n\\[\nH_0: \\mu_{\\text{h}} = \\mu_{\\text{d}} \\quad \\mu_{\\text{h}} - \\mu_{\\text{d}} = 0\n\\]\n\\[\nH_1: \\mu_{\\text{h}} \\neq \\mu_{\\text{d}} \\quad \\mu_{\\text{h}} - \\mu_{\\text{d}} \\neq 0\n\\]\nQuindi, stiamo facendo inferenza sulle popolazioni da cui provengono i due campioni. L’ipotesi nulla è che i due campioni provengano da una popolazione con la stessa media, e quindi che non ci siano differenze."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-a-2-campioni-2",
+    "href": "slides/06-inferenza.html#test-a-2-campioni-2",
+    "title": "Inferenza statistica",
+    "section": "Test a 2 campioni",
+    "text": "Test a 2 campioni\nVediamo i dati per prima cosa, togliamo le osservazioni con sec_school così abbiamo 2 gruppi:\n\n# togliamo sec_school cosi abbiamo 2 gruppi\ndat2 &lt;- dat[dat$education != \"sec_school\", ]\nboxplot(perc_self_efficacy ~ education, data = dat2)"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-a-2-campioni-2-output",
+    "href": "slides/06-inferenza.html#test-a-2-campioni-2-output",
+    "title": "Inferenza statistica",
+    "section": "Test a 2 campioni",
+    "text": "Test a 2 campioni"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-a-2-campioni-3",
+    "href": "slides/06-inferenza.html#test-a-2-campioni-3",
+    "title": "Inferenza statistica",
+    "section": "Test a 2 campioni",
+    "text": "Test a 2 campioni\nVediamo anche un grafico con le medie (rombi) e i singoli punti:\n\n# calcolo la media per ogni gruppo\n(m &lt;- tapply(dat2$perc_self_efficacy, dat2$education, mean))\n\n     degree high_school \n   3.720976    3.912800 \n\n\n\nstripchart(perc_self_efficacy ~ education, data = dat2, method = \"jitter\", vertical = TRUE, pch = 19, cex = 2)\npoints(x = 1:2, y = m, pch = 18, cex = 4, col = \"red\")"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-a-2-campioni-3-output",
+    "href": "slides/06-inferenza.html#test-a-2-campioni-3-output",
+    "title": "Inferenza statistica",
+    "section": "Test a 2 campioni",
+    "text": "Test a 2 campioni"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-a-2-campioni-4",
+    "href": "slides/06-inferenza.html#test-a-2-campioni-4",
+    "title": "Inferenza statistica",
+    "section": "Test a 2 campioni",
+    "text": "Test a 2 campioni\nPer quanto riguarda la statistica test, il discorso è leggermente più complesso. Rispetto al caso ad un campione, qui stiamo ragionando su una differenza tra due medie (e non una media vs un valore). Quindi la statistica test è una differenza:\n\\[\n\\begin{aligned}\n\\zeta = \\mu_h - \\mu_d \\\\\nb = \\bar{x}_{d} - \\bar{x}_h\n\\end{aligned}\n\\]\nDove \\(\\zeta\\) è il parametro differenza tra medie e \\(b\\) la sua stima al livello del campione. Dobbiamo quindi calcolare l’errore standard di \\(b\\)."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-a-2-campioni-5",
+    "href": "slides/06-inferenza.html#test-a-2-campioni-5",
+    "title": "Inferenza statistica",
+    "section": "Test a 2 campioni",
+    "text": "Test a 2 campioni\nLa formula è più complessa di quella di una singola media ma la logica è la stessa. Ricordo che l’errore standard quantifica l’incertezza di stima combinando variabilità del fenomeno e numerosità campionaria. In questo caso abbiamo una doppia incertezza legata alla stima di due medie. Quindi:\n\\[\n\\text{SE}_{b} = \\sqrt{\\frac{s^2_{d}}{n_d} + \\frac{s^2_{h}}{n_h}}\n\\]\nSostanzialmente sommiamo l’incertezza nella stima di entrambe le medie."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-a-2-campioni-6",
+    "href": "slides/06-inferenza.html#test-a-2-campioni-6",
+    "title": "Inferenza statistica",
+    "section": "Test a 2 campioni",
+    "text": "Test a 2 campioni\nAssumendo che \\(\\sigma^2_d = \\sigma^2_h\\) possiamo usare \\(s_p\\) (\\(p\\) per pooled/combinata) calcolata come:\n\\[\ns_p = \\sqrt{\\frac{s^2_d (n_d - 1) + s^2_h (n_h - 1)}{n_d + n_h - 2}}\n\\]\nQuesta è una media pesata delle due varianze che viene calcolata assumendo che le due popolazioni abbiano la stessa varianza. Lo standard error diventa quindi:\n\\[\n\\text{SE}_b = s_p \\sqrt{\\frac{1}{n_d} + \\frac{1}{n_h}}\n\\]"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-a-2-campioni-7",
+    "href": "slides/06-inferenza.html#test-a-2-campioni-7",
+    "title": "Inferenza statistica",
+    "section": "Test a 2 campioni",
+    "text": "Test a 2 campioni\nPossiamo infine calcolare la statistica test come nel caso ad un campione:\n\\[\nt = \\frac{b}{\\text{SE}_b} = \\frac{\\bar{x}_{d} - \\bar{x}_h}{s_p \\sqrt{\\frac{1}{n_d} + \\frac{1}{n_h}}}\n\\]\nLa distribuzione campionaria di \\(t\\) è una \\(t\\) di Student con \\(\\nu = n_d + n_h - 2\\) gradi di libertà. Potremmo anche assumere una distribuzione normale ma questo è quello che solitamente si fa."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-a-2-campioni-8",
+    "href": "slides/06-inferenza.html#test-a-2-campioni-8",
+    "title": "Inferenza statistica",
+    "section": "Test a 2 campioni",
+    "text": "Test a 2 campioni\nPossiamo anche visualizzarla. Il punto rosso è la statistica test, le linee tratteggiate sono i valori critici con \\(\\alpha = 0.05\\)"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-a-2-campioni-9",
+    "href": "slides/06-inferenza.html#test-a-2-campioni-9",
+    "title": "Inferenza statistica",
+    "section": "Test a 2 campioni",
+    "text": "Test a 2 campioni\nOvviamente per fare tutto esistono delle funzioni già predisposte. Ad esempio in R:\n\nt.test(perc_self_efficacy ~ education, data = dat2, var.equal = TRUE)\n\n\n    Two Sample t-test\n\ndata:  perc_self_efficacy by education\nt = -2.1404, df = 89, p-value = 0.03506\nalternative hypothesis: true difference in means between group degree and group high_school is not equal to 0\n95 percent confidence interval:\n -0.36990164 -0.01374714\nsample estimates:\n     mean in group degree mean in group high_school \n                 3.720976                  3.912800"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#test-a-2-campioni-10",
+    "href": "slides/06-inferenza.html#test-a-2-campioni-10",
+    "title": "Inferenza statistica",
+    "section": "Test a 2 campioni",
+    "text": "Test a 2 campioni\nIn questo caso quindi la statistica test è negativa, quindi perc_self_efficacy è maggiore per il campione con high_school.\nInoltre, il p value è minore di \\(\\alpha\\) e quindi, rischiando di sbagliarci con una probabilità \\(\\alpha\\), possiamo rifiutare l’ipotesi \\(H_0\\) di uguaglianza delle medie delle popolazioni.\nIn altri termini, se \\(H_0\\) fosse vera, sarebbe poco probabile (p value) ottenere una differenza tra le medie \\(b\\) tra i due campioni."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#potenza-ed-errore-di-2-tipo",
+    "href": "slides/06-inferenza.html#potenza-ed-errore-di-2-tipo",
+    "title": "Inferenza statistica",
+    "section": "Potenza ed errore di 2 tipo",
+    "text": "Potenza ed errore di 2 tipo\nIn questi esempi pratici, abbiamo parlato di errore di primo tipo \\(\\alpha\\), ipotesi nulla e p value. Non abbiamo però fatto riferimento alla potenza (e quindi all’errore di secondo tipo).\nIl punto principale è che mentre \\(H_0\\) possiamo assumerla come assenza dell’effetto (e.g., differenza tra medie). L’ipotesi alternativa, che ci permette di valutare potenza ed errore di secondo tipo, deve essere specificata chiaramente e non solo come maggiore, minore o diverso.\nSpecificare \\(H_1\\) però non è semplice per due motivi:\n\ndeve essere fatto a priori ovvero prima di vedere i dati. \\(H_1\\) deve rappresentare un ipotesi plausibile riguardo la direzione e la grandezza dell’effetto. Se le medie sono diverse (\\(H_0\\) è falsa), quanto sono diverse?\nper essere specificata richiede conoscenza del fenomeno da esprimere in termini numerici"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#effect-size",
+    "href": "slides/06-inferenza.html#effect-size",
+    "title": "Inferenza statistica",
+    "section": "Effect size",
+    "text": "Effect size\nUn ultimo aspetto importante nell’inferenza infatti è il concetto di effect size. L’effect size non è altro che una statistica come le altre ma che viene usata essendo direttamente e “facilmente” interpretabile. Ci sono due tipo di effect size:\n\nstandardizzati: ad esempio il Cohen’s \\(d\\), correlazione, odds ratio, etc. Sono degli effect size che non dipendono dall’unità di misura originale. A prescindere da cosa sto correlando, una correlazione di 0.5 è interpretata, statisticamente, allo stesso modo.\nnon standardizzati: ad esempio la differenza semplice tra due medie. Dal punto di vista prettamente statistico sono preferibili ma non sempre sono intepretabili. Dire che due persone differiscono di 15cm in altezza è chiaro (effetto grande). Dire che due persone differiscono di 4 punti su una scala di depressione è meno chiaro."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#effect-size-1",
+    "href": "slides/06-inferenza.html#effect-size-1",
+    "title": "Inferenza statistica",
+    "section": "Effect size",
+    "text": "Effect size\nL’effect size lo abbiamo già introdotto anche se non esplicitamente. Se riprendiamo la statistica test nel caso dei due campioni:"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#effect-size-2",
+    "href": "slides/06-inferenza.html#effect-size-2",
+    "title": "Inferenza statistica",
+    "section": "Effect size",
+    "text": "Effect size\nQuindi, il numeratore \\(b\\) è un effect size non standardizzato perchè ci dice la differenza tra le due medie sulla scala della variabile. Può essere utile, se è chiaro come intepretarlo.\nL’informazione sul campione non ci serve perchè l’effect size deve dirci una caratteristica del fenomeno e non la sua precisione di stima.\nLa deviazione standard (pooled) è una stima di quanto le due popolazioni variano. Quindi possiamo rapportare \\(b\\) a \\(s_p\\) per standardizzare la differenza tra medie grezza in base a quanto variano. E’ la stessa logica di un punto \\(z\\)."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#effect-size-3",
+    "href": "slides/06-inferenza.html#effect-size-3",
+    "title": "Inferenza statistica",
+    "section": "Effect size",
+    "text": "Effect size\nIn formula possiamo calcolare questo effect size, chiamiamolo \\(d\\):\n\\[\nd = \\frac{b}{s_p}\n\\]\nIn pratica ci dice quanto separati sono i due gruppi (e quanto le popolazioni in termini di stima) in unità di deviazione standard.\nPossiamo anche ricavarlo dalla statistica \\(t\\):\n\\[\nd = t \\sqrt{\\frac{1}{n_d} + \\frac{1}{n_h}}\n\\]"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#effect-size-cohens-d",
+    "href": "slides/06-inferenza.html#effect-size-cohens-d",
+    "title": "Inferenza statistica",
+    "section": "Effect size, Cohen’s \\(d\\)",
+    "text": "Effect size, Cohen’s \\(d\\)\nQuesto effect size si chiama comunemente Cohen’s \\(d\\) (o differenza tra medie standardizzate). E viene definito a livello della popolazione come:\n\\[\n\\delta = \\frac{\\mu_1 - \\mu_0}{\\sigma}\n\\]\nOvvero differenza tra medie standardizzata per la deviazione standard. Ci sono vari modi di calcolarlo, in particolare per stimare \\(\\sigma\\). Il caso di \\(s_p\\) è uno dei vari modi ma la logica è sempre la stessa."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#effect-size-cohens-d-1",
+    "href": "slides/06-inferenza.html#effect-size-cohens-d-1",
+    "title": "Inferenza statistica",
+    "section": "Effect size, Cohen’s \\(d\\)",
+    "text": "Effect size, Cohen’s \\(d\\)\nProviamo a calcolarlo in R sul t-test che abbiamo fatto prima. Possiamo usare il pacchetto effectsize:\n\nlibrary(effectsize)\ncohens_d(perc_self_efficacy ~ education, data = dat2)\n\nCohen's d |         95% CI\n--------------------------\n-0.45     | [-0.87, -0.03]\n\n- Estimated using pooled SD.\n\n\nQuindi i due gruppi hanno una differenza di 0.45 deviazioni standard."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#cohens-d",
+    "href": "slides/06-inferenza.html#cohens-d",
+    "title": "Inferenza statistica",
+    "section": "Cohen’s \\(d\\)",
+    "text": "Cohen’s \\(d\\)\nAnche se standardizzato, questo effect size non è facilmente interpretabile come una correlazione (tra -1 e 1). Ci sono dei benchmark che possono essere utili:\n\nLa differenza di altezza media tra maschi e femmine in Olanda è di 13cm o Cohen’s \\(d = 2\\) (Schönbeck et al., 2012)1\nCi sono delle stime degli effect size medi in Psicologia attorno a 0.4 (Richard et al., 2003)\n\nQueste sono solo indicazioni generali, ogni ambito di ricerca può avere degli effetti plausibili. Ovviamente diffidate degli effetti troppo ottimisti, sono poco plausibili.\nhttps://lakens.github.io/statistical_inferences/06-effectsize.html"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#cohens-d-1",
+    "href": "slides/06-inferenza.html#cohens-d-1",
+    "title": "Inferenza statistica",
+    "section": "Cohen’s \\(d\\)",
+    "text": "Cohen’s \\(d\\)\nPer capire meglio il Cohen’s \\(d\\) vi ho preparato questa visualizzazione interattiva:\n\nhttps://stat-teaching.github.io/statshiny/shiny/d.html"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#effect-size-e-potenza",
+    "href": "slides/06-inferenza.html#effect-size-e-potenza",
+    "title": "Inferenza statistica",
+    "section": "Effect size e potenza",
+    "text": "Effect size e potenza\nTorniamo alla nostra visualizzazione interattiva visualizzando sia \\(H_0\\) che \\(H_1\\) e quindi anche la potenza (ed errore di secondo tipo)\n\nhttps://stat-teaching.github.io/statshiny/shiny/ttest.html"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#effect-size-e-potenza-1",
+    "href": "slides/06-inferenza.html#effect-size-e-potenza-1",
+    "title": "Inferenza statistica",
+    "section": "Effect size e potenza",
+    "text": "Effect size e potenza\nSe noi standardizziamo e quindi esprimiamo le nostre distribuzioni campionarie in termini di Cohen’s \\(d\\) ci rendiamo conto che \\(\\delta\\) (a livello della popolazione) è il livello di separazione delle due ipotesi.\nIn altri termini, la potenza è una funzione matematica che dipende da:\n\n\\(\\alpha\\)\nla numerosità campionaria \\(n\\)\nil grado di separazione delle due ipotesi, riassumibile in modo standardizzato con \\(\\delta\\)\n\nOvviamente \\(\\delta\\) è a sua volta funzione di \\(b\\) (effetto grezzo) e \\(\\sigma\\)."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#correlazione",
+    "href": "slides/06-inferenza.html#correlazione",
+    "title": "Inferenza statistica",
+    "section": "Correlazione",
+    "text": "Correlazione\nLa correlazione è già di per se una misura di effect size standardizzato. E’ possibile costruire un test d’ipotesi con \\(H_0: \\rho = \\rho_0\\) (solitamente con \\(\\rho_0 = 0\\)). Posso usare la statistica test:\n\\[\nt = \\frac{r}{\\text{SE}_r} \\quad\\quad \\text{SE}_r = \\frac{1 - r^2}{\\sqrt{n - 2}}\n\\]\nQuindi la correlazione diviso il suo errore standard, proprio come i t-test di prima. L’errore standard1. Sotto \\(H_0\\) la correlazione si distribuisce come una t di Student con \\(\\nu = n - 2\\) gradi di libertà.\nDa notare che ci sono diversi modi di calcolare l’errore standard e la statistica test, questo è uno dei tanti. La logica è sempre comunque la stessa."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#correlazione-1",
+    "href": "slides/06-inferenza.html#correlazione-1",
+    "title": "Inferenza statistica",
+    "section": "Correlazione",
+    "text": "Correlazione\nIn R posso usare la funzione cor.test:\n\ncor.test(dat$needs, dat$burnout)\n\n\n    Pearson's product-moment correlation\n\ndata:  dat$needs and dat$burnout\nt = -3.2845, df = 94, p-value = 0.001436\nalternative hypothesis: true correlation is not equal to 0\n95 percent confidence interval:\n -0.4898326 -0.1286457\nsample estimates:\n       cor \n-0.3208562"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#potenza-in-pratica",
+    "href": "slides/06-inferenza.html#potenza-in-pratica",
+    "title": "Inferenza statistica",
+    "section": "Potenza in pratica",
+    "text": "Potenza in pratica\nI calcoli possono essere fatti usando le funzioni pnorm o pt in R (come per il p value) oppure con il pacchetto pwr.\n\n# install.package(\"pwr\") # se non installato\nlibrary(pwr)\n\n# potenza per t test a due campioni indipendenti\npwr.t.test(\n    n = 50, # numero di soggetti per gruppo\n    d = 0.5 # effect size, cohens'd\n)\n\n\n     Two-sample t test power calculation \n\n              n = 50\n              d = 0.5\n      sig.level = 0.05\n          power = 0.6968934\n    alternative = two.sided\n\nNOTE: n is number in *each* group"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#potenza-in-pratica-1",
+    "href": "slides/06-inferenza.html#potenza-in-pratica-1",
+    "title": "Inferenza statistica",
+    "section": "Potenza in pratica",
+    "text": "Potenza in pratica\nSi può anche calcolare per una correlazione:\n\npwr::pwr.r.test(\n    n = 30, # numero di soggetti\n    r = 0.2 # correlazione ipotizzata\n)\n\n\n     approximate correlation power calculation (arctangh transformation) \n\n              n = 30\n              r = 0.2\n      sig.level = 0.05\n          power = 0.1871222\n    alternative = two.sided"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#potenza-in-pratica-2",
+    "href": "slides/06-inferenza.html#potenza-in-pratica-2",
+    "title": "Inferenza statistica",
+    "section": "Potenza in pratica",
+    "text": "Potenza in pratica\nPossiamo anche definire la potenza, e trovare \\(n\\):\n\npwr::pwr.r.test(\n    power = 0.8, # potenza desiderata, 80%\n    r = 0.2 # correlazione ipotizzata\n)\n\n\n     approximate correlation power calculation (arctangh transformation) \n\n              n = 193.0867\n              r = 0.2\n      sig.level = 0.05\n          power = 0.8\n    alternative = two.sided"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#potenza-in-pratica-3",
+    "href": "slides/06-inferenza.html#potenza-in-pratica-3",
+    "title": "Inferenza statistica",
+    "section": "Potenza in pratica",
+    "text": "Potenza in pratica\nE’ possibile fare questo anche in Jamovi con il pacchetto aggiuntivo pamlj:"
+  },
+  {
+    "objectID": "slides/06-inferenza.html#inferenza-un-riassunto",
+    "href": "slides/06-inferenza.html#inferenza-un-riassunto",
+    "title": "Inferenza statistica",
+    "section": "Inferenza, un riassunto",
+    "text": "Inferenza, un riassunto\n\nquando definiamo \\(H_0\\) e \\(\\alpha\\) abbiamo definito la probabilità di fare errore di primo tipo (\\(\\alpha\\)) e possiamo calcolare i valori critici ovvero quei valori della statistica test che sono associati ad \\(\\alpha\\). I valori critici dipendono:\n\ngradi di libertà (nel caso della t di Student) che ovviamente a loro volta dipendono dal numero di soggetti\ndalla distribuzione (Normale o t di Student)\nda \\(\\alpha\\)\ndalla direzione di \\(H_1\\) (bidirezionale o monodirezionale)\n\ndefinendo \\(H_1\\) in modo puntuale (con un effect size standardizzato o meno) possiamo (e dobbiamo) anche stimare la potenza. La potenza è la probabilità di rifiutare l’ipotesi nulla quando questa è effettivamente falsa.\nuna volta definite \\(H_0\\) e \\(H_1\\) e stimata la potenza possiamo raccogliere i dati, calcolare la statistica test osservata e procedere alla decisione inferenziale basata su:\n\ncalcolare il p value e confrontarlo con \\(\\alpha\\)\ncalcolare l’intervallo di confidenza e vedere se il valore nullo \\(H_0\\) è compreso nell’intervallo\ncalcolare il valore critico della statistica test e confrontarlo con quello osservato\n\n\nVi ricordo che non sapendo se \\(H_0\\) sia vera o falsa, è assunta come vera per il calcolo del p value e come falsa per il calcolo della potenza."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#criticità-inferenziali",
+    "href": "slides/06-inferenza.html#criticità-inferenziali",
+    "title": "Inferenza statistica",
+    "section": "Criticità inferenziali",
+    "text": "Criticità inferenziali\nUn primo aspetto da considerare è che basarsi solo sul p value è molto fuorviante. Abbiamo visto che il p value è la probabilità di un valore uguale o più estremo a quello osservato se è vera l’ipotesi nulla. Il p value dipende principalmente da \\(t\\), la statistica test osservata calcolata come \\(t = \\frac{b}{\\text{SE}_b}\\). Dove \\(b\\) è la statistica test grezza (e.g., differenza tra medie) e \\(\\text{SE}_b\\) il suo errore standard.\nTuttavia la stessa \\(t\\) essendo un rapporto può essere prodotta da infinite combinazioni di \\(b\\) ed \\(\\text{SE}_b\\). Di conseguenza, sapere il p value e al massimo la statistica test non è sufficiente per valutare il risultato di uno studio.\nSapere l’effect size, ad esempio il Cohen’s \\(d\\) diventa fondamentale per capire la grandezza dell’effetto stimata che ha prodotto quel p value."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#criticità-inferenziali-1",
+    "href": "slides/06-inferenza.html#criticità-inferenziali-1",
+    "title": "Inferenza statistica",
+    "section": "Criticità inferenziali",
+    "text": "Criticità inferenziali\nIn questo grafico ad esempio (i calcoli sono un pochino complessi) vedete che lo stesso p value (linee colorate) si può ottenere con combinazioni diverse di \\(d\\) (effect size) e \\(n\\) (numerosità)."
+  },
+  {
+    "objectID": "slides/06-inferenza.html#bibliografia",
+    "href": "slides/06-inferenza.html#bibliografia",
+    "title": "Inferenza statistica",
+    "section": "Bibliografia",
+    "text": "Bibliografia\n\n\n\n\nDi Marco, G., Hichy, Z., & Sciacca, F. (2020). Dataset on the relationship between psychosocial resources of volunteers and their quality of life. Data in Brief, 30, 105522. https://doi.org/10.1016/j.dib.2020.105522\n\n\nGigerenzer, G. (1993). The Superego, the Ego, and the Id in Statistical Reasoning. In A Handbook for Data Analysis in the Behaviorial Sciences. Psychology Press. https://doi.org/10.4324/9781315799582\n\n\nGigerenzer, G. (2018). Statistical rituals: The replication delusion and how we got there. Advances in Methods and Practices in Psychological Science, 1, 198–218. https://doi.org/10.1177/2515245918771329\n\n\nRichard, F. D., Bond, C. F., Jr, & Stokes-Zoota, J. J. (2003). One hundred years of social psychology quantitatively described. Review of General Psychology: Journal of Division 1, of the American Psychological Association, 7, 331–363. https://doi.org/10.1037/1089-2680.7.4.331\n\n\nSchönbeck, Y., Talma, H., Dommelen, P. van, Bakker, B., Buitendijk, S. E., HiraSing, R. A., & Buuren, S. van. (2012). The world’s tallest nation has stopped growing taller: the height of Dutch children from 1955 to 2009. Pediatric Research, 73, 371–377. https://doi.org/10.1038/pr.2012.189"
   }
 ]

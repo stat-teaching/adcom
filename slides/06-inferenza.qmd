@@ -1,8 +1,6 @@
 ---
 title: Inferenza statistica
-draft: true
 pdf: "[{{< fa file-pdf >}}](slides/06-inferenza.pdf)"
-pdf-pages: 60
 ---
 
 ```{r}
@@ -1008,11 +1006,11 @@ Quindi possiamo riassumere questo sistema in una tabella di contingenza 2x2:
 
 ## Errori inferenziali e potenza
 
-Potete trovare una visualizzazione interattiva di queste probabilità a questo link:
+Potete trovare una visualizzazione interattiva di queste probabilità a questo link. Impostate il flag solo su $H_0$, vedremo dopo $H_1$
 
 <center>
 
-[https://stat-teaching.github.io/statshiny/shiny/inference.html](https://stat-teaching.github.io/statshiny/shiny/inference.html)
+[https://stat-teaching.github.io/statshiny/shiny/ttest.html](https://stat-teaching.github.io/statshiny/shiny/ttest.html)
 
 </center>
 
@@ -1310,11 +1308,11 @@ Per capire meglio il Cohen's $d$ vi ho preparato questa visualizzazione interatt
 
 ## Effect size e potenza
 
-Torniamo alla nostra visualizzazione interattiva, nella sezione standardizzata:
+Torniamo alla nostra visualizzazione interattiva visualizzando sia $H_0$ che $H_1$ e quindi anche la potenza (ed errore di secondo tipo)
 
 <center>
 
-[https://stat-teaching.github.io/statshiny/shiny/inference.html](https://stat-teaching.github.io/statshiny/shiny/inference.html)
+[https://stat-teaching.github.io/statshiny/shiny/ttest.html](https://stat-teaching.github.io/statshiny/shiny/ttest.html)
 
 </center>
 
@@ -1329,6 +1327,7 @@ In altri termini, la potenza è una funzione matematica che dipende da:
 - il grado di separazione delle due ipotesi, riassumibile in modo standardizzato con $\delta$
 
 Ovviamente $\delta$ è a sua volta funzione di $b$ (effetto grezzo) e $\sigma$.
+
 
 ## Correlazione
 
@@ -1348,6 +1347,99 @@ In R posso usare la funzione `cor.test`:
 #| echo: true
 
 cor.test(dat$needs, dat$burnout)
+```
+
+## Potenza in pratica
+
+I calcoli possono essere fatti usando le funzioni `pnorm` o `pt` in R (come per il p value) oppure con il pacchetto `pwr`.
+
+```{r}
+#| echo: true
+
+# install.package("pwr") # se non installato
+library(pwr)
+
+# potenza per t test a due campioni indipendenti
+pwr.t.test(
+    n = 50, # numero di soggetti per gruppo
+    d = 0.5 # effect size, cohens'd
+)
+```
+
+## Potenza in pratica
+
+Si può anche calcolare per una correlazione:
+
+```{r}
+#| echo: true
+
+pwr::pwr.r.test(
+    n = 30, # numero di soggetti
+    r = 0.2 # correlazione ipotizzata
+)
+```
+
+## Potenza in pratica
+
+Possiamo anche definire la potenza, e trovare $n$:
+
+```{r}
+#| echo: true
+
+pwr::pwr.r.test(
+    power = 0.8, # potenza desiderata, 80%
+    r = 0.2 # correlazione ipotizzata
+)
+```
+
+## Potenza in pratica
+
+E' possibile fare questo anche in Jamovi con il pacchetto aggiuntivo `pamlj`:
+
+![](img/jamovi-power.png){fig-align="center"}
+
+## Inferenza, un riassunto {.smaller}
+
+- quando definiamo $H_0$ e $\alpha$ abbiamo definito la probabilità di fare errore di primo tipo ($\alpha$) e possiamo calcolare i valori critici ovvero quei valori della statistica test che sono associati ad $\alpha$. I valori critici dipendono:
+    - gradi di libertà (nel caso della t di Student) che ovviamente a loro volta dipendono dal numero di soggetti
+    - dalla distribuzione (Normale o t di Student)
+    - da $\alpha$
+    - dalla direzione di $H_1$ (bidirezionale o monodirezionale)
+- definendo $H_1$ in modo puntuale (con un effect size standardizzato o meno) possiamo (e dobbiamo) anche stimare la potenza. La potenza è la probabilità di rifiutare l'ipotesi nulla quando questa è effettivamente falsa.
+- una volta definite $H_0$ e $H_1$ e stimata la potenza possiamo raccogliere i dati, calcolare la statistica test osservata e procedere alla decisione inferenziale basata su:
+    - calcolare il p value e confrontarlo con $\alpha$
+    - calcolare l'intervallo di confidenza e vedere se il valore nullo $H_0$ è compreso nell'intervallo
+    - calcolare il valore critico della statistica test e confrontarlo con quello osservato
+
+Vi ricordo che non sapendo se $H_0$ sia vera o falsa, è assunta come vera per il calcolo del p value e come falsa per il calcolo della potenza.
+
+## Criticità inferenziali
+
+Un primo aspetto da considerare è che basarsi solo sul p value è molto fuorviante. Abbiamo visto che il p value è la probabilità di un valore uguale o più estremo a quello osservato se è vera l'ipotesi nulla. Il p value dipende principalmente da $t$, la statistica test osservata calcolata come $t = \frac{b}{\text{SE}_b}$. Dove $b$ è la statistica test grezza (e.g., differenza tra medie) e $\text{SE}_b$ il suo errore standard.
+
+Tuttavia la stessa $t$ essendo un rapporto può essere prodotta da infinite combinazioni di $b$ ed $\text{SE}_b$. Di conseguenza, sapere il p value e al massimo la statistica test non è sufficiente per valutare il risultato di uno studio.
+
+Sapere l'effect size, ad esempio il Cohen's $d$ diventa fondamentale per capire la grandezza dell'effetto stimata che ha prodotto quel p value.
+
+## Criticità inferenziali
+
+In questo grafico ad esempio (i calcoli sono un pochino complessi) vedete che lo stesso p value (linee colorate) si può ottenere con combinazioni diverse di $d$ (effect size) e $n$ (numerosità).
+
+```{r}
+p <- c(0.01, 0.04, 0.08)
+d <- seq(0.1, 1, 0.01)
+
+dd <- expand.grid(p = p, d = d)
+dd$n <- n_from_p_d(dd$p, dd$d)
+
+ggplot(dd, aes(x = d, y = n, color = factor(p))) +
+    geom_line() +
+    labs(color = "p value",
+         x = "Cohen's d",
+         y = "n (per gruppo)") +
+    scale_x_continuous(
+        sec.axis = sec_axis(~ . / sqrt(1/n + 1/n), name = "t")
+    )
 ```
 
 ## Bibliografia
