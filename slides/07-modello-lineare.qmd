@@ -15,6 +15,7 @@ library(here)
 library(latex2exp)
 library(plotly)
 devtools::load_all()
+TeX <- latex2exp::TeX
 ```
 
 ```{r}
@@ -153,7 +154,7 @@ b0l <- rnorm(4, b0, 0.5)
 
 par(mfrow = c(2, 2))
 for(i in 1:length(b1l)) {
-    lp <- (b0l[i] + b1l[i]* dat$satisfaction)
+    lp <- (b0l[i] + b1l[i]* dat$burnout)
     SS <- sum((dat$satisfaction - lp)^2)
     plot(dat$burnout, dat$satisfaction, type = "n", main = sprintf("SS = %.2f", SS))
     abline(a = b0l[i], b = b1l[i])
@@ -317,7 +318,7 @@ plot(burnout0, dat$satisfaction, pch = 19, cex = 1.5, xlab = "Burnout", col = sc
 abline(fit, lwd = 2, col = "dodgerblue")
 abline(v = 0, lty = "dotted")
 points(x = 0, y = b0, cex = 2, pch = 19, col = "firebrick")
-text(x = 0, y = b0-0.2, label = TeX(r"($\beta_0$)"), cex = 1.5)
+text(x = 0, y = b0-0.2, label = latex2exp::TeX(r"($\beta_0$)"), cex = 1.5)
 segments(x0 = c(1, 2), y0 = c(0, 0), x = c(1, 2), b0 + b1 * c(1, 2))
 segments(x0 = c(-1, -1), y0 =  b0 + b1 * c(1, 2), x = c(1, 2), b0 + b1 * c(1, 2))
 text(x = 1.5, y = 2.25, label = TeX(r"($\Delta_x = 1$)"), cex = 1.5)
@@ -621,21 +622,29 @@ Quindi, una relazione tra due variabili, si può approssimare con una retta dell
 
 ## Stesso $\beta_1$, diversa $\sigma_{\epsilon}$
 
-Vediamo dei casi dove la pendenza/slope della retta è la stessa ma la deviazione standard dei residui cambia.
+Vediamo dei casi dove la pendenza/slope della retta è la stessa ma la deviazione standard dei residui cambia. Dove è più forte la relazione secondo voi?
 
 ```{r}
+sim_lm <- function(b0, b1, sigma, n = NULL, x = NULL){
+  if(is.null(x)) x <- rnorm(n)
+  if(is.null(n)) n <- length(x)
+  z <- rnorm(n)
+  xz <- residuals(lm(z ~ x))
+  y <- b0 + b1 * x + xz * sigma
+  data.frame(y, x)
+}
 n <- 100
 x <- runif(n, 0, 10)
 
-y1 <- 2 + 0.5 * x + rnorm(n) * 0.2
-y2 <- 2 + 0.5 * x + rnorm(n) * 1
-y3 <- 2 + 0.5 * x + rnorm(n) * 2
+y1 <- sim_lm(2, 0.5, 0.2, x = x)
+y2 <- sim_lm(2, 0.5, 1, x = x)
+y3 <- sim_lm(2, 0.5, 2, x = x)
 
-fit1 <- lm(y1 ~ x)
-fit2 <- lm(y2 ~ x)
-fit3 <- lm(y3 ~ x)
+fit1 <- lm(y ~ x, data = y1)
+fit2 <- lm(y ~ x, data = y2)
+fit3 <- lm(y ~ x, data = y3)
 
-ylim <- range(c(y1, y2, y3))
+ylim <- range(c(y1$y, y2$y, y3$y))
 
 fitl <- list(fit1, fit2, fit3)
 
@@ -652,6 +661,7 @@ for(i in 1:3){
          ylab = "y",
          pch = 19)
     abline(fitl[[i]], col = "dodgerblue", lwd = 2)
+    text(2, ylim[2], labels = TeX(sprintf(r"($R^2 = %.2f$)", summary(fitl[[i]])$r.squared)))
 }
 ```
 
@@ -746,6 +756,9 @@ $$
 $$
 
 Trovare la miglior retta che minimizza la SS equivale a calcolare il coefficiente di correlazione.
+
+Chiaramente nei tre grafici con $\sigma_{\epsilon}$ diversa essendo fissa la parte sistematica $\beta_0 + \beta_1 x$ allora la varianza di $y$ è maggiore. Se $\sigma_y$ aumenta per mantenere lo stesso rapporto (abbiamo fissato $\beta_1$) necessariamente $r_{xy}$ deve scendere. Per questo se calcoliamo la correlazione, questa diminuisce (a parità di $\beta_1$) all'aumentare della dispersione attorno alla retta ($\sigma_{\epsilon}$).
+
 
 ## Riassumendo
 
@@ -1045,58 +1058,69 @@ $$
 t = \frac{\hat \beta_j}{\text{SE}_{\beta_j}}
 $$
 
-Questa statistica test sotto $H_0$ si distribuisce come una $t$ di Student con $n - p$ dove $p$ è il numero totale di coefficienti stimati dal modello. Nel caso dell'altezza, $p = 2$ ($\beta_0$ e $\beta_1$) quindi $\nu = n - p = 396 - 2 = 394$.
+Questa statistica test sotto $H_0$ si distribuisce come una $t$ di Student con $\nu = n - p$ gradi di libertà dove $p$ è il numero totale di coefficienti stimati dal modello. Nel caso dell'altezza, $p = 2$ ($\beta_0$ e $\beta_1$) quindi $\nu = n - p = 396 - 2 = 394$.
 
-# Regressione multipla
+## $R^2$ aggiustato
 
-## Regressione multipla
+Nella tabella di regressione vedete anche il valore di $R^2$ aggiustato.
 
-Un modello di regressione passa da essere semplice a multiplo quando il numero di predittori è $> 1$. Da non confondere dalla regressione multivariata dove il numero di outcomes è $> 1$.
+$$
+R^2_{\text{adj}} = 1 - \frac{(1 - R^2)(n - 1)}{n - p}
+$$
 
-La logica (minimi quadrati, inferenza, $R^2$, residui, etc.) è esattamente la stessa a prescindere dal numero di predittori MA, ci sono dei punti importanti:
+Dove $n$ è la numerosità campionaria e $p$ il numero di coefficienti stimati. Sostanzialmente questa formula riduce il valore di $R^2$ in funzione del numero dei parametri stimati. A parità di $R^2$ (non aggiustato), quello aggiustato sarà minore se sono serviti più parametri per arrivare alla stessa varianza spiegata.
 
-- la visualizzazione grafica diventa complessa se non impossibile
-- i coefficienti associati allo stesso predittore possono cambiare nel momento in cui aggiungiamo un nuovo predittore
-- l'intepretazione dei parametri diventa più complessa
-- si aprono problemi di parsimonia del modello nei termini di un trade-off tra complessità (numero di parametri)
+## Assunzioni
 
-## Regressione multipla
+Il modello lineare funziona correttamente nel momento in cui alcune assunzioni sono rispettate:
 
-```{r}
-dat <- sdag(
-  math ~ 0.5 * age,
-  peso ~ 0.8 * age
-)
+- **Linearità.** Si assume che la relazione tra $x$ e $y$ sia lineare, sia nella regressione semplice sia in quella multipla.
+- **Indipendenza.** I residui devono essere indipendenti tra loro. In sostanza, non devono esserci strutture sistematiche o fattori non misurati che li rendano dipendenti.
+- **Normalità.** Si assume che i residui siano distribuiti normalmente. Non è necessario che $x$ e $y$ siano normali, purché lo siano i residui.
+- **Omoscedasticità.** La varianza dei residui deve essere costante. In pratica, la dispersione dei residui deve rimanere simile per tutti i valori predetti $\mu$ e, idealmente, per tutti i valori dei predittori $x$.
 
-# 1. Modello lineare
-model <- lm(math ~ peso + age, data = dat)
+## Linearità
 
-# 2. Griglia per il piano (X=peso, Z=age, Y=math)
-axis_x <- seq(min(dat$peso, na.rm=T), max(dat$peso, na.rm=T), length.out = 30)
-axis_z <- seq(min(dat$age, na.rm=T), max(dat$age, na.rm=T), length.out = 30)
+Questa assunzione riguarda la **componente sistematica** del modello. In regressione lineare, “lineare” significa **lineare nei parametri**.
 
-surface_data <- expand.grid(peso = axis_x, age = axis_z)
-surface_data$math <- predict(model, newdata = surface_data)
+Ad esempio, questi sono modelli lineari:
 
-# Trasformiamo in matrice (Z per plotly è l'altezza, quindi qui mettiamo 'math')
-math_matrix <- matrix(surface_data$math, nrow = 30, ncol = 30)
+$$
+y = \beta_0 + \beta_1 x
+$$
+$$
+y = \beta_0 + \beta_1 x + \beta_2 x^2
+$$
 
-# 3. Grafico 3D ottimizzato
-plot_ly(dat, x = ~peso, y = ~age, z = ~math) %>%
-  add_markers(marker = list(size = 4, opacity = 0.6, 
-                            color = ~age, colorscale = 'Viridis'), 
-              name = "Studenti") %>%
-  add_surface(x = ~axis_x, 
-              y = ~axis_z, 
-              z = ~math_matrix, 
-              showscale = FALSE, 
-              opacity = 0.4, 
-              name = "Effetto Combinato") %>%
-  layout(scene = list(
-    xaxis = list(title = 'Peso (Predittore)'),
-    yaxis = list(title = 'Età (Confounder)'),
-    zaxis = list(title = 'Math (Outcome)')
-  ))
-```
+è un modello lineare. Pur non rappresentando una retta, resta lineare perché i coefficienti $\beta_0$, $\beta_1$ e $\beta_2$ compaiono linearmente.
+
+$$
+y = \beta_0 + x^{\beta_1}
+$$
+
+non è un modello lineare, perché il parametro $\beta_1$ compare come esponente e quindi non entra in forma lineare.
+
+## Indipendenza
+
+Questa assunzione è *by-design* nel senso che dipende dal tipo di dato. In termini pratici significa che le righe del nostro dataset devono essere indipendenti. Indipendenza in questo caso significa, sostanzialmente, che ogni riga appartiene ad un soggetto diverso. Ad esempio:
+
+- 100 soggetti dove misuro $p$ variabili (questionari, socio-anagrafiche, etc.) -> dataset con righe indipendenti
+- 100 soggetti misurati prima/dopo un trattamento. Il valore pre e post sono correlati (dipendenti) perchè sono appartenenti allo stesso soggetto
+
+In questo secondo caso è necessario usare dei modelli che tengano conto della dipendenza, come quelli multilivello. In tutti gli altri casi, il modello lineare che stiamo usando è adeguato.
+
+## Normalità dei residui
+
+La normalità dei residui, come dice il nome significa che i residui (e non la variabile dipendente) devono essere distribuiti normalmente. In linea teorica, i residui devono avere media $\mu = 0$ e $\sigma = \sigma_{\epsilon}$ (quella stimata dal modello). Nella pratica devono avere una forma normale e non contenere pattern e/o deviazioni dalla media $\mu = 0$.
+
+Questa assunzione si vede principalmente a livello grafico e guardando statistiche descrittive dei residui. Alcuni propongono di usare dei test per valutare la normalità (tipo Shapiro-Wilk). Tuttavia il metodo migliore è quello grafico.
+
+## Omoscedasticità dei residui
+
+Oltre alla normalità, il modello lineare richiede che la varianza dei residui $\sigma_{\epsilon}$ sia costante per ogni valore di $x$. In termini pratici, la dispersione attorno alla retta di regressione stimata deve essere costante.
+
+Ovviamente questo è legato al fatto che stimando un solo parametro di varianza dei residui, questo per essere informativo non deve variare in funzione di $x$, altrimenti $\sigma_{\epsilon}$ diventa meno informativo.
+
+Anche questo criterio è facilmente verificabile a livello grafico e quindi consiglio di evitare i test statistici per questo tipo di cose.
 
 ## Bibliografia

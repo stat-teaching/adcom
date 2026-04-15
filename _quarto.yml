@@ -15,6 +15,7 @@ project:
     - slides/files/*.pdf
     - slides/sharing
     - l/*
+    - materials/*
 
 website:
   favicon: resources/hex.svg
