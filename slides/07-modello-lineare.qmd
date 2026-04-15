@@ -1,6 +1,7 @@
 ---
 title: Modello di Regressione Lineare
-draft: true
+pdf: "[{{< fa file-pdf >}}](slides/07-modello-lineare.pdf)"
+pdf-pages: 36
 ---
 
 ```{r}
@@ -43,16 +44,6 @@ dat <- readRDS(here("data/adcom.rds"))
 ```
 
 {{< include _common.qmd >}}
-
-## Materiale (da studiare!)
-
-Essendo l'argomento complesso e importante, solo in questo caso ci affidiamo anche a materiale più canonico. In particolare, le slide sono basate anche su questo capitolo di libro. Le cose da studiare sono quelle che facciamo a lezione MA nel libro le stesse sono spiegate in modo più discorsivo.
-
-<center>
-
-[LEARNING STATISTICS WITH JAMOVI - Capitolo 12](https://davidfoxcroft.github.io/lsj-book/lsj-free.pdf)
-
-</center>
 
 ## Dataset
 
