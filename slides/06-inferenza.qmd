@@ -1328,7 +1328,6 @@ In altri termini, la potenza è una funzione matematica che dipende da:
 
 Ovviamente $\delta$ è a sua volta funzione di $b$ (effetto grezzo) e $\sigma$.
 
-
 ## Correlazione
 
 La correlazione è già di per se una misura di effect size standardizzato. E' possibile costruire un test d'ipotesi con $H_0: \rho = \rho_0$ (solitamente con $\rho_0 = 0$). Posso usare la statistica test:
