@@ -1,7 +1,7 @@
 ---
 title: Modello di Regressione Lineare
 pdf: "[{{< fa file-pdf >}}](slides/07-modello-lineare.pdf)"
-pdf-pages: 36
+pdf-pages: 47
 ---
 
 ```{r}
