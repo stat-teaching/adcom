@@ -66,7 +66,7 @@ head(dat)
 
 ## Relazione lineare
 
-Quando abbiamo parlato di *correlazione*, abbiamo chiarito che due variabili sono correlate se la loro relazione è di tipo *lineare*. Lineare significa che la relazione può essere descritta da una retta. **Ma come disegnamo questa retta?**
+Quando abbiamo parlato di *correlazione*, abbiamo chiarito che due variabili sono correlate se la loro relazione è di tipo *lineare*. Lineare significa che la relazione può essere descritta da una retta. **Ma come disegniamo questa retta?**
 
 ```{r}
 plot(dat$burnout, dat$satisfaction, pch = 19, cex = 1.5)
