@@ -15,6 +15,7 @@ library(ggdag)
 library(here)
 library(latex2exp)
 library(plotly)
+library(scatterplot3d)
 devtools::load_all()
 TeX <- latex2exp::TeX
 ```
@@ -1106,12 +1107,432 @@ La normalità dei residui, come dice il nome significa che i residui (e non la v
 
 Questa assunzione si vede principalmente a livello grafico e guardando statistiche descrittive dei residui. Alcuni propongono di usare dei test per valutare la normalità (tipo Shapiro-Wilk). Tuttavia il metodo migliore è quello grafico.
 
+## Normalità dei residui
+
+La cosa più semplice da fare è rappresentare graficamente i residui con un istogramma e/o un QQ-plot.
+
+Riprendiamo un modello lineare semplice:
+
+```{r}
+fit <- lm(satisfaction ~ burnout, data = dat)
+summary(fit)
+```
+
+## Normalità dei residui
+
+Come vedete su R c'è una sezione specifica riguardo i residui che vi fornisce alcune statistiche descrittive in particolare minimo, primo quartile, mediana, terzo quartile e massimo. Già qui possiamo farci un'idea del pattern:
+
+- i residui devono essere simmetrici attorno a zero, vediamo che la mediana è molto vicina a zero
+- se i residui sono normali, 1 e 3 quartile dovrebbero essere lo stesso valore (o molto simile) semplicemente con segno diverso
+- lo stesso vale anche per massimo e minimo ma questi sono estremamente sensibili a valori anomali
+
+## Normalità dei residui
+
+Vediamo con un'istogramma. Le linee rosse sono i quantili che sono riportati nel summary del modello:
+
+```{r}
+hist(residuals(fit))
+abline(v = quantile(residuals(fit), c(0.25, 0.5, 0.75)), lwd = 2, col = "firebrick")
+```
+
+## Normalità dei residui
+
+Un modo però ancora più efficace è quello del QQ plot perchè ci fa vedere direttamente delle deviazioni dalla normalità:
+
+```{r}
+qqnorm(residuals(fit), ylab = "Residui")
+qqline(residuals(fit))
+```
+
+## Normalità dei residui
+
+In questo caso sulle code abbiamo della deviazione dalla normalità ma in generale possiamo dire che il modello è abbastanza adeguato. Deviazioni importanti dalla normalità sicuramente devono essere evidenziate. Solitamente la principale motivazione di non normalità dei residui è legata al fatto che il modello lineare non è il modello adeguato per quella tipologia di dato. In particolare, la variabile outcome può avere bisogno di un'altro modello.
+
 ## Omoscedasticità dei residui
 
-Oltre alla normalità, il modello lineare richiede che la varianza dei residui $\sigma_{\epsilon}$ sia costante per ogni valore di $x$. In termini pratici, la dispersione attorno alla retta di regressione stimata deve essere costante.
+Oltre alla normalità, il modello lineare richiede che la varianza dei residui $\sigma_{\epsilon}$ sia costante per ogni valore di $\mu$. In termini pratici, la dispersione attorno alla retta di regressione stimata deve essere costante.
 
 Ovviamente questo è legato al fatto che stimando un solo parametro di varianza dei residui, questo per essere informativo non deve variare in funzione di $x$, altrimenti $\sigma_{\epsilon}$ diventa meno informativo.
 
 Anche questo criterio è facilmente verificabile a livello grafico e quindi consiglio di evitare i test statistici per questo tipo di cose.
+
+## Omoscedasticità dei residui
+
+L'Omoscedasticità dei residui si intende condizionata rispetto al valore stimato dal modello. In altri termini, per ogni valore stimato ci si aspetta che la varianza dei residui (attorno al valore stimato) sia normale (assunzione precedente) con varianza costante.
+
+```{r}
+plot(fit, which = 1)
+```
+
+## Omoscedasticità dei residui
+
+In questo grafico le cose da osservare sono:
+
+- se la linea rossa (una sorta di stima non lineare della relazione) è orizzontale. In questo caso significa che non c'è un pattern nella relazione. Il caso ideale è la linea rossa il più simile possibile a quella tratteggiata orizzontale.
+- se la dispersione dei punti attorno alla linea rossa (idealmente quella tratteggiata) è costante. Ovvero non ci sono incrementi o decrementi di variabilità.
+
+Nel grafico precedente la dispersione sembra abbastanza costante a parte agli estremi dove aumenta a sinistra e si riduce a destra. Attenzione che con poche osservazioni è difficile vedere chiaramente eventuali problemi.
+
+## Un caso ideale (positivo e negativo)
+
+Vi mostro dei dati simulati per vedere dei casi prototipici di deviazioni rispetto a questi assunti. Questi sono dei dati simulati seguendo esattamente gli assunti. Relazione lineare tra `x` e `y`.
+
+```{r}
+n <- 1e4
+b0 <- 30
+b1 <- 0.3
+x <- runif(n, 0, 100)
+y <- b0 + b1 * x + rnorm(n, 0, 10)
+plot(x, y, main = "n = 10000")
+```
+
+## Un caso ideale (positivo e negativo)
+
+Fittiamo il modello lineare e vediamo i residui:
+
+```{r}
+fit <- lm(y ~ x, data = dat)
+summary(fit)
+```
+
+## Un caso ideale (positivo e negativo)
+
+A prescindere da coefficienti ed intepretazione, possiamo vedere che i residui sono chiaramente normali guardando solo i quantili riportati. Vediamo comunque un grafico:
+
+```{r}
+par(mfrow = c(1, 2))
+hist(residuals(fit))
+qqnorm(residuals(fit))
+qqline(residuals(fit))
+```
+
+## Un caso ideale (positivo e negativo)
+
+Vediamo adesso i valori predetti vs i residui per vedere pattern nella relazione e la dispersione attorno ai valori predetti:
+
+```{r}
+plot(fit, which = 1, labels.id = FALSE)
+```
+
+## Un caso ideale (positivo e negativo)
+
+Vediamo adesso un caso dove gli assunti sono chiaramente violati:
+
+```{r}
+n <- 1e4
+b0 <- 30
+b1 <- 0.3
+x <- runif(n, 0, 100)
+y <- b0 + b1 * x + 0.01 * x^2 + rnorm(n, 0, log(5) + log(1.2) * x)
+plot(x, y)
+```
+
+## Un caso ideale (positivo e negativo)
+
+Anche qui facciamo il modello lineare:
+
+```{r}
+fit <- lm(y ~ x, data = dat)
+summary(fit)
+```
+
+## Un caso ideale (positivo e negativo)
+
+A parte la forma chiaramente non lineare e la dispersione non costante, i quantili dei residui non sono estremamente problematici, vediamo il grafico. E' presente un'asimmetria positiva essendoci dei valori estremi grandi che non sono bilanciati attorno allo zero.
+
+```{r}
+par(mfrow = c(1, 2))
+hist(residuals(fit))
+qqnorm(residuals(fit))
+qqline(residuals(fit))
+```
+
+## Un caso ideale (positivo e negativo)
+
+Vediamo ora i valori predetti rispetto ai residui:
+
+```{r}
+plot(fit, which = 1, labels.id = FALSE)
+```
+
+## Un caso ideale (positivo e negativo)
+
+Nel grafico vediamo chiaramente:
+
+- un pattern che rimane (linea rossa non orizzontale) quindi il valore atteso (media) dei residui calcolata per ogni valore predetto dal modello non è sempre zero
+- la dispersione dei punti attorno ai valori predetti dal modello non è costante ed anzi ha un pattern crescente in questo caso
+
+## Qualche precisazione
+
+Un'aspetto fondamentale rispetto alla verifica delle assunzioni, in particolare normalità e omoschedasticità riguarda il fatto che le assunzioni devono essere verificate sui residui e non sull'outcome $y$ "grezzo".
+
+In altri termini, la variabile $y$ potrebbe sembrare non-normale ma una volta ripulita dalla componente sistematica, quindi calcolando i residui, questi risultano normali e con varianza costante.
+
+# Regressione Multipla
+
+## Regressione Multipla
+
+Tutto quello che abbiamo visto fino ad ora era riferito al modello lineare semplice ovvero un predittore e un outcome. 
+
+Abbiamo visto che nel caso di un predittore categoriale a 2 livelli questo si riduca ad un t-test mentre nel caso di un predittore numerico questo diventi sostanzialmente una correlazione.
+
+Il vero vantaggio di un modello lineare però è quello di includere più di un predittore (categoriale o numerico) all'interno dello stesso modello.
+
+## Regressione Multipla
+
+La formula rimane la stessa, semplicemente si allunga:
+
+$$
+y_i = \beta_0 + \beta_1 x_{1_i} + \beta_2 x_{2_i} + \dots \beta_p x_{p_i} + \epsilon_i
+$$
+
+Quindi possiamo aggiungere in modo additivo predittori $x_p$. Come vedete la struttura è sempre la stessa, abbiamo una componente sistematica che rispetto a prima contiene più componenti $\beta_0 + \beta_1 x_{1_i} + \dots$ e la componente casuale (residua) $\epsilon_i$ che rappresenta sempre la parte non spiegata del modello.
+
+## Regressione Multipla
+
+Tutto quello che abbiamo visto nel caso semplice, vale anche nel caso multiplo. La difficoltà però riguarda principalmente la visualizzazione. La relazione tra $y$ e $x$ è facilmente rappresentabile in un piano (2 dimensioni). Quella tra $y$ e $x_1$ e $x_2$ richiede un cubo (3 dimensioni). Dopo le 3 dimensioni non è più possibile rappresentare graficamente i concetti.
+
+```{r}
+dat <- sdag(
+  y ~ 0.5 * x1 + 0.1 * x2,
+  n = 100,
+  empirical = TRUE
+)
+
+par(mfrow = c(1, 2))
+plot(y ~ x1, data = dat, pch = 19, cex = 1.5)
+plot(y ~ x2, data = dat, pch = 19, cex = 1.5)
+```
+
+## Regressione Multipla
+
+Quelle del grafico precendente sono due relazioni bivariate (due modelli lineari semplici). Mettiamo però tutto assieme. Ora il modello non stima la retta ma il piano che minimizza le distanze.
+
+```{r}
+fit <- lm(y ~ x1 + x2, data = dat)
+
+s3d <- scatterplot3d(x = dat$x1, y = dat$x2, z = dat$y, 
+                     pch = 16, 
+                     type = "p",
+                     cex.symbols = 1.5,
+                     xlab = "Predittore x1",
+                     ylab = "Predittore x2",
+                     zlab = "Outcome y",
+                     angle = 45) # Puoi cambiare l'angolo per ruotare la visuale
+
+s3d$plane3d(fit, lty.box = "solid", col = "blue")
+```
+
+## Regressione Multipla
+
+La logica è la stessa, le distanze (residui) ora sono su 3 dimensioni e non più su due:
+
+```{r}
+s3d <- scatterplot3d(x = dat$x1, y = dat$x2, z = dat$y, 
+                     pch = 16, 
+                     type = "p",
+                     cex.symbols = 1.5,
+                     xlab = "Predittore x1",
+                     ylab = "Predittore x2",
+                     zlab = "Outcome y",
+                     angle = 45) # Puoi cambiare l'angolo per ruotare la visuale
+
+# 4. Aggiungiamo il piano
+s3d$plane3d(fit, col = "black", lty = "dotted")
+
+coords <- s3d$xyz.convert(x = dat$x1, y = dat$x2, z = dat$y)
+coords_pred <- s3d$xyz.convert(dat$x1, dat$x2, predict(fit))
+
+segments(coords$x, coords$y, coords_pred$x, coords_pred$y, 
+         col = "red", lwd = 1.5)
+```
+
+## Regressione Multipla
+
+Vediamo come cambia l'intepretazione dei parametri. Proviamo a stimare questo modello `attachment ~ period` dove `attachment` indica il senso di appartenenza e legame affettivo con l’organizzazione e `period` indica il numero di anni di "anzianità" di volontariato.
+
+```{r}
+dat <- readRDS(here("data/dimarco2020.rds"))
+dat$attachment0 <- scale(dat$attachment)
+dat$period0 <- scale(dat$attachment)
+```
+
+```{r, lines = "^Coefficients|^Signif"}
+#| echo: true
+
+fit <- lm(attachment ~ period, data = dat)
+summary(fit)
+```
+
+Vediamo che all'aumentare di un anno di "anzianità" aumenta l'attaccamento di 0.01 con un p value significativo.
+
+## Regressione Multipla
+
+Quindi possiamo concludere che all'aumentare dell'esperienza di volontariato, maggiore sarà il mio attaccamento all'associazione che frequento attualmente. Tuttavia mi viene il dubbio che anche l'età anagrafica possa essere rilevante. Magari persone con età maggiore hanno sistematicamente meno o più attaccamento. Includo anche l'età nel modello:
+
+```{r, lines = "^Coefficients|^Signif"}
+#| echo: true
+
+fit2 <- lm(attachment ~ period + age, data = dat)
+summary(fit2)
+```
+
+## Regressione Multipla
+
+Vediamo che il coefficiente di `period` è drasticamente diminuito e il p value non è più inferiore ad $\alpha$. Inoltre, `age` è associata ad un coefficiente di 0.01 con un p-value significativo. Cosa è successo?
+
+Intanto, i coefficienti si intepretano sempre allo stesso modo del caso semplice, ma con una piccola aggiunta:
+
+- `period` (0.002) è l'incremento di `attachment` quando `period` aumenta di 1, controllando per `age`
+- `age` (0.012) è l'incremento di `attachment` quando `age` aumenta di 1, controllando per `period`
+
+L'aggiunta riguarda quindi il *controllando per*. Cosa stiamo facendo quindi?
+
+## Regressione Multipla
+
+Ragionando in ottica bivariata (con regressione semplice o correlazione) noi vediamo la relazione tra `attachment ~ period` e `attachment ~ age`. 
+
+Quello che però vogliamo realmente vedere, in ottica multivariata è il **contributo unico** di `period` e di `age` nello spiegare la varianza di `attachment`.
+
+In termini pratici questo significa prendere soggetti con la stessa `age` ma che variano in `period` (e viceversa) e vedere l'effetto su `attachment`.
+
+Se tenendo fisso `period`, `age` è comunque legato ad `attachment` significa che `age` sta spiegando qualcosa che `period` non spiegava.
+
+## Regressione Multipla
+
+Graficamente questo è quello che stiamo facendo, individuare la varianza spiegata unicamente da quella variabile.
+
+![](img/venn-multiple-lm.svg){fig-align="center"}
+
+## Regressione Multipla
+
+Quello che emerge nel nostro caso è simile al *third-variable problem*. `age` è legato sia a `attachment` che a `period` mentre `period` e `attachment` sono poco o nulla legati. Se ometto `age` allora `period` e `attachment` sembrano apparentemente legati.
+
+```{r}
+mdag(
+    y ~ z,
+    x ~ z,
+    labels = list(
+        y = "Attachment",
+        x = "Period",
+        z = "Age"
+    ),
+    outcome = "y"
+)
+```
+
+## Regressione Multipla
+
+Quindi, inserire `age` come controllo ci permette di capire che non è tanto l'anzianità di volontariato ad aumentare l'attaccamento quanto l'età.
+
+Due persone con la stessa età ma con anzianità diversa tendono tendono ad avere punteggi simili di `attachment`. Due persone con età diversa ma stessa anzianità, tendono ad avere invece maggiore `attachment` all'aumentare dell'età.
+
+## Regressione Multipla
+
+Vediamolo in 3D (di solito non si fa ma in questo caso utile).
+
+```{r}
+#| fig-height: 8
+s3d <- scatterplot3d(x = dat$period, y = dat$age, z = dat$attachment, 
+                     pch = 16, 
+                     type = "p",
+                     cex.symbols = 1.5,
+                     xlab = "Period",
+                     ylab = "Age",
+                     zlab = "Attachment",
+                     angle = 45) # Puoi cambiare l'angolo per ruotare la visuale
+
+s3d$plane3d(fit2, col = "black", lty = "dotted")
+```
+
+## Regressione Multipla
+
+![](img/3d-plot-dimarco.svg){fig-align="center"}
+
+## Regressione Multipla
+
+Per darvi un'idea, ecco dei dati simulati dove l'effetto di `period` è zero vs diverso da zero.
+
+```{r}
+dat_ex <- sdag(
+    attachment ~ 0.5 * age,
+    period ~ 0.8 * age,
+    attachment ~ 0 * period,
+    empirical = TRUE
+)
+
+dat_ex2 <- sdag(
+    attachment ~ 0.5 * age,
+    period ~ 0.8 * age,
+    attachment ~ 0.3 * period,
+    empirical = TRUE
+)
+
+
+par(mfrow = c(1, 2))
+
+fit_ex <- lm(attachment ~ period + age, data = dat_ex)
+
+# 2. Crea il grafico 3D di base con i punti
+s3d <- scatterplot3d(dat_ex$period, dat_ex$age, dat_ex$attachment, 
+                     pch = 19, color = "lightgray",
+                     xlab = "Period", ylab = "Age", zlab = "Attachment",
+                     main = "Effetto period = 0")
+
+# 3. Aggiungi il piano del modello RIDOTTO (solo period)
+# Lo coloriamo in Rosso per distinguerlo
+s3d$plane3d(fit_ex, col = "red", lty.box = "solid", lwd = 2)
+
+fit_ex2 <- lm(attachment ~ period + age, data = dat_ex2)
+
+# 2. Crea il grafico 3D di base con i punti
+s3d <- scatterplot3d(dat_ex2$period, dat_ex2$age, dat_ex2$attachment, 
+                     pch = 19, color = "lightgray",
+                     xlab = "Period", ylab = "Age", zlab = "Attachment",
+                     main = "Effetto period > 0")
+
+# 3. Aggiungi il piano del modello RIDOTTO (solo period)
+# Lo coloriamo in Rosso per distinguerlo
+s3d$plane3d(fit_ex2, col = "red", lty.box = "solid", lwd = 2)
+```
+
+## Regressione Multipla
+
+Quello che si fa solitamente è rappresentare le singole relazioni stimate dal modello (quindi aggiustate). Le bande colorate sono gli intervalli di confidenza. Quello che viene fatto è vedere la retta stimata per un certo predittore, fissando gli altri sul valore medio.
+
+```{r}
+library(effects)
+plot(allEffects(fit2))
+```
+
+## Regressione Multipla
+
+Un'ultima intepretazione utile di cosa succede nel modello di regressione multiplo riguarda la residualizzazione. Noi vogliamo vedere la relazione `attachment ~ period` ripulendo per `age`. Quindi togliere l'effetto di `age` sia da `attachment` che da `period`.
+
+Possiamo quindi fare due modelli di questo tipo:
+
+```{r}
+#| echo: true
+att_age <- lm(attachment ~ age, data = dat)
+period_age <- lm(period ~ age, data = dat)
+```
+
+I residui di questi due modelli saranno i valori di `attachment` e `period` togliendo l'effetto di `age`.
+
+## Regressione Multipla
+
+Possiamo ora fare un terzo modello dove usiamo `period` (pulito da `age`) che predice `attachment` (pulito da `age`):
+
+```{r, lines = "^Coefficients|^r_period"}
+#| echo: true
+
+options(scipen = 999)
+r_attachment <- residuals(att_age)
+r_period <- residuals(period_age)
+fit_res <- lm(r_attachment ~ r_period)
+summary(fit_res)
+```
+
+Il coefficiente è lo stesso di quando facciamo il modello completo `attachment ~ period + age`. Internamente il modello vede la relazione tra predittore e outcome, residualizzata per gli altri predittori.
 
 ## Bibliografia

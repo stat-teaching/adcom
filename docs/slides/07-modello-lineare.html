@@ -237,7 +237,7 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
     </div>
 </div>
 
-  <p class="date"><em>Ultimo aggiornamento: 04-16-2026</em></p>
+  <p class="date"><em>Ultimo aggiornamento: 04-22-2026</em></p>
 </section>
 
 
@@ -1374,11 +1374,320 @@ y = \beta_0 + x^{\beta_1}
 <p>La normalità dei residui, come dice il nome significa che i residui (e non la variabile dipendente) devono essere distribuiti normalmente. In linea teorica, i residui devono avere media <span class="math inline">\(\mu = 0\)</span> e <span class="math inline">\(\sigma = \sigma_{\epsilon}\)</span> (quella stimata dal modello). Nella pratica devono avere una forma normale e non contenere pattern e/o deviazioni dalla media <span class="math inline">\(\mu = 0\)</span>.</p>
 <p>Questa assunzione si vede principalmente a livello grafico e guardando statistiche descrittive dei residui. Alcuni propongono di usare dei test per valutare la normalità (tipo Shapiro-Wilk). Tuttavia il metodo migliore è quello grafico.</p>
 </section>
+<section id="normalità-dei-residui-1" class="slide level2">
+<h2>Normalità dei residui</h2>
+<p>La cosa più semplice da fare è rappresentare graficamente i residui con un istogramma e/o un QQ-plot.</p>
+<p>Riprendiamo un modello lineare semplice:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = satisfaction ~ burnout, data = dat)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.16992 -0.22280  0.02072  0.27720  1.03872 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  4.83504    0.15688  30.821  &lt; 2e-16 ***
+burnout     -0.50720    0.07842  -6.468 4.43e-09 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.4439 on 94 degrees of freedom
+Multiple R-squared:  0.308, Adjusted R-squared:  0.3006 
+F-statistic: 41.83 on 1 and 94 DF,  p-value: 4.43e-09
+</code></pre>
+</div>
+</div>
+</section>
+<section id="normalità-dei-residui-2" class="slide level2">
+<h2>Normalità dei residui</h2>
+<p>Come vedete su R c’è una sezione specifica riguardo i residui che vi fornisce alcune statistiche descrittive in particolare minimo, primo quartile, mediana, terzo quartile e massimo. Già qui possiamo farci un’idea del pattern:</p>
+<ul>
+<li>i residui devono essere simmetrici attorno a zero, vediamo che la mediana è molto vicina a zero</li>
+<li>se i residui sono normali, 1 e 3 quartile dovrebbero essere lo stesso valore (o molto simile) semplicemente con segno diverso</li>
+<li>lo stesso vale anche per massimo e minimo ma questi sono estremamente sensibili a valori anomali</li>
+</ul>
+</section>
+<section id="normalità-dei-residui-3" class="slide level2">
+<h2>Normalità dei residui</h2>
+<p>Vediamo con un’istogramma. Le linee rosse sono i quantili che sono riportati nel summary del modello:</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-49-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="normalità-dei-residui-4" class="slide level2">
+<h2>Normalità dei residui</h2>
+<p>Un modo però ancora più efficace è quello del QQ plot perchè ci fa vedere direttamente delle deviazioni dalla normalità:</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-50-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="normalità-dei-residui-5" class="slide level2">
+<h2>Normalità dei residui</h2>
+<p>In questo caso sulle code abbiamo della deviazione dalla normalità ma in generale possiamo dire che il modello è abbastanza adeguato. Deviazioni importanti dalla normalità sicuramente devono essere evidenziate. Solitamente la principale motivazione di non normalità dei residui è legata al fatto che il modello lineare non è il modello adeguato per quella tipologia di dato. In particolare, la variabile outcome può avere bisogno di un’altro modello.</p>
+</section>
 <section id="omoscedasticità-dei-residui" class="slide level2">
 <h2>Omoscedasticità dei residui</h2>
-<p>Oltre alla normalità, il modello lineare richiede che la varianza dei residui <span class="math inline">\(\sigma_{\epsilon}\)</span> sia costante per ogni valore di <span class="math inline">\(x\)</span>. In termini pratici, la dispersione attorno alla retta di regressione stimata deve essere costante.</p>
+<p>Oltre alla normalità, il modello lineare richiede che la varianza dei residui <span class="math inline">\(\sigma_{\epsilon}\)</span> sia costante per ogni valore di <span class="math inline">\(\mu\)</span>. In termini pratici, la dispersione attorno alla retta di regressione stimata deve essere costante.</p>
 <p>Ovviamente questo è legato al fatto che stimando un solo parametro di varianza dei residui, questo per essere informativo non deve variare in funzione di <span class="math inline">\(x\)</span>, altrimenti <span class="math inline">\(\sigma_{\epsilon}\)</span> diventa meno informativo.</p>
 <p>Anche questo criterio è facilmente verificabile a livello grafico e quindi consiglio di evitare i test statistici per questo tipo di cose.</p>
+</section>
+<section id="omoscedasticità-dei-residui-1" class="slide level2">
+<h2>Omoscedasticità dei residui</h2>
+<p>L’Omoscedasticità dei residui si intende condizionata rispetto al valore stimato dal modello. In altri termini, per ogni valore stimato ci si aspetta che la varianza dei residui (attorno al valore stimato) sia normale (assunzione precedente) con varianza costante.</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-51-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="omoscedasticità-dei-residui-2" class="slide level2">
+<h2>Omoscedasticità dei residui</h2>
+<p>In questo grafico le cose da osservare sono:</p>
+<ul>
+<li>se la linea rossa (una sorta di stima non lineare della relazione) è orizzontale. In questo caso significa che non c’è un pattern nella relazione. Il caso ideale è la linea rossa il più simile possibile a quella tratteggiata orizzontale.</li>
+<li>se la dispersione dei punti attorno alla linea rossa (idealmente quella tratteggiata) è costante. Ovvero non ci sono incrementi o decrementi di variabilità.</li>
+</ul>
+<p>Nel grafico precedente la dispersione sembra abbastanza costante a parte agli estremi dove aumenta a sinistra e si riduce a destra. Attenzione che con poche osservazioni è difficile vedere chiaramente eventuali problemi.</p>
+</section>
+<section id="un-caso-ideale-positivo-e-negativo" class="slide level2">
+<h2>Un caso ideale (positivo e negativo)</h2>
+<p>Vi mostro dei dati simulati per vedere dei casi prototipici di deviazioni rispetto a questi assunti. Questi sono dei dati simulati seguendo esattamente gli assunti. Relazione lineare tra <code>x</code> e <code>y</code>.</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-52-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="un-caso-ideale-positivo-e-negativo-1" class="slide level2">
+<h2>Un caso ideale (positivo e negativo)</h2>
+<p>Fittiamo il modello lineare e vediamo i residui:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y ~ x, data = dat)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-35.485  -6.685   0.095   6.589  37.085 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 29.766543   0.200295   148.6   &lt;2e-16 ***
+x            0.304761   0.003443    88.5   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 9.958 on 9998 degrees of freedom
+Multiple R-squared:  0.4393,    Adjusted R-squared:  0.4392 
+F-statistic:  7833 on 1 and 9998 DF,  p-value: &lt; 2.2e-16
+</code></pre>
+</div>
+</div>
+</section>
+<section id="un-caso-ideale-positivo-e-negativo-2" class="slide level2">
+<h2>Un caso ideale (positivo e negativo)</h2>
+<p>A prescindere da coefficienti ed intepretazione, possiamo vedere che i residui sono chiaramente normali guardando solo i quantili riportati. Vediamo comunque un grafico:</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-54-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="un-caso-ideale-positivo-e-negativo-3" class="slide level2">
+<h2>Un caso ideale (positivo e negativo)</h2>
+<p>Vediamo adesso i valori predetti vs i residui per vedere pattern nella relazione e la dispersione attorno ai valori predetti:</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-55-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="un-caso-ideale-positivo-e-negativo-4" class="slide level2">
+<h2>Un caso ideale (positivo e negativo)</h2>
+<p>Vediamo adesso un caso dove gli assunti sono chiaramente violati:</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-56-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="un-caso-ideale-positivo-e-negativo-5" class="slide level2">
+<h2>Un caso ideale (positivo e negativo)</h2>
+<p>Anche qui facciamo il modello lineare:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y ~ x, data = dat)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-51.305  -9.219  -0.065   8.825  74.407 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 13.297876   0.281222   47.29   &lt;2e-16 ***
+x            1.300242   0.004866  267.22   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 14.01 on 9998 degrees of freedom
+Multiple R-squared:  0.8772,    Adjusted R-squared:  0.8772 
+F-statistic: 7.141e+04 on 1 and 9998 DF,  p-value: &lt; 2.2e-16
+</code></pre>
+</div>
+</div>
+</section>
+<section id="un-caso-ideale-positivo-e-negativo-6" class="slide level2">
+<h2>Un caso ideale (positivo e negativo)</h2>
+<p>A parte la forma chiaramente non lineare e la dispersione non costante, i quantili dei residui non sono estremamente problematici, vediamo il grafico. E’ presente un’asimmetria positiva essendoci dei valori estremi grandi che non sono bilanciati attorno allo zero.</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-58-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="un-caso-ideale-positivo-e-negativo-7" class="slide level2">
+<h2>Un caso ideale (positivo e negativo)</h2>
+<p>Vediamo ora i valori predetti rispetto ai residui:</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-59-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="un-caso-ideale-positivo-e-negativo-8" class="slide level2">
+<h2>Un caso ideale (positivo e negativo)</h2>
+<p>Nel grafico vediamo chiaramente:</p>
+<ul>
+<li>un pattern che rimane (linea rossa non orizzontale) quindi il valore atteso (media) dei residui calcolata per ogni valore predetto dal modello non è sempre zero</li>
+<li>la dispersione dei punti attorno ai valori predetti dal modello non è costante ed anzi ha un pattern crescente in questo caso</li>
+</ul>
+</section>
+<section id="qualche-precisazione" class="slide level2">
+<h2>Qualche precisazione</h2>
+<p>Un’aspetto fondamentale rispetto alla verifica delle assunzioni, in particolare normalità e omoschedasticità riguarda il fatto che le assunzioni devono essere verificate sui residui e non sull’outcome <span class="math inline">\(y\)</span> “grezzo”.</p>
+<p>In altri termini, la variabile <span class="math inline">\(y\)</span> potrebbe sembrare non-normale ma una volta ripulita dalla componente sistematica, quindi calcolando i residui, questi risultano normali e con varianza costante.</p>
+</section></section>
+<section>
+<section id="regressione-multipla" class="title-slide slide level1 center">
+<h1>Regressione Multipla</h1>
+
+</section>
+<section id="regressione-multipla-1" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Tutto quello che abbiamo visto fino ad ora era riferito al modello lineare semplice ovvero un predittore e un outcome.</p>
+<p>Abbiamo visto che nel caso di un predittore categoriale a 2 livelli questo si riduca ad un t-test mentre nel caso di un predittore numerico questo diventi sostanzialmente una correlazione.</p>
+<p>Il vero vantaggio di un modello lineare però è quello di includere più di un predittore (categoriale o numerico) all’interno dello stesso modello.</p>
+</section>
+<section id="regressione-multipla-2" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>La formula rimane la stessa, semplicemente si allunga:</p>
+<p><span class="math display">\[
+y_i = \beta_0 + \beta_1 x_{1_i} + \beta_2 x_{2_i} + \dots \beta_p x_{p_i} + \epsilon_i
+\]</span></p>
+<p>Quindi possiamo aggiungere in modo additivo predittori <span class="math inline">\(x_p\)</span>. Come vedete la struttura è sempre la stessa, abbiamo una componente sistematica che rispetto a prima contiene più componenti <span class="math inline">\(\beta_0 + \beta_1 x_{1_i} + \dots\)</span> e la componente casuale (residua) <span class="math inline">\(\epsilon_i\)</span> che rappresenta sempre la parte non spiegata del modello.</p>
+</section>
+<section id="regressione-multipla-3" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Tutto quello che abbiamo visto nel caso semplice, vale anche nel caso multiplo. La difficoltà però riguarda principalmente la visualizzazione. La relazione tra <span class="math inline">\(y\)</span> e <span class="math inline">\(x\)</span> è facilmente rappresentabile in un piano (2 dimensioni). Quella tra <span class="math inline">\(y\)</span> e <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span> richiede un cubo (3 dimensioni). Dopo le 3 dimensioni non è più possibile rappresentare graficamente i concetti.</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-60-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="regressione-multipla-4" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Quelle del grafico precendente sono due relazioni bivariate (due modelli lineari semplici). Mettiamo però tutto assieme. Ora il modello non stima la retta ma il piano che minimizza le distanze.</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-61-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="regressione-multipla-5" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>La logica è la stessa, le distanze (residui) ora sono su 3 dimensioni e non più su due:</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-62-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="regressione-multipla-6" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Vediamo come cambia l’intepretazione dei parametri. Proviamo a stimare questo modello <code>attachment ~ period</code> dove <code>attachment</code> indica il senso di appartenenza e legame affettivo con l’organizzazione e <code>period</code> indica il numero di anni di “anzianità” di volontariato.</p>
+<div class="cell" data-layout-align="center" data-lines="^Coefficients|^Signif">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(attachment <span class="sc">~</span> period, <span class="at">data =</span> dat)</span>
+<span id="cb36-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 3.511591   0.073240  47.946  &lt; 2e-16 ***
+period      0.010856   0.003234   3.357  0.00114 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Vediamo che all’aumentare di un anno di “anzianità” aumenta l’attaccamento di 0.01 con un p value significativo.</p>
+</section>
+<section id="regressione-multipla-7" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Quindi possiamo concludere che all’aumentare dell’esperienza di volontariato, maggiore sarà il mio attaccamento all’associazione che frequento attualmente. Tuttavia mi viene il dubbio che anche l’età anagrafica possa essere rilevante. Magari persone con età maggiore hanno sistematicamente meno o più attaccamento. Includo anche l’età nel modello:</p>
+<div class="cell" data-layout-align="center" data-lines="^Coefficients|^Signif">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a aria-hidden="true" tabindex="-1"></a>fit2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(attachment <span class="sc">~</span> period <span class="sc">+</span> age, <span class="at">data =</span> dat)</span>
+<span id="cb38-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 3.087684   0.182768  16.894   &lt;2e-16 ***
+period      0.002521   0.004566   0.552   0.5822    
+age         0.012052   0.004785   2.519   0.0135 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="regressione-multipla-8" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Vediamo che il coefficiente di <code>period</code> è drasticamente diminuito e il p value non è più inferiore ad <span class="math inline">\(\alpha\)</span>. Inoltre, <code>age</code> è associata ad un coefficiente di 0.01 con un p-value significativo. Cosa è successo?</p>
+<p>Intanto, i coefficienti si intepretano sempre allo stesso modo del caso semplice, ma con una piccola aggiunta:</p>
+<ul>
+<li><code>period</code> (0.002) è l’incremento di <code>attachment</code> quando <code>period</code> aumenta di 1, controllando per <code>age</code></li>
+<li><code>age</code> (0.012) è l’incremento di <code>attachment</code> quando <code>age</code> aumenta di 1, controllando per <code>period</code></li>
+</ul>
+<p>L’aggiunta riguarda quindi il <em>controllando per</em>. Cosa stiamo facendo quindi?</p>
+</section>
+<section id="regressione-multipla-9" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Ragionando in ottica bivariata (con regressione semplice o correlazione) noi vediamo la relazione tra <code>attachment ~ period</code> e <code>attachment ~ age</code>.</p>
+<p>Quello che però vogliamo realmente vedere, in ottica multivariata è il <strong>contributo unico</strong> di <code>period</code> e di <code>age</code> nello spiegare la varianza di <code>attachment</code>.</p>
+<p>In termini pratici questo significa prendere soggetti con la stessa <code>age</code> ma che variano in <code>period</code> (e viceversa) e vedere l’effetto su <code>attachment</code>.</p>
+<p>Se tenendo fisso <code>period</code>, <code>age</code> è comunque legato ad <code>attachment</code> significa che <code>age</code> sta spiegando qualcosa che <code>period</code> non spiegava.</p>
+</section>
+<section id="regressione-multipla-10" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Graficamente questo è quello che stiamo facendo, individuare la varianza spiegata unicamente da quella variabile.</p>
+
+<img data-src="img/venn-multiple-lm.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="regressione-multipla-11" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Quello che emerge nel nostro caso è simile al <em>third-variable problem</em>. <code>age</code> è legato sia a <code>attachment</code> che a <code>period</code> mentre <code>period</code> e <code>attachment</code> sono poco o nulla legati. Se ometto <code>age</code> allora <code>period</code> e <code>attachment</code> sembrano apparentemente legati.</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-66-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="regressione-multipla-12" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Quindi, inserire <code>age</code> come controllo ci permette di capire che non è tanto l’anzianità di volontariato ad aumentare l’attaccamento quanto l’età.</p>
+<p>Due persone con la stessa età ma con anzianità diversa tendono tendono ad avere punteggi simili di <code>attachment</code>. Due persone con età diversa ma stessa anzianità, tendono ad avere invece maggiore <code>attachment</code> all’aumentare dell’età.</p>
+</section>
+<section id="regressione-multipla-13" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Vediamolo in 3D (di solito non si fa ma in questo caso utile).</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-67-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="regressione-multipla-14" class="slide level2">
+<h2>Regressione Multipla</h2>
+
+<img data-src="img/3d-plot-dimarco.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="regressione-multipla-15" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Per darvi un’idea, ecco dei dati simulati dove l’effetto di <code>period</code> è zero vs diverso da zero.</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-68-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="regressione-multipla-16" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Quello che si fa solitamente è rappresentare le singole relazioni stimate dal modello (quindi aggiustate). Le bande colorate sono gli intervalli di confidenza. Quello che viene fatto è vedere la retta stimata per un certo predittore, fissando gli altri sul valore medio.</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-69-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="regressione-multipla-17" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Un’ultima intepretazione utile di cosa succede nel modello di regressione multiplo riguarda la residualizzazione. Noi vogliamo vedere la relazione <code>attachment ~ period</code> ripulendo per <code>age</code>. Quindi togliere l’effetto di <code>age</code> sia da <code>attachment</code> che da <code>period</code>.</p>
+<p>Possiamo quindi fare due modelli di questo tipo:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a aria-hidden="true" tabindex="-1"></a>att_age <span class="ot">&lt;-</span> <span class="fu">lm</span>(attachment <span class="sc">~</span> age, <span class="at">data =</span> dat)</span>
+<span id="cb40-2"><a aria-hidden="true" tabindex="-1"></a>period_age <span class="ot">&lt;-</span> <span class="fu">lm</span>(period <span class="sc">~</span> age, <span class="at">data =</span> dat)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>I residui di questi due modelli saranno i valori di <code>attachment</code> e <code>period</code> togliendo l’effetto di <code>age</code>.</p>
+</section>
+<section id="regressione-multipla-18" class="slide level2">
+<h2>Regressione Multipla</h2>
+<p>Possiamo ora fare un terzo modello dove usiamo <code>period</code> (pulito da <code>age</code>) che predice <code>attachment</code> (pulito da <code>age</code>):</p>
+<div class="cell" data-layout-align="center" data-lines="^Coefficients|^r_period">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
+<span id="cb41-2"><a aria-hidden="true" tabindex="-1"></a>r_attachment <span class="ot">&lt;-</span> <span class="fu">residuals</span>(att_age)</span>
+<span id="cb41-3"><a aria-hidden="true" tabindex="-1"></a>r_period <span class="ot">&lt;-</span> <span class="fu">residuals</span>(period_age)</span>
+<span id="cb41-4"><a aria-hidden="true" tabindex="-1"></a>fit_res <span class="ot">&lt;-</span> <span class="fu">lm</span>(r_attachment <span class="sc">~</span> r_period)</span>
+<span id="cb41-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit_res)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Coefficients:
+                           Estimate              Std. Error t value Pr(&gt;|t|)
+(Intercept) 0.000000000000000003518 0.030661328267777052115   0.000     1.00
+r_period    0.002520844794687062632 0.004541656842091223827   0.555     0.58</code></pre>
+</div>
+</div>
+<p>Il coefficiente è lo stesso di quando facciamo il modello completo <code>attachment ~ period + age</code>. Internamente il modello vede la relazione tra predittore e outcome, residualizzata per gli altri predittori.</p>
 </section>
 <section id="bibliografia" class="slide level2 smaller scrollable">
 <h2>Bibliografia</h2>

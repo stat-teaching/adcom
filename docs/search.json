@@ -525,11 +525,256 @@
     "text": "Normalità dei residui\nLa normalità dei residui, come dice il nome significa che i residui (e non la variabile dipendente) devono essere distribuiti normalmente. In linea teorica, i residui devono avere media \\(\\mu = 0\\) e \\(\\sigma = \\sigma_{\\epsilon}\\) (quella stimata dal modello). Nella pratica devono avere una forma normale e non contenere pattern e/o deviazioni dalla media \\(\\mu = 0\\).\nQuesta assunzione si vede principalmente a livello grafico e guardando statistiche descrittive dei residui. Alcuni propongono di usare dei test per valutare la normalità (tipo Shapiro-Wilk). Tuttavia il metodo migliore è quello grafico."
   },
   {
+    "objectID": "slides/07-modello-lineare.html#normalità-dei-residui-1",
+    "href": "slides/07-modello-lineare.html#normalità-dei-residui-1",
+    "title": "Modello di Regressione Lineare",
+    "section": "Normalità dei residui",
+    "text": "Normalità dei residui\nLa cosa più semplice da fare è rappresentare graficamente i residui con un istogramma e/o un QQ-plot.\nRiprendiamo un modello lineare semplice:\n\n\n\nCall:\nlm(formula = satisfaction ~ burnout, data = dat)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-1.16992 -0.22280  0.02072  0.27720  1.03872 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  4.83504    0.15688  30.821  &lt; 2e-16 ***\nburnout     -0.50720    0.07842  -6.468 4.43e-09 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.4439 on 94 degrees of freedom\nMultiple R-squared:  0.308, Adjusted R-squared:  0.3006 \nF-statistic: 41.83 on 1 and 94 DF,  p-value: 4.43e-09"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#normalità-dei-residui-2",
+    "href": "slides/07-modello-lineare.html#normalità-dei-residui-2",
+    "title": "Modello di Regressione Lineare",
+    "section": "Normalità dei residui",
+    "text": "Normalità dei residui\nCome vedete su R c’è una sezione specifica riguardo i residui che vi fornisce alcune statistiche descrittive in particolare minimo, primo quartile, mediana, terzo quartile e massimo. Già qui possiamo farci un’idea del pattern:\n\ni residui devono essere simmetrici attorno a zero, vediamo che la mediana è molto vicina a zero\nse i residui sono normali, 1 e 3 quartile dovrebbero essere lo stesso valore (o molto simile) semplicemente con segno diverso\nlo stesso vale anche per massimo e minimo ma questi sono estremamente sensibili a valori anomali"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#normalità-dei-residui-3",
+    "href": "slides/07-modello-lineare.html#normalità-dei-residui-3",
+    "title": "Modello di Regressione Lineare",
+    "section": "Normalità dei residui",
+    "text": "Normalità dei residui\nVediamo con un’istogramma. Le linee rosse sono i quantili che sono riportati nel summary del modello:"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#normalità-dei-residui-4",
+    "href": "slides/07-modello-lineare.html#normalità-dei-residui-4",
+    "title": "Modello di Regressione Lineare",
+    "section": "Normalità dei residui",
+    "text": "Normalità dei residui\nUn modo però ancora più efficace è quello del QQ plot perchè ci fa vedere direttamente delle deviazioni dalla normalità:"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#normalità-dei-residui-5",
+    "href": "slides/07-modello-lineare.html#normalità-dei-residui-5",
+    "title": "Modello di Regressione Lineare",
+    "section": "Normalità dei residui",
+    "text": "Normalità dei residui\nIn questo caso sulle code abbiamo della deviazione dalla normalità ma in generale possiamo dire che il modello è abbastanza adeguato. Deviazioni importanti dalla normalità sicuramente devono essere evidenziate. Solitamente la principale motivazione di non normalità dei residui è legata al fatto che il modello lineare non è il modello adeguato per quella tipologia di dato. In particolare, la variabile outcome può avere bisogno di un’altro modello."
+  },
+  {
     "objectID": "slides/07-modello-lineare.html#omoscedasticità-dei-residui",
     "href": "slides/07-modello-lineare.html#omoscedasticità-dei-residui",
     "title": "Modello di Regressione Lineare",
     "section": "Omoscedasticità dei residui",
-    "text": "Omoscedasticità dei residui\nOltre alla normalità, il modello lineare richiede che la varianza dei residui \\(\\sigma_{\\epsilon}\\) sia costante per ogni valore di \\(x\\). In termini pratici, la dispersione attorno alla retta di regressione stimata deve essere costante.\nOvviamente questo è legato al fatto che stimando un solo parametro di varianza dei residui, questo per essere informativo non deve variare in funzione di \\(x\\), altrimenti \\(\\sigma_{\\epsilon}\\) diventa meno informativo.\nAnche questo criterio è facilmente verificabile a livello grafico e quindi consiglio di evitare i test statistici per questo tipo di cose."
+    "text": "Omoscedasticità dei residui\nOltre alla normalità, il modello lineare richiede che la varianza dei residui \\(\\sigma_{\\epsilon}\\) sia costante per ogni valore di \\(\\mu\\). In termini pratici, la dispersione attorno alla retta di regressione stimata deve essere costante.\nOvviamente questo è legato al fatto che stimando un solo parametro di varianza dei residui, questo per essere informativo non deve variare in funzione di \\(x\\), altrimenti \\(\\sigma_{\\epsilon}\\) diventa meno informativo.\nAnche questo criterio è facilmente verificabile a livello grafico e quindi consiglio di evitare i test statistici per questo tipo di cose."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#omoscedasticità-dei-residui-1",
+    "href": "slides/07-modello-lineare.html#omoscedasticità-dei-residui-1",
+    "title": "Modello di Regressione Lineare",
+    "section": "Omoscedasticità dei residui",
+    "text": "Omoscedasticità dei residui\nL’Omoscedasticità dei residui si intende condizionata rispetto al valore stimato dal modello. In altri termini, per ogni valore stimato ci si aspetta che la varianza dei residui (attorno al valore stimato) sia normale (assunzione precedente) con varianza costante."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#omoscedasticità-dei-residui-2",
+    "href": "slides/07-modello-lineare.html#omoscedasticità-dei-residui-2",
+    "title": "Modello di Regressione Lineare",
+    "section": "Omoscedasticità dei residui",
+    "text": "Omoscedasticità dei residui\nIn questo grafico le cose da osservare sono:\n\nse la linea rossa (una sorta di stima non lineare della relazione) è orizzontale. In questo caso significa che non c’è un pattern nella relazione. Il caso ideale è la linea rossa il più simile possibile a quella tratteggiata orizzontale.\nse la dispersione dei punti attorno alla linea rossa (idealmente quella tratteggiata) è costante. Ovvero non ci sono incrementi o decrementi di variabilità.\n\nNel grafico precedente la dispersione sembra abbastanza costante a parte agli estremi dove aumenta a sinistra e si riduce a destra. Attenzione che con poche osservazioni è difficile vedere chiaramente eventuali problemi."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo",
+    "href": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo",
+    "title": "Modello di Regressione Lineare",
+    "section": "Un caso ideale (positivo e negativo)",
+    "text": "Un caso ideale (positivo e negativo)\nVi mostro dei dati simulati per vedere dei casi prototipici di deviazioni rispetto a questi assunti. Questi sono dei dati simulati seguendo esattamente gli assunti. Relazione lineare tra x e y."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-1",
+    "href": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-1",
+    "title": "Modello di Regressione Lineare",
+    "section": "Un caso ideale (positivo e negativo)",
+    "text": "Un caso ideale (positivo e negativo)\nFittiamo il modello lineare e vediamo i residui:\n\n\n\nCall:\nlm(formula = y ~ x, data = dat)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-35.485  -6.685   0.095   6.589  37.085 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 29.766543   0.200295   148.6   &lt;2e-16 ***\nx            0.304761   0.003443    88.5   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 9.958 on 9998 degrees of freedom\nMultiple R-squared:  0.4393,    Adjusted R-squared:  0.4392 \nF-statistic:  7833 on 1 and 9998 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-2",
+    "href": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-2",
+    "title": "Modello di Regressione Lineare",
+    "section": "Un caso ideale (positivo e negativo)",
+    "text": "Un caso ideale (positivo e negativo)\nA prescindere da coefficienti ed intepretazione, possiamo vedere che i residui sono chiaramente normali guardando solo i quantili riportati. Vediamo comunque un grafico:"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-3",
+    "href": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-3",
+    "title": "Modello di Regressione Lineare",
+    "section": "Un caso ideale (positivo e negativo)",
+    "text": "Un caso ideale (positivo e negativo)\nVediamo adesso i valori predetti vs i residui per vedere pattern nella relazione e la dispersione attorno ai valori predetti:"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-4",
+    "href": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-4",
+    "title": "Modello di Regressione Lineare",
+    "section": "Un caso ideale (positivo e negativo)",
+    "text": "Un caso ideale (positivo e negativo)\nVediamo adesso un caso dove gli assunti sono chiaramente violati:"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-5",
+    "href": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-5",
+    "title": "Modello di Regressione Lineare",
+    "section": "Un caso ideale (positivo e negativo)",
+    "text": "Un caso ideale (positivo e negativo)\nAnche qui facciamo il modello lineare:\n\n\n\nCall:\nlm(formula = y ~ x, data = dat)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-51.305  -9.219  -0.065   8.825  74.407 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 13.297876   0.281222   47.29   &lt;2e-16 ***\nx            1.300242   0.004866  267.22   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 14.01 on 9998 degrees of freedom\nMultiple R-squared:  0.8772,    Adjusted R-squared:  0.8772 \nF-statistic: 7.141e+04 on 1 and 9998 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-6",
+    "href": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-6",
+    "title": "Modello di Regressione Lineare",
+    "section": "Un caso ideale (positivo e negativo)",
+    "text": "Un caso ideale (positivo e negativo)\nA parte la forma chiaramente non lineare e la dispersione non costante, i quantili dei residui non sono estremamente problematici, vediamo il grafico. E’ presente un’asimmetria positiva essendoci dei valori estremi grandi che non sono bilanciati attorno allo zero."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-7",
+    "href": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-7",
+    "title": "Modello di Regressione Lineare",
+    "section": "Un caso ideale (positivo e negativo)",
+    "text": "Un caso ideale (positivo e negativo)\nVediamo ora i valori predetti rispetto ai residui:"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-8",
+    "href": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo-8",
+    "title": "Modello di Regressione Lineare",
+    "section": "Un caso ideale (positivo e negativo)",
+    "text": "Un caso ideale (positivo e negativo)\nNel grafico vediamo chiaramente:\n\nun pattern che rimane (linea rossa non orizzontale) quindi il valore atteso (media) dei residui calcolata per ogni valore predetto dal modello non è sempre zero\nla dispersione dei punti attorno ai valori predetti dal modello non è costante ed anzi ha un pattern crescente in questo caso"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#qualche-precisazione",
+    "href": "slides/07-modello-lineare.html#qualche-precisazione",
+    "title": "Modello di Regressione Lineare",
+    "section": "Qualche precisazione",
+    "text": "Qualche precisazione\nUn’aspetto fondamentale rispetto alla verifica delle assunzioni, in particolare normalità e omoschedasticità riguarda il fatto che le assunzioni devono essere verificate sui residui e non sull’outcome \\(y\\) “grezzo”.\nIn altri termini, la variabile \\(y\\) potrebbe sembrare non-normale ma una volta ripulita dalla componente sistematica, quindi calcolando i residui, questi risultano normali e con varianza costante."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-1",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-1",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nTutto quello che abbiamo visto fino ad ora era riferito al modello lineare semplice ovvero un predittore e un outcome.\nAbbiamo visto che nel caso di un predittore categoriale a 2 livelli questo si riduca ad un t-test mentre nel caso di un predittore numerico questo diventi sostanzialmente una correlazione.\nIl vero vantaggio di un modello lineare però è quello di includere più di un predittore (categoriale o numerico) all’interno dello stesso modello."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-2",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-2",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nLa formula rimane la stessa, semplicemente si allunga:\n\\[\ny_i = \\beta_0 + \\beta_1 x_{1_i} + \\beta_2 x_{2_i} + \\dots \\beta_p x_{p_i} + \\epsilon_i\n\\]\nQuindi possiamo aggiungere in modo additivo predittori \\(x_p\\). Come vedete la struttura è sempre la stessa, abbiamo una componente sistematica che rispetto a prima contiene più componenti \\(\\beta_0 + \\beta_1 x_{1_i} + \\dots\\) e la componente casuale (residua) \\(\\epsilon_i\\) che rappresenta sempre la parte non spiegata del modello."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-3",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-3",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nTutto quello che abbiamo visto nel caso semplice, vale anche nel caso multiplo. La difficoltà però riguarda principalmente la visualizzazione. La relazione tra \\(y\\) e \\(x\\) è facilmente rappresentabile in un piano (2 dimensioni). Quella tra \\(y\\) e \\(x_1\\) e \\(x_2\\) richiede un cubo (3 dimensioni). Dopo le 3 dimensioni non è più possibile rappresentare graficamente i concetti."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-4",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-4",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nQuelle del grafico precendente sono due relazioni bivariate (due modelli lineari semplici). Mettiamo però tutto assieme. Ora il modello non stima la retta ma il piano che minimizza le distanze."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-5",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-5",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nLa logica è la stessa, le distanze (residui) ora sono su 3 dimensioni e non più su due:"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-6",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-6",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nVediamo come cambia l’intepretazione dei parametri. Proviamo a stimare questo modello attachment ~ period dove attachment indica il senso di appartenenza e legame affettivo con l’organizzazione e period indica il numero di anni di “anzianità” di volontariato.\n\nfit &lt;- lm(attachment ~ period, data = dat)\nsummary(fit)\n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 3.511591   0.073240  47.946  &lt; 2e-16 ***\nperiod      0.010856   0.003234   3.357  0.00114 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nVediamo che all’aumentare di un anno di “anzianità” aumenta l’attaccamento di 0.01 con un p value significativo."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-7",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-7",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nQuindi possiamo concludere che all’aumentare dell’esperienza di volontariato, maggiore sarà il mio attaccamento all’associazione che frequento attualmente. Tuttavia mi viene il dubbio che anche l’età anagrafica possa essere rilevante. Magari persone con età maggiore hanno sistematicamente meno o più attaccamento. Includo anche l’età nel modello:\n\nfit2 &lt;- lm(attachment ~ period + age, data = dat)\nsummary(fit2)\n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 3.087684   0.182768  16.894   &lt;2e-16 ***\nperiod      0.002521   0.004566   0.552   0.5822    \nage         0.012052   0.004785   2.519   0.0135 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-8",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-8",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nVediamo che il coefficiente di period è drasticamente diminuito e il p value non è più inferiore ad \\(\\alpha\\). Inoltre, age è associata ad un coefficiente di 0.01 con un p-value significativo. Cosa è successo?\nIntanto, i coefficienti si intepretano sempre allo stesso modo del caso semplice, ma con una piccola aggiunta:\n\nperiod (0.002) è l’incremento di attachment quando period aumenta di 1, controllando per age\nage (0.012) è l’incremento di attachment quando age aumenta di 1, controllando per period\n\nL’aggiunta riguarda quindi il controllando per. Cosa stiamo facendo quindi?"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-9",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-9",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nRagionando in ottica bivariata (con regressione semplice o correlazione) noi vediamo la relazione tra attachment ~ period e attachment ~ age.\nQuello che però vogliamo realmente vedere, in ottica multivariata è il contributo unico di period e di age nello spiegare la varianza di attachment.\nIn termini pratici questo significa prendere soggetti con la stessa age ma che variano in period (e viceversa) e vedere l’effetto su attachment.\nSe tenendo fisso period, age è comunque legato ad attachment significa che age sta spiegando qualcosa che period non spiegava."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-10",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-10",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nGraficamente questo è quello che stiamo facendo, individuare la varianza spiegata unicamente da quella variabile."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-11",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-11",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nQuello che emerge nel nostro caso è simile al third-variable problem. age è legato sia a attachment che a period mentre period e attachment sono poco o nulla legati. Se ometto age allora period e attachment sembrano apparentemente legati."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-12",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-12",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nQuindi, inserire age come controllo ci permette di capire che non è tanto l’anzianità di volontariato ad aumentare l’attaccamento quanto l’età.\nDue persone con la stessa età ma con anzianità diversa tendono tendono ad avere punteggi simili di attachment. Due persone con età diversa ma stessa anzianità, tendono ad avere invece maggiore attachment all’aumentare dell’età."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-13",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-13",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nVediamolo in 3D (di solito non si fa ma in questo caso utile)."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-14",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-14",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-15",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-15",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nPer darvi un’idea, ecco dei dati simulati dove l’effetto di period è zero vs diverso da zero."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-16",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-16",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nQuello che si fa solitamente è rappresentare le singole relazioni stimate dal modello (quindi aggiustate). Le bande colorate sono gli intervalli di confidenza. Quello che viene fatto è vedere la retta stimata per un certo predittore, fissando gli altri sul valore medio."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-17",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-17",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nUn’ultima intepretazione utile di cosa succede nel modello di regressione multiplo riguarda la residualizzazione. Noi vogliamo vedere la relazione attachment ~ period ripulendo per age. Quindi togliere l’effetto di age sia da attachment che da period.\nPossiamo quindi fare due modelli di questo tipo:\n\natt_age &lt;- lm(attachment ~ age, data = dat)\nperiod_age &lt;- lm(period ~ age, data = dat)\n\nI residui di questi due modelli saranno i valori di attachment e period togliendo l’effetto di age."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#regressione-multipla-18",
+    "href": "slides/07-modello-lineare.html#regressione-multipla-18",
+    "title": "Modello di Regressione Lineare",
+    "section": "Regressione Multipla",
+    "text": "Regressione Multipla\nPossiamo ora fare un terzo modello dove usiamo period (pulito da age) che predice attachment (pulito da age):\n\noptions(scipen = 999)\nr_attachment &lt;- residuals(att_age)\nr_period &lt;- residuals(period_age)\nfit_res &lt;- lm(r_attachment ~ r_period)\nsummary(fit_res)\n\nCoefficients:\n                           Estimate              Std. Error t value Pr(&gt;|t|)\n(Intercept) 0.000000000000000003518 0.030661328267777052115   0.000     1.00\nr_period    0.002520844794687062632 0.004541656842091223827   0.555     0.58\n\n\nIl coefficiente è lo stesso di quando facciamo il modello completo attachment ~ period + age. Internamente il modello vede la relazione tra predittore e outcome, residualizzata per gli altri predittori."
   },
   {
     "objectID": "slides/07-modello-lineare.html#bibliografia",
@@ -1845,7 +2090,7 @@
     "href": "internal.html",
     "title": "Internal",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nInferenza statistica\n\n\nApr 15, 2026\n\n\n\n\n\n\n\n\n\nModello di Regressione Lineare\n\n\nApr 16, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nInferenza statistica\n\n\nApr 15, 2026\n\n\n\n\n\n\n\n\n\nModello di Regressione Lineare\n\n\nApr 22, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "extra/dimarco2020.html",
