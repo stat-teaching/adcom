@@ -1,7 +1,7 @@
 ---
 title: Modello di Regressione Lineare
 pdf: "[{{< fa file-pdf >}}](slides/07-modello-lineare.pdf)"
-pdf-pages: 47
+pdf-pages: 96
 ---
 
 ```{r}
@@ -906,7 +906,7 @@ stripchart(altezza ~ sex,
            col = 3:2)
 ```
 
-## Predittore categoriale
+## Predittore categoriale {.smaller}
 
 Proviamo a farlo direttamente in R:
 
@@ -1069,7 +1069,7 @@ Il modello lineare funziona correttamente nel momento in cui alcune assunzioni s
 - **Linearità.** Si assume che la relazione tra $x$ e $y$ sia lineare, sia nella regressione semplice sia in quella multipla.
 - **Indipendenza.** I residui devono essere indipendenti tra loro. In sostanza, non devono esserci strutture sistematiche o fattori non misurati che li rendano dipendenti.
 - **Normalità.** Si assume che i residui siano distribuiti normalmente. Non è necessario che $x$ e $y$ siano normali, purché lo siano i residui.
-- **Omoscedasticità.** La varianza dei residui deve essere costante. In pratica, la dispersione dei residui deve rimanere simile per tutti i valori predetti $\mu$ e, idealmente, per tutti i valori dei predittori $x$.
+- **Omoschedasticità.** La varianza dei residui deve essere costante. In pratica, la dispersione dei residui deve rimanere simile per tutti i valori predetti $\mu$ e, idealmente, per tutti i valori dei predittori $x$.
 
 ## Linearità
 
@@ -1107,7 +1107,7 @@ La normalità dei residui, come dice il nome significa che i residui (e non la v
 
 Questa assunzione si vede principalmente a livello grafico e guardando statistiche descrittive dei residui. Alcuni propongono di usare dei test per valutare la normalità (tipo Shapiro-Wilk). Tuttavia il metodo migliore è quello grafico.
 
-## Normalità dei residui
+## Normalità dei residui {.smaller}
 
 La cosa più semplice da fare è rappresentare graficamente i residui con un istogramma e/o un QQ-plot.
 
@@ -1148,7 +1148,7 @@ qqline(residuals(fit))
 
 In questo caso sulle code abbiamo della deviazione dalla normalità ma in generale possiamo dire che il modello è abbastanza adeguato. Deviazioni importanti dalla normalità sicuramente devono essere evidenziate. Solitamente la principale motivazione di non normalità dei residui è legata al fatto che il modello lineare non è il modello adeguato per quella tipologia di dato. In particolare, la variabile outcome può avere bisogno di un'altro modello.
 
-## Omoscedasticità dei residui
+## Omoschedasticità dei residui
 
 Oltre alla normalità, il modello lineare richiede che la varianza dei residui $\sigma_{\epsilon}$ sia costante per ogni valore di $\mu$. In termini pratici, la dispersione attorno alla retta di regressione stimata deve essere costante.
 
@@ -1156,15 +1156,15 @@ Ovviamente questo è legato al fatto che stimando un solo parametro di varianza 
 
 Anche questo criterio è facilmente verificabile a livello grafico e quindi consiglio di evitare i test statistici per questo tipo di cose.
 
-## Omoscedasticità dei residui
+## Omoschedasticità dei residui
 
-L'Omoscedasticità dei residui si intende condizionata rispetto al valore stimato dal modello. In altri termini, per ogni valore stimato ci si aspetta che la varianza dei residui (attorno al valore stimato) sia normale (assunzione precedente) con varianza costante.
+L'Omoschedasticità dei residui si intende condizionata rispetto al valore stimato dal modello. In altri termini, per ogni valore stimato ci si aspetta che la varianza dei residui (attorno al valore stimato) sia normale (assunzione precedente) con varianza costante.
 
 ```{r}
 plot(fit, which = 1)
 ```
 
-## Omoscedasticità dei residui
+## Omoschedasticità dei residui
 
 In questo grafico le cose da osservare sono:
 
@@ -1186,7 +1186,7 @@ y <- b0 + b1 * x + rnorm(n, 0, 10)
 plot(x, y, main = "n = 10000")
 ```
 
-## Un caso ideale (positivo e negativo)
+## Un caso ideale (positivo e negativo) {.smaller}
 
 Fittiamo il modello lineare e vediamo i residui:
 
@@ -1227,7 +1227,7 @@ y <- b0 + b1 * x + 0.01 * x^2 + rnorm(n, 0, log(5) + log(1.2) * x)
 plot(x, y)
 ```
 
-## Un caso ideale (positivo e negativo)
+## Un caso ideale (positivo e negativo) {.smaller}
 
 Anche qui facciamo il modello lineare:
 

@@ -237,7 +237,7 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
     </div>
 </div>
 
-  <p class="date"><em>Ultimo aggiornamento: 04-22-2026</em></p>
+  <p class="date"><em>Ultimo aggiornamento: 04-23-2026</em></p>
 </section>
 
 
@@ -769,7 +769,7 @@ y_i = \beta_0 + \beta_1 x_{1_i} + \beta_2 x_{2_i} + \epsilon_i
 <h2>Predittore categoriale</h2>
 
 <img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-40-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="predittore-categoriale-2" class="slide level2">
+<section id="predittore-categoriale-2" class="slide level2 smaller">
 <h2>Predittore categoriale</h2>
 <p>Proviamo a farlo direttamente in R:</p>
 <div class="cell" data-layout-align="center">
@@ -1342,7 +1342,7 @@ R^2_{\text{adj}} = 1 - \frac{(1 - R^2)(n - 1)}{n - p}
 <li><strong>Linearità.</strong> Si assume che la relazione tra <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> sia lineare, sia nella regressione semplice sia in quella multipla.</li>
 <li><strong>Indipendenza.</strong> I residui devono essere indipendenti tra loro. In sostanza, non devono esserci strutture sistematiche o fattori non misurati che li rendano dipendenti.</li>
 <li><strong>Normalità.</strong> Si assume che i residui siano distribuiti normalmente. Non è necessario che <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> siano normali, purché lo siano i residui.</li>
-<li><strong>Omoscedasticità.</strong> La varianza dei residui deve essere costante. In pratica, la dispersione dei residui deve rimanere simile per tutti i valori predetti <span class="math inline">\(\mu\)</span> e, idealmente, per tutti i valori dei predittori <span class="math inline">\(x\)</span>.</li>
+<li><strong>Omoschedasticità.</strong> La varianza dei residui deve essere costante. In pratica, la dispersione dei residui deve rimanere simile per tutti i valori predetti <span class="math inline">\(\mu\)</span> e, idealmente, per tutti i valori dei predittori <span class="math inline">\(x\)</span>.</li>
 </ul>
 </section>
 <section id="linearità" class="slide level2">
@@ -1374,7 +1374,7 @@ y = \beta_0 + x^{\beta_1}
 <p>La normalità dei residui, come dice il nome significa che i residui (e non la variabile dipendente) devono essere distribuiti normalmente. In linea teorica, i residui devono avere media <span class="math inline">\(\mu = 0\)</span> e <span class="math inline">\(\sigma = \sigma_{\epsilon}\)</span> (quella stimata dal modello). Nella pratica devono avere una forma normale e non contenere pattern e/o deviazioni dalla media <span class="math inline">\(\mu = 0\)</span>.</p>
 <p>Questa assunzione si vede principalmente a livello grafico e guardando statistiche descrittive dei residui. Alcuni propongono di usare dei test per valutare la normalità (tipo Shapiro-Wilk). Tuttavia il metodo migliore è quello grafico.</p>
 </section>
-<section id="normalità-dei-residui-1" class="slide level2">
+<section id="normalità-dei-residui-1" class="slide level2 smaller">
 <h2>Normalità dei residui</h2>
 <p>La cosa più semplice da fare è rappresentare graficamente i residui con un istogramma e/o un QQ-plot.</p>
 <p>Riprendiamo un modello lineare semplice:</p>
@@ -1425,19 +1425,19 @@ F-statistic: 41.83 on 1 and 94 DF,  p-value: 4.43e-09
 <h2>Normalità dei residui</h2>
 <p>In questo caso sulle code abbiamo della deviazione dalla normalità ma in generale possiamo dire che il modello è abbastanza adeguato. Deviazioni importanti dalla normalità sicuramente devono essere evidenziate. Solitamente la principale motivazione di non normalità dei residui è legata al fatto che il modello lineare non è il modello adeguato per quella tipologia di dato. In particolare, la variabile outcome può avere bisogno di un’altro modello.</p>
 </section>
-<section id="omoscedasticità-dei-residui" class="slide level2">
-<h2>Omoscedasticità dei residui</h2>
+<section id="omoschedasticità-dei-residui" class="slide level2">
+<h2>Omoschedasticità dei residui</h2>
 <p>Oltre alla normalità, il modello lineare richiede che la varianza dei residui <span class="math inline">\(\sigma_{\epsilon}\)</span> sia costante per ogni valore di <span class="math inline">\(\mu\)</span>. In termini pratici, la dispersione attorno alla retta di regressione stimata deve essere costante.</p>
 <p>Ovviamente questo è legato al fatto che stimando un solo parametro di varianza dei residui, questo per essere informativo non deve variare in funzione di <span class="math inline">\(x\)</span>, altrimenti <span class="math inline">\(\sigma_{\epsilon}\)</span> diventa meno informativo.</p>
 <p>Anche questo criterio è facilmente verificabile a livello grafico e quindi consiglio di evitare i test statistici per questo tipo di cose.</p>
 </section>
-<section id="omoscedasticità-dei-residui-1" class="slide level2">
-<h2>Omoscedasticità dei residui</h2>
-<p>L’Omoscedasticità dei residui si intende condizionata rispetto al valore stimato dal modello. In altri termini, per ogni valore stimato ci si aspetta che la varianza dei residui (attorno al valore stimato) sia normale (assunzione precedente) con varianza costante.</p>
+<section id="omoschedasticità-dei-residui-1" class="slide level2">
+<h2>Omoschedasticità dei residui</h2>
+<p>L’Omoschedasticità dei residui si intende condizionata rispetto al valore stimato dal modello. In altri termini, per ogni valore stimato ci si aspetta che la varianza dei residui (attorno al valore stimato) sia normale (assunzione precedente) con varianza costante.</p>
 
 <img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-51-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="omoscedasticità-dei-residui-2" class="slide level2">
-<h2>Omoscedasticità dei residui</h2>
+<section id="omoschedasticità-dei-residui-2" class="slide level2">
+<h2>Omoschedasticità dei residui</h2>
 <p>In questo grafico le cose da osservare sono:</p>
 <ul>
 <li>se la linea rossa (una sorta di stima non lineare della relazione) è orizzontale. In questo caso significa che non c’è un pattern nella relazione. Il caso ideale è la linea rossa il più simile possibile a quella tratteggiata orizzontale.</li>
@@ -1450,7 +1450,7 @@ F-statistic: 41.83 on 1 and 94 DF,  p-value: 4.43e-09
 <p>Vi mostro dei dati simulati per vedere dei casi prototipici di deviazioni rispetto a questi assunti. Questi sono dei dati simulati seguendo esattamente gli assunti. Relazione lineare tra <code>x</code> e <code>y</code>.</p>
 
 <img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-52-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="un-caso-ideale-positivo-e-negativo-1" class="slide level2">
+<section id="un-caso-ideale-positivo-e-negativo-1" class="slide level2 smaller">
 <h2>Un caso ideale (positivo e negativo)</h2>
 <p>Fittiamo il modello lineare e vediamo i residui:</p>
 <div class="cell" data-layout-align="center">
@@ -1492,7 +1492,7 @@ F-statistic:  7833 on 1 and 9998 DF,  p-value: &lt; 2.2e-16
 <p>Vediamo adesso un caso dove gli assunti sono chiaramente violati:</p>
 
 <img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-56-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="un-caso-ideale-positivo-e-negativo-5" class="slide level2">
+<section id="un-caso-ideale-positivo-e-negativo-5" class="slide level2 smaller">
 <h2>Un caso ideale (positivo e negativo)</h2>
 <p>Anche qui facciamo il modello lineare:</p>
 <div class="cell" data-layout-align="center">

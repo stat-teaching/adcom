@@ -501,7 +501,7 @@
     "href": "slides/07-modello-lineare.html#assunzioni",
     "title": "Modello di Regressione Lineare",
     "section": "Assunzioni",
-    "text": "Assunzioni\nIl modello lineare funziona correttamente nel momento in cui alcune assunzioni sono rispettate:\n\nLinearità. Si assume che la relazione tra \\(x\\) e \\(y\\) sia lineare, sia nella regressione semplice sia in quella multipla.\nIndipendenza. I residui devono essere indipendenti tra loro. In sostanza, non devono esserci strutture sistematiche o fattori non misurati che li rendano dipendenti.\nNormalità. Si assume che i residui siano distribuiti normalmente. Non è necessario che \\(x\\) e \\(y\\) siano normali, purché lo siano i residui.\nOmoscedasticità. La varianza dei residui deve essere costante. In pratica, la dispersione dei residui deve rimanere simile per tutti i valori predetti \\(\\mu\\) e, idealmente, per tutti i valori dei predittori \\(x\\)."
+    "text": "Assunzioni\nIl modello lineare funziona correttamente nel momento in cui alcune assunzioni sono rispettate:\n\nLinearità. Si assume che la relazione tra \\(x\\) e \\(y\\) sia lineare, sia nella regressione semplice sia in quella multipla.\nIndipendenza. I residui devono essere indipendenti tra loro. In sostanza, non devono esserci strutture sistematiche o fattori non misurati che li rendano dipendenti.\nNormalità. Si assume che i residui siano distribuiti normalmente. Non è necessario che \\(x\\) e \\(y\\) siano normali, purché lo siano i residui.\nOmoschedasticità. La varianza dei residui deve essere costante. In pratica, la dispersione dei residui deve rimanere simile per tutti i valori predetti \\(\\mu\\) e, idealmente, per tutti i valori dei predittori \\(x\\)."
   },
   {
     "objectID": "slides/07-modello-lineare.html#linearità",
@@ -560,25 +560,25 @@
     "text": "Normalità dei residui\nIn questo caso sulle code abbiamo della deviazione dalla normalità ma in generale possiamo dire che il modello è abbastanza adeguato. Deviazioni importanti dalla normalità sicuramente devono essere evidenziate. Solitamente la principale motivazione di non normalità dei residui è legata al fatto che il modello lineare non è il modello adeguato per quella tipologia di dato. In particolare, la variabile outcome può avere bisogno di un’altro modello."
   },
   {
-    "objectID": "slides/07-modello-lineare.html#omoscedasticità-dei-residui",
-    "href": "slides/07-modello-lineare.html#omoscedasticità-dei-residui",
+    "objectID": "slides/07-modello-lineare.html#omoschedasticità-dei-residui",
+    "href": "slides/07-modello-lineare.html#omoschedasticità-dei-residui",
     "title": "Modello di Regressione Lineare",
-    "section": "Omoscedasticità dei residui",
-    "text": "Omoscedasticità dei residui\nOltre alla normalità, il modello lineare richiede che la varianza dei residui \\(\\sigma_{\\epsilon}\\) sia costante per ogni valore di \\(\\mu\\). In termini pratici, la dispersione attorno alla retta di regressione stimata deve essere costante.\nOvviamente questo è legato al fatto che stimando un solo parametro di varianza dei residui, questo per essere informativo non deve variare in funzione di \\(x\\), altrimenti \\(\\sigma_{\\epsilon}\\) diventa meno informativo.\nAnche questo criterio è facilmente verificabile a livello grafico e quindi consiglio di evitare i test statistici per questo tipo di cose."
+    "section": "Omoschedasticità dei residui",
+    "text": "Omoschedasticità dei residui\nOltre alla normalità, il modello lineare richiede che la varianza dei residui \\(\\sigma_{\\epsilon}\\) sia costante per ogni valore di \\(\\mu\\). In termini pratici, la dispersione attorno alla retta di regressione stimata deve essere costante.\nOvviamente questo è legato al fatto che stimando un solo parametro di varianza dei residui, questo per essere informativo non deve variare in funzione di \\(x\\), altrimenti \\(\\sigma_{\\epsilon}\\) diventa meno informativo.\nAnche questo criterio è facilmente verificabile a livello grafico e quindi consiglio di evitare i test statistici per questo tipo di cose."
   },
   {
-    "objectID": "slides/07-modello-lineare.html#omoscedasticità-dei-residui-1",
-    "href": "slides/07-modello-lineare.html#omoscedasticità-dei-residui-1",
+    "objectID": "slides/07-modello-lineare.html#omoschedasticità-dei-residui-1",
+    "href": "slides/07-modello-lineare.html#omoschedasticità-dei-residui-1",
     "title": "Modello di Regressione Lineare",
-    "section": "Omoscedasticità dei residui",
-    "text": "Omoscedasticità dei residui\nL’Omoscedasticità dei residui si intende condizionata rispetto al valore stimato dal modello. In altri termini, per ogni valore stimato ci si aspetta che la varianza dei residui (attorno al valore stimato) sia normale (assunzione precedente) con varianza costante."
+    "section": "Omoschedasticità dei residui",
+    "text": "Omoschedasticità dei residui\nL’Omoschedasticità dei residui si intende condizionata rispetto al valore stimato dal modello. In altri termini, per ogni valore stimato ci si aspetta che la varianza dei residui (attorno al valore stimato) sia normale (assunzione precedente) con varianza costante."
   },
   {
-    "objectID": "slides/07-modello-lineare.html#omoscedasticità-dei-residui-2",
-    "href": "slides/07-modello-lineare.html#omoscedasticità-dei-residui-2",
+    "objectID": "slides/07-modello-lineare.html#omoschedasticità-dei-residui-2",
+    "href": "slides/07-modello-lineare.html#omoschedasticità-dei-residui-2",
     "title": "Modello di Regressione Lineare",
-    "section": "Omoscedasticità dei residui",
-    "text": "Omoscedasticità dei residui\nIn questo grafico le cose da osservare sono:\n\nse la linea rossa (una sorta di stima non lineare della relazione) è orizzontale. In questo caso significa che non c’è un pattern nella relazione. Il caso ideale è la linea rossa il più simile possibile a quella tratteggiata orizzontale.\nse la dispersione dei punti attorno alla linea rossa (idealmente quella tratteggiata) è costante. Ovvero non ci sono incrementi o decrementi di variabilità.\n\nNel grafico precedente la dispersione sembra abbastanza costante a parte agli estremi dove aumenta a sinistra e si riduce a destra. Attenzione che con poche osservazioni è difficile vedere chiaramente eventuali problemi."
+    "section": "Omoschedasticità dei residui",
+    "text": "Omoschedasticità dei residui\nIn questo grafico le cose da osservare sono:\n\nse la linea rossa (una sorta di stima non lineare della relazione) è orizzontale. In questo caso significa che non c’è un pattern nella relazione. Il caso ideale è la linea rossa il più simile possibile a quella tratteggiata orizzontale.\nse la dispersione dei punti attorno alla linea rossa (idealmente quella tratteggiata) è costante. Ovvero non ci sono incrementi o decrementi di variabilità.\n\nNel grafico precedente la dispersione sembra abbastanza costante a parte agli estremi dove aumenta a sinistra e si riduce a destra. Attenzione che con poche osservazioni è difficile vedere chiaramente eventuali problemi."
   },
   {
     "objectID": "slides/07-modello-lineare.html#un-caso-ideale-positivo-e-negativo",
@@ -2090,7 +2090,7 @@
     "href": "internal.html",
     "title": "Internal",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nInferenza statistica\n\n\nApr 15, 2026\n\n\n\n\n\n\n\n\n\nModello di Regressione Lineare\n\n\nApr 22, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nInferenza statistica\n\n\nApr 15, 2026\n\n\n\n\n\n\n\n\n\nModello di Regressione Lineare\n\n\nApr 23, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "extra/dimarco2020.html",
