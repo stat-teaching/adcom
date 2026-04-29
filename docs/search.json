@@ -777,6 +777,132 @@
     "text": "Regressione Multipla\nPossiamo ora fare un terzo modello dove usiamo period (pulito da age) che predice attachment (pulito da age):\n\noptions(scipen = 999)\nr_attachment &lt;- residuals(att_age)\nr_period &lt;- residuals(period_age)\nfit_res &lt;- lm(r_attachment ~ r_period)\nsummary(fit_res)\n\nCoefficients:\n                           Estimate              Std. Error t value Pr(&gt;|t|)\n(Intercept) 0.000000000000000003518 0.030661328267777052115   0.000     1.00\nr_period    0.002520844794687062632 0.004541656842091223827   0.555     0.58\n\n\nIl coefficiente è lo stesso di quando facciamo il modello completo attachment ~ period + age. Internamente il modello vede la relazione tra predittore e outcome, residualizzata per gli altri predittori."
   },
   {
+    "objectID": "slides/07-modello-lineare.html#predittori-categoriali-con-2-livelli",
+    "href": "slides/07-modello-lineare.html#predittori-categoriali-con-2-livelli",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori categoriali con > 2 livelli",
+    "text": "Predittori categoriali con &gt; 2 livelli\nPrima di vedere una regressione multipla con predittori categoriali e numerici, vediamo cosa succede se inseriamo un predittore categoriale con più di 2 livelli. Intuitivamente:\n\nnon è più come un semplice t-test essendo che abbiamo più di due gruppi/livelli\nnon abbiamo più una singola pendenza che rappresenta l’effetto del predittore sull’outcome\nse con 2 livelli potevamo rappresentare la variabile come una serie di 0 e 1 (variabile dummy) ora ci servono più variabili dummy avendo più gruppi/categorie"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-categoriali-con-2-livelli-1",
+    "href": "slides/07-modello-lineare.html#predittori-categoriali-con-2-livelli-1",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori categoriali con > 2 livelli",
+    "text": "Predittori categoriali con &gt; 2 livelli\nInfatti l’equazione di un modello lineare con un predittore \\(x\\) categoriale con \\(k &gt; 2\\) livelli diventa:\n\\[\ny_i = \\beta_0 + \\beta_1 D_{i1} + \\beta_2 D_{i2} + \\dots + \\beta_{k-1}D_{i,k-1} + \\varepsilon_i\n\\]\n\\[\nD_{ij} =\n\\begin{cases}\n1 & \\text{se l'osservazione } i \\text{ appartiene al livello } j, \\\\\n0 & \\text{altrimenti.}\n\\end{cases}\n\\]\nQuindi quando inseriamo un predittore a \\(k\\) livelli, si creano \\(k - 1\\) variabili dummy \\(D\\) dove 1 e 0 rappresenta l’appartenenza a quella categoria. Ma cosa vogliono dire i parametri?"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-categoriali-con-2-livelli-2",
+    "href": "slides/07-modello-lineare.html#predittori-categoriali-con-2-livelli-2",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori categoriali con > 2 livelli",
+    "text": "Predittori categoriali con &gt; 2 livelli\nL’idea è la stessa dell’esempio con 2 gruppi. Sostanzialmente ogni parametro \\(\\beta\\) (a parte l’intercetta che vediamo dopo) rappresenta la differenza tra due livelli (proprio come nel caso dei tre gruppi).\nL’intercetta rappresenta la media del gruppo di riferimento. Di default i software prendono il primo in ordine alfabetico oppure quello che viene specificato manualmente.\nOgni parametro \\(\\beta\\) rappresenta quindi la differenza tra il gruppo di riferimento (intercetta) e il gruppo che quella specifica variabile dummy codifica. Sono sostanzialmente \\(k - 1\\) t-test confrontati sempre con il gruppo di riferimento."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-categoriali-con-2-livelli-3",
+    "href": "slides/07-modello-lineare.html#predittori-categoriali-con-2-livelli-3",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori categoriali con > 2 livelli",
+    "text": "Predittori categoriali con &gt; 2 livelli\nVediamo un esempio pratico, usiamo residence (area geografica di residenza) per predire l’attaccamento all’associazione di volontariato (attachment). Il punto rosso è la media."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-categoriali-con-2-livelli-4",
+    "href": "slides/07-modello-lineare.html#predittori-categoriali-con-2-livelli-4",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori categoriali con > 2 livelli",
+    "text": "Predittori categoriali con &gt; 2 livelli\nVediamolo ora all’interno del modello. central in ordine alfabetico è il primo livello e quindi rappresenta l’intercetta (ovviamente si può cambiare).\n\nfit &lt;- lm(attachment ~ residence, data = dat)\nsummary(fit)\n\n\nCall:\nlm(formula = attachment ~ residence, data = dat)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-0.8871 -0.1161  0.1129  0.2196  0.4429 \n\nCoefficients:\n                Estimate Std. Error t value            Pr(&gt;|t|)    \n(Intercept)     3.786071   0.059808  63.304 &lt;0.0000000000000002 ***\nresidencenorth -0.005646   0.075551  -0.075               0.941    \nresidencesouth -0.228929   0.091358  -2.506               0.014 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.3165 on 93 degrees of freedom\nMultiple R-squared:  0.08218,   Adjusted R-squared:  0.06244 \nF-statistic: 4.164 on 2 and 93 DF,  p-value: 0.01854"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-categoriali-con-2-livelli-5",
+    "href": "slides/07-modello-lineare.html#predittori-categoriali-con-2-livelli-5",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori categoriali con > 2 livelli",
+    "text": "Predittori categoriali con &gt; 2 livelli\nQuindi:\n\n(Intercept) è la media di attachment per i soggetti di centro-italia\nresidencenorth è la differenza tra nord-italia e centro-italia\nresidencesouth è la differenza tra sud-italia e centro-italia\n\nStessa intepretazione del caso a due livelli, solo che abbiamo un contrasto in più."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-categoriali-con-2-livelli-6",
+    "href": "slides/07-modello-lineare.html#predittori-categoriali-con-2-livelli-6",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori categoriali con > 2 livelli",
+    "text": "Predittori categoriali con &gt; 2 livelli"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali",
+    "href": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori numerici e categoriali",
+    "text": "Predittori numerici e categoriali\nMettiamo le cose insieme, ora facciamo un modello dove abbiamo predittori categoriali (residence) e numerici (period) insieme. Di base stiamo modellando questo:"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali-1",
+    "href": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali-1",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori numerici e categoriali",
+    "text": "Predittori numerici e categoriali\nPartiamo dal modello questa volta e poi vediamo graficamente cosa succede:\n\n\n\nCall:\nlm(formula = attachment ~ period + residence, data = dat)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.84760 -0.18916  0.07101  0.20185  0.58751 \n\nCoefficients:\n                Estimate Std. Error t value             Pr(&gt;|t|)    \n(Intercept)     3.534554   0.095893  36.860 &lt; 0.0000000000000002 ***\nperiod          0.010511   0.003225   3.260              0.00156 ** \nresidencenorth  0.045488   0.073612   0.618              0.53814    \nresidencesouth -0.174621   0.088550  -1.972              0.05161 .  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.3013 on 92 degrees of freedom\nMultiple R-squared:  0.1772,    Adjusted R-squared:  0.1504 \nF-statistic: 6.605 on 3 and 92 DF,  p-value: 0.0004316"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali-2",
+    "href": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali-2",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori numerici e categoriali",
+    "text": "Predittori numerici e categoriali\nSe intepretiamo i parametri come al solito, abbiamo:\n\n(Intercept): media di attachment quando tutto è zero. Quindi quando siamo nel gruppo di riferimento (central) e quando period è zero.\nperiod: l’incremento di attachment per un incremento unitario di period controllando per residence\nresidencenorth e residencesouth la differenza di attachment tra nord/sud vs central, controllando per period\n\nMa cosa significa controllando per con variabili categoriali e numeriche? Vediamolo graficamente concentrandosi (per semplicità) sul confronto sud vs centro."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali-3",
+    "href": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali-3",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori numerici e categoriali",
+    "text": "Predittori numerici e categoriali\nAbbiamo l’effetto di period (rette) per ogni gruppo e i quadrati sono le medie di period per central e south. I due gruppi hanno una certa differenza su attachment anche."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali-4",
+    "href": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali-4",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori numerici e categoriali",
+    "text": "Predittori numerici e categoriali"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali-5",
+    "href": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali-5",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori numerici e categoriali",
+    "text": "Predittori numerici e categoriali"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali-6",
+    "href": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali-6",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori numerici e categoriali",
+    "text": "Predittori numerici e categoriali\nPer controllare, come nel caso di variabile numeriche dobbiamo fissare il valore di period (ovvero la media)."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali-7",
+    "href": "slides/07-modello-lineare.html#predittori-numerici-e-categoriali-7",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori numerici e categoriali",
+    "text": "Predittori numerici e categoriali"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#medie-aggiustate",
+    "href": "slides/07-modello-lineare.html#medie-aggiustate",
+    "title": "Modello di Regressione Lineare",
+    "section": "Medie aggiustate",
+    "text": "Medie aggiustate\nQuelle che abbiamo calcolato e confrontato graficamente si chiamano medie aggiustate. L’aggiustamento deriva dal tenere fisso (alla media) il valore della covariata in questione (period). Una volta controllato per period le differenze tra medie possono aumentare, diminuire o rimanere simili."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-categoriali-test-omnibus",
+    "href": "slides/07-modello-lineare.html#predittori-categoriali-test-omnibus",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori categoriali, test omnibus",
+    "text": "Predittori categoriali, test omnibus\nL’ultima particolarità dei predittori categoriali è che essendo associati a \\(k - 1\\) coefficienti (\\(k\\) numero di livelli) il test statistico che vediamo dal modello viene fatto su ogni livello (vs l’intercetta/riferimento). Se vogliamo sapere l’effetto complessivo (omnibus) del predittore (e non delle singole dummy) si usa l’analisi della varianza. In R si può fare con car::Anova() in Jamovi è indicato il test omnibus:\n\nlibrary(car) # per la funzione Anova\nfit &lt;- lm(attachment ~ period + residence, data = dat)\ncar::Anova(fit)\n\nAnova Table (Type II tests)\n\nResponse: attachment\n          Sum Sq Df F value   Pr(&gt;F)   \nperiod    0.9644  1 10.6252 0.001564 **\nresidence 0.7121  2  3.9231 0.023173 * \nResiduals 8.3501 92                    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-categoriali-test-omnibus-1",
+    "href": "slides/07-modello-lineare.html#predittori-categoriali-test-omnibus-1",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori categoriali, test omnibus",
+    "text": "Predittori categoriali, test omnibus\nVediamo un test per ogni predittore del modello, anche se residence ha \\(k\\) livelli. Questo test ha come ipotesi nulla \\(H_0\\) che tutti i confronti (nord vs sud, central vs sud, central vs north) sono zero mentre l’ipotesi alternativa è che almeno uno sia diverso da zero.\nPer i predittori numerici o categoriali con \\(k = 2\\) livelli, questo test è ridondante rispetto al summary del modello. Per quelli con \\(k &gt; 2\\) livelli ci dice complessivamente se il predittore spiega della varianza ma non ci dice quale specifico contrasto. Per quello guardiamo i coefficienti del modello."
+  },
+  {
     "objectID": "slides/07-modello-lineare.html#bibliografia",
     "href": "slides/07-modello-lineare.html#bibliografia",
     "title": "Modello di Regressione Lineare",
@@ -2090,7 +2216,7 @@
     "href": "internal.html",
     "title": "Internal",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nInferenza statistica\n\n\nApr 15, 2026\n\n\n\n\n\n\n\n\n\nModello di Regressione Lineare\n\n\nApr 23, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nInferenza statistica\n\n\nApr 15, 2026\n\n\n\n\n\n\n\n\n\nModello di Regressione Lineare\n\n\nApr 29, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "extra/dimarco2020.html",

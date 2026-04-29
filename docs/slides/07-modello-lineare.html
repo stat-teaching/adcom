@@ -237,7 +237,7 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
     </div>
 </div>
 
-  <p class="date"><em>Ultimo aggiornamento: 04-23-2026</em></p>
+  <p class="date"><em>Ultimo aggiornamento: 04-29-2026</em></p>
 </section>
 
 
@@ -1671,7 +1671,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <p>I residui di questi due modelli saranno i valori di <code>attachment</code> e <code>period</code> togliendo l’effetto di <code>age</code>.</p>
 </section>
-<section id="regressione-multipla-18" class="slide level2">
+<section id="regressione-multipla-18" class="slide level2 smaller">
 <h2>Regressione Multipla</h2>
 <p>Possiamo ora fare un terzo modello dove usiamo <code>period</code> (pulito da <code>age</code>) che predice <code>attachment</code> (pulito da <code>age</code>):</p>
 <div class="cell" data-layout-align="center" data-lines="^Coefficients|^r_period">
@@ -1688,6 +1688,181 @@ r_period    0.002520844794687062632 0.004541656842091223827   0.555     0.58</co
 </div>
 </div>
 <p>Il coefficiente è lo stesso di quando facciamo il modello completo <code>attachment ~ period + age</code>. Internamente il modello vede la relazione tra predittore e outcome, residualizzata per gli altri predittori.</p>
+</section>
+<section id="predittori-categoriali-con-2-livelli" class="slide level2">
+<h2>Predittori categoriali con &gt; 2 livelli</h2>
+<p>Prima di vedere una regressione multipla con predittori categoriali e numerici, vediamo cosa succede se inseriamo un predittore categoriale con più di 2 livelli. Intuitivamente:</p>
+<ul>
+<li>non è più come un semplice t-test essendo che abbiamo più di due gruppi/livelli</li>
+<li>non abbiamo più una singola pendenza che rappresenta l’effetto del predittore sull’outcome</li>
+<li>se con 2 livelli potevamo rappresentare la variabile come una serie di 0 e 1 (variabile dummy) ora ci servono più variabili dummy avendo più gruppi/categorie</li>
+</ul>
+</section>
+<section id="predittori-categoriali-con-2-livelli-1" class="slide level2">
+<h2>Predittori categoriali con &gt; 2 livelli</h2>
+<p>Infatti l’equazione di un modello lineare con un predittore <span class="math inline">\(x\)</span> categoriale con <span class="math inline">\(k &gt; 2\)</span> livelli diventa:</p>
+<p><span class="math display">\[
+y_i = \beta_0 + \beta_1 D_{i1} + \beta_2 D_{i2} + \dots + \beta_{k-1}D_{i,k-1} + \varepsilon_i
+\]</span></p>
+<p><span class="math display">\[
+D_{ij} =
+\begin{cases}
+1 &amp; \text{se l'osservazione } i \text{ appartiene al livello } j, \\
+0 &amp; \text{altrimenti.}
+\end{cases}
+\]</span></p>
+<p>Quindi quando inseriamo un predittore a <span class="math inline">\(k\)</span> livelli, si creano <span class="math inline">\(k - 1\)</span> variabili dummy <span class="math inline">\(D\)</span> dove 1 e 0 rappresenta l’appartenenza a quella categoria. Ma cosa vogliono dire i parametri?</p>
+</section>
+<section id="predittori-categoriali-con-2-livelli-2" class="slide level2">
+<h2>Predittori categoriali con &gt; 2 livelli</h2>
+<p>L’idea è la stessa dell’esempio con 2 gruppi. Sostanzialmente ogni parametro <span class="math inline">\(\beta\)</span> (a parte l’intercetta che vediamo dopo) rappresenta la differenza tra due livelli (proprio come nel caso dei tre gruppi).</p>
+<p>L’intercetta rappresenta la media del gruppo di riferimento. Di default i software prendono il primo in ordine alfabetico oppure quello che viene specificato manualmente.</p>
+<p>Ogni parametro <span class="math inline">\(\beta\)</span> rappresenta quindi la differenza tra il gruppo di riferimento (intercetta) e il gruppo che quella specifica variabile dummy codifica. Sono sostanzialmente <span class="math inline">\(k - 1\)</span> t-test confrontati sempre con il gruppo di riferimento.</p>
+</section>
+<section id="predittori-categoriali-con-2-livelli-3" class="slide level2">
+<h2>Predittori categoriali con &gt; 2 livelli</h2>
+<p>Vediamo un esempio pratico, usiamo <code>residence</code> (area geografica di residenza) per predire l’attaccamento all’associazione di volontariato (<code>attachment</code>). Il punto rosso è la media.</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-72-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="predittori-categoriali-con-2-livelli-4" class="slide level2 smaller">
+<h2>Predittori categoriali con &gt; 2 livelli</h2>
+<p>Vediamolo ora all’interno del modello. <code>central</code> in ordine alfabetico è il primo livello e quindi rappresenta l’intercetta (ovviamente si può cambiare).</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(attachment <span class="sc">~</span> residence, <span class="at">data =</span> dat)</span>
+<span id="cb43-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = attachment ~ residence, data = dat)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.8871 -0.1161  0.1129  0.2196  0.4429 
+
+Coefficients:
+                Estimate Std. Error t value            Pr(&gt;|t|)    
+(Intercept)     3.786071   0.059808  63.304 &lt;0.0000000000000002 ***
+residencenorth -0.005646   0.075551  -0.075               0.941    
+residencesouth -0.228929   0.091358  -2.506               0.014 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.3165 on 93 degrees of freedom
+Multiple R-squared:  0.08218,   Adjusted R-squared:  0.06244 
+F-statistic: 4.164 on 2 and 93 DF,  p-value: 0.01854
+</code></pre>
+</div>
+</div>
+</section>
+<section id="predittori-categoriali-con-2-livelli-5" class="slide level2">
+<h2>Predittori categoriali con &gt; 2 livelli</h2>
+<p>Quindi:</p>
+<ul>
+<li><code>(Intercept)</code> è la media di <code>attachment</code> per i soggetti di centro-italia</li>
+<li><code>residencenorth</code> è la differenza tra nord-italia e centro-italia</li>
+<li><code>residencesouth</code> è la differenza tra sud-italia e centro-italia</li>
+</ul>
+<p>Stessa intepretazione del caso a due livelli, solo che abbiamo un contrasto in più.</p>
+</section>
+<section id="predittori-categoriali-con-2-livelli-6" class="slide level2">
+<h2>Predittori categoriali con &gt; 2 livelli</h2>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-74-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="predittori-numerici-e-categoriali" class="slide level2">
+<h2>Predittori numerici e categoriali</h2>
+<p>Mettiamo le cose insieme, ora facciamo un modello dove abbiamo predittori categoriali (<code>residence</code>) e numerici (<code>period</code>) insieme. Di base stiamo modellando questo:</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-75-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="predittori-numerici-e-categoriali-1" class="slide level2 smaller">
+<h2>Predittori numerici e categoriali</h2>
+<p>Partiamo dal modello questa volta e poi vediamo graficamente cosa succede:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = attachment ~ period + residence, data = dat)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.84760 -0.18916  0.07101  0.20185  0.58751 
+
+Coefficients:
+                Estimate Std. Error t value             Pr(&gt;|t|)    
+(Intercept)     3.534554   0.095893  36.860 &lt; 0.0000000000000002 ***
+period          0.010511   0.003225   3.260              0.00156 ** 
+residencenorth  0.045488   0.073612   0.618              0.53814    
+residencesouth -0.174621   0.088550  -1.972              0.05161 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.3013 on 92 degrees of freedom
+Multiple R-squared:  0.1772,    Adjusted R-squared:  0.1504 
+F-statistic: 6.605 on 3 and 92 DF,  p-value: 0.0004316
+</code></pre>
+</div>
+</div>
+</section>
+<section id="predittori-numerici-e-categoriali-2" class="slide level2">
+<h2>Predittori numerici e categoriali</h2>
+<p>Se intepretiamo i parametri come al solito, abbiamo:</p>
+<ul>
+<li><code>(Intercept)</code>: media di <code>attachment</code> quando tutto è zero. Quindi quando siamo nel gruppo di riferimento (<code>central</code>) e quando <code>period</code> è zero.</li>
+<li><code>period</code>: l’incremento di <code>attachment</code> per un incremento unitario di <code>period</code> controllando per <code>residence</code></li>
+<li><code>residencenorth</code> e <code>residencesouth</code> la differenza di attachment tra nord/sud vs central, controllando per <code>period</code></li>
+</ul>
+<p>Ma cosa significa <em>controllando per</em> con variabili categoriali e numeriche? Vediamolo graficamente concentrandosi (per semplicità) sul confronto sud vs centro.</p>
+</section>
+<section id="predittori-numerici-e-categoriali-3" class="slide level2">
+<h2>Predittori numerici e categoriali</h2>
+<p>Abbiamo l’effetto di <code>period</code> (rette) per ogni gruppo e i quadrati sono le medie di period per central e south. I due gruppi hanno una certa differenza su <code>attachment</code> anche.</p>
+</section>
+<section id="predittori-numerici-e-categoriali-4" class="slide level2">
+<h2>Predittori numerici e categoriali</h2>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-77-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="predittori-numerici-e-categoriali-5" class="slide level2">
+<h2>Predittori numerici e categoriali</h2>
+
+<img data-src="img/adj_mean1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="predittori-numerici-e-categoriali-6" class="slide level2">
+<h2>Predittori numerici e categoriali</h2>
+<p>Per <em>controllare</em>, come nel caso di variabile numeriche dobbiamo fissare il valore di <code>period</code> (ovvero la media).</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-78-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="predittori-numerici-e-categoriali-7" class="slide level2">
+<h2>Predittori numerici e categoriali</h2>
+
+<img data-src="img/adj_mean2.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="medie-aggiustate" class="slide level2 smaller">
+<h2>Medie aggiustate</h2>
+<p>Quelle che abbiamo calcolato e confrontato graficamente si chiamano medie aggiustate. L’aggiustamento deriva dal tenere fisso (alla media) il valore della covariata in questione (<code>period</code>). Una volta controllato per <code>period</code> le differenze tra medie possono aumentare, diminuire o rimanere simili.</p>
+
+<img data-src="img/adj_mean3.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="predittori-categoriali-test-omnibus" class="slide level2 smaller">
+<h2>Predittori categoriali, test omnibus</h2>
+<p>L’ultima particolarità dei predittori categoriali è che essendo associati a <span class="math inline">\(k - 1\)</span> coefficienti (<span class="math inline">\(k\)</span> numero di livelli) il test statistico che vediamo dal modello viene fatto su ogni livello (vs l’intercetta/riferimento). Se vogliamo sapere l’effetto complessivo (omnibus) del predittore (e non delle singole dummy) si usa l’analisi della varianza. In R si può fare con <code>car::Anova()</code> in Jamovi è indicato il test omnibus:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car) <span class="co"># per la funzione Anova</span></span>
+<span id="cb46-2"><a aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(attachment <span class="sc">~</span> period <span class="sc">+</span> residence, <span class="at">data =</span> dat)</span>
+<span id="cb46-3"><a aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">Anova</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Anova Table (Type II tests)
+
+Response: attachment
+          Sum Sq Df F value   Pr(&gt;F)   
+period    0.9644  1 10.6252 0.001564 **
+residence 0.7121  2  3.9231 0.023173 * 
+Residuals 8.3501 92                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+</code></pre>
+</div>
+</div>
+</section>
+<section id="predittori-categoriali-test-omnibus-1" class="slide level2">
+<h2>Predittori categoriali, test omnibus</h2>
+<p>Vediamo un test per ogni predittore del modello, anche se <code>residence</code> ha <span class="math inline">\(k\)</span> livelli. Questo test ha come ipotesi nulla <span class="math inline">\(H_0\)</span> che tutti i confronti (nord vs sud, central vs sud, central vs north) sono zero mentre l’ipotesi alternativa è che almeno uno sia diverso da zero.</p>
+<p>Per i predittori numerici o categoriali con <span class="math inline">\(k = 2\)</span> livelli, questo test è ridondante rispetto al summary del modello. Per quelli con <span class="math inline">\(k &gt; 2\)</span> livelli ci dice complessivamente se il predittore spiega della varianza ma non ci dice quale specifico contrasto. Per quello guardiamo i coefficienti del modello.</p>
 </section>
 <section id="bibliografia" class="slide level2 smaller scrollable">
 <h2>Bibliografia</h2>

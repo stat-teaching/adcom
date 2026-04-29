@@ -1519,7 +1519,7 @@ period_age <- lm(period ~ age, data = dat)
 
 I residui di questi due modelli saranno i valori di `attachment` e `period` togliendo l'effetto di `age`.
 
-## Regressione Multipla
+## Regressione Multipla {.smaller}
 
 Possiamo ora fare un terzo modello dove usiamo `period` (pulito da `age`) che predice `attachment` (pulito da `age`):
 
@@ -1534,5 +1534,232 @@ summary(fit_res)
 ```
 
 Il coefficiente è lo stesso di quando facciamo il modello completo `attachment ~ period + age`. Internamente il modello vede la relazione tra predittore e outcome, residualizzata per gli altri predittori.
+
+## Predittori categoriali con > 2 livelli
+
+Prima di vedere una regressione multipla con predittori categoriali e numerici, vediamo cosa succede se inseriamo un predittore categoriale con più di 2 livelli. Intuitivamente:
+
+- non è più come un semplice t-test essendo che abbiamo più di due gruppi/livelli
+- non abbiamo più una singola pendenza che rappresenta l'effetto del predittore sull'outcome
+- se con 2 livelli potevamo rappresentare la variabile come una serie di 0 e 1 (variabile dummy) ora ci servono più variabili dummy avendo più gruppi/categorie
+
+## Predittori categoriali con > 2 livelli
+
+Infatti l'equazione di un modello lineare con un predittore $x$ categoriale con $k > 2$ livelli diventa:
+
+$$
+y_i = \beta_0 + \beta_1 D_{i1} + \beta_2 D_{i2} + \dots + \beta_{k-1}D_{i,k-1} + \varepsilon_i
+$$
+
+$$
+D_{ij} =
+\begin{cases}
+1 & \text{se l'osservazione } i \text{ appartiene al livello } j, \\
+0 & \text{altrimenti.}
+\end{cases}
+$$
+
+Quindi quando inseriamo un predittore a $k$ livelli, si creano $k - 1$ variabili dummy $D$ dove 1 e 0 rappresenta l'appartenenza a quella categoria. Ma cosa vogliono dire i parametri?
+
+## Predittori categoriali con > 2 livelli
+
+L'idea è la stessa dell'esempio con 2 gruppi. Sostanzialmente ogni parametro $\beta$ (a parte l'intercetta che vediamo dopo) rappresenta la differenza tra due livelli (proprio come nel caso dei tre gruppi).
+
+L'intercetta rappresenta la media del gruppo di riferimento. Di default i software prendono il primo in ordine alfabetico oppure quello che viene specificato manualmente.
+
+Ogni parametro $\beta$ rappresenta quindi la differenza tra il gruppo di riferimento (intercetta) e il gruppo che quella specifica variabile dummy codifica. Sono sostanzialmente $k - 1$ t-test confrontati sempre con il gruppo di riferimento.
+
+## Predittori categoriali con > 2 livelli
+
+Vediamo un esempio pratico, usiamo `residence` (area geografica di residenza) per predire l'attaccamento all'associazione di volontariato (`attachment`). Il punto rosso è la media.
+
+```{r}
+ggplot(dat, aes(x = residence, y = attachment)) +
+  geom_point(position = position_jitter(width = 0.1), size = 3) +
+  geom_point(
+    data = dat |> 
+      group_by(residence) |> 
+      mutate(attachment = mean(attachment)),
+      size = 5,
+      col = "firebrick"
+  )
+```
+
+## Predittori categoriali con > 2 livelli {.smaller}
+
+Vediamolo ora all'interno del modello. `central` in ordine alfabetico è il primo livello e quindi rappresenta l'intercetta (ovviamente si può cambiare).
+
+```{r}
+#| echo: true
+fit <- lm(attachment ~ residence, data = dat)
+summary(fit)
+```
+
+## Predittori categoriali con > 2 livelli
+
+Quindi:
+
+- `(Intercept)` è la media di `attachment` per i soggetti di centro-italia
+- `residencenorth` è la differenza tra nord-italia e centro-italia
+- `residencesouth` è la differenza tra sud-italia e centro-italia
+
+Stessa intepretazione del caso a due livelli, solo che abbiamo un contrasto in più.
+
+## Predittori categoriali con > 2 livelli
+
+```{r}
+ggplot(dat, aes(x = residence, y = attachment)) +
+  geom_point(position = position_jitter(width = 0.1), size = 3) +
+  geom_line(data = dat |> 
+      group_by(residence) |> 
+      mutate(attachment = mean(attachment)),
+  aes(x = residence, y = attachment, group = 1)) +
+  geom_point(
+    data = dat |> 
+      group_by(residence) |> 
+      mutate(attachment = mean(attachment)),
+      size = 5,
+      col = "firebrick"
+  ) +
+  annotate("label", x = 0.8, y = 3.9, label = latex2exp::TeX(r"($\beta_0$)", output = "character"), parse = TRUE,
+size = 5) +
+  annotate("label", x = 1.5, y = 3.9, label = latex2exp::TeX(r"($\beta_1$)", output = "character"), parse = TRUE,
+size = 5) +
+  annotate("label", x = 2.5, y = 3.9, label = latex2exp::TeX(r"($\beta_2$)", output = "character"), parse = TRUE,
+size = 5)
+```
+
+## Predittori numerici e categoriali
+
+Mettiamo le cose insieme, ora facciamo un modello dove abbiamo predittori categoriali (`residence`) e numerici (`period`) insieme. Di base stiamo modellando questo:
+
+```{r}
+dat_cs <- filter(dat, residence != "north")
+dat_cs$residence <- factor(dat_cs$residence)
+ggplot(dat, aes(x = period, y = attachment, color = residence)) +
+  geom_point(size = 3)
+```
+
+## Predittori numerici e categoriali {.smaller}
+
+Partiamo dal modello questa volta e poi vediamo graficamente cosa succede:
+
+```{r}
+fit <- lm(attachment ~ period + residence, data = dat)
+summary(fit)
+```
+
+## Predittori numerici e categoriali
+
+Se intepretiamo i parametri come al solito, abbiamo:
+
+- `(Intercept)`: media di `attachment` quando tutto è zero. Quindi quando siamo nel gruppo di riferimento (`central`) e quando `period` è zero.
+- `period`: l'incremento di `attachment` per un incremento unitario di `period` controllando per `residence`
+- `residencenorth` e `residencesouth` la differenza di attachment tra nord/sud vs central, controllando per `period`
+
+Ma cosa significa *controllando per* con variabili categoriali e numeriche? Vediamolo graficamente concentrandosi (per semplicità) sul confronto sud vs centro.
+
+## Predittori numerici e categoriali
+
+Abbiamo l'effetto di `period` (rette) per ogni gruppo e i quadrati sono le medie di period per central e south. I due gruppi hanno una certa differenza su `attachment` anche.
+
+## Predittori numerici e categoriali
+
+```{r}
+#| fig-height: 10
+
+dat_cs <- filter(dat, residence != "north")
+dat_cs$residence <- factor(dat_cs$residence)
+fit <- lm(attachment ~ period + residence, data = dat_cs)
+
+b <- coef(fit)
+
+line_data <- data.frame(
+  residence = levels(dat_cs$residence),
+  intercept = b["(Intercept)"] + c(0, b[paste0("residence", levels(dat_cs$residence)[2])]),
+  slope = b["period"]
+)
+
+period_agg <- dat_cs |> 
+  group_by(residence) |> 
+  summarise(period = mean(period))
+
+period_agg$attachment <- predict(fit, newdata = period_agg)
+
+adj_mean <- data.frame(
+  period = mean(dat_cs$period),
+  residence = unique(dat_cs$residence)
+)
+
+adj_mean$attachment <- predict(fit, adj_mean)
+
+ggplot(dat_cs, aes(x = period, y = attachment, color = residence)) +
+  geom_point(size = 3) +
+  geom_abline(
+    data = line_data,
+    aes(intercept = intercept, slope = slope, color = residence),
+    linewidth = 1
+  ) +
+  geom_point(data = period_agg,
+             aes(x = period, y = attachment),
+             col = "black", size = 5, shape = 15) +
+  geom_hline(yintercept = period_agg$attachment, lty = "dotted")
+```
+
+## Predittori numerici e categoriali
+
+![](img/adj_mean1.svg){fig-align="center"}
+
+## Predittori numerici e categoriali
+
+Per *controllare*, come nel caso di variabile numeriche dobbiamo fissare il valore di `period` (ovvero la media).
+
+```{r}
+#| fig-height: 10
+
+ggplot(dat_cs, aes(x = period, y = attachment, color = residence)) +
+  geom_point(size = 3) +
+  geom_abline(
+    data = line_data,
+    aes(intercept = intercept, slope = slope, color = residence),
+    linewidth = 1
+  ) +
+  geom_point(data = period_agg,
+             aes(x = period, y = attachment),
+             col = "black", size = 5, shape = 15) +
+  geom_hline(yintercept = period_agg$attachment, lty = "dotted") +
+  geom_vline(xintercept = mean(dat_cs$period)) +
+  geom_hline(yintercept = adj_mean$attachment, lty = "dotted") +
+  geom_point(data = adj_mean, aes(x = period, y = attachment, color = residence),
+size = 5, shape = 15)
+```
+
+## Predittori numerici e categoriali
+
+![](img/adj_mean2.svg){fig-align="center"}
+
+## Medie aggiustate {.smaller}
+
+Quelle che abbiamo calcolato e confrontato graficamente si chiamano medie aggiustate. L'aggiustamento deriva dal tenere fisso (alla media) il valore della covariata in questione (`period`). Una volta controllato per `period` le differenze tra medie possono aumentare, diminuire o rimanere simili.
+
+![](img/adj_mean3.svg){fig-align="center"}
+
+## Predittori categoriali, test omnibus {.smaller}
+
+L'ultima particolarità dei predittori categoriali è che essendo associati a $k - 1$ coefficienti ($k$ numero di livelli) il test statistico che vediamo dal modello viene fatto su ogni livello (vs l'intercetta/riferimento). Se vogliamo sapere l'effetto complessivo (omnibus) del predittore (e non delle singole dummy) si usa l'analisi della varianza. In R si può fare con `car::Anova()` in Jamovi è indicato il test omnibus:
+
+```{r}
+#| echo: true
+
+library(car) # per la funzione Anova
+fit <- lm(attachment ~ period + residence, data = dat)
+car::Anova(fit)
+```
+
+## Predittori categoriali, test omnibus
+
+Vediamo un test per ogni predittore del modello, anche se `residence` ha $k$ livelli. Questo test ha come ipotesi nulla $H_0$ che tutti i confronti (nord vs sud, central vs sud, central vs north) sono zero mentre l'ipotesi alternativa è che almeno uno sia diverso da zero.
+
+Per i predittori numerici o categoriali con $k = 2$ livelli, questo test è ridondante rispetto al summary del modello. Per quelli con $k > 2$ livelli ci dice complessivamente se il predittore spiega della varianza ma non ci dice quale specifico contrasto. Per quello guardiamo i coefficienti del modello.
 
 ## Bibliografia
