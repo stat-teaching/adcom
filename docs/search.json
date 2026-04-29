@@ -903,6 +903,69 @@
     "text": "Predittori categoriali, test omnibus\nVediamo un test per ogni predittore del modello, anche se residence ha \\(k\\) livelli. Questo test ha come ipotesi nulla \\(H_0\\) che tutti i confronti (nord vs sud, central vs sud, central vs north) sono zero mentre l’ipotesi alternativa è che almeno uno sia diverso da zero.\nPer i predittori numerici o categoriali con \\(k = 2\\) livelli, questo test è ridondante rispetto al summary del modello. Per quelli con \\(k &gt; 2\\) livelli ci dice complessivamente se il predittore spiega della varianza ma non ci dice quale specifico contrasto. Per quello guardiamo i coefficienti del modello."
   },
   {
+    "objectID": "slides/07-modello-lineare.html#predittori-categoriali-e-numerici",
+    "href": "slides/07-modello-lineare.html#predittori-categoriali-e-numerici",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori categoriali e numerici",
+    "text": "Predittori categoriali e numerici\nIl modello con period e residence si chiama tecnicamente un modello additivo ovvero i singoli predittori sono inseriti assumendo che l’effetto di uno non influenzi l’altro (se non in termini di controllare per).\nTuttavia ci si potrebbe chiedere se l’effetto di period possa variare tra una zona geografica e l’altra.\nIn termini grafici, se la retta di attachment ~ period possa essere diversa tra una zona e l’altra. Questo è un esempio di interazione"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-categoriali-e-numerici-1",
+    "href": "slides/07-modello-lineare.html#predittori-categoriali-e-numerici-1",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori categoriali e numerici",
+    "text": "Predittori categoriali e numerici\nL’interazione è un concetto importante ma complesso. Tecnicamente c’è interazione quando l’effetto di un predittore (sull’outcome) cambia in funzione di un’altro predittore."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-categoriali-e-numerici-2",
+    "href": "slides/07-modello-lineare.html#predittori-categoriali-e-numerici-2",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori categoriali e numerici",
+    "text": "Predittori categoriali e numerici\nIn questo esempio l’effetto di \\(x\\) cambia nel momento in cui lo stimo per il gruppo “a” rispetto al gruppo “b”.\nNel modello additivo, non serve stimare la relazione y ~ x per ogni gruppo perchè assumiamo che sia la stessa. Infatti le rette sono parallele, basta stimarlo solo una volta.\nFormalmente (poi vediamo nei dati) dove \\(g\\) è la variabile categoriale gruppo (“a” e “b”):\n\\[\ny_i = \\beta_0 + \\beta_1 x_i + \\beta_2 g_i + \\epsilon_i\n\\]\n\\[\ng_{i} =\n\\begin{cases}\n1 & \\text{se l'osservazione } i \\text{ appartiene al gruppo a }\\\\\n0 & \\text{altrimenti. (gruppo b)}\n\\end{cases}\n\\]"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-categoriali-e-numerici-3",
+    "href": "slides/07-modello-lineare.html#predittori-categoriali-e-numerici-3",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori categoriali e numerici",
+    "text": "Predittori categoriali e numerici"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#predittori-categoriali-e-numerici-4",
+    "href": "slides/07-modello-lineare.html#predittori-categoriali-e-numerici-4",
+    "title": "Modello di Regressione Lineare",
+    "section": "Predittori categoriali e numerici",
+    "text": "Predittori categoriali e numerici\nNel caso dell’interazione invece, dobbiamo stimare due pendenze, una per gruppo. Quindi abbiamo un parametro aggiuntivo rispetto al modello additivo. Formalmente:\n\\[\ny_i = \\beta_0 + \\beta_1 x_i + \\beta_2 g_i + \\beta_3 x_i g_i + \\epsilon_i\n\\]\nTecnicamente \\(\\beta_3\\) (il parametro di interazione) è la differenza tra le pendenze dei due gruppi.\nIl parametro di interazione è \\(\\beta_3\\). l’interazione non è un modello adittivo perchè i due predittori si moltiplicano tra loro. Infatti si dice che è un modello moltiplicativo (o semplicemente con interazioni)."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#interazione-in-pratica",
+    "href": "slides/07-modello-lineare.html#interazione-in-pratica",
+    "title": "Modello di Regressione Lineare",
+    "section": "Interazione in pratica",
+    "text": "Interazione in pratica\nVediamola con i dati veri. Stimiamo il modello con interazione di attachment ~ period * age. Da notare che si usa il simbolo * (moltiplicazione) rispetto a quello + additivo. Anche qui, per semplicità omettiamo.\n\nfit &lt;- lm(attachment ~ period * residence, data = dat, subset = residence != \"north\")\nsummary(fit)\n\n\nCall:\nlm(formula = attachment ~ period * residence, data = dat, subset = residence != \n    \"north\")\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.81364 -0.15364  0.06913  0.23048  0.71174 \n\nCoefficients:\n                       Estimate Std. Error t value            Pr(&gt;|t|)    \n(Intercept)            3.650828   0.177978  20.513 &lt;0.0000000000000002 ***\nperiod                 0.005652   0.006932   0.815               0.419    \nresidencesouth        -0.460256   0.285128  -1.614               0.113    \nperiod:residencesouth  0.013886   0.013162   1.055               0.297    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.3415 on 45 degrees of freedom\nMultiple R-squared:  0.1683,    Adjusted R-squared:  0.1128 \nF-statistic: 3.035 on 3 and 45 DF,  p-value: 0.03874"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#interazione-in-pratica-1",
+    "href": "slides/07-modello-lineare.html#interazione-in-pratica-1",
+    "title": "Modello di Regressione Lineare",
+    "section": "Interazione in pratica",
+    "text": "Interazione in pratica\nVediamola graficamente e poi interpretiamo i parametri. Graficamente sembra esserci evidenza di interazione: la pendenza per south è maggiore rispetto a quella per central. Quindi (graficamente) l’effetto di period è più forte per le persone residenti al sud rispetto a quelle del centro."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#interazione-in-pratica-2",
+    "href": "slides/07-modello-lineare.html#interazione-in-pratica-2",
+    "title": "Modello di Regressione Lineare",
+    "section": "Interazione in pratica",
+    "text": "Interazione in pratica\nOra vediamo i parametri. C’è una differenzia sostanziale rispetto al modello additivo, l’effetto di un predittore viene condizionato all’altro. Nel modello additivo questo non è rilevante perchè si assume che non ci sia interazione. Metto tra [] l’aggiunta interpretativa.\n\n(Intercept): attachment medio quando tutto è zero. In questo caso quando period è zero e residence è central (livello di riferimento) [solita interpretazione]\nperiod: incremento di attachment per incremento unitario di period [quando residence è zero, quindi per le persone di centro]. In altri termini è la pendenza attachment ~ period per le persone di centro\nresidencesouth: differenza in attachment tra nord e sud [quando period è zero]. Quindi è la differenza tra i due gruppi fissando il valore di period a zero.\nperiod:residencesouth: [questo è il parametro di interazione e rappresenta la differenza tra la pendenza per le persone del sud e le persone di centro]. Se le due pendenze sono diverse (non parallele) questo parametro sarà diverso da zero.\n\nQuindi la differenza principale è che ogni effetto è condizionato a quando l’altro è zero. Nel caso additivo questo non fa differenza mentre qui cambia l’interpretazione dei parametri essendo che stiamo stimando due pendenze e non più solo una."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#interazione-in-pratica-3",
+    "href": "slides/07-modello-lineare.html#interazione-in-pratica-3",
+    "title": "Modello di Regressione Lineare",
+    "section": "Interazione in pratica",
+    "text": "Interazione in pratica"
+  },
+  {
     "objectID": "slides/07-modello-lineare.html#bibliografia",
     "href": "slides/07-modello-lineare.html#bibliografia",
     "title": "Modello di Regressione Lineare",

@@ -1864,6 +1864,98 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 <p>Vediamo un test per ogni predittore del modello, anche se <code>residence</code> ha <span class="math inline">\(k\)</span> livelli. Questo test ha come ipotesi nulla <span class="math inline">\(H_0\)</span> che tutti i confronti (nord vs sud, central vs sud, central vs north) sono zero mentre l’ipotesi alternativa è che almeno uno sia diverso da zero.</p>
 <p>Per i predittori numerici o categoriali con <span class="math inline">\(k = 2\)</span> livelli, questo test è ridondante rispetto al summary del modello. Per quelli con <span class="math inline">\(k &gt; 2\)</span> livelli ci dice complessivamente se il predittore spiega della varianza ma non ci dice quale specifico contrasto. Per quello guardiamo i coefficienti del modello.</p>
 </section>
+<section id="predittori-categoriali-e-numerici" class="slide level2">
+<h2>Predittori categoriali e numerici</h2>
+<p>Il modello con <code>period</code> e <code>residence</code> si chiama tecnicamente un <strong>modello additivo</strong> ovvero i singoli predittori sono inseriti assumendo che l’effetto di uno non influenzi l’altro (se non in termini di <em>controllare per</em>).</p>
+<p>Tuttavia ci si potrebbe chiedere se l’effetto di <code>period</code> possa variare tra una zona geografica e l’altra.</p>
+<p>In termini grafici, se la retta di <code>attachment ~ period</code> possa essere diversa tra una zona e l’altra. Questo è un esempio di <strong>interazione</strong></p>
+</section>
+<section id="predittori-categoriali-e-numerici-1" class="slide level2">
+<h2>Predittori categoriali e numerici</h2>
+<p>L’<strong>interazione</strong> è un concetto importante ma complesso. Tecnicamente c’è interazione quando l’effetto di un predittore (sull’outcome) cambia in funzione di un’altro predittore.</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-80-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="predittori-categoriali-e-numerici-2" class="slide level2">
+<h2>Predittori categoriali e numerici</h2>
+<p>In questo esempio l’effetto di <span class="math inline">\(x\)</span> cambia nel momento in cui lo stimo per il gruppo “a” rispetto al gruppo “b”.</p>
+<p>Nel modello additivo, non serve stimare la relazione <code>y ~ x</code> per ogni gruppo perchè assumiamo che sia la stessa. Infatti le rette sono parallele, basta stimarlo solo una volta.</p>
+<p>Formalmente (poi vediamo nei dati) dove <span class="math inline">\(g\)</span> è la variabile categoriale gruppo (“a” e “b”):</p>
+<p><span class="math display">\[
+y_i = \beta_0 + \beta_1 x_i + \beta_2 g_i + \epsilon_i
+\]</span></p>
+<p><span class="math display">\[
+g_{i} =
+\begin{cases}
+1 &amp; \text{se l'osservazione } i \text{ appartiene al gruppo a }\\
+0 &amp; \text{altrimenti. (gruppo b)}
+\end{cases}
+\]</span></p>
+</section>
+<section id="predittori-categoriali-e-numerici-3" class="slide level2">
+<h2>Predittori categoriali e numerici</h2>
+
+<img data-src="img/noint.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="predittori-categoriali-e-numerici-4" class="slide level2">
+<h2>Predittori categoriali e numerici</h2>
+<p>Nel caso dell’interazione invece, dobbiamo stimare due pendenze, una per gruppo. Quindi abbiamo un parametro aggiuntivo rispetto al modello additivo. Formalmente:</p>
+<p><span class="math display">\[
+y_i = \beta_0 + \beta_1 x_i + \beta_2 g_i + \beta_3 x_i g_i + \epsilon_i
+\]</span></p>
+<p>Tecnicamente <span class="math inline">\(\beta_3\)</span> (il parametro di interazione) è <strong>la differenza tra le pendenze dei due gruppi</strong>.</p>
+<p>Il parametro di interazione è <span class="math inline">\(\beta_3\)</span>. l’interazione non è un modello adittivo perchè i due predittori si moltiplicano tra loro. Infatti si dice che è un modello <strong>moltiplicativo</strong> (o semplicemente con interazioni).</p>
+</section>
+<section id="interazione-in-pratica" class="slide level2 smaller">
+<h2>Interazione in pratica</h2>
+<p>Vediamola con i dati veri. Stimiamo il modello con interazione di <code>attachment ~ period * age</code>. Da notare che si usa il simbolo <code>*</code> (moltiplicazione) rispetto a quello <code>+</code> additivo. Anche qui, per semplicità omettiamo.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(attachment <span class="sc">~</span> period <span class="sc">*</span> residence, <span class="at">data =</span> dat, <span class="at">subset =</span> residence <span class="sc">!=</span> <span class="st">"north"</span>)</span>
+<span id="cb48-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = attachment ~ period * residence, data = dat, subset = residence != 
+    "north")
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.81364 -0.15364  0.06913  0.23048  0.71174 
+
+Coefficients:
+                       Estimate Std. Error t value            Pr(&gt;|t|)    
+(Intercept)            3.650828   0.177978  20.513 &lt;0.0000000000000002 ***
+period                 0.005652   0.006932   0.815               0.419    
+residencesouth        -0.460256   0.285128  -1.614               0.113    
+period:residencesouth  0.013886   0.013162   1.055               0.297    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.3415 on 45 degrees of freedom
+Multiple R-squared:  0.1683,    Adjusted R-squared:  0.1128 
+F-statistic: 3.035 on 3 and 45 DF,  p-value: 0.03874
+</code></pre>
+</div>
+</div>
+</section>
+<section id="interazione-in-pratica-1" class="slide level2 smaller">
+<h2>Interazione in pratica</h2>
+<p>Vediamola graficamente e poi interpretiamo i parametri. Graficamente sembra esserci evidenza di interazione: la pendenza per south è maggiore rispetto a quella per central. Quindi (graficamente) l’effetto di <code>period</code> è più forte per le persone residenti al sud rispetto a quelle del centro.</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-82-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="interazione-in-pratica-2" class="slide level2 smaller">
+<h2>Interazione in pratica</h2>
+<p>Ora vediamo i parametri. C’è una differenzia sostanziale rispetto al modello additivo, l’effetto di un predittore viene condizionato all’altro. Nel modello additivo questo non è rilevante perchè si assume che non ci sia interazione. Metto tra [] l’aggiunta interpretativa.</p>
+<ul>
+<li><code>(Intercept)</code>: attachment medio quando tutto è zero. In questo caso quando period è zero e residence è central (livello di riferimento) [solita interpretazione]</li>
+<li><code>period</code>: incremento di attachment per incremento unitario di period [quando residence è zero, quindi per le persone di centro]. In altri termini è la pendenza <code>attachment ~ period</code> per le persone di centro</li>
+<li><code>residencesouth</code>: differenza in attachment tra nord e sud [quando period è zero]. Quindi è la differenza tra i due gruppi fissando il valore di period a zero.</li>
+<li><code>period:residencesouth</code>: [questo è il parametro di interazione e rappresenta la differenza tra la pendenza per le persone del sud e le persone di centro]. Se le due pendenze sono diverse (non parallele) questo parametro sarà diverso da zero.</li>
+</ul>
+<p>Quindi la differenza principale è che ogni effetto è condizionato a quando l’altro è zero. Nel caso additivo questo non fa differenza mentre qui cambia l’interpretazione dei parametri essendo che stiamo stimando due pendenze e non più solo una.</p>
+</section>
+<section id="interazione-in-pratica-3" class="slide level2">
+<h2>Interazione in pratica</h2>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-83-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="bibliografia" class="slide level2 smaller scrollable">
 <h2>Bibliografia</h2>
 
