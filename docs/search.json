@@ -956,11 +956,18 @@
     "href": "slides/07-modello-lineare.html#interazione-in-pratica-2",
     "title": "Modello di Regressione Lineare",
     "section": "Interazione in pratica",
-    "text": "Interazione in pratica\nOra vediamo i parametri. C’è una differenzia sostanziale rispetto al modello additivo, l’effetto di un predittore viene condizionato all’altro. Nel modello additivo questo non è rilevante perchè si assume che non ci sia interazione. Metto tra [] l’aggiunta interpretativa.\n\n(Intercept): attachment medio quando tutto è zero. In questo caso quando period è zero e residence è central (livello di riferimento) [solita interpretazione]\nperiod: incremento di attachment per incremento unitario di period [quando residence è zero, quindi per le persone di centro]. In altri termini è la pendenza attachment ~ period per le persone di centro\nresidencesouth: differenza in attachment tra nord e sud [quando period è zero]. Quindi è la differenza tra i due gruppi fissando il valore di period a zero.\nperiod:residencesouth: [questo è il parametro di interazione e rappresenta la differenza tra la pendenza per le persone del sud e le persone di centro]. Se le due pendenze sono diverse (non parallele) questo parametro sarà diverso da zero.\n\nQuindi la differenza principale è che ogni effetto è condizionato a quando l’altro è zero. Nel caso additivo questo non fa differenza mentre qui cambia l’interpretazione dei parametri essendo che stiamo stimando due pendenze e non più solo una."
+    "text": "Interazione in pratica\nOra vediamo i parametri. C’è una differenzia sostanziale rispetto al modello additivo, l’effetto di un predittore viene condizionato all’altro. Nel modello additivo questo non è rilevante perchè si assume che non ci sia interazione. Metto tra [] l’aggiunta interpretativa.\n\n(Intercept): attachment medio quando tutto è zero. In questo caso quando period è zero e residence è central (livello di riferimento) [solita interpretazione]\nperiod: incremento di attachment per incremento unitario di period [quando residence è zero, quindi per le persone di centro]. In altri termini è la pendenza attachment ~ period per le persone di centro\nresidencesouth: differenza in attachment tra centro e sud [quando period è zero]. Quindi è la differenza tra i due gruppi fissando il valore di period a zero.\nperiod:residencesouth: [questo è il parametro di interazione e rappresenta la differenza tra la pendenza per le persone del sud e le persone di centro]. Se le due pendenze sono diverse (non parallele) questo parametro sarà diverso da zero.\n\nQuindi la differenza principale è che ogni effetto è condizionato a quando l’altro è zero. Nel caso additivo questo non fa differenza mentre qui cambia l’interpretazione dei parametri essendo che stiamo stimando due pendenze e non più solo una."
   },
   {
     "objectID": "slides/07-modello-lineare.html#interazione-in-pratica-3",
     "href": "slides/07-modello-lineare.html#interazione-in-pratica-3",
+    "title": "Modello di Regressione Lineare",
+    "section": "Interazione in pratica",
+    "text": "Interazione in pratica"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#interazione-in-pratica-4",
+    "href": "slides/07-modello-lineare.html#interazione-in-pratica-4",
     "title": "Modello di Regressione Lineare",
     "section": "Interazione in pratica",
     "text": "Interazione in pratica"
@@ -2279,7 +2286,7 @@
     "href": "internal.html",
     "title": "Internal",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nInferenza statistica\n\n\nApr 15, 2026\n\n\n\n\n\n\n\n\n\nModello di Regressione Lineare\n\n\nApr 29, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nInferenza statistica\n\n\nApr 15, 2026\n\n\n\n\n\n\n\n\n\nModello di Regressione Lineare\n\n\nApr 30, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "extra/dimarco2020.html",

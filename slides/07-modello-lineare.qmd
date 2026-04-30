@@ -1862,7 +1862,7 @@ Ora vediamo i parametri. C'è una differenzia sostanziale rispetto al modello ad
  
 - `(Intercept)`: attachment medio quando tutto è zero. In questo caso quando period è zero e residence è central (livello di riferimento) [solita interpretazione]
 - `period`: incremento di attachment per incremento unitario di period [quando residence è zero, quindi per le persone di centro]. In altri termini è la pendenza `attachment ~ period` per le persone di centro
-- `residencesouth`: differenza in attachment tra nord e sud [quando period è zero]. Quindi è la differenza tra i due gruppi fissando il valore di period a zero.
+- `residencesouth`: differenza in attachment tra centro e sud [quando period è zero]. Quindi è la differenza tra i due gruppi fissando il valore di period a zero.
 - `period:residencesouth`: [questo è il parametro di interazione e rappresenta la differenza tra la pendenza per le persone del sud e le persone di centro]. Se le due pendenze sono diverse (non parallele) questo parametro sarà diverso da zero.
 
 Quindi la differenza principale è che ogni effetto è condizionato a quando l'altro è zero. Nel caso additivo questo non fa differenza mentre qui cambia l'interpretazione dei parametri essendo che stiamo stimando due pendenze e non più solo una.
@@ -1885,5 +1885,9 @@ aes(x = period, y = attachment, color = residence)) +
     color = "residence"
   )
 ```
+
+## Interazione in pratica
+
+![](img/int.svg){fig-align="center"}
 
 ## Bibliografia
