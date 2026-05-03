@@ -371,11 +371,11 @@
     "text": "Messaggio finale\n\nAll models are wrong, but some are useful.  – George Box\n\nQuindi, i modelli statistici sono semplificazioni matematiche della realtà tramite assunzioni e vincoli.\nIl modello lineare ad esempio, assume che una retta sia una buona approssimazione della realtà. Modelli più complessi possono approssimare meglio ma richiedono anche più parametri.\nI parametri vengono stimati (con errore) e la qualità della stima è funzione della variabilità del fenomeno e del numero di osservazioni.\nModelli complessi richiedono maggior numero di informazione (soggetti) per essere stimati in modo affidabile."
   },
   {
-    "objectID": "slides/07-modello-lineare.html#modello-lineare-1",
-    "href": "slides/07-modello-lineare.html#modello-lineare-1",
+    "objectID": "slides/07-modello-lineare.html#modello-lineare-extra",
+    "href": "slides/07-modello-lineare.html#modello-lineare-extra",
     "title": "Modello di Regressione Lineare",
-    "section": "Modello lineare",
-    "text": "Modello lineare\nOra ci focalizziamo sul modello lineare con la consapevolezza che \\(f()\\) possa essere molte cose. Formalmente:\n\\[\n\\mathbf{y}_{n\\times1} = \\mathbf{X}_{n \\times p}\\boldsymbol{\\beta}_{p \\times 1} + \\boldsymbol{\\epsilon}_{n \\times 1}\n\\]\nIl grassetto (o matrix formulation) è un modo compatto per scrivere anche modelli lunghi. Infatti possiamo avere:\n\\[\ny_i = \\beta_0 + \\beta_1 x_{1_i} + \\beta_2 x_{2_i} + \\epsilon_i\n\\]"
+    "section": "Modello lineare [#extra]",
+    "text": "Modello lineare [#extra]\nOra ci focalizziamo sul modello lineare con la consapevolezza che \\(f()\\) possa essere molte cose. Formalmente:\n\\[\n\\mathbf{y}_{n\\times1} = \\mathbf{X}_{n \\times p}\\boldsymbol{\\beta}_{p \\times 1} + \\boldsymbol{\\epsilon}_{n \\times 1}\n\\]\nIl grassetto (o matrix formulation) è un modo compatto per scrivere anche modelli lunghi. Infatti possiamo avere:\n\\[\ny_i = \\beta_0 + \\beta_1 x_{1_i} + \\beta_2 x_{2_i} + \\epsilon_i\n\\]"
   },
   {
     "objectID": "slides/07-modello-lineare.html#modello-lineare-semplice",
@@ -2286,7 +2286,7 @@
     "href": "internal.html",
     "title": "Internal",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nInferenza statistica\n\n\nApr 15, 2026\n\n\n\n\n\n\n\n\n\nModello di Regressione Lineare\n\n\nApr 30, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nInferenza statistica\n\n\nApr 15, 2026\n\n\n\n\n\n\n\n\n\nModello di Regressione Lineare\n\n\nMay 3, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "extra/dimarco2020.html",

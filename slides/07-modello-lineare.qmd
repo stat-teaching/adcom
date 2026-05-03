@@ -1,7 +1,6 @@
 ---
 title: Modello di Regressione Lineare
 pdf: "[{{< fa file-pdf >}}](slides/07-modello-lineare.pdf)"
-pdf-pages: 96
 ---
 
 ```{r}
@@ -853,7 +852,7 @@ Modelli complessi richiedono maggior numero di informazione (soggetti) per esser
 
 # Modello lineare
 
-## Modello lineare
+## Modello lineare [#extra]
 
 Ora ci focalizziamo sul modello lineare con la consapevolezza che $f()$ possa essere molte cose. Formalmente:
 
