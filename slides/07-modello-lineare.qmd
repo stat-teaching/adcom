@@ -1889,4 +1889,20 @@ aes(x = period, y = attachment, color = residence)) +
 
 ![](img/int.svg){fig-align="center"}
 
+## Riassunto notazione modelli
+
+Per riassumere la notazione dei modelli, sopratutto per distinguere modelli con e senza interazione:
+
+Questo è un modello di regressione multipla dove l'outcome `attachment` viene spiegato da `period` e `residence`. Il `+` indica che i due effetti sono additivi (ovvero senza interazione).
+
+```r
+attachment ~ period + residence
+```
+
+Questo è un modello di regressione multipla dove l'outcome `attachment` viene spiegato da `period` e `residence` in interazione. Il `*` (moltiplicazione) indica che i due effetti sono moltiplicativi, ovvero il modello stimerà l'interazione.
+
+```r
+attachment ~ period * residence
+```
+
 ## Bibliografia

@@ -1960,6 +1960,14 @@ F-statistic: 3.035 on 3 and 45 DF,  p-value: 0.03874
 <h2>Interazione in pratica</h2>
 
 <img data-src="img/int.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="riassunto-notazione-modelli" class="slide level2">
+<h2>Riassunto notazione modelli</h2>
+<p>Per riassumere la notazione dei modelli, sopratutto per distinguere modelli con e senza interazione:</p>
+<p>Questo è un modello di regressione multipla dove l’outcome <code>attachment</code> viene spiegato da <code>period</code> e <code>residence</code>. Il <code>+</code> indica che i due effetti sono additivi (ovvero senza interazione).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a aria-hidden="true" tabindex="-1"></a>attachment <span class="sc">~</span> period <span class="sc">+</span> residence</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Questo è un modello di regressione multipla dove l’outcome <code>attachment</code> viene spiegato da <code>period</code> e <code>residence</code> in interazione. Il <code>*</code> (moltiplicazione) indica che i due effetti sono moltiplicativi, ovvero il modello stimerà l’interazione.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a aria-hidden="true" tabindex="-1"></a>attachment <span class="sc">~</span> period <span class="sc">*</span> residence</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 <section id="bibliografia" class="slide level2 smaller scrollable">
 <h2>Bibliografia</h2>
 

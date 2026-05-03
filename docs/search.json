@@ -973,6 +973,13 @@
     "text": "Interazione in pratica"
   },
   {
+    "objectID": "slides/07-modello-lineare.html#riassunto-notazione-modelli",
+    "href": "slides/07-modello-lineare.html#riassunto-notazione-modelli",
+    "title": "Modello di Regressione Lineare",
+    "section": "Riassunto notazione modelli",
+    "text": "Riassunto notazione modelli\nPer riassumere la notazione dei modelli, sopratutto per distinguere modelli con e senza interazione:\nQuesto è un modello di regressione multipla dove l’outcome attachment viene spiegato da period e residence. Il + indica che i due effetti sono additivi (ovvero senza interazione).\nattachment ~ period + residence\nQuesto è un modello di regressione multipla dove l’outcome attachment viene spiegato da period e residence in interazione. Il * (moltiplicazione) indica che i due effetti sono moltiplicativi, ovvero il modello stimerà l’interazione.\nattachment ~ period * residence"
+  },
+  {
     "objectID": "slides/07-modello-lineare.html#bibliografia",
     "href": "slides/07-modello-lineare.html#bibliografia",
     "title": "Modello di Regressione Lineare",
