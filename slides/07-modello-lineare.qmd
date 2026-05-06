@@ -1905,4 +1905,54 @@ Questo è un modello di regressione multipla dove l'outcome `attachment` viene s
 attachment ~ period * residence
 ```
 
+## Test omnibus con interazione {.smaller}
+
+Il test omnibus è particolarmente utile nel caso di predittori categoriali con più di due livelli ma anche in presenza di interazioni (sopratutto quando predittori categoriali a più livelli sono coinvolti).
+
+Nel caso del modello completo `attachment ~ period * residence` (senza togliere le osservazioni del nord) abbiamo:
+
+```{r}
+#| echo: true
+
+fit <- lm(attachment ~ period * residence, data = dat)
+summary(fit)
+```
+
+## Test omnibus con interazione
+
+Quindi rispetto a prima abbiamo 3 pendenze e quindi due parametri di interazione che rappresentano le differenze tra le pendenze delle due categorie rispetto a quella di riferimento.
+
+```{r}
+library(ggeffects)
+ggeffect(fit, terms = c("period", "residence")) |> 
+  data.frame() |> 
+  ggplot(aes(x = x, y = predicted)) +
+  geom_line(aes(color = group)) +
+  labs(
+    y = "attachment",
+    x = "period",
+    color = "residence"
+  )
+```
+
+## Test omnibus con interazione
+
+In figura i parametri e la loro intepretazione dal grafico.
+
+![](img/int3.svg){fig-align="center"}
+
+## Test omnibus con interazione
+
+In questo caso abbiamo due parameri di interazione, per averne uno unico possiamo usare `car::Anova()` (o test omnibus su Jamovi):
+
+```{r}
+#| echo: true
+
+car::Anova(fit)
+```
+
+## Test omnibus con interazione
+
+![](img/anovaint.svg){fig-align="center"}
+
 ## Bibliografia

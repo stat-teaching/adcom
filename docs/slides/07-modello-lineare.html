@@ -237,7 +237,7 @@ Filippo Gambarota PhD <a href="https://orcid.org/0000-0002-6666-1747" class="qua
     </div>
 </div>
 
-  <p class="date"><em>Ultimo aggiornamento: 05-03-2026</em></p>
+  <p class="date"><em>Ultimo aggiornamento: 05-06-2026</em></p>
 </section>
 
 
@@ -1968,6 +1968,74 @@ F-statistic: 3.035 on 3 and 45 DF,  p-value: 0.03874
 <p>Questo è un modello di regressione multipla dove l’outcome <code>attachment</code> viene spiegato da <code>period</code> e <code>residence</code> in interazione. Il <code>*</code> (moltiplicazione) indica che i due effetti sono moltiplicativi, ovvero il modello stimerà l’interazione.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a aria-hidden="true" tabindex="-1"></a>attachment <span class="sc">~</span> period <span class="sc">*</span> residence</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
+<section id="test-omnibus-con-interazione" class="slide level2 smaller">
+<h2>Test omnibus con interazione</h2>
+<p>Il test omnibus è particolarmente utile nel caso di predittori categoriali con più di due livelli ma anche in presenza di interazioni (sopratutto quando predittori categoriali a più livelli sono coinvolti).</p>
+<p>Nel caso del modello completo <code>attachment ~ period * residence</code> (senza togliere le osservazioni del nord) abbiamo:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(attachment <span class="sc">~</span> period <span class="sc">*</span> residence, <span class="at">data =</span> dat)</span>
+<span id="cb52-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = attachment ~ period * residence, data = dat)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.81364 -0.15565  0.06884  0.20395  0.71174 
+
+Coefficients:
+                       Estimate Std. Error t value            Pr(&gt;|t|)    
+(Intercept)            3.650828   0.157435  23.189 &lt;0.0000000000000002 ***
+period                 0.005652   0.006131   0.922              0.3591    
+residencenorth        -0.082810   0.181401  -0.457              0.6491    
+residencesouth        -0.460256   0.252216  -1.825              0.0713 .  
+period:residencenorth  0.005490   0.007389   0.743              0.4594    
+period:residencesouth  0.013886   0.011643   1.193              0.2361    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.3021 on 90 degrees of freedom
+Multiple R-squared:  0.1905,    Adjusted R-squared:  0.1456 
+F-statistic: 4.237 on 5 and 90 DF,  p-value: 0.001664
+</code></pre>
+</div>
+</div>
+</section>
+<section id="test-omnibus-con-interazione-1" class="slide level2">
+<h2>Test omnibus con interazione</h2>
+<p>Quindi rispetto a prima abbiamo 3 pendenze e quindi due parametri di interazione che rappresentano le differenze tra le pendenze delle due categorie rispetto a quella di riferimento.</p>
+
+<img data-src="07-modello-lineare_files/figure-revealjs/unnamed-chunk-85-1.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="test-omnibus-con-interazione-2" class="slide level2">
+<h2>Test omnibus con interazione</h2>
+<p>In figura i parametri e la loro intepretazione dal grafico.</p>
+
+<img data-src="img/int3.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="test-omnibus-con-interazione-3" class="slide level2">
+<h2>Test omnibus con interazione</h2>
+<p>In questo caso abbiamo due parameri di interazione, per averne uno unico possiamo usare <code>car::Anova()</code> (o test omnibus su Jamovi):</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">Anova</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Anova Table (Type II tests)
+
+Response: attachment
+                 Sum Sq Df F value   Pr(&gt;F)   
+period           0.9644  1 10.5655 0.001622 **
+residence        0.7121  2  3.9011 0.023726 * 
+period:residence 0.1354  2  0.7417 0.479211   
+Residuals        8.2147 90                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+</code></pre>
+</div>
+</div>
+</section>
+<section id="test-omnibus-con-interazione-4" class="slide level2">
+<h2>Test omnibus con interazione</h2>
+
+<img data-src="img/anovaint.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="bibliografia" class="slide level2 smaller scrollable">
 <h2>Bibliografia</h2>
 

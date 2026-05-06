@@ -63,8 +63,6 @@ $$
 L(\mathbf{\beta}, \sigma^2 \mid \mathbf{y}) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left( -\frac{(y_i - \mathbf{x}_i^\top \mathbf{\beta})^2}{2\sigma^2} \right)
 $$
 
-. . .
-
 In realtà, nemmeno io la capisco fino in fondo. L'obiettivo di questo corso non è capire o studiare le formule ma capire più ad alto livello quello che implicano.
 
 ## Formule, formule, formule
@@ -93,11 +91,7 @@ Immaginate di leggere su un paper riguardo **due studi** dove un *gruppo clinico
 
 Nel **primo studio** viene raccolto un campione di *30 soggetti*. Nel **secondo studio** viene raccolto un campione di *300 soggetti*.
 
-. . .
-
 Nel primo studio viene riportato che il gruppo clinico ha una misura *significativamente* maggiore nella variabile d'interesse, mentre il secondo studio non riporta differenze *significative*.
-
-. . .
 
 Se doveste scommettere, quale dei due studi è maggiormente informativo? perchè
 

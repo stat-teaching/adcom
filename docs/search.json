@@ -980,6 +980,41 @@
     "text": "Riassunto notazione modelli\nPer riassumere la notazione dei modelli, sopratutto per distinguere modelli con e senza interazione:\nQuesto è un modello di regressione multipla dove l’outcome attachment viene spiegato da period e residence. Il + indica che i due effetti sono additivi (ovvero senza interazione).\nattachment ~ period + residence\nQuesto è un modello di regressione multipla dove l’outcome attachment viene spiegato da period e residence in interazione. Il * (moltiplicazione) indica che i due effetti sono moltiplicativi, ovvero il modello stimerà l’interazione.\nattachment ~ period * residence"
   },
   {
+    "objectID": "slides/07-modello-lineare.html#test-omnibus-con-interazione",
+    "href": "slides/07-modello-lineare.html#test-omnibus-con-interazione",
+    "title": "Modello di Regressione Lineare",
+    "section": "Test omnibus con interazione",
+    "text": "Test omnibus con interazione\nIl test omnibus è particolarmente utile nel caso di predittori categoriali con più di due livelli ma anche in presenza di interazioni (sopratutto quando predittori categoriali a più livelli sono coinvolti).\nNel caso del modello completo attachment ~ period * residence (senza togliere le osservazioni del nord) abbiamo:\n\nfit &lt;- lm(attachment ~ period * residence, data = dat)\nsummary(fit)\n\n\nCall:\nlm(formula = attachment ~ period * residence, data = dat)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.81364 -0.15565  0.06884  0.20395  0.71174 \n\nCoefficients:\n                       Estimate Std. Error t value            Pr(&gt;|t|)    \n(Intercept)            3.650828   0.157435  23.189 &lt;0.0000000000000002 ***\nperiod                 0.005652   0.006131   0.922              0.3591    \nresidencenorth        -0.082810   0.181401  -0.457              0.6491    \nresidencesouth        -0.460256   0.252216  -1.825              0.0713 .  \nperiod:residencenorth  0.005490   0.007389   0.743              0.4594    \nperiod:residencesouth  0.013886   0.011643   1.193              0.2361    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.3021 on 90 degrees of freedom\nMultiple R-squared:  0.1905,    Adjusted R-squared:  0.1456 \nF-statistic: 4.237 on 5 and 90 DF,  p-value: 0.001664"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#test-omnibus-con-interazione-1",
+    "href": "slides/07-modello-lineare.html#test-omnibus-con-interazione-1",
+    "title": "Modello di Regressione Lineare",
+    "section": "Test omnibus con interazione",
+    "text": "Test omnibus con interazione\nQuindi rispetto a prima abbiamo 3 pendenze e quindi due parametri di interazione che rappresentano le differenze tra le pendenze delle due categorie rispetto a quella di riferimento."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#test-omnibus-con-interazione-2",
+    "href": "slides/07-modello-lineare.html#test-omnibus-con-interazione-2",
+    "title": "Modello di Regressione Lineare",
+    "section": "Test omnibus con interazione",
+    "text": "Test omnibus con interazione\nIn figura i parametri e la loro intepretazione dal grafico."
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#test-omnibus-con-interazione-3",
+    "href": "slides/07-modello-lineare.html#test-omnibus-con-interazione-3",
+    "title": "Modello di Regressione Lineare",
+    "section": "Test omnibus con interazione",
+    "text": "Test omnibus con interazione\nIn questo caso abbiamo due parameri di interazione, per averne uno unico possiamo usare car::Anova() (o test omnibus su Jamovi):\n\ncar::Anova(fit)\n\nAnova Table (Type II tests)\n\nResponse: attachment\n                 Sum Sq Df F value   Pr(&gt;F)   \nperiod           0.9644  1 10.5655 0.001622 **\nresidence        0.7121  2  3.9011 0.023726 * \nperiod:residence 0.1354  2  0.7417 0.479211   \nResiduals        8.2147 90                    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "slides/07-modello-lineare.html#test-omnibus-con-interazione-4",
+    "href": "slides/07-modello-lineare.html#test-omnibus-con-interazione-4",
+    "title": "Modello di Regressione Lineare",
+    "section": "Test omnibus con interazione",
+    "text": "Test omnibus con interazione"
+  },
+  {
     "objectID": "slides/07-modello-lineare.html#bibliografia",
     "href": "slides/07-modello-lineare.html#bibliografia",
     "title": "Modello di Regressione Lineare",
@@ -2104,7 +2139,7 @@
     "href": "slides/01-intro-analisi-dati.html#formule-formule-formule",
     "title": "Introduzione all’analisi dei dati",
     "section": "Formule, formule, formule",
-    "text": "Formule, formule, formule\nTuttə voi conoscete e capite questa formula giusto? Possiamo dare per scontate queste cose?\n\\[\nL(\\mathbf{\\beta}, \\sigma^2 \\mid \\mathbf{y}) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi \\sigma^2}} \\exp\\left( -\\frac{(y_i - \\mathbf{x}_i^\\top \\mathbf{\\beta})^2}{2\\sigma^2} \\right)\n\\]\n\nIn realtà, nemmeno io la capisco fino in fondo. L’obiettivo di questo corso non è capire o studiare le formule ma capire più ad alto livello quello che implicano."
+    "text": "Formule, formule, formule\nTuttə voi conoscete e capite questa formula giusto? Possiamo dare per scontate queste cose?\n\\[\nL(\\mathbf{\\beta}, \\sigma^2 \\mid \\mathbf{y}) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi \\sigma^2}} \\exp\\left( -\\frac{(y_i - \\mathbf{x}_i^\\top \\mathbf{\\beta})^2}{2\\sigma^2} \\right)\n\\]\nIn realtà, nemmeno io la capisco fino in fondo. L’obiettivo di questo corso non è capire o studiare le formule ma capire più ad alto livello quello che implicano."
   },
   {
     "objectID": "slides/01-intro-analisi-dati.html#formule-formule-formule-1",
@@ -2125,7 +2160,7 @@
     "href": "slides/01-intro-analisi-dati.html#un-piccolo-esempio-1",
     "title": "Introduzione all’analisi dei dati",
     "section": "Un piccolo esempio (1)",
-    "text": "Un piccolo esempio (1)\nImmaginate di leggere su un paper riguardo due studi dove un gruppo clinico e un gruppo di controllo vengono confrontati rispetto ad un certo costrutto psicologico misurato tramite una scala self-report. L’ipotesi degli autori dice che ci si aspetta un punteggio diverso tra gruppo clinico e gruppo di controllo.\nNel primo studio viene raccolto un campione di 30 soggetti. Nel secondo studio viene raccolto un campione di 300 soggetti.\n\nNel primo studio viene riportato che il gruppo clinico ha una misura significativamente maggiore nella variabile d’interesse, mentre il secondo studio non riporta differenze significative.\n\n\nSe doveste scommettere, quale dei due studi è maggiormente informativo? perchè"
+    "text": "Un piccolo esempio (1)\nImmaginate di leggere su un paper riguardo due studi dove un gruppo clinico e un gruppo di controllo vengono confrontati rispetto ad un certo costrutto psicologico misurato tramite una scala self-report. L’ipotesi degli autori dice che ci si aspetta un punteggio diverso tra gruppo clinico e gruppo di controllo.\nNel primo studio viene raccolto un campione di 30 soggetti. Nel secondo studio viene raccolto un campione di 300 soggetti.\nNel primo studio viene riportato che il gruppo clinico ha una misura significativamente maggiore nella variabile d’interesse, mentre il secondo studio non riporta differenze significative.\nSe doveste scommettere, quale dei due studi è maggiormente informativo? perchè"
   },
   {
     "objectID": "slides/01-intro-analisi-dati.html#un-piccolo-esempio-2",
@@ -2293,7 +2328,7 @@
     "href": "internal.html",
     "title": "Internal",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nInferenza statistica\n\n\nApr 15, 2026\n\n\n\n\n\n\n\n\n\nModello di Regressione Lineare\n\n\nMay 3, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Ultimo aggiornamento - Oldest\n      \n      \n        Ultimo aggiornamento - Newest\n      \n      \n        Titolo\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitolo\n\n\n\nUltimo aggiornamento\n\n\n\nPDF\n\n\n\n\n\n\n\n\nIntroduzione al Corso\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione all’analisi dei dati\n\n\nMay 5, 2026\n\n\n\n\n\n\n\n\n\nIntroduzione alla metodologia della ricerca\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nStatistica Descrittiva\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nProbabilità e distribuzioni di probabilità\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nDistribuzione Normale\n\n\nMar 26, 2026\n\n\n\n\n\n\n\n\n\nInferenza statistica\n\n\nApr 15, 2026\n\n\n\n\n\n\n\n\n\nModello di Regressione Lineare\n\n\nMay 6, 2026\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "extra/dimarco2020.html",
