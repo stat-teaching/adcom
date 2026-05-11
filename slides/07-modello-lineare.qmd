@@ -1620,13 +1620,18 @@ ggplot(dat, aes(x = residence, y = attachment)) +
       size = 5,
       col = "firebrick"
   ) +
-  annotate("label", x = 0.8, y = 3.9, label = latex2exp::TeX(r"($\beta_0$)", output = "character"), parse = TRUE,
-size = 5) +
-  annotate("label", x = 1.5, y = 3.9, label = latex2exp::TeX(r"($\beta_1$)", output = "character"), parse = TRUE,
-size = 5) +
-  annotate("label", x = 2.5, y = 3.9, label = latex2exp::TeX(r"($\beta_2$)", output = "character"), parse = TRUE,
-size = 5)
+#   annotate("label", x = 0.8, y = 3.9, label = latex2exp::TeX(r"($\beta_0$)", output = "character"), parse = TRUE,
+# size = 5) +
+#   annotate("label", x = 1.5, y = 3.9, label = latex2exp::TeX(r"($\beta_1$)", output = "character"), parse = TRUE,
+# size = 5) +
+#   annotate("label", x = 2.5, y = 3.9, label = latex2exp::TeX(r"($\beta_2$)", output = "character"), parse = TRUE,
+# size = 5) +
+  mtheme()
 ```
+
+## Predittori categoriali con > 2 livelli
+
+![](img/cat3.svg){fig-align="center"}
 
 ## Predittori numerici e categoriali
 
